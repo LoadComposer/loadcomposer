@@ -1,0 +1,20 @@
+LoadComposer v1.0.0-rc.2
+Copyright © 2026 Marco Pernigotti. All rights reserved except as granted by LCCL-1.0.
+
+Official website: https://loadcomposer.com/
+Official source: https://github.com/LoadComposer/loadcomposer
+Commercial licensing: licensing@loadcomposer.com
+
+LoadComposer is distributed under the custom LoadComposer Community License 1.0
+(LCCL-1.0; LicenseRef-LoadComposer-Community-1.0). The source is available for
+the permitted uses described in LICENSE. Commercial exploitation of the
+software or access to it requires separate written permission.
+
+LoadComposer provides geometric estimates and heuristic layouts. It does not
+validate weight, balance, axle loads, stability, handling access, lashing,
+regulatory compliance, or operational safety. “NON OK” is not proof that no
+feasible arrangement exists. Verify all results with qualified professionals.
+
+The LoadComposer name, logo, visual identity, and domains are reserved. Modified
+versions must be clearly identified, use a different name, and must not imply
+endorsement.

@@ -1,0 +1,16 @@
+node_modules/
+.npm-cache/
+*.log
+.DS_Store
+visual-evidence-v1.0.0-rc.2/
+visual-refinements-results-v1.0.0-rc.2.json
+screenshots-i18n-v1.0.0-rc.2/
+visual-responsive-results-v1.0.0-rc.2.json
+print-evidence-v1.0.0-rc.2/
+print-i18n-v1.0.0-rc.2/
+print-plurals-v1.0.0-rc.2/
+screenshots-responsive-rc.2/
+responsive-results-rc.2.json
+*-results-v1.0.0-rc.2.json
+*-results-rc.2.json
+event-audit-results-rc.2.json

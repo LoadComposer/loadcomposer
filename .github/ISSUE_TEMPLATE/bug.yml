@@ -1,0 +1,54 @@
+name: Bug report
+description: Report reproducible incorrect behavior in a supported release.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not report security vulnerabilities here. Remember that LoadComposer is a geometric estimator; review docs/LIMITATIONS.md before treating an operational constraint as a software defect.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: v1.0.0-rc.1
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Execution mode
+      options:
+        - Official website
+        - Local HTTP server
+        - Standalone file
+        - Third-party host
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Include exact inputs, language, theme, viewport, and ordered steps. Remove confidential or personal data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and observed result
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and operating system
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I reproduced this with the official unmodified release.
+          required: true
+        - label: I did not include secrets, customer data, or a security exploit.
+          required: true

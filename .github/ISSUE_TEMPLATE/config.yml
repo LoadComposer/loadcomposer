@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/LoadComposer/loadcomposer/security/policy
+    about: Read the private security-reporting instructions before disclosing a vulnerability.
+  - name: Commercial licensing
+    url: mailto:licensing@loadcomposer.com
+    about: Ask about SaaS, white-label, embedding, or other commercial exploitation.

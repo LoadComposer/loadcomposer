@@ -1,0 +1,161 @@
+# LoadComposer Community License 1.0
+
+Identifier: `LCCL-1.0`  
+SPDX expression for package metadata: `LicenseRef-LoadComposer-Community-1.0`
+
+Copyright © 2026 Marco Pernigotti. All rights reserved except as expressly granted below.
+
+This is a custom source-available license. It is not an OSI-approved license and it does not grant unrestricted commercial exploitation rights. The English text below is the governing text. `LICENSE.it.md` is a courtesy translation only.
+
+## 1. Definitions
+
+“Software” means LoadComposer, including its source code, executable or standalone forms, documentation, bundled assets, and any copy supplied with this License.
+
+“Owner” means Marco Pernigotti, the copyright owner.
+
+“You” means the individual or legal entity exercising rights under this License.
+
+“Internal Use” means use within and for the operations of You or Your organization, without providing the Software itself, or access to it, to third parties for consideration or as a monetized offering. Internal Use includes use by employees and contractors acting for the organization.
+
+“Non-Monetized” means that access to, use of, or distribution of the Software is not sold, rented, paywalled, subscription-funded, advertising-funded, sponsored, affiliate-funded, donation-gated, used for lead generation or data monetization, or otherwise linked directly or indirectly to revenue or commercial consideration.
+
+“Derivative Work” means a modified version of the Software or a work based substantially on it. Merely using output produced by the Software does not create a Derivative Work.
+
+“Commercial License” means a separate written agreement signed or otherwise expressly accepted by the Owner that grants rights beyond this License.
+
+## 2. Acceptance and scope
+
+By copying, modifying, distributing, publicly hosting, or otherwise exercising rights granted by this License, You accept its terms. If You do not accept them, You may not exercise those rights. Rights not expressly granted remain reserved to the Owner. Ownership of every copy of the Software remains with the Owner and the applicable contributors; this License transfers no copyright, trademark, domain name, patent, or other ownership interest.
+
+Mandatory rights and exceptions that applicable law does not permit this License to restrict remain unaffected.
+
+## 3. Free permitted uses
+
+Subject to this License, the Owner grants You a worldwide, non-exclusive, royalty-free, non-transferable except as expressly permitted here, revocable-on-breach license to:
+
+1. use the Software for personal, educational, academic, research, evaluation, public-administration, nonprofit, and charitable purposes;
+2. use the Software internally in a business or professional activity, including a for-profit activity;
+3. copy, study, inspect, test, and modify the Software;
+4. create Derivative Works;
+5. redistribute the Software or Derivative Works free of charge and on a Non-Monetized basis, subject to Sections 6 and 7;
+6. host the Software or a Derivative Work publicly, free of charge and on a Non-Monetized basis, subject to Section 8; and
+7. submit contributions under the project’s contribution terms.
+
+No fee or commercial license is required merely because the person or organization using the Software operates for profit, provided that the use is Internal Use and does not amount to a prohibited monetization under Section 5.
+
+## 4. Internal use, outputs, and ordinary business activity
+
+Internal Use is permitted even when it supports paid business or professional operations. You may use estimates, diagrams, printouts, data, and other output produced by the Software in planning, quotation, procurement, warehousing, logistics, transport, sale, or delivery of goods and services. You may sell or transport goods whose loading was planned with the Software.
+
+The preceding permission does not authorize selling, licensing, operating, or monetizing the Software itself; providing paid access to it; or marketing services whose principal value is the resale, implementation, commercialization, or operation of LoadComposer for third parties.
+
+## 5. Commercial exploitation requiring a separate license
+
+Without a Commercial License from the Owner, You must not, directly or indirectly:
+
+1. sell, rent, lease, sublicense, or charge a usage, access, implementation, activation, maintenance, or licensing fee for the Software;
+2. place the Software behind a paywall, subscription, membership, paid account, bundled paid tier, or other consideration;
+3. provide it as software-as-a-service, hosted software, managed service, API, embedded service, or remotely accessible functionality for consideration;
+4. provide a white-label, private-label, rebranded, or OEM version;
+5. embed or integrate a substantial part of the Software into a product or service sold, licensed, or otherwise monetized;
+6. resell access, sublicense rights, or offer the Software as part of a commercial marketplace, bundle, platform, or appliance;
+7. monetize access through advertising, sponsorship, affiliate links, lead generation, sale or exploitation of user data, access-linked donations, or equivalent indirect consideration;
+8. operate a service whose principal purpose is to resell, implement, host, customize, support, or commercialize LoadComposer for third parties; or
+9. remove or circumvent the conditions of this License for commercial advantage.
+
+General consulting, logistics, transport, warehousing, manufacturing, or other professional services do not violate this Section merely because the Software is used internally as one tool among others. If the Software itself, access to it, or its implementation is a principal item being supplied or monetized, a Commercial License is required.
+
+Commercial licensing enquiries: `licensing@loadcomposer.com`.
+
+## 6. Conditions for public Derivative Works
+
+If You distribute or publicly host a Derivative Work, You must:
+
+1. keep the complete `LICENSE` and `NOTICE` files with the work;
+2. state prominently that the work is modified and is not the official version;
+3. identify the material changes, the date of each release, and the author or responsible organization;
+4. make the complete corresponding source code available at no charge through the same distribution or a clear, durable source link;
+5. license the whole Derivative Work, insofar as it is based on the Software, only under `LCCL-1.0`, without additional terms that restrict recipients’ exercise of this License;
+6. keep access free and Non-Monetized; and
+7. comply with the attribution and trademark requirements below.
+
+Private modifications used only for Internal Use need not be published.
+
+## 7. Conditions for free redistribution
+
+Every redistributed copy, modified or unmodified, must include:
+
+1. the complete `LICENSE` and `NOTICE`;
+2. the exact version number;
+3. attribution to Marco Pernigotti and applicable contributors;
+4. a link to the official repository at `https://github.com/LoadComposer/loadcomposer`;
+5. the warranty and operational disclaimer in this License; and
+6. source code, or a clear and durable no-charge means of obtaining the complete corresponding source code.
+
+Redistribution must be free and Non-Monetized. You may recover only the reasonable, documented cost of physical media and shipment. That cost recovery must not include a license fee, margin, service fee, or payment for access to the Software.
+
+## 8. Public hosting
+
+You may host an unmodified copy or a compliant Derivative Work for public use only if access is free and Non-Monetized. The hosted interface or an immediately adjacent page must provide clear attribution, the exact version, a link to the source, and a link to this License. You must not suggest that the Owner operates, endorses, certifies, or supports Your host.
+
+The Owner’s official websites and services are not subject to the Non-Monetized condition. The Owner exclusively retains the right to monetize official distribution or hosting, including through commercial licenses, advertising, sponsorship, donations, partnerships, or paid services.
+
+## 9. Attribution and notices
+
+You must preserve copyright, authorship, license, warranty, and provenance notices. You must not remove or falsify notices or represent another person as the author of the Software. Reasonable changes in display placement are permitted when technically necessary, provided that attribution remains clear and accessible.
+
+## 10. Names, marks, logo, and endorsement
+
+“LoadComposer,” its logo, visual identity, domain names, and related marks are reserved to the Owner. This License grants no trademark or branding license.
+
+An exact, unmodified official release may identify itself by its official name and version solely to describe what it is. A Derivative Work must use a clearly different product name, must not use the LoadComposer logo or confusingly similar branding, and must not imply sponsorship, certification, affiliation, or endorsement by the Owner. Nominative references may be used only as permitted by applicable law and must remain truthful and proportionate.
+
+## 11. Contributions
+
+Contributions are accepted only under `CONTRIBUTING.md` and `CLA.md`. Submission of a contribution does not obligate the Owner to accept, publish, maintain, or distribute it. Contributors retain ownership of their contributions subject to the licenses they grant. The Owner may distribute accepted contributions as part of official, community, or commercial versions and under future licensing models to the extent authorized by the contributor terms.
+
+## 12. No operational, engineering, or regulatory assurance
+
+The Software provides geometric estimates and heuristic layouts. It is a planning aid, not a loading instruction, engineering analysis, safety certification, transport document, or proof of feasibility.
+
+A result marked “NON OK,” or its translation, does not prove that no feasible arrangement exists. A positive result does not prove that an arrangement is safe, legal, stable, reachable by handling equipment, or operationally feasible. Unless expressly stated otherwise, the Software does not validate weight, load distribution, center of gravity, balance, axle loads, floor loading, lashing, stacking strength, hazardous goods, route limits, vehicle homologation, container or carrier rules, workplace safety, customs, or other legal and regulatory requirements.
+
+Users must verify measurements and assumptions and obtain qualified operational, engineering, safety, carrier, and legal review before acting.
+
+## 13. Disclaimer of warranty
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED “AS IS” AND “AS AVAILABLE,” WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WARRANTIES OF ACCURACY, COMPLETENESS, FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, QUIET ENJOYMENT, NON-INFRINGEMENT, AVAILABILITY, SECURITY, OR ERROR-FREE OPERATION.
+
+The Owner does not warrant that results are correct, complete, current, suitable for a specific vehicle or load, or compliant with law or industry practice. Mandatory warranties, remedies, and consumer rights that cannot lawfully be excluded remain unaffected.
+
+## 14. Limitation of liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE OWNER AND CONTRIBUTORS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE, OR CONSEQUENTIAL LOSS; LOSS OF PROFIT, REVENUE, DATA, BUSINESS, OPPORTUNITY, OR GOODWILL; OR DAMAGE TO GOODS, VEHICLES, PROPERTY, OR PERSONS ARISING FROM OR RELATED TO THE SOFTWARE OR ITS OUTPUT.
+
+Where liability cannot be excluded, aggregate liability will not exceed the greater of the amount You paid the Owner specifically for the Software during the preceding twelve months or EUR 100.
+
+Nothing in this License excludes or limits liability where exclusion or limitation is prohibited, including liability for wilful misconduct or gross negligence under applicable Italian law, death or personal injury where legally non-excludable, fraud, or mandatory consumer rights.
+
+## 15. Termination and reinstatement
+
+Your rights terminate automatically when You materially breach this License. For a first unintentional breach, rights are provisionally reinstated when You fully cure the breach, notify affected recipients where appropriate, and complete the cure within 30 days after discovery or written notice, whichever occurs first.
+
+The automatic cure rule does not apply where the breach is intentional and consists of selling or monetizing the Software without authorization, removing the License or attribution, falsely claiming authorship or official status, or misusing the LoadComposer name or logo. Reinstatement in those cases requires the Owner’s express written consent. Termination does not affect accrued claims, and Sections intended by their nature to survive remain effective.
+
+## 16. Compliance and third-party rights
+
+You are responsible for complying with export controls, sanctions, privacy, consumer, employment, safety, transport, and other laws applicable to Your use or distribution. You must not use the Software in a way that infringes third-party rights. The Software may include components subject to separate notices; those rights are governed by their applicable terms.
+
+## 17. Governing law and venue
+
+This License is governed by Italian law, excluding conflict-of-law rules, and must be interpreted consistently with mandatory European Union law. Subject to any jurisdiction that applicable law makes mandatory, the courts of Verona, Italy have exclusive jurisdiction.
+
+If You are a consumer, this clause does not deprive You of mandatory protections or the competent court assigned by applicable consumer law. Nothing in this License restricts statutory software exceptions or other rights that cannot validly be waived.
+
+## 18. Entire terms, severability, and versions
+
+This License and incorporated notices state the complete community licensing terms for the Software. A Commercial License may vary them only by an express written agreement with the Owner. Failure to enforce a provision is not a waiver. If a provision is invalid or unenforceable, it will be limited to the minimum extent necessary and the remainder will continue in effect.
+
+The Owner may publish new versions of `LCCL`. Unless the Owner expressly states otherwise, a copy of the Software is governed by the version distributed with that copy; You may not unilaterally substitute a later or earlier license version.
+
+This text has not been certified by a standards body and is not represented as having been reviewed by a lawyer. Professional legal advice should be obtained before relying on it for commercial distribution, consumer-facing services, employment policies, or material transactions.

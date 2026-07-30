@@ -1,0 +1,49 @@
+name: Package integrity
+
+on:
+  push:
+    paths:
+      - "site/**"
+      - "scripts/**"
+      - "tests/**"
+      - "docs/**"
+      - "package*.json"
+      - "LICENSE*"
+      - "NOTICE"
+      - "README*"
+      - ".nvmrc"
+      - ".node-version"
+      - ".github/workflows/**"
+  pull_request:
+    paths:
+      - "site/**"
+      - "scripts/**"
+      - "tests/**"
+      - "docs/**"
+      - "package*.json"
+      - "LICENSE*"
+      - "NOTICE"
+      - "README*"
+      - ".nvmrc"
+      - ".node-version"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic-distribution:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.17.0
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:hardening
+      - run: npm run test:workflow-policy
+      - run: git diff --exit-code -- site/downloads site/legal site/assets docs/translations
