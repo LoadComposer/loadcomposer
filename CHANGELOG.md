@@ -2,6 +2,35 @@
 
 All notable project changes are documented here.
 
+## [1.0.0-rc.3] — 2026-07-31
+
+### Fixed
+
+- GitHub Actions CI now installs `poppler-utils` after Node setup and before
+  `npm ci`, making `pdfinfo`, `pdftotext`, and `pdftocairo` available to the
+  complete PDF test chain on `ubuntu-latest`.
+- The bug-report version placeholder now identifies `v1.0.0-rc.3`.
+- The architecture document now identifies `v1.0.0-rc.2` as the direct
+  application and print-evidence baseline.
+
+### Changed
+
+- Current release identifiers, catalog version metadata, generated glossaries,
+  documentation, reports, tests, fixtures, and artifact names now use
+  `v1.0.0-rc.3` where they describe the candidate itself.
+- Regression fixtures and print parity now compare directly from canonical
+  `v1.0.0-rc.2` to `v1.0.0-rc.3`.
+
+### Unchanged from v1.0.0-rc.2
+
+- Application JavaScript, algorithms, geometry, capacity, load layouts, mixed
+  layouts, coordinates, results, labels, UI, translations other than version
+  metadata, responsive behavior, and print output.
+- `LICENSE`, `LICENSE.it.md`, `NOTICE`, legal terms, permissions, distribution
+  model, and confirmed project email addresses.
+- Workflow triggers, read-only permissions, runner, timeout, pinned actions,
+  Node.js version, npm cache, `npm ci`, and failure-propagating `npm test`.
+
 ## [1.0.0-rc.2] — 2026-07-30
 
 ### Added

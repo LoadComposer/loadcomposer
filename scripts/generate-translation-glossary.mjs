@@ -9,7 +9,7 @@ const LANG_DIR = path.join(PROJECT_DIR, "site", "lang");
 const OUTPUT_DIR = path.join(PROJECT_DIR, "docs", "translations");
 const IT_PATH = path.join(LANG_DIR, "it.json");
 const TARGET_CODES = ["en", "de", "es", "fr", "pt", "nl"];
-const VERSION = "v1.0.0-rc.2";
+const VERSION = "v1.0.0-rc.3";
 const EXPECTED_COUNT = 451;
 const CHECK_ONLY = process.argv.includes("--check");
 

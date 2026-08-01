@@ -21,7 +21,7 @@ Do not connect the primary domain until this checklist is complete.
 - Verify desktop and mobile layouts, including 320 px width.
 - Verify preview side/ramp views and colour/black-and-white modes.
 - Verify browser print and saved PDF output.
-- Confirm title and visible badge show `v1.0.0-rc.2`.
+- Confirm title and visible badge show `v1.0.0-rc.3`.
 
 ## Legal pages and downloads
 
@@ -29,7 +29,7 @@ Do not connect the primary domain until this checklist is complete.
 - Open LICENSE, LICENSE.it.md, NOTICE, trademarks, commercial licensing,
   privacy, and security from the legal index.
 - Confirm the three footer links resolve and do not appear in print.
-- Download `loadcomposer-v1.0.0-rc.2-standalone.zip`.
+- Download `loadcomposer-v1.0.0-rc.3-standalone.zip`.
 - Download the secondary HTML-only file and both `.sha256` sidecars.
 - Verify the downloaded ZIP sidecar.
 - Extract the ZIP and verify its five internal hashes.
@@ -51,5 +51,5 @@ Do not connect the primary domain until this checklist is complete.
 ## Approval boundary
 
 Record the preview URL and results. If any issue requires a code or packaging
-change, prepare `v1.0.0-rc.3`. Only after the preview is approved should the
+change, prepare a separately numbered release candidate. Only after the preview is approved should the
 primary domain, DNS, and apex/`www` redirect be configured.

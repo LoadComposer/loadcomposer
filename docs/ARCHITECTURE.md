@@ -8,8 +8,8 @@ LoadComposer is a static, client-side application with no application backend.
 - `site/lang/index.json` lists enabled language catalogs.
 - `site/lang/*.json` contains the seven localized catalogs.
 - The modular page loads only same-origin catalog JSON.
-- `site/downloads/loadcomposer-v1.0.0-rc.2-standalone.html` is deterministically generated from the same page and embeds the language index and catalogs.
-- `site/downloads/loadcomposer-v1.0.0-rc.2-standalone.zip` is the primary offline distribution and adds the controlling license, informational translation, notice, readme, and internal checksums.
+- `site/downloads/loadcomposer-v1.0.0-rc.3-standalone.html` is deterministically generated from the same page and embeds the language index and catalogs.
+- `site/downloads/loadcomposer-v1.0.0-rc.3-standalone.zip` is the primary offline distribution and adds the controlling license, informational translation, notice, readme, and internal checksums.
 - `site/legal/` exposes byte-identical copies of the canonical legal documents plus a static index.
 - The application stores only theme and language preferences in browser `localStorage`; planning inputs are processed in the current page.
 
@@ -21,7 +21,7 @@ No framework, bundler, package registry, CDN, external font, remote script, or a
 
 ## Test boundaries
 
-The repository contains an exact `v1.0.0-rc.1` application fixture, derived from the canonical signed delivery, for direct regression checks. It contains no earlier application version. Tests compare:
+The repository contains an exact `v1.0.0-rc.2` application fixture, derived from the canonical signed delivery, for direct regression checks. It contains no earlier application version. Tests compare:
 
 - translated text and catalog keys;
 - application source regions outside permitted version/metadata changes;

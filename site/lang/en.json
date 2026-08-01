@@ -3,10 +3,10 @@
     "code": "en",
     "name": "English",
     "dir": "ltr",
-    "version": "1.0.0-rc.2"
+    "version": "1.0.0-rc.3"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.0.0-rc.2",
+    "meta.documentTitle": "LoadComposer v1.0.0-rc.3",
     "language.preference": "Language preference",
     "language.auto": "Automatic",
     "language.italian": "Italiano",

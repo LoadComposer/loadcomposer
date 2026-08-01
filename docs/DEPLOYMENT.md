@@ -48,7 +48,7 @@ At minimum, verify:
 
 - `/` in all seven enabled languages and both themes;
 - `/legal/` and all seven public legal documents;
-- `/downloads/loadcomposer-v1.0.0-rc.2-standalone.zip`;
+- `/downloads/loadcomposer-v1.0.0-rc.3-standalone.zip`;
 - the secondary HTML-only download and both `.sha256` sidecars;
 - response headers, CSP, redirect behavior, `robots.txt`, and `sitemap.xml`;
 - desktop and mobile layouts;

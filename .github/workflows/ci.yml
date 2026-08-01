@@ -18,5 +18,9 @@ jobs:
         with:
           node-version: 22.17.0
           cache: npm
+      - name: Install PDF test dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends poppler-utils
       - run: npm ci
       - run: npm test
