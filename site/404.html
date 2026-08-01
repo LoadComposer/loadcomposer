@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoadComposer — Page not found</title>
+  <meta name="description" content="The requested LoadComposer page does not exist.">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#071a24">
+  <link rel="icon" href="/assets/loadcomposer-favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f4f8fa;
+      --surface: #ffffff;
+      --text: #102a37;
+      --muted: #506b78;
+      --border: #c7d8df;
+      --accent: #0f8f87;
+      --accent-soft: #e5f7f4;
+      --shadow: 0 18px 42px rgba(7, 26, 36, .10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--bg);
+      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      width: min(760px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 56px;
+    }
+    .logo {
+      display: block;
+      width: min(100%, 430px);
+      height: auto;
+      margin: 0 auto 28px;
+    }
+    .logo-night { display: none; }
+    .card {
+      padding: clamp(24px, 6vw, 48px);
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .status {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: clamp(3.5rem, 15vw, 6.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 5vw, 2.55rem);
+      line-height: 1.15;
+    }
+    p {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      color: var(--text);
+      background: var(--accent-soft);
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    a:hover { border-color: var(--accent); }
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #071a24;
+        --surface: #0d2632;
+        --text: #e8f4f6;
+        --muted: #a9c0c8;
+        --border: #294653;
+        --accent: #42c5b9;
+        --accent-soft: #123d40;
+        --shadow: 0 18px 42px rgba(0, 0, 0, .28);
+      }
+      .logo-day { display: none; }
+      .logo-night { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo logo-day" src="/assets/loadcomposer-desktop-day.svg" alt="LoadComposer — Compose the perfect load">
+    <img class="logo logo-night" src="/assets/loadcomposer-desktop-night.svg" alt="LoadComposer — Compose the perfect load">
+    <section class="card" aria-labelledby="page-title">
+      <p class="status" aria-hidden="true">404</p>
+      <h1 id="page-title">Page not found</h1>
+      <p>The address you requested does not exist.</p>
+      <nav aria-label="Page links">
+        <a href="/">Go to LoadComposer</a>
+        <a href="/legal/">Legal information</a>
+      </nav>
+    </section>
+  </main>
+</body>
+</html>

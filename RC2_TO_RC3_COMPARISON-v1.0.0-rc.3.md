@@ -1,8 +1,44 @@
 # RC.2 → RC.3 comparison — LoadComposer v1.0.0-rc.3
 
-Date: 2026-07-31  
+Date: 2026-08-01  
 Baseline archive: `loadcomposer-v1.0.0-rc.2-delivery.zip`  
 Baseline SHA-256: `1c6ed3e3da26755d0af9c46a6e838fff2482ea5f1ef80885eb75283cdc763a05`
+
+## Final-candidate revision against the approved RC.3 base
+
+Approved RC.3 base SHA-256:
+`e9fd5840a7da3417e5293febc7495301f5619ad60a5acd19a6b3fb4aeb9994d5`.
+
+The release number remains `v1.0.0-rc.3`. The exact changed-path inventory
+against that approved base is:
+
+| Path | Classification | Change |
+|---|---|---|
+| `site/404.html` | New public hosting behavior | Static, local-only, no-script `noindex,follow` page for nonexistent routes. |
+| `tests/repository-release-audit-rc.3.mjs` | Minimal strengthened test | Requires and validates the 404 page, real downloads and sitemap exclusion. |
+| `CHANGELOG.md` | Release documentation | Adds the 404 correction and frozen-file statement. |
+| `CHANGELOG-v1.0.0-rc.3.md` | Release documentation | Records the final-candidate hosting correction without changing version. |
+| `docs/CLOUDFLARE_PREVIEW_CHECKLIST.md` | Hosting checklist | Adds real preview checks for custom 404 status and unchanged downloads. |
+| `loadcomposer-v1.0.0-rc.3-test-bundle.zip` | Reproducibility artifact | Regenerated to include the 404 and strengthened test; 176 payload files. |
+| `TEST_REPORT-v1.0.0-rc.3.md` | Validation report | Records base admission, full tests, 404 checks and frozen scope. |
+| `WORKFLOW_VALIDATION-v1.0.0-rc.3.md` | Workflow report | Separates approved-base hosted results from revised-candidate local results. |
+| `RELEASE_CHECKLIST-v1.0.0-rc.3.md` | Release checklist | Adds admission, 404 and post-push verification gates. |
+| `RC2_TO_RC3_COMPARISON-v1.0.0-rc.3.md` | Comparison report | Adds this exact RC.3-base-to-final-candidate delta. |
+| `DELIVERY_MANIFEST-v1.0.0-rc.3.txt` | Delivery control | Regenerated for the final file set and records the approved RC.3 base. |
+| `SHA256SUMS-v1.0.0-rc.3.txt` | Delivery control | Regenerated to cover every final file except itself. |
+
+All other paths are byte-identical to the approved RC.3 base. Specifically:
+
+- `site/index.html`, seven catalogs, application JavaScript/CSS, logos,
+  favicon, Open Graph image, fixtures and print evidence: unchanged;
+- `LICENSE`, `LICENSE.it.md`, `NOTICE` and all other legal documents: unchanged;
+- `robots.txt`, `sitemap.xml`, `_headers`, `_redirects` and legal page: unchanged;
+- standalone HTML, standalone ZIP and both sidecars: unchanged;
+- `VERSION`, package files, workflows, application algorithms, geometry, UI,
+  translations, responsive behavior and print: unchanged.
+
+The only new public behavior is the custom page returned for nonexistent URLs.
+There is no downloads index and no redirect workaround.
 
 ## Result
 

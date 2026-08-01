@@ -37,6 +37,21 @@ Do not connect the primary domain until this checklist is complete.
 - Verify Italian, English, one additional language, both themes, single/mixed
   pallets, preview, and print without requesting `lang/`.
 
+## Not-found handling
+
+- Open `/downloads/` and confirm Cloudflare returns HTTP `404` with the custom
+  “Page not found” page, not the main application.
+- Repeat with `/percorso-inesistente-test/` and another nonexistent path.
+- Confirm the 404 page displays the local LoadComposer logo in both light and
+  dark color schemes, works without JavaScript, and requests no remote assets.
+- Confirm its robots directive is exactly `noindex,follow` and that it has no
+  automatic redirect, canonical URL, or Open Graph metadata.
+- Confirm its links to `/` and `/legal/` work with the keyboard and show visible
+  focus.
+- Confirm the four real files below `/downloads/` still return normally and
+  that no `site/downloads/index.html` has been introduced.
+- Confirm `404.html` is absent from `sitemap.xml`.
+
 ## Headers and network
 
 - Confirm CSP, `X-Content-Type-Options`, `X-Frame-Options`, referrer policy, and

@@ -1,11 +1,15 @@
-# Local workflow validation — LoadComposer v1.0.0-rc.3
+# Workflow validation — LoadComposer v1.0.0-rc.3 final candidate
 
-Date: 2026-07-31  
+Date: 2026-08-01  
 Node: `22.17.0`  
 npm: `11.9.0`
 
-GitHub Actions has not run because no push was performed. The repository
-commands and policy were verified locally from clean extracted content.
+The approved RC.3 base with SHA-256
+`e9fd5840a7da3417e5293febc7495301f5619ad60a5acd19a6b3fb4aeb9994d5`
+had already passed private GitHub Actions CI, Package integrity and Cloudflare
+Pages preview according to the publisher. This final-candidate revision has not
+been pushed; its hosted workflows remain pending. Neither workflow file changed
+from the approved base.
 
 ## `.github/workflows/ci.yml`
 
@@ -16,26 +20,19 @@ commands and policy were verified locally from clean extracted content.
 - Timeout: 75 minutes.
 - Actions: `actions/checkout@v6`, `actions/setup-node@v7`.
 - Node/cache: exact Node `22.17.0`, npm cache.
-- PDF dependency step, after Node setup and before `npm ci`:
-
-  ```yaml
-  - name: Install PDF test dependencies
-    run: |
-      sudo apt-get update
-      sudo apt-get install --yes --no-install-recommends poppler-utils
-  ```
-
+- PDF dependency step remains after Node setup and before `npm ci`.
 - Remaining commands: `npm ci`; `npm test`.
-- Failure propagation: no `|| true`, ignored error, continue-on-error, wrapper,
-  or equivalent neutralization.
-- Clean local `npm ci && npm test`: `RC3_CLEAN_EXIT=0`.
+- Failure propagation: no `|| true`, ignored error, `continue-on-error`, skip,
+  wrapper or equivalent neutralization.
+- Source-tree result: `RC3_404_NPM_TEST_EXIT=0`.
+- Clean test-bundle result: `RC3_404_CLEAN_EXIT=0`.
 - Counts: `112/112` visual, `35/35` functional parity, `7,542/7,542`
   geometric parity, `37/37` regressions, `9/9` XSS, `20/20` events,
   `110/110` PDFs and `47/47` print renders.
 
 The local environment already exposed all three Poppler binaries, so the
-hosted-runner `apt-get` step itself was not executed locally. The complete PDF
-chain was executed against the locally installed Poppler tools.
+hosted-runner `apt-get` step was not repeated. The complete PDF chain was
+executed twice against locally installed Poppler tools.
 
 ## `.github/workflows/package-integrity.yml`
 
@@ -47,31 +44,33 @@ chain was executed against the locally installed Poppler tools.
 - Timeout: 25 minutes.
 - Actions: `actions/checkout@v6`, `actions/setup-node@v7`.
 - Node/cache: exact Node `22.17.0`, npm cache.
-- Commands reproduced locally:
+- Commands reproduced locally in a clean extraction:
   1. `npm ci`
   2. `npm run build`
   3. `npm run test:hardening`
   4. `npm run test:workflow-policy`
   5. `git diff --exit-code -- site/downloads site/legal site/assets docs/translations`
-- Local result: `RC3_INTEGRITY_EXIT=0`.
-- No commit was created in the temporary repository.
+- Local result: `RC3_404_INTEGRITY_EXIT=0`.
+- The temporary repository contains zero commits.
 
-## Security and policy result
+## Policy result
 
 - `pull_request_target`: absent.
 - Secrets and token inputs: absent.
 - Write permissions: absent.
 - Downloaded shell scripts (`curl`/`wget`): absent.
-- Ignored failures (`|| true`): absent.
+- Ignored failures and test neutralization: absent.
 - Automated push, release, package publication and deploy: absent.
 - Unapproved actions: absent.
-- `poppler-utils` installation and required order: asserted by
+- `poppler-utils` installation and required order: still asserted by
   `tests/workflow-policy-rc.3.mjs`.
+- The only test changed for the 404 correction is
+  `tests/repository-release-audit-rc.3.mjs`; workflow policy was not altered.
 
 ## Environment limit
 
-Actual GitHub-hosted execution, `apt-get`, cache restoration, path-filter
-behavior and hosted-runner logs remain pending until the publisher performs the
-first push. No push, tag, release or deployment was performed here.
+The actual hosted runs, cache restoration and Cloudflare custom-404 status for
+this revised candidate require the publisher's push to the private repository.
+No commit, push, tag, GitHub Release or deployment was performed here.
 
-Status: `PASS` for local reproducibility and workflow policy.
+Status: `PASS` for local reproducibility and unchanged workflow policy.

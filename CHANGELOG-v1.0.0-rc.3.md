@@ -2,6 +2,16 @@
 
 Release date: 2026-07-31
 
+## Final candidate hosting correction
+
+- Added `site/404.html`, a static, no-script and `noindex,follow` page for
+  routes that do not exist on Cloudflare Pages.
+- The page uses only approved local logo assets, supports light and dark color
+  schemes, and links to `/` and `/legal/` without automatic redirects.
+- No downloads page was added. Existing download files, application files,
+  catalogs, hosting policy files, standalone artifacts and legal documents are
+  unchanged from the privately approved RC.3 base.
+
 ## CI correction
 
 - Added installation of `poppler-utils` to `.github/workflows/ci.yml` after

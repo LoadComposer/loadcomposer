@@ -26,11 +26,15 @@ const required = [
   "package.json",
   "package-lock.json",
   "site/index.html",
+  "site/404.html",
   "site/_headers",
   "site/_redirects",
   "site/robots.txt",
   "site/sitemap.xml",
   "site/downloads/loadcomposer-v1.0.0-rc.3-standalone.html",
+  "site/downloads/loadcomposer-v1.0.0-rc.3-standalone.html.sha256",
+  "site/downloads/loadcomposer-v1.0.0-rc.3-standalone.zip",
+  "site/downloads/loadcomposer-v1.0.0-rc.3-standalone.zip.sha256",
   "docs/QUICK-START.md",
   "docs/LIMITATIONS.md",
   "docs/ARCHITECTURE.md",
@@ -100,6 +104,32 @@ for (const match of app.matchAll(/<(?:script|img|link)\b[^>]*\b(?:src|href)="([^
     `Remote runtime resource found: ${resource}`
   );
 }
+
+const notFound = read("site/404.html");
+assert.match(notFound, /^<!DOCTYPE html>/i, "404 page is not HTML5.");
+assert.match(notFound, /<meta\s+charset="UTF-8">/i, "404 page does not declare UTF-8.");
+assert.match(
+  notFound,
+  /<meta\s+name="robots"\s+content="noindex,follow">/i,
+  "404 page must use noindex,follow."
+);
+assert(notFound.includes("<title>LoadComposer — Page not found</title>"), "404 page title is missing.");
+assert(notFound.includes(">404</p>"), "404 page does not show the status code.");
+assert(notFound.includes(">Page not found</h1>"), "404 page heading is missing.");
+assert(notFound.includes('href="/"'), "404 page does not link to the site root.");
+assert(notFound.includes('href="/legal/"'), "404 page does not link to legal information.");
+assert(notFound.includes("prefers-color-scheme: dark"), "404 page does not support the dark color scheme.");
+assert(notFound.includes(":focus-visible"), "404 page does not define visible keyboard focus.");
+assert(!/<script\b/i.test(notFound), "404 page must work without JavaScript.");
+assert(!/<meta\s+http-equiv=["']refresh["']/i.test(notFound), "404 page contains an automatic redirect.");
+assert(!/<link\s+rel=["']canonical["']/i.test(notFound), "404 page must not declare a canonical URL.");
+assert(!/<meta\s+property=["']og:/i.test(notFound), "404 page must not publish Open Graph metadata.");
+assert(!/\b(?:google-analytics|googletagmanager|gtag\(|plausible|matomo|segment\.com|hotjar|facebook\.net)\b/i.test(notFound), "Tracker or analytics marker found in 404 page.");
+for (const match of notFound.matchAll(/<(?:img|link|a)\b[^>]*\b(?:src|href)="([^"]+)"/gi)) {
+  const resource = match[1];
+  assert(!/^https?:\/\//i.test(resource) && !/^\/\//.test(resource), `Remote 404 resource found: ${resource}`);
+}
+assert(!read("site/sitemap.xml").includes("404.html"), "404 page must not be included in the sitemap.");
 
 const headers = read("site/_headers");
 for (const directive of [

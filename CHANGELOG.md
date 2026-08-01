@@ -6,6 +6,9 @@ All notable project changes are documented here.
 
 ### Fixed
 
+- Added a static `site/404.html` so nonexistent Cloudflare Pages routes no
+  longer fall back to the main application. The page is `noindex,follow`, uses
+  only approved local assets, and does not redirect.
 - GitHub Actions CI now installs `poppler-utils` after Node setup and before
   `npm ci`, making `pdfinfo`, `pdftotext`, and `pdftocairo` available to the
   complete PDF test chain on `ubuntu-latest`.
@@ -30,6 +33,8 @@ All notable project changes are documented here.
   model, and confirmed project email addresses.
 - Workflow triggers, read-only permissions, runner, timeout, pinned actions,
   Node.js version, npm cache, `npm ci`, and failure-propagating `npm test`.
+- The four standalone download artifacts, `robots.txt`, `sitemap.xml`,
+  `_headers`, `_redirects`, and the existing legal page.
 
 ## [1.0.0-rc.2] — 2026-07-30
 
