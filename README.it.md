@@ -8,7 +8,7 @@
 
 LoadComposer è un ausilio alla pianificazione nel browser che stima la disposizione geometrica dei pallet nei principali container marittimi e bilici da 13,60 m. Gestisce carichi a pallet singolo e misti, rotazione e orientamento obbligatorio dell’inforcamento, quantità su livelli, anteprime responsive, stampa operativa localizzata e una pagina standalone offline.
 
-> **Release candidate:** `v1.0.0-rc.3`. Verificare sempre i risultati prima dell’uso operativo.
+> **Release candidate:** `v1.0.0-rc.4`. Verificare sempre i risultati prima dell’uso operativo.
 
 | Giorno | Notte |
 |---|---|
@@ -38,12 +38,12 @@ python3 -m http.server 8000 --directory site
 Aprire `http://127.0.0.1:8000/`. Per l’uso offline il download principale è:
 
 ```text
-site/downloads/loadcomposer-v1.0.0-rc.3-standalone.zip
+site/downloads/loadcomposer-v1.0.0-rc.4-standalone.zip
 ```
 
 Estrarre il pacchetto, verificare `SHA256SUMS.txt` e aprire l’HTML incluso.
 Il download secondario **Solo HTML standalone** resta disponibile come
-`site/downloads/loadcomposer-v1.0.0-rc.3-standalone.html`.
+`site/downloads/loadcomposer-v1.0.0-rc.4-standalone.html`.
 
 Per ricostruire e verificare:
 

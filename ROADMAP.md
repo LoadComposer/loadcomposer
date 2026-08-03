@@ -18,4 +18,4 @@ This roadmap is directional and creates no commitment, deadline, or warranty.
 
 Weight, balance, axle loads, load securing, route compliance, and regulatory certification are not implied by this roadmap. They require dedicated domain models, qualified review, and separate validation before any implementation claim.
 
-No stable release, hosted commercial service, new language, PWA, service worker, deployment, or distribution channel is created by `v1.0.0-rc.3`.
+No stable release, hosted commercial service, new language, PWA, service worker, deployment, or distribution channel is created by `v1.0.0-rc.4`.

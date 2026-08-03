@@ -11,7 +11,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoadComposer v1.0.0-rc.3</title>
+  <title>LoadComposer v1.0.0-rc.4</title>
   <meta name="description" content="LoadComposer estimates pallet arrangements in common road and sea freight vehicles directly in your browser." />
   <meta name="application-name" content="LoadComposer" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -19,10 +19,10 @@
   <link rel="canonical" href="https://loadcomposer.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LoadComposer" />
-  <meta property="og:title" content="LoadComposer v1.0.0-rc.3" />
+  <meta property="og:title" content="LoadComposer v1.0.0-rc.4" />
   <meta property="og:description" content="Browser-based geometric load-planning estimates, with offline and standalone support." />
   <meta property="og:url" content="https://loadcomposer.com/" />
-  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.0.0-rc.3.png" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.0.0-rc.4.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -3436,7 +3436,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.0.0-rc.3</span>
+        <span class="app-version">v1.0.0-rc.4</span>
       </div>
 
       <div class="header-controls">
@@ -3985,12 +3985,13 @@
         innerLength: 13620,
         innerWidth: 2480,
         innerHeight: 2650,
-        minHeight: 2600,
-        maxHeight: 2700,
+        prudentialLength: 13600,
+        prudentialWidth: 2450,
+        prudentialHeight: 2600,
         doorWidth: null,
         doorHeight: null,
         accessKnown: false,
-        referenceNote: "Altezza utile tipica 2.600-2.700 mm; 2.650 mm usati come riferimento di progetto."
+        referenceNote: "Riferimento prudenziale 13.600 × 2.450 × 2.600 mm; l’altezza utile indicativa dei telonati standard può arrivare a circa 2.700 mm."
       },
       {
         id: "truck-mega-1360",
@@ -4000,27 +4001,29 @@
         innerLength: 13620,
         innerWidth: 2480,
         innerHeight: 3000,
-        minHeight: 2845,
-        maxHeight: 3200,
+        prudentialLength: 13600,
+        prudentialWidth: 2450,
+        prudentialHeight: 2900,
         doorWidth: null,
         doorHeight: null,
         accessKnown: false,
-        referenceNote: "Altezza utile tipica 2.845-3.000 mm, con alcune configurazioni fino a circa 3.200 mm."
+        referenceNote: "Riferimento prudenziale 13.600 × 2.450 × 2.900 mm; l’intervallo descrittivo tipico è circa 2.900–3.050 mm, con limite di progetto 3.000 mm."
       },
       {
         id: "truck-reefer-1360",
-        name: "Bilico 13,60 frigo",
+        name: "Bilico 13,60 frigo standard monotemperatura",
         group: "Bilici full load 13,60 m",
         vehicleType: "truck",
-        innerLength: 13410,
+        innerLength: 13310,
         innerWidth: 2460,
         innerHeight: 2650,
-        minLength: 13310,
-        minHeight: 2630,
+        prudentialLength: 13300,
+        prudentialWidth: 2460,
+        prudentialHeight: 2600,
         doorWidth: null,
         doorHeight: null,
         accessKnown: false,
-        referenceNote: "Le serie rilevate variano circa 13.310-13.410 × 2.460 × 2.630-2.650 mm."
+        referenceNote: "Riferimento prudenziale 13.300 × 2.460 × 2.600 mm; 13.310 mm è la lunghezza caricabile usata. 13.410 mm descrive soltanto la cassa interna di una serie."
       }
     ];
 
@@ -5332,6 +5335,7 @@
         operationalNote: null,
         verificationIssues: [],
         conservativeIssues: [],
+        prudentialIssues: [],
         spareLength,
         spareWidth,
         spareHeight,
@@ -5412,10 +5416,15 @@
       }
 
       const conservativeIssues = [];
+      const prudentialIssues = [];
+      const hasPrudentialLength = Number.isFinite(c.prudentialLength);
+      const hasPrudentialWidth = Number.isFinite(c.prudentialWidth);
+      const hasPrudentialHeight = Number.isFinite(c.prudentialHeight);
 
       if (
         fullFloorUsed &&
         result.layout.usedLength > 0 &&
+        !hasPrudentialLength &&
         Number.isFinite(c.minLength) &&
         result.layout.usedLength > c.minLength
       ) {
@@ -5425,6 +5434,7 @@
       if (
         fullFloorUsed &&
         result.layout.usedWidth > 0 &&
+        !hasPrudentialWidth &&
         Number.isFinite(c.minWidth) &&
         result.layout.usedWidth > c.minWidth
       ) {
@@ -5433,15 +5443,75 @@
 
       if (
         usedHeight > 0 &&
+        !hasPrudentialHeight &&
         Number.isFinite(c.minHeight) &&
         usedHeight > c.minHeight
       ) {
         conservativeIssues.push(t("space.issue.minHeight", { value: formatInt(c.minHeight) }));
       }
 
+      if (
+        fullFloorUsed &&
+        result.layout.usedLength > 0 &&
+        hasPrudentialLength &&
+        result.layout.usedLength >= c.prudentialLength &&
+        result.layout.usedLength <= c.innerLength
+      ) {
+        prudentialIssues.push({
+          axis: "length",
+          used: result.layout.usedLength,
+          reference: c.prudentialLength,
+          nominal: c.innerLength,
+          message: t("space.issue.prudentialLength", {
+            used: formatInt(result.layout.usedLength),
+            reference: formatInt(c.prudentialLength),
+            nominal: formatInt(c.innerLength)
+          })
+        });
+      }
+
+      if (
+        fullFloorUsed &&
+        result.layout.usedWidth > 0 &&
+        hasPrudentialWidth &&
+        result.layout.usedWidth >= c.prudentialWidth &&
+        result.layout.usedWidth <= c.innerWidth
+      ) {
+        prudentialIssues.push({
+          axis: "width",
+          used: result.layout.usedWidth,
+          reference: c.prudentialWidth,
+          nominal: c.innerWidth,
+          message: t("space.issue.prudentialWidth", {
+            used: formatInt(result.layout.usedWidth),
+            reference: formatInt(c.prudentialWidth),
+            nominal: formatInt(c.innerWidth)
+          })
+        });
+      }
+
+      if (
+        usedHeight > 0 &&
+        hasPrudentialHeight &&
+        usedHeight >= c.prudentialHeight &&
+        usedHeight <= c.innerHeight
+      ) {
+        prudentialIssues.push({
+          axis: "height",
+          used: usedHeight,
+          reference: c.prudentialHeight,
+          nominal: c.innerHeight,
+          message: t("space.issue.prudentialHeight", {
+            used: formatInt(usedHeight),
+            reference: formatInt(c.prudentialHeight),
+            nominal: formatInt(c.innerHeight)
+          })
+        });
+      }
+
       let level = "none";
 
-      if (verificationIssues.length || conservativeIssues.length) {
+      if (verificationIssues.length || conservativeIssues.length || prudentialIssues.length) {
         level = "verification";
       } else if (operationalNote) {
         level = "operational";
@@ -5452,6 +5522,7 @@
         operationalNote,
         verificationIssues,
         conservativeIssues,
+        prudentialIssues,
         spareLength,
         spareWidth,
         spareHeight,
@@ -5505,6 +5576,14 @@
         );
       }
 
+      if (alert.prudentialIssues.length) {
+        parts.push(
+          `<span class="space-verify-text">${escapeHtml(t("space.prudentialHtml", {
+            issues: alert.prudentialIssues.map(issue => issue.message).join("; ")
+          }))}</span>`
+        );
+      }
+
       return parts.join("");
     }
 
@@ -5529,6 +5608,12 @@
       if (alert.conservativeIssues.length) {
         parts.push(t("space.conservativePlain", {
           issues: alert.conservativeIssues.join("; ")
+        }));
+      }
+
+      if (alert.prudentialIssues.length) {
+        parts.push(t("space.prudentialPlain", {
+          issues: alert.prudentialIssues.map(issue => issue.message).join("; ")
         }));
       }
 
@@ -6850,6 +6935,11 @@
           issues: alert.conservativeIssues.join("; ")
         }), { tag: "span", className: "space-verify-text" });
       }
+      if (alert.prudentialIssues.length) {
+        appendText(parent, t("space.prudentialHtml", {
+          issues: alert.prudentialIssues.map(issue => issue.message).join("; ")
+        }), { tag: "span", className: "space-verify-text" });
+      }
     }
 
     function appendContainerCell(row, container) {
@@ -6903,6 +6993,13 @@
         : result.spaceAlert.level === "operational"
           ? "space-cell-tight"
           : "";
+      if (result.spaceAlert.level === "verification") {
+        cell.append(statusBadgeNode("verify", t("status.verifyMeasures")));
+        appendBreak(cell);
+      } else if (result.spaceAlert.level === "operational") {
+        cell.append(statusBadgeNode("warn", t("status.compactLoad")));
+        appendBreak(cell);
+      }
       appendMultiline(cell, lines, { tag: "span", className: "small" });
       appendSpaceAlertDetails(cell, result);
       const showReference = (

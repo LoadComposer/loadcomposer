@@ -2,6 +2,34 @@
 
 All notable project changes are documented here.
 
+## [1.0.0-rc.4] — 2026-08-03
+
+### Changed
+
+- Promoted release metadata and generated artifacts from RC.3 to RC.4.
+- Updated the three 13.60 m trailer profiles with separate nominal and
+  prudential dimensions; the standard single-temperature reefer uses a
+  loadable length of 13,310 mm.
+- Added one inclusive `VERIFICA MISURE` warning when a used dimension reaches
+  its prudential reference without exceeding the nominal limit.
+- Preserved the legacy conservative warning only for profiles without a
+  prudential value on the same axis, preventing duplicate warnings.
+- Added the five necessary warning translations to all seven catalogs.
+- Made LICENSE and NOTICE open inline and separated mutable, 404 and immutable
+  download cache rules.
+- Added Contributor Covenant 2.1 with `conduct@loadcomposer.com` enforcement.
+
+### Verification
+
+- Direct RC.3 functional parity: `35/35`; equivalent-input geometry:
+  `7,542/7,542`, zero differences.
+- Trailer/warning scenarios: `29/29`, including the 19 overlap and precedence
+  checks and the required 33/34 EUR cases.
+- Full source and clean-bundle `npm test`: PASS under Node 22.17.0 and npm
+  11.9.0, including all `110/110` PDF scenarios.
+- Delivery controls use unambiguous N-2 manifest and N-1 checksum-list
+  coverage with no circular checksum dependency.
+
 ## [1.0.0-rc.3] — 2026-07-31
 
 ### Fixed
