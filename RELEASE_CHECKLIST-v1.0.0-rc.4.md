@@ -4,10 +4,13 @@ Date: 2026-08-03
 
 ## Admission and version
 
-- [x] Canonical RC.3 SHA exact; ZIP, root, traversal and symlink checks PASS.
-- [x] RC.3 delivery `183/183` and standalone `5/5` PASS.
-- [x] DOCX SHA exact and used only as an external dimensional source.
-- [x] Rejected RC.4 artifacts excluded as inputs.
+- [x] Canonical incremental RC.4 base SHA
+  `a87ccc732b660f6cafe29dedbe21d2a390d407ac0b964d7142f64a49de5637ca`.
+- [x] Base ZIP, single root, traversal and symlink checks PASS; 202 files,
+  200 manifest entries and `201/201` checksums.
+- [x] Base 191-file test bundle and both standalone hashes verified exactly.
+- [x] Rejected `c2358ab6...` candidate, RC.3, repository and previous work
+  outputs excluded as software bases.
 - [x] Version remains exactly `1.0.0-rc.4`.
 
 ## Profiles and warnings
@@ -30,7 +33,9 @@ Date: 2026-08-03
 - [x] Seven catalogs, each with 456 aligned keys; no eighth language.
 - [x] Six LICENSE/NOTICE copies match canonical RC.3 hashes byte for byte.
 - [x] LICENSE and NOTICE links have no download attribute and exact inline headers.
-- [x] Cache-Control rules are non-overlapping across 105 evaluations.
+- [x] Cache-Control rules are non-overlapping across `3 × 36 = 108` evaluations.
+- [x] Exact `.html` and clean standalone URL rules both expect immutable cache.
+- [ ] Verify the real `.html` → `308` → clean-URL `200` headers after push.
 - [x] Contributor Covenant 2.1 uses `conduct@loadcomposer.com`.
 - [x] `site/downloads/index.html` absent; exactly four RC.4 artifacts present.
 - [x] 404 page, redirects, robots, legal substance, logos and container profiles

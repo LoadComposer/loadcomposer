@@ -6,6 +6,7 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 const SITE = path.join(ROOT, "site");
 const MUTABLE = "public, max-age=0, must-revalidate";
 const IMMUTABLE = "public, max-age=31536000, immutable";
+const CLEAN_STANDALONE = "/downloads/loadcomposer-v1.0.0-rc.4-standalone";
 const HOSTS = [
   "https://loadcomposer.com",
   "https://loadcomposer.pages.dev",
@@ -59,10 +60,11 @@ const paths = [...new Set([
   "/",
   "/legal/",
   ...inventory,
+  CLEAN_STANDALONE,
   "/downloads/",
   "/percorso-inesistente-test/"
 ])].sort();
-assert.equal(paths.length, 35, `Expected 35 policy paths, got ${paths.length}.`);
+assert.equal(paths.length, 36, `Expected 36 policy paths, got ${paths.length}.`);
 
 let assertions = 0;
 for (const host of HOSTS) {
@@ -74,7 +76,7 @@ for (const host of HOSTS) {
       .map(header => header.value);
     let expected;
     if (pathname === "/404.html") expected = ["no-store"];
-    else if (/^\/downloads\/loadcomposer-v1\.0\.0-rc\.4-standalone\.(?:html|zip)(?:\.sha256)?$/.test(pathname)) {
+    else if (pathname === CLEAN_STANDALONE || /^\/downloads\/loadcomposer-v1\.0\.0-rc\.4-standalone\.(?:html|zip)(?:\.sha256)?$/.test(pathname)) {
       expected = [IMMUTABLE];
     } else if (pathname === "/downloads/" || pathname === "/percorso-inesistente-test/") {
       expected = [];

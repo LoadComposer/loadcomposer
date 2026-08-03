@@ -5,26 +5,32 @@ Status: PASS locally; not published or finally approved
 
 ## Input admission
 
-- Canonical RC.3 delivery SHA-256:
-  `16f89233050b5d6dcfd34785b80093feb8ba7111798fee1a7e65e66c29384694`.
-- RC.3: one archive root, no traversal or anomalous symlink, `183/183`
-  delivery checksums and standalone `5/5` PASS.
-- RC.3 standalone SHA-256: HTML `70b4ec43627eedbdcf0cfc48cbc17d193cd1cd338301a74cd7e1534b45eabe65`;
-  ZIP `c7518ddda3ed7f1db992dcc5a17608d55b570d97c71b12a59a1de6105fbb3ef7`.
-- Dimensional DOCX SHA-256:
-  `d8a7a941473d7f64effa4564706736d129d59c6d0c34c8642205c81edfafaebd`.
-- The rejected RC.4 delivery and bundle were not used as software input.
+- Canonical incremental RC.4 base delivery SHA-256:
+  `a87ccc732b660f6cafe29dedbe21d2a390d407ac0b964d7142f64a49de5637ca`.
+- Base admission PASS: one `delivery-v1.0.0-rc.4/` root, no traversal or
+  anomalous symlink, 202 files, 200 manifest entries and `201/201` checksums.
+- Base test bundle: 191 files, SHA-256
+  `d7b04a0036cfa652ec3acca81a6b2fac54f37be724fdcc4935e140af68386128`.
+- Base standalone SHA-256: HTML
+  `afd84b741059c47dcfc95bec9ccbfefadb6c33405e75fdbeb9b3684824163a96`;
+  ZIP `d024a4c57a879c406ef68c389c66442c5327cbeaa9b71b1cce302059a894dbd8`.
+- The rejected `c2358ab6...` delivery, RC.3, repository checkout and previous
+  work outputs were not used as the software base.
 
 ## Environment and reproducibility
 
 - Node.js `22.17.0`; npm `11.9.0`.
-- Source-tree `npm ci`: 58 packages from the lockfile, PASS.
-- Source-tree complete `npm test`: `CORRECTED_RC4_NPM_TEST_EXIT=0`.
-- Exact 191-file test-bundle extraction: fresh `npm ci` PASS and complete
-  `npm test` PASS (`CORRECTED_RC4_CLEAN_NPM_CI_EXIT=0`,
-  `CORRECTED_RC4_CLEAN_NPM_TEST_EXIT=0`).
-- A prior clean attempt was discarded before installation because it exposed
-  Node 24.14.0 and a non-writable npm cache; it is not counted as a valid run.
+- Source-tree `npm ci`: 58 packages from the lockfile, PASS
+  (`RC4_CLEANURL_SOURCE_NPM_CI_EXIT=0`).
+- Source-tree complete `npm test`: `RC4_CLEANURL_SOURCE_NPM_TEST_EXIT=0`.
+- Exact final 191-file test bundle SHA-256
+  `d96006fd9665130726185cb8c9574f51cd27631ae2c3db3295fca81e0b9406e2`:
+  fresh `npm ci` and complete `npm test` PASS
+  (`RC4_CLEANURL_BUNDLE_NPM_CI_EXIT=0`,
+  `RC4_CLEANURL_BUNDLE_NPM_TEST_EXIT=0`).
+- Two launcher attempts stopped before a valid run because of, respectively,
+  an unwritable npm cache target and an incorrect working directory. Neither
+  altered the admitted source files or the final test bundle.
 
 ## Complete suite
 
@@ -34,7 +40,7 @@ Status: PASS locally; not published or finally approved
 | Catalogs | `7 × 456` keys PASS |
 | Modular i18n | `18/18` PASS |
 | Trailer, overlap and precedence checks | `29/29` PASS |
-| Cache policy | `3 × 35 = 105` exact evaluations PASS |
+| Cache policy | `3 × 36 = 108` exact evaluations PASS |
 | LICENSE/NOTICE inline and identity | `6/6` byte identities PASS |
 | Repository runtime | `16/16` HTTP/subfolder/`file://` PASS |
 | Visual/responsive matrix | `112/112` PASS |
@@ -65,6 +71,9 @@ unchanged. The authorized result change for the reefer profile follows from its
 than the RC.3 profile's 67. No weight, axle, payload, backend or tracking feature
 was added.
 
-The local server cannot conclusively reproduce Cloudflare Pages edge-cache,
-real response-header composition or production custom-404 behavior; those
-remain post-push preview checks.
+Before the patch, the physical `.html` URL was observed online redirecting with
+`308` to the clean URL; the redirect was immutable, but the final clean-URL
+`200` response was `must-revalidate`. The new exact clean-URL rule is locally
+validated as immutable. Cloudflare Pages edge-cache, the complete
+`.html` → `308` → clean-URL `200` chain, real response-header composition and
+production custom-404 behavior remain post-push checks.

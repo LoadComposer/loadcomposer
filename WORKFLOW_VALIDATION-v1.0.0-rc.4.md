@@ -16,8 +16,10 @@ test chain, including every command after `test:print-i18n`.
 
 ## Package integrity reproduction
 
-The exact 191-file test bundle was extracted a third time. A temporary Git
-index was created without a commit, then the workflow commands were reproduced:
+The exact final 191-file test bundle, SHA-256
+`d96006fd9665130726185cb8c9574f51cd27631ae2c3db3295fca81e0b9406e2`,
+was extracted a third time. A temporary Git index was created without a commit,
+then the workflow commands were reproduced:
 
 1. `npm ci`
 2. `npm run build`
@@ -25,7 +27,7 @@ index was created without a commit, then the workflow commands were reproduced:
 4. `npm run test:workflow-policy`
 5. `git diff --exit-code -- site/downloads site/legal site/assets docs/translations`
 
-Result: `CORRECTED_RC4_INTEGRITY_EXIT=0`; `NO_COMMIT_PRESENT`.
+Result: `RC4_CLEANURL_PACKAGE_INTEGRITY_EXIT=0`; `NO_COMMIT_PRESENT`.
 
 No workflow contains secrets, token inputs, write permissions,
 `pull_request_target`, ignored failures, automated push, release, publication or
