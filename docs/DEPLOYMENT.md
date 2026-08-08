@@ -13,13 +13,13 @@ npm test
 ```
 
 The expected baseline is `v22.17.0` and `11.9.0`. Node versions matching
-`^22.17.0 || >=24.0.0` are declared compatible, but the release-candidate
+`^22.17.0 || >=24.0.0` are declared compatible, but the private stable
 validation and GitHub workflows use exactly 22.17.0.
 
 ## Cloudflare Pages preview
 
-Create the first preview only after the repository has been pushed and both
-GitHub workflows have completed successfully.
+Allow the existing Pages project to deploy `v1.0.0` only after the controlled
+repository push and both GitHub workflows have completed successfully.
 
 | Setting | Value |
 |---|---|
@@ -30,10 +30,9 @@ GitHub workflows have completed successfully.
 | Production branch | The repository default branch |
 
 Cloudflare serves the committed output in `site/`; it does not need to rebuild
-the application. The first deployment must remain on its temporary `pages.dev`
-address until the preview checklist is complete. Do not connect
-`loadcomposer.com`, change DNS, or configure the apex/`www` redirect during
-this preview stage.
+the application. Verify both the existing `pages.dev` address and
+`loadcomposer.com` after deployment. Do not change DNS, the domain attachment,
+or the apex/`www` redirect as part of the stable promotion.
 
 `site/_headers` applies a same-origin content-security policy and related
 response headers. Inline scripts and styles are required by the canonical
@@ -48,7 +47,7 @@ At minimum, verify:
 
 - `/` in all seven enabled languages and both themes;
 - `/legal/` and all seven public legal documents;
-- `/downloads/loadcomposer-v1.0.0-rc.4-standalone.zip`;
+- `/downloads/loadcomposer-v1.0.0-standalone.zip`;
 - the secondary HTML-only download and both `.sha256` sidecars;
 - response headers, CSP, redirect behavior, `robots.txt`, and `sitemap.xml`;
 - desktop and mobile layouts;

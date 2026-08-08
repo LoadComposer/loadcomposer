@@ -8,8 +8,8 @@ LoadComposer is a static, client-side application with no application backend.
 - `site/lang/index.json` lists enabled language catalogs.
 - `site/lang/*.json` contains the seven localized catalogs.
 - The modular page loads only same-origin catalog JSON.
-- `site/downloads/loadcomposer-v1.0.0-rc.4-standalone.html` is deterministically generated from the same page and embeds the language index and catalogs.
-- `site/downloads/loadcomposer-v1.0.0-rc.4-standalone.zip` is the primary offline distribution and adds the controlling license, informational translation, notice, readme, and internal checksums.
+- `site/downloads/loadcomposer-v1.0.0-standalone.html` is deterministically generated from the same page and embeds the language index and catalogs.
+- `site/downloads/loadcomposer-v1.0.0-standalone.zip` is the primary offline distribution and adds the controlling license, informational translation, notice, readme, and internal checksums.
 - `site/legal/` exposes byte-identical copies of the canonical legal documents plus a static index.
 - The application stores only theme and language preferences in browser `localStorage`; planning inputs are processed in the current page.
 
@@ -21,11 +21,11 @@ No framework, bundler, package registry, CDN, external font, remote script, or a
 
 ## Test boundaries
 
-The repository contains an exact `v1.0.0-rc.3` application fixture derived
-directly from the admitted canonical RC.3 delivery. That fixture is the direct
-baseline for RC.4 source, event, functional and geometric comparisons. The
-older RC.2 print raster evidence remains only as the already verified historical
-print baseline inherited unchanged through RC.3. Tests compare:
+The repository contains an exact ten-file `v1.0.0-rc.4` fixture derived
+directly from the admitted canonical RC.4 delivery. That fixture is the direct
+baseline for stable source, catalog, event, functional and geometric
+comparisons. The older RC.2 and RC.3 fixtures remain only where historically
+required by the inherited regression and print evidence. Tests compare:
 
 - translated text and catalog keys;
 - application source regions outside permitted version/metadata changes;

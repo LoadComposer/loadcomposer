@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, "..");
-const VERSION = "1.0.0-rc.4";
+const VERSION = "1.0.0";
 const PACKAGE_DIR_NAME = `loadcomposer-v${VERSION}-standalone`;
 const HTML_NAME = `${PACKAGE_DIR_NAME}.html`;
 const ZIP_NAME = `${PACKAGE_DIR_NAME}.zip`;

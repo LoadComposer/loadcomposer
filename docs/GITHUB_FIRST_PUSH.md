@@ -1,18 +1,18 @@
-# First GitHub push
+# Repository update for v1.0.0
 
-This checklist starts after the `v1.0.0-rc.4` delivery has been extracted and
+This checklist starts after the `v1.0.0` delivery has been extracted and
 its internal checksums have been verified.
 
-## Upload the candidate
+## Publish the private candidate commit
 
-1. Create or open `https://github.com/LoadComposer/loadcomposer`.
+1. Open `https://github.com/LoadComposer/loadcomposer`.
 2. Confirm the intended repository visibility before uploading.
 3. Confirm the default branch name and branch-protection settings.
-4. Upload the contents of `delivery-v1.0.0-rc.4/` as the repository root.
+4. Upload the contents of `delivery-v1.0.0/` as the repository root.
 5. Do not upload the outer delivery ZIP, `node_modules`, caches, temporary test
    results, or credentials.
 6. Do not create the stable `v1.0.0` tag.
-7. Do not create an RC tag until the first workflow runs are green.
+7. Do not create the stable tag until the workflow runs and deployed-site checks are green.
 
 ## Validate the first run
 
@@ -26,9 +26,9 @@ its internal checksums have been verified.
    then verify their checksums before use.
 7. Confirm that no workflow attempted a deploy, release, package publication,
    or automatic push.
-8. If a real GitHub-only problem appears, prepare a separately numbered release
-   candidate; do not modify the already delivered RC.4 retroactively.
-9. Create an RC tag only after every required workflow is green.
+8. If a real GitHub-only problem appears, stop publication and prepare a
+   separately authorized correction; do not modify the published RC.4 history.
+9. Create the stable tag only after every required workflow and HTTP check is green.
 
 ## Repository checks after push
 

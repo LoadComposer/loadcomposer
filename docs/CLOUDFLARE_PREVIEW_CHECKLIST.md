@@ -1,16 +1,16 @@
 # Cloudflare Pages preview checklist
 
-Do not connect the primary domain until this checklist is complete.
+Do not create the stable tag or GitHub Release until this checklist is complete
+on the deployed `v1.0.0` commit.
 
 ## Project setup
 
-- Connect the official GitHub repository.
-- Select the approved default branch as the production branch.
-- Use no framework preset.
-- Leave the build command empty.
-- Set the build output directory to `site`.
-- Leave the root directory at the repository root.
-- Create the first deployment on the temporary `pages.dev` address.
+- Confirm the existing official GitHub repository connection.
+- Confirm the approved default branch remains the production branch.
+- Confirm there is no framework preset or build command.
+- Confirm the build output directory remains `site`.
+- Confirm the root directory remains the repository root.
+- Do not change the existing `pages.dev`, custom-domain, DNS, or redirect setup.
 
 ## Application
 
@@ -21,7 +21,7 @@ Do not connect the primary domain until this checklist is complete.
 - Verify desktop and mobile layouts, including 320 px width.
 - Verify preview side/ramp views and colour/black-and-white modes.
 - Verify browser print and saved PDF output.
-- Confirm title and visible badge show `v1.0.0-rc.4`.
+- Confirm title and visible badge show `v1.0.0`.
 
 ## Legal pages and downloads
 
@@ -29,7 +29,7 @@ Do not connect the primary domain until this checklist is complete.
 - Open LICENSE, LICENSE.it.md, NOTICE, trademarks, commercial licensing,
   privacy, and security from the legal index.
 - Confirm the three footer links resolve and do not appear in print.
-- Download `loadcomposer-v1.0.0-rc.4-standalone.zip`.
+- Download `loadcomposer-v1.0.0-standalone.zip`.
 - Download the secondary HTML-only file and both `.sha256` sidecars.
 - Verify the downloaded ZIP sidecar.
 - Extract the ZIP and verify its five internal hashes.

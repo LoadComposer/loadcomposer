@@ -2,6 +2,32 @@
 
 All notable project changes are documented here.
 
+## [1.0.0] — 2026-08-08
+
+### Changed
+
+- Promoted the verified `v1.0.0-rc.4` candidate to the first stable release.
+- Renamed current standalone, test-bundle, report, manifest, checksum, glossary,
+  and Open Graph artifacts from RC.4 to `v1.0.0`.
+- Promoted the five exact versioned Cache-Control paths, including the clean
+  standalone URL, from RC.4 to `v1.0.0`.
+
+### Unchanged from v1.0.0-rc.4
+
+- Application behavior, algorithms, geometry, coordinates, results, pallet and
+  equipment data, trailer prudential thresholds, UI, themes, responsive
+  behavior, print output, security behavior, and operational translations.
+- License and legal-document content, the custom 404 page, inline LICENSE and
+  NOTICE handling, and the absence of a `/downloads/` index page.
+
+### Verification
+
+- Direct RC.4 functional parity: `35/35`; equivalent-input geometry:
+  `7,542/7,542`, zero differences.
+- Trailer/warning scenarios: `29/29`, including all required 33/34 EUR cases.
+- Full source and clean-bundle `npm test`: PASS under Node 22.17.0 and npm
+  11.9.0, including all `110/110` PDF scenarios.
+
 ## [1.0.0-rc.4] — 2026-08-03
 
 ### Changed
