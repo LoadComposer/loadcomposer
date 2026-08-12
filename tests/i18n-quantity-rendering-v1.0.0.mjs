@@ -5,7 +5,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.0.0-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.1.0-standalone.html")
 ).href;
 const LANGUAGES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const LOCALES = {
@@ -380,9 +380,9 @@ try {
 }
 
 fs.writeFileSync(
-  path.join(ROOT, "quantity-rendering-results-v1.0.0.json"),
+  path.join(ROOT, "quantity-rendering-results-v1.1.0.json"),
   `${JSON.stringify({
-    version: "1.0.0",
+    version: "1.1.0",
     languages: LANGUAGES,
     quantities: [0, 1, 2, 5],
     records,

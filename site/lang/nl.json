@@ -3,10 +3,10 @@
     "code": "nl",
     "name": "Nederlands",
     "dir": "ltr",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.0.0",
+    "meta.documentTitle": "LoadComposer v1.1.0",
     "language.preference": "Taalvoorkeur",
     "language.auto": "Automatisch",
     "language.italian": "Italiano",
@@ -169,6 +169,9 @@
     "footer.license": "Licentie",
     "footer.privacy": "Privacy",
     "footer.legalInformation": "Juridische informatie",
+    "footer.linksAria": "Links in de voettekst",
+    "footer.suggestions": "Suggesties",
+    "footer.reportIssue": "Een probleem melden",
     "vehicle.group.containers": "Zeecontainers",
     "vehicle.group.trucks": "Opleggers van 13,60 m voor volledige ladingen",
     "vehicle.20dc.name": "20' Dry",

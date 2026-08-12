@@ -6,10 +6,10 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.0.0-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.1.0-standalone.html")
 ).href;
-const OUTPUT = path.join(ROOT, "print-i18n-v1.0.0");
-const RESULT_PATH = path.join(ROOT, "print-i18n-results-v1.0.0.json");
+const OUTPUT = path.join(ROOT, "print-i18n-v1.1.0");
+const RESULT_PATH = path.join(ROOT, "print-i18n-results-v1.1.0.json");
 const LANGUAGES = ["de", "es", "fr", "pt", "nl"];
 const LOCALES = {
   de: "de-DE",
@@ -430,7 +430,7 @@ try {
 }
 
 fs.writeFileSync(RESULT_PATH, `${JSON.stringify({
-  version: "1.0.0",
+  version: "1.1.0",
   generatedAt: FIXED_NOW,
   languages: LANGUAGES,
   scenariosPerLanguage: SCENARIOS.length,

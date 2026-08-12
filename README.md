@@ -8,7 +8,7 @@
 
 LoadComposer is a browser-based planning aid that estimates how pallets fit geometrically in common maritime containers and 13.60 m semi-trailers. It supports single-pallet and mixed-pallet scenarios, rotation and mandatory fork-entry orientation, layered quantities, responsive previews, localized operational printouts, and an offline standalone page.
 
-> **First stable release:** `v1.0.0`. Verify results before operational use.
+> **Current release:** `v1.1.0` (first stable release: `v1.0.0`). Verify results before operational use.
 
 | Day | Night |
 |---|---|
@@ -42,12 +42,12 @@ Open `http://127.0.0.1:8000/`.
 For offline use, the primary download is the complete package:
 
 ```text
-site/downloads/loadcomposer-v1.0.0-standalone.zip
+site/downloads/loadcomposer-v1.1.0-standalone.zip
 ```
 
 Extract it, verify `SHA256SUMS.txt`, and open the included HTML. The secondary
 **Standalone HTML only** download remains available at
-`site/downloads/loadcomposer-v1.0.0-standalone.html`.
+`site/downloads/loadcomposer-v1.1.0-standalone.html`.
 
 To reproduce the application and run all checks:
 
@@ -93,7 +93,7 @@ LoadComposer is source-available under the custom [LoadComposer Community Licens
 
 Official site: [loadcomposer.com](https://loadcomposer.com/)  
 Official repository: [github.com/LoadComposer/loadcomposer](https://github.com/LoadComposer/loadcomposer)  
-Stable release: [complete standalone package](https://loadcomposer.com/downloads/loadcomposer-v1.0.0-standalone.zip)  
-Secondary: [Standalone HTML only](https://loadcomposer.com/downloads/loadcomposer-v1.0.0-standalone.html)
+Current release: [complete standalone package](https://loadcomposer.com/downloads/loadcomposer-v1.1.0-standalone.zip)  
+Secondary: [Standalone HTML only](https://loadcomposer.com/downloads/loadcomposer-v1.1.0-standalone.html)
 
 Copyright © 2026 Marco Pernigotti.

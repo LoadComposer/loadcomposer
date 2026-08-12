@@ -1,7 +1,7 @@
 # Cloudflare Pages preview checklist
 
 Do not create the stable tag or GitHub Release until this checklist is complete
-on the deployed `v1.0.0` commit.
+on the deployed `v1.1.0` commit.
 
 ## Project setup
 
@@ -21,7 +21,7 @@ on the deployed `v1.0.0` commit.
 - Verify desktop and mobile layouts, including 320 px width.
 - Verify preview side/ramp views and colour/black-and-white modes.
 - Verify browser print and saved PDF output.
-- Confirm title and visible badge show `v1.0.0`.
+- Confirm title and visible badge show `v1.1.0`.
 
 ## Legal pages and downloads
 
@@ -29,7 +29,7 @@ on the deployed `v1.0.0` commit.
 - Open LICENSE, LICENSE.it.md, NOTICE, trademarks, commercial licensing,
   privacy, and security from the legal index.
 - Confirm the three footer links resolve and do not appear in print.
-- Download `loadcomposer-v1.0.0-standalone.zip`.
+- Download `loadcomposer-v1.1.0-standalone.zip`.
 - Download the secondary HTML-only file and both `.sha256` sidecars.
 - Verify the downloaded ZIP sidecar.
 - Extract the ZIP and verify its five internal hashes.

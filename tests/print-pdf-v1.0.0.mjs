@@ -23,7 +23,7 @@ const BASELINE_ONLY = process.env.PRINT_BASELINE_ONLY === "1";
 const RESULT_PATH = path.join(
   OUTPUT_ROOT,
   process.env.PRINT_RESULT_NAME ||
-    (BASELINE_ONLY ? "print-baseline-v1.0.0.json" : "print-results-v1.0.0.json")
+    (BASELINE_ONLY ? "print-baseline-v1.0.0.json" : "print-results-v1.1.0.json")
 );
 const FIXED_NOW = "2026-07-24T10:00:00.000Z";
 const PRINT_MESSAGE =

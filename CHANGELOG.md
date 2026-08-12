@@ -2,6 +2,18 @@
 
 All notable project changes are documented here.
 
+## [1.1.0] — 2026-08-11
+
+### Added
+
+- Added localized **Suggestions** and **Report a problem** links to the application footer in all seven enabled languages.
+- Routed preliminary ideas and questions to GitHub Discussions and reproducible defects to the existing GitHub bug-report form.
+
+### Unchanged from v1.0.0
+
+- Loading algorithms, geometry, coordinates, pallet and equipment data, prudential thresholds, operational results, themes, responsive application layout, printing, PDF output, security boundaries, legal terms, and cache semantics.
+- Offline and `file://` planner operation; the two optional GitHub links require connectivity only when opened.
+
 ## [1.0.0] — 2026-08-08
 
 ### Changed

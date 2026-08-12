@@ -5,7 +5,7 @@ import vm from "node:vm";
 const root = path.resolve(import.meta.dirname, "..");
 const files = [
   "site/index.html",
-  "site/downloads/loadcomposer-v1.0.0-standalone.html",
+  "site/downloads/loadcomposer-v1.1.0-standalone.html",
 ];
 
 for (const relative of files) {

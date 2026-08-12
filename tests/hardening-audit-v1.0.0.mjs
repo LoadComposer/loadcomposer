@@ -9,7 +9,7 @@ import { JSDOM } from "jsdom";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const SITE = path.join(ROOT, "site");
 const DOWNLOADS = path.join(SITE, "downloads");
-const VERSION = "1.0.0";
+const VERSION = "1.1.0";
 const PACKAGE_NAME = `loadcomposer-v${VERSION}-standalone`;
 const HTML_NAME = `${PACKAGE_NAME}.html`;
 const ZIP_NAME = `${PACKAGE_NAME}.zip`;
@@ -168,12 +168,14 @@ assertNoRemoteResources(legalIndex, "site/legal/index.html");
 const webDom = new JSDOM(web);
 try {
   const links = [...webDom.window.document.querySelectorAll(".footer-links a")];
-  assert.equal(links.length, 3);
+  assert.equal(links.length, 5);
   assert.deepEqual(
-    links.map(link => link.getAttribute("href")),
+    links.slice(0, 3).map(link => link.getAttribute("href")),
     ["./legal/LICENSE", "./legal/PRIVACY.md", "./legal/"]
   );
-  assert.ok(links.every(link => !link.hasAttribute("target")));
+  assert.ok(links.slice(0, 3).every(link => !link.hasAttribute("target")));
+  assert.ok(links.slice(3).every(link => link.getAttribute("target") === "_blank"));
+  assert.ok(links.slice(3).every(link => link.getAttribute("rel") === "noopener noreferrer"));
   assert.ok(webDom.window.document.querySelector(".github-row > .github-link"));
 } finally {
   webDom.window.close();
@@ -186,7 +188,14 @@ assert.match(
 for (const code of CODES) {
   const catalog = JSON.parse(read(path.join(SITE, "lang", `${code}.json`)));
   assert.equal(catalog.meta.version, VERSION);
-  for (const key of ["footer.license", "footer.privacy", "footer.legalInformation"]) {
+  for (const key of [
+    "footer.license",
+    "footer.privacy",
+    "footer.legalInformation",
+    "footer.linksAria",
+    "footer.suggestions",
+    "footer.reportIssue"
+  ]) {
     assert.equal(typeof catalog.translations[key], "string", `${code}:${key} missing.`);
     assert.ok(catalog.translations[key].trim(), `${code}:${key} empty.`);
   }
@@ -292,7 +301,7 @@ try {
     "https://loadcomposer.com/",
     "licensing@loadcomposer.com",
     '"AS IS"',
-    "Version 1.0"
+    "Version 1.1"
   ]) {
     assert.ok(packageReadme.includes(required), `Standalone README is missing: ${required}`);
   }
@@ -312,6 +321,6 @@ assert.ok(readme.includes("Standalone HTML only"));
 assert.ok(readme.includes("source-available"));
 
 console.log(
-  "v1.0.0 hardening audit PASS: Node/npm metadata, HTML notices, 7 public legal copies, " +
-  "3 localized footer links, standalone ZIP/5 hashes, downloads, internal links and no remote resources."
+  "v1.1.0 hardening audit PASS: Node/npm metadata, HTML notices, 7 public legal copies, " +
+  "5 localized footer links, standalone ZIP/5 hashes, downloads, internal links and no remote resources."
 );

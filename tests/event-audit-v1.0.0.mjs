@@ -8,7 +8,7 @@ const TEST_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = path.resolve(TEST_DIR, "..");
 const BASELINE_PATH = path.resolve(
   PROJECT_DIR,
-  process.env.LOADCOMPOSER_EVENT_BASELINE || "tests/fixtures/baseline-v1.0.0-rc.4/loadcomposer-v1.0.0-rc.4-standalone.html"
+  process.env.LOADCOMPOSER_EVENT_BASELINE || "tests/fixtures/baseline-v1.0.0/loadcomposer-v1.0.0-standalone.html"
 );
 const CURRENT_PATH = path.resolve(
   PROJECT_DIR,
@@ -436,17 +436,17 @@ const measurements = [];
 for (const action of ACTIONS) {
   const baseline = await measureAction(BASELINE_PATH, action);
   const current = await measureAction(CURRENT_PATH, action);
-  assertEqual(baseline.calculate, action.expected.calculate, `${action.label}, rc.4 calculate`);
+  assertEqual(baseline.calculate, action.expected.calculate, `${action.label}, v1.0.0 calculate`);
   assertEqual(
     baseline.drawSelected,
     action.expected.drawSelected,
-    `${action.label}, rc.4 drawSelected`
+    `${action.label}, v1.0.0 drawSelected`
   );
-  assertEqual(current.calculate, action.expected.calculate, `${action.label}, v1.0.0 calculate`);
+  assertEqual(current.calculate, action.expected.calculate, `${action.label}, v1.1.0 calculate`);
   assertEqual(
     current.drawSelected,
     action.expected.drawSelected,
-    `${action.label}, v1.0.0 drawSelected`
+    `${action.label}, v1.1.0 drawSelected`
   );
   measurements.push({
     id: action.id,
@@ -615,8 +615,8 @@ await stateCheck("costruzioni interne possono evitare calcoli intermedi", async 
 
 measurements.forEach(item => {
   console.log(
-    `PASS  ${item.label}: rc.4 ${item.baseline.calculate}/${item.baseline.drawSelected}, ` +
-    `v1.0.0 ${item.current.calculate}/${item.current.drawSelected}`
+    `PASS  ${item.label}: v1.0.0 ${item.baseline.calculate}/${item.baseline.drawSelected}, ` +
+    `v1.1.0 ${item.current.calculate}/${item.current.drawSelected}`
   );
 });
 
@@ -631,9 +631,9 @@ const output = {
   current: path.basename(CURRENT_PATH),
   protocol: {
     numericAndText:
-      "Una modifica logica è misurata con input seguito dal commit change; v1.0.0 conserva la singola reazione a input di rc.4.",
+      "Una modifica logica è misurata con input seguito dal commit change; v1.1.0 conserva la singola reazione a input di v1.0.0.",
     selectsCheckboxesRadios:
-      "Select usa change; checkbox e radio usano click nativo, che emette input e change, ma v1.0.0 conserva la singola reazione a change di rc.4.",
+      "Select usa change; checkbox e radio usano click nativo, che emette input e change, ma v1.1.0 conserva la singola reazione a change di v1.0.0.",
     counters:
       "calculate() e drawSelected() sono strumentate direttamente all'ingresso della funzione."
   },

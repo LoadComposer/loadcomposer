@@ -3,10 +3,10 @@
     "code": "it",
     "name": "Italiano",
     "dir": "ltr",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.0.0",
+    "meta.documentTitle": "LoadComposer v1.1.0",
     "language.preference": "Preferenza lingua",
     "language.auto": "Automatico",
     "language.italian": "Italiano",
@@ -169,6 +169,9 @@
     "footer.license": "Licenza",
     "footer.privacy": "Privacy",
     "footer.legalInformation": "Informazioni legali",
+    "footer.linksAria": "Collegamenti del piè di pagina",
+    "footer.suggestions": "Suggerimenti",
+    "footer.reportIssue": "Segnala un problema",
     "vehicle.group.containers": "Container marittimi",
     "vehicle.group.trucks": "Bilici full load 13,60 m",
     "vehicle.20dc.name": "20' Dry",

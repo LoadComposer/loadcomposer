@@ -3,10 +3,10 @@
     "code": "de",
     "name": "Deutsch",
     "dir": "ltr",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.0.0",
+    "meta.documentTitle": "LoadComposer v1.1.0",
     "language.preference": "Spracheinstellung",
     "language.auto": "Automatisch",
     "language.italian": "Italiano",
@@ -169,6 +169,9 @@
     "footer.license": "Lizenz",
     "footer.privacy": "Datenschutz",
     "footer.legalInformation": "Rechtliche Hinweise",
+    "footer.linksAria": "Links im Fußbereich",
+    "footer.suggestions": "Vorschläge",
+    "footer.reportIssue": "Problem melden",
     "vehicle.group.containers": "Seecontainer",
     "vehicle.group.trucks": "13,60-m-Sattelauflieger für Komplettladungen",
     "vehicle.20dc.name": "20' Dry",

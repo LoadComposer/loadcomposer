@@ -58,6 +58,7 @@
       "print.layerSummary": "Template composto esclusivamente da frammenti pluralizzati."
     },
     "fr": {
+      "footer.suggestions": "Suggestions è la forma francese corretta.",
       "pallet.customFallbackType": "Type è la forma francese corretta.",
       "geometry.orientationNormal": "Normale è la forma francese corretta.",
       "print.type": "Type è la forma francese corretta.",

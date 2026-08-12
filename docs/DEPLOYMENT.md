@@ -18,7 +18,7 @@ validation and GitHub workflows use exactly 22.17.0.
 
 ## Cloudflare Pages preview
 
-Allow the existing Pages project to deploy `v1.0.0` only after the controlled
+Allow the existing Pages project to deploy `v1.1.0` only after the controlled
 repository push and both GitHub workflows have completed successfully.
 
 | Setting | Value |
@@ -47,7 +47,7 @@ At minimum, verify:
 
 - `/` in all seven enabled languages and both themes;
 - `/legal/` and all seven public legal documents;
-- `/downloads/loadcomposer-v1.0.0-standalone.zip`;
+- `/downloads/loadcomposer-v1.1.0-standalone.zip`;
 - the secondary HTML-only download and both `.sha256` sidecars;
 - response headers, CSP, redirect behavior, `robots.txt`, and `sitemap.xml`;
 - desktop and mobile layouts;

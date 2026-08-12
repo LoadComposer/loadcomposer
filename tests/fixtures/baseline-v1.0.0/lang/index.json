@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "defaultLanguage": "en",
+  "languages": [
+    {
+      "code": "it",
+      "englishName": "Italian",
+      "nativeName": "Italiano",
+      "locale": "it-IT",
+      "browserPrefixes": ["it"],
+      "dir": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "en",
+      "englishName": "English",
+      "nativeName": "English",
+      "locale": "en-GB",
+      "browserPrefixes": ["en"],
+      "dir": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "de",
+      "englishName": "German",
+      "nativeName": "Deutsch",
+      "locale": "de-DE",
+      "browserPrefixes": ["de"],
+      "dir": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "es",
+      "englishName": "Spanish",
+      "nativeName": "Español",
+      "locale": "es-ES",
+      "browserPrefixes": ["es"],
+      "dir": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "fr",
+      "englishName": "French",
+      "nativeName": "Français",
+      "locale": "fr-FR",
+      "browserPrefixes": ["fr"],
+      "dir": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "pt",
+      "englishName": "Portuguese",
+      "nativeName": "Português",
+      "locale": "pt-PT",
+      "browserPrefixes": ["pt"],
+      "dir": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "pl",
+      "englishName": "Polish",
+      "nativeName": "Polski",
+      "locale": "pl-PL",
+      "browserPrefixes": ["pl"],
+      "dir": "ltr",
+      "enabled": false
+    },
+    {
+      "code": "nl",
+      "englishName": "Dutch",
+      "nativeName": "Nederlands",
+      "locale": "nl-NL",
+      "browserPrefixes": ["nl"],
+      "dir": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "tr",
+      "englishName": "Turkish",
+      "nativeName": "Türkçe",
+      "locale": "tr-TR",
+      "browserPrefixes": ["tr"],
+      "dir": "ltr",
+      "enabled": false
+    },
+    {
+      "code": "zh-Hans",
+      "englishName": "Chinese (Simplified)",
+      "nativeName": "简体中文",
+      "locale": "zh-Hans-CN",
+      "browserPrefixes": ["zh"],
+      "dir": "ltr",
+      "enabled": false
+    },
+    {
+      "code": "ar",
+      "englishName": "Arabic",
+      "nativeName": "العربية",
+      "locale": "ar",
+      "browserPrefixes": ["ar"],
+      "dir": "rtl",
+      "enabled": false
+    }
+  ]
+}

@@ -12,9 +12,9 @@ const PROJECT = path.resolve(import.meta.dirname, "..");
 const ZIP = path.resolve(
   process.argv[2] ||
     process.env.LOADCOMPOSER_DELIVERY_ZIP ||
-    path.join(PROJECT, "..", "loadcomposer-v1.0.0-delivery.zip")
+    path.join(PROJECT, "..", "loadcomposer-v1.1.0-delivery.zip")
 );
-const ROOT_NAME = "delivery-v1.0.0";
+const ROOT_NAME = "delivery-v1.1.0";
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 
 function assert(condition, message) {
@@ -113,8 +113,8 @@ async function inspect(browser, url, code) {
   await context.close();
   assert(errors.length === 0, `${url}/${code}: ${errors.join(" | ")}`);
   assert(remote.length === 0, `${url}/${code}: remote requests ${remote.join(", ")}`);
-  assert(state.title === "LoadComposer v1.0.0", `${url}/${code}: title`);
-  assert(state.badge === "v1.0.0", `${url}/${code}: badge`);
+  assert(state.title === "LoadComposer v1.1.0", `${url}/${code}: title`);
+  assert(state.badge === "v1.1.0", `${url}/${code}: badge`);
   assert(state.language === code, `${url}/${code}: language`);
 }
 
@@ -131,14 +131,14 @@ const required = [
   "NOTICE",
   "README.md",
   "README.it.md",
-  "LEGAL_AUDIT-v1.0.0.md",
-  "TEST_REPORT-v1.0.0.md",
-  "RELEASE_CHECKLIST-v1.0.0.md",
-  "SHA256SUMS-v1.0.0.txt",
-  "DELIVERY_MANIFEST-v1.0.0.txt",
-  "loadcomposer-v1.0.0-test-bundle.zip",
+  "LEGAL_AUDIT-v1.1.0.md",
+  "TEST_REPORT-v1.1.0.md",
+  "RELEASE_CHECKLIST-v1.1.0.md",
+  "SHA256SUMS-v1.1.0.txt",
+  "DELIVERY_MANIFEST-v1.1.0.txt",
+  "loadcomposer-v1.1.0-test-bundle.zip",
   "site/index.html",
-  "site/downloads/loadcomposer-v1.0.0-standalone.html",
+  "site/downloads/loadcomposer-v1.1.0-standalone.html",
   "site/_headers",
   "site/_redirects",
   "site/robots.txt",
@@ -157,8 +157,8 @@ assert(files.every(file => !/v0\.9\.0-alpha\./i.test(file)), "Pre-RC.2 applicati
 assert(files.every(file => !/(?:^|\/)\.(?:env|npmrc)(?:$|\.)/.test(file)), "Secret/config file entered delivery.");
 assert(files.every(file => !/\.docx$/i.test(file)), "Source DOCX entered delivery.");
 
-const manifestName = "DELIVERY_MANIFEST-v1.0.0.txt";
-const sumsName = "SHA256SUMS-v1.0.0.txt";
+const manifestName = "DELIVERY_MANIFEST-v1.1.0.txt";
+const sumsName = "SHA256SUMS-v1.1.0.txt";
 const manifestSource = fs.readFileSync(path.join(root, manifestName), "utf8");
 const sumsSource = fs.readFileSync(path.join(root, sumsName), "utf8");
 const manifest = manifestEntries(manifestSource);
@@ -189,22 +189,22 @@ nodeAssert.doesNotMatch(manifestSource, /^Checksum coverage:/m, "Ambiguous cover
 
 const checksumOutput = run(
   "sha256sum",
-  ["-c", "SHA256SUMS-v1.0.0.txt"],
+  ["-c", "SHA256SUMS-v1.1.0.txt"],
   { cwd: root }
 );
 const verified = checksumOutput.trim().split("\n").filter(Boolean);
 assert(verified.length === files.length - 1, "Checksum coverage does not cover every file except the checksum list.");
 assert(verified.every(line => line.endsWith(": OK")), "Internal checksum failure.");
 
-const bundle = path.join(root, "loadcomposer-v1.0.0-test-bundle.zip");
+const bundle = path.join(root, "loadcomposer-v1.1.0-test-bundle.zip");
 run("unzip", ["-t", bundle]);
 const bundleList = run("unzip", ["-Z1", bundle]).split("\n").filter(Boolean);
 assert(
-  bundleList.every(file => file.startsWith("loadcomposer-v1.0.0-test-bundle/")),
+  bundleList.every(file => file.startsWith("loadcomposer-v1.1.0-test-bundle/")),
   "Test bundle root is inconsistent."
 );
 assert(bundleList.some(file => file.endsWith("/package-lock.json")), "Test bundle lockfile missing.");
-assert(bundleList.some(file => file.includes("/tests/fixtures/baseline-v1.0.0-rc.4/")), "Canonical RC.4 fixture missing.");
+assert(bundleList.some(file => file.includes("/tests/fixtures/baseline-v1.0.0/")), "Canonical v1.0.0 fixture missing.");
 assert(bundleList.every(file => !/v0\.9\.0-alpha\./i.test(file)), "Pre-RC.2 application fixture entered test bundle.");
 
 const server = await serve(path.join(root, "site"));
@@ -217,7 +217,7 @@ try {
     scenarios += 1;
   }
   const standalone = pathToFileURL(
-    path.join(root, "site", "downloads", "loadcomposer-v1.0.0-standalone.html")
+    path.join(root, "site", "downloads", "loadcomposer-v1.1.0-standalone.html")
   ).href;
   for (const code of CODES) {
     await inspect(browser, standalone, code);

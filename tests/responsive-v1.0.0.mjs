@@ -10,8 +10,8 @@ const APP_PATH = path.resolve(
   process.env.LOADCOMPOSER_HTML || "site/index.html"
 );
 const APP_HTML = fs.readFileSync(APP_PATH, "utf8");
-const OUTPUT_PATH = path.join(PROJECT_DIR, "responsive-results-v1.0.0.json");
-const SCREENSHOT_DIR = path.join(PROJECT_DIR, "screenshots-responsive-v1.0.0");
+const OUTPUT_PATH = path.join(PROJECT_DIR, "responsive-results-v1.1.0.json");
+const SCREENSHOT_DIR = path.join(PROJECT_DIR, "screenshots-responsive-v1.1.0");
 
 const VIEWPORTS = [
   { width: 320, height: 568 },
@@ -731,8 +731,8 @@ async function capturePreviewScreenshots(browser) {
     assertEqual(errors.consoleErrors.length, 0, "preview screenshot: errori console");
     assertEqual(errors.pageErrors.length, 0, "preview screenshot: errori pagina");
     return [
-      "screenshots-responsive-v1.0.0/screenshot-preview-side-412x915.png",
-      "screenshots-responsive-v1.0.0/screenshot-preview-ramp-412x915.png"
+      "screenshots-responsive-v1.1.0/screenshot-preview-side-412x915.png",
+      "screenshots-responsive-v1.1.0/screenshot-preview-ramp-412x915.png"
     ];
   } finally {
     await context.close();
@@ -764,7 +764,7 @@ try {
 const screenshots = fs.readdirSync(SCREENSHOT_DIR)
   .filter(filename => filename.endsWith(".png"))
   .sort()
-  .map(filename => `screenshots-responsive-v1.0.0/${filename}`);
+  .map(filename => `screenshots-responsive-v1.1.0/${filename}`);
 
 const output = {
   status: "PASS",
@@ -797,6 +797,6 @@ const output = {
 
 fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`);
 console.log(
-  `Responsive v1.0.0: ${VIEWPORTS.length}/${VIEWPORTS.length} viewport PASS, ` +
+  `Responsive v1.1.0: ${VIEWPORTS.length}/${VIEWPORTS.length} viewport PASS, ` +
   `${screenshots.length} screenshot, 0 errori console.`
 );

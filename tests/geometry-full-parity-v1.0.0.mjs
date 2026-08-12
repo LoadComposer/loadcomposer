@@ -10,14 +10,14 @@ const PROJECT_DIR = path.resolve(TEST_DIR, "..");
 const BASELINE_PATH = path.resolve(
   PROJECT_DIR,
   process.env.LOADCOMPOSER_BASELINE ||
-    "tests/fixtures/baseline-v1.0.0-rc.4/loadcomposer-v1.0.0-rc.4-standalone.html"
+    "tests/fixtures/baseline-v1.0.0/loadcomposer-v1.0.0-standalone.html"
 );
 const CURRENT_PATH = path.resolve(
   PROJECT_DIR,
-  process.env.LOADCOMPOSER_HTML || "site/downloads/loadcomposer-v1.0.0-standalone.html"
+  process.env.LOADCOMPOSER_HTML || "site/downloads/loadcomposer-v1.1.0-standalone.html"
 );
 const EXPECTED_BASELINE_SHA256 =
-  "afd84b741059c47dcfc95bec9ccbfefadb6c33405e75fdbeb9b3684824163a96";
+  "5221cd2629b63c3a1f6f5037165189a0d080d30bd9e72b5084f7525cb0d2e15a";
 const EPSILON = 0.0001;
 
 function sha256(filePath) {
@@ -424,7 +424,7 @@ function b10Signature(result) {
 const actualBaselineSha256 = sha256(BASELINE_PATH);
 if (actualBaselineSha256 !== EXPECTED_BASELINE_SHA256) {
   throw new Error(
-    `Baseline rc.4 inattesa: atteso ${EXPECTED_BASELINE_SHA256}, ottenuto ${actualBaselineSha256}`
+    `Baseline v1.0.0 inattesa: atteso ${EXPECTED_BASELINE_SHA256}, ottenuto ${actualBaselineSha256}`
   );
 }
 
@@ -608,8 +608,8 @@ try {
       after,
       fixture.gap
     );
-    assertChecks(beforeChecks, `${fixture.id} rc.4`);
-    assertChecks(afterChecks, `${fixture.id} v1.0.0`);
+    assertChecks(beforeChecks, `${fixture.id} v1.0.0`);
+    assertChecks(afterChecks, `${fixture.id} v1.1.0`);
 
     const changed = JSON.stringify(beforeComparable) !== JSON.stringify(afterComparable);
     if (!changed) {
@@ -722,7 +722,7 @@ try {
   assertEqual(
     mixedDifferences.length,
     0,
-    "layout mixed modificati tra rc.4 e v1.0.0"
+    "layout mixed modificati tra v1.0.0 e v1.1.0"
   );
 
   const report = {
@@ -755,7 +755,7 @@ try {
       unchangedCases: unchangedMixedCases,
       differences: mixedDifferences.length,
       rules: [
-        "Tra rc.4 e v1.0.0 non è autorizzata alcuna differenza geometrica mixed a input equivalente.",
+        "Tra v1.0.0 e v1.1.0 non è autorizzata alcuna differenza geometrica mixed a input equivalente.",
         "Bounds, gap, overlap, conteggi e used spans reali devono essere confermati."
       ],
       differenceDetails: mixedDifferences,
@@ -769,7 +769,7 @@ try {
   };
 
   console.log(
-    `Confronto rc.4/v1.0.0: single capacity ${singleCapacityCases} casi, ` +
+    `Confronto v1.0.0/v1.1.0: single capacity ${singleCapacityCases} casi, ` +
     `${singleCapacityDifferences.length} differenze; single load ${singleLoadCases} casi, ` +
     `${singleLoadDifferences.length} differenze; B-10 ${b10Scenarios.length}/7 PASS.`
   );
@@ -777,7 +777,7 @@ try {
     `Mixed ${mixedCases} casi: ${mixedDifferences.length} differenze, ` +
     `${unchangedMixedCases} invariati, 0 differenze inattese.`
   );
-  console.log("PASS: rc.4 e v1.0.0 sono geometricamente identiche su tutte le fixture a input equivalente.");
+  console.log("PASS: v1.0.0 e v1.1.0 sono geometricamente identiche su tutte le fixture a input equivalente.");
 
   if (process.env.LOADCOMPOSER_BASELINE_JSON) {
     fs.writeFileSync(

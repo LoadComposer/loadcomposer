@@ -5,9 +5,10 @@ Thank you for considering a contribution. LoadComposer accepts focused changes t
 ## Before you begin
 
 1. Read [LICENSE](LICENSE), [CLA.md](CLA.md), [SECURITY.md](SECURITY.md), and the current [ROADMAP.md](ROADMAP.md).
-2. Search existing issues and open a focused issue before a substantial change.
-3. Do not disclose security vulnerabilities in a public issue.
-4. Do not submit material you do not have the right to license.
+2. Use [GitHub Discussions](https://github.com/LoadComposer/loadcomposer/discussions) for initial ideas, suggestions, questions, and preliminary feature discussion.
+3. Use [GitHub Issues](https://github.com/LoadComposer/loadcomposer/issues/new?template=bug.yml) for reproducible software defects, after checking for an existing report.
+4. Report security vulnerabilities only through the private procedure in [SECURITY.md](SECURITY.md), never in Discussions or a public issue.
+5. Do not submit material you do not have the right to license.
 
 ## Contribution terms
 

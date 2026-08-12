@@ -3,10 +3,10 @@
     "code": "es",
     "name": "Español",
     "dir": "ltr",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.0.0",
+    "meta.documentTitle": "LoadComposer v1.1.0",
     "language.preference": "Preferencia de idioma",
     "language.auto": "Automático",
     "language.italian": "Italiano",
@@ -169,6 +169,9 @@
     "footer.license": "Licencia",
     "footer.privacy": "Privacidad",
     "footer.legalInformation": "Información legal",
+    "footer.linksAria": "Enlaces del pie de página",
+    "footer.suggestions": "Sugerencias",
+    "footer.reportIssue": "Informar de un problema",
     "vehicle.group.containers": "Contenedores marítimos",
     "vehicle.group.trucks": "Semirremolques de carga completa de 13,60 m",
     "vehicle.20dc.name": "20' Dry",
