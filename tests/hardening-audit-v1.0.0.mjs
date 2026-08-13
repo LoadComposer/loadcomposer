@@ -9,7 +9,7 @@ import { JSDOM } from "jsdom";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const SITE = path.join(ROOT, "site");
 const DOWNLOADS = path.join(SITE, "downloads");
-const VERSION = "1.1.0";
+const VERSION = "1.2.0";
 const PACKAGE_NAME = `loadcomposer-v${VERSION}-standalone`;
 const HTML_NAME = `${PACKAGE_NAME}.html`;
 const ZIP_NAME = `${PACKAGE_NAME}.zip`;
@@ -168,14 +168,16 @@ assertNoRemoteResources(legalIndex, "site/legal/index.html");
 const webDom = new JSDOM(web);
 try {
   const links = [...webDom.window.document.querySelectorAll(".footer-links a")];
-  assert.equal(links.length, 5);
+  assert.equal(links.length, 6);
   assert.deepEqual(
     links.slice(0, 3).map(link => link.getAttribute("href")),
     ["./legal/LICENSE", "./legal/PRIVACY.md", "./legal/"]
   );
   assert.ok(links.slice(0, 3).every(link => !link.hasAttribute("target")));
-  assert.ok(links.slice(3).every(link => link.getAttribute("target") === "_blank"));
-  assert.ok(links.slice(3).every(link => link.getAttribute("rel") === "noopener noreferrer"));
+  assert.equal(links[3].getAttribute("href"), "./downloads/");
+  assert.equal(links[3].hasAttribute("target"), false);
+  assert.ok(links.slice(4).every(link => link.getAttribute("target") === "_blank"));
+  assert.ok(links.slice(4).every(link => link.getAttribute("rel") === "noopener noreferrer"));
   assert.ok(webDom.window.document.querySelector(".github-row > .github-link"));
 } finally {
   webDom.window.close();
@@ -192,6 +194,7 @@ for (const code of CODES) {
     "footer.license",
     "footer.privacy",
     "footer.legalInformation",
+    "footer.download",
     "footer.linksAria",
     "footer.suggestions",
     "footer.reportIssue"
@@ -301,7 +304,7 @@ try {
     "https://loadcomposer.com/",
     "licensing@loadcomposer.com",
     '"AS IS"',
-    "Version 1.1"
+    "Version 1.2"
   ]) {
     assert.ok(packageReadme.includes(required), `Standalone README is missing: ${required}`);
   }
@@ -313,14 +316,15 @@ assertInternalLinks(path.join(SITE, "index.html"));
 assertInternalLinks(legalIndexPath);
 
 const readme = read(path.join(ROOT, "README.md"));
-const zipPosition = readme.indexOf(ZIP_NAME);
 const htmlPosition = readme.indexOf(HTML_NAME);
-assert.ok(zipPosition >= 0, "README does not name the primary standalone ZIP.");
-assert.ok(htmlPosition < 0 || zipPosition < htmlPosition, "README does not list ZIP before HTML.");
-assert.ok(readme.includes("Standalone HTML only"));
+const zipPosition = readme.indexOf(ZIP_NAME);
+assert.ok(htmlPosition >= 0, "README does not name the primary standalone HTML.");
+assert.ok(zipPosition >= 0, "README does not name the standalone ZIP.");
+assert.ok(htmlPosition < zipPosition, "README does not list HTML before ZIP.");
+assert.ok(readme.includes("Download page"));
 assert.ok(readme.includes("source-available"));
 
 console.log(
-  "v1.1.0 hardening audit PASS: Node/npm metadata, HTML notices, 7 public legal copies, " +
-  "5 localized footer links, standalone ZIP/5 hashes, downloads, internal links and no remote resources."
+  "v1.2.0 hardening audit PASS: Node/npm metadata, HTML notices, 7 public legal copies, " +
+  "6 localized footer links, standalone ZIP/5 hashes, Download page, internal links and no remote resources."
 );

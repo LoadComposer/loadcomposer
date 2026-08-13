@@ -442,11 +442,11 @@ for (const action of ACTIONS) {
     action.expected.drawSelected,
     `${action.label}, v1.0.0 drawSelected`
   );
-  assertEqual(current.calculate, action.expected.calculate, `${action.label}, v1.1.0 calculate`);
+  assertEqual(current.calculate, action.expected.calculate, `${action.label}, v1.2.0 calculate`);
   assertEqual(
     current.drawSelected,
     action.expected.drawSelected,
-    `${action.label}, v1.1.0 drawSelected`
+    `${action.label}, v1.2.0 drawSelected`
   );
   measurements.push({
     id: action.id,
@@ -616,7 +616,7 @@ await stateCheck("costruzioni interne possono evitare calcoli intermedi", async 
 measurements.forEach(item => {
   console.log(
     `PASS  ${item.label}: v1.0.0 ${item.baseline.calculate}/${item.baseline.drawSelected}, ` +
-    `v1.1.0 ${item.current.calculate}/${item.current.drawSelected}`
+    `v1.2.0 ${item.current.calculate}/${item.current.drawSelected}`
   );
 });
 
@@ -631,9 +631,9 @@ const output = {
   current: path.basename(CURRENT_PATH),
   protocol: {
     numericAndText:
-      "Una modifica logica è misurata con input seguito dal commit change; v1.1.0 conserva la singola reazione a input di v1.0.0.",
+      "Una modifica logica è misurata con input seguito dal commit change; v1.2.0 conserva la singola reazione a input di v1.0.0.",
     selectsCheckboxesRadios:
-      "Select usa change; checkbox e radio usano click nativo, che emette input e change, ma v1.1.0 conserva la singola reazione a change di v1.0.0.",
+      "Select usa change; checkbox e radio usano click nativo, che emette input e change, ma v1.2.0 conserva la singola reazione a change di v1.0.0.",
     counters:
       "calculate() e drawSelected() sono strumentate direttamente all'ingresso della funzione."
   },

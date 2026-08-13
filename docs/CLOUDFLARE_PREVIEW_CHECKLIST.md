@@ -1,7 +1,7 @@
 # Cloudflare Pages preview checklist
 
 Do not create the stable tag or GitHub Release until this checklist is complete
-on the deployed `v1.1.0` commit.
+on the deployed `v1.2.0` commit.
 
 ## Project setup
 
@@ -21,7 +21,7 @@ on the deployed `v1.1.0` commit.
 - Verify desktop and mobile layouts, including 320 px width.
 - Verify preview side/ramp views and colour/black-and-white modes.
 - Verify browser print and saved PDF output.
-- Confirm title and visible badge show `v1.1.0`.
+- Confirm title and visible badge show `v1.2.0`.
 
 ## Legal pages and downloads
 
@@ -29,8 +29,8 @@ on the deployed `v1.1.0` commit.
 - Open LICENSE, LICENSE.it.md, NOTICE, trademarks, commercial licensing,
   privacy, and security from the legal index.
 - Confirm the three footer links resolve and do not appear in print.
-- Download `loadcomposer-v1.1.0-standalone.zip`.
-- Download the secondary HTML-only file and both `.sha256` sidecars.
+- Open `/downloads/`, confirm the online choice is recommended, then download
+  `loadcomposer-v1.2.0-standalone.html`, the ZIP, and both `.sha256` sidecars.
 - Verify the downloaded ZIP sidecar.
 - Extract the ZIP and verify its five internal hashes.
 - Open the extracted HTML through `file://`.
@@ -39,8 +39,7 @@ on the deployed `v1.1.0` commit.
 
 ## Not-found handling
 
-- Open `/downloads/` and confirm Cloudflare returns HTTP `404` with the custom
-  “Page not found” page, not the main application.
+- Open `/downloads/` and confirm Cloudflare returns the localized Download page.
 - Repeat with `/percorso-inesistente-test/` and another nonexistent path.
 - Confirm the 404 page displays the local LoadComposer logo in both light and
   dark color schemes, works without JavaScript, and requests no remote assets.
@@ -48,8 +47,8 @@ on the deployed `v1.1.0` commit.
   automatic redirect, canonical URL, or Open Graph metadata.
 - Confirm its links to `/` and `/legal/` work with the keyboard and show visible
   focus.
-- Confirm the four real files below `/downloads/` still return normally and
-  that no `site/downloads/index.html` has been introduced.
+- Confirm v1.0.0, v1.1.0, and v1.2.0 artifacts below `/downloads/` still
+  return normally, with the index revalidated and versioned artifacts immutable.
 - Confirm `404.html` is absent from `sitemap.xml`.
 
 ## Headers and network

@@ -29,6 +29,12 @@
 /404.html
   Cache-Control: no-store
 
+/downloads/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/downloads/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 /downloads/loadcomposer-v1.0.0-standalone.html
   Cache-Control: public, max-age=31536000, immutable
 
@@ -57,6 +63,21 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /downloads/loadcomposer-v1.1.0-standalone.zip.sha256
+  Cache-Control: public, max-age=31536000, immutable
+
+/downloads/loadcomposer-v1.2.0-standalone.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/downloads/loadcomposer-v1.2.0-standalone
+  Cache-Control: public, max-age=31536000, immutable
+
+/downloads/loadcomposer-v1.2.0-standalone.html.sha256
+  Cache-Control: public, max-age=31536000, immutable
+
+/downloads/loadcomposer-v1.2.0-standalone.zip
+  Cache-Control: public, max-age=31536000, immutable
+
+/downloads/loadcomposer-v1.2.0-standalone.zip.sha256
   Cache-Control: public, max-age=31536000, immutable
 
 /legal/LICENSE

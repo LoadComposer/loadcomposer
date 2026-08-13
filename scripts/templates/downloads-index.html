@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--
+  LoadComposer
+  Copyright © 2026 Marco Pernigotti.
+  Licensed under the LoadComposer Community License 1.0.
+  SPDX-License-Identifier: LicenseRef-LoadComposer-Community-1.0
+  Official repository: https://github.com/LoadComposer/loadcomposer
+  Provided "AS IS", without warranty.
+-->
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download LoadComposer — Online oppure offline</title>
+  <meta name="description" content="Usa LoadComposer online oppure scarica la versione standalone per computer senza accesso a Internet." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#071a24" />
+  <link rel="canonical" href="https://loadcomposer.com/downloads/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LoadComposer" />
+  <meta property="og:title" content="Download LoadComposer — Online oppure offline" />
+  <meta property="og:description" content="Usa LoadComposer online oppure scarica la versione standalone per computer senza accesso a Internet." />
+  <meta property="og:url" content="https://loadcomposer.com/downloads/" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.0.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script id="loadcomposer-downloads-data" type="application/json">__DOWNLOADS_DATA__</script>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themes = new Set(["auto", "light", "dark"]);
+      let preference = "auto";
+      try {
+        const stored = localStorage.getItem("loadcomposer.theme");
+        if (themes.has(stored)) preference = stored;
+      } catch (_) {}
+      const systemDark = Boolean(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      const resolved = preference === "auto" ? (systemDark ? "dark" : "light") : preference;
+      root.dataset.themePreference = preference;
+      root.dataset.theme = resolved;
+      root.style.colorScheme = resolved;
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #f1f7f9;
+      --surface: #ffffff;
+      --surface-soft: #e9f3f4;
+      --text: #102d35;
+      --muted: #536d75;
+      --border: #bed2d6;
+      --accent: #0f766e;
+      --accent-hover: #0d655f;
+      --accent-soft: #d7efec;
+      --focus: #0b83a3;
+      --shadow: 0 18px 46px rgba(22, 62, 69, .10);
+    }
+    :root[data-theme="dark"] {
+      --bg: #071a24;
+      --surface: #0d2732;
+      --surface-soft: #12343d;
+      --text: #e6f3f4;
+      --muted: #a6bdc1;
+      --border: #34515a;
+      --accent: #55d6c6;
+      --accent-hover: #75e4d6;
+      --accent-soft: #123d3e;
+      --focus: #6ddbf4;
+      --shadow: 0 18px 54px rgba(0, 0, 0, .25);
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 0; background: var(--bg); }
+    body {
+      margin: 0;
+      min-width: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    button, select { font: inherit; }
+    .shell { width: min(1080px, 100%); margin: 0 auto; padding: 20px 22px 40px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-size: 20px; font-weight: 800; text-decoration: none; }
+    .brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--border); }
+    .brand-mark svg { width: 25px; height: 25px; fill: currentColor; }
+    .controls { display: flex; flex-wrap: wrap; align-items: end; justify-content: flex-end; gap: 10px; }
+    .control { display: grid; gap: 4px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .control select { min-height: 44px; padding: 8px 34px 8px 12px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+    main { padding-top: 56px; }
+    .hero { max-width: 800px; margin-bottom: 30px; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(32px, 5vw, 54px); line-height: 1.06; letter-spacing: -.035em; }
+    .recommendation { margin: 18px 0 0; padding: 14px 17px; color: var(--text); background: var(--accent-soft); border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 12px; font-size: 18px; font-weight: 750; }
+    .choices { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: 20px; align-items: start; }
+    .card { min-width: 0; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); }
+    .card.primary { border: 2px solid var(--accent); }
+    .card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    h2 { margin: 0; font-size: 27px; line-height: 1.15; }
+    .badge { display: inline-flex; align-items: center; min-height: 30px; padding: 5px 10px; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 999px; font-size: 11px; font-weight: 850; letter-spacing: .04em; text-align: center; }
+    .card.primary .badge { color: #ffffff; background: var(--accent); border-color: var(--accent); }
+    :root[data-theme="dark"] .card.primary .badge { color: #07231f; }
+    .body { margin: 18px 0; color: var(--muted); }
+    .benefits { margin: 0 0 23px; padding-left: 22px; }
+    .benefits li + li { margin-top: 8px; }
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 11px 18px; color: #ffffff; background: var(--accent); border: 1px solid var(--accent); border-radius: 12px; font-weight: 800; text-decoration: none; text-align: center; }
+    :root[data-theme="dark"] .button { color: #07231f; }
+    .button:hover { background: var(--accent-hover); }
+    .button.secondary { color: var(--text); background: transparent; border-color: var(--border); }
+    :root[data-theme="dark"] .button.secondary { color: var(--text); border-color: var(--accent); }
+    .button.secondary:hover { color: var(--text); background: var(--accent-soft); border-color: var(--accent); }
+    .button.secondary:active { color: var(--text); background: var(--surface-soft); border-color: var(--accent); }
+    .offline-note { margin: 18px 0; padding: 12px 14px; color: var(--text); background: var(--surface-soft); border-radius: 10px; font-weight: 700; }
+    .version { margin: 20px 0 12px; font-size: 18px; font-weight: 850; }
+    .download-option + .download-option { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--border); }
+    .download-help { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+    details { margin-top: 22px; border-top: 1px solid var(--border); padding-top: 18px; }
+    summary { cursor: pointer; color: var(--text); font-weight: 800; }
+    .integrity-body { margin: 12px 0; color: var(--muted); font-size: 14px; }
+    .hash-block + .hash-block { margin-top: 14px; }
+    .hash-label { display: block; margin-bottom: 5px; color: var(--text); font-size: 13px; font-weight: 750; }
+    code { display: block; max-width: 100%; padding: 10px; overflow-wrap: anywhere; word-break: break-all; color: var(--text); background: var(--surface-soft); border-radius: 8px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 12px; }
+    .releases { margin: 28px 0 0; text-align: center; }
+    .releases a { color: var(--accent); font-weight: 750; text-underline-offset: 3px; }
+    footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 18px; margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+    footer a { min-height: 36px; display: inline-flex; align-items: center; padding: 5px; text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    @media (max-width: 760px) {
+      .shell { padding: 16px 14px 32px; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .controls { width: 100%; justify-content: stretch; }
+      .control { flex: 1 1 135px; }
+      .control select { width: 100%; }
+      main { padding-top: 38px; }
+      .choices { grid-template-columns: 1fr; }
+      .card { padding: 22px 18px; }
+      .button { width: 100%; }
+    }
+    @media (max-width: 350px) {
+      .shell { padding-inline: 10px; }
+      .brand { font-size: 18px; }
+      .controls { display: grid; grid-template-columns: 1fr; }
+      h1 { font-size: 32px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="Torna a LoadComposer" data-i18n-aria-label="downloads.brandHomeAria">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v4h5V5H4Zm7 0v4h9V5h-9ZM4 11v8h5v-8H4Zm7 0v8h9v-8h-9Z"/></svg>
+        </span>
+        <span>LoadComposer</span>
+      </a>
+      <div class="controls">
+        <label class="control">
+          <span data-i18n="downloads.language.label">Lingua</span>
+          <select id="languageSelect" aria-label="Lingua" data-i18n-aria-label="downloads.language.label"></select>
+        </label>
+        <label class="control">
+          <span data-i18n="downloads.theme.label">Tema</span>
+          <select id="themeSelect" aria-label="Tema" data-i18n-aria-label="downloads.theme.label">
+            <option value="auto" data-i18n="downloads.theme.auto">Automatico</option>
+            <option value="light" data-i18n="downloads.theme.light">Chiaro</option>
+            <option value="dark" data-i18n="downloads.theme.dark">Scuro</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="downloadTitle">
+        <h1 id="downloadTitle" data-i18n="downloads.title">Usa LoadComposer online oppure offline</h1>
+        <p class="recommendation" data-i18n="downloads.recommendation">Se questo computer ha accesso a Internet, usa la versione online.</p>
+      </section>
+
+      <div class="choices">
+        <section class="card primary" aria-labelledby="onlineTitle">
+          <div class="card-head">
+            <h2 id="onlineTitle" data-i18n="downloads.online.title">Versione online</h2>
+            <span class="badge" data-i18n="downloads.online.badge">CONSIGLIATA</span>
+          </div>
+          <p class="body" data-i18n="downloads.online.body">È il modo più semplice per usare LoadComposer: non richiede installazione e apre sempre la versione più recente, comprese nuove funzioni e correzioni.</p>
+          <ul class="benefits">
+            <li data-i18n="downloads.online.noDownload">Non devi scaricare nulla.</li>
+            <li data-i18n="downloads.online.noManualUpdates">Non devi aggiornare manualmente i file.</li>
+            <li data-i18n="downloads.online.currentVersion">Usi sempre la versione pubblicata corrente.</li>
+          </ul>
+          <a class="button" href="../" data-i18n="downloads.online.button">Apri LoadComposer</a>
+        </section>
+
+        <section class="card" aria-labelledby="offlineTitle">
+          <div class="card-head">
+            <h2 id="offlineTitle" data-i18n="downloads.offline.title">Versione offline</h2>
+            <span class="badge" data-i18n="downloads.offline.badge">PER COMPUTER SENZA INTERNET</span>
+          </div>
+          <p class="body" data-i18n="downloads.offline.body">Pensata per computer che non hanno accesso a Internet o devono restare offline. È una semplice pagina web standalone e il planner funziona senza connessione. Non si aggiorna automaticamente: per usare nuove funzioni e correzioni devi sostituire manualmente il file con una versione più recente.</p>
+          <p class="offline-note" data-i18n="downloads.offline.internetNote">Se hai accesso a Internet, normalmente non serve scaricare questa versione.</p>
+          <p class="version" data-i18n="downloads.currentVersion">LoadComposer v1.2.0</p>
+
+          <div class="download-option">
+            <a class="button" href="./loadcomposer-v1.2.0-standalone.html" download="loadcomposer-v1.2.0-standalone.html" data-i18n="downloads.offline.htmlButton">Scarica HTML standalone</a>
+            <p class="download-help" data-i18n="downloads.offline.htmlHelp">Un solo file da copiare sul computer e aprire con il browser.</p>
+          </div>
+          <div class="download-option">
+            <a class="button secondary" href="./loadcomposer-v1.2.0-standalone.zip" download="loadcomposer-v1.2.0-standalone.zip" data-i18n="downloads.offline.zipButton">Scarica ZIP standalone</a>
+            <p class="download-help" data-i18n="downloads.offline.zipHelp">Pacchetto standalone compresso, utile per archiviazione o distribuzione interna.</p>
+          </div>
+
+          <details>
+            <summary data-i18n="downloads.integrity.title">Verifica integrità</summary>
+            <p class="integrity-body" data-i18n="downloads.integrity.body">Il checksum SHA-256 permette di verificare che il file scaricato sia identico all'originale pubblicato.</p>
+            <div class="hash-block">
+              <span class="hash-label" data-i18n="downloads.integrity.htmlLabel">SHA-256 HTML standalone</span>
+              <code data-checksum="html">__HTML_SHA256__</code>
+            </div>
+            <div class="hash-block">
+              <span class="hash-label" data-i18n="downloads.integrity.zipLabel">SHA-256 ZIP standalone</span>
+              <code data-checksum="zip">__ZIP_SHA256__</code>
+            </div>
+          </details>
+        </section>
+      </div>
+
+      <p class="releases"><a href="https://github.com/LoadComposer/loadcomposer/releases" target="_blank" rel="noopener noreferrer" data-i18n="downloads.releases">Versioni precedenti e dettagli delle release su GitHub</a></p>
+    </main>
+
+    <footer aria-label="Collegamenti del piè di pagina" data-i18n-aria-label="footer.linksAria">
+      <a href="../" data-i18n="downloads.footer.home">Torna a LoadComposer</a>
+      <a href="../legal/LICENSE" data-i18n="footer.license">Licenza</a>
+      <a href="../legal/PRIVACY.md" data-i18n="footer.privacy">Privacy</a>
+      <a href="../legal/" data-i18n="footer.legalInformation">Informazioni legali</a>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+      const data = JSON.parse(document.getElementById("loadcomposer-downloads-data").textContent);
+      const root = document.documentElement;
+      const languageSelect = document.getElementById("languageSelect");
+      const themeSelect = document.getElementById("themeSelect");
+      const systemTheme = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+      function browserLanguage() {
+        const raw = String((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+        const prefix = raw.split("-")[0];
+        return data.languages.some(item => item.code === prefix) ? prefix : data.defaultLanguage;
+      }
+
+      function savedLanguage() {
+        try {
+          const stored = localStorage.getItem("loadcomposer.language");
+          if (data.languages.some(item => item.code === stored)) return stored;
+        } catch (_) {}
+        return browserLanguage();
+      }
+
+      function translate(code) {
+        const catalog = data.catalogs[code] || data.catalogs[data.defaultLanguage];
+        root.lang = code;
+        root.dir = "ltr";
+        root.dataset.language = code;
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+          if (typeof catalog[key] === "string") element.textContent = catalog[key];
+        });
+        document.querySelectorAll("[data-i18n-aria-label]").forEach(element => {
+          const key = element.dataset.i18nAriaLabel;
+          if (typeof catalog[key] === "string") element.setAttribute("aria-label", catalog[key]);
+        });
+        document.title = catalog["downloads.meta.title"];
+        document.querySelector('meta[name="description"]').setAttribute("content", catalog["downloads.meta.description"]);
+        document.querySelector('meta[property="og:title"]').setAttribute("content", catalog["downloads.meta.title"]);
+        document.querySelector('meta[property="og:description"]').setAttribute("content", catalog["downloads.meta.description"]);
+        languageSelect.value = code;
+        try { localStorage.setItem("loadcomposer.language", code); } catch (_) {}
+        root.dataset.i18nReady = "true";
+      }
+
+      function resolveTheme(preference) {
+        return preference === "auto" ? (systemTheme && systemTheme.matches ? "dark" : "light") : preference;
+      }
+
+      function setTheme(preference) {
+        root.dataset.themePreference = preference;
+        root.dataset.theme = resolveTheme(preference);
+        root.style.colorScheme = root.dataset.theme;
+        themeSelect.value = preference;
+        try { localStorage.setItem("loadcomposer.theme", preference); } catch (_) {}
+      }
+
+      data.languages.forEach(language => {
+        const option = document.createElement("option");
+        option.value = language.code;
+        option.textContent = language.nativeName;
+        languageSelect.append(option);
+      });
+      languageSelect.addEventListener("change", () => translate(languageSelect.value));
+      themeSelect.addEventListener("change", () => setTheme(themeSelect.value));
+      if (systemTheme) systemTheme.addEventListener("change", () => {
+        if (root.dataset.themePreference === "auto") setTheme("auto");
+      });
+      translate(savedLanguage());
+      setTheme(root.dataset.themePreference || "auto");
+    })();
+  </script>
+</body>
+</html>

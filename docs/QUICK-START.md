@@ -12,11 +12,12 @@ Open `http://127.0.0.1:8000/`. A Node static server or any ordinary static host 
 
 ## Use the standalone build
 
-Use `site/downloads/loadcomposer-v1.1.0-standalone.zip` as the primary
-offline download. Extract it, verify `SHA256SUMS.txt`, and open the included
-HTML directly. It embeds the seven catalogs and is tested through `file://`;
-it does not need installation or a network connection. The single HTML remains
-available as the secondary **Standalone HTML only** download.
+Use `site/downloads/loadcomposer-v1.2.0-standalone.html` as the simplest
+offline download. Copy it to the offline computer and open it directly in a
+browser. It embeds the seven catalogs and is tested through `file://`; it does
+not need installation or a network connection. The ZIP is available for
+archiving or internal distribution. When Internet is available, use the
+recommended online planner from `site/downloads/index.html`.
 
 ## Basic workflow
 

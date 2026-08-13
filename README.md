@@ -8,7 +8,7 @@
 
 LoadComposer is a browser-based planning aid that estimates how pallets fit geometrically in common maritime containers and 13.60 m semi-trailers. It supports single-pallet and mixed-pallet scenarios, rotation and mandatory fork-entry orientation, layered quantities, responsive previews, localized operational printouts, and an offline standalone page.
 
-> **Current release:** `v1.1.0` (first stable release: `v1.0.0`). Verify results before operational use.
+> **Current release:** `v1.2.0` (first stable release: `v1.0.0`). Verify results before operational use.
 
 | Day | Night |
 |---|---|
@@ -39,15 +39,22 @@ python3 -m http.server 8000 --directory site
 
 Open `http://127.0.0.1:8000/`.
 
-For offline use, the primary download is the complete package:
+Use the hosted planner when Internet access is available. The Download page
+explains the two modes and provides the current offline artifacts:
 
 ```text
-site/downloads/loadcomposer-v1.1.0-standalone.zip
+site/downloads/index.html
 ```
 
-Extract it, verify `SHA256SUMS.txt`, and open the included HTML. The secondary
-**Standalone HTML only** download remains available at
-`site/downloads/loadcomposer-v1.1.0-standalone.html`.
+For offline use, the simplest download is the standalone HTML:
+
+```text
+site/downloads/loadcomposer-v1.2.0-standalone.html
+```
+
+Copy it to the offline computer and open it in a browser. A compressed ZIP for
+archiving or internal distribution is also available as
+`site/downloads/loadcomposer-v1.2.0-standalone.zip`.
 
 To reproduce the application and run all checks:
 
@@ -71,7 +78,7 @@ Confirm measurements and the actual equipment, then obtain qualified operational
 ## Project map
 
 - `site/` — production-ready static site and Cloudflare Pages output.
-- `site/downloads/` — complete standalone ZIP, secondary HTML-only download, and SHA-256 sidecars.
+- `site/downloads/` — localized Download page, current and historical standalone artifacts, and SHA-256 sidecars.
 - `site/legal/` — public byte-identical legal-document copies and legal index.
 - `site/lang/` — seven enabled catalogs and language index.
 - `docs/` — quick start, architecture, limitations, deployment, release process, screenshots, and verification evidence.
@@ -93,7 +100,7 @@ LoadComposer is source-available under the custom [LoadComposer Community Licens
 
 Official site: [loadcomposer.com](https://loadcomposer.com/)  
 Official repository: [github.com/LoadComposer/loadcomposer](https://github.com/LoadComposer/loadcomposer)  
-Current release: [complete standalone package](https://loadcomposer.com/downloads/loadcomposer-v1.1.0-standalone.zip)  
-Secondary: [Standalone HTML only](https://loadcomposer.com/downloads/loadcomposer-v1.1.0-standalone.html)
+Download options: [loadcomposer.com/downloads/](https://loadcomposer.com/downloads/)  
+Current standalone HTML: [v1.2.0](https://loadcomposer.com/downloads/loadcomposer-v1.2.0-standalone.html)
 
 Copyright © 2026 Marco Pernigotti.

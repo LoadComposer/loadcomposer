@@ -1,6 +1,7 @@
 {
   "shared": {
     "meta.documentTitle": "Nome prodotto e versione devono rimanere invariati.",
+    "downloads.currentVersion": "Nome prodotto e versione devono rimanere invariati.",
     "language.italian": "Nome nativo della lingua italiana.",
     "language.english": "Nome nativo della lingua inglese.",
     "language.currentAuto": "Etichetta tecnica concisa con codice lingua.",
@@ -36,6 +37,7 @@
   },
   "locales": {
     "de": {
+      "footer.download": "Download è il termine tedesco corrente.",
       "pallet.optional": "Optional è la forma tedesca corretta.",
       "geometry.orientationNormal": "Normal è la forma tedesca corretta.",
       "layout.orientationNormalCount.one": "Normal è la forma tedesca corretta.",
@@ -45,6 +47,7 @@
       "print.layerSummary": "Template composto esclusivamente da frammenti pluralizzati."
     },
     "es": {
+      "downloads.theme.label": "Tema è la forma spagnola corretta.",
       "pallet.customFallbackType": "Tipo è la forma spagnola corretta.",
       "results.metric.weight": "Peso è la forma spagnola corretta.",
       "results.table.weight": "Peso è la forma spagnola corretta.",
@@ -69,6 +72,7 @@
       "layout.orientationNormalCount.one": "Normale è la forma francese corretta."
     },
     "pt": {
+      "downloads.theme.label": "Tema è la forma portoghese corretta.",
       "pallet.customFallbackType": "Tipo è la forma portoghese corretta.",
       "results.metric.weight": "Peso è la forma portoghese corretta.",
       "results.table.weight": "Peso è la forma portoghese corretta.",
@@ -81,6 +85,7 @@
       "print.layerSummary": "Template composto esclusivamente da frammenti pluralizzati."
     },
     "nl": {
+      "footer.download": "Download è il termine olandese corrente.",
       "footer.privacy": "Privacy è il termine olandese corrente.",
       "pallet.customFallbackType": "Type è la forma olandese corretta.",
       "preset.42x42.name": "Pallet e misura tecnica sono intenzionalmente invariati.",

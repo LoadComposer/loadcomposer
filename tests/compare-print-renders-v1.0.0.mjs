@@ -10,10 +10,10 @@ const baselineDir = path.join(
 );
 const candidateDir = path.join(
   projectDir,
-  "print-evidence-v1.1.0",
+  "print-evidence-v1.2.0",
   "pdf-renders"
 );
-const resultPath = path.join(projectDir, "print-render-parity-results-v1.1.0.json");
+const resultPath = path.join(projectDir, "print-render-parity-results-v1.2.0.json");
 
 function files(root) {
   const output = [];
@@ -81,7 +81,7 @@ const records = candidateFiles.map(relative => {
 });
 
 const payload = {
-  version: "1.1.0",
+  version: "1.2.0",
   baseline: "v1.0.0-rc.2 verified print renders",
   generatedAt: new Date().toISOString(),
   approved: records.length,

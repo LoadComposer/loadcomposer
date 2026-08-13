@@ -2,6 +2,33 @@
 
 All notable project changes are documented here.
 
+## [1.2.0] — 2026-08-12
+
+### Added
+
+- Added a localized, responsive `/downloads/` page that clearly recommends the
+  online planner when Internet is available and presents the offline HTML as
+  the simplest option for computers that must remain offline.
+- Added exact v1.2.0 standalone HTML/ZIP downloads, deterministic SHA-256
+  display, a GitHub Releases link, theme controls, seven-language support, and
+  a localized Download link in the application footer.
+
+### Changed
+
+- Renamed the user-facing layout-clearance wording to the natural equivalent
+  of “Remaining space” in all seven enabled languages, in both the application
+  and operational print output.
+- Simplified the compact-loading message to state the remaining free length
+  directly and removed the visible per-row allowance calculation.
+- Recorded side loading as a future roadmap item without implementing geometry,
+  vehicle openings, access rules, or controls.
+
+### Unchanged from v1.1.0
+
+- Single/mixed algorithms, capacities, thresholds, compact-loading activation,
+  spare-space calculations, coordinates, pallet/equipment data, themes,
+  security boundaries, legal terms, and offline planner behaviour.
+
 ## [1.1.0] — 2026-08-11
 
 ### Added

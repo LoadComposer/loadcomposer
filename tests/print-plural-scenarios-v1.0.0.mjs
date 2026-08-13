@@ -6,12 +6,12 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.1.0-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.2.0-standalone.html")
 ).href;
-const OUTPUT = path.join(ROOT, "print-plurals-v1.1.0");
+const OUTPUT = path.join(ROOT, "print-plurals-v1.2.0");
 const RESULT_PATH = path.join(
   ROOT,
-  "print-plural-results-v1.1.0.json"
+  "print-plural-results-v1.2.0.json"
 );
 const LANGUAGES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const INDEX = JSON.parse(fs.readFileSync(path.join(ROOT, "site", "lang", "index.json")));
@@ -478,7 +478,7 @@ try {
 }
 
 fs.writeFileSync(RESULT_PATH, `${JSON.stringify({
-  version: "1.1.0",
+  version: "1.2.0",
   languages: LANGUAGES,
   scenariosPerLanguage: SCENARIOS.length,
   pdfs: records.length,

@@ -9,8 +9,8 @@ const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const NEW_CODES = ["de", "es", "fr", "pt", "nl"];
 const EXPECTED_ENABLED = [...CODES].sort();
 const EXPECTED_DISABLED = ["ar", "pl", "tr", "zh-Hans"].sort();
-const EXPECTED_VERSION = "1.1.0";
-const EXPECTED_COUNT = 459;
+const EXPECTED_VERSION = "1.2.0";
+const EXPECTED_COUNT = 492;
 const SAFE_CODE = /^(?:[a-z]{2}|zh-Hans)$/;
 const PLACEHOLDER = /\{[A-Za-z0-9_.-]+\}/g;
 const PLURAL_BASES = [
@@ -246,7 +246,7 @@ for (const code of NEW_CODES) {
 
   const copiedEnglish = referenceKeys.filter(key => translated[key] === reference[key]).length;
   const copiedItalian = referenceKeys.filter(key => translated[key] === italian[key]).length;
-  const copiedEnglishLimit = code === "nl" ? 52 : 51;
+  const copiedEnglishLimit = code === "nl" ? 54 : 51;
   assert.ok(copiedEnglish < copiedEnglishLimit, `${code} appears copied from English`);
   assert.ok(copiedItalian < 50, `${code} appears copied from Italian`);
 

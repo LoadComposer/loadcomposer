@@ -14,7 +14,7 @@ const PACKAGE_PATH = path.resolve(
   PROJECT_DIR,
   process.env.LOADCOMPOSER_PACKAGE || "package.json"
 );
-const EXPECTED_VERSION = "1.1.0";
+const EXPECTED_VERSION = "1.2.0";
 
 function assertEqual(actual, expected, label) {
   if (actual !== expected) {

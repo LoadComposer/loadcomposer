@@ -1,6 +1,6 @@
-# Repository update for v1.1.0
+# Repository update for v1.2.0
 
-This checklist starts after the `v1.1.0` delivery has been extracted and
+This checklist starts after the `v1.2.0` delivery has been extracted and
 its internal checksums have been verified.
 
 ## Publish the private candidate commit
@@ -8,10 +8,10 @@ its internal checksums have been verified.
 1. Open `https://github.com/LoadComposer/loadcomposer`.
 2. Confirm the intended repository visibility before uploading.
 3. Confirm the default branch name and branch-protection settings.
-4. Upload the contents of `delivery-v1.1.0/` as the repository root.
+4. Upload the contents of `delivery-v1.2.0/` as the repository root.
 5. Do not upload the outer delivery ZIP, `node_modules`, caches, temporary test
    results, or credentials.
-6. Do not create the `v1.1.0` tag.
+6. Do not create the `v1.2.0` tag until the candidate is accepted.
 7. Do not create the stable tag until the workflow runs and deployed-site checks are green.
 
 ## Validate the first run

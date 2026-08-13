@@ -8,7 +8,7 @@
 
 LoadComposer è un ausilio alla pianificazione nel browser che stima la disposizione geometrica dei pallet nei principali container marittimi e bilici da 13,60 m. Gestisce carichi a pallet singolo e misti, rotazione e orientamento obbligatorio dell’inforcamento, quantità su livelli, anteprime responsive, stampa operativa localizzata e una pagina standalone offline.
 
-> **Versione corrente:** `v1.1.0` (prima versione stabile: `v1.0.0`). Verificare sempre i risultati prima dell’uso operativo.
+> **Versione corrente:** `v1.2.0` (prima versione stabile: `v1.0.0`). Verificare sempre i risultati prima dell’uso operativo.
 
 | Giorno | Notte |
 |---|---|
@@ -35,15 +35,23 @@ LoadComposer è un ausilio alla pianificazione nel browser che stima la disposiz
 python3 -m http.server 8000 --directory site
 ```
 
-Aprire `http://127.0.0.1:8000/`. Per l’uso offline il download principale è:
+Aprire `http://127.0.0.1:8000/`. Quando Internet è disponibile è consigliata
+la versione online. La pagina seguente spiega le due modalità e offre gli
+artefatti offline correnti:
 
 ```text
-site/downloads/loadcomposer-v1.1.0-standalone.zip
+site/downloads/index.html
 ```
 
-Estrarre il pacchetto, verificare `SHA256SUMS.txt` e aprire l’HTML incluso.
-Il download secondario **Solo HTML standalone** resta disponibile come
-`site/downloads/loadcomposer-v1.1.0-standalone.html`.
+Per l’uso offline il download più semplice è l’HTML standalone:
+
+```text
+site/downloads/loadcomposer-v1.2.0-standalone.html
+```
+
+Copiarlo sul computer offline e aprirlo nel browser. Per archiviazione o
+distribuzione interna è disponibile anche
+`site/downloads/loadcomposer-v1.2.0-standalone.zip`.
 
 Per ricostruire e verificare:
 
@@ -79,5 +87,6 @@ LoadComposer è source-available con la licenza personalizzata [LoadComposer Com
 
 Sito ufficiale: [loadcomposer.com](https://loadcomposer.com/)  
 Repository ufficiale: [github.com/LoadComposer/loadcomposer](https://github.com/LoadComposer/loadcomposer)
+Pagina Download: [loadcomposer.com/downloads/](https://loadcomposer.com/downloads/)
 
 Copyright © 2026 Marco Pernigotti.

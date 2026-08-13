@@ -8,14 +8,14 @@ const projectDir = path.resolve(import.meta.dirname, "..");
 const baselineUrl = pathToFileURL(
   path.join(
     projectDir,
-    "tests/fixtures/baseline-v1.0.0",
-    "loadcomposer-v1.0.0-standalone.html"
+    "tests/fixtures/baseline-v1.1.0",
+    "loadcomposer-v1.1.0-standalone.html"
   )
 ).href;
 const candidateUrl = pathToFileURL(
-  path.join(projectDir, "site/downloads/loadcomposer-v1.1.0-standalone.html")
+  path.join(projectDir, "site/downloads/loadcomposer-v1.2.0-standalone.html")
 ).href;
-const resultPath = path.join(projectDir, "functional-parity-results-v1.1.0.json");
+const resultPath = path.join(projectDir, "functional-parity-results-v1.2.0.json");
 const browser = await launchBrowser(projectDir);
 const languages = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const localeByLanguage = {
@@ -188,12 +188,12 @@ try {
       assert(after.rowCount === 12, `${scenario.name}/${language}: candidate vehicle rows`);
       assert(
         JSON.stringify(before.geometry) === JSON.stringify(after.geometry),
-        `${scenario.name}/${language}: v1.0.0/v1.1.0 geometry mismatch`
+        `${scenario.name}/${language}: v1.1.0/v1.2.0 geometry mismatch`
       );
       if (language === "it") {
         assert(
           JSON.stringify(before.dataRows) === JSON.stringify(after.dataRows),
-          `${scenario.name}/${language}: v1.0.0/v1.1.0 numeric result mismatch`
+          `${scenario.name}/${language}: v1.1.0/v1.2.0 numeric result mismatch`
         );
       }
       comparisons.push({
@@ -208,8 +208,8 @@ try {
     await baseline.context.close();
   }
   fs.writeFileSync(resultPath, `${JSON.stringify({
-    version: "1.1.0",
-    baseline: "1.0.0",
+    version: "1.2.0",
+    baseline: "1.1.0",
     generatedAt: new Date().toISOString(),
     scenarios: comparisons,
     status: "PASS"
