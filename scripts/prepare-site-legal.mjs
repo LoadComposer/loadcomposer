@@ -8,6 +8,8 @@ const LEGAL_DIR = path.join(ROOT, "site", "legal");
 const VERSION = "1.2.1";
 const TEMPLATE = path.join(ROOT, "scripts", "templates", "legal-index.html");
 const OUTPUT = path.join(LEGAL_DIR, "index.html");
+const COMPACT_BRAND_DAY = path.join(ROOT, "site", "assets", "loadcomposer-mobile-day.svg");
+const COMPACT_BRAND_NIGHT = path.join(ROOT, "site", "assets", "loadcomposer-mobile-night.svg");
 const INDEX_PATH = path.join(ROOT, "site", "lang", "index.json");
 const LEGAL_FILES = [
   "LICENSE",
@@ -66,7 +68,7 @@ for (const filename of LEGAL_FILES) {
   }
 }
 
-for (const filePath of [TEMPLATE, INDEX_PATH]) {
+for (const filePath of [TEMPLATE, INDEX_PATH, COMPACT_BRAND_DAY, COMPACT_BRAND_NIGHT]) {
   if (!fs.existsSync(filePath)) {
     throw new Error(`Required Legal page input is missing: ${path.relative(ROOT, filePath)}`);
   }
@@ -98,8 +100,14 @@ const pageData = JSON.stringify({
 }).replace(/</g, "\\u003c");
 
 let output = fs.readFileSync(TEMPLATE, "utf8");
-if (!output.includes("__LEGAL_DATA__")) throw new Error("Legal template data marker is missing.");
-output = output.replace("__LEGAL_DATA__", pageData);
+for (const [marker, value] of [
+  ["__LEGAL_DATA__", pageData],
+  ["__COMPACT_BRAND_DAY__", fs.readFileSync(COMPACT_BRAND_DAY, "utf8").trim()],
+  ["__COMPACT_BRAND_NIGHT__", fs.readFileSync(COMPACT_BRAND_NIGHT, "utf8").trim()]
+]) {
+  if (!output.includes(marker)) throw new Error(`Legal template marker missing: ${marker}`);
+  output = output.replace(marker, value);
+}
 if (/__[A-Z0-9_]+__/.test(output)) throw new Error("Unresolved Legal page marker.");
 fs.writeFileSync(OUTPUT, output, "utf8");
 

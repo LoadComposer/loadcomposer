@@ -21,6 +21,12 @@ All notable project changes are documented here.
 - Aligned the custom 404 with the approved secondary-page shell, seven-language
   preference and automatic/light/dark theme behavior while retaining a compact
   no-script fallback, root-relative recovery links, `noindex` and `no-store`.
+- Replaced the generic Download, Legal and 404 header mark with the compact
+  no-payoff lockup derived from the canonical Main LC symbol and outlined
+  LoadComposer wordmark.
+- Increased the visual prominence of the 404 status and arranged recovery
+  actions as one primary row above two equal secondary actions, with an
+  explicit full-width mobile stack.
 
 ### Unchanged from v1.2.0
 

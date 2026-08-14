@@ -138,6 +138,7 @@ const required = [
   "WORKFLOW_VALIDATION-v1.2.1.md",
   "V12_TO_V121_COMPARISON-v1.2.1.md",
   "V121_404_FINALIZATION_COMPARISON-v1.2.1.md",
+  "V121_FINAL_POLISH_COMPARISON-v1.2.1.md",
   "SHA256SUMS-v1.2.1.txt",
   "DELIVERY_MANIFEST-v1.2.1.txt",
   "loadcomposer-v1.2.1-test-bundle.zip",
@@ -213,6 +214,7 @@ assert(bundleList.some(file => file.includes("/tests/fixtures/baseline-v1.0.0/")
 assert(bundleList.some(file => file.includes("/tests/fixtures/baseline-v1.1.0/")), "Canonical v1.1.0 fixture missing.");
 assert(bundleList.some(file => file.includes("/tests/fixtures/baseline-v1.2.0/")), "Canonical v1.2.0 fixture missing.");
 assert(bundleList.some(file => file.includes("/tests/fixtures/baseline-v1.2.1-pre-404/")), "Pre-404 v1.2.1 fixture missing.");
+assert(bundleList.some(file => file.endsWith("/tests/final-polish-branding-v1.2.1.mjs")), "Final-polish branding test missing.");
 assert(bundleList.every(file => !/v0\.9\.0-alpha\./i.test(file)), "Pre-RC.2 application fixture entered test bundle.");
 
 const server = await serve(path.join(root, "site"));

@@ -5,11 +5,11 @@ Canonical baseline: loadcomposer-v1.2.0-delivery.zip
 Canonical baseline SHA-256: ac4041e9ef6f06ba7e6dee156c2f9bff7a3420964bfb6cacff7066975ffdfc42
 License: LCCL-1.0 (LicenseRef-LoadComposer-Community-1.0)
 Copyright: Copyright © 2026 Marco Pernigotti
-Payload files before controls: 789
-Final file count: 791
-Manifest entries: 789 files
+Payload files before controls: 824
+Final file count: 826
+Manifest entries: 824 files
 Manifest exclusions: DELIVERY_MANIFEST-v1.2.1.txt, SHA256SUMS-v1.2.1.txt
-Checksum-list coverage: 790 files
+Checksum-list coverage: 825 files
 Checksum-list exclusion: SHA256SUMS-v1.2.1.txt
 
 SHA-256  BYTES  PATH
@@ -32,7 +32,7 @@ cdcbe9e8de85d22aafcdf61011b33a7e754922dcfe83bf11dceeb4834f9a61ee  1941  CHANGELO
 c57d3e4a1c26ab4bbcb19216c6eca8871f6dfc39a148f6bae83bf4d62d93c9a2  992  CHANGELOG-v1.1.0.md
 27cd0f62edb412e4762903352f989f112c4ccc9a9a7ed16bdd0c76213dda487a  813  CHANGELOG-v1.2.0.md
 ff94102fe460379d5489d8e1363630215492764cb14930e0e74ad06a5e5565f8  1381  CHANGELOG-v1.2.1.md
-19cc47757fcadda442af69952d9ca0b3b6c13af3ccf2c58f7881267824e6b470  10114  CHANGELOG.md
+a134de27c3dfc6b85b9079637a892bee144881242dc6505ea91c2ba0abbc4c7c  10471  CHANGELOG.md
 769bd9d679c80e62dadabf635f31448011118e62839350926ed2f2088449faf2  3532  CLA.md
 58aa3f29aa69ccc5f9d244fef334d7f684f42769494be39d93989f8fc7c26921  5255  CODE_OF_CONDUCT.md
 59444c07f5f7286d1e032211b7e933aa9ab357e6d0a66e7c1022e673c3a6e3c4  1529  COMMERCIAL-LICENSING.md
@@ -54,19 +54,20 @@ e7e13ee9c4901051d2355815a7e01a880a93d0bc97a47f7c774a5f12d483eab3  4621  README.i
 95b66b13e35eef26b11a2ecf70ba3d7f0d05fc94b0d8fae040ed5e2f1a7866c1  3213  RELEASE_CHECKLIST-v1.0.0.md
 53e227764800bf7f9c08abf852ede2ea2a4fec21b657114da71feef885ab276b  3418  RELEASE_CHECKLIST-v1.1.0.md
 a631dd6d754bb06d7584ca959b6233ff2fa6246177d635ada2024210ac214015  3490  RELEASE_CHECKLIST-v1.2.0.md
-38004568c0a1713dee021eef1e90ce6ae2d0d1b4257f2e8405c53b5c3897cff5  3362  RELEASE_CHECKLIST-v1.2.1.md
+15e6e299fcfd373eac7a9351af7c9c7b7ed612c1fd5a1bbd7d829a96e7229898  3655  RELEASE_CHECKLIST-v1.2.1.md
 69f1030123277b666b0baa1e77a4d18d3e30ae8deab41247987ed26603c2121b  2078  ROADMAP.md
 41f27656c06f55d1ad059f9ec7738bb2ee884270ccae86b0f4d6316a93efe076  1503  SECURITY.md
 b908e35be920563781c6c83a54eb3f688c575e9f4bc5070dba8e11f1c7e216e8  3114  TEST_REPORT-v1.0.0.md
 31053edce651d7dbc41616c7f663f0aeb2b3ed1ee4c8f82e0fdb0d90e94972fa  3414  TEST_REPORT-v1.1.0.md
 da8fc66b0f30432acd43282d09f85a2e758a01d8b30553d950333d83ab75277b  6105  TEST_REPORT-v1.2.0.md
-def4ebb5907685095b264dc3c146d3306db2d2ce11247e6cfbb0f5193e1435cf  5203  TEST_REPORT-v1.2.1.md
+ce69adba07f745e1f19e0a7191d2685a892c538d4b3224289758bd85256d983c  6245  TEST_REPORT-v1.2.1.md
 5c69098cb03d6033200b42edb4eefb1b9a0a0542e91f05a57ec58c61f5337490  1494  TRADEMARKS.md
 25e42e921a1c9676fcbc53d91d0f3ec06fbd59a363f440f8af66ed9478b9777a  1893  TRAILER_DIMENSIONS_REVIEW-v1.0.0.md
 b5ff0f5a5f38fe36db611563984ff9d59199a7bea1a6a6e7f45d227af57856bc  1482  TRAILER_DIMENSIONS_REVIEW-v1.1.0.md
 6e686157eabc46c3c60b980a8edd6c5259a0841d6f608262bb3bedd5a2f5211a  1647  TRAILER_DIMENSIONS_REVIEW-v1.2.0.md
 93b99e164eb3187f76423f7e941026c6d4a3b27392f7bfcef4797e07ba25a0db  5307  V11_TO_V12_COMPARISON-v1.2.0.md
 b42396cf7d1e5f745a6cba3a37111805532ef96a81686a4c2298e0e8855bd05d  2289  V121_404_FINALIZATION_COMPARISON-v1.2.1.md
+bb71cf3532ada772f87599c9b89ea5adbb8679c3975689a686f6b6f4865e6bad  4075  V121_FINAL_POLISH_COMPARISON-v1.2.1.md
 586a252596f523a428da0539455dfd07f709b58d068def4147d40389a11b2e48  3293  V12_CANDIDATE_VISUAL_FIX_COMPARISON-v1.2.0.md
 f63a087fe4b591682ee8f1307a118cee84ce46443a004613bc2b9fedc4e3c4fe  2711  V12_TO_V121_COMPARISON-v1.2.1.md
 5b83429805bde0e5de33e2ff4a301ab2fd3b58ecac72685675ef1d292039a03d  5063  V1_TO_V11_COMPARISON-v1.1.0.md
@@ -115,11 +116,11 @@ b86dbac8bcc3680fe4a4796fc185df2001e4b79e02a128c18f5bb4a390028f69  124640  docs/t
 1e4b89c40e6582c1491590424e31af732d41dc01cadca62a8b9adf4e86ec1794  79309  docs/verification/pdf/ramp-mixed-color.pdf
 ae1e03e1ae7fff73fb8f0ff6f1853f5a5fa0d0dde3c075985fd86275a647fad7  61697  docs/verification/pdf/side-single-bw.pdf
 7c1b22c86f3c9454bb49bb26fc4b78a9938711d1d477519b315e7ca0ca0a550c  54864  docs/verification/pdf/side-single-color.pdf
-3edbf5ecfcaf3f08ba78e1fdb2c5a2fdaed9d0457f090afed62f33ad1395325e  10404  functional-parity-results-v1.2.1.json
-238ff7bd9109338d19eb2f608beb5e7f191cc3449c4c86c04b387be2c6938f36  17706  i18n-results-v1.2.1.json
-430b14c05cb300f7d92f3f46c48ae26719b118119ca536a935041f4d69e9ec35  13593326  loadcomposer-v1.2.1-test-bundle.zip
+5259857e94faaf7206d4d57980455f7823ff7623e43af70de228ce6be4ad7de2  10404  functional-parity-results-v1.2.1.json
+1a75199f5b4f4753668968fd467c615f78a4fb96c3199a77bfb253368a5d2639  17706  i18n-results-v1.2.1.json
+f225d748e582a630d9575138c75e56fd1afe2b8486d83d3e2d58090b825d6691  13612955  loadcomposer-v1.2.1-test-bundle.zip
 a4fe205d4c44b5b1d2f104e47575ad291dcd654569e3bca1e44d7813675fea17  28001  package-lock.json
-a5e6fc4fb61162e44970ad75890d6a4d35a37a3fa19d23af5e864805ad694fcd  5807  package.json
+fcae9d9c8f42e16c9b28337d7a7c02016233d82f24603051d4617d853e254ff9  5908  package.json
 de556afe2aff150a144230344d0a2cbbf55f8da838894c68a59433d0eb15ab85  231720  print-evidence-v1.2.1/pdf-renders/ramp-mixed-bw-1.png
 123bc95f4e12443e3d511edcaf9571045bf7b45a4452400eedd9903afe669dac  144777  print-evidence-v1.2.1/pdf-renders/ramp-mixed-color-1.png
 a90c098be4605d2ef0a408bac2e8d02a4a871de06738d033e4446903d9b61798  228446  print-evidence-v1.2.1/pdf-renders/ramp-mixed-eight-types-bw-1.png
@@ -437,53 +438,53 @@ bd82fa119ac6f10423dae621b89730c701d8219564b4010801ae0e3ff28793aa  240123  screen
 cbaf693ec682f67b48ba3ecec5c8b2eec9bfddb08e85892ec9f4669da6e70fc2  241439  screenshots-i18n-v1.2.1/320-light-pt-single.png
 6a803ea2227821d36b50f552771d8bb5eeeb6a3f4f9cc991596807f58514327c  58217  screenshots-i18n-v1.2.1/de-invalid-input.png
 a4b66834506c26e161121627d2ed584a99efc562c5dd71c830dd9aec6f695b41  10661  screenshots-i18n-v1.2.1/de-language-menu-open.png
-b3994260a19d0360e1de6fd7aa00cdd442ba7655c66ecdb948462ceca2747de9  2462  screenshots-i18n-v1.2.1/de-pallet-menu-open.png
+59ca44e7586946a4b2a968f08f41eb190d0b8642388ec38c44687be6613aae0e  2407  screenshots-i18n-v1.2.1/de-pallet-menu-open.png
 4c4c17e6e0fcf25eaeb3c29689fe2c86dae46538cb043ee65557584526fd3578  255767  screenshots-i18n-v1.2.1/de-preview-ramp.png
 fb410af58c9e8b33c73e1acff27c73dce444c3ff491454bfc70b341596ac4ebc  136865  screenshots-i18n-v1.2.1/de-preview-side.png
 23ceb5e8383ab90d6be38e8bc3c98ca8f5a2a80e8cf1f2ff4462d6b9d238a571  410562  screenshots-i18n-v1.2.1/de-results-section.png
 4b6a7290d5312eebf2c341bd2bc18c2916af92d481e15a2eff3dd6e7075516bd  56531  screenshots-i18n-v1.2.1/es-invalid-input.png
 6319acaca19e77239574e9428e951c88986bc6405a0313fb13f831433ae0c867  10573  screenshots-i18n-v1.2.1/es-language-menu-open.png
-77e5bbb909eb1523a4cbfd78ebc4f1e855e1ad6ae019dd9dc5f50def1f188046  2863  screenshots-i18n-v1.2.1/es-pallet-menu-open.png
+59d8ce42afe393e9c562b72b0d643008f9222b6288cb9cfc9889541c030a27d6  2583  screenshots-i18n-v1.2.1/es-pallet-menu-open.png
 c7c74277c06af7346a6d72beeec6a18c70cf2fa76baff512bb107eeca48bac10  253615  screenshots-i18n-v1.2.1/es-preview-ramp.png
 2aba5cf7b82f576cba551eb87a43272ef8b520cbb50ebdb0745d2d3d5045a818  131691  screenshots-i18n-v1.2.1/es-preview-side.png
 ffa5d03f51dd327abd1df979d9ffc323d028d747ed16fed0960dae6fb340a0e3  409805  screenshots-i18n-v1.2.1/es-results-section.png
 07eece66d7cc9d05b0b875c71d5f5a03d2247150941419208e11ddabf5e77d4e  57616  screenshots-i18n-v1.2.1/fr-invalid-input.png
 ecdbb55a79ef95786102dbf01280dd0c6bda6ff24f0a1df2a5be44ce2b12cfcf  10619  screenshots-i18n-v1.2.1/fr-language-menu-open.png
-72aa7110087f57482aa1de753761d4c4df8a24da4ec662d4fe7a933168e7a4d5  2941  screenshots-i18n-v1.2.1/fr-pallet-menu-open.png
+34b365aa13e5c0a6790a9e07f3c2c9d80676f948d8d956d2312e14617670b09d  2701  screenshots-i18n-v1.2.1/fr-pallet-menu-open.png
 2acddb283f63da9c31d2f3eacb5f251448cca2856b33eb543776a13aa51c8ddb  251365  screenshots-i18n-v1.2.1/fr-preview-ramp.png
 ddf969c8f33ecfe3cc5c01ad461134a6a792129e2f7cbd960a6ebaae95f93293  130734  screenshots-i18n-v1.2.1/fr-preview-side.png
 bf400e183107504bfc7044f477b822bee47c786e30621fe46a7971546f99e1dd  403484  screenshots-i18n-v1.2.1/fr-results-section.png
 946660bbc006accde03b2112694fa217ba58bfd12cf93c97d2bc5d25f2c8f9cf  54996  screenshots-i18n-v1.2.1/nl-invalid-input.png
 87437f160952005fd692a305800b53b5cd9e8fac29101ecf1ffd71d0c4d29aab  10278  screenshots-i18n-v1.2.1/nl-language-menu-open.png
-c0ebdf4895e232d0d7f300b06a4b5eeda762acef1be61c235a985e758797c4bc  2376  screenshots-i18n-v1.2.1/nl-pallet-menu-open.png
+59e61ffed6e01ca951efe7548887bb1b6706b51bfe9909eac6fa4219da496e37  2404  screenshots-i18n-v1.2.1/nl-pallet-menu-open.png
 b92c2b477f1020ee7f3e555df70826cc7d28e7ff11129a4903bb15b6f810d1d8  255734  screenshots-i18n-v1.2.1/nl-preview-ramp.png
 cdc6f64816a3f27761200cc8af887ba387b4bf265fe921ebb18b777b99bae1ad  132964  screenshots-i18n-v1.2.1/nl-preview-side.png
 0c53379dcd5bc4f057a3d003869af7dc9e3bfe212a02b231ed3ed314378024f4  408246  screenshots-i18n-v1.2.1/nl-results-section.png
 f74eb9404ef78780ba7969b6b756324cff6f8e1f736ed7b267b8099ea14e9262  57468  screenshots-i18n-v1.2.1/pt-invalid-input.png
 31c93f8ec45916d7757c4297c705a0a0f9761a0450676286a8067c3247e6b8ce  10483  screenshots-i18n-v1.2.1/pt-language-menu-open.png
-bf8b1f6375f4f3e82b26144559b620d51af662eecc243a0e78add451d83c4cf5  2795  screenshots-i18n-v1.2.1/pt-pallet-menu-open.png
+6ebd7b4e377ce1cc367c0e5aa16cd6e3a4758cb4c9cb8f64289ff1a7e496ee19  2802  screenshots-i18n-v1.2.1/pt-pallet-menu-open.png
 3045a84bfd0d6789fcb97b304c361d3ee70e7146a403932cf4bec0a7b84ccf7a  251488  screenshots-i18n-v1.2.1/pt-preview-ramp.png
 1abf578c833983fee43ed5d907b8ca85b1662572e94e01886c1c18da46d9ba3c  132660  screenshots-i18n-v1.2.1/pt-preview-side.png
 9c2faf5280afaa227e37272e83d34ba55401830f059a1fb3489e1a8aec74eb6f  408711  screenshots-i18n-v1.2.1/pt-results-section.png
-1ceb940599c52ba7728427d31ef1c984ee656253402d86210d0f8ab15e0d74ba  101484  screenshots-responsive-v1.2.1/screenshot-1024x768-landscape.png
-12abc4a3b6ad1b9a82a400da0e5720b8fb5c62b0cc239cd30d04d606b0cad141  145432  screenshots-responsive-v1.2.1/screenshot-1440x900-desktop.png
+ca448b95c7d1f36dd5ea77155109713f19eb805f867929e326763cf767764c0b  101488  screenshots-responsive-v1.2.1/screenshot-1024x768-landscape.png
+3fd8b2efa8e6a1691b9998d2724783d0cd37f85ac5a459c21df6278b08f6dca3  145442  screenshots-responsive-v1.2.1/screenshot-1440x900-desktop.png
 591bd93f56472d553e4e045e9b2aa8dd9110e526567577b055ab4a715a4d00a1  31926  screenshots-responsive-v1.2.1/screenshot-320x568-single.png
 2c6ebc76f589f6a68590e86b6247f0643b8f5eb1574e72fa17ffc72555352791  50299  screenshots-responsive-v1.2.1/screenshot-390x844-mixed.png
 0165c1603a73b0c620a37b065362140858b2c7c102120e5e44d4b7f4d385175e  71375  screenshots-responsive-v1.2.1/screenshot-768x1024-tablet.png
 8b4a956628d305d1173d0012a748b0b28de24a764fdaad5441320ba771a4ae33  57531  screenshots-responsive-v1.2.1/screenshot-preview-ramp-412x915.png
 ce2938b72aedb86ebd35d401a904c0bb425698270306b8e5d85ff07bf7ca05df  60340  screenshots-responsive-v1.2.1/screenshot-preview-side-412x915.png
-9b027e7635ea91eb10e009f004f5b778ce4812bc40d6b6407331cb24f1ad153b  2830  scripts/build-404-page.mjs
-adbad02ec861ddd522ffafd1c21c15bdfbad44456db497d2360dc767c5c85983  3824  scripts/build-downloads-page.mjs
+d729f48786c454c8dd5c53d3e7b7acd422609ca3bffd10d96bc5cb72abb00632  3228  scripts/build-404-page.mjs
+ab726edf51179e5131a31070f0858dfd975b123c7176bcfd73a1848f3764f6e4  4216  scripts/build-downloads-page.mjs
 2edc7427bce13e7285070e4365b480db62cbe52c6e0719eb0a71d15e5b1fe381  2464  scripts/build-standalone.mjs
 ec55a594d1d17e63c43611cc2bd8d176d670b90fd90d77b12b8b6f981ee99d7e  2173  scripts/create-delivery-controls.mjs
 f84d4cf31ff65539ef22a6f620a4814f26ba5bfad6c8aab1622cd68e36df7cec  8001  scripts/generate-translation-glossary.mjs
 cd9c6870d01981cbd294fc4fe969d52037709e76abb5648c527a2f56d942a068  5687  scripts/package-standalone.mjs
 ce676184b3d49b866690677b17f3882221f6dfe5e3c84f732fe4b7873bdde337  2973  scripts/prepare-release-assets.mjs
-38e5b4d4f3cd959c516a1f5a130ea2920730e73c09ed22242094e488ee681815  3598  scripts/prepare-site-legal.mjs
-4f01e2ed5b211671e77f1163162aa4a5191d59ca92786e91ee1f0c249bf586ca  11532  scripts/templates/404.html
-9d614ca81245dc550c63b99ed7bec1fff99c1cd01f255fc3c46d7ca0394cd236  18285  scripts/templates/downloads-index.html
-1c58fcd978a65a60ce23464b2f95837dbbca445c6a86e464d9f9a0704adb062a  13733  scripts/templates/legal-index.html
-cb8d70184709b5c5220aa49f61558ff08b3c33ee1b64e4282d749fbb0183c936  16544  site/404.html
+b8bed88331cc153e1a46c0c6671ee5b8b86bb4fd9f855883000ed331fc399e62  4043  scripts/prepare-site-legal.mjs
+bd3e05b02a1a4796f1faa5a814626fdd9a7e4aece042a487679b770538ab7aab  11405  scripts/templates/404.html
+79b878fe85fbb38c4bfc45c16db3eb27659b398950a14449eb329eca799c5c28  18141  scripts/templates/downloads-index.html
+a07c07d6d25f439a918e8745449ae8367907acb3b3400a20c8e733de7caa5133  13589  scripts/templates/legal-index.html
+3d98f5057bafb86d2a85f13e7f81abd05130b7af999255e3905a28592558eead  41133  site/404.html
 ee94a81c2039376cefa2ed78d7b868b49cf07e918529dabc130f3ea33647bfd2  3537  site/_headers
 816ef2030cadd390863fdc6320f3eb60017e60d9ca25d5f27984009a4616fd16  18  site/_redirects
 689ecb9c9cba363d7000bb73ffe9bf3ce7b62f3f322d6b91be0a85a43d4e4cf2  455  site/assets/README.md
@@ -496,7 +497,7 @@ c8634694ffe7ad13a1fcbd48be1a55aa822e4b9032a675d7adf7aafa139750ff  12382  site/as
 66c10638024d365950c169d60bf05c6c84578ce4c63fa260a4af73bd36bfd6fb  30283  site/assets/loadcomposer-og-v1.1.0.png
 66c10638024d365950c169d60bf05c6c84578ce4c63fa260a4af73bd36bfd6fb  30283  site/assets/loadcomposer-og-v1.2.0.png
 b764b3d7d5e17374f3c34288f791ec50e155852dedfde370e225980e510596e1  30403  site/assets/loadcomposer-og-v1.2.1.png
-12fff0b40f191c5c455e5b52fe107b48339f8a25e1772e47837fe26ea5421852  37573  site/downloads/index.html
+1b8479f05ab01e22c8382c4a5be4bd361b295ff95088b5f07c9b303797c07f29  62145  site/downloads/index.html
 5221cd2629b63c3a1f6f5037165189a0d080d30bd9e72b5084f7525cb0d2e15a  596114  site/downloads/loadcomposer-v1.0.0-standalone.html
 a61aa3adb5a44be44540a1cb338e28a44726e1d7042804aba654238e0141d9c8  102  site/downloads/loadcomposer-v1.0.0-standalone.html.sha256
 7cc159250dcdd3edcf5d07746443ca450e21842ae4b6a228609d715b6373ce24  628246  site/downloads/loadcomposer-v1.0.0-standalone.zip
@@ -529,7 +530,7 @@ f196f6c2fc051659ab85aefe9131342cc5c3e363fa3abd6601036ff308ae34c0  37470  site/la
 13ba9454ebab8c3bbaf195e978c3b2e7a4cf0f69bc0d732bd622e35d811f5e28  1602  site/legal/PRIVACY.md
 41f27656c06f55d1ad059f9ec7738bb2ee884270ccae86b0f4d6316a93efe076  1503  site/legal/SECURITY.md
 5c69098cb03d6033200b42edb4eefb1b9a0a0542e91f05a57ec58c61f5337490  1494  site/legal/TRADEMARKS.md
-304ac901ef1ffa4436caa46c574ee8e6cb9b2ab0e251e23e92fc1a277810613a  25051  site/legal/index.html
+c12b66426e9a8bb4c74fe837e5bf98b822d6c84ca803e0fc8841dbc946298c0e  49623  site/legal/index.html
 bdc0c4e243cbeda3853663200b29f24515695cd2ecbd5a12f401524f22b23ad5  70  site/robots.txt
 7325e644c643536684d1cf200d8f5a27984188b8eb7b234936a178cd97a74d08  599  site/sitemap.xml
 ce9ca268a560daee028bd267c53ea8d9b065106205dfa80495e751d59a874b5f  16151  tests/404-page-v1.2.1.mjs
@@ -543,10 +544,11 @@ c82dc93b9836a143205ba83beaaa72d299747052fcd3c6d0c6c894b1c46d4e15  6885  tests/co
 6d78af4633aafa86987c7a4d4e79be444edba7dda234944350544895dfabb062  5217  tests/community-scope-audit-v1.1.0.mjs
 74ce64aa170182617908c209ddb1646d63ed35ca7c2cf2a4f8003e261353fcbd  3173  tests/compare-print-renders-v1.0.0.mjs
 0ad00942e78a8ecc10acebb4b652b3547c7169cd67cc2ae4cc9862d605eb7ce8  10198  tests/delivery-packaging-v1.0.0.mjs
-451d153269a95ce4dc064b7aff55d4256bfc7f9087adf2452b6f73f5ae82728f  10625  tests/delivery-packaging-v1.2.1.mjs
+fcde2efc891d63a46eb62d28865b7a0f2961a1f12d206ab8168c1196dda86ce5  10799  tests/delivery-packaging-v1.2.1.mjs
 a03d9ea227fc3a1e78cda8f811c63c1a5eacb1ad337d32e9b122678737e0edc2  20896  tests/downloads-page-v1.2.0.mjs
 18c03c9931041f1b5449c6cca9d2af645938637bc347accd09fd81bb447f92cb  21487  tests/downloads-page-v1.2.1.mjs
 349b105ac6e2ee268ffbcbce8792bdc785e9a3324037992ebcf585f1fb4b9b49  20572  tests/event-audit-v1.0.0.mjs
+42ed0d9fa717f651512764df82fba84a2b82b41f309a96f4a47fb64f01ef9b7d  13610  tests/final-polish-branding-v1.2.1.mjs
 bc581c5ab6e34e934017271df39c3fe30a57813dc4dc859fa0d86657c998f98a  31980  tests/fixtures/baseline-v1.0.0-rc.2/lang/de.json
 e045f4d57b1105efdb5e6c907b52d3005fe3ccaa96b8bb6b56b3dbecccd87601  30245  tests/fixtures/baseline-v1.0.0-rc.2/lang/en.json
 bca9c1a3fa1fb3fbc589297469599ff4ae20383dfa0f164804c197d82877881a  32185  tests/fixtures/baseline-v1.0.0-rc.2/lang/es.json
@@ -682,7 +684,7 @@ a4b02a4655349310649d38595f016f1da4e028d62f982720c028382e728937e3  4935  tests/st
 dda7e689d91882a364635984cb863b33e4d797662bf4a3869bfff38ff487a2b5  11933  tests/trailer-prudential-alerts-v1.0.0.mjs
 5f2c838cc6ed553e5ec6af7d3d448884dd06fe9170d98c63d3eb8b5b7f47b833  12742  tests/ui-consistency-v1.2.1.mjs
 a00f76ec75007a7274bbea13ca0df114340f43d6702b71cfa2e59bf0b0f4eebb  8483  tests/v12-scope-audit-v1.2.0.mjs
-a90a6c9c9bf899a219e870ddf45d20d70e92052cd9b02ac023b07095e14e5f59  6056  tests/v121-404-finalization-scope-audit.mjs
+0266d7204c4e2cae57030b60819bbf598c331b883f85ccd0d1c74020d0bf33a4  6708  tests/v121-404-finalization-scope-audit.mjs
 0b517c75fab02b46fbf622d9869eb4f11d017c865affc14bb10cb234116865f3  6187  tests/v121-scope-audit-v1.2.1.mjs
 d1b5884cc5da1023166cfe3865078944aa53351e8ec7f6e5b96c9e451af06913  1607  tests/version-consistency-v1.0.0.mjs
 34229d5039832014b6cd0f794ad7e33525d69a6d962fc7cd30464ade90286f98  55587  tests/visual-refinements-v1.0.0.mjs
@@ -705,8 +707,41 @@ a20df523b817c7c0ce75d17a38d998281d9c941a32705b51e5bc445360fdafb6  35351  visual-
 488744a4ee99ef291b10988b3c99552f826015446758a6f1bd10817811df60e2  2222  visual-evidence-v1.2.1/before-rc.3-black-and-white-label.png
 457ec248a58f9fb800c7e4c3ecd58758b73b5bd56bc6b79721c807eba3ec88e1  12099  visual-evidence-v1.2.1/before-rc.3-footer-github.png
 b893e3de9bdfa323c516d515de0a26042fa17d771eaf310076eefca796ed71af  17626  visual-evidence-v1.2.1/before-rc.3-locked-orientation.png
-815ab6bc953c1136d44702407eb09cc0199ffc4af8fb81e32975e67b2311e3a1  23087  visual-evidence-v1.2.1/before-rc.3-picker-day-hover.png
+adf7f09b9b47e690aab2d811f754e52af765b0bd76f56d3570aa6615c4b34ab6  23084  visual-evidence-v1.2.1/before-rc.3-picker-day-hover.png
 fb0783a361bae8944c2c0eb7febff49ea09cc4ca14729d90db09f960501c6334  10227  visual-evidence-v1.2.1/before-rc.3-print-legend-normal.png
+a569087c95d8aabfc2a0389c05cd6ec1e3fe23751596b5bb3abfea493b3b09a7  35910  visual-evidence-v1.2.1/final-polish-404/404-de-dark-1366x768.png
+88984b850b9aefa901c1124169e8e85dab6035cbca2c08660d5ab3370e56f3b2  33887  visual-evidence-v1.2.1/final-polish-404/404-en-dark-1366x768.png
+b2709032a346014b1793122a6740c759cbae0669508190a086de3f69d9a08751  34190  visual-evidence-v1.2.1/final-polish-404/404-en-light-1366x768.png
+257ac0a7ede1fc9ccd8d0e01432652ad8b40383fd1dd73541a658f25cb46e49b  32513  visual-evidence-v1.2.1/final-polish-404/404-it-auto-1366x768.png
+f89ba6ea352c22bae0821285d6f89d10ed04334e78cb1f38481c96f3de2e1d7b  32320  visual-evidence-v1.2.1/final-polish-404/404-it-dark-1366x768.png
+aefe3201a6bb1c5ae9bddf893b5af503212ce14a00995a317bbb56d84460aca1  32702  visual-evidence-v1.2.1/final-polish-404/404-it-light-1366x768.png
+77ae25798b19a0a2a7d8c5d22ad0acaaf9bfa9c5be81049fa106598ab73025c7  35477  visual-evidence-v1.2.1/final-polish-404/404-responsive-de-dark-1024x768.png
+5890b264bad5a89e86b59d1ca4b2876a1d3e16d098103c9c99e5672476f57a01  37311  visual-evidence-v1.2.1/final-polish-404/404-responsive-de-dark-1366x768.png
+70f04f4161c91aad8d18c39f9732d142887f4b735a4afbf65c476d66cae919aa  41639  visual-evidence-v1.2.1/final-polish-404/404-responsive-de-dark-1920x1080.png
+175c8815cf12c732a08dd997335403d07a97890e2b21c445ef53f692f25018ee  47462  visual-evidence-v1.2.1/final-polish-404/404-responsive-de-dark-2560x1440.png
+8b1722b11fb4a76f116f0cb129eca586732b8d1a84048438a35c582513970614  31828  visual-evidence-v1.2.1/final-polish-404/404-responsive-de-dark-320x568.png
+61848addcdb75325b65cc79cd113983103d0307ea3ba0a32ef07b7c7c1bcc80a  32129  visual-evidence-v1.2.1/final-polish-404/404-responsive-de-dark-375x812.png
+33ce64c13be4f156e78ffde630b1ca0831a618ca8b2200dae8332bd4feccae74  32457  visual-evidence-v1.2.1/final-polish-404/404-responsive-de-dark-390x844.png
+91bebbacb7c58518ca96b2526c6c2e7ee585908ea4ab8483e27f6e5d480f65bd  35557  visual-evidence-v1.2.1/final-polish-404/404-responsive-de-dark-768x1024.png
+f89ba6ea352c22bae0821285d6f89d10ed04334e78cb1f38481c96f3de2e1d7b  32320  visual-evidence-v1.2.1/final-polish-brand/404-dark-1366x768.png
+aefe3201a6bb1c5ae9bddf893b5af503212ce14a00995a317bbb56d84460aca1  32702  visual-evidence-v1.2.1/final-polish-brand/404-light-1366x768.png
+ce979b6bde6d995d2aafeaf2217c2b656baf051f41182e0d6cb2d384c07f8179  82109  visual-evidence-v1.2.1/final-polish-brand/downloads-dark-1366x768.png
+2c732d291412f8be1a9294a462175890b8676942302c341420c7339b19e351ad  82706  visual-evidence-v1.2.1/final-polish-brand/downloads-light-1366x768.png
+e1a8c713f38668d95e4998b05ea2858c13b77ded7a21fadc57f37d702c85f34a  51654  visual-evidence-v1.2.1/final-polish-brand/legal-dark-1366x768.png
+de6d2544670de13aa87e101ec07c7e5870298c1006948dd3597ab92a387b9599  51497  visual-evidence-v1.2.1/final-polish-brand/legal-light-1366x768.png
+dcb86c802adb010e0ffd8bdf58af6fb8ac6b1baa2ac2b10855b779d18d854b77  115424  visual-evidence-v1.2.1/final-polish-brand/main-dark-1366x768.png
+487346fd4a2089efda04a1bdfcde1f12ff7f06fcf07b017fcdd76290ab18ca86  115917  visual-evidence-v1.2.1/final-polish-downloads/downloads-en-dark-laptop-1366.png
+91df2d659164b4ea5ee08d3dc793fb8e09ff211314881340202d8eaa3ee590d3  97017  visual-evidence-v1.2.1/final-polish-downloads/downloads-en-dark-mobile-390.png
+1fc265bce82ef4e7318caf5b47630e39f83e3fba0524841931703c2a9117a14d  116308  visual-evidence-v1.2.1/final-polish-downloads/downloads-en-light-laptop-1366.png
+4d870953355c108fcc805948963e1bb8ee5a4be441c3907733c81a77b9bfc46c  95921  visual-evidence-v1.2.1/final-polish-downloads/downloads-en-light-mobile-390.png
+eb61f75112b58e290636cd372b097331abbfede55111a9ee22bc9b8db8db444d  113350  visual-evidence-v1.2.1/final-polish-downloads/downloads-it-dark-laptop-1366.png
+f630011b351d9b3cb84e412df461cd6207bd26b14bdbb5226ee25806a9f390c6  94714  visual-evidence-v1.2.1/final-polish-downloads/downloads-it-dark-mobile-390.png
+996e13b22cf31d805167e454670d62bc14238880dfea3bd773daa81597ed1255  113908  visual-evidence-v1.2.1/final-polish-downloads/downloads-it-light-laptop-1366.png
+6d00a7bcefcccce1020b65eacb28d7874ef9de3ef8b005505c6c10998f12f222  94189  visual-evidence-v1.2.1/final-polish-downloads/downloads-it-light-mobile-390.png
+652880d2320a75b24ebeb9ed5be6e67544b9dac7d58dba1141ebfc28edc8dafb  73922  visual-evidence-v1.2.1/final-polish-legal/legal-de-auto-1366x768.png
+d812339f5345ed40d2ac47d172d25e32ef36d400ec17008d055bb05bbee88031  68295  visual-evidence-v1.2.1/final-polish-legal/legal-de-dark-390x844.png
+841f5fadca081f7fabba719035e4146e2227d778fa842699cba7cdd4f5682250  72195  visual-evidence-v1.2.1/final-polish-legal/legal-en-dark-1920x1080.png
+3a3af88ac8461bf1db02f6c5679ec4e80a2843ca8efa3c8753c77f4b41e70b77  71279  visual-evidence-v1.2.1/final-polish-legal/legal-it-light-1920x1080.png
 543e5935358cb02a01724939a0a20821579a3f4feacf47c4a5742cd38edd0c4b  16684  visual-evidence-v1.2.1/rc.3-detail-1440-dark-1200x800.png
 38886e500b702a99bad973f3ecbf6f4499a8ec6eb9f20952d217e54f6378a2f5  16827  visual-evidence-v1.2.1/rc.3-detail-1440-light-1200x800.png
 a36f5231c17d02371f14ebf0e17876ea5bc7f14d29c33bd6d13f9bc0f9820503  17164  visual-evidence-v1.2.1/rc.3-detail-320-dark-1200x800.png
@@ -800,5 +835,5 @@ fb0783a361bae8944c2c0eb7febff49ea09cc4ca14729d90db09f960501c6334  10227  visual-
 79536f6b8b10cc7af4a0bb9d9575be0acd33eb63afe1c3b2aa9e5fd569b0e219  10399  visual-evidence-v1.2.1/v1.2.1-print-legend-rotated.png
 38886e500b702a99bad973f3ecbf6f4499a8ec6eb9f20952d217e54f6378a2f5  16827  visual-evidence-v1.2.1/v1.2.1-selected-normal.png
 244d890bc8f26be71525610ec4230b194a7bc55233fbc7878b18095ca144edec  16831  visual-evidence-v1.2.1/v1.2.1-selected-rotated.png
-e433ad4ef48ff044a700e1ca4f48049b3efb7fac5982b9bbbf41febc3ed3cedd  973976  visual-refinements-results-v1.2.1.json
-c2ae0075728638bb3e3c0280b56dcdc03803d3e929f70c841b1076485e910b08  29787  visual-responsive-results-v1.2.1.json
+8ed9d00f883254dbfb0618acc1d1b546429b407043259834c7f8464b3934529e  974082  visual-refinements-results-v1.2.1.json
+c6cc8aaf2ba663c63ff519ff2a42fd317fbfd27ba66902cbc2cf3946062318cd  29787  visual-responsive-results-v1.2.1.json

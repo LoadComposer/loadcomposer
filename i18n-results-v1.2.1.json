@@ -1,13 +1,13 @@
 {
   "version": "1.2.1",
-  "generatedAt": "2026-08-14T05:51:07.220Z",
+  "generatedAt": "2026-08-14T07:08:11.919Z",
   "passed": 18,
   "failed": 0,
   "results": [
     {
       "name": "Catalog JSON, parity, metadata, and future-language registry",
       "status": "PASS",
-      "durationMs": 2,
+      "durationMs": 5,
       "details": {
         "keys": 514,
         "codes": [
@@ -28,7 +28,7 @@
     {
       "name": "HTTP root publication",
       "status": "PASS",
-      "durationMs": 161,
+      "durationMs": 183,
       "details": {
         "lang": "en",
         "dir": "ltr",
@@ -44,7 +44,7 @@
     {
       "name": "HTTP subfolder publication with relative paths",
       "status": "PASS",
-      "durationMs": 142,
+      "durationMs": 154,
       "details": {
         "lang": "it",
         "heading": "Dati carico",
@@ -58,7 +58,7 @@
     {
       "name": "Automatic regional-language resolution",
       "status": "PASS",
-      "durationMs": 1317,
+      "durationMs": 1374,
       "details": [
         {
           "browserLocale": "de-DE",
@@ -110,7 +110,7 @@
     {
       "name": "New-language manual workflow, persistence, UI states, and fallback",
       "status": "PASS",
-      "durationMs": 4278,
+      "durationMs": 4196,
       "details": [
         {
           "code": "de",
@@ -182,7 +182,7 @@
     {
       "name": "404 catalog uses Italian fallback",
       "status": "PASS",
-      "durationMs": 145,
+      "durationMs": 132,
       "details": {
         "lang": "it",
         "heading": "Dati carico",
@@ -198,7 +198,7 @@
     {
       "name": "Malformed JSON uses Italian fallback",
       "status": "PASS",
-      "durationMs": 148,
+      "durationMs": 156,
       "details": {
         "lang": "it",
         "heading": "Dati carico",
@@ -214,7 +214,7 @@
     {
       "name": "Missing English key falls back to Italian, never undefined",
       "status": "PASS",
-      "durationMs": 155,
+      "durationMs": 143,
       "details": {
         "lang": "en",
         "heading": "Dati carico",
@@ -225,7 +225,7 @@
     {
       "name": "Missing Italian catalog falls back to English",
       "status": "PASS",
-      "durationMs": 158,
+      "durationMs": 137,
       "details": {
         "lang": "en",
         "heading": "Load data"
@@ -234,7 +234,7 @@
     {
       "name": "Catalog cache avoids repeat requests",
       "status": "PASS",
-      "durationMs": 221,
+      "durationMs": 215,
       "details": {
         "before": [
           "./lang/index.json",
@@ -251,7 +251,7 @@
     {
       "name": "Unregistered language and path traversal are rejected before URL construction",
       "status": "PASS",
-      "durationMs": 182,
+      "durationMs": 162,
       "details": {
         "before": [
           "./lang/index.json",
@@ -275,7 +275,7 @@
     {
       "name": "Catalog strings are inert text, not executable HTML",
       "status": "PASS",
-      "durationMs": 159,
+      "durationMs": 141,
       "details": {
         "heading": "<img src=x onerror=\"window.__catalogXss=1\">Catalog title",
         "xss": 0,
@@ -287,7 +287,7 @@
     {
       "name": "Language selector accessibility and persistence",
       "status": "PASS",
-      "durationMs": 343,
+      "durationMs": 305,
       "details": {
         "lang": "it",
         "preference": "it",
@@ -309,7 +309,7 @@
     {
       "name": "Blocked localStorage does not block the app",
       "status": "PASS",
-      "durationMs": 333,
+      "durationMs": 322,
       "details": {
         "lang": "nl",
         "resolved": [
@@ -326,7 +326,7 @@
     {
       "name": "Standalone works through file:// without lang requests",
       "status": "PASS",
-      "durationMs": 344,
+      "durationMs": 313,
       "details": {
         "lang": "nl",
         "headings": {
@@ -362,7 +362,7 @@
     {
       "name": "No remote dependencies in modular or standalone output",
       "status": "PASS",
-      "durationMs": 4,
+      "durationMs": 3,
       "details": {
         "externalDependencies": [],
         "authorizedLinks": [

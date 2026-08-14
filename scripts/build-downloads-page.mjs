@@ -8,6 +8,8 @@ const VERSION = "1.2.1";
 const DOWNLOADS = path.join(ROOT, "site", "downloads");
 const TEMPLATE = path.join(ROOT, "scripts", "templates", "downloads-index.html");
 const OUTPUT = path.join(DOWNLOADS, "index.html");
+const COMPACT_BRAND_DAY = path.join(ROOT, "site", "assets", "loadcomposer-mobile-day.svg");
+const COMPACT_BRAND_NIGHT = path.join(ROOT, "site", "assets", "loadcomposer-mobile-night.svg");
 const HTML_NAME = `loadcomposer-v${VERSION}-standalone.html`;
 const ZIP_NAME = `loadcomposer-v${VERSION}-standalone.zip`;
 const HTML_PATH = path.join(DOWNLOADS, HTML_NAME);
@@ -60,7 +62,7 @@ function sha256(filePath) {
   return crypto.createHash("sha256").update(fs.readFileSync(filePath)).digest("hex");
 }
 
-for (const filePath of [TEMPLATE, HTML_PATH, ZIP_PATH, INDEX_PATH]) {
+for (const filePath of [TEMPLATE, HTML_PATH, ZIP_PATH, INDEX_PATH, COMPACT_BRAND_DAY, COMPACT_BRAND_NIGHT]) {
   if (!fs.existsSync(filePath)) throw new Error(`Required input missing: ${path.relative(ROOT, filePath)}`);
 }
 
@@ -88,6 +90,8 @@ const pageData = JSON.stringify({
 let output = fs.readFileSync(TEMPLATE, "utf8");
 const replacements = new Map([
   ["__DOWNLOADS_DATA__", pageData],
+  ["__COMPACT_BRAND_DAY__", fs.readFileSync(COMPACT_BRAND_DAY, "utf8").trim()],
+  ["__COMPACT_BRAND_NIGHT__", fs.readFileSync(COMPACT_BRAND_NIGHT, "utf8").trim()],
   ["__HTML_SHA256__", sha256(HTML_PATH)],
   ["__ZIP_SHA256__", sha256(ZIP_PATH)]
 ]);

@@ -1,6 +1,6 @@
 {
   "version": "1.2.1",
-  "generatedAt": "2026-08-14T05:54:14.078Z",
+  "generatedAt": "2026-08-14T07:10:51.943Z",
   "pickerScenarios": 49,
   "pickerTouchScenarios": 7,
   "blackAndWhiteScenarios": 7,
@@ -15,6 +15,10 @@
     "before-rc.3-locked-orientation.png",
     "before-rc.3-picker-day-hover.png",
     "before-rc.3-print-legend-normal.png",
+    "final-polish-404",
+    "final-polish-brand",
+    "final-polish-downloads",
+    "final-polish-legal",
     "rc.3-detail-1440-dark-1200x800.png",
     "rc.3-detail-1440-light-1200x800.png",
     "rc.3-detail-320-dark-1200x800.png",

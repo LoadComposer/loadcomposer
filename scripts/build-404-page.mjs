@@ -6,6 +6,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VERSION = "1.2.1";
 const TEMPLATE = path.join(ROOT, "scripts", "templates", "404.html");
 const OUTPUT = path.join(ROOT, "site", "404.html");
+const COMPACT_BRAND_DAY = path.join(ROOT, "site", "assets", "loadcomposer-mobile-day.svg");
+const COMPACT_BRAND_NIGHT = path.join(ROOT, "site", "assets", "loadcomposer-mobile-night.svg");
 const INDEX_PATH = path.join(ROOT, "site", "lang", "index.json");
 const REQUIRED_KEYS = [
   "footer.download",
@@ -36,7 +38,7 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;");
 }
 
-for (const filePath of [TEMPLATE, INDEX_PATH]) {
+for (const filePath of [TEMPLATE, INDEX_PATH, COMPACT_BRAND_DAY, COMPACT_BRAND_NIGHT]) {
   if (!fs.existsSync(filePath)) throw new Error(`Required 404 input missing: ${path.relative(ROOT, filePath)}`);
 }
 
@@ -65,7 +67,12 @@ const languageOptions = languages
   .join("");
 
 let output = fs.readFileSync(TEMPLATE, "utf8");
-for (const [marker, value] of [["__404_DATA__", pageData], ["__LANGUAGE_OPTIONS__", languageOptions]]) {
+for (const [marker, value] of [
+  ["__404_DATA__", pageData],
+  ["__LANGUAGE_OPTIONS__", languageOptions],
+  ["__COMPACT_BRAND_DAY__", fs.readFileSync(COMPACT_BRAND_DAY, "utf8").trim()],
+  ["__COMPACT_BRAND_NIGHT__", fs.readFileSync(COMPACT_BRAND_NIGHT, "utf8").trim()]
+]) {
   if (!output.includes(marker)) throw new Error(`404 template marker missing: ${marker}`);
   output = output.replace(marker, value);
 }

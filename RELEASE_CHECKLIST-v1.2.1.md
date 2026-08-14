@@ -1,48 +1,57 @@
-# Release checklist — LoadComposer v1.2.1 definitive private candidate
+# Release checklist — LoadComposer v1.2.1 final-polish candidate
 
 Date: 2026-08-14
 
 ## Admission and scope
 
-- [x] Received v1.2.1 candidate SHA-256 exactly matches `c2ef52af6f8db9e5b40db20110f1623b0884e79a173aa8c2df47e07e02dc58e9`.
-- [x] Input ZIP integrity, one root, path safety, `771` files, manifest `769/769` and checksum list `770/770` PASS.
-- [x] Version remains exactly `1.2.1` / `v1.2.1`; no new release entry was created.
-- [x] Final authored scope is limited to the 404 shell, its build support, five i18n keys, tests and release reports.
-- [x] ROADMAP is byte-identical; no future or functional feature changed.
+- [x] Input SHA-256 exactly matches `d2d3c06e50bbd867d624623dbcc846331dab79ac448c5671f6602c15a7231c66`.
+- [x] ZIP integrity, root `delivery-v1.2.1/`, `791` files, manifest `789/789` and checksum list `790/790` PASS.
+- [x] Version remains exactly `1.2.1` / `v1.2.1`; no new release entry exists.
+- [x] Product-facing scope is limited to compact secondary branding and the approved 404 prominence/action hierarchy.
+- [x] No Main, Download-content, Legal-content, planner, algorithm, geometry, vehicle, print or PDF redesign/refactor was performed.
 
-## Public pages and 404
+## Compact branding
 
-- [x] Exactly four public page shells exist: Main, Download, Legal and custom 404.
-- [x] Versioned standalone HTML files are classified as artifacts, not site shells.
-- [x] Legal files remain raw documents; print/schema views remain runtime-only.
-- [x] 404 uses the approved secondary-page header, palette, typography, controls, focus and responsive philosophy.
-- [x] 404 supports the same seven languages and shared `loadcomposer.language` preference.
-- [x] 404 supports Auto/Light/Dark through shared `loadcomposer.theme` and updates `theme-color`.
-- [x] English fallback stays visible without JavaScript; the body is never permanently hidden.
-- [x] Home, Download, Legal and favicon paths are root-relative and correct on nested missing routes.
-- [x] `noindex,follow`, `/404.html` `no-store`, HTTP 404 status and sitemap exclusion are preserved.
-- [x] Language/theme matrix `21/21`, responsive `8/8`, nested routes `4/4`, no-script and 200% zoom PASS.
-- [x] Targeted Italian, English and German screenshots in light/dark/auto were reviewed.
+- [x] Compact lockup is derived from the exact existing Main mobile day/night SVG assets.
+- [x] LC pixel symbol and outlined Load/Composer wordmark are preserved.
+- [x] No new logo, generic square, emoji, font, remote resource, payoff or version badge was added.
+- [x] Download, Legal and 404 contain the same day/night compact lockup markup and dimensions.
+- [x] Brand link is root-safe `/` and remains correct for nested 404 routes.
+- [x] Desktop size is `170 × 40.1 px`; 320 px viewport size is `150 × 35.4 px`.
+- [x] Responsive brand matrix `21/21` dark plus `3/3` light PASS with zero overlap or overflow.
+- [x] Dark comparison screenshots for Main, Download, Legal and 404 reviewed.
+- [x] Light comparison screenshots for Download, Legal and 404 reviewed.
 
-## Frozen candidate behavior
+## 404 hierarchy
 
-- [x] Main and Legal outputs are byte-identical to the received candidate.
-- [x] Download template/content/logic are unchanged; generated output differs only by current standalone checksums.
-- [x] Standalone differs only by five embedded, unused 404 catalog keys.
-- [x] Seven catalogs contain an identical `514`-key set.
-- [x] All seven canonical/public legal pairs remain byte-identical.
-- [x] Main semantics `28/28`, Main responsive `10/10`, Download `21/21 + 40/40`, Legal `21/21 + 10/10` PASS.
+- [x] Localized “Page not found” remains the only H1.
+- [x] Decorative status `404` remains `aria-hidden="true"` and computes between 48 and 64 px.
+- [x] Primary Home action occupies the first full row on desktop.
+- [x] Download and Legal actions share an equal secondary row on desktop.
+- [x] All three actions stack full-width below 420 px.
+- [x] Italian/English/German desktop and 2560/1920/1366/1024/768/390/375/320 visual cases PASS.
+- [x] Nested missing routes `4/4`, HTTP 404, favicon, Home, Download and Legal paths PASS.
+- [x] Seven languages, Auto/Light/Dark, no-script fallback, noindex, no-store and no redirect remain intact.
+
+## Frozen behavior and data
+
+- [x] Main output is byte-identical (`7d802b95…0cdac`).
+- [x] Standalone HTML and ZIP are byte-identical (`ef89ada8…96fb0`; `04c8e665…50c`).
+- [x] Catalogs remain `7 × 514`; no translation key/value changed.
+- [x] Seven canonical/public Legal document pairs remain byte-identical.
+- [x] ROADMAP, routes, cache policy, CSP, sitemap and headers are unchanged.
 - [x] Functional parity `35/35`; geometry `7,542/7,542`, zero differences.
 - [x] Remaining-space `7/7`; trailer `29/29`; regression `37/37`; XSS `9/9`; events/state `20/20 + 7/7` PASS.
 - [x] PDF `33 + 35 + 42 = 110/110`; raster parity `47/47` pixel-identical.
+- [x] Download `21/21 + 40/40`; Legal `21/21 + 10/10`; 404 `21/21 + 8/8 + 4/4` PASS.
 - [x] Cache `165/165`, repository runtime `16/16`, hardening and workflow-policy audits PASS.
 
 ## Packaging and publication boundary
 
 - [x] v1.0.0, v1.1.0 and v1.2.0 public Download artifacts remain preserved.
-- [x] Final v1.2.1 standalone HTML/ZIP and both sidecars are internally consistent.
-- [x] Final test bundle has one `loadcomposer-v1.2.1-test-bundle/` root and includes frozen historical fixtures plus the pre-404 standalone fixture.
-- [x] Final delivery has one `delivery-v1.2.1/` root; manifest is `N−2`; checksum list is `N−1` and includes the manifest.
+- [x] Final v1.2.1 standalone HTML/ZIP and both sidecars remain internally consistent.
+- [x] Test bundle includes frozen historical fixtures and the final-polish branding test.
+- [x] Delivery has one `delivery-v1.2.1/` root; manifest is `N−2`; checksum list is `N−1` and hashes the manifest.
 - [x] No commit, push, merge, tag, GitHub Release, deployment, Cloudflare, DNS or domain mutation was performed.
 - [ ] Real online redirects, edge headers/cache and custom-404 serving require authorized post-deployment verification.
-- [ ] Independent private review and final approval remain pending.
+- [ ] Independent final review and publication approval remain pending.

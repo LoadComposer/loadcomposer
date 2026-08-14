@@ -47,6 +47,7 @@
     "test:legal-inline": "node tests/legal-inline-v1.0.0.mjs",
     "test:legal-page": "node tests/legal-page-v1.2.1.mjs",
     "test:404": "node tests/404-page-v1.2.1.mjs",
+    "test:final-polish": "node tests/final-polish-branding-v1.2.1.mjs",
     "test:404-scope": "node tests/v121-404-finalization-scope-audit.mjs",
     "test:orientation-audit": "node tests/orientation-source-audit-v1.0.0.mjs",
     "test:visual-refinements": "node tests/visual-refinements-v1.0.0.mjs",
@@ -68,7 +69,7 @@
     "test:workflow-policy": "node tests/workflow-policy-v1.0.0.mjs",
     "test:delivery": "node tests/delivery-packaging-v1.2.1.mjs",
     "test:legacy": "npm run test:version && npm run test:regression && npm run test:security && npm run test:events && npm run test:responsive",
-    "test": "npm run build && npm run check:glossary && npm run check:i18n-js && npm run check:js && npm run check:node && npm run test:catalogs && npm run test:plural-audit && npm run test:plural-engine && npm run test:quantity-rendering && npm run test:i18n && npm run test:scope-freeze && npm run test:scope-audit && npm run test:404-scope && npm run test:community-feedback && npm run test:downloads && npm run test:remaining-space && npm run test:ui-v121 && npm run test:trailer-prudential && npm run test:cache-policy && npm run test:legal-inline && npm run test:legal-page && npm run test:404 && npm run test:orientation-audit && npm run test:repository && npm run test:runtime && npm run test:hardening && npm run test:workflow-policy && npm run test:visual-refinements && npm run test:i18n-visual && npm run test:parity && npm run test:geometry && npm run test:legacy && npm run test:print-i18n && npm run test:print-parity && npm run test:print-locales && npm run test:print-plurals"
+    "test": "npm run build && npm run check:glossary && npm run check:i18n-js && npm run check:js && npm run check:node && npm run test:catalogs && npm run test:plural-audit && npm run test:plural-engine && npm run test:quantity-rendering && npm run test:i18n && npm run test:scope-freeze && npm run test:scope-audit && npm run test:404-scope && npm run test:community-feedback && npm run test:downloads && npm run test:remaining-space && npm run test:ui-v121 && npm run test:trailer-prudential && npm run test:cache-policy && npm run test:legal-inline && npm run test:legal-page && npm run test:404 && npm run test:final-polish && npm run test:orientation-audit && npm run test:repository && npm run test:runtime && npm run test:hardening && npm run test:workflow-policy && npm run test:visual-refinements && npm run test:i18n-visual && npm run test:parity && npm run test:geometry && npm run test:legacy && npm run test:print-i18n && npm run test:print-parity && npm run test:print-locales && npm run test:print-plurals"
   },
   "devDependencies": {
     "@sparticuz/chromium": "149.0.0",

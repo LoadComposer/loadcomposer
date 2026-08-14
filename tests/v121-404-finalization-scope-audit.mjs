@@ -12,13 +12,19 @@ const NEW_KEYS = [
   "404.description",
   "404.navigationAria"
 ];
-const PROTECTED_HASHES = {
+const EXPECTED_FINAL_HASHES = {
   "site/index.html": "7d802b95af70433b75a4267538c40fcb03705d54689e7b67fb75ce98fef0cdac",
-  "site/legal/index.html": "304ac901ef1ffa4436caa46c574ee8e6cb9b2ab0e251e23e92fc1a277810613a",
-  "scripts/templates/downloads-index.html": "9d614ca81245dc550c63b99ed7bec1fff99c1cd01f255fc3c46d7ca0394cd236",
-  "scripts/templates/legal-index.html": "1c58fcd978a65a60ce23464b2f95837dbbca445c6a86e464d9f9a0704adb062a",
-  "scripts/build-downloads-page.mjs": "adbad02ec861ddd522ffafd1c21c15bdfbad44456db497d2360dc767c5c85983",
-  "scripts/prepare-site-legal.mjs": "38e5b4d4f3cd959c516a1f5a130ea2920730e73c09ed22242094e488ee681815",
+  "site/downloads/index.html": "1b8479f05ab01e22c8382c4a5be4bd361b295ff95088b5f07c9b303797c07f29",
+  "site/legal/index.html": "c12b66426e9a8bb4c74fe837e5bf98b822d6c84ca803e0fc8841dbc946298c0e",
+  "site/404.html": "3d98f5057bafb86d2a85f13e7f81abd05130b7af999255e3905a28592558eead",
+  "scripts/templates/downloads-index.html": "79b878fe85fbb38c4bfc45c16db3eb27659b398950a14449eb329eca799c5c28",
+  "scripts/templates/legal-index.html": "a07c07d6d25f439a918e8745449ae8367907acb3b3400a20c8e733de7caa5133",
+  "scripts/templates/404.html": "bd3e05b02a1a4796f1faa5a814626fdd9a7e4aece042a487679b770538ab7aab",
+  "scripts/build-downloads-page.mjs": "ab726edf51179e5131a31070f0858dfd975b123c7176bcfd73a1848f3764f6e4",
+  "scripts/prepare-site-legal.mjs": "b8bed88331cc153e1a46c0c6671ee5b8b86bb4fd9f855883000ed331fc399e62",
+  "scripts/build-404-page.mjs": "d729f48786c454c8dd5c53d3e7b7acd422609ca3bffd10d96bc5cb72abb00632",
+  "site/assets/loadcomposer-mobile-day.svg": "c5cec1be899a039c1ad90b7cef686d742b0cbb4fb4c318e918d3e3311a549c5e",
+  "site/assets/loadcomposer-mobile-night.svg": "c8634694ffe7ad13a1fcbd48be1a55aa822e4b9032a675d7adf7aafa139750ff",
   "site/_headers": "ee94a81c2039376cefa2ed78d7b868b49cf07e918529dabc130f3ea33647bfd2",
   "site/sitemap.xml": "7325e644c643536684d1cf200d8f5a27984188b8eb7b234936a178cd97a74d08",
   "ROADMAP.md": "69f1030123277b666b0baa1e77a4d18d3e30ae8deab41247987ed26603c2121b",
@@ -51,8 +57,8 @@ function embedded(source) {
   return { full: match[0], prefix: match[1], json: match[2], suffix: match[3], parsed: JSON.parse(match[2]) };
 }
 
-for (const [relative, expected] of Object.entries(PROTECTED_HASHES)) {
-  assert.equal(sha256(path.join(ROOT, relative)), expected, `Protected candidate file changed: ${relative}`);
+for (const [relative, expected] of Object.entries(EXPECTED_FINAL_HASHES)) {
+  assert.equal(sha256(path.join(ROOT, relative)), expected, `Final-polish scope file changed unexpectedly: ${relative}`);
 }
 for (const legal of ["LICENSE", "LICENSE.it.md", "NOTICE", "PRIVACY.md", "SECURITY.md", "TRADEMARKS.md", "COMMERCIAL-LICENSING.md"]) {
   assert.ok(
@@ -107,12 +113,12 @@ const normalizedDownload = fs.readFileSync(path.join(ROOT, "site", "downloads", 
   .replaceAll(currentZipHash, PRE_404_ZIP_HASH);
 assert.equal(
   crypto.createHash("sha256").update(normalizedDownload).digest("hex"),
-  "987ddd072827d4652caeca1ff632850de778dd129f9d6de4213d410b59781eff",
-  "Download changed outside the deterministically updated standalone checksums."
+  "2cb5f06b6a7ec32cc882d026f31ca016aee684b1445ca82ae3a0034ae9e22471",
+  "Download changed outside the approved compact branding and deterministic standalone checksums."
 );
 
 console.log(
-  "v1.2.1 404 finalization scope PASS: Main, Download behavior/template, Legal, routing, sitemap, roadmap and 7 legal documents exact; " +
-  "standalone differs only by five unused 404 catalog keys and Download output only by the resulting checksums; " +
-  "algorithms, geometry, print and planner markup unchanged."
+  "v1.2.1 final-polish scope PASS: Main, routing, sitemap, roadmap, canonical logo assets and 7 legal documents exact; " +
+  "Download/Legal/404 use the approved compact lockup, standalone remains limited to five unused 404 catalog keys, " +
+  "and algorithms, geometry, print and planner markup remain unchanged."
 );
