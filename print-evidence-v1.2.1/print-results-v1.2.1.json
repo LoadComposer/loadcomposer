@@ -1,0 +1,6928 @@
+{
+  "app": "loadcomposer-v1.2.1-standalone.html",
+  "generatedAt": "2026-07-24T10:00:00.000Z",
+  "browser": "Chromium 149 via Playwright 1.61.1",
+  "baselineOnly": false,
+  "guardResults": {
+    "nonOk": "PASS",
+    "validationError": "PASS",
+    "message": "Stampa operativa non disponibile: lo schema selezionato non è CI STA."
+  },
+  "pageQualityRegression": {
+    "mixedRampPages": {
+      "rc4": {
+        "ramp-mixed-color.pdf": 1,
+        "ramp-mixed-bw.pdf": 1
+      }
+    },
+    "isolatedWordGuard": {
+      "fixtureWords": 4,
+      "detected": true,
+      "status": "PASS"
+    },
+    "nearEmptyPageChecks": "PASS",
+    "warehouseOnlyPageChecks": "PASS",
+    "isolatedWordPageChecks": "PASS",
+    "unnecessaryPageChecks": "PASS",
+    "pngDecodeChecks": {
+      "files": 47,
+      "failures": 0,
+      "signature": "PASS",
+      "iend": "PASS",
+      "completeDecode": "PASS",
+      "positiveDimensions": "PASS",
+      "nonEmptyImages": "PASS",
+      "sideSingleStackedColorPage1": "PASS"
+    },
+    "nominalLabelsAlpha13": {
+      "expectationSource": {
+        "single": "result.input.pallet.length × result.input.pallet.width",
+        "mixed": "result.input.types[rect.typeIndex].length × width",
+        "applicationRectDimensionTextUsed": false
+      },
+      "expectedDimensions": [
+        {
+          "scenario": "side-single-color.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-bw.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-color.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-bw.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-euro-locked-rotated-color.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-euro-locked-rotated-bw.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-euro-locked-rotated-color.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-euro-locked-rotated-bw.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-industrial-locked-rotated-color.pdf",
+          "values": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ]
+        },
+        {
+          "scenario": "side-single-industrial-locked-rotated-bw.pdf",
+          "values": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ]
+        },
+        {
+          "scenario": "ramp-single-industrial-locked-rotated-color.pdf",
+          "values": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ]
+        },
+        {
+          "scenario": "ramp-single-industrial-locked-rotated-bw.pdf",
+          "values": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ]
+        },
+        {
+          "scenario": "side-single-custom-1450x900-locked-rotated-color.pdf",
+          "values": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ]
+        },
+        {
+          "scenario": "side-single-custom-1450x900-locked-rotated-bw.pdf",
+          "values": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ]
+        },
+        {
+          "scenario": "ramp-single-custom-1450x900-locked-rotated-color.pdf",
+          "values": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ]
+        },
+        {
+          "scenario": "ramp-single-custom-1450x900-locked-rotated-bw.pdf",
+          "values": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ]
+        },
+        {
+          "scenario": "side-mixed-color.pdf",
+          "values": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-mixed-bw.pdf",
+          "values": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-mixed-color.pdf",
+          "values": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-mixed-bw.pdf",
+          "values": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-mixed-long-legend.pdf",
+          "values": [
+            "1000×800",
+            "950×800",
+            "900×800",
+            "1000×700",
+            "950×700",
+            "900×700"
+          ]
+        },
+        {
+          "scenario": "ramp-mixed-eight-types-bw.pdf",
+          "values": [
+            "900×800",
+            "1000×800",
+            "1000×700",
+            "900×700",
+            "900×700",
+            "950×700",
+            "950×800",
+            "950×800"
+          ]
+        },
+        {
+          "scenario": "side-mixed-eight-types-bw.pdf",
+          "values": [
+            "900×800",
+            "1000×800",
+            "1000×700",
+            "900×700",
+            "900×700",
+            "950×700",
+            "950×800",
+            "950×800"
+          ]
+        },
+        {
+          "scenario": "side-single-long-id-color.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-stacked-color.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-stacked-bw.pdf",
+          "values": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        }
+      ],
+      "drawnDimensions": [
+        {
+          "scenario": "side-single-color.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-bw.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-color.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-bw.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-euro-locked-rotated-color.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-euro-locked-rotated-bw.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-euro-locked-rotated-color.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-euro-locked-rotated-bw.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-industrial-locked-rotated-color.pdf",
+          "previewColor": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ],
+          "previewBw": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ],
+          "pdfCanvas": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ]
+        },
+        {
+          "scenario": "side-single-industrial-locked-rotated-bw.pdf",
+          "previewColor": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ],
+          "previewBw": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ],
+          "pdfCanvas": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ]
+        },
+        {
+          "scenario": "ramp-single-industrial-locked-rotated-color.pdf",
+          "previewColor": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ],
+          "previewBw": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ],
+          "pdfCanvas": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ]
+        },
+        {
+          "scenario": "ramp-single-industrial-locked-rotated-bw.pdf",
+          "previewColor": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ],
+          "previewBw": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ],
+          "pdfCanvas": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×1000"
+          ]
+        },
+        {
+          "scenario": "side-single-custom-1450x900-locked-rotated-color.pdf",
+          "previewColor": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ],
+          "previewBw": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ],
+          "pdfCanvas": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ]
+        },
+        {
+          "scenario": "side-single-custom-1450x900-locked-rotated-bw.pdf",
+          "previewColor": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ],
+          "previewBw": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ],
+          "pdfCanvas": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ]
+        },
+        {
+          "scenario": "ramp-single-custom-1450x900-locked-rotated-color.pdf",
+          "previewColor": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ],
+          "previewBw": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ],
+          "pdfCanvas": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ]
+        },
+        {
+          "scenario": "ramp-single-custom-1450x900-locked-rotated-bw.pdf",
+          "previewColor": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ],
+          "previewBw": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ],
+          "pdfCanvas": [
+            "1450×900",
+            "1450×900",
+            "1450×900",
+            "1450×900"
+          ]
+        },
+        {
+          "scenario": "side-mixed-color.pdf",
+          "previewColor": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-mixed-bw.pdf",
+          "previewColor": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-mixed-color.pdf",
+          "previewColor": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-mixed-bw.pdf",
+          "previewColor": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×1000",
+            "1200×1000",
+            "1200×1000",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-mixed-long-legend.pdf",
+          "previewColor": [
+            "1000×800",
+            "950×800",
+            "900×800",
+            "1000×700",
+            "950×700",
+            "900×700"
+          ],
+          "previewBw": [
+            "1000×800",
+            "950×800",
+            "900×800",
+            "1000×700",
+            "950×700",
+            "900×700"
+          ],
+          "pdfCanvas": [
+            "1000×800",
+            "950×800",
+            "900×800",
+            "1000×700",
+            "950×700",
+            "900×700"
+          ]
+        },
+        {
+          "scenario": "ramp-mixed-eight-types-bw.pdf",
+          "previewColor": [
+            "900×800",
+            "1000×800",
+            "1000×700",
+            "900×700",
+            "900×700",
+            "950×700",
+            "950×800",
+            "950×800"
+          ],
+          "previewBw": [
+            "900×800",
+            "1000×800",
+            "1000×700",
+            "900×700",
+            "900×700",
+            "950×700",
+            "950×800",
+            "950×800"
+          ],
+          "pdfCanvas": [
+            "900×800",
+            "1000×800",
+            "1000×700",
+            "900×700",
+            "900×700",
+            "950×700",
+            "950×800",
+            "950×800"
+          ]
+        },
+        {
+          "scenario": "side-mixed-eight-types-bw.pdf",
+          "previewColor": [
+            "900×800",
+            "1000×800",
+            "1000×700",
+            "900×700",
+            "900×700",
+            "950×700",
+            "950×800",
+            "950×800"
+          ],
+          "previewBw": [
+            "900×800",
+            "1000×800",
+            "1000×700",
+            "900×700",
+            "900×700",
+            "950×700",
+            "950×800",
+            "950×800"
+          ],
+          "pdfCanvas": [
+            "900×800",
+            "1000×800",
+            "1000×700",
+            "900×700",
+            "900×700",
+            "950×700",
+            "950×800",
+            "950×800"
+          ]
+        },
+        {
+          "scenario": "side-single-long-id-color.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "side-single-stacked-color.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        },
+        {
+          "scenario": "ramp-single-stacked-bw.pdf",
+          "previewColor": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "previewBw": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ],
+          "pdfCanvas": [
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800",
+            "1200×800"
+          ]
+        }
+      ],
+      "rotatedRectangles": [
+        {
+          "scenario": "side-single-color.pdf",
+          "rotated": 6,
+          "total": 10
+        },
+        {
+          "scenario": "side-single-bw.pdf",
+          "rotated": 6,
+          "total": 10
+        },
+        {
+          "scenario": "ramp-single-color.pdf",
+          "rotated": 6,
+          "total": 10
+        },
+        {
+          "scenario": "ramp-single-bw.pdf",
+          "rotated": 6,
+          "total": 10
+        },
+        {
+          "scenario": "side-single-euro-locked-rotated-color.pdf",
+          "rotated": 6,
+          "total": 6
+        },
+        {
+          "scenario": "side-single-euro-locked-rotated-bw.pdf",
+          "rotated": 6,
+          "total": 6
+        },
+        {
+          "scenario": "ramp-single-euro-locked-rotated-color.pdf",
+          "rotated": 6,
+          "total": 6
+        },
+        {
+          "scenario": "ramp-single-euro-locked-rotated-bw.pdf",
+          "rotated": 6,
+          "total": 6
+        },
+        {
+          "scenario": "side-single-industrial-locked-rotated-color.pdf",
+          "rotated": 5,
+          "total": 5
+        },
+        {
+          "scenario": "side-single-industrial-locked-rotated-bw.pdf",
+          "rotated": 5,
+          "total": 5
+        },
+        {
+          "scenario": "ramp-single-industrial-locked-rotated-color.pdf",
+          "rotated": 5,
+          "total": 5
+        },
+        {
+          "scenario": "ramp-single-industrial-locked-rotated-bw.pdf",
+          "rotated": 5,
+          "total": 5
+        },
+        {
+          "scenario": "side-single-custom-1450x900-locked-rotated-color.pdf",
+          "rotated": 4,
+          "total": 4
+        },
+        {
+          "scenario": "side-single-custom-1450x900-locked-rotated-bw.pdf",
+          "rotated": 4,
+          "total": 4
+        },
+        {
+          "scenario": "ramp-single-custom-1450x900-locked-rotated-color.pdf",
+          "rotated": 4,
+          "total": 4
+        },
+        {
+          "scenario": "ramp-single-custom-1450x900-locked-rotated-bw.pdf",
+          "rotated": 4,
+          "total": 4
+        },
+        {
+          "scenario": "side-mixed-color.pdf",
+          "rotated": 4,
+          "total": 7
+        },
+        {
+          "scenario": "side-mixed-bw.pdf",
+          "rotated": 4,
+          "total": 7
+        },
+        {
+          "scenario": "ramp-mixed-color.pdf",
+          "rotated": 4,
+          "total": 7
+        },
+        {
+          "scenario": "ramp-mixed-bw.pdf",
+          "rotated": 4,
+          "total": 7
+        },
+        {
+          "scenario": "ramp-mixed-long-legend.pdf",
+          "rotated": 6,
+          "total": 6
+        },
+        {
+          "scenario": "ramp-mixed-eight-types-bw.pdf",
+          "rotated": 8,
+          "total": 8
+        },
+        {
+          "scenario": "side-mixed-eight-types-bw.pdf",
+          "rotated": 8,
+          "total": 8
+        },
+        {
+          "scenario": "side-single-long-id-color.pdf",
+          "rotated": 0,
+          "total": 4
+        },
+        {
+          "scenario": "side-single-stacked-color.pdf",
+          "rotated": 5,
+          "total": 5
+        },
+        {
+          "scenario": "ramp-single-stacked-bw.pdf",
+          "rotated": 5,
+          "total": 5
+        }
+      ],
+      "singleInvertedOccurrences": 0,
+      "singleRotatedInversionStatus": "PASS",
+      "mixedTypeIndexExpectationStatus": "PASS",
+      "status": "PASS"
+    }
+  },
+  "summary": {
+    "pdfs": 33,
+    "requiredEvidencePdfs": 26,
+    "xssPdfs": 7,
+    "pngRenders": 47,
+    "failures": 0
+  },
+  "records": [
+    {
+      "scenario": "side-single-color.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 10,
+        "placed": 10,
+        "capacity": 11,
+        "floorPositions": 10,
+        "floorCapacity": 11,
+        "layers": 1,
+        "rectangles": 10,
+        "rotatedRectangles": 6,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 20,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 6,
+        "totalRectangles": 10,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-color-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 156,
+            "characters": 929,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.28058944490396104,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-color-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.28058944490396104,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-single-bw.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 10,
+        "placed": 10,
+        "capacity": 11,
+        "floorPositions": 10,
+        "floorCapacity": 11,
+        "layers": 1,
+        "rectangles": 10,
+        "rotatedRectangles": 6,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 20,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 6,
+        "totalRectangles": 10,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-bw-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 160,
+            "characters": 939,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.18602523894862605,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-bw-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.18602523894862605,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-single-color.pdf",
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 10,
+        "placed": 10,
+        "capacity": 11,
+        "floorPositions": 10,
+        "floorCapacity": 11,
+        "layers": 1,
+        "rectangles": 10,
+        "rotatedRectangles": 6,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 20,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 6,
+        "totalRectangles": 10,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 10,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-single-color-1.png",
+          "pdf-renders/ramp-single-color-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 39,
+            "characters": 214,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.184219482354563,
+            "contentBoundingRatio": 0.6780167264038232
+          },
+          {
+            "page": 2,
+            "words": 117,
+            "characters": 705,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07828224083264405,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-single-color-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.184219482354563,
+            "contentBoundingRatio": 0.6780167264038232,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-single-color-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07828224083264405,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-single-bw.pdf",
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 10,
+        "placed": 10,
+        "capacity": 11,
+        "floorPositions": 10,
+        "floorCapacity": 11,
+        "layers": 1,
+        "rectangles": 10,
+        "rotatedRectangles": 6,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 20,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 6,
+        "totalRectangles": 10,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 10,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-single-bw-1.png",
+          "pdf-renders/ramp-single-bw-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 41,
+            "characters": 219,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.11873621450234353,
+            "contentBoundingRatio": 0.6780167264038232
+          },
+          {
+            "page": 2,
+            "words": 119,
+            "characters": 710,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07845025158533223,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-single-bw-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.11873621450234353,
+            "contentBoundingRatio": 0.6780167264038232,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-single-bw-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07845025158533223,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-single-euro-locked-rotated-color.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 6,
+        "placed": 6,
+        "capacity": 7,
+        "floorPositions": 6,
+        "floorCapacity": 7,
+        "layers": 1,
+        "rectangles": 6,
+        "rotatedRectangles": 6,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 12,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 6,
+        "totalRectangles": 6,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-euro-locked-rotated-color-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 162,
+            "characters": 951,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.2665569570811506,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-euro-locked-rotated-color-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.2665569570811506,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-single-euro-locked-rotated-bw.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 6,
+        "placed": 6,
+        "capacity": 7,
+        "floorPositions": 6,
+        "floorCapacity": 7,
+        "layers": 1,
+        "rectangles": 6,
+        "rotatedRectangles": 6,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 12,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 6,
+        "totalRectangles": 6,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-euro-locked-rotated-bw-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 166,
+            "characters": 961,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.15077457264957264,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-euro-locked-rotated-bw-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.15077457264957264,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-single-euro-locked-rotated-color.pdf",
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 6,
+        "placed": 6,
+        "capacity": 7,
+        "floorPositions": 6,
+        "floorCapacity": 7,
+        "layers": 1,
+        "rectangles": 6,
+        "rotatedRectangles": 6,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 12,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 6,
+        "totalRectangles": 6,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 6,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-single-euro-locked-rotated-color-1.png",
+          "pdf-renders/ramp-single-euro-locked-rotated-color-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 45,
+            "characters": 245,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.16591995221027478,
+            "contentBoundingRatio": 0.6780167264038232
+          },
+          {
+            "page": 2,
+            "words": 117,
+            "characters": 696,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07811279409061667,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-single-euro-locked-rotated-color-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.16591995221027478,
+            "contentBoundingRatio": 0.6780167264038232,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-single-euro-locked-rotated-color-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07811279409061667,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-single-euro-locked-rotated-bw.pdf",
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 6,
+        "placed": 6,
+        "capacity": 7,
+        "floorPositions": 6,
+        "floorCapacity": 7,
+        "layers": 1,
+        "rectangles": 6,
+        "rotatedRectangles": 6,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 12,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 6,
+        "totalRectangles": 6,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 6,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-single-euro-locked-rotated-bw-1.png",
+          "pdf-renders/ramp-single-euro-locked-rotated-bw-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 47,
+            "characters": 250,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.08384669952210275,
+            "contentBoundingRatio": 0.6780167264038232
+          },
+          {
+            "page": 2,
+            "words": 119,
+            "characters": 701,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07828080484330484,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-single-euro-locked-rotated-bw-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.08384669952210275,
+            "contentBoundingRatio": 0.6780167264038232,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-single-euro-locked-rotated-bw-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07828080484330484,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-single-industrial-locked-rotated-color.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 5,
+        "placed": 5,
+        "capacity": 5,
+        "floorPositions": 5,
+        "floorCapacity": 5,
+        "layers": 1,
+        "rectangles": 5,
+        "rotatedRectangles": 5,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 10,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "previewColorDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "previewBwDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "physicalDimensions": [
+          "1000×1200",
+          "1000×1200",
+          "1000×1200",
+          "1000×1200",
+          "1000×1200"
+        ],
+        "rotatedRectangles": 5,
+        "totalRectangles": 5,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-industrial-locked-rotated-color-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 162,
+            "characters": 959,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.26672137786049077,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-industrial-locked-rotated-color-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.26672137786049077,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-single-industrial-locked-rotated-bw.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 5,
+        "placed": 5,
+        "capacity": 5,
+        "floorPositions": 5,
+        "floorCapacity": 5,
+        "layers": 1,
+        "rectangles": 5,
+        "rotatedRectangles": 5,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 10,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "previewColorDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "previewBwDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "physicalDimensions": [
+          "1000×1200",
+          "1000×1200",
+          "1000×1200",
+          "1000×1200",
+          "1000×1200"
+        ],
+        "rotatedRectangles": 5,
+        "totalRectangles": 5,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-industrial-locked-rotated-bw-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 166,
+            "characters": 969,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.1519362880249977,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-industrial-locked-rotated-bw-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.1519362880249977,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-single-industrial-locked-rotated-color.pdf",
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 5,
+        "placed": 5,
+        "capacity": 5,
+        "floorPositions": 5,
+        "floorCapacity": 5,
+        "layers": 1,
+        "rectangles": 5,
+        "rotatedRectangles": 5,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 10,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "previewColorDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "previewBwDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "physicalDimensions": [
+          "1000×1200",
+          "1000×1200",
+          "1000×1200",
+          "1000×1200",
+          "1000×1200"
+        ],
+        "rotatedRectangles": 5,
+        "totalRectangles": 5,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 5,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-single-industrial-locked-rotated-color-1.png",
+          "pdf-renders/ramp-single-industrial-locked-rotated-color-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 45,
+            "characters": 253,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.16607432106424042,
+            "contentBoundingRatio": 0.6780167264038232
+          },
+          {
+            "page": 2,
+            "words": 117,
+            "characters": 696,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07811351208528627,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-single-industrial-locked-rotated-color-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.16607432106424042,
+            "contentBoundingRatio": 0.6780167264038232,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-single-industrial-locked-rotated-color-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07811351208528627,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-single-industrial-locked-rotated-bw.pdf",
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 5,
+        "placed": 5,
+        "capacity": 5,
+        "floorPositions": 5,
+        "floorCapacity": 5,
+        "layers": 1,
+        "rectangles": 5,
+        "rotatedRectangles": 5,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 10,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "previewColorDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "previewBwDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×1000"
+        ],
+        "physicalDimensions": [
+          "1000×1200",
+          "1000×1200",
+          "1000×1200",
+          "1000×1200",
+          "1000×1200"
+        ],
+        "rotatedRectangles": 5,
+        "totalRectangles": 5,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 5,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-single-industrial-locked-rotated-bw-1.png",
+          "pdf-renders/ramp-single-industrial-locked-rotated-bw-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 47,
+            "characters": 258,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.08485907200624943,
+            "contentBoundingRatio": 0.6780167264038232
+          },
+          {
+            "page": 2,
+            "words": 119,
+            "characters": 701,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07828152283797445,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-single-industrial-locked-rotated-bw-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.08485907200624943,
+            "contentBoundingRatio": 0.6780167264038232,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-single-industrial-locked-rotated-bw-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07828152283797445,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-single-custom-1450x900-locked-rotated-color.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 4,
+        "placed": 4,
+        "capacity": 6,
+        "floorPositions": 4,
+        "floorCapacity": 6,
+        "layers": 1,
+        "rectangles": 4,
+        "rotatedRectangles": 4,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 8,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "previewColorDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "previewBwDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "pdfCanvasDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "physicalDimensions": [
+          "900×1450",
+          "900×1450",
+          "900×1450",
+          "900×1450"
+        ],
+        "rotatedRectangles": 4,
+        "totalRectangles": 4,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-custom-1450x900-locked-rotated-color-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 163,
+            "characters": 963,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.26697554797353185,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-custom-1450x900-locked-rotated-color-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.26697554797353185,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-single-custom-1450x900-locked-rotated-bw.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 4,
+        "placed": 4,
+        "capacity": 6,
+        "floorPositions": 4,
+        "floorCapacity": 6,
+        "layers": 1,
+        "rectangles": 4,
+        "rotatedRectangles": 4,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 8,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "previewColorDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "previewBwDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "pdfCanvasDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "physicalDimensions": [
+          "900×1450",
+          "900×1450",
+          "900×1450",
+          "900×1450"
+        ],
+        "rotatedRectangles": 4,
+        "totalRectangles": 4,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-custom-1450x900-locked-rotated-bw-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 167,
+            "characters": 973,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.14820845970039517,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-custom-1450x900-locked-rotated-bw-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.14820845970039517,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-single-custom-1450x900-locked-rotated-color.pdf",
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 4,
+        "placed": 4,
+        "capacity": 6,
+        "floorPositions": 4,
+        "floorCapacity": 6,
+        "layers": 1,
+        "rectangles": 4,
+        "rotatedRectangles": 4,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 8,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "previewColorDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "previewBwDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "pdfCanvasDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "physicalDimensions": [
+          "900×1450",
+          "900×1450",
+          "900×1450",
+          "900×1450"
+        ],
+        "rotatedRectangles": 4,
+        "totalRectangles": 4,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 4,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-single-custom-1450x900-locked-rotated-color-1.png",
+          "pdf-renders/ramp-single-custom-1450x900-locked-rotated-color-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 46,
+            "characters": 257,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.1662997713904972,
+            "contentBoundingRatio": 0.6780167264038232
+          },
+          {
+            "page": 2,
+            "words": 117,
+            "characters": 696,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07812212802132157,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-single-custom-1450x900-locked-rotated-color-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.1662997713904972,
+            "contentBoundingRatio": 0.6780167264038232,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-single-custom-1450x900-locked-rotated-color-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07812212802132157,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-single-custom-1450x900-locked-rotated-bw.pdf",
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 4,
+        "placed": 4,
+        "capacity": 6,
+        "floorPositions": 4,
+        "floorCapacity": 6,
+        "layers": 1,
+        "rectangles": 4,
+        "rotatedRectangles": 4,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 8,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "previewColorDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "previewBwDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "pdfCanvasDimensions": [
+          "1450×900",
+          "1450×900",
+          "1450×900",
+          "1450×900"
+        ],
+        "physicalDimensions": [
+          "900×1450",
+          "900×1450",
+          "900×1450",
+          "900×1450"
+        ],
+        "rotatedRectangles": 4,
+        "totalRectangles": 4,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 4,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-single-custom-1450x900-locked-rotated-bw-1.png",
+          "pdf-renders/ramp-single-custom-1450x900-locked-rotated-bw-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 48,
+            "characters": 262,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.08214146218178477,
+            "contentBoundingRatio": 0.6780167264038232
+          },
+          {
+            "page": 2,
+            "words": 119,
+            "characters": 701,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07829013877400974,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-single-custom-1450x900-locked-rotated-bw-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.08214146218178477,
+            "contentBoundingRatio": 0.6780167264038232,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-single-custom-1450x900-locked-rotated-bw-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07829013877400974,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-mixed-color.pdf",
+      "mode": "mixed",
+      "view": "side",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 7,
+        "placed": 7,
+        "capacity": 7,
+        "floorPositions": 7,
+        "layers": 1,
+        "typeCount": 2,
+        "rectangles": 7,
+        "rotatedRectangles": 4,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 21,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "1000×1200",
+          "1200×1000",
+          "1000×1200",
+          "1200×800",
+          "800×1200",
+          "1200×800",
+          "800×1200"
+        ],
+        "rotatedRectangles": 4,
+        "totalRectangles": 7,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-mixed-color-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 163,
+            "characters": 908,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.2638716570168183,
+            "contentBoundingRatio": 0.8296026330300524
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-mixed-color-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.2638716570168183,
+            "contentBoundingRatio": 0.8296026330300524,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-mixed-bw.pdf",
+      "mode": "mixed",
+      "view": "side",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 7,
+        "placed": 7,
+        "capacity": 7,
+        "floorPositions": 7,
+        "layers": 1,
+        "typeCount": 2,
+        "rectangles": 7,
+        "rotatedRectangles": 4,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 21,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "1000×1200",
+          "1200×1000",
+          "1000×1200",
+          "1200×800",
+          "800×1200",
+          "1200×800",
+          "800×1200"
+        ],
+        "rotatedRectangles": 4,
+        "totalRectangles": 7,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-mixed-bw-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 167,
+            "characters": 918,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.1578037404650308,
+            "contentBoundingRatio": 0.8296026330300524
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-mixed-bw-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.1578037404650308,
+            "contentBoundingRatio": 0.8296026330300524,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-mixed-color.pdf",
+      "mode": "mixed",
+      "view": "ramp",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 7,
+        "placed": 7,
+        "capacity": 7,
+        "floorPositions": 7,
+        "layers": 1,
+        "typeCount": 2,
+        "rectangles": 7,
+        "rotatedRectangles": 4,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 21,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "1000×1200",
+          "1200×1000",
+          "1000×1200",
+          "1200×800",
+          "800×1200",
+          "1200×800",
+          "800×1200"
+        ],
+        "rotatedRectangles": 4,
+        "totalRectangles": 7,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 7,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-mixed-color-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 161,
+            "characters": 898,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.21935311552247036,
+            "contentBoundingRatio": 0.8429573338847532
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-mixed-color-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.21935311552247036,
+            "contentBoundingRatio": 0.8429573338847532,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-mixed-bw.pdf",
+      "mode": "mixed",
+      "view": "ramp",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 7,
+        "placed": 7,
+        "capacity": 7,
+        "floorPositions": 7,
+        "layers": 1,
+        "typeCount": 2,
+        "rectangles": 7,
+        "rotatedRectangles": 4,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 21,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×1000",
+          "1200×1000",
+          "1200×1000",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "1000×1200",
+          "1200×1000",
+          "1000×1200",
+          "1200×800",
+          "800×1200",
+          "1200×800",
+          "800×1200"
+        ],
+        "rotatedRectangles": 4,
+        "totalRectangles": 7,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 7,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-mixed-bw-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 165,
+            "characters": 908,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.14941110077198788,
+            "contentBoundingRatio": 0.8429573338847532
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-mixed-bw-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.14941110077198788,
+            "contentBoundingRatio": 0.8429573338847532,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-mixed-long-legend.pdf",
+      "mode": "mixed",
+      "view": "ramp",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 6,
+        "placed": 6,
+        "capacity": 6,
+        "floorPositions": 6,
+        "layers": 1,
+        "typeCount": 6,
+        "rectangles": 6,
+        "rotatedRectangles": 6,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 18,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1000×800",
+          "950×800",
+          "900×800",
+          "1000×700",
+          "950×700",
+          "900×700"
+        ],
+        "previewColorDimensions": [
+          "1000×800",
+          "950×800",
+          "900×800",
+          "1000×700",
+          "950×700",
+          "900×700"
+        ],
+        "previewBwDimensions": [
+          "1000×800",
+          "950×800",
+          "900×800",
+          "1000×700",
+          "950×700",
+          "900×700"
+        ],
+        "pdfCanvasDimensions": [
+          "1000×800",
+          "950×800",
+          "900×800",
+          "1000×700",
+          "950×700",
+          "900×700"
+        ],
+        "physicalDimensions": [
+          "800×1000",
+          "800×950",
+          "800×900",
+          "700×1000",
+          "700×950",
+          "700×900"
+        ],
+        "rotatedRectangles": 6,
+        "totalRectangles": 6,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 6,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-mixed-long-legend-1.png",
+          "pdf-renders/ramp-mixed-long-legend-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 139,
+            "characters": 789,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.19287849807003032,
+            "contentBoundingRatio": 0.8018851668045216
+          },
+          {
+            "page": 2,
+            "words": 108,
+            "characters": 629,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07627975369910854,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-mixed-long-legend-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.19287849807003032,
+            "contentBoundingRatio": 0.8018851668045216,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-mixed-long-legend-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07627975369910854,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-mixed-eight-types-bw.pdf",
+      "mode": "mixed",
+      "view": "ramp",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 8,
+        "placed": 8,
+        "capacity": 8,
+        "floorPositions": 8,
+        "layers": 1,
+        "typeCount": 8,
+        "rectangles": 8,
+        "rotatedRectangles": 8,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 24,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "900×800",
+          "1000×800",
+          "1000×700",
+          "900×700",
+          "900×700",
+          "950×700",
+          "950×800",
+          "950×800"
+        ],
+        "previewColorDimensions": [
+          "900×800",
+          "1000×800",
+          "1000×700",
+          "900×700",
+          "900×700",
+          "950×700",
+          "950×800",
+          "950×800"
+        ],
+        "previewBwDimensions": [
+          "900×800",
+          "1000×800",
+          "1000×700",
+          "900×700",
+          "900×700",
+          "950×700",
+          "950×800",
+          "950×800"
+        ],
+        "pdfCanvasDimensions": [
+          "900×800",
+          "1000×800",
+          "1000×700",
+          "900×700",
+          "900×700",
+          "950×700",
+          "950×800",
+          "950×800"
+        ],
+        "physicalDimensions": [
+          "800×900",
+          "800×1000",
+          "700×1000",
+          "700×900",
+          "700×900",
+          "700×950",
+          "800×950",
+          "800×950"
+        ],
+        "rotatedRectangles": 8,
+        "totalRectangles": 8,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 8,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-mixed-eight-types-bw-1.png",
+          "pdf-renders/ramp-mixed-eight-types-bw-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 160,
+            "characters": 900,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.11604445248598474,
+            "contentBoundingRatio": 0.8338301856447018
+          },
+          {
+            "page": 2,
+            "words": 136,
+            "characters": 795,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.11500048823637533,
+            "contentBoundingRatio": 0.3194501884018013
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-mixed-eight-types-bw-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.11604445248598474,
+            "contentBoundingRatio": 0.8338301856447018,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-mixed-eight-types-bw-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.11500048823637533,
+            "contentBoundingRatio": 0.3194501884018013,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-mixed-eight-types-bw.pdf",
+      "mode": "mixed",
+      "view": "side",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 8,
+        "placed": 8,
+        "capacity": 8,
+        "floorPositions": 8,
+        "layers": 1,
+        "typeCount": 8,
+        "rectangles": 8,
+        "rotatedRectangles": 8,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 24,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "900×800",
+          "1000×800",
+          "1000×700",
+          "900×700",
+          "900×700",
+          "950×700",
+          "950×800",
+          "950×800"
+        ],
+        "previewColorDimensions": [
+          "900×800",
+          "1000×800",
+          "1000×700",
+          "900×700",
+          "900×700",
+          "950×700",
+          "950×800",
+          "950×800"
+        ],
+        "previewBwDimensions": [
+          "900×800",
+          "1000×800",
+          "1000×700",
+          "900×700",
+          "900×700",
+          "950×700",
+          "950×800",
+          "950×800"
+        ],
+        "pdfCanvasDimensions": [
+          "900×800",
+          "1000×800",
+          "1000×700",
+          "900×700",
+          "900×700",
+          "950×700",
+          "950×800",
+          "950×800"
+        ],
+        "physicalDimensions": [
+          "800×900",
+          "800×1000",
+          "700×1000",
+          "700×900",
+          "700×900",
+          "700×950",
+          "800×950",
+          "800×950"
+        ],
+        "rotatedRectangles": 8,
+        "totalRectangles": 8,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-mixed-eight-types-bw-1.png",
+          "pdf-renders/side-mixed-eight-types-bw-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 171,
+            "characters": 1011,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.1318999287749288,
+            "contentBoundingRatio": 0.743422450831725
+          },
+          {
+            "page": 2,
+            "words": 110,
+            "characters": 639,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.10426933990442055,
+            "contentBoundingRatio": 0.3153626447477254
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-mixed-eight-types-bw-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.1318999287749288,
+            "contentBoundingRatio": 0.743422450831725,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/side-mixed-eight-types-bw-2.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.10426933990442055,
+            "contentBoundingRatio": 0.3153626447477254,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-single-long-id-color.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 4,
+        "placed": 4,
+        "capacity": 11,
+        "floorPositions": 4,
+        "floorCapacity": 11,
+        "layers": 1,
+        "rectangles": 4,
+        "rotatedRectangles": 0,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 12,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "rotatedRectangles": 0,
+        "totalRectangles": 4,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-long-id-color-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 157,
+            "characters": 969,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.2727173513463836,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-long-id-color-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.2727173513463836,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "side-single-stacked-color.pdf",
+      "mode": "single",
+      "view": "side",
+      "colorMode": "colore",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 10,
+        "placed": 10,
+        "capacity": 22,
+        "floorPositions": 5,
+        "floorCapacity": 11,
+        "layers": 2,
+        "rectangles": 5,
+        "rotatedRectangles": 5,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 20,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 5,
+        "totalRectangles": 5,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": null,
+        "rampColorTextBackingRects": null
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 1100,
+        "imageNaturalHeight": 470
+      },
+      "pdf": {
+        "pages": 1,
+        "widthPt": 841.92,
+        "heightPt": 594.96,
+        "orientation": "landscape",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/side-single-stacked-color-1.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 160,
+            "characters": 948,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.2820749758753791,
+            "contentBoundingRatio": 0.8485433324143001
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/side-single-stacked-color-1.png",
+            "width": 1404,
+            "height": 992,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.2820749758753791,
+            "contentBoundingRatio": 0.8485433324143001,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "ramp-single-stacked-bw.pdf",
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "B/N magazzino",
+      "fixture": {
+        "ok": true,
+        "validationError": false,
+        "validationValid": true,
+        "requested": 10,
+        "placed": 10,
+        "capacity": 22,
+        "floorPositions": 5,
+        "floorCapacity": 11,
+        "layers": 2,
+        "rectangles": 5,
+        "rotatedRectangles": 5,
+        "printDisabled": false
+      },
+      "labels": {
+        "lines": 20,
+        "colorBwParity": true,
+        "nominalDimensions": true,
+        "expectedDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewColorDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "previewBwDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "pdfCanvasDimensions": [
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800",
+          "1200×800"
+        ],
+        "physicalDimensions": [
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200",
+          "800×1200"
+        ],
+        "rotatedRectangles": 5,
+        "totalRectangles": 5,
+        "invertedSingleOccurrences": 0,
+        "expectationBuilderUsesApplicationFunction": false,
+        "noRotatedAbbreviation": true,
+        "rampBwTextBackingRects": 5,
+        "rampColorTextBackingRects": 0
+      },
+      "dom": {
+        "minStandardFontPt": 8.5,
+        "imageNaturalWidth": 720,
+        "imageNaturalHeight": 1200
+      },
+      "pdf": {
+        "pages": 2,
+        "widthPt": 594.96,
+        "heightPt": 841.92,
+        "orientation": "portrait",
+        "outOfBoundsWords": 0,
+        "renders": [
+          "pdf-renders/ramp-single-stacked-bw-1.png",
+          "pdf-renders/ramp-single-stacked-bw-2.png"
+        ],
+        "pageQuality": [
+          {
+            "page": 1,
+            "words": 41,
+            "characters": 227,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.09833942192813161,
+            "contentBoundingRatio": 0.6780167264038232
+          },
+          {
+            "page": 2,
+            "words": 123,
+            "characters": 721,
+            "warehouseOnly": false,
+            "fewIsolatedWords": false,
+            "nearlyEmptyRender": false,
+            "inkPixelRatio": 0.07876257926661152,
+            "contentBoundingRatio": 0.24382524584137488
+          }
+        ],
+        "pngAudits": [
+          {
+            "file": "pdf-renders/ramp-single-stacked-bw-1.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.09833942192813161,
+            "contentBoundingRatio": 0.6780167264038232,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          },
+          {
+            "file": "pdf-renders/ramp-single-stacked-bw-2.png",
+            "width": 992,
+            "height": 1404,
+            "bitDepth": 8,
+            "colorType": 2,
+            "iendPresent": true,
+            "decodedBytes": 4178304,
+            "decoderErrors": 0,
+            "inkPixelRatio": 0.07876257926661152,
+            "contentBoundingRatio": 0.24382524584137488,
+            "chunkTypes": [
+              "IHDR",
+              "sRGB",
+              "pHYs",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IDAT",
+              "IEND"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "xssRecords": [
+    {
+      "payload": "<img src=x onerror=\"window.__xss=1\">",
+      "renderedPayload": "<img src=x onerror=\"window.__xss=1\">",
+      "fieldCoverage": [
+        "nome",
+        "identificativo"
+      ],
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "B/N magazzino",
+      "file": "pdf/xss/xss-01-single-ramp-bw.pdf",
+      "minStandardFontPt": 8.5,
+      "pages": 2,
+      "status": "PASS"
+    },
+    {
+      "payload": "<svg onload=\"window.__xss=2\"></svg>",
+      "renderedPayload": "<svg onload=\"window.__xss=2\"></svg>",
+      "fieldCoverage": [
+        "nome",
+        "identificativo"
+      ],
+      "mode": "mixed",
+      "view": "side",
+      "colorMode": "colore",
+      "file": "pdf/xss/xss-02-mixed-side-color.pdf",
+      "minStandardFontPt": 8.5,
+      "pages": 1,
+      "status": "PASS"
+    },
+    {
+      "payload": "</td></tr><script>window.__xss=3</script>",
+      "renderedPayload": "</td></tr><script>window.__xss=3</sc",
+      "fieldCoverage": [
+        "nome",
+        "identificativo"
+      ],
+      "mode": "single",
+      "view": "side",
+      "colorMode": "B/N magazzino",
+      "file": "pdf/xss/xss-03-single-side-bw.pdf",
+      "minStandardFontPt": 8.5,
+      "pages": 1,
+      "status": "PASS"
+    },
+    {
+      "payload": "\"><input autofocus onfocus=\"window.__xss=4\">",
+      "renderedPayload": "\"><input autofocus onfocus=\"window._",
+      "fieldCoverage": [
+        "nome",
+        "identificativo"
+      ],
+      "mode": "mixed",
+      "view": "ramp",
+      "colorMode": "colore",
+      "file": "pdf/xss/xss-04-mixed-ramp-color.pdf",
+      "minStandardFontPt": 8.5,
+      "pages": 1,
+      "status": "PASS"
+    },
+    {
+      "payload": "javascript:alert(1)",
+      "renderedPayload": "javascript:alert(1)",
+      "fieldCoverage": [
+        "nome",
+        "identificativo"
+      ],
+      "mode": "single",
+      "view": "side",
+      "colorMode": "B/N magazzino",
+      "file": "pdf/xss/xss-05-single-side-bw.pdf",
+      "minStandardFontPt": 8.5,
+      "pages": 1,
+      "status": "PASS"
+    },
+    {
+      "payload": "Test & <prova> \"apostrofo\" 'accenti àèìòù'",
+      "renderedPayload": "Test & <prova> \"apostrofo\" 'accenti",
+      "fieldCoverage": [
+        "nome",
+        "identificativo"
+      ],
+      "mode": "mixed",
+      "view": "side",
+      "colorMode": "colore",
+      "file": "pdf/xss/xss-06-mixed-side-color.pdf",
+      "minStandardFontPt": 8.5,
+      "pages": 1,
+      "status": "PASS"
+    },
+    {
+      "payload": "</script><script>window.__xss=5</script>",
+      "renderedPayload": "</script><script>window.__xss=5</scr",
+      "fieldCoverage": [
+        "nome",
+        "identificativo"
+      ],
+      "mode": "single",
+      "view": "ramp",
+      "colorMode": "B/N magazzino",
+      "file": "pdf/xss/xss-07-single-ramp-bw.pdf",
+      "minStandardFontPt": 8.5,
+      "pages": 2,
+      "status": "PASS"
+    }
+  ],
+  "pngValidation": [
+    {
+      "file": "pdf-renders/ramp-mixed-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.14941110077198788,
+      "contentBoundingRatio": 0.8429573338847532,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-mixed-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.21935311552247036,
+      "contentBoundingRatio": 0.8429573338847532,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-mixed-eight-types-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.11604445248598474,
+      "contentBoundingRatio": 0.8338301856447018,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-mixed-eight-types-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.11500048823637533,
+      "contentBoundingRatio": 0.3194501884018013,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-mixed-long-legend-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.19287849807003032,
+      "contentBoundingRatio": 0.8018851668045216,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-mixed-long-legend-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07627975369910854,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.11873621450234353,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07845025158533223,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.184219482354563,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-color-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07828224083264405,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-custom-1450x900-locked-rotated-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.08214146218178477,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-custom-1450x900-locked-rotated-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07829013877400974,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-custom-1450x900-locked-rotated-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.1662997713904972,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-custom-1450x900-locked-rotated-color-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07812212802132157,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-euro-locked-rotated-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.08384669952210275,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-euro-locked-rotated-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07828080484330484,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-euro-locked-rotated-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.16591995221027478,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-euro-locked-rotated-color-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07811279409061667,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-industrial-locked-rotated-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.08485907200624943,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-industrial-locked-rotated-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07828152283797445,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-industrial-locked-rotated-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.16607432106424042,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-industrial-locked-rotated-color-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07811351208528627,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-stacked-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.09833942192813161,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/ramp-single-stacked-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07876257926661152,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-mixed-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.1578037404650308,
+      "contentBoundingRatio": 0.8296026330300524,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-mixed-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.2638716570168183,
+      "contentBoundingRatio": 0.8296026330300524,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-mixed-eight-types-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.1318999287749288,
+      "contentBoundingRatio": 0.743422450831725,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-mixed-eight-types-bw-2.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.10426933990442055,
+      "contentBoundingRatio": 0.3153626447477254,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.18602523894862605,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.28058944490396104,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-custom-1450x900-locked-rotated-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.14820845970039517,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-custom-1450x900-locked-rotated-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.26697554797353185,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-euro-locked-rotated-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.15077457264957264,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-euro-locked-rotated-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.2665569570811506,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-industrial-locked-rotated-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.1519362880249977,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-industrial-locked-rotated-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.26672137786049077,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-long-id-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.2727173513463836,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/side-single-stacked-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.2820749758753791,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/xss-01-single-ramp-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07149934518886132,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/xss-01-single-ramp-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07837270816101462,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/xss-02-mixed-side-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.26176721464019853,
+      "contentBoundingRatio": 0.8296026330300524,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/xss-03-single-side-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.13309395391048617,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/xss-04-mixed-ramp-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.22955007582023712,
+      "contentBoundingRatio": 0.8501286646447936,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/xss-05-single-side-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.14198775388291518,
+      "contentBoundingRatio": 0.8485433324143001,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/xss-06-mixed-side-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.2613902674386545,
+      "contentBoundingRatio": 0.8296026330300524,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/xss-07-single-ramp-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07253397550776583,
+      "contentBoundingRatio": 0.6780167264038232,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "file": "pdf-renders/xss-07-single-ramp-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "bitDepth": 8,
+      "colorType": 2,
+      "iendPresent": true,
+      "decodedBytes": 4178304,
+      "decoderErrors": 0,
+      "inkPixelRatio": 0.07837270816101462,
+      "contentBoundingRatio": 0.24382524584137488,
+      "chunkTypes": [
+        "IHDR",
+        "sRGB",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ]
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,56 @@
+{
+  "version": "1.2.1",
+  "languages": [
+    "it",
+    "en",
+    "de",
+    "es",
+    "fr",
+    "pt",
+    "nl"
+  ],
+  "quantities": [
+    0,
+    1,
+    2,
+    5
+  ],
+  "records": [
+    {
+      "language": "it",
+      "probes": 4,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "probes": 4,
+      "status": "PASS"
+    },
+    {
+      "language": "de",
+      "probes": 4,
+      "status": "PASS"
+    },
+    {
+      "language": "es",
+      "probes": 4,
+      "status": "PASS"
+    },
+    {
+      "language": "fr",
+      "probes": 4,
+      "status": "PASS"
+    },
+    {
+      "language": "pt",
+      "probes": 4,
+      "status": "PASS"
+    },
+    {
+      "language": "nl",
+      "probes": 4,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

@@ -8,8 +8,8 @@ import { launchBrowser } from "./browser-runtime.mjs";
 const TEST_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = path.resolve(TEST_DIR, "..");
 const APP_NAME = "site/index.html";
-const STANDALONE_NAME = "site/downloads/loadcomposer-v1.2.0-standalone.html";
-const RESULT_PATH = path.join(PROJECT_DIR, "i18n-results-v1.2.0.json");
+const STANDALONE_NAME = "site/downloads/loadcomposer-v1.2.1-standalone.html";
+const RESULT_PATH = path.join(PROJECT_DIR, "i18n-results-v1.2.1.json");
 const APP_HTML = fs.readFileSync(path.join(PROJECT_DIR, APP_NAME), "utf8");
 const INDEX = JSON.parse(
   fs.readFileSync(path.join(PROJECT_DIR, "site/lang/index.json"), "utf8")
@@ -189,7 +189,7 @@ try {
     const itKeys = Object.keys(IT.translations).sort();
     const enKeys = Object.keys(EN.translations).sort();
     equal(JSON.stringify(itKeys), JSON.stringify(enKeys), "it/en key parity");
-    equal(itKeys.length, 492, "catalog key count");
+    equal(itKeys.length, 514, "catalog key count");
     ENABLED_CODES.forEach(code => {
       equal(
         JSON.stringify(Object.keys(CATALOGS[code].translations).sort()),
@@ -396,7 +396,7 @@ try {
         overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth
       }));
       equal(state.lang, code, `${code} manual language`);
-      equal(state.title, "LoadComposer v1.2.0", `${code} document title`);
+      equal(state.title, "LoadComposer v1.2.1", `${code} document title`);
       assert(fitsVisible, `${code} FITS-equivalent result`);
       assert(noLayoutVisible, `${code} no-layout result`);
       equal(state.technical, false, `${code} technical keys`);
@@ -748,7 +748,7 @@ try {
   await browser.close();
   await new Promise(resolve => server.close(resolve));
   fs.writeFileSync(RESULT_PATH, `${JSON.stringify({
-    version: "1.2.0",
+    version: "1.2.1",
     generatedAt: new Date().toISOString(),
     passed: results.filter(result => result.status === "PASS").length,
     failed: results.filter(result => result.status === "FAIL").length,

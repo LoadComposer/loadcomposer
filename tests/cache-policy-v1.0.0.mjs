@@ -9,7 +9,8 @@ const IMMUTABLE = "public, max-age=31536000, immutable";
 const CLEAN_STANDALONES = [
   "/downloads/loadcomposer-v1.0.0-standalone",
   "/downloads/loadcomposer-v1.1.0-standalone",
-  "/downloads/loadcomposer-v1.2.0-standalone"
+  "/downloads/loadcomposer-v1.2.0-standalone",
+  "/downloads/loadcomposer-v1.2.1-standalone"
 ];
 const HOSTS = [
   "https://loadcomposer.com",
@@ -68,7 +69,7 @@ const paths = [...new Set([
   "/downloads/",
   "/percorso-inesistente-test/"
 ])].sort();
-assert.ok(paths.length >= 48, `Expected the complete v1.2.0 policy inventory, got ${paths.length} paths.`);
+assert.ok(paths.length >= 53, `Expected the complete v1.2.1 policy inventory, got ${paths.length} paths.`);
 
 let assertions = 0;
 for (const host of HOSTS) {
@@ -80,7 +81,7 @@ for (const host of HOSTS) {
       .map(header => header.value);
     let expected;
     if (pathname === "/404.html") expected = ["no-store"];
-    else if (CLEAN_STANDALONES.includes(pathname) || /^\/downloads\/loadcomposer-v1\.[012]\.0-standalone\.(?:html|zip)(?:\.sha256)?$/.test(pathname)) {
+    else if (CLEAN_STANDALONES.includes(pathname) || /^\/downloads\/loadcomposer-v(?:1\.[01]\.0|1\.2\.[01])-standalone\.(?:html|zip)(?:\.sha256)?$/.test(pathname)) {
       expected = [IMMUTABLE];
     } else if (pathname === "/percorso-inesistente-test/") {
       expected = [];

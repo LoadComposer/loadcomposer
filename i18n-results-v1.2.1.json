@@ -1,0 +1,421 @@
+{
+  "version": "1.2.1",
+  "generatedAt": "2026-08-14T05:51:07.220Z",
+  "passed": 18,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Catalog JSON, parity, metadata, and future-language registry",
+      "status": "PASS",
+      "durationMs": 2,
+      "details": {
+        "keys": 514,
+        "codes": [
+          "it",
+          "en",
+          "de",
+          "es",
+          "fr",
+          "pt",
+          "pl",
+          "nl",
+          "tr",
+          "zh-Hans",
+          "ar"
+        ]
+      }
+    },
+    {
+      "name": "HTTP root publication",
+      "status": "PASS",
+      "durationMs": 161,
+      "details": {
+        "lang": "en",
+        "dir": "ltr",
+        "heading": "Load data",
+        "visible": "visible",
+        "catalogRequests": [
+          "./lang/index.json",
+          "./lang/en.json",
+          "./lang/it.json"
+        ]
+      }
+    },
+    {
+      "name": "HTTP subfolder publication with relative paths",
+      "status": "PASS",
+      "durationMs": 142,
+      "details": {
+        "lang": "it",
+        "heading": "Dati carico",
+        "requests": [
+          "./lang/index.json",
+          "./lang/it.json",
+          "./lang/en.json"
+        ]
+      }
+    },
+    {
+      "name": "Automatic regional-language resolution",
+      "status": "PASS",
+      "durationMs": 1317,
+      "details": [
+        {
+          "browserLocale": "de-DE",
+          "expected": "de",
+          "heading": "Ladedaten"
+        },
+        {
+          "browserLocale": "es-ES",
+          "expected": "es",
+          "heading": "Datos de carga"
+        },
+        {
+          "browserLocale": "es-MX",
+          "expected": "es",
+          "heading": "Datos de carga"
+        },
+        {
+          "browserLocale": "fr-FR",
+          "expected": "fr",
+          "heading": "Données de chargement"
+        },
+        {
+          "browserLocale": "fr-CA",
+          "expected": "fr",
+          "heading": "Données de chargement"
+        },
+        {
+          "browserLocale": "pt-PT",
+          "expected": "pt",
+          "heading": "Dados de carga"
+        },
+        {
+          "browserLocale": "pt-BR",
+          "expected": "pt",
+          "heading": "Dados de carga"
+        },
+        {
+          "browserLocale": "nl-NL",
+          "expected": "nl",
+          "heading": "Ladinggegevens"
+        },
+        {
+          "browserLocale": "ja-JP",
+          "expected": "en",
+          "heading": "Load data"
+        }
+      ]
+    },
+    {
+      "name": "New-language manual workflow, persistence, UI states, and fallback",
+      "status": "PASS",
+      "durationMs": 4278,
+      "details": [
+        {
+          "code": "de",
+          "lang": "de",
+          "title": "LoadComposer v1.2.1",
+          "technical": false,
+          "undefinedVisible": false,
+          "canvas": {
+            "width": 1100,
+            "height": 470
+          },
+          "overflow": false,
+          "fallback": "en"
+        },
+        {
+          "code": "es",
+          "lang": "es",
+          "title": "LoadComposer v1.2.1",
+          "technical": false,
+          "undefinedVisible": false,
+          "canvas": {
+            "width": 1100,
+            "height": 470
+          },
+          "overflow": false,
+          "fallback": "en"
+        },
+        {
+          "code": "fr",
+          "lang": "fr",
+          "title": "LoadComposer v1.2.1",
+          "technical": false,
+          "undefinedVisible": false,
+          "canvas": {
+            "width": 1100,
+            "height": 470
+          },
+          "overflow": false,
+          "fallback": "en"
+        },
+        {
+          "code": "pt",
+          "lang": "pt",
+          "title": "LoadComposer v1.2.1",
+          "technical": false,
+          "undefinedVisible": false,
+          "canvas": {
+            "width": 1100,
+            "height": 470
+          },
+          "overflow": false,
+          "fallback": "en"
+        },
+        {
+          "code": "nl",
+          "lang": "nl",
+          "title": "LoadComposer v1.2.1",
+          "technical": false,
+          "undefinedVisible": false,
+          "canvas": {
+            "width": 1100,
+            "height": 470
+          },
+          "overflow": false,
+          "fallback": "en"
+        }
+      ]
+    },
+    {
+      "name": "404 catalog uses Italian fallback",
+      "status": "PASS",
+      "durationMs": 145,
+      "details": {
+        "lang": "it",
+        "heading": "Dati carico",
+        "errors": [
+          {
+            "stage": "catalog",
+            "code": "en",
+            "message": "Language catalog HTTP 404."
+          }
+        ]
+      }
+    },
+    {
+      "name": "Malformed JSON uses Italian fallback",
+      "status": "PASS",
+      "durationMs": 148,
+      "details": {
+        "lang": "it",
+        "heading": "Dati carico",
+        "errors": [
+          {
+            "stage": "catalog",
+            "code": "en",
+            "message": "Language catalog contains invalid JSON: Unexpected end of JSON input"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Missing English key falls back to Italian, never undefined",
+      "status": "PASS",
+      "durationMs": 155,
+      "details": {
+        "lang": "en",
+        "heading": "Dati carico",
+        "body": "v1.2.1\nAuto · EN\nAuto\n\nSelect one or more pallet groups, set quantities and permitted orientations, and compare available space in the main maritime containers and 13.60 m full-load semi-trailers.\n\nDati carico\nDimensions must be positive whole millimetres and must represent the actual maximum footprint of the loaded pallet, including any overhang. Quantities must be whole numbers, up to 500 pallets in total per calculation.\nLoad mode\nSingle pallet\nMixed pallets\nPallet group settings\nPallet type\nSELECT PALLET SIZE\n⌄\n1,200 × 800 mm\nEuro pallet\nQuantity\nLoaded pallet height\nIdentifier / item\n(optional)\nIt will appear inside the pallets and in the layout legend.\nAllow 90° rotation\nLoadComposer may rotate this pallet type to find the best arrangement.\nClearance between pallets mm\nStackable pallets\nCalculate\nReset\nResults\nLoadComposer uses a heuristic engine. FITS means that a layout was found and validated; NOT OK means that no layout was found, not that the load is mathematically impossible. Vehicle dimensions are nominal operating references.\nTOTAL CBM\n14.4 m³\nWEIGHT\nN/A\nBEST ARRANGEMENT FOUND\n34 plt\nSMALLEST SUITABLE VEHICLE\n20' Reefer\nVEHICLE\tOUTCOME\tLOAD / CAPACITY\tHEIGHT / ACCESS\tREMAINING SPACE\nMARITIME CONTAINERS\n20' Dry\n5,896 × 2,350 × 2,393 mm\tFITS\t10 of 10 pallets\nFound capacity: 11 pallets\n1 free slot\tOK\nInternal height: 2,393 mm\nDoor: 2,340 × 2,280 mm\tRemaining length: 1,096 mm\nRemaining width: 350 mm\nRemaining height: 893 mm\n40' Dry\n12,032 × 2,350 × 2,393 mm\tFITS\t10 of 10 pallets\nFound capacity: 25 pallets\n15 free slots\tOK\nInternal height: 2,393 mm\nDoor: 2,340 × 2,280 mm\tRemaining length: 6,032 mm\nRemaining width: 750 mm\nRemaining height: 893 mm\n40' High Cube\n12,032 × 2,350 × 2,697 mm\tFITS\t10 of 10 pallets\nFound capacity: 25 pallets\n15 free slots\tOK\nInternal height: 2,697 mm\nDoor: 2,340 × 2,585 mm\tRemaining length: 6,032 mm\nRemaining width: 750 mm\nRemaining height: 1,197 mm\n45' High Cube\n13,556 × 2,352 × 2,698 mm\tFITS\t10 of 10 pallets\nFound capacity: 27 pallets\n17 free slots\tOK\nInternal height: 2,698 mm\nDoor: 2,340 × 2,585 mm\tRemaining length: 7,556 mm\nRemaining width: 752 mm\nRemaining height: 1,198 mm\n20' Reefer\n5,456 × 2,294 × 2,273 mm\tFITS\t10 of 10 pallets\nFound capacity: 10 pallets\tOK\nInternal height: 2,273 mm\nDoor: 2,290 × 2,264 mm\tRemaining length: 656 mm\nRemaining width: 294 mm\nRemaining height: 773 mm\n40' HC Reefer\n11,584 × 2,294 × 2,557 mm\tFITS\t10 of 10 pallets\nFound capacity: 23 pallets\n13 free slots\tOK\nInternal height: 2,557 mm\nDoor: 2,290 × 2,569 mm\tRemaining length: 5,584 mm\nRemaining width: 694 mm\nRemaining height: 1,057 mm\n40' HC Pallet Wide\n12,095 × 2,444 × 2,692 mm\tFITS\t10 of 10 pallets\nFound capacity: 30 pallets\n20 free slots\tOK\nInternal height: 2,692 mm\nDoor: 2,400 × 2,584 mm\tRemaining length: 8,095 mm\nRemaining width: 44 mm\nRemaining height: 1,192 mm\n45' HC Pallet Wide\n13,624 × 2,420 × 2,687 mm\tFITS\t10 of 10 pallets\nFound capacity: 34 pallets\n24 free slots\tOK\nInternal height: 2,687 mm\nDoor: 2,360 × 2,580 mm\tRemaining length: 9,624 mm\nRemaining width: 20 mm\nRemaining height: 1,187 mm\nCommercial variant: always confirm equipment dimensions and availability.\n45' Reefer Pallet Wide\n13,280 × 2,440 × 2,582 mm\tFITS\t10 of 10 pallets\nFound capacity: 33 pallets\n23 free slots\tOK\nInternal height: 2,582 mm\nDoor: 2,440 × 2,567 mm\tRemaining length: 9,280 mm\nRemaining width: 40 mm\nRemaining height: 1,082 mm\nNiche equipment relevant to European Euro-pallet supply chains.\n13.60 M FULL-LOAD SEMI-TRAILERS\n13.60 m curtain-side semi-trailer\n13,620 × 2,480 × 2,650 mm\tFITS\t10 of 10 pallets\nFound capacity: 34 pallets\n24 free slots\tFOOTPRINT OK\nUsable height: 2,650 mm\nRear opening: not verified\tRemaining length: 9,620 mm\nRemaining width: 80 mm\nRemaining height: 1,150 mm\nPrudential reference 13,600 × 2,450 × 2,600 mm; the indicative usable height of standard curtain-side trailers can reach approximately 2,700 mm.\n13.60 m mega semi-trailer\n13,620 × 2,480 × 3,000 mm\tFITS\t10 of 10 pallets\nFound capacity: 34 pallets\n24 free slots\tFOOTPRINT OK\nUsable height: 3,000 mm\nRear opening: not verified\tRemaining length: 9,620 mm\nRemaining width: 80 mm\nRemaining height: 1,500 mm\nPrudential reference 13,600 × 2,450 × 2,900 mm; the descriptive typical range is approximately 2,900–3,050 mm, with a 3,000 mm design limit.\n13.60 m standard single-temperature refrigerated semi-trailer\n13,310 × 2,460 × 2,650 mm\tFITS\t10 of 10 pallets\nFound capacity: 33 pallets\n23 free slots\tFOOTPRINT OK\nUsable height: 2,650 mm\nRear opening: not verified\tRemaining length: 9,310 mm\nRemaining width: 60 mm\nRemaining height: 1,150 mm\nPrudential reference 13,300 × 2,460 × 2,600 mm; 13,310 mm is the usable loading length. 13,410 mm describes only the internal body length of one series.\nTop-view layout\nDisplay\n20' Dry - 10/10 pallets required · capacity 11 pallets\n40' Dry - 10/10 pallets required · capacity 25 pallets\n40' High Cube - 10/10 pallets required · capacity 25 pallets\n45' High Cube - 10/10 pallets required · capacity 27 pallets\n20' Reefer - 10/10 pallets required · capacity 10 pallets\n40' HC Reefer - 10/10 pallets required · capacity 23 pallets\n40' HC Pallet Wide - 10/10 pallets required · capacity 30 pallets\n45' HC Pallet Wide - 10/10 pallets required · capacity 34 pallets\n45' Reefer Pallet Wide - 10/10 pallets required · capacity 33 pallets\n13.60 m curtain-side semi-trailer - 10/10 pallets required · capacity 34 pallets\n13.60 m mega semi-trailer - 10/10 pallets required · capacity 34 pallets\n13.60 m standard single-temperature refrigerated semi-trailer - 10/10 pallets required · capacity 33 pallets\nLayout view\nSide · horizontal\nRamp · vertical\nBlack & white\nPrint layout\nThe view selection immediately updates both the preview and print. In ramp view the vehicle is shown vertically: the front or tractor is at the top and the doors or ramp are at the bottom. Pallets and the arrangement are rotated, while codes, identifiers, and dimensions remain horizontal relative to the screen and paper for readability. “Black & white” changes both the preview and print and uses patterns and graphic differences instead of colours, for output suitable for monochrome printers.\n20' Dry: found capacity 11 pallets (11 floor positions). Required quantity: 10. Placed quantity: 10. The requested load is fully placed. The drawing shows only 10 floor positions used by the requested load.\nNote: this tool performs an indicative geometry check and does not replace operational verification with the freight forwarder or checks relating to packaging, load securing, safety, pallet bulging, actual vehicle tolerances, and operating constraints. This version calculates floor-level arrangements for rear loading. Weight, load balance, and side loading are not yet included.\nLicense\nPrivacy\nLegal information\nDownload\nSuggestions\nReport a problem",
+        "technical": "⟦test.missing.technical.key⟧"
+      }
+    },
+    {
+      "name": "Missing Italian catalog falls back to English",
+      "status": "PASS",
+      "durationMs": 158,
+      "details": {
+        "lang": "en",
+        "heading": "Load data"
+      }
+    },
+    {
+      "name": "Catalog cache avoids repeat requests",
+      "status": "PASS",
+      "durationMs": 221,
+      "details": {
+        "before": [
+          "./lang/index.json",
+          "./lang/en.json",
+          "./lang/it.json"
+        ],
+        "after": [
+          "./lang/index.json",
+          "./lang/en.json",
+          "./lang/it.json"
+        ]
+      }
+    },
+    {
+      "name": "Unregistered language and path traversal are rejected before URL construction",
+      "status": "PASS",
+      "durationMs": 182,
+      "details": {
+        "before": [
+          "./lang/index.json",
+          "./lang/en.json",
+          "./lang/it.json"
+        ],
+        "after": [
+          "./lang/index.json",
+          "./lang/en.json",
+          "./lang/it.json"
+        ],
+        "failures": [
+          "../en",
+          "en/../../it",
+          "xx",
+          "zh-Hans.json"
+        ],
+        "preference": "auto"
+      }
+    },
+    {
+      "name": "Catalog strings are inert text, not executable HTML",
+      "status": "PASS",
+      "durationMs": 159,
+      "details": {
+        "heading": "<img src=x onerror=\"window.__catalogXss=1\">Catalog title",
+        "xss": 0,
+        "injectedImages": 0,
+        "injectedScripts": 0,
+        "firstVehicle": "</td></tr><script>window.__catalogXss=2</script>5,896 × 2,350 × 2,393 mm"
+      }
+    },
+    {
+      "name": "Language selector accessibility and persistence",
+      "status": "PASS",
+      "durationMs": 343,
+      "details": {
+        "lang": "it",
+        "preference": "it",
+        "label": "IT",
+        "targetHeight": 44,
+        "overflow": false,
+        "visibleOptions": [
+          "auto",
+          "it",
+          "en",
+          "de",
+          "es",
+          "fr",
+          "pt",
+          "nl"
+        ]
+      }
+    },
+    {
+      "name": "Blocked localStorage does not block the app",
+      "status": "PASS",
+      "durationMs": 333,
+      "details": {
+        "lang": "nl",
+        "resolved": [
+          "de",
+          "es",
+          "fr",
+          "pt",
+          "nl"
+        ],
+        "rows": 14,
+        "ready": "true"
+      }
+    },
+    {
+      "name": "Standalone works through file:// without lang requests",
+      "status": "PASS",
+      "durationMs": 344,
+      "details": {
+        "lang": "nl",
+        "headings": {
+          "it": "Dati carico",
+          "en": "Load data",
+          "de": "Ladedaten",
+          "es": "Datos de carga",
+          "fr": "Données de chargement",
+          "pt": "Dados de carga",
+          "nl": "Ladinggegevens"
+        },
+        "embedded": true,
+        "requests": [],
+        "rows": 14
+      }
+    },
+    {
+      "name": "Standalone embeds the exact canonical JSON catalogs",
+      "status": "PASS",
+      "durationMs": 6,
+      "details": {
+        "keys": 514
+      }
+    },
+    {
+      "name": "Translation DOM writes avoid innerHTML",
+      "status": "PASS",
+      "durationMs": 1,
+      "details": {
+        "staticMarkupAssignments": 3
+      }
+    },
+    {
+      "name": "No remote dependencies in modular or standalone output",
+      "status": "PASS",
+      "durationMs": 4,
+      "details": {
+        "externalDependencies": [],
+        "authorizedLinks": [
+          {
+            "name": "site/index.html",
+            "value": "https://loadcomposer.com/"
+          },
+          {
+            "name": "site/index.html",
+            "value": "https://github.com/LoadComposer/loadcomposer/discussions"
+          },
+          {
+            "name": "site/index.html",
+            "value": "https://github.com/LoadComposer/loadcomposer/issues/new?template=bug.yml"
+          },
+          {
+            "name": "site/index.html",
+            "value": "https://github.com/LoadComposer/loadcomposer"
+          },
+          {
+            "name": "site/downloads/loadcomposer-v1.2.1-standalone.html",
+            "value": "https://loadcomposer.com/"
+          },
+          {
+            "name": "site/downloads/loadcomposer-v1.2.1-standalone.html",
+            "value": "https://loadcomposer.com/legal/LICENSE"
+          },
+          {
+            "name": "site/downloads/loadcomposer-v1.2.1-standalone.html",
+            "value": "https://loadcomposer.com/legal/PRIVACY.md"
+          },
+          {
+            "name": "site/downloads/loadcomposer-v1.2.1-standalone.html",
+            "value": "https://loadcomposer.com/legal/"
+          },
+          {
+            "name": "site/downloads/loadcomposer-v1.2.1-standalone.html",
+            "value": "https://loadcomposer.com/downloads/"
+          },
+          {
+            "name": "site/downloads/loadcomposer-v1.2.1-standalone.html",
+            "value": "https://github.com/LoadComposer/loadcomposer/discussions"
+          },
+          {
+            "name": "site/downloads/loadcomposer-v1.2.1-standalone.html",
+            "value": "https://github.com/LoadComposer/loadcomposer/issues/new?template=bug.yml"
+          },
+          {
+            "name": "site/downloads/loadcomposer-v1.2.1-standalone.html",
+            "value": "https://github.com/LoadComposer/loadcomposer"
+          }
+        ]
+      }
+    }
+  ]
+}

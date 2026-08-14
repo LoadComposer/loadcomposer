@@ -1097,7 +1097,7 @@ test("B-10: quantità superiore alla capacità", async () => {
     assertEqual(result.ok, false, "una quantità superiore alla capacità mostra CI STA");
     assertPreviewAndPrintRectCount(app, result, 11);
     assert(
-      app.document.getElementById("resultsBody").textContent.includes("Non piazzato: 1 pallet"),
+      app.document.getElementById("resultsBody").textContent.includes("Manca 1 pallet"),
       "la tabella non indica chiaramente il numero non piazzato"
     );
   } finally {
@@ -1140,9 +1140,11 @@ test("B-10: tabella, note, titolo e riepilogo distinguono i conteggi", async () 
     const printDetails = app.window.buildPrintDetails(result).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
     const printLegend = app.window.buildPrintLegend(result, false).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
+    assert(tableText.includes("10 su 10 pallet"), "rapporto piazzati/richiesti assente dalla tabella");
     assert(tableText.includes("Capacità trovata: 11 pallet"), "capacità assente dalla tabella");
-    assert(tableText.includes("Quantità richiesta: 10"), "quantità richiesta assente dalla tabella");
-    assert(tableText.includes("Quantità piazzata: 10"), "quantità piazzata assente dalla tabella");
+    assert(tableText.includes("1 posto libero"), "posto libero assente dalla tabella");
+    assert(!tableText.includes("Quantità richiesta:"), "etichetta ridondante quantità richiesta nella tabella");
+    assert(!tableText.includes("Quantità piazzata:"), "etichetta ridondante quantità piazzata nella tabella");
     assert(notesText.includes("capacità trovata 11 pallet"), "capacità assente dalle note preview");
     assert(notesText.includes("Quantità richiesta: 10"), "richiesta assente dalle note preview");
     assert(notesText.includes("Quantità piazzata: 10"), "piazzamento assente dalle note preview");

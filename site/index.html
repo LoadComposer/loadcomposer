@@ -11,7 +11,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoadComposer v1.2.0</title>
+  <title>LoadComposer v1.2.1</title>
   <meta name="description" content="LoadComposer estimates pallet arrangements in common road and sea freight vehicles directly in your browser." />
   <meta name="application-name" content="LoadComposer" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -19,10 +19,10 @@
   <link rel="canonical" href="https://loadcomposer.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LoadComposer" />
-  <meta property="og:title" content="LoadComposer v1.2.0" />
+  <meta property="og:title" content="LoadComposer v1.2.1" />
   <meta property="og:description" content="Browser-based geometric load-planning estimates, with offline and standalone support." />
   <meta property="og:url" content="https://loadcomposer.com/" />
-  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.0.png" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.1.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -762,7 +762,7 @@
 
     header {
       padding: 28px 22px 14px;
-      max-width: 1280px;
+      max-width: 1520px;
       margin: 0 auto;
     }
 
@@ -781,7 +781,7 @@
     }
 
     main {
-      max-width: 1280px;
+      max-width: 1520px;
       margin: 0 auto;
       padding: 18px 22px 36px;
       display: grid;
@@ -1075,7 +1075,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 790px;
+      min-width: 740px;
       background: rgba(15, 23, 42, 0.45);
     }
 
@@ -1311,7 +1311,7 @@
     }
 
     .footer {
-      max-width: 1280px;
+      max-width: 1520px;
       margin: 0 auto;
       padding: 0 22px 36px;
       color: var(--muted);
@@ -2742,6 +2742,45 @@
       background: var(--lc-table-head);
     }
 
+    .results-table thead th:first-child {
+      left: 0;
+      z-index: 3;
+      box-shadow: 1px 0 0 var(--lc-border-strong);
+    }
+
+    .results-table tbody td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      background: var(--lc-table-row);
+      box-shadow: 1px 0 0 var(--lc-border-strong);
+    }
+
+    .results-table tbody tr:nth-child(even):not(.vehicle-group-row) td:first-child {
+      background: var(--lc-table-row-alt);
+    }
+
+    .results-table .vehicle-group-row td:first-child {
+      background: var(--lc-accent-soft);
+    }
+
+    html[data-theme="dark"] .results-table .vehicle-group-row td:first-child {
+      background: #132632;
+    }
+
+    @media (max-width: 380px) {
+      .results-table thead th:first-child {
+        left: auto;
+        z-index: 1;
+        box-shadow: none;
+      }
+
+      .results-table tbody td:first-child {
+        position: static;
+        box-shadow: none;
+      }
+    }
+
     .badge.ok {
       color: var(--lc-success);
       background: var(--lc-success-soft);
@@ -3436,7 +3475,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.2.0</span>
+        <span class="app-version">v1.2.1</span>
       </div>
 
       <div class="header-controls">
@@ -3681,15 +3720,14 @@
         </div>
 
         <div class="tablewrap">
-          <table>
+          <table class="results-table">
             <thead>
               <tr>
-                <th data-i18n="results.table.vehicle">results.table.vehicle</th>
-                <th data-i18n="results.table.outcome">results.table.outcome</th>
-                <th data-i18n="results.table.capacity">results.table.capacity</th>
-                <th data-i18n="results.table.access">results.table.access</th>
-                <th data-i18n="results.table.weight">results.table.weight</th>
-                <th data-i18n="results.table.margin">results.table.margin</th>
+                <th scope="col" data-i18n="results.table.vehicle">results.table.vehicle</th>
+                <th scope="col" data-i18n="results.table.outcome">results.table.outcome</th>
+                <th scope="col" data-i18n="results.table.capacity">results.table.capacity</th>
+                <th scope="col" data-i18n="results.table.access">results.table.access</th>
+                <th scope="col" data-i18n="results.table.margin">results.table.margin</th>
               </tr>
             </thead>
             <tbody id="resultsBody"></tbody>
@@ -7045,7 +7083,7 @@
           const groupRow = document.createElement("tr");
           groupRow.className = "vehicle-group-row";
           const groupCell = groupRow.insertCell();
-          groupCell.colSpan = 6;
+          groupCell.colSpan = 5;
           groupCell.textContent = group;
           fragment.append(groupRow);
           currentGroup = group;
@@ -7062,7 +7100,15 @@
       const capKind = result.fitsQtyBySpace ? "ok" : result.totalCapacity > 0 ? "warn" : "bad";
       const finalKind = result.ok ? "ok" : "bad";
       const missing = result.unplacedCount;
-      const remainingSlots = Math.max(0, result.totalCapacity - quantity);
+      const remainingSlots = result.fitsQtyBySpace
+        ? Math.max(0, result.totalCapacity - result.placedCount)
+        : 0;
+      const showFloorPositions = (
+        result.layers > 1 ||
+        result.loadLayers > 1 ||
+        result.floorCapacity !== result.totalCapacity ||
+        result.placedFloorPositions !== result.placedCount
+      );
       const spareLength = Math.max(0, c.innerLength - result.layout.usedLength);
       const spareWidth = Math.max(0, c.innerWidth - result.layout.usedWidth);
       const spareHeight = Math.max(0, c.innerHeight - usedLoadHeight(result));
@@ -7082,7 +7128,10 @@
       const capacity = row.insertCell();
       capacity.append(statusBadgeNode(
         capKind,
-        result.fitsQtyBySpace ? t("status.quantityOk") : t("status.spaceInsufficient")
+        pluralText("table.mixedPlaced", quantity, {
+          placed: formatInt(result.placedCount),
+          total: formatInt(quantity)
+        })
       ));
       appendBreak(capacity);
       appendText(capacity, t("table.capacityFound"), { tag: "strong" });
@@ -7092,26 +7141,21 @@
           result.totalCapacity
         )}`
       ));
-      const floorText = pluralText("table.floorPositions", result.floorCapacity) +
-        (result.layers > 1
-          ? pluralText("preview.singleLayers", result.layers)
-          : "");
-      appendText(capacity, floorText, { tag: "span", className: "small", breakBefore: true });
-      appendText(capacity, t("table.requestedQuantity"), { tag: "strong", breakBefore: true });
-      capacity.append(document.createTextNode(` ${formatInt(quantity)}`));
-      appendText(capacity, t("table.placedQuantity"), { tag: "strong", breakBefore: true });
-      capacity.append(document.createTextNode(` ${formatInt(result.placedCount)}`));
-      const usedFloorText = pluralText(
-        "table.usedFloorPositions",
-        result.placedFloorPositions
-      ) + (result.loadLayers > 1
-        ? pluralText("layout.upToLayers", result.loadLayers)
-        : "");
-      appendText(capacity, usedFloorText, {
-        tag: "span",
-        className: "small",
-        breakBefore: true
-      });
+      if (showFloorPositions) {
+        appendText(capacity, pluralText("table.floorPositions", result.floorCapacity), {
+          tag: "span",
+          className: "small",
+          breakBefore: true
+        });
+        appendText(capacity, pluralText(
+          "table.usedFloorPositions",
+          result.placedFloorPositions
+        ), {
+          tag: "span",
+          className: "small",
+          breakBefore: true
+        });
+      }
       if (missing > 0) {
         appendText(capacity, pluralText("table.missing", missing), {
           tag: "span",
@@ -7128,10 +7172,6 @@
       }
 
       appendAccessCell(row, result);
-      appendText(row.insertCell(), t("common.notAvailable"), {
-        tag: "span",
-        className: "weight-na"
-      });
       appendMarginCell(row, result, [
         t("table.lengthMargin", { value: formatInt(spareLength) }),
         t("table.widthMargin", { value: formatInt(spareWidth) }),
@@ -7203,10 +7243,6 @@
       }
 
       appendAccessCell(row, result, maxHeight);
-      appendText(row.insertCell(), t("common.notAvailable"), {
-        tag: "span",
-        className: "weight-na"
-      });
       appendMarginCell(row, result, [
         t("table.lengthMargin", { value: formatInt(spareLength) }),
         t("table.widthMargin", { value: formatInt(spareWidth) }),

@@ -9,7 +9,7 @@ import { JSDOM } from "jsdom";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const SITE = path.join(ROOT, "site");
 const DOWNLOADS = path.join(SITE, "downloads");
-const VERSION = "1.2.0";
+const VERSION = "1.2.1";
 const PACKAGE_NAME = `loadcomposer-v${VERSION}-standalone`;
 const HTML_NAME = `${PACKAGE_NAME}.html`;
 const ZIP_NAME = `${PACKAGE_NAME}.zip`;
@@ -165,6 +165,26 @@ assert.ok(legalIndex.includes("licensing@loadcomposer.com"));
 assert.ok(legalIndex.includes("https://github.com/LoadComposer/loadcomposer"));
 assertNoRemoteResources(legalIndex, "site/legal/index.html");
 
+const notFoundPath = path.join(SITE, "404.html");
+const notFound = read(notFoundPath);
+assertNoRemoteResources(notFound, "site/404.html");
+assert.match(notFound, /<meta name="robots" content="noindex,follow"\s*\/>/);
+assert.ok(notFound.includes('href="/"'));
+assert.ok(notFound.includes('href="/downloads/"'));
+assert.ok(notFound.includes('href="/legal/"'));
+const notFoundDom = new JSDOM(notFound);
+try {
+  const embedded = JSON.parse(
+    notFoundDom.window.document.getElementById("loadcomposer-404-data").textContent
+  );
+  assert.deepEqual(Object.keys(embedded.catalogs), CODES);
+  assert.equal(notFoundDom.window.document.querySelectorAll("#languageSelect option").length, 7);
+  assert.equal(notFoundDom.window.document.querySelectorAll("h1").length, 1);
+  assert.equal(notFoundDom.window.document.querySelector(".status").getAttribute("aria-hidden"), "true");
+} finally {
+  notFoundDom.window.close();
+}
+
 const webDom = new JSDOM(web);
 try {
   const links = [...webDom.window.document.querySelectorAll(".footer-links a")];
@@ -197,7 +217,12 @@ for (const code of CODES) {
     "footer.download",
     "footer.linksAria",
     "footer.suggestions",
-    "footer.reportIssue"
+    "footer.reportIssue",
+    "404.meta.title",
+    "404.meta.description",
+    "404.title",
+    "404.description",
+    "404.navigationAria"
   ]) {
     assert.equal(typeof catalog.translations[key], "string", `${code}:${key} missing.`);
     assert.ok(catalog.translations[key].trim(), `${code}:${key} empty.`);
@@ -325,6 +350,6 @@ assert.ok(readme.includes("Download page"));
 assert.ok(readme.includes("source-available"));
 
 console.log(
-  "v1.2.0 hardening audit PASS: Node/npm metadata, HTML notices, 7 public legal copies, " +
-  "6 localized footer links, standalone ZIP/5 hashes, Download page, internal links and no remote resources."
+  "v1.2.1 hardening audit PASS: Node/npm metadata, HTML notices, 7 public legal copies, " +
+  "6 localized footer links, standalone ZIP/5 hashes, Download/Legal/404 pages, internal links and no remote resources."
 );

@@ -1,0 +1,341 @@
+{
+  "version": "1.2.1",
+  "baseline": "v1.0.0-rc.2 verified print renders",
+  "generatedAt": "2026-08-14T05:56:20.085Z",
+  "approved": 47,
+  "geometryDifferences": 0,
+  "pixelIdentical": 47,
+  "authorizedTextChanges": "none",
+  "status": "PASS",
+  "records": [
+    {
+      "file": "ramp-mixed-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "de556afe2aff150a144230344d0a2cbbf55f8da838894c68a59433d0eb15ab85",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-mixed-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "123bc95f4e12443e3d511edcaf9571045bf7b45a4452400eedd9903afe669dac",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-mixed-eight-types-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "a90c098be4605d2ef0a408bac2e8d02a4a871de06738d033e4446903d9b61798",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-mixed-eight-types-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "e3bafdf5d5b854c3d1c1bc074ff95675e3dd5ae9eae1b29a760b175b7efe43dc",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-mixed-long-legend-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "0f41c756940cc23a1a697d46ffcdef6cfe6e7d30dd6a5b0f340f3d5c037ad54f",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-mixed-long-legend-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "350784eff2b2df12d7339eb47a4be25ef19066791d9960d9a6d636ad9f9cdbfe",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "017e40a35e98da90219db5df3efc89a7916fd45a59c7a5d8ecd24b7ca22455bf",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "89c129ded4d9eeb4dcbd1351a8803b4cf041028aa8adbbddd66d93635a1c2bf4",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "b5bdd7f9154bf652af854433337436b0adae6081cfd47071bb4b702c320f0f51",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-color-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "02d417b912dc9c0d588fffe310a632665805b39c0067ee70334a63c7b744257d",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-custom-1450x900-locked-rotated-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "aecb5b328cf3606fbba9815117668f7f584027cdfc4f19edd34e5af3c9fac434",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-custom-1450x900-locked-rotated-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "03407ec812887040498df6e429111f696f0af25e43e5721797df91f5e65385f0",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-custom-1450x900-locked-rotated-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "381b374cfd2856659a0ea4a025f0488e4d9d3f22c9236e0d6c86784fca692d73",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-custom-1450x900-locked-rotated-color-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "1ff46a254fb2960541e9b0be28b1b44e565698434e25bb7def01e1c07f9d8e0f",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-euro-locked-rotated-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "3840297b898b892929dd4c3389b874710cc23629998f7e06643142e067ec8cc7",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-euro-locked-rotated-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "ec742481d9717f44ffbd584ceca53b7bca5f1670ed581fce7d4aa75dbab0792d",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-euro-locked-rotated-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "793fa9d03600f378ee46657ab6ccff6e6db619f46603c90e9cac994819c7e7ef",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-euro-locked-rotated-color-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "3835f260f4571666c07d765adb07f6a254e1d1cc9d330205831b0dc659ffabe3",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-industrial-locked-rotated-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "0ee6b345218e8b9e97cd1b4391cd0ba95804661d3c031f57c19d7a36094aa9e5",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-industrial-locked-rotated-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "ff291d08a92fea65679dcf36a66885b23154ddcd24154660193bc415b4fc0176",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-industrial-locked-rotated-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "bfe19d5f661f00761cc66d3812f4cb7f8609bcab801553fdbbafff4693da526f",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-industrial-locked-rotated-color-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "122e1792f273c572bc193a14a997da79a6308dd9cf4a6cf7b3a6fd480e73a46a",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-stacked-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "fa885fe42b83a0685f8b9f162b87ebe318c420625d07b03685bd63bfed5f22fb",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "ramp-single-stacked-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "832fff06f4d0468fbaea29cdeb0ef228a6fcb9f92a1a7ce809eb0ee41ed18a4a",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-mixed-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "bd21237fefd6b175545b497f4fdf8eb8c64a8d5d330e0e472597381c43a4544b",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-mixed-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "1f7d334f546f5d97557c59a1ca2d1ea88a5df814a71e61f6a13812989d77ede9",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-mixed-eight-types-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "b7db40412ac35e2c6b58e8210bfa58a883caca4db2c0db040ec11f82ce9b6bbc",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-mixed-eight-types-bw-2.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "5405e8444284c1b24e4ff850b1ecf1e3211b1c9470cf7aafc9484fccf3cd10b6",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "ccbfb46a2d1af46e38a48c5ae521130663a01a15215d704842e8624f1fa1628b",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "f8e1b59fa34e47e2f5f3613ab457fb7d60bdc42f0c4b5d03138341a78474b64e",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-custom-1450x900-locked-rotated-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "d2b583784d0636c7ccd51ed6435673f924c4967e45d4e842af28d6a17b85c08b",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-custom-1450x900-locked-rotated-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "a3010fb50b6ccf7436f452ed9cd6953d28b1376bd3c6d35f987f6569a0245449",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-euro-locked-rotated-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "f3b135a53b96d1d6de7b505dfa4b0cfbe0bc5dc43c185e23e9df9a7b378c78b1",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-euro-locked-rotated-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "5292693287f72f5dfec328ac57efac98726d38859652e4975c6087a46a8b77fa",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-industrial-locked-rotated-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "d0d706d23ae11aca00226647b3bbb927359ad6f91bb108b6fe1073867eff4ff0",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-industrial-locked-rotated-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "047e4b683d68aa8aac6fa5ca120376c7fcda422326213cd63504299722c8596d",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-long-id-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "ea626b2cdf4b2301c35242aeb25e1a10761ed5add11b89822eecb6465c149444",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "side-single-stacked-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "840335ea586e1dc4f5314fb9bb84074ef13e7a3e419ed3e2a892353b4405e7c1",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "xss-01-single-ramp-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "b681480d1156377aad17f29c158f535dc65d7855fe23c71c7636d4f8f84700aa",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "xss-01-single-ramp-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "5277b209190f02235a19aac031ae91437dbd99eb4c1c0d496d52e45fd4a670bb",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "xss-02-mixed-side-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "d6e1a22b5467b844336e4b8e105324e2acafff4948e95a667fd666714738d881",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "xss-03-single-side-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "a26fec3db66fc6eaa8a223ede1ee9cf25e7bf1fe2103012e78402022a463fe3c",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "xss-04-mixed-ramp-color-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "8c3959d1b55e541dad656f999d849d6994ea5ae77a88cfdbcf5406420468423f",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "xss-05-single-side-bw-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "ca7a44e7566093e84e9fb989b78cc72313282464e506c7a476c83f9cb856accc",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "xss-06-mixed-side-color-1.png",
+      "width": 1404,
+      "height": 992,
+      "sha256": "978cf6f8ce34c57ac186987bc19a0af0620a82ae8390101f6ca440585da90634",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "xss-07-single-ramp-bw-1.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "bbb2fc76b116f4d6d2b44f97fbd13fff068deb3d8de628eb2ec5ceec063c6f41",
+      "pixelIdenticalToApprovedBaseline": true
+    },
+    {
+      "file": "xss-07-single-ramp-bw-2.png",
+      "width": 992,
+      "height": 1404,
+      "sha256": "5277b209190f02235a19aac031ae91437dbd99eb4c1c0d496d52e45fd4a670bb",
+      "pixelIdenticalToApprovedBaseline": true
+    }
+  ]
+}

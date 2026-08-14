@@ -8,9 +8,9 @@ const APP = path.join(
   ROOT,
   "site",
   "downloads",
-  "loadcomposer-v1.2.0-standalone.html"
+  "loadcomposer-v1.2.1-standalone.html"
 );
-const OUTPUT = path.join(ROOT, "trailer-prudential-results-v1.2.0.json");
+const OUTPUT = path.join(ROOT, "trailer-prudential-results-v1.2.1.json");
 
 function canvasContextStub() {
   return new Proxy({}, {
@@ -419,7 +419,7 @@ runScenario({
 });
 
 fs.writeFileSync(OUTPUT, `${JSON.stringify({
-  version: "1.2.0",
+  version: "1.2.1",
   source: path.relative(ROOT, APP),
   checks,
   status: "PASS"

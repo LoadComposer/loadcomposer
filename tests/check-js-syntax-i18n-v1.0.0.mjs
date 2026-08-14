@@ -5,8 +5,10 @@ import vm from "node:vm";
 const root = path.resolve(import.meta.dirname, "..");
 const files = [
   "site/index.html",
-  "site/downloads/loadcomposer-v1.2.0-standalone.html",
+  "site/downloads/loadcomposer-v1.2.1-standalone.html",
   "site/downloads/index.html",
+  "site/legal/index.html",
+  "site/404.html",
 ];
 
 for (const relative of files) {
@@ -15,7 +17,7 @@ for (const relative of files) {
     .filter((match) => !/\btype\s*=\s*["']application\/json["']/i.test(match[1]))
     .map((match) => match[2]);
 
-  const minimum = relative === "site/downloads/index.html" ? 2 : 4;
+  const minimum = relative === "site/index.html" || relative.includes("standalone") ? 4 : 2;
   if (scripts.length < minimum) {
     throw new Error(`${relative}: attesi almeno ${minimum} script eseguibili, trovati ${scripts.length}`);
   }

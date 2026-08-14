@@ -10,8 +10,8 @@ const APP_PATH = path.resolve(
   process.env.LOADCOMPOSER_HTML || "site/index.html"
 );
 const APP_HTML = fs.readFileSync(APP_PATH, "utf8");
-const OUTPUT_PATH = path.join(PROJECT_DIR, "responsive-results-v1.2.0.json");
-const SCREENSHOT_DIR = path.join(PROJECT_DIR, "screenshots-responsive-v1.2.0");
+const OUTPUT_PATH = path.join(PROJECT_DIR, "responsive-results-v1.2.1.json");
+const SCREENSHOT_DIR = path.join(PROJECT_DIR, "screenshots-responsive-v1.2.1");
 
 const VIEWPORTS = [
   { width: 320, height: 568 },
@@ -208,7 +208,7 @@ async function horizontalLayout(page, label) {
   return measurement;
 }
 
-async function assertTableScroll(page, label) {
+async function assertTableScroll(page, label, expected) {
   const result = await page.evaluate(() => {
     const wrap = document.querySelector(".tablewrap");
     const beforeDocument = document.documentElement.scrollLeft;
@@ -228,11 +228,19 @@ async function assertTableScroll(page, label) {
       afterBody
     };
   });
-  assert(
-    result.scrollWidth > result.clientWidth,
-    `${label}: tabella non eccede il contenitore nella fixture`
-  );
-  assert(result.moved > 0, `${label}: tablewrap non scorre autonomamente`);
+  if (expected) {
+    assert(
+      result.scrollWidth > result.clientWidth,
+      `${label}: tabella non eccede il contenitore nella fixture compatta`
+    );
+    assert(result.moved > 0, `${label}: tablewrap non scorre autonomamente`);
+  } else {
+    assert(
+      result.scrollWidth <= result.clientWidth + 1,
+      `${label}: scroll interno non necessario su desktop`
+    );
+    assertEqual(result.moved, 0, `${label}: tablewrap si muove senza overflow`);
+  }
   assertEqual(
     result.afterDocument,
     result.beforeDocument,
@@ -421,7 +429,7 @@ async function runViewport(browser, viewport) {
   const { context, page, errors } = await createPage(browser, viewport);
   try {
     const initial = await horizontalLayout(page, `${id} single`);
-    const table = await assertTableScroll(page, id);
+    const table = await assertTableScroll(page, id, viewport.width <= 1024);
     const picker = await assertPicker(page, id, false);
     await assertTouchTargets(page, id);
     const preview = {
@@ -731,8 +739,8 @@ async function capturePreviewScreenshots(browser) {
     assertEqual(errors.consoleErrors.length, 0, "preview screenshot: errori console");
     assertEqual(errors.pageErrors.length, 0, "preview screenshot: errori pagina");
     return [
-      "screenshots-responsive-v1.2.0/screenshot-preview-side-412x915.png",
-      "screenshots-responsive-v1.2.0/screenshot-preview-ramp-412x915.png"
+      "screenshots-responsive-v1.2.1/screenshot-preview-side-412x915.png",
+      "screenshots-responsive-v1.2.1/screenshot-preview-ramp-412x915.png"
     ];
   } finally {
     await context.close();
@@ -764,7 +772,7 @@ try {
 const screenshots = fs.readdirSync(SCREENSHOT_DIR)
   .filter(filename => filename.endsWith(".png"))
   .sort()
-  .map(filename => `screenshots-responsive-v1.2.0/${filename}`);
+  .map(filename => `screenshots-responsive-v1.2.1/${filename}`);
 
 const output = {
   status: "PASS",
@@ -797,6 +805,6 @@ const output = {
 
 fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`);
 console.log(
-  `Responsive v1.2.0: ${VIEWPORTS.length}/${VIEWPORTS.length} viewport PASS, ` +
+  `Responsive v1.2.1: ${VIEWPORTS.length}/${VIEWPORTS.length} viewport PASS, ` +
   `${screenshots.length} screenshot, 0 errori console.`
 );

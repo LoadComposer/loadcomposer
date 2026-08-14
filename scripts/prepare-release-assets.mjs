@@ -7,7 +7,7 @@ const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, "..");
 const APP_PATH = path.join(ROOT, "site", "index.html");
 const ASSET_DIR = path.join(ROOT, "site", "assets");
-const OG_PATH = path.join(ASSET_DIR, "loadcomposer-og-v1.2.0.png");
+const OG_PATH = path.join(ASSET_DIR, "loadcomposer-og-v1.2.1.png");
 const EXPECTED_LOGOS = [
   "loadcomposer-desktop-day.svg",
   "loadcomposer-desktop-night.svg",
@@ -63,7 +63,7 @@ if (!fs.existsSync(OG_PATH)) {
     const encoded = Buffer.from(nightLogo, "utf8").toString("base64");
     await page.setContent(
       `<!doctype html><html><head><style>` +
-      `html,body{margin:0;width:1200px;height:630px;background:#071a24}` +
+      `html,body{margin:0;width:1200px;height:630px;background:#050D16}` +
       `body{display:grid;place-items:center}` +
       `img{display:block;width:940px;height:auto}` +
       `</style></head><body>` +

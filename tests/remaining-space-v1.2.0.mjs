@@ -6,7 +6,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const BASELINE = path.join(ROOT, "tests", "fixtures", "baseline-v1.1.0", "loadcomposer-v1.1.0-standalone.html");
-const CURRENT = path.join(ROOT, "site", "downloads", "loadcomposer-v1.2.0-standalone.html");
+const CURRENT = path.join(ROOT, "site", "downloads", "loadcomposer-v1.2.1-standalone.html");
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const CHANGED_KEYS = [
   "results.table.margin",
@@ -82,7 +82,7 @@ async function snapshot(page) {
     const result = lastResults[resultIndex];
     const rows = [...document.querySelectorAll("#resultsBody tr")]
       .filter(row => !row.classList.contains("vehicle-group-row"));
-    const marginCell = rows[resultIndex].cells[5];
+    const marginCell = rows[resultIndex].cells[4];
     const alert = result.spaceAlert;
     const printHtml = buildPrintDetails(result, { viewLabel: "TEST", colorLabel: "TEST" });
     return {

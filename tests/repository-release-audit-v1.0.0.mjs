@@ -5,7 +5,7 @@ import path from "node:path";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const read = relative => fs.readFileSync(path.join(ROOT, relative), "utf8");
 const exists = relative => fs.existsSync(path.join(ROOT, relative));
-const VERSION = "1.2.0";
+const VERSION = "1.2.1";
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 
 const required = [
@@ -33,10 +33,10 @@ const required = [
   "site/robots.txt",
   "site/sitemap.xml",
   "site/downloads/index.html",
-  "site/downloads/loadcomposer-v1.2.0-standalone.html",
-  "site/downloads/loadcomposer-v1.2.0-standalone.html.sha256",
-  "site/downloads/loadcomposer-v1.2.0-standalone.zip",
-  "site/downloads/loadcomposer-v1.2.0-standalone.zip.sha256",
+  "site/downloads/loadcomposer-v1.2.1-standalone.html",
+  "site/downloads/loadcomposer-v1.2.1-standalone.html.sha256",
+  "site/downloads/loadcomposer-v1.2.1-standalone.zip",
+  "site/downloads/loadcomposer-v1.2.1-standalone.zip.sha256",
   "scripts/build-downloads-page.mjs",
   "scripts/templates/downloads-index.html",
   "docs/QUICK-START.md",
@@ -89,10 +89,10 @@ assert.equal(read("VERSION").trim(), VERSION);
 
 const app = read("site/index.html");
 for (const metadata of [
-  "<title>LoadComposer v1.2.0</title>",
+  "<title>LoadComposer v1.2.1</title>",
   'rel="canonical" href="https://loadcomposer.com/"',
   'property="og:url" content="https://loadcomposer.com/"',
-  'property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.0.png"',
+  'property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.1.png"',
   'name="robots"',
   'name="description"',
   'name="theme-color"'
@@ -111,20 +111,23 @@ for (const match of app.matchAll(/<(?:script|img|link)\b[^>]*\b(?:src|href)="([^
 
 const notFound = read("site/404.html");
 assert.match(notFound, /^<!DOCTYPE html>/i, "404 page is not HTML5.");
-assert.match(notFound, /<meta\s+charset="UTF-8">/i, "404 page does not declare UTF-8.");
+assert.match(notFound, /<meta\s+charset="UTF-8"\s*\/>/i, "404 page does not declare UTF-8.");
 assert.match(
   notFound,
-  /<meta\s+name="robots"\s+content="noindex,follow">/i,
+  /<meta\s+name="robots"\s+content="noindex,follow"\s*\/>/i,
   "404 page must use noindex,follow."
 );
 assert(notFound.includes("<title>LoadComposer — Page not found</title>"), "404 page title is missing.");
 assert(notFound.includes(">404</p>"), "404 page does not show the status code.");
 assert(notFound.includes(">Page not found</h1>"), "404 page heading is missing.");
 assert(notFound.includes('href="/"'), "404 page does not link to the site root.");
+assert(notFound.includes('href="/downloads/"'), "404 page does not link to Download.");
 assert(notFound.includes('href="/legal/"'), "404 page does not link to legal information.");
 assert(notFound.includes("prefers-color-scheme: dark"), "404 page does not support the dark color scheme.");
 assert(notFound.includes(":focus-visible"), "404 page does not define visible keyboard focus.");
-assert(!/<script\b/i.test(notFound), "404 page must work without JavaScript.");
+assert(notFound.includes("The requested address does not exist."), "404 English fallback is missing.");
+assert(notFound.includes("Return to LoadComposer"), "404 fallback recovery action is missing.");
+assert(!/html:not\(\[data-i18n-ready\]\)\s+body\s*\{[^}]*visibility:\s*hidden/i.test(notFound), "404 fallback may become permanently invisible.");
 assert(!/<meta\s+http-equiv=["']refresh["']/i.test(notFound), "404 page contains an automatic redirect.");
 assert(!/<link\s+rel=["']canonical["']/i.test(notFound), "404 page must not declare a canonical URL.");
 assert(!/<meta\s+property=["']og:/i.test(notFound), "404 page must not publish Open Graph metadata.");

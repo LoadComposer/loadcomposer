@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, "..");
-const VERSION = "1.2.0";
+const VERSION = "1.2.1";
 const PACKAGE_DIR_NAME = `loadcomposer-v${VERSION}-standalone`;
 const HTML_NAME = `${PACKAGE_DIR_NAME}.html`;
 const ZIP_NAME = `${PACKAGE_DIR_NAME}.zip`;
@@ -35,7 +35,7 @@ Official repository: https://github.com/LoadComposer/loadcomposer
 Official site: https://loadcomposer.com/
 Commercial licensing: licensing@loadcomposer.com
 
-The software is provided "AS IS", without warranty. Version 1.2 performs
+The software is provided "AS IS", without warranty. Version 1.2.1 performs
 indicative geometric planning only: it does not verify weight, balance, axle
 loads, floor loads, securing, stability, safety, legal compliance, or actual
 equipment tolerances. Always verify the real load and equipment operationally.

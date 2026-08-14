@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+  LoadComposer
+  Copyright © 2026 Marco Pernigotti.
+  Licensed under the LoadComposer Community License 1.0.
+  SPDX-License-Identifier: LicenseRef-LoadComposer-Community-1.0
+  Official repository: https://github.com/LoadComposer/loadcomposer
+  Provided "AS IS", without warranty.
+-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoadComposer — Legal information</title>
+  <meta name="description" content="LoadComposer license, privacy, security, trademark, and commercial-licensing documents." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#F4F5F2" />
+  <link rel="canonical" href="https://loadcomposer.com/legal/" />
+  <link rel="icon" href="../assets/loadcomposer-favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LoadComposer" />
+  <meta property="og:title" content="LoadComposer — Legal information" />
+  <meta property="og:description" content="LoadComposer license, privacy, security, trademark, and commercial-licensing documents." />
+  <meta property="og:url" content="https://loadcomposer.com/legal/" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.1.png" />
+  <script id="loadcomposer-legal-data" type="application/json">__LEGAL_DATA__</script>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themes = new Set(["auto", "light", "dark"]);
+      let preference = "auto";
+      try {
+        const stored = localStorage.getItem("loadcomposer.theme");
+        if (themes.has(stored)) preference = stored;
+      } catch (_) {}
+      const systemDark = Boolean(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      const resolved = preference === "auto" ? (systemDark ? "dark" : "light") : preference;
+      root.dataset.themePreference = preference;
+      root.dataset.theme = resolved;
+      root.style.colorScheme = resolved;
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #F4F5F2;
+      --surface: #FFFFFF;
+      --surface-soft: #F1F5F3;
+      --text: #13272F;
+      --muted: #52656C;
+      --border: #D2DCD8;
+      --accent: #0D7C75;
+      --accent-hover: #096C66;
+      --accent-soft: #DDF3F0;
+      --focus: #007C73;
+      --shadow: 0 1px 2px rgba(16, 36, 46, .05), 0 8px 24px rgba(16, 36, 46, .07);
+    }
+    :root[data-theme="dark"] {
+      --bg: #050D16;
+      --surface: #0D1B27;
+      --surface-soft: #122330;
+      --text: #E2E9EC;
+      --muted: #AAB7BE;
+      --border: #263B4A;
+      --accent: #3BC0B5;
+      --accent-hover: #4ACBC0;
+      --accent-soft: #102F33;
+      --focus: #60D5CB;
+      --shadow: 0 1px 0 rgba(255, 255, 255, .035), 0 12px 28px rgba(0, 0, 0, .16);
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 0; background: var(--bg); }
+    html:not([data-i18n-ready]) body { visibility: hidden; }
+    body {
+      margin: 0;
+      min-width: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    button, select { font: inherit; }
+    .shell { width: min(1080px, 100%); margin: 0 auto; padding: 20px 22px 40px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-size: 20px; font-weight: 800; text-decoration: none; }
+    .brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--border); }
+    .brand-mark svg { width: 25px; height: 25px; fill: currentColor; }
+    .controls { display: flex; flex-wrap: wrap; align-items: end; justify-content: flex-end; gap: 10px; }
+    .control { display: grid; gap: 4px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .control select { min-height: 44px; padding: 8px 34px 8px 12px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+    main { width: min(860px, 100%); margin: 0 auto; padding-top: 56px; }
+    .card { padding: clamp(24px, 5vw, 44px); background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); }
+    h1 { margin: 0 0 18px; font-size: clamp(32px, 5vw, 48px); line-height: 1.08; letter-spacing: -.035em; }
+    h2 { margin: 34px 0 12px; font-size: 22px; line-height: 1.2; }
+    p { margin: 0 0 16px; color: var(--muted); }
+    .notice { padding: 15px 17px; color: var(--text); background: var(--accent-soft); border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 12px; }
+    .notice span { display: block; }
+    .notice span + span { margin-top: 6px; }
+    .notice strong { font-weight: 850; }
+    ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    li a { min-height: 44px; display: flex; align-items: center; padding: 10px 12px; color: var(--text); background: var(--surface-soft); border: 1px solid transparent; border-radius: 10px; font-weight: 700; text-decoration: none; }
+    li a:hover { color: var(--accent); background: var(--accent-soft); border-color: var(--accent); }
+    .contact a { color: var(--accent); font-weight: 750; text-underline-offset: 3px; }
+    footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 18px; margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+    footer a { min-height: 36px; display: inline-flex; align-items: center; padding: 5px; text-underline-offset: 3px; }
+    footer a:hover { color: var(--accent); }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    @media (max-width: 760px) {
+      .shell { padding: 16px 14px 32px; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .controls { width: 100%; justify-content: stretch; }
+      .control { flex: 1 1 135px; }
+      .control select { width: 100%; }
+      main { padding-top: 38px; }
+      .card { padding: 22px 18px; }
+    }
+    @media (max-width: 350px) {
+      .shell { padding-inline: 10px; }
+      .brand { font-size: 18px; }
+      .controls { display: grid; grid-template-columns: 1fr; }
+      h1 { font-size: 32px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="Back to LoadComposer" data-i18n-aria-label="downloads.brandHomeAria">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v4h5V5H4Zm7 0v4h9V5h-9ZM4 11v8h5v-8H4Zm7 0v8h9v-8h-9Z"/></svg>
+        </span>
+        <span>LoadComposer</span>
+      </a>
+      <div class="controls">
+        <label class="control">
+          <span data-i18n="downloads.language.label">Language</span>
+          <select id="languageSelect" aria-label="Language" data-i18n-aria-label="downloads.language.label"></select>
+        </label>
+        <label class="control">
+          <span data-i18n="downloads.theme.label">Theme</span>
+          <select id="themeSelect" aria-label="Theme" data-i18n-aria-label="downloads.theme.label">
+            <option value="auto" data-i18n="downloads.theme.auto">Automatic</option>
+            <option value="light" data-i18n="downloads.theme.light">Light</option>
+            <option value="dark" data-i18n="downloads.theme.dark">Dark</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="legalTitle">
+        <h1 id="legalTitle" data-i18n="legal.title">Legal information</h1>
+        <p class="notice">
+          <strong data-i18n="legal.notice.controlling">LICENSE is the controlling English legal text.</strong>
+          <span data-i18n="legal.notice.translation">LICENSE.it.md is provided only as an informational Italian translation.</span>
+          <span data-i18n="legal.notice.sourceAvailable">LoadComposer is source-available under its custom license.</span>
+        </p>
+
+        <h2 data-i18n="legal.documents.title">Documents</h2>
+        <ul>
+          <li><a href="./LICENSE" data-i18n="legal.documents.licenseEnglish">LoadComposer Community License 1.0 — controlling English text</a></li>
+          <li><a href="./LICENSE.it.md" data-i18n="legal.documents.licenseItalian">LoadComposer Community License 1.0 — informational Italian translation</a></li>
+          <li><a href="./NOTICE" data-i18n="legal.documents.notice">Notice and attribution</a></li>
+          <li><a href="./TRADEMARKS.md" data-i18n="legal.documents.trademarks">Trademark policy</a></li>
+          <li><a href="./COMMERCIAL-LICENSING.md" data-i18n="legal.documents.commercial">Commercial licensing</a></li>
+          <li><a href="./PRIVACY.md" data-i18n="legal.documents.privacy">Privacy information</a></li>
+          <li><a href="./SECURITY.md" data-i18n="legal.documents.security">Security policy</a></li>
+        </ul>
+
+        <h2 data-i18n="legal.contact.title">Contact</h2>
+        <p class="contact"><span data-i18n="legal.contact.prefix">Commercial licensing and license questions:</span> <a href="mailto:licensing@loadcomposer.com">licensing@loadcomposer.com</a>.</p>
+      </section>
+    </main>
+
+    <footer aria-label="Footer links" data-i18n-aria-label="footer.linksAria">
+      <a href="../" data-i18n="downloads.footer.home">Back to LoadComposer</a>
+      <a href="../downloads/" data-i18n="footer.download">Download</a>
+      <a href="./PRIVACY.md" data-i18n="footer.privacy">Privacy</a>
+      <a href="https://github.com/LoadComposer/loadcomposer" target="_blank" rel="noopener noreferrer" data-i18n="legal.footer.repository">Official repository</a>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+      const data = JSON.parse(document.getElementById("loadcomposer-legal-data").textContent);
+      const root = document.documentElement;
+      const languageSelect = document.getElementById("languageSelect");
+      const themeSelect = document.getElementById("themeSelect");
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      const systemTheme = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+      function browserLanguage() {
+        const raw = String((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+        const prefix = raw.split("-")[0];
+        return data.languages.some(item => item.code === prefix) ? prefix : data.defaultLanguage;
+      }
+
+      function savedLanguage() {
+        try {
+          const stored = localStorage.getItem("loadcomposer.language");
+          if (data.languages.some(item => item.code === stored)) return stored;
+        } catch (_) {}
+        return browserLanguage();
+      }
+
+      function translate(code) {
+        const catalog = data.catalogs[code] || data.catalogs[data.defaultLanguage];
+        root.lang = code;
+        root.dir = "ltr";
+        root.dataset.language = code;
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+          if (typeof catalog[key] === "string") element.textContent = catalog[key];
+        });
+        document.querySelectorAll("[data-i18n-aria-label]").forEach(element => {
+          const key = element.dataset.i18nAriaLabel;
+          if (typeof catalog[key] === "string") element.setAttribute("aria-label", catalog[key]);
+        });
+        document.title = catalog["legal.meta.title"];
+        document.querySelector('meta[name="description"]').setAttribute("content", catalog["legal.meta.description"]);
+        document.querySelector('meta[property="og:title"]').setAttribute("content", catalog["legal.meta.title"]);
+        document.querySelector('meta[property="og:description"]').setAttribute("content", catalog["legal.meta.description"]);
+        languageSelect.value = code;
+        try { localStorage.setItem("loadcomposer.language", code); } catch (_) {}
+        root.dataset.i18nReady = "true";
+      }
+
+      function resolveTheme(preference) {
+        return preference === "auto" ? (systemTheme && systemTheme.matches ? "dark" : "light") : preference;
+      }
+
+      function setTheme(preference) {
+        root.dataset.themePreference = preference;
+        root.dataset.theme = resolveTheme(preference);
+        root.style.colorScheme = root.dataset.theme;
+        themeMeta.setAttribute("content", root.dataset.theme === "dark" ? "#050D16" : "#F4F5F2");
+        themeSelect.value = preference;
+        try { localStorage.setItem("loadcomposer.theme", preference); } catch (_) {}
+      }
+
+      data.languages.forEach(language => {
+        const option = document.createElement("option");
+        option.value = language.code;
+        option.textContent = language.nativeName;
+        languageSelect.append(option);
+      });
+      languageSelect.addEventListener("change", () => translate(languageSelect.value));
+      themeSelect.addEventListener("change", () => setTheme(themeSelect.value));
+      if (systemTheme) systemTheme.addEventListener("change", () => {
+        if (root.dataset.themePreference === "auto") setTheme("auto");
+      });
+      translate(savedLanguage());
+      setTheme(root.dataset.themePreference || "auto");
+    })();
+  </script>
+</body>
+</html>

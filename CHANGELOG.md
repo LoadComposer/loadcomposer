@@ -2,6 +2,35 @@
 
 All notable project changes are documented here.
 
+## [1.2.1] — 2026-08-14
+
+### Changed
+
+- Aligned the Download and Legal page palettes, typography, controls, and
+  secondary-page footer treatment with the main application.
+- Replaced the standalone Legal presentation with a localized secondary-page
+  shell supporting the seven enabled languages and the shared automatic,
+  light, and dark theme preference.
+- Increased the controlled desktop application shell from 1280 px to 1520 px
+  while retaining the approximately 430 px load-data panel.
+- Simplified the result table to five columns, removed only the repeated
+  per-vehicle Weight column, and retained the upper Weight — N/A summary.
+- Reworded Load / capacity and access details with concise localized ratios,
+  free-slot or missing-pallet messages, and stacking-only floor-position data.
+- Added a sticky Vehicle column when internal table scrolling is needed.
+- Aligned the custom 404 with the approved secondary-page shell, seven-language
+  preference and automatic/light/dark theme behavior while retaining a compact
+  no-script fallback, root-relative recovery links, `noindex` and `no-store`.
+
+### Unchanged from v1.2.0
+
+- Single and mixed algorithms, geometry, capacities, placement, stacking,
+  pallet and vehicle data, prudential thresholds, residual-space semantics,
+  preview, print and PDF output.
+- The seven canonical legal documents, which remain byte-identical.
+- Routes, cache philosophy, CSP, offline behavior, and all v1.0.0, v1.1.0 and
+  v1.2.0 versioned download artifacts.
+
 ## [1.2.0] — 2026-08-12
 
 ### Added

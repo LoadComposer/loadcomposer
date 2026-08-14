@@ -9,7 +9,7 @@ const SITE = path.join(ROOT, "site");
 const STANDALONE = path.join(
   SITE,
   "downloads",
-  "loadcomposer-v1.2.0-standalone.html"
+  "loadcomposer-v1.2.1-standalone.html"
 );
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 
@@ -79,8 +79,8 @@ async function inspect(browser, url, code) {
   await context.close();
   assert(errors.length === 0, `${url}/${code}: ${errors.join(" | ")}`);
   assert(remote.length === 0, `${url}/${code}: remote requests ${remote.join(", ")}`);
-  assert(state.title === "LoadComposer v1.2.0", `${url}/${code}: title`);
-  assert(state.badge === "v1.2.0", `${url}/${code}: badge`);
+  assert(state.title === "LoadComposer v1.2.1", `${url}/${code}: title`);
+  assert(state.badge === "v1.2.1", `${url}/${code}: badge`);
   assert(state.language === code, `${url}/${code}: active language ${state.language}`);
   assert(state.rows > 0, `${url}/${code}: result table`);
 }

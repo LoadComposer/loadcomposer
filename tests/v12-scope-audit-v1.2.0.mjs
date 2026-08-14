@@ -5,6 +5,7 @@ import path from "node:path";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const BASELINE = path.join(ROOT, "tests", "fixtures", "baseline-v1.1.0");
+const TARGET = path.join(ROOT, "tests", "fixtures", "baseline-v1.2.0");
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const EXPECTED_BASELINE_HASHES = {
   "loadcomposer-v1.1.0.html": "d45ce95bf8dae458be80131c728477744fe076f784e995704e2a9d7b97334604",
@@ -17,6 +18,18 @@ const EXPECTED_BASELINE_HASHES = {
   "lang/fr.json": "8c182cf077149c315a8d9554bff4d3ec24ee09b5cbd4676b0b4b4ad72fc583b8",
   "lang/pt.json": "0b49785503f36ada52c6107aabe8ccfa0e2b5cba5caa327d409d991b68746ee2",
   "lang/nl.json": "6f4212f5da247b36f7e7fe43c99f5c6234640e62a3238bab3be97b856d342dac"
+};
+const EXPECTED_TARGET_HASHES = {
+  "loadcomposer-v1.2.0.html": "b56be4f08b82dd4a46950043681b22f47d58b94abda615805e466ff6f7974fa1",
+  "loadcomposer-v1.2.0-standalone.html": "b6cb5321e003b58fa4429081b35c2fcdffa849a2e2b089f8781235692988523d",
+  "lang/index.json": "bbb457595ba12d38cb7853a3f5b67fff679a79655b3959cb24ee9443ce76198f",
+  "lang/it.json": "10d498eb343d5d49a1ac7011d177db7166cb47c8f87abf671cc9fe3a28c8ce6e",
+  "lang/en.json": "28cbf591e8fd5101b49c95e6e268e35370ed60b5915eaf28c72ce4881c90079e",
+  "lang/de.json": "dfac8fe26828b949d6374d9e9effcfa511bff57c1518667075437bc72fe94bca",
+  "lang/es.json": "bceb69b9b95b4daa20f3fa9d1316454acc092f78a381906aff4cf179c4114182",
+  "lang/fr.json": "62ad3b84e24ad2a19571bda82b8f06b2d5b3851123a1af37f165f8986ccfafac",
+  "lang/pt.json": "2f48ac9da463b6b12e3f1193a5f120a792cd3c7b6f911fb8c7c340261e2556f3",
+  "lang/nl.json": "86ab4bcbc3b3723cd272e9be16d1a8ca2d763fa4328c8517343865024c91786c"
 };
 const ADDED_KEYS = [
   "footer.download",
@@ -125,16 +138,19 @@ function normalizeCurrentHtml(source) {
 for (const [relative, expected] of Object.entries(EXPECTED_BASELINE_HASHES)) {
   assert.equal(sha256(path.join(BASELINE, relative)), expected, `Baseline fixture changed: ${relative}`);
 }
+for (const [relative, expected] of Object.entries(EXPECTED_TARGET_HASHES)) {
+  assert.equal(sha256(path.join(TARGET, relative)), expected, `Target fixture changed: ${relative}`);
+}
 
 assert.equal(
-  read(path.join(ROOT, "site", "lang", "index.json")),
+  read(path.join(TARGET, "lang", "index.json")),
   read(path.join(BASELINE, "lang", "index.json")),
   "Language inventory changed from v1.1.0."
 );
 
 for (const code of CODES) {
   const baseline = JSON.parse(read(path.join(BASELINE, "lang", `${code}.json`)));
-  const current = JSON.parse(read(path.join(ROOT, "site", "lang", `${code}.json`)));
+  const current = JSON.parse(read(path.join(TARGET, "lang", `${code}.json`)));
   assert.equal(current.meta.version, "1.2.0", `${code}: current metadata version.`);
   current.meta.version = baseline.meta.version;
   for (const key of ADDED_KEYS) {
@@ -150,11 +166,11 @@ for (const code of CODES) {
 }
 
 for (const [baselineName, currentName] of [
-  ["loadcomposer-v1.1.0.html", "site/index.html"],
-  ["loadcomposer-v1.1.0-standalone.html", "site/downloads/loadcomposer-v1.2.0-standalone.html"]
+  ["loadcomposer-v1.1.0.html", "loadcomposer-v1.2.0.html"],
+  ["loadcomposer-v1.1.0-standalone.html", "loadcomposer-v1.2.0-standalone.html"]
 ]) {
   const baseline = stripEmbeddedCatalogs(read(path.join(BASELINE, baselineName)));
-  const current = normalizeCurrentHtml(read(path.join(ROOT, currentName)));
+  const current = normalizeCurrentHtml(read(path.join(TARGET, currentName)));
   if (current !== baseline) {
     const diagnostic = path.join("/tmp", `loadcomposer-${path.basename(currentName)}-normalized.html`);
     fs.writeFileSync(diagnostic, current);

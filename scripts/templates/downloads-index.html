@@ -14,14 +14,14 @@
   <title>Download LoadComposer — Online oppure offline</title>
   <meta name="description" content="Usa LoadComposer online oppure scarica la versione standalone per computer senza accesso a Internet." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#071a24" />
+  <meta name="theme-color" content="#F4F5F2" />
   <link rel="canonical" href="https://loadcomposer.com/downloads/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LoadComposer" />
   <meta property="og:title" content="Download LoadComposer — Online oppure offline" />
   <meta property="og:description" content="Usa LoadComposer online oppure scarica la versione standalone per computer senza accesso a Internet." />
   <meta property="og:url" content="https://loadcomposer.com/downloads/" />
-  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.0.png" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.1.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -44,30 +44,32 @@
   </script>
   <style>
     :root {
-      --bg: #f1f7f9;
-      --surface: #ffffff;
-      --surface-soft: #e9f3f4;
-      --text: #102d35;
-      --muted: #536d75;
-      --border: #bed2d6;
-      --accent: #0f766e;
-      --accent-hover: #0d655f;
-      --accent-soft: #d7efec;
-      --focus: #0b83a3;
-      --shadow: 0 18px 46px rgba(22, 62, 69, .10);
+      --bg: #F4F5F2;
+      --surface: #FFFFFF;
+      --surface-soft: #F1F5F3;
+      --text: #13272F;
+      --muted: #52656C;
+      --border: #D2DCD8;
+      --accent: #0D7C75;
+      --accent-hover: #096C66;
+      --accent-soft: #DDF3F0;
+      --focus: #007C73;
+      --primary-text: #FFFFFF;
+      --shadow: 0 1px 2px rgba(16, 36, 46, .05), 0 8px 24px rgba(16, 36, 46, .07);
     }
     :root[data-theme="dark"] {
-      --bg: #071a24;
-      --surface: #0d2732;
-      --surface-soft: #12343d;
-      --text: #e6f3f4;
-      --muted: #a6bdc1;
-      --border: #34515a;
-      --accent: #55d6c6;
-      --accent-hover: #75e4d6;
-      --accent-soft: #123d3e;
-      --focus: #6ddbf4;
-      --shadow: 0 18px 54px rgba(0, 0, 0, .25);
+      --bg: #050D16;
+      --surface: #0D1B27;
+      --surface-soft: #122330;
+      --text: #E2E9EC;
+      --muted: #AAB7BE;
+      --border: #263B4A;
+      --accent: #3BC0B5;
+      --accent-hover: #4ACBC0;
+      --accent-soft: #102F33;
+      --focus: #60D5CB;
+      --primary-text: #03181D;
+      --shadow: 0 1px 0 rgba(255, 255, 255, .035), 0 12px 28px rgba(0, 0, 0, .16);
     }
     * { box-sizing: border-box; }
     html { min-width: 0; background: var(--bg); }
@@ -76,7 +78,7 @@
       min-width: 0;
       color: var(--text);
       background: var(--bg);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.55;
     }
     a { color: inherit; }
@@ -99,13 +101,11 @@
     .card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     h2 { margin: 0; font-size: 27px; line-height: 1.15; }
     .badge { display: inline-flex; align-items: center; min-height: 30px; padding: 5px 10px; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 999px; font-size: 11px; font-weight: 850; letter-spacing: .04em; text-align: center; }
-    .card.primary .badge { color: #ffffff; background: var(--accent); border-color: var(--accent); }
-    :root[data-theme="dark"] .card.primary .badge { color: #07231f; }
+    .card.primary .badge { color: var(--primary-text); background: var(--accent); border-color: var(--accent); }
     .body { margin: 18px 0; color: var(--muted); }
     .benefits { margin: 0 0 23px; padding-left: 22px; }
     .benefits li + li { margin-top: 8px; }
-    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 11px 18px; color: #ffffff; background: var(--accent); border: 1px solid var(--accent); border-radius: 12px; font-weight: 800; text-decoration: none; text-align: center; }
-    :root[data-theme="dark"] .button { color: #07231f; }
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 11px 18px; color: var(--primary-text); background: var(--accent); border: 1px solid var(--accent); border-radius: 12px; font-weight: 800; text-decoration: none; text-align: center; }
     .button:hover { background: var(--accent-hover); }
     .button.secondary { color: var(--text); background: transparent; border-color: var(--border); }
     :root[data-theme="dark"] .button.secondary { color: var(--text); border-color: var(--accent); }
@@ -199,14 +199,14 @@
           </div>
           <p class="body" data-i18n="downloads.offline.body">Pensata per computer che non hanno accesso a Internet o devono restare offline. È una semplice pagina web standalone e il planner funziona senza connessione. Non si aggiorna automaticamente: per usare nuove funzioni e correzioni devi sostituire manualmente il file con una versione più recente.</p>
           <p class="offline-note" data-i18n="downloads.offline.internetNote">Se hai accesso a Internet, normalmente non serve scaricare questa versione.</p>
-          <p class="version" data-i18n="downloads.currentVersion">LoadComposer v1.2.0</p>
+          <p class="version" data-i18n="downloads.currentVersion">LoadComposer v1.2.1</p>
 
           <div class="download-option">
-            <a class="button" href="./loadcomposer-v1.2.0-standalone.html" download="loadcomposer-v1.2.0-standalone.html" data-i18n="downloads.offline.htmlButton">Scarica HTML standalone</a>
+            <a class="button" href="./loadcomposer-v1.2.1-standalone.html" download="loadcomposer-v1.2.1-standalone.html" data-i18n="downloads.offline.htmlButton">Scarica HTML standalone</a>
             <p class="download-help" data-i18n="downloads.offline.htmlHelp">Un solo file da copiare sul computer e aprire con il browser.</p>
           </div>
           <div class="download-option">
-            <a class="button secondary" href="./loadcomposer-v1.2.0-standalone.zip" download="loadcomposer-v1.2.0-standalone.zip" data-i18n="downloads.offline.zipButton">Scarica ZIP standalone</a>
+            <a class="button secondary" href="./loadcomposer-v1.2.1-standalone.zip" download="loadcomposer-v1.2.1-standalone.zip" data-i18n="downloads.offline.zipButton">Scarica ZIP standalone</a>
             <p class="download-help" data-i18n="downloads.offline.zipHelp">Pacchetto standalone compresso, utile per archiviazione o distribuzione interna.</p>
           </div>
 

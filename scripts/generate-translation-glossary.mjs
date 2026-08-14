@@ -9,8 +9,8 @@ const LANG_DIR = path.join(PROJECT_DIR, "site", "lang");
 const OUTPUT_DIR = path.join(PROJECT_DIR, "docs", "translations");
 const IT_PATH = path.join(LANG_DIR, "it.json");
 const TARGET_CODES = ["en", "de", "es", "fr", "pt", "nl"];
-const VERSION = "v1.2.0";
-const EXPECTED_COUNT = 492;
+const VERSION = "v1.2.1";
+const EXPECTED_COUNT = 514;
 const CHECK_ONLY = process.argv.includes("--check");
 
 const CONTEXT_BY_PREFIX = {
@@ -20,6 +20,7 @@ const CONTEXT_BY_PREFIX = {
   footer: "Piè di pagina dell’applicazione",
   geometry: "Validazione geometrica e diagnostica dello schema",
   language: "Selettore e preferenze della lingua",
+  legal: "Interfaccia della pagina Informazioni legali",
   layout: "Descrizione e calcolo della disposizione",
   load: "Sezione Dati carico",
   meta: "Metadati del documento",
@@ -45,6 +46,7 @@ const NOTE_BY_PREFIX = {
   footer: "Testo informativo non operativo.",
   geometry: "Terminologia tecnica di validazione; non semplificare il significato geometrico.",
   language: "Terminologia del selettore lingua e dei relativi stati.",
+  legal: "Testo dell’interfaccia Legal; non modifica né traduce i documenti legali canonici.",
   layout: "Terminologia della disposizione e della capacità geometrica.",
   load: "Terminologia della configurazione del carico.",
   meta: "Nome prodotto e numero di versione invariati.",

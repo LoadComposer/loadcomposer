@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--
+  LoadComposer
+  Copyright © 2026 Marco Pernigotti.
+  Licensed under the LoadComposer Community License 1.0.
+  SPDX-License-Identifier: LicenseRef-LoadComposer-Community-1.0
+  Official repository: https://github.com/LoadComposer/loadcomposer
+  Provided "AS IS", without warranty.
+-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoadComposer — Page not found</title>
+  <meta name="description" content="The requested LoadComposer address does not exist." />
+  <meta name="robots" content="noindex,follow" />
+  <meta name="theme-color" content="#F4F5F2" />
+  <link rel="icon" href="/assets/loadcomposer-favicon.svg" type="image/svg+xml" />
+  <script id="loadcomposer-404-data" type="application/json">__404_DATA__</script>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themes = new Set(["auto", "light", "dark"]);
+      let preference = "auto";
+      try {
+        const stored = localStorage.getItem("loadcomposer.theme");
+        if (themes.has(stored)) preference = stored;
+      } catch (_) {}
+      const systemDark = Boolean(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      const resolved = preference === "auto" ? (systemDark ? "dark" : "light") : preference;
+      root.dataset.themePreference = preference;
+      root.dataset.theme = resolved;
+      root.style.colorScheme = resolved;
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", resolved === "dark" ? "#050D16" : "#F4F5F2");
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #F4F5F2;
+      --surface: #FFFFFF;
+      --surface-soft: #F1F5F3;
+      --text: #13272F;
+      --muted: #52656C;
+      --border: #D2DCD8;
+      --accent: #0D7C75;
+      --accent-hover: #096C66;
+      --accent-soft: #DDF3F0;
+      --focus: #007C73;
+      --primary-text: #FFFFFF;
+      --shadow: 0 1px 2px rgba(16, 36, 46, .05), 0 8px 24px rgba(16, 36, 46, .07);
+    }
+    :root[data-theme="dark"] {
+      --bg: #050D16;
+      --surface: #0D1B27;
+      --surface-soft: #122330;
+      --text: #E2E9EC;
+      --muted: #AAB7BE;
+      --border: #263B4A;
+      --accent: #3BC0B5;
+      --accent-hover: #4ACBC0;
+      --accent-soft: #102F33;
+      --focus: #60D5CB;
+      --primary-text: #03181D;
+      --shadow: 0 1px 0 rgba(255, 255, 255, .035), 0 12px 28px rgba(0, 0, 0, .16);
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 0; background: var(--bg); }
+    body {
+      margin: 0;
+      min-width: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    button, select { font: inherit; }
+    .shell { width: min(1080px, 100%); min-height: 100vh; display: flex; flex-direction: column; margin: 0 auto; padding: 20px 22px 40px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-size: 20px; font-weight: 800; text-decoration: none; }
+    .brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--border); }
+    .brand-mark svg { width: 25px; height: 25px; fill: currentColor; }
+    .controls { display: flex; flex-wrap: wrap; align-items: end; justify-content: flex-end; gap: 10px; }
+    .control { display: grid; gap: 4px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .control select { min-height: 44px; padding: 8px 34px 8px 12px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+    main { width: min(720px, 100%); flex: 1; display: grid; align-content: center; margin: 0 auto; padding: 56px 0 28px; }
+    .card { padding: clamp(28px, 6vw, 48px); text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); }
+    .status { margin: 0 0 10px; color: var(--accent); font-size: 16px; font-weight: 850; line-height: 1; letter-spacing: .14em; }
+    h1 { margin: 0; font-size: clamp(34px, 6vw, 48px); line-height: 1.08; letter-spacing: -.035em; }
+    .description { max-width: 520px; margin: 16px auto 0; color: var(--muted); font-size: 18px; }
+    .actions { max-width: 540px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 30px auto 0; }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; padding: 11px 18px; border: 1px solid var(--border); border-radius: 12px; color: var(--text); background: transparent; font-weight: 800; text-decoration: none; text-align: center; }
+    .button:hover { color: var(--text); background: var(--accent-soft); border-color: var(--accent); }
+    .button.primary { flex-basis: 100%; max-width: 300px; color: var(--primary-text); background: var(--accent); border-color: var(--accent); }
+    .button.primary:hover { color: var(--primary-text); background: var(--accent-hover); }
+    footer { display: flex; justify-content: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    @media (max-width: 760px) {
+      .shell { padding: 16px 14px 32px; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .controls { width: 100%; justify-content: stretch; }
+      .control { flex: 1 1 135px; }
+      .control select { width: 100%; }
+      main { padding-top: 38px; }
+      .card { padding: 30px 20px; }
+    }
+    @media (max-width: 420px) {
+      .actions { display: grid; grid-template-columns: 1fr; }
+      .button, .button.primary { width: 100%; max-width: none; }
+    }
+    @media (max-width: 350px) {
+      .shell { padding-inline: 10px; }
+      .brand { font-size: 18px; }
+      .controls { display: grid; grid-template-columns: 1fr; }
+      h1 { font-size: 32px; }
+      .description { font-size: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Return to LoadComposer" data-i18n-aria-label="downloads.brandHomeAria">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v4h5V5H4Zm7 0v4h9V5h-9ZM4 11v8h5v-8H4Zm7 0v8h9v-8h-9Z"/></svg>
+        </span>
+        <span>LoadComposer</span>
+      </a>
+      <div class="controls">
+        <label class="control">
+          <span data-i18n="downloads.language.label">Language</span>
+          <select id="languageSelect" aria-label="Language" data-i18n-aria-label="downloads.language.label">__LANGUAGE_OPTIONS__</select>
+        </label>
+        <label class="control">
+          <span data-i18n="downloads.theme.label">Theme</span>
+          <select id="themeSelect" aria-label="Theme" data-i18n-aria-label="downloads.theme.label">
+            <option value="auto" data-i18n="downloads.theme.auto">Automatic</option>
+            <option value="light" data-i18n="downloads.theme.light">Light</option>
+            <option value="dark" data-i18n="downloads.theme.dark">Dark</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="notFoundTitle">
+        <p class="status" aria-hidden="true">404</p>
+        <h1 id="notFoundTitle" data-i18n="404.title">Page not found</h1>
+        <p class="description" data-i18n="404.description">The requested address does not exist.</p>
+        <nav class="actions" aria-label="Page links" data-i18n-aria-label="404.navigationAria">
+          <a class="button primary" href="/" data-i18n="downloads.footer.home">Return to LoadComposer</a>
+          <a class="button" href="/downloads/" data-i18n="footer.download">Download</a>
+          <a class="button" href="/legal/" data-i18n="footer.legalInformation">Legal information</a>
+        </nav>
+      </section>
+    </main>
+
+    <footer><span>LoadComposer v1.2.1</span></footer>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+      const data = JSON.parse(document.getElementById("loadcomposer-404-data").textContent);
+      const root = document.documentElement;
+      const languageSelect = document.getElementById("languageSelect");
+      const themeSelect = document.getElementById("themeSelect");
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      const systemTheme = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+      function browserLanguage() {
+        const raw = String((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+        const prefix = raw.split("-")[0];
+        return data.languages.some(item => item.code === prefix) ? prefix : data.defaultLanguage;
+      }
+
+      function savedLanguage() {
+        try {
+          const stored = localStorage.getItem("loadcomposer.language");
+          if (data.languages.some(item => item.code === stored)) return stored;
+        } catch (_) {}
+        return browserLanguage();
+      }
+
+      function translate(code) {
+        const catalog = data.catalogs[code] || data.catalogs[data.defaultLanguage];
+        root.lang = code;
+        root.dir = "ltr";
+        root.dataset.language = code;
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+          if (typeof catalog[key] === "string") element.textContent = catalog[key];
+        });
+        document.querySelectorAll("[data-i18n-aria-label]").forEach(element => {
+          const key = element.dataset.i18nAriaLabel;
+          if (typeof catalog[key] === "string") element.setAttribute("aria-label", catalog[key]);
+        });
+        document.title = catalog["404.meta.title"];
+        document.querySelector('meta[name="description"]').setAttribute("content", catalog["404.meta.description"]);
+        languageSelect.value = code;
+        try { localStorage.setItem("loadcomposer.language", code); } catch (_) {}
+        root.dataset.i18nReady = "true";
+      }
+
+      function resolveTheme(preference) {
+        return preference === "auto" ? (systemTheme && systemTheme.matches ? "dark" : "light") : preference;
+      }
+
+      function setTheme(preference) {
+        root.dataset.themePreference = preference;
+        root.dataset.theme = resolveTheme(preference);
+        root.style.colorScheme = root.dataset.theme;
+        themeMeta.setAttribute("content", root.dataset.theme === "dark" ? "#050D16" : "#F4F5F2");
+        themeSelect.value = preference;
+        try { localStorage.setItem("loadcomposer.theme", preference); } catch (_) {}
+      }
+
+      languageSelect.addEventListener("change", () => translate(languageSelect.value));
+      themeSelect.addEventListener("change", () => setTheme(themeSelect.value));
+      if (systemTheme) systemTheme.addEventListener("change", () => {
+        if (root.dataset.themePreference === "auto") setTheme("auto");
+      });
+      translate(savedLanguage());
+      setTheme(root.dataset.themePreference || "auto");
+    })();
+  </script>
+</body>
+</html>

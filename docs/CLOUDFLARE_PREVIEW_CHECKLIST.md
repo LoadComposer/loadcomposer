@@ -1,7 +1,7 @@
 # Cloudflare Pages preview checklist
 
 Do not create the stable tag or GitHub Release until this checklist is complete
-on the deployed `v1.2.0` commit.
+on the deployed `v1.2.1` commit.
 
 ## Project setup
 
@@ -21,7 +21,7 @@ on the deployed `v1.2.0` commit.
 - Verify desktop and mobile layouts, including 320 px width.
 - Verify preview side/ramp views and colour/black-and-white modes.
 - Verify browser print and saved PDF output.
-- Confirm title and visible badge show `v1.2.0`.
+- Confirm title and visible badge show `v1.2.1`.
 
 ## Legal pages and downloads
 
@@ -30,7 +30,7 @@ on the deployed `v1.2.0` commit.
   privacy, and security from the legal index.
 - Confirm the three footer links resolve and do not appear in print.
 - Open `/downloads/`, confirm the online choice is recommended, then download
-  `loadcomposer-v1.2.0-standalone.html`, the ZIP, and both `.sha256` sidecars.
+  `loadcomposer-v1.2.1-standalone.html`, the ZIP, and both `.sha256` sidecars.
 - Verify the downloaded ZIP sidecar.
 - Extract the ZIP and verify its five internal hashes.
 - Open the extracted HTML through `file://`.
@@ -47,7 +47,7 @@ on the deployed `v1.2.0` commit.
   automatic redirect, canonical URL, or Open Graph metadata.
 - Confirm its links to `/` and `/legal/` work with the keyboard and show visible
   focus.
-- Confirm v1.0.0, v1.1.0, and v1.2.0 artifacts below `/downloads/` still
+- Confirm v1.0.0, v1.1.0, v1.2.0, and v1.2.1 artifacts below `/downloads/` all
   return normally, with the index revalidated and versioned artifacts immutable.
 - Confirm `404.html` is absent from `sitemap.xml`.
 

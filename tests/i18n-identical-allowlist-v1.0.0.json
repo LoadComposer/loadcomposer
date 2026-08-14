@@ -62,6 +62,8 @@
     },
     "fr": {
       "footer.suggestions": "Suggestions è la forma francese corretta.",
+      "legal.documents.title": "Documents è la forma francese corretta.",
+      "legal.contact.title": "Contact è la forma francese corretta.",
       "pallet.customFallbackType": "Type è la forma francese corretta.",
       "geometry.orientationNormal": "Normale è la forma francese corretta.",
       "print.type": "Type è la forma francese corretta.",
@@ -87,6 +89,7 @@
     "nl": {
       "footer.download": "Download è il termine olandese corrente.",
       "footer.privacy": "Privacy è il termine olandese corrente.",
+      "legal.contact.title": "Contact è la forma olandese corretta.",
       "pallet.customFallbackType": "Type è la forma olandese corretta.",
       "preset.42x42.name": "Pallet e misura tecnica sono intenzionalmente invariati.",
       "preset.48x45.name": "Pallet e misura tecnica sono intenzionalmente invariati.",

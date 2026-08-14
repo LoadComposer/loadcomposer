@@ -5,7 +5,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.2.0-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.2.1-standalone.html")
 ).href;
 const LANGUAGES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const LOCALES = {
@@ -20,51 +20,58 @@ const LOCALES = {
 const EXPECTED = {
   it: {
     pallet: ["pallet", "pallet", "pallet", "pallet"],
-    floor: ["0 posizioni a pavimento", "1 posizione a pavimento", "2 posizioni a pavimento", "5 posizioni a pavimento"],
+    floor: ["Posti a pavimento: 0", "Posto a pavimento: 1", "Posti a pavimento: 2", "Posti a pavimento: 5"],
     layer: ["capacità geometrica 0 strati", "capacità geometrica 1 strato", "capacità geometrica 2 strati", "capacità geometrica 5 strati"],
     missing: ["Non piazzato: 1 pallet.", "Non piazzati: 2 pallet."],
+    tableMissing: "Manca 1 pallet",
     mixed: ["1 pallet misto è piazzato a pavimento.", "2 pallet misti sono piazzati a pavimento."]
   },
   en: {
     pallet: ["pallets", "pallet", "pallets", "pallets"],
-    floor: ["0 floor positions", "1 floor position", "2 floor positions", "5 floor positions"],
+    floor: ["Floor positions: 0", "Floor position: 1", "Floor positions: 2", "Floor positions: 5"],
     layer: ["geometric capacity 0 layers", "geometric capacity 1 layer", "geometric capacity 2 layers", "geometric capacity 5 layers"],
     missing: ["Not placed: 1 pallet.", "Not placed: 2 pallets."],
+    tableMissing: "1 pallet missing",
     mixed: ["1 mixed pallet is placed on the floor.", "2 mixed pallets are placed on the floor."]
   },
   de: {
     pallet: ["Paletten", "Palette", "Paletten", "Paletten"],
-    floor: ["0 Bodenstellplätze", "1 Bodenstellplatz", "2 Bodenstellplätze", "5 Bodenstellplätze"],
+    floor: ["Bodenstellplätze: 0", "Bodenstellplatz: 1", "Bodenstellplätze: 2", "Bodenstellplätze: 5"],
     layer: ["geometrische Kapazität 0 Lagen", "geometrische Kapazität 1 Lage", "geometrische Kapazität 2 Lagen", "geometrische Kapazität 5 Lagen"],
     missing: ["Nicht platziert: 1 Palette.", "Nicht platziert: 2 Paletten."],
+    tableMissing: "Es fehlt 1 Palette",
     mixed: ["1 gemischte Palette ist am Boden platziert.", "2 gemischte Paletten sind am Boden platziert."]
   },
   es: {
     pallet: ["palés", "palé", "palés", "palés"],
-    floor: ["0 posiciones en suelo", "1 posición en suelo", "2 posiciones en suelo", "5 posiciones en suelo"],
+    floor: ["Puestos en el suelo: 0", "Puesto en el suelo: 1", "Puestos en el suelo: 2", "Puestos en el suelo: 5"],
     layer: ["capacidad geométrica de 0 niveles", "capacidad geométrica de 1 nivel", "capacidad geométrica de 2 niveles", "capacidad geométrica de 5 niveles"],
     missing: ["Sin colocar: 1 palé.", "Sin colocar: 2 palés."],
+    tableMissing: "Falta 1 palé",
     mixed: ["1 palé mixto está colocado en el suelo.", "2 palés mixtos están colocados en el suelo."]
   },
   fr: {
     pallet: ["palette", "palette", "palettes", "palettes"],
-    floor: ["0 position au sol", "1 position au sol", "2 positions au sol", "5 positions au sol"],
+    floor: ["Place au sol : 0", "Place au sol : 1", "Places au sol : 2", "Places au sol : 5"],
     layer: ["capacité géométrique de 0 niveau", "capacité géométrique de 1 niveau", "capacité géométrique de 2 niveaux", "capacité géométrique de 5 niveaux"],
     missing: ["Non placée : 1 palette.", "Non placées : 2 palettes."],
+    tableMissing: "Il manque 1 palette",
     mixed: ["1 palette mixte est placée au sol.", "2 palettes mixtes sont placées au sol."]
   },
   pt: {
     pallet: ["paletes", "palete", "paletes", "paletes"],
-    floor: ["0 posições no piso", "1 posição no piso", "2 posições no piso", "5 posições no piso"],
+    floor: ["Lugares no piso: 0", "Lugar no piso: 1", "Lugares no piso: 2", "Lugares no piso: 5"],
     layer: ["capacidade geométrica de 0 níveis", "capacidade geométrica de 1 nível", "capacidade geométrica de 2 níveis", "capacidade geométrica de 5 níveis"],
     missing: ["Não colocada: 1 palete.", "Não colocadas: 2 paletes."],
+    tableMissing: "Falta 1 palete",
     mixed: ["1 palete mista está colocada no piso.", "2 paletes mistas estão colocadas no piso."]
   },
   nl: {
     pallet: ["pallets", "pallet", "pallets", "pallets"],
-    floor: ["0 vloerplaatsen", "1 vloerplaats", "2 vloerplaatsen", "5 vloerplaatsen"],
+    floor: ["Vloerplaatsen: 0", "Vloerplaats: 1", "Vloerplaatsen: 2", "Vloerplaatsen: 5"],
     layer: ["geometrische capaciteit 0 lagen", "geometrische capaciteit 1 laag", "geometrische capaciteit 2 lagen", "geometrische capaciteit 5 lagen"],
     missing: ["Niet geplaatst: 1 pallet.", "Niet geplaatst: 2 pallets."],
+    tableMissing: "1 pallet ontbreekt",
     mixed: ["1 gemengde pallet is op de vloer geplaatst.", "2 gemengde pallets zijn op de vloer geplaatst."]
   }
 };
@@ -279,8 +286,13 @@ try {
       assert(one.requested === 1 && one.placed === 1, `${language}: requested/placed 1`);
       assert(one.floorCapacity === 1 && one.placedFloor === 1, `${language}: floor 1`);
       assert(one.layers === 1 && one.loadLayers === 1, `${language}: layer 1`);
-      assert(clean(one.table).includes(EXPECTED[language].floor[1]), `${language}: table singular floor`);
-      assert(clean(one.preview).includes(EXPECTED[language].floor[1]), `${language}: preview singular floor`);
+      assert(!clean(one.table).includes(EXPECTED[language].floor[1]), `${language}: redundant table singular floor`);
+      const previewFloor = await app.page.evaluate(() => window.loadComposerI18n.plural(
+        "preview.singleFloorCapacity",
+        1,
+        { count: "1" }
+      ));
+      assert(clean(one.preview).includes(clean(previewFloor)), `${language}: preview singular floor`);
       assert(!clean(one.table).includes("⟦") && !clean(one.preview).includes("⟦"), `${language}: technical marker`);
       const onePrint = await capturePrint(app.page);
       assert(!onePrint.technical && !onePrint.undefinedText, `${language}: print markers`);
@@ -302,7 +314,7 @@ try {
         `${language}: preview one unplaced`
       );
       assert(
-        clean(missing.table).includes(clean(EXPECTED[language].missing[0].replace(/\.$/, ""))),
+        clean(missing.table).includes(clean(EXPECTED[language].tableMissing)),
         `${language}: table one unplaced`
       );
 
@@ -380,9 +392,9 @@ try {
 }
 
 fs.writeFileSync(
-  path.join(ROOT, "quantity-rendering-results-v1.2.0.json"),
+  path.join(ROOT, "quantity-rendering-results-v1.2.1.json"),
   `${JSON.stringify({
-    version: "1.2.0",
+    version: "1.2.1",
     languages: LANGUAGES,
     quantities: [0, 1, 2, 5],
     records,
