@@ -5,7 +5,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const CURRENT_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.2.1-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html")
 ).href;
 const BASELINE_URL = pathToFileURL(
   path.join(
@@ -14,8 +14,8 @@ const BASELINE_URL = pathToFileURL(
     "loadcomposer-v1.0.0-rc.3-standalone.html"
   )
 ).href;
-const EVIDENCE_DIR = path.join(ROOT, "visual-evidence-v1.2.1");
-const RESULT_PATH = path.join(ROOT, "visual-refinements-results-v1.2.1.json");
+const EVIDENCE_DIR = path.join(ROOT, "visual-evidence-v1.3.0");
+const RESULT_PATH = path.join(ROOT, "visual-refinements-results-v1.3.0.json");
 const LANGUAGES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const VIEWPORTS = [
   { width: 320, height: 568 },
@@ -816,8 +816,8 @@ async function verifyPrintExclusion(browser, records) {
           long: rotationLabel(long),
           auto: rotationLabel(auto),
           reversedShort: rotationLabel(reversedShort),
-          expectedShort: i18n.t("rotation.lockedShort", { entry: i18n.number(800) }),
-          expectedLong: i18n.t("rotation.lockedLong", { entry: i18n.number(1200) }),
+          expectedShort: i18n.t("rotation.lockedShort", { entry: formatLength(800) }),
+          expectedLong: i18n.t("rotation.lockedLong", { entry: formatLength(1200) }),
           expectedAuto: i18n.t("rotation.allowed"),
           legend
         };
@@ -1003,11 +1003,17 @@ async function verifyVisualDelta(browser, records) {
             `${width}/${theme}/${dimensions.id}/${index}: approved layout geometry changed`
           );
           assert(
-            JSON.stringify(diagram.dimensionSignature) ===
-              JSON.stringify(baseline.dimensionSignature) &&
+            JSON.stringify(diagram.dimensionSignature.map(item => item.slice(0, -1))) ===
+              JSON.stringify(baseline.dimensionSignature.map(item => item.slice(0, -1))) &&
               JSON.stringify(diagram.palletSignature) ===
                 JSON.stringify(baseline.palletSignature),
-            `${width}/${theme}/${dimensions.id}/${index}: pallet or dimensions changed`
+            `${width}/${theme}/${dimensions.id}/${index}: pallet or dimension geometry changed`
+          );
+          assert(
+            diagram.dimensionSignature
+              .filter(item => item[0].toLowerCase() === "text")
+              .every(item => / mm$/.test(item.at(-1))),
+            `${width}/${theme}/${dimensions.id}/${index}: selected-unit dimension label missing`
           );
           assert(
             diagram.background === "rgba(0, 0, 0, 0)" &&
@@ -1078,7 +1084,7 @@ async function captureEvidence(browser, url, prefix) {
 async function captureRequiredComparisons(browser) {
   const versions = [
     { url: BASELINE_URL, id: "rc.3" },
-    { url: CURRENT_URL, id: "v1.2.1" }
+    { url: CURRENT_URL, id: "v1.3.0" }
   ];
   const comparisonCases = ORIENTATION_CASES.filter(item => (
     ["euro", "industrial", "north-american", "custom", "elongated"].includes(item.id)
@@ -1300,7 +1306,7 @@ async function captureOrientationMatrix(browser) {
         await page.locator("#singlePalletGroup [data-role='orientationPanel']").screenshot({
           path: path.join(
             EVIDENCE_DIR,
-            `v1.2.1-orientation-${language}-${theme}-1200x800-390.png`
+            `v1.3.0-orientation-${language}-${theme}-1200x800-390.png`
           )
         });
       } finally {
@@ -1320,7 +1326,7 @@ async function captureOrientationMatrix(browser) {
       await page.setViewportSize(viewport);
       await configureOrientation(page, { length: 1200, width: 800 });
       await page.locator("#singlePalletGroup [data-role='orientationPanel']").screenshot({
-        path: path.join(EVIDENCE_DIR, `v1.2.1-orientation-viewport-${width}.png`)
+        path: path.join(EVIDENCE_DIR, `v1.3.0-orientation-viewport-${width}.png`)
       });
     } finally {
       await context.close();
@@ -1336,7 +1342,7 @@ async function captureOrientationMatrix(browser) {
     try {
       await configureOrientation(page, dimensions);
       await page.locator("#singlePalletGroup [data-role='orientationPanel']").screenshot({
-        path: path.join(EVIDENCE_DIR, `v1.2.1-orientation-case-${dimensions.id}.png`)
+        path: path.join(EVIDENCE_DIR, `v1.3.0-orientation-case-${dimensions.id}.png`)
       });
     } finally {
       await context.close();
@@ -1354,19 +1360,19 @@ try {
   await verifyPrintExclusion(browser, records);
   await verifyVisualDelta(browser, records);
   await captureEvidence(browser, BASELINE_URL, "before-rc.3");
-  await captureEvidence(browser, CURRENT_URL, "v1.2.1");
+  await captureEvidence(browser, CURRENT_URL, "v1.3.0");
   await captureRequiredComparisons(browser);
   await captureOrientationMatrix(browser);
   await capturePrintLegend(browser, BASELINE_URL, "before-rc.3", "normal");
-  await capturePrintLegend(browser, CURRENT_URL, "v1.2.1", "normal");
-  await capturePrintLegend(browser, CURRENT_URL, "v1.2.1", "rotated");
-  await capturePrintLegend(browser, CURRENT_URL, "v1.2.1", "auto");
+  await capturePrintLegend(browser, CURRENT_URL, "v1.3.0", "normal");
+  await capturePrintLegend(browser, CURRENT_URL, "v1.3.0", "rotated");
+  await capturePrintLegend(browser, CURRENT_URL, "v1.3.0", "auto");
 } finally {
   await browser.close();
 }
 
 const payload = {
-  version: "1.2.1",
+  version: "1.3.0",
   generatedAt: new Date().toISOString(),
   pickerScenarios: records.filter(record => record.type === "picker").length,
   pickerTouchScenarios: records.filter(record => record.type === "picker-touch").length,

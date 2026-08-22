@@ -6,7 +6,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const BASELINE = path.join(ROOT, "tests", "fixtures", "baseline-v1.1.0", "loadcomposer-v1.1.0-standalone.html");
-const CURRENT = path.join(ROOT, "site", "downloads", "loadcomposer-v1.2.1-standalone.html");
+const CURRENT = path.join(ROOT, "site", "downloads", "loadcomposer-v1.3.0-standalone.html");
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const CHANGED_KEYS = [
   "results.table.margin",
@@ -154,15 +154,15 @@ try {
       assert.equal(current[key], baseline[key], `${code}: baseline/current ${key} differs.`);
     }
     const catalog = readCatalog(code);
-    const renderedCompact = catalog["space.compactPlain"].replace("{margin}", "32");
+    const renderedCompact = catalog["space.compactPlain"].replace("{margin}", "32 mm");
     assert.equal(current.plain, renderedCompact, `${code}: compact plain text.`);
     assert.ok(current.html.includes(renderedCompact), `${code}: compact HTML text.`);
     assert.equal(current.plain.includes("perRow"), false, `${code}: perRow leaked.`);
     assert.equal(/(?:approximately|circa|etwa|aproximadamente|environ|ongeveer).*per/i.test(current.plain), false, `${code}: old per-row explanation remains.`);
     assert.equal(current.columnHeading, catalog["results.table.margin"], `${code}: remaining-space heading.`);
-    assert.ok(current.marginCell.includes(catalog["table.lengthMargin"].replace("{value}", "32")), `${code}: remaining length row.`);
+    assert.ok(current.marginCell.includes(catalog["table.lengthMargin"].replace("{value}", "32 mm")), `${code}: remaining length row.`);
     assert.ok(current.printHtml.includes(catalog["print.margins"]), `${code}: print remaining-space heading.`);
-    assert.ok(current.printHtml.includes(catalog["table.lengthMargin"].replace("{value}", "32")), `${code}: print remaining length.`);
+    assert.ok(current.printHtml.includes(catalog["table.lengthMargin"].replace("{value}", "32 mm")), `${code}: print remaining length.`);
     assert.ok(current.printHtml.includes(renderedCompact), `${code}: print compact instruction.`);
   }
 } finally {
@@ -171,17 +171,17 @@ try {
 
 const italian = readCatalog("it");
 assert.equal(italian["results.table.margin"], "Spazio residuo");
-assert.equal(italian["table.lengthMargin"], "Lunghezza residua: {value} mm");
-assert.equal(italian["table.widthMargin"], "Larghezza residua: {value} mm");
-assert.equal(italian["table.heightMargin"], "Altezza residua: {value} mm");
+assert.equal(italian["table.lengthMargin"], "Lunghezza residua: {value}");
+assert.equal(italian["table.widthMargin"], "Larghezza residua: {value}");
+assert.equal(italian["table.heightMargin"], "Altezza residua: {value}");
 assert.equal(italian["table.heightIndividual"], "Altezza residua: valutata per singolo pallet");
 assert.equal(italian["print.margins"], "Spazio residuo");
 assert.equal(
   italian["space.compactPlain"],
-  "Caricamento compatto: mantenere i pallet ben accostati fin dalle prime file. Restano solo {margin} mm liberi in lunghezza."
+  "Caricamento compatto: mantenere i pallet ben accostati fin dalle prime file. Restano solo {margin} liberi in lunghezza."
 );
 
 console.log(
   "Remaining-space PASS: canonical v1.1.0 fixture reproduces spareLength 32 mm; " +
-  "7/7 languages preserve activation, spare values, rows and internal allowancePerRow while updating only visible UI/plain/PDF wording."
+  "7/7 languages preserve activation, spare values, rows and internal allowancePerRow while formatting the selected linear unit in UI/plain/PDF wording."
 );

@@ -8,8 +8,8 @@ LoadComposer is a static, client-side application with no application backend.
 - `site/lang/index.json` lists enabled language catalogs.
 - `site/lang/*.json` contains the seven localized catalogs.
 - The modular page loads only same-origin catalog JSON.
-- `site/downloads/loadcomposer-v1.2.1-standalone.html` is deterministically generated from the same page and embeds the language index and catalogs.
-- `site/downloads/loadcomposer-v1.2.1-standalone.zip` is the compressed offline distribution and adds the controlling license, informational translation, notice, readme, and internal checksums.
+- `site/downloads/loadcomposer-v1.3.0-standalone.html` is deterministically generated from the same page and embeds the language index and catalogs.
+- `site/downloads/loadcomposer-v1.3.0-standalone.zip` is the compressed offline distribution and adds the controlling license, informational translation, notice, readme, and internal checksums.
 - `site/downloads/index.html` is generated after the standalone artifacts so it can embed their verified SHA-256 values while presenting the online planner as the normal recommended choice.
 - `site/legal/` exposes byte-identical copies of the canonical legal documents plus a generated seven-language secondary-page shell.
 - The application stores only theme and language preferences in browser `localStorage`; planning inputs are processed in the current page.
@@ -24,7 +24,7 @@ No framework, bundler, package registry, CDN, external font, remote script, or a
 
 The repository contains an exact ten-file `v1.2.0` fixture derived directly
 from the admitted canonical stable delivery. That fixture is the direct
-baseline for v1.2.1 source, catalog, functional and geometric comparisons.
+baseline for v1.3.0 source, catalog, functional and geometric comparisons.
 Older stable and RC fixtures remain only where historically required by the
 inherited regression and print evidence. Tests compare:
 

@@ -5,7 +5,7 @@ import path from "node:path";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const read = relative => fs.readFileSync(path.join(ROOT, relative), "utf8");
 const exists = relative => fs.existsSync(path.join(ROOT, relative));
-const VERSION = "1.2.1";
+const VERSION = "1.3.0";
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 
 const required = [
@@ -33,10 +33,10 @@ const required = [
   "site/robots.txt",
   "site/sitemap.xml",
   "site/downloads/index.html",
-  "site/downloads/loadcomposer-v1.2.1-standalone.html",
-  "site/downloads/loadcomposer-v1.2.1-standalone.html.sha256",
-  "site/downloads/loadcomposer-v1.2.1-standalone.zip",
-  "site/downloads/loadcomposer-v1.2.1-standalone.zip.sha256",
+  "site/downloads/loadcomposer-v1.3.0-standalone.html",
+  "site/downloads/loadcomposer-v1.3.0-standalone.html.sha256",
+  "site/downloads/loadcomposer-v1.3.0-standalone.zip",
+  "site/downloads/loadcomposer-v1.3.0-standalone.zip.sha256",
   "scripts/build-downloads-page.mjs",
   "scripts/templates/downloads-index.html",
   "docs/QUICK-START.md",
@@ -89,10 +89,10 @@ assert.equal(read("VERSION").trim(), VERSION);
 
 const app = read("site/index.html");
 for (const metadata of [
-  "<title>LoadComposer v1.2.1</title>",
+  "<title>LoadComposer v1.3.0</title>",
   'rel="canonical" href="https://loadcomposer.com/"',
   'property="og:url" content="https://loadcomposer.com/"',
-  'property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.1.png"',
+  'property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.0.png"',
   'name="robots"',
   'name="description"',
   'name="theme-color"'

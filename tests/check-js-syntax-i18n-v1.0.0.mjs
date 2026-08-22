@@ -5,7 +5,7 @@ import vm from "node:vm";
 const root = path.resolve(import.meta.dirname, "..");
 const files = [
   "site/index.html",
-  "site/downloads/loadcomposer-v1.2.1-standalone.html",
+  "site/downloads/loadcomposer-v1.3.0-standalone.html",
   "site/downloads/index.html",
   "site/legal/index.html",
   "site/404.html",

@@ -32,8 +32,7 @@
     "vehicle.40rh.name": "Denominazione tecnica protetta.",
     "vehicle.40hwpw.name": "Denominazione tecnica protetta.",
     "vehicle.45hwpw.name": "Denominazione tecnica protetta.",
-    "vehicle.45rhpw.name": "Denominazione tecnica protetta.",
-    "print.accessDoor": "Template composto solo da segnaposto, unità e trattino."
+    "vehicle.45rhpw.name": "Denominazione tecnica protetta."
   },
   "locales": {
     "de": {
@@ -62,6 +61,7 @@
     },
     "fr": {
       "footer.suggestions": "Suggestions è la forma francese corretta.",
+      "status.notOk": "NON OK è una sigla diagnostica operativa intenzionalmente condivisa.",
       "legal.documents.title": "Documents è la forma francese corretta.",
       "legal.contact.title": "Contact è la forma francese corretta.",
       "pallet.customFallbackType": "Type è la forma francese corretta.",
@@ -69,7 +69,6 @@
       "print.type": "Type è la forma francese corretta.",
       "print.orientation": "Orientation è la forma francese corretta.",
       "print.dimensions": "Dimensions è la forma francese corretta.",
-      "print.placement": "Placement è la forma francese corretta.",
       "geometry.rectangle": "Rectangle è la forma francese corretta.",
       "layout.orientationNormalCount.one": "Normale è la forma francese corretta."
     },
@@ -78,7 +77,6 @@
       "pallet.customFallbackType": "Tipo è la forma portoghese corretta.",
       "results.metric.weight": "Peso è la forma portoghese corretta.",
       "results.table.weight": "Peso è la forma portoghese corretta.",
-      "table.door": "Porta è la forma portoghese corretta.",
       "print.type": "Tipo è la forma portoghese corretta.",
       "geometry.orientationNormal": "Normal è la forma portoghese corretta.",
       "layout.orientationNormalCount.one": "Normal è la forma portoghese corretta.",
@@ -91,9 +89,6 @@
       "footer.privacy": "Privacy è il termine olandese corrente.",
       "legal.contact.title": "Contact è la forma olandese corretta.",
       "pallet.customFallbackType": "Type è la forma olandese corretta.",
-      "preset.42x42.name": "Pallet e misura tecnica sono intenzionalmente invariati.",
-      "preset.48x45.name": "Pallet e misura tecnica sono intenzionalmente invariati.",
-      "preset.48x48.name": "Pallet e misura tecnica sono intenzionalmente invariati.",
       "common.pallet.one": "Pallet è il termine olandese corrente.",
       "common.pallet.other": "Pallets è il plurale olandese corrente.",
       "preview.stackCount.one": "Pallet è il singolare olandese corrente.",

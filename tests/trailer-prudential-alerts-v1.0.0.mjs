@@ -8,9 +8,9 @@ const APP = path.join(
   ROOT,
   "site",
   "downloads",
-  "loadcomposer-v1.2.1-standalone.html"
+  "loadcomposer-v1.3.0-standalone.html"
 );
-const OUTPUT = path.join(ROOT, "trailer-prudential-results-v1.2.1.json");
+const OUTPUT = path.join(ROOT, "trailer-prudential-results-v1.3.0.json");
 
 function canvasContextStub() {
   return new Proxy({}, {
@@ -107,9 +107,9 @@ function axisIssues(result, axis) {
 function verifyRenderedAlert(window, result, vehicle, expectedBadgeCount) {
   const row = rowFor(window, vehicle);
   assert.equal(
-    row.querySelectorAll(".badge.verify").length,
+    row.cells[4].querySelectorAll(".badge.verify").length,
     expectedBadgeCount,
-    `${vehicle}: unexpected VERIFICA MISURE badge count.`
+    `${vehicle}: unexpected remaining-space verification badge count.`
   );
   const html = row.textContent;
   const plainText = window.spaceAlertPlainText(result);
@@ -185,7 +185,8 @@ assert.deepEqual(
     innerHeight: curtain.innerHeight,
     prudentialLength: curtain.prudentialLength,
     prudentialWidth: curtain.prudentialWidth,
-    prudentialHeight: curtain.prudentialHeight
+    prudentialHeight: curtain.prudentialHeight,
+    accessAutoOkHeight: curtain.accessAutoOkHeight
   },
   {
     innerLength: 13620,
@@ -193,7 +194,8 @@ assert.deepEqual(
     innerHeight: 2650,
     prudentialLength: 13600,
     prudentialWidth: 2450,
-    prudentialHeight: 2600
+    prudentialHeight: 2600,
+    accessAutoOkHeight: 2500
   }
 );
 assert.equal("minHeight" in curtain, false);
@@ -206,7 +208,8 @@ assert.deepEqual(
     innerHeight: mega.innerHeight,
     prudentialLength: mega.prudentialLength,
     prudentialWidth: mega.prudentialWidth,
-    prudentialHeight: mega.prudentialHeight
+    prudentialHeight: mega.prudentialHeight,
+    accessAutoOkHeight: mega.accessAutoOkHeight
   },
   {
     innerLength: 13620,
@@ -214,7 +217,8 @@ assert.deepEqual(
     innerHeight: 3000,
     prudentialLength: 13600,
     prudentialWidth: 2450,
-    prudentialHeight: 2900
+    prudentialHeight: 2900,
+    accessAutoOkHeight: 2550
   }
 );
 assert.equal("minHeight" in mega, false);
@@ -229,7 +233,8 @@ assert.deepEqual(
     innerHeight: reefer.innerHeight,
     prudentialLength: reefer.prudentialLength,
     prudentialWidth: reefer.prudentialWidth,
-    prudentialHeight: reefer.prudentialHeight
+    prudentialHeight: reefer.prudentialHeight,
+    accessAutoOkHeight: reefer.accessAutoOkHeight
   },
   {
     innerLength: 13310,
@@ -237,7 +242,8 @@ assert.deepEqual(
     innerHeight: 2650,
     prudentialLength: 13300,
     prudentialWidth: 2460,
-    prudentialHeight: 2600
+    prudentialHeight: 2600,
+    accessAutoOkHeight: 2500
   }
 );
 assert.equal("minLength" in reefer, false);
@@ -419,7 +425,7 @@ runScenario({
 });
 
 fs.writeFileSync(OUTPUT, `${JSON.stringify({
-  version: "1.2.1",
+  version: "1.3.0",
   source: path.relative(ROOT, APP),
   checks,
   status: "PASS"

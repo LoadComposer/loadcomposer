@@ -12,7 +12,7 @@ Open `http://127.0.0.1:8000/`. A Node static server or any ordinary static host 
 
 ## Use the standalone build
 
-Use `site/downloads/loadcomposer-v1.2.1-standalone.html` as the simplest
+Use `site/downloads/loadcomposer-v1.3.0-standalone.html` as the simplest
 offline download. Copy it to the offline computer and open it directly in a
 browser. It embeds the seven catalogs and is tested through `file://`; it does
 not need installation or a network connection. The ZIP is available for

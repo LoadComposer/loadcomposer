@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = path.resolve(SCRIPT_DIR, "..");
 const SOURCE_NAME = "site/index.html";
-const OUTPUT_NAME = "site/downloads/loadcomposer-v1.2.1-standalone.html";
+const OUTPUT_NAME = "site/downloads/loadcomposer-v1.3.0-standalone.html";
 const sourcePath = path.join(PROJECT_DIR, SOURCE_NAME);
 const outputPath = path.join(PROJECT_DIR, OUTPUT_NAME);
 const LANG_DIR = path.join(PROJECT_DIR, "site", "lang");

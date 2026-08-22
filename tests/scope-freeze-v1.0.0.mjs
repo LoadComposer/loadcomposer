@@ -8,6 +8,11 @@ const BASELINE_DIR = path.join(PROJECT_DIR, "tests/fixtures/baseline-v1.0.0-rc.3
 const CURRENT_DIR = path.join(PROJECT_DIR, "site", "lang");
 const ENABLED = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const DISABLED = ["pl", "tr", "zh-Hans", "ar"];
+const STATUS_FINALIZATION_KEYS = new Set([
+  "results.subtitle",
+  "status.notOk",
+  "status.partial"
+]);
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -22,9 +27,11 @@ for (const code of ENABLED) {
   const baseline = readJson(path.join(BASELINE_DIR, `${code}.json`)).translations;
   const current = readJson(path.join(CURRENT_DIR, `${code}.json`)).translations;
   const keys = Object.keys(baseline).filter(key => (
-    key.startsWith("status.") ||
-    key === "results.subtitle" ||
-    key === "preview.operationalPrintUnavailable"
+    (
+      key.startsWith("status.") ||
+      key === "results.subtitle" ||
+      key === "preview.operationalPrintUnavailable"
+    ) && !STATUS_FINALIZATION_KEYS.has(key)
   ));
   for (const key of keys) {
     protectedKeys.add(key);

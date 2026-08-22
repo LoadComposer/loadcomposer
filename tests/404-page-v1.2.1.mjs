@@ -112,6 +112,7 @@ assert.deepEqual(
     "downloads/loadcomposer-v1.1.0-standalone.html",
     "downloads/loadcomposer-v1.2.0-standalone.html",
     "downloads/loadcomposer-v1.2.1-standalone.html",
+    "downloads/loadcomposer-v1.3.0-standalone.html",
     "index.html",
     "legal/index.html"
   ],
@@ -318,7 +319,7 @@ try {
 }
 
 console.log(
-  `404 page v1.2.1 PASS: four exact public shells; ${languageThemeScenarios}/${languageThemeScenarios} language/theme, ` +
+  `404 page v1.3.0 PASS: four exact public shells; ${languageThemeScenarios}/${languageThemeScenarios} language/theme, ` +
   `${responsiveScenarios}/${responsiveScenarios} responsive and ${nestedScenarios}/${nestedScenarios} nested-route scenarios; ` +
   "HTTP 404, root-relative links/assets, no-script fallback, noindex/no-store, focus, landmarks, zoom and zero remote requests."
 );

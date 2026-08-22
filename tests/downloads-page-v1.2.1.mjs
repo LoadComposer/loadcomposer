@@ -9,8 +9,8 @@ import { launchBrowser } from "./browser-runtime.mjs";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const SITE = path.join(ROOT, "site");
 const PAGE = path.join(SITE, "downloads", "index.html");
-const HTML_NAME = "loadcomposer-v1.2.1-standalone.html";
-const ZIP_NAME = "loadcomposer-v1.2.1-standalone.zip";
+const HTML_NAME = "loadcomposer-v1.3.0-standalone.html";
+const ZIP_NAME = "loadcomposer-v1.3.0-standalone.zip";
 const HTML_PATH = path.join(SITE, "downloads", HTML_NAME);
 const ZIP_PATH = path.join(SITE, "downloads", ZIP_NAME);
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
@@ -93,7 +93,7 @@ async function focusByKeyboard(page, selector) {
 assert.ok(fs.existsSync(PAGE), "site/downloads/index.html missing.");
 assert.ok(fs.existsSync(HTML_PATH), `${HTML_NAME} missing.`);
 assert.ok(fs.existsSync(ZIP_PATH), `${ZIP_NAME} missing.`);
-for (const version of ["1.0.0", "1.1.0", "1.2.0"]) {
+for (const version of ["1.0.0", "1.1.0", "1.2.0", "1.2.1"]) {
   for (const suffix of [".html", ".html.sha256", ".zip", ".zip.sha256"]) {
     assert.ok(
       fs.existsSync(path.join(SITE, "downloads", `loadcomposer-v${version}-standalone${suffix}`)),
@@ -110,7 +110,7 @@ try {
   assert.equal(document.querySelector('meta[name="robots"]')?.content, "index,follow,max-image-preview:large");
   assert.equal(document.querySelector('meta[property="og:url"]')?.content, "https://loadcomposer.com/downloads/");
   const data = JSON.parse(document.getElementById("loadcomposer-downloads-data").textContent);
-  assert.equal(data.version, "1.2.1");
+  assert.equal(data.version, "1.3.0");
   assert.deepEqual(data.languages.map(language => language.code), CODES);
   assert.deepEqual(Object.keys(data.catalogs), CODES);
   const htmlLink = document.querySelector(`a[download="${HTML_NAME}"]`);
@@ -156,7 +156,7 @@ for (const token of [
 const headers = read(path.join(SITE, "_headers"));
 assert.match(headers, /\/downloads\/\n\s+Cache-Control: public, max-age=0, must-revalidate/);
 assert.match(headers, /\/downloads\/index\.html\n\s+Cache-Control: public, max-age=0, must-revalidate/);
-for (const version of ["1.0.0", "1.1.0", "1.2.0", "1.2.1"]) {
+for (const version of ["1.0.0", "1.1.0", "1.2.0", "1.2.1", "1.3.0"]) {
   for (const suffix of [".html", "", ".html.sha256", ".zip", ".zip.sha256"]) {
     const escaped = `/downloads/loadcomposer-v${version}-standalone${suffix}`.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     assert.match(headers, new RegExp(`${escaped}\\n\\s+Cache-Control: public, max-age=31536000, immutable`));
@@ -165,7 +165,7 @@ for (const version of ["1.0.0", "1.1.0", "1.2.0", "1.2.1"]) {
 assert.equal(/^\/downloads\/\*$/m.test(headers), false, "Broad /downloads/* rule is forbidden.");
 const sitemap = read(path.join(SITE, "sitemap.xml"));
 assert.ok(sitemap.includes("<loc>https://loadcomposer.com/downloads/</loc>"));
-assert.equal(sitemap.includes("loadcomposer-v1.2.1-standalone"), false, "Versioned artifacts entered sitemap.");
+assert.equal(sitemap.includes("loadcomposer-v1.3.0-standalone"), false, "Versioned artifacts entered sitemap.");
 
 const browser = await launchBrowser(ROOT);
 let scenarios = 0;

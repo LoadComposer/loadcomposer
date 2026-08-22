@@ -6,12 +6,12 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.2.1-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html")
 ).href;
-const OUTPUT = path.join(ROOT, "print-plurals-v1.2.1");
+const OUTPUT = path.join(ROOT, "print-plurals-v1.3.0");
 const RESULT_PATH = path.join(
   ROOT,
-  "print-plural-results-v1.2.1.json"
+  "print-plural-results-v1.3.0.json"
 );
 const LANGUAGES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const INDEX = JSON.parse(fs.readFileSync(path.join(ROOT, "site", "lang", "index.json")));
@@ -115,6 +115,16 @@ function plural(code, base, count, variables = {}) {
     translations[`${base}.other`];
   assert(typeof template === "string", `${code}:${base} missing plural form`);
   return interpolate(template, { count, ...variables });
+}
+
+function translate(code, key, variables = {}) {
+  const template = CATALOGS[code].translations[key];
+  assert(typeof template === "string", `${code}:${key} missing translation`);
+  return interpolate(template, variables);
+}
+
+function labelledPalletCount(code, labelKey, count) {
+  return `${translate(code, labelKey)} ${count} ${plural(code, "common.pallet", count)}`;
 }
 
 async function openApp(browser, language) {
@@ -412,23 +422,23 @@ try {
         let expectedText;
         if (scenario.name === "one-pallet") {
           assert(state.capacity === 1 && state.placed === 1, `${language}: capacity one`);
-          expectedText = plural(language, "print.requested", 1);
+          expectedText = labelledPalletCount(language, "table.requestedQuantity", 1);
         } else if (scenario.name === "one-floor-position") {
           assert(state.placedFloor === 1, `${language}: one floor position`);
-          expectedText = plural(language, "print.floorUsed", 1);
+          expectedText = labelledPalletCount(language, "table.requestedQuantity", 1);
         } else if (scenario.name === "one-unplaced-diagnostic") {
           assert(state.unplaced === 1 && !state.ok, `${language}: one unplaced`);
           assert(state.printDisabled, `${language}: operational print must stay disabled`);
-          expectedText = plural(language, "preview.singleMissing", 1);
+          expectedText = plural(language, "table.missing", 1);
         } else if (scenario.name === "two-pallets") {
           assert(state.requested === 2 && state.placed === 2, `${language}: two pallets`);
-          expectedText = plural(language, "print.requested", 2);
+          expectedText = labelledPalletCount(language, "table.requestedQuantity", 2);
         } else if (scenario.name === "mixed-one-item") {
           assert(state.requested === 1 && state.placed === 1, `${language}: mixed one`);
-          expectedText = plural(language, "print.mixedOperationalNote", 1);
+          expectedText = labelledPalletCount(language, "table.placedQuantity", 1);
         } else {
           assert(state.layers === 2 && state.loadLayers === 2, `${language}: multiple layers`);
-          expectedText = plural(language, "print.layersCapacity", 2);
+          expectedText = plural(language, "print.layersUsed", 2);
         }
 
         const pdfPath = path.join(languageDir, `${scenario.name}.pdf`);
@@ -478,7 +488,7 @@ try {
 }
 
 fs.writeFileSync(RESULT_PATH, `${JSON.stringify({
-  version: "1.2.1",
+  version: "1.3.0",
   languages: LANGUAGES,
   scenariosPerLanguage: SCENARIOS.length,
   pdfs: records.length,

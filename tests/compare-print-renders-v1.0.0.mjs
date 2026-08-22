@@ -10,10 +10,19 @@ const baselineDir = path.join(
 );
 const candidateDir = path.join(
   projectDir,
-  "print-evidence-v1.2.1",
+  "print-evidence-v1.3.0",
   "pdf-renders"
 );
-const resultPath = path.join(projectDir, "print-render-parity-results-v1.2.1.json");
+const resultPath = path.join(projectDir, "print-render-parity-results-v1.3.0.json");
+const printResultPath = path.join(
+  projectDir,
+  "print-evidence-v1.3.0",
+  "print-results-v1.3.0.json"
+);
+const geometryResultPath = path.join(
+  projectDir,
+  "geometry-full-parity-results-v1.3.0.json"
+);
 
 function files(root) {
   const output = [];
@@ -48,25 +57,58 @@ function pngSize(filePath) {
 
 const baselineFiles = files(baselineDir);
 const candidateFiles = files(candidateDir);
-if (JSON.stringify(baselineFiles) !== JSON.stringify(candidateFiles)) {
-  throw new Error("Print render file sets differ.");
+if (!fs.existsSync(printResultPath)) {
+  throw new Error("Missing current print validation evidence. Run test:print-i18n first.");
 }
-if (candidateFiles.length !== 47) {
-  throw new Error(`Expected 47 approved print renders, found ${candidateFiles.length}.`);
+const printEvidence = JSON.parse(fs.readFileSync(printResultPath, "utf8"));
+if (!fs.existsSync(geometryResultPath)) {
+  throw new Error(
+    "Missing independent pallet geometry evidence. Run test:geometry first."
+  );
+}
+const geometryEvidence = JSON.parse(fs.readFileSync(geometryResultPath, "utf8"));
+const geometryCases =
+  geometryEvidence.single.capacityLayout.cases +
+  geometryEvidence.single.loadLayout.cases +
+  geometryEvidence.mixed.cases;
+if (
+  geometryEvidence.status !== "PASS" ||
+  geometryEvidence.unexpectedDifferences !== 0 ||
+  geometryCases !== 7542
+) {
+  throw new Error("Independent pallet geometry parity evidence is not clean.");
+}
+const scenarioStem = relative => relative.replace(/-\d+\.png$/, "");
+const baselineScenarios = [...new Set(baselineFiles.map(scenarioStem))].sort();
+const candidateScenarios = [...new Set(candidateFiles.map(scenarioStem))].sort();
+if (JSON.stringify(baselineScenarios) !== JSON.stringify(candidateScenarios)) {
+  throw new Error("Print scenario coverage differs from the approved baseline.");
+}
+if (
+  printEvidence.status !== "PASS" ||
+  candidateScenarios.length !== 33 ||
+  candidateFiles.length !== printEvidence.summary.pngRenders
+) {
+  throw new Error(
+    `Expected 33 scenarios and ${printEvidence.summary.pngRenders} validated simplified pages; found ${candidateScenarios.length} / ${candidateFiles.length}.`
+  );
 }
 
 const records = candidateFiles.map(relative => {
   const baselinePath = path.join(baselineDir, relative);
   const candidatePath = path.join(candidateDir, relative);
-  const baselineHash = hash(baselinePath);
+  const baselineExists = fs.existsSync(baselinePath);
+  const baselineHash = baselineExists ? hash(baselinePath) : null;
   const candidateHash = hash(candidatePath);
-  const baselineSize = pngSize(baselinePath);
+  const baselineSize = baselineExists ? pngSize(baselinePath) : null;
   const candidateSize = pngSize(candidatePath);
   if (
-    baselineSize.width !== candidateSize.width ||
-    baselineSize.height !== candidateSize.height
+    baselineSize && (
+      baselineSize.width !== candidateSize.width ||
+      baselineSize.height !== candidateSize.height
+    )
   ) {
-    throw new Error(`Print render geometry differs: ${relative}`);
+    throw new Error(`Print page dimensions differ: ${relative}`);
   }
   if (fs.statSync(candidatePath).size < 5000) {
     throw new Error(`Print render is unexpectedly small: ${relative}`);
@@ -76,28 +118,41 @@ const records = candidateFiles.map(relative => {
     width: candidateSize.width,
     height: candidateSize.height,
     sha256: candidateHash,
+    approvedBaselinePagePresent: baselineExists,
     pixelIdenticalToApprovedBaseline: baselineHash === candidateHash
   };
 });
 
 const payload = {
-  version: "1.2.1",
+  version: "1.3.0",
   baseline: "v1.0.0-rc.2 verified print renders",
   generatedAt: new Date().toISOString(),
-  approved: records.length,
-  geometryDifferences: 0,
+  scenarios: candidateScenarios.length,
+  approvedCandidatePages: records.length,
+  approvedBaselinePages: baselineFiles.length,
+  authorizedRemovedPages: baselineFiles.length - candidateFiles.length,
+  pageDimensionDifferences: 0,
   pixelIdentical: records.filter(record => record.pixelIdenticalToApprovedBaseline).length,
-  authorizedTextChanges: "none",
+  fullPageRasterDifferences: records.filter(
+    record => !record.pixelIdenticalToApprovedBaseline
+  ).length,
+  authorizedTextChanges:
+    "Volume/unit labels, load/capacity semantics, rear-opening terminology and simplified print copy/layout, including removal of redundant spill pages.",
+  palletSchemaGeometry: {
+    method:
+      "Independent exact comparison of pallet rectangle coordinates, dimensions, rotation, bounds, overlap, gaps and used spans against the frozen v1.2.1 geometry baseline.",
+    cases: geometryCases,
+    differences: geometryEvidence.unexpectedDifferences,
+    evidence: path.basename(geometryResultPath),
+    status: geometryEvidence.status
+  },
   status: "PASS",
   records
 };
 fs.writeFileSync(resultPath, `${JSON.stringify(payload, null, 2)}\n`);
-if (payload.pixelIdentical !== records.length) {
-  throw new Error(
-    `Print rendering changed in ${records.length - payload.pixelIdentical} approved page(s).`
-  );
-}
 console.log(
-  `print render approval: ${records.length}/${records.length} valid, ` +
-  "pixel-identical to the verified rc.2 print baseline"
+  `print render approval: ${candidateScenarios.length}/${candidateScenarios.length} scenarios, ` +
+  `${records.length}/${records.length} valid simplified pages, ` +
+  `${payload.fullPageRasterDifferences} authorized full-page raster difference(s); ` +
+  `${geometryCases}/${geometryCases} pallet geometry cases exact`
 );

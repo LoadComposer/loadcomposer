@@ -1042,8 +1042,12 @@ test("B-10: un Euro pallet richiesto nel 20 Dry", async () => {
     assertEqual(result.layout, result.loadLayout, "il layout operativo non coincide con loadLayout");
     assertPreviewAndPrintRectCount(app, result, 1);
     assert(
-      app.window.resultPrintTitle(result).includes("1 pallet richiesto"),
-      "il titolo di stampa non riporta la quantità richiesta"
+      app.window.buildPrintDetails(result).includes("Carico richiesto: 1 pallet"),
+      "il riepilogo di stampa non riporta il carico richiesto"
+    );
+    assert(
+      !app.window.resultPrintTitle(result).includes("1 pallet"),
+      "il titolo di stampa duplica il carico richiesto"
     );
   } finally {
     app.dom.window.close();
@@ -1097,7 +1101,7 @@ test("B-10: quantità superiore alla capacità", async () => {
     assertEqual(result.ok, false, "una quantità superiore alla capacità mostra CI STA");
     assertPreviewAndPrintRectCount(app, result, 11);
     assert(
-      app.document.getElementById("resultsBody").textContent.includes("Manca 1 pallet"),
+      app.document.getElementById("resultsBody").textContent.includes("1 pallet non entra"),
       "la tabella non indica chiaramente il numero non piazzato"
     );
   } finally {
@@ -1140,23 +1144,22 @@ test("B-10: tabella, note, titolo e riepilogo distinguono i conteggi", async () 
     const printDetails = app.window.buildPrintDetails(result).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
     const printLegend = app.window.buildPrintLegend(result, false).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-    assert(tableText.includes("10 su 10 pallet"), "rapporto piazzati/richiesti assente dalla tabella");
+    assert(!tableText.includes("Carico richiesto: 10 pallet"), "carico richiesto ripetuto nella riga della tabella");
+    assert(!tableText.includes("10 su 10 pallet"), "rapporto piazzati/richiesti ancora presente nella tabella");
     assert(tableText.includes("Capacità trovata: 11 pallet"), "capacità assente dalla tabella");
     assert(tableText.includes("1 posto libero"), "posto libero assente dalla tabella");
-    assert(!tableText.includes("Quantità richiesta:"), "etichetta ridondante quantità richiesta nella tabella");
+    assert(!tableText.includes("Quantità richiesta:"), "vecchia etichetta quantità richiesta nella tabella");
     assert(!tableText.includes("Quantità piazzata:"), "etichetta ridondante quantità piazzata nella tabella");
-    assert(notesText.includes("capacità trovata 11 pallet"), "capacità assente dalle note preview");
-    assert(notesText.includes("Quantità richiesta: 10"), "richiesta assente dalle note preview");
-    assert(notesText.includes("Quantità piazzata: 10"), "piazzamento assente dalle note preview");
+    assert(notesText.includes("Capacità trovata: 11 pallet"), "capacità assente dalle note preview");
+    assert(notesText.includes("Carico richiesto: 10 pallet"), "richiesta assente dalle note preview");
+    assert(!notesText.includes("Quantità piazzata: 10"), "piazzamento ridondante nelle note preview");
+    assert(printDetails.includes("Carico richiesto: 10 pallet"), "carico richiesto assente dal riepilogo stampa");
+    assert(printDetails.includes("Capacità trovata: 11 pallet"), "capacità assente dal riepilogo stampa");
+    assert(printDetails.includes("1 posto libero"), "posto libero assente dal riepilogo stampa");
+    assert(!printLegend.includes("Quantità richiesta 10"), "legenda stampa duplica il carico richiesto");
     assert(
-      printDetails.includes("10 pallet piazzati / 10 pallet richiesti"),
-      "riepilogo stampa incoerente"
-    );
-    assert(printDetails.includes("capacità trovata 11 pallet"), "capacità assente dal riepilogo stampa");
-    assert(printLegend.includes("Quantità richiesta 10"), "legenda stampa incoerente");
-    assert(
-      app.window.resultPrintTitle(result).includes("10 pallet richiesti"),
-      "titolo stampa basato sulla capacità anziché sulla richiesta"
+      !app.window.resultPrintTitle(result).includes("10 pallet"),
+      "titolo stampa duplica il carico richiesto"
     );
   } finally {
     app.dom.window.close();
@@ -1429,6 +1432,10 @@ test("errore interno fallisce chiuso e disabilita la stampa", async () => {
         "ERRORE DI VALIDAZIONE DELLO SCHEMA"
       ),
       "messaggio distinguibile non mostrato nella tabella"
+    );
+    assert(
+      !app.document.querySelector("#resultsBody tr:not(.vehicle-group-row)").cells[1].textContent.includes("NON CI STA"),
+      "errore tecnico etichettato come verdetto NON CI STA"
     );
     assertEqual(
       app.document.getElementById("printLayoutBtn").disabled,

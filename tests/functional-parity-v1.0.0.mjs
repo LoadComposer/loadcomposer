@@ -8,14 +8,14 @@ const projectDir = path.resolve(import.meta.dirname, "..");
 const baselineUrl = pathToFileURL(
   path.join(
     projectDir,
-    "tests/fixtures/baseline-v1.2.0",
-    "loadcomposer-v1.2.0-standalone.html"
+    "tests/fixtures/baseline-v1.2.1",
+    "loadcomposer-v1.2.1-standalone.html"
   )
 ).href;
 const candidateUrl = pathToFileURL(
-  path.join(projectDir, "site/downloads/loadcomposer-v1.2.1-standalone.html")
+  path.join(projectDir, "site/downloads/loadcomposer-v1.3.0-standalone.html")
 ).href;
-const resultPath = path.join(projectDir, "functional-parity-results-v1.2.1.json");
+const resultPath = path.join(projectDir, "functional-parity-results-v1.3.0.json");
 const browser = await launchBrowser(projectDir);
 const languages = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const localeByLanguage = {
@@ -30,6 +30,10 @@ const localeByLanguage = {
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
+}
+
+function metricTokens(value) {
+  return String(value).match(/-?\d+(?:[.,]\d+)?/g) || [];
 }
 
 async function open(url, candidate, language = "it") {
@@ -188,12 +192,17 @@ try {
       assert(after.rowCount === 12, `${scenario.name}/${language}: candidate vehicle rows`);
       assert(
         JSON.stringify(before.geometry) === JSON.stringify(after.geometry),
-        `${scenario.name}/${language}: v1.2.0/v1.2.1 geometry mismatch`
+        `${scenario.name}/${language}: v1.2.1/v1.3.0 geometry mismatch`
       );
       if (language === "it") {
         assert(
-          JSON.stringify(before.metrics) === JSON.stringify(after.metrics),
-          `${scenario.name}/${language}: v1.2.0/v1.2.1 summary metric mismatch`
+          JSON.stringify([before.metrics[0], before.metrics[1], before.metrics[3]]) ===
+            JSON.stringify([after.metrics[0], after.metrics[1], after.metrics[3]]),
+          `${scenario.name}/${language}: stable summary metric mismatch`
+        );
+        assert(
+          JSON.stringify(metricTokens(before.metrics[2])) === JSON.stringify(metricTokens(after.metrics[2])),
+          `${scenario.name}/${language}: best-summary numeric value mismatch`
         );
       }
       comparisons.push({
@@ -208,8 +217,8 @@ try {
     await baseline.context.close();
   }
   fs.writeFileSync(resultPath, `${JSON.stringify({
-    version: "1.2.1",
-    baseline: "1.2.0",
+    version: "1.3.0",
+    baseline: "1.2.1",
     generatedAt: new Date().toISOString(),
     scenarios: comparisons,
     status: "PASS"

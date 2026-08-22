@@ -2,6 +2,51 @@
 
 All notable project changes are documented here.
 
+## [1.3.0] — 2026-08-14
+
+### Added
+
+- Added a global `mm` / `cm` / `in` preference in the load-data panel, with
+  native radio semantics, keyboard/touch support, visible focus, and
+  persistence under `loadcomposer.unit`.
+- Added locale-aware decimal presentation, point/comma parsing, one-time
+  normalisation to integer millimetres, protected invalid-edit switching, and
+  canonical round-trip behaviour.
+- Applied the selected unit to every operational linear input and output,
+  including custom pallets, gaps, vehicle dimensions, remaining space,
+  warnings, preview labels, and print/PDF.
+
+### Changed
+
+- Presents Total volume as `m³` for metric `mm`/`cm` and `ft³` for imperial
+  `in`, without changing the canonical volume calculation.
+- Clarified Single and Mixed requested-load, found-capacity, loaded-count,
+  free-slot, and does-not-fit wording in all seven languages.
+- Standardised “Rear opening” terminology and limited highest-pallet detail to
+  access or height warnings.
+- Removed repeated load totals from operational print/PDF summaries and shows
+  floor/layer detail only when stacking makes it informative.
+- Finalized the result status system: the localized FITS/DOES NOT FIT pair is
+  reserved for the final outcome, while load/capacity and access controls use
+  state-only OK/PARTIAL/NOT OK/VERIFY badges with green/amber diagnostics and
+  red reserved for a negative final verdict.
+- Shows zero free slots explicitly when Single capacity equals the request, in
+  both the table and operational print output.
+- Presents metric-native pallet presets directly in mm or cm, presents imperial-native
+  commercial identities exactly in inches, and adds only a working-unit conversion
+  when crossing metric/imperial systems.
+- Applies documented prudential auto-OK access-height references only to the 13.60 m
+  curtain, Mega, and reefer profiles; heights above the reference but inside internal
+  geometry remain VERIFY, and internal geometry, door data, and capacity are unchanged.
+
+### Unchanged from v1.2.1
+
+- Geometry, placement, capacity, coordinates, pallet/vehicle data, thresholds,
+  canonical volume calculation, weight handling, and all canonical outcomes remain unchanged; the engine
+  still receives and returns integer millimetres only.
+- Industrial preset labels, vehicle names, secondary-page layouts, and the
+  seven canonical legal documents remain protected.
+
 ## [1.2.1] — 2026-08-14
 
 ### Changed

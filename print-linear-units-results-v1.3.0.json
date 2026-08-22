@@ -1,0 +1,84 @@
+{
+  "version": "1.3.0",
+  "generatedAt": "2026-08-21T16:34:13.565Z",
+  "scenarios": 8,
+  "status": "PASS",
+  "records": [
+    {
+      "id": "single-cm-color",
+      "kind": "single",
+      "unit": "cm",
+      "bw": false,
+      "pages": 1,
+      "bytes": 57303,
+      "status": "PASS"
+    },
+    {
+      "id": "single-in-bw",
+      "kind": "single",
+      "unit": "in",
+      "bw": true,
+      "pages": 1,
+      "bytes": 65076,
+      "status": "PASS"
+    },
+    {
+      "id": "mixed-cm-bw",
+      "kind": "mixed",
+      "unit": "cm",
+      "bw": true,
+      "pages": 1,
+      "bytes": 122945,
+      "status": "PASS"
+    },
+    {
+      "id": "mixed-in-color",
+      "kind": "mixed",
+      "unit": "in",
+      "bw": false,
+      "pages": 1,
+      "bytes": 59893,
+      "status": "PASS"
+    },
+    {
+      "id": "compact-cm-color",
+      "kind": "compact",
+      "unit": "cm",
+      "bw": false,
+      "expected": "3.2 cm",
+      "pages": 2,
+      "bytes": 57252,
+      "status": "PASS"
+    },
+    {
+      "id": "compact-in-bw",
+      "kind": "compact",
+      "unit": "in",
+      "bw": true,
+      "expected": "1.26 in",
+      "pages": 2,
+      "bytes": 76094,
+      "status": "PASS"
+    },
+    {
+      "id": "custom-cm-bw",
+      "kind": "custom",
+      "unit": "cm",
+      "bw": true,
+      "expected": "160 × 100 × 150 cm",
+      "pages": 1,
+      "bytes": 66369,
+      "status": "PASS"
+    },
+    {
+      "id": "custom-in-color",
+      "kind": "custom",
+      "unit": "in",
+      "bw": false,
+      "expected": "62.99 × 39.37 × 59.06 in",
+      "pages": 1,
+      "bytes": 53769,
+      "status": "PASS"
+    }
+  ]
+}

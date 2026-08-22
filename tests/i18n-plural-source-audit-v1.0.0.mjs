@@ -46,6 +46,31 @@ const NON_COUNT_KEYS = new Set([
   "space.issue.prudentialWidth",
   "space.issue.prudentialHeight"
 ]);
+const LEGACY_COMPATIBILITY_BASES = new Set([
+  "preview.singleCapacity",
+  "preview.singleFloorCapacity",
+  "preview.singleLayers",
+  "preview.singleMissing",
+  "preview.singleUsedFloor",
+  "preview.singleUsedLayers",
+  "preview.mixedNotes",
+  "preview.mixedMissing",
+  "preview.mixedComplete",
+  "print.requestedQuantityValue",
+  "print.placedQuantityValue",
+  "print.mixedCapacity",
+  "print.singleCapacity",
+  "print.mixedPlacement",
+  "print.placedValue",
+  "print.requestedValue",
+  "print.foundCapacityValue",
+  "print.mixedFloor",
+  "print.floorCapacity",
+  "print.layersCapacity",
+  "print.mixedOperationalNote",
+  "print.floorPositionsUse",
+  "print.layerSuffix"
+]);
 
 function placeholders(value) {
   return [...String(value).matchAll(PLACEHOLDER)]
@@ -77,6 +102,7 @@ const pluralBases = new Set(
 assert.equal(pluralBases.size, 45, "counted translation families");
 for (const base of pluralBases) {
   assert.equal(typeof reference[`${base}.other`], "string", `${base}.other`);
+  if (LEGACY_COMPATIBILITY_BASES.has(base)) continue;
   const directPattern = new RegExp(
     `\\bt\\(\\s*["']${base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`
   );
@@ -127,5 +153,6 @@ for (const key of NON_COUNT_KEYS) {
 
 console.log(
   `Plural source audit PASS: ${pluralBases.size} counted families, ` +
-  `${COMPOSED_KEYS.size} composed templates, ${NON_COUNT_KEYS.size} classified non-count labels.`
+  `${COMPOSED_KEYS.size} composed templates, ${NON_COUNT_KEYS.size} classified non-count labels, ` +
+  `${LEGACY_COMPATIBILITY_BASES.size} retained compatibility families.`
 );

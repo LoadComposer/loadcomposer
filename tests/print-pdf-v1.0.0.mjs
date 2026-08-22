@@ -23,7 +23,7 @@ const BASELINE_ONLY = process.env.PRINT_BASELINE_ONLY === "1";
 const RESULT_PATH = path.join(
   OUTPUT_ROOT,
   process.env.PRINT_RESULT_NAME ||
-    (BASELINE_ONLY ? "print-baseline-v1.0.0.json" : "print-results-v1.2.1.json")
+    (BASELINE_ONLY ? "print-baseline-v1.0.0.json" : "print-results-v1.3.0.json")
 );
 const FIXED_NOW = "2026-07-24T10:00:00.000Z";
 const PRINT_MESSAGE =
@@ -947,8 +947,9 @@ function verifyPdf(
     ? ["CI STA", "Generato"]
     : [
       "CI STA",
-      "Quantità richiesta",
-      "Quantità piazzata",
+      "Carico richiesto:",
+      options.loadMode === "mixed" ? "Caricati:" : "Capacità trovata:",
+      "Volume totale",
       "Peso e bilanciamento",
       "Generato"
     ];
@@ -1153,7 +1154,7 @@ function scenarioList() {
       view: "side",
       bw: false,
       options: { quantity: 10, height: 1000 },
-      requiredText: ["10 pallet richiesti"],
+      requiredText: ["Carico richiesto: 10 pallet"],
       expectedDimension: "1200×800",
       forbiddenDimension: "800×1200"
     },
@@ -1353,7 +1354,7 @@ function scenarioList() {
         maxLayers: 2,
         verticalGap: 0
       },
-      requiredText: ["2 strati", "STACK-TEST"],
+      requiredText: ["Strati: fino a 2", "STACK-TEST"],
       expectedDimension: "1200×800",
       forbiddenDimension: "800×1200",
       verifyStackFourthLine: true
@@ -1371,7 +1372,7 @@ function scenarioList() {
         maxLayers: 2,
         verticalGap: 0
       },
-      requiredText: ["2 strati", "STACK-TEST"],
+      requiredText: ["Strati: fino a 2", "STACK-TEST"],
       expectedDimension: "1200×800",
       forbiddenDimension: "800×1200",
       verifyStackFourthLine: true
@@ -1562,7 +1563,8 @@ async function run() {
         scenario.requiredText || [],
         {
           expectedPages: scenario.expectedPages,
-          singleLineQuantityHeader: scenario.singleLineQuantityHeader
+          singleLineQuantityHeader: scenario.singleLineQuantityHeader,
+          loadMode: scenario.kind === "mixed" ? "mixed" : "single"
         }
       );
       records.push({
@@ -1651,7 +1653,9 @@ async function run() {
         );
         const pdfAudit = verifyPdf(
           pdfPath,
-          view === "ramp" ? "portrait" : "landscape"
+          view === "ramp" ? "portrait" : "landscape",
+          [],
+          { loadMode: mixed ? "mixed" : "single" }
         );
         xssRecords.push({
           payload,

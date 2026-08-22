@@ -2,15 +2,15 @@
 
 This roadmap is directional and creates no commitment, deadline, or warranty.
 
-## Current micro-release
+## Current release
 
-`v1.2.0` adds a clear online/offline Download page and simplifies the wording
-used for remaining space and compact loading. No geometry, capacity, vehicle,
-pallet, weight, or balance model is changed.
+`v1.3.0` adds a global linear-unit preference for millimetres, centimetres,
+and inches. User input and presentation are converted at the application
+boundary while the geometric engine, presets, coordinates, capacities, and
+all canonical data continue to use integer millimetres only.
 
-## Successive work not included in v1.2.0
+## Successive work not included in v1.3.0
 
-- Input units in millimetres, centimetres, and inches.
 - Rapid entry / compact editing for mixed-pallet groups.
 - Additional languages: Polish, Turkish, Simplified Chinese, and Arabic with RTL support.
 - Side loading: evaluate a future loading mode in which physical entry may be
@@ -33,5 +33,5 @@ evaluated progressively as separate, small releases.
 
 Weight, balance, axle loads, load securing, route compliance, and regulatory certification are not implied by this roadmap. They require dedicated domain models, qualified review, and separate validation before any implementation claim.
 
-The `v1.2.0` release adds no hosted commercial service, new language, PWA,
+The `v1.3.0` release adds no hosted commercial service, new language, PWA,
 service worker, backend, analytics, or new distribution channel.

@@ -11,7 +11,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoadComposer v1.2.1</title>
+  <title>LoadComposer v1.3.0</title>
   <meta name="description" content="LoadComposer estimates pallet arrangements in common road and sea freight vehicles directly in your browser." />
   <meta name="application-name" content="LoadComposer" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -19,10 +19,10 @@
   <link rel="canonical" href="https://loadcomposer.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LoadComposer" />
-  <meta property="og:title" content="LoadComposer v1.2.1" />
+  <meta property="og:title" content="LoadComposer v1.3.0" />
   <meta property="og:description" content="Browser-based geometric load-planning estimates, with offline and standalone support." />
   <meta property="og:url" content="https://loadcomposer.com/" />
-  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.2.1.png" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.0.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -826,6 +826,86 @@
       gap: 13px;
     }
 
+    .unit-preference {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      min-width: 0;
+    }
+
+    .unit-preference legend {
+      margin-bottom: 7px;
+      color: var(--lc-text-secondary, var(--muted));
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .unit-segments {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4px;
+      width: min(250px, 100%);
+      padding: 4px;
+      border: 1px solid var(--lc-border, rgba(148, 163, 184, 0.18));
+      border-radius: 12px;
+      background: var(--lc-surface-secondary, rgba(15, 23, 42, 0.55));
+    }
+
+    .unit-option {
+      display: block;
+      min-width: 0;
+      color: var(--lc-text-secondary, var(--muted));
+    }
+
+    .unit-option input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      min-height: 0;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .unit-option span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      min-height: 44px;
+      padding: 8px 10px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      color: inherit;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .unit-option input:checked + span {
+      color: var(--lc-selected-text, var(--lc-text, var(--text)));
+      background: var(--lc-selected-bg, rgba(56, 189, 248, 0.12));
+      border-color: var(--lc-selected-border, var(--lc-accent, var(--accent)));
+      font-weight: 900;
+    }
+
+    .unit-option input:checked + span::before {
+      content: "✓";
+      line-height: 1;
+    }
+
+    .unit-option input:focus-visible + span {
+      border-color: var(--lc-focus, var(--accent));
+      outline: 3px solid color-mix(in srgb, var(--lc-focus, var(--accent)) 28%, transparent);
+      outline-offset: 1px;
+    }
+
     .row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1079,6 +1159,25 @@
       background: rgba(15, 23, 42, 0.45);
     }
 
+    .results-table {
+      min-width: 940px;
+    }
+
+    .results-table th:nth-child(2),
+    .results-table td:nth-child(2) {
+      min-width: 118px;
+    }
+
+    .results-table th:nth-child(3),
+    .results-table td:nth-child(3) {
+      min-width: 205px;
+    }
+
+    .results-table th:nth-child(4),
+    .results-table td:nth-child(4) {
+      min-width: 220px;
+    }
+
     th,
     td {
       padding: 12px 12px;
@@ -1106,11 +1205,15 @@
     .badge {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
       border-radius: 999px;
       padding: 5px 9px;
       font-size: 12px;
       font-weight: 800;
+      min-width: 58px;
+      line-height: 1.25;
+      text-align: center;
       white-space: nowrap;
     }
 
@@ -1139,9 +1242,9 @@
     }
 
     .badge.verify {
-      background: rgba(168, 85, 247, 0.15);
-      color: #d8b4fe;
-      border: 1px solid rgba(168, 85, 247, 0.30);
+      background: rgba(245, 158, 11, 0.13);
+      color: #fcd34d;
+      border: 1px solid rgba(245, 158, 11, 0.25);
     }
 
     .badge.info {
@@ -2788,7 +2891,8 @@
     }
 
     .badge.warn,
-    .badge.tight {
+    .badge.tight,
+    .badge.verify {
       color: var(--lc-warning);
       background: var(--lc-warning-soft);
       border-color: var(--lc-warning);
@@ -2798,12 +2902,6 @@
       color: var(--lc-error);
       background: var(--lc-error-soft);
       border-color: var(--lc-error);
-    }
-
-    .badge.verify {
-      color: var(--lc-verify);
-      background: var(--lc-verify-soft);
-      border-color: var(--lc-verify);
     }
 
     .badge.info {
@@ -3402,6 +3500,8 @@
       .theme-menu,
       .language-menu,
       .orientation-diagram,
+      .unit-segments,
+      .unit-option span,
       canvas {
         border-color: ButtonText;
       }
@@ -3412,7 +3512,8 @@
       .orientation-card:has(input:focus-visible),
       .checkline:has(input:focus-visible),
       .print-toggle:has(input:focus-visible),
-      .switch-control:has(input:focus-visible) {
+      .switch-control:has(input:focus-visible),
+      .unit-option:has(input:focus-visible) span {
         outline: 3px solid Highlight;
       }
 
@@ -3475,7 +3576,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.2.1</span>
+        <span class="app-version">v1.3.0</span>
       </div>
 
       <div class="header-controls">
@@ -3556,6 +3657,24 @@
           </select>
         </label>
 
+        <fieldset class="unit-preference">
+          <legend data-i18n="units.label">units.label</legend>
+          <div class="unit-segments">
+            <label class="unit-option">
+              <input type="radio" name="linearUnit" value="mm" checked data-i18n-aria-label="units.mmAria">
+              <span>mm</span>
+            </label>
+            <label class="unit-option">
+              <input type="radio" name="linearUnit" value="cm" data-i18n-aria-label="units.cmAria">
+              <span>cm</span>
+            </label>
+            <label class="unit-option">
+              <input type="radio" name="linearUnit" value="in" data-i18n-aria-label="units.inAria">
+              <span>in</span>
+            </label>
+          </div>
+        </fieldset>
+
         <div id="singleModeForm">
           <div id="singlePalletGroup" class="pallet-group" data-group-kind="single">
             <div class="group-heading">
@@ -3583,18 +3702,18 @@
 
               <label>
                 <span data-i18n="pallet.loadedHeight">pallet.loadedHeight</span>
-                <input id="palletHeight" data-field="height" type="number" min="1" step="1" value="1500" required>
+                <input id="palletHeight" data-field="height" data-length-input data-min-mm="1" data-mm="1500" type="text" inputmode="decimal" value="1500" required>
               </label>
             </div>
 
             <div class="custom-size-fields hidden" data-role="customFields">
               <label>
                 <span data-i18n="pallet.length">pallet.length</span>
-                <input id="palletLength" data-field="length" type="number" min="1" step="1" value="1200" required>
+                <input id="palletLength" data-field="length" data-length-input data-min-mm="1" data-mm="1200" type="text" inputmode="decimal" value="1200" required>
               </label>
               <label>
                 <span data-i18n="pallet.width">pallet.width</span>
-                <input id="palletWidth" data-field="width" type="number" min="1" step="1" value="800" required>
+                <input id="palletWidth" data-field="width" data-length-input data-min-mm="1" data-mm="800" type="text" inputmode="decimal" value="800" required>
               </label>
               <label>
                 <span data-i18n="pallet.customName">pallet.customName</span>
@@ -3644,7 +3763,7 @@
           <div class="row" style="margin-top:13px;">
             <label>
               <span data-i18n="pallet.gap">pallet.gap</span>
-              <input id="gap" type="number" min="0" step="1" value="0" required>
+              <input id="gap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0" required>
             </label>
             <div></div>
           </div>
@@ -3655,7 +3774,7 @@
 
           <label>
             <span data-i18n="pallet.gap">pallet.gap</span>
-            <input id="mixedGap" type="number" min="0" step="1" value="0" required>
+            <input id="mixedGap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0" required>
           </label>
 
           <div id="mixedRows" class="mixed-list"></div>
@@ -3678,7 +3797,7 @@
 
               <label>
                 <span data-i18n="pallet.verticalGap">pallet.verticalGap</span>
-                <input id="verticalGap" type="number" min="0" step="1" value="0" required>
+                <input id="verticalGap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0" required>
               </label>
             </div>
           </div>
@@ -3702,7 +3821,7 @@
       <div class="results">
         <div class="summary">
           <div class="metric">
-            <div class="k" data-i18n="results.metric.cbm">results.metric.cbm</div>
+            <div class="k" data-i18n="results.metric.volume">results.metric.volume</div>
             <div id="cbmTotal" class="v">-</div>
           </div>
           <div class="metric">
@@ -3710,7 +3829,7 @@
             <div id="weightTotal" class="v">-</div>
           </div>
           <div class="metric">
-            <div class="k" data-i18n="results.metric.best">results.metric.best</div>
+            <div id="bestCapacityLabel" class="k" data-i18n="results.metric.bestCapacity">results.metric.bestCapacity</div>
             <div id="bestCapacity" class="v">-</div>
           </div>
           <div class="metric">
@@ -3855,12 +3974,44 @@
         : `⟦${key}.other⟧`;
     }
 
+    const UNIT_STORAGE_KEY = "loadcomposer.unit";
+    const LENGTH_UNIT_CONFIG = Object.freeze({
+      mm: Object.freeze({ millimetresPerUnit: 1, maximumFractionDigits: 0 }),
+      cm: Object.freeze({ millimetresPerUnit: 10, maximumFractionDigits: 1 }),
+      in: Object.freeze({ millimetresPerUnit: 25.4, maximumFractionDigits: 2 })
+    });
+
+    function normalizedLengthUnit(value) {
+      return Object.prototype.hasOwnProperty.call(LENGTH_UNIT_CONFIG, value)
+        ? value
+        : "mm";
+    }
+
+    function storedLengthUnit() {
+      try {
+        return normalizedLengthUnit(localStorage.getItem(UNIT_STORAGE_KEY));
+      } catch (_) {
+        return "mm";
+      }
+    }
+
+    function persistLengthUnit(value) {
+      try {
+        localStorage.setItem(UNIT_STORAGE_KEY, normalizedLengthUnit(value));
+      } catch (_) {
+        /* La preferenza resta valida per la sessione anche senza storage. */
+      }
+    }
+
+    let currentLengthUnit = storedLengthUnit();
+    document.documentElement.dataset.unit = currentLengthUnit;
+
     function localizedContainerName(container) {
       return t(`vehicle.${container.id}.name`);
     }
 
     function localizedContainerNote(container) {
-      return t(`vehicle.${container.id}.note`);
+      return t(`vehicle.${container.id}.note`, vehicleNoteLengthVariables(container.id));
     }
 
     function localizedContainerGroup(container) {
@@ -4050,6 +4201,7 @@
         prudentialLength: 13600,
         prudentialWidth: 2450,
         prudentialHeight: 2600,
+        accessAutoOkHeight: 2500,
         doorWidth: null,
         doorHeight: null,
         accessKnown: false,
@@ -4066,6 +4218,7 @@
         prudentialLength: 13600,
         prudentialWidth: 2450,
         prudentialHeight: 2900,
+        accessAutoOkHeight: 2550,
         doorWidth: null,
         doorHeight: null,
         accessKnown: false,
@@ -4082,6 +4235,7 @@
         prudentialLength: 13300,
         prudentialWidth: 2460,
         prudentialHeight: 2600,
+        accessAutoOkHeight: 2500,
         doorWidth: null,
         doorHeight: null,
         accessKnown: false,
@@ -4095,15 +4249,15 @@
     ];
 
     const PALLET_PRESETS = [
-      { section: "common", id: "eur", length: 1200, width: 800, primary: "1200 × 800 mm", secondary: "Euro pallet", name: "Euro pallet" },
-      { section: "common", id: "industrial", length: 1200, width: 1000, primary: "1200 × 1000 mm", secondary: "Pallet industriale", name: "Pallet industriale" },
-      { section: "common", id: "north-american", length: 1219, width: 1016, primary: "48 × 40 in", secondary: "1219 × 1016 mm · Pallet nordamericano", name: "Pallet nordamericano" },
-      { section: "common", id: "asian", length: 1100, width: 1100, primary: "1100 × 1100 mm", secondary: "Standard asiatico", name: "Pallet standard asiatico" },
-      { section: "other", id: "australian", length: 1165, width: 1165, primary: "1165 × 1165 mm", secondary: "Pallet australiano", name: "Pallet australiano" },
-      { section: "other", id: "half-euro", length: 800, width: 600, primary: "800 × 600 mm", secondary: "Mezzo Euro pallet", name: "Mezzo Euro pallet" },
-      { section: "other", id: "42x42", length: 1067, width: 1067, primary: "42 × 42 in", secondary: "1067 × 1067 mm", name: "Pallet 42 × 42 in" },
-      { section: "other", id: "48x45", length: 1219, width: 1143, primary: "48 × 45 in", secondary: "1219 × 1143 mm", name: "Pallet 48 × 45 in" },
-      { section: "other", id: "48x48", length: 1219, width: 1219, primary: "48 × 48 in", secondary: "1219 × 1219 mm", name: "Pallet 48 × 48 in" },
+      { section: "common", id: "eur", length: 1200, width: 800, nativeUnit: "mm", nativeLength: 1200, nativeWidth: 800, primary: "1200 × 800 mm", secondary: "Euro pallet", name: "Euro pallet" },
+      { section: "common", id: "industrial", length: 1200, width: 1000, nativeUnit: "mm", nativeLength: 1200, nativeWidth: 1000, primary: "1200 × 1000 mm", secondary: "Pallet industriale", name: "Pallet industriale" },
+      { section: "common", id: "north-american", length: 1219, width: 1016, nativeUnit: "in", nativeLength: 48, nativeWidth: 40, primary: "48 × 40 in", secondary: "1219 × 1016 mm · Pallet nordamericano", name: "Pallet nordamericano" },
+      { section: "common", id: "asian", length: 1100, width: 1100, nativeUnit: "mm", nativeLength: 1100, nativeWidth: 1100, primary: "1100 × 1100 mm", secondary: "Standard asiatico", name: "Pallet standard asiatico" },
+      { section: "other", id: "australian", length: 1165, width: 1165, nativeUnit: "mm", nativeLength: 1165, nativeWidth: 1165, primary: "1165 × 1165 mm", secondary: "Pallet australiano", name: "Pallet australiano" },
+      { section: "other", id: "half-euro", length: 800, width: 600, nativeUnit: "mm", nativeLength: 800, nativeWidth: 600, primary: "800 × 600 mm", secondary: "Mezzo Euro pallet", name: "Mezzo Euro pallet" },
+      { section: "other", id: "42x42", length: 1067, width: 1067, nativeUnit: "in", nativeLength: 42, nativeWidth: 42, primary: "42 × 42 in", secondary: "1067 × 1067 mm", name: "Pallet telecom / vernici" },
+      { section: "other", id: "48x45", length: 1219, width: 1143, nativeUnit: "in", nativeLength: 48, nativeWidth: 45, primary: "48 × 45 in", secondary: "1219 × 1143 mm", name: "Pallet automotive" },
+      { section: "other", id: "48x48", length: 1219, width: 1219, nativeUnit: "in", nativeLength: 48, nativeWidth: 48, primary: "48 × 48 in", secondary: "1219 × 1219 mm", name: "Pallet per fusti" },
       { section: "custom", id: "custom", length: 1200, width: 800, primary: "Inserisci dimensioni…", secondary: "Lunghezza e larghezza personalizzate", name: "Pallet personalizzato" }
     ];
 
@@ -4118,6 +4272,7 @@
 
     const els = {
       loadMode: document.getElementById("loadMode"),
+      unitRadios: Array.from(document.querySelectorAll('input[name="linearUnit"]')),
       singleModeForm: document.getElementById("singleModeForm"),
       mixedModeForm: document.getElementById("mixedModeForm"),
       singlePalletGroup: document.getElementById("singlePalletGroup"),
@@ -4140,6 +4295,7 @@
       resultsBody: document.getElementById("resultsBody"),
       cbmTotal: document.getElementById("cbmTotal"),
       weightTotal: document.getElementById("weightTotal"),
+      bestCapacityLabel: document.getElementById("bestCapacityLabel"),
       bestCapacity: document.getElementById("bestCapacity"),
       smallestOk: document.getElementById("smallestOk"),
       drawSelect: document.getElementById("drawSelect"),
@@ -5100,22 +5256,22 @@
                   orientation: orientation.rotated
                     ? t("geometry.orientationRotated")
                     : t("geometry.orientationNormal"),
-                  width: formatInt(dimensions.width),
+                  width: formatLength(dimensions.width),
                   limitName: container.accessKnown === false
                     ? t("geometry.internalWidthArticle")
                     : t("geometry.doorArticle"),
-                  limit: formatInt(accessWidth)
+                  limit: formatLength(accessWidth)
                 })
               );
             }
             if (heightMargin < -GEOMETRY_EPSILON) {
               heightFailures.push(
                 t("geometry.heightFailure", {
-                  height: formatInt(pallet.height),
+                  height: formatLength(pallet.height),
                   limitName: container.accessKnown === false
                     ? t("geometry.internalHeightArticle")
                     : t("geometry.doorArticle"),
-                  limit: formatInt(heightLimit)
+                  limit: formatLength(heightLimit)
                 })
               );
             }
@@ -5218,8 +5374,8 @@
           if (result.layers < 1 || usedHeight > container.innerHeight + GEOMETRY_EPSILON) {
             heightFailures.push(
               t("geometry.loadHeightFailure", {
-                height: formatInt(usedHeight),
-                limit: formatInt(container.innerHeight)
+                height: formatLength(usedHeight),
+                limit: formatLength(container.innerHeight)
               })
             );
           }
@@ -5277,11 +5433,11 @@
             accessFailures.push(
               t("geometry.mixedAccessFailure", {
                 label,
-                width: formatInt(rect.width),
+                width: formatLength(rect.width),
                 limitName: container.accessKnown === false
                   ? t("geometry.internalWidthArticle")
                   : t("geometry.doorArticle"),
-                limit: formatInt(accessWidth)
+                limit: formatLength(accessWidth)
               })
             );
           }
@@ -5289,11 +5445,11 @@
             heightFailures.push(
               t("geometry.mixedHeightFailure", {
                 label,
-                height: formatInt(item.height),
+                height: formatLength(item.height),
                 limitName: container.accessKnown === false
                   ? t("geometry.internalHeightArticle")
                   : t("geometry.doorArticle"),
-                limit: formatInt(heightLimit)
+                limit: formatLength(heightLimit)
               })
             );
           }
@@ -5301,8 +5457,8 @@
             heightFailures.push(
               t("geometry.mixedInternalHeightFailure", {
                 label,
-                height: formatInt(item.height),
-                limit: formatInt(container.innerHeight)
+                height: formatLength(item.height),
+                limit: formatLength(container.innerHeight)
               })
             );
           }
@@ -5333,6 +5489,218 @@
     function format1(value) {
       return i18n.number(value, { maximumFractionDigits: 1 });
     }
+
+    function formatVolume(cubicMetres, unit = currentLengthUnit) {
+      const imperial = normalizedLengthUnit(unit) === "in";
+      const value = imperial ? cubicMetres * 35.3146667 : cubicMetres;
+      return `${format1(value)} ${imperial ? "ft³" : "m³"}`;
+    }
+
+    function normalizeLengthToMm(value, unit = currentLengthUnit) {
+      const config = LENGTH_UNIT_CONFIG[normalizedLengthUnit(unit)];
+      const millimetres = Number(value) * config.millimetresPerUnit;
+      return Number.isFinite(millimetres) ? Math.round(millimetres) : Number.NaN;
+    }
+
+    function parseLengthInput(rawValue, unit = currentLengthUnit) {
+      const normalizedUnit = normalizedLengthUnit(unit);
+      const config = LENGTH_UNIT_CONFIG[normalizedUnit];
+      const raw = String(rawValue ?? "").trim();
+
+      if (!raw) return { status: "empty", raw, unit: normalizedUnit };
+      if (/^\d+[.,]$/.test(raw) && config.maximumFractionDigits > 0) {
+        return { status: "incomplete", raw, unit: normalizedUnit };
+      }
+
+      const pattern = config.maximumFractionDigits === 0
+        ? /^\d+$/
+        : new RegExp(`^\\d+(?:[.,]\\d{1,${config.maximumFractionDigits}})?$`);
+      if (!pattern.test(raw)) {
+        return { status: "invalid", raw, unit: normalizedUnit };
+      }
+
+      const numericValue = Number(raw.replace(",", "."));
+      const mm = normalizeLengthToMm(numericValue, normalizedUnit);
+      if (!Number.isFinite(numericValue) || !Number.isSafeInteger(mm)) {
+        return { status: "invalid", raw, unit: normalizedUnit };
+      }
+
+      return {
+        status: "valid",
+        raw,
+        unit: normalizedUnit,
+        value: numericValue,
+        mm
+      };
+    }
+
+    function mmToDisplay(mm, unit = currentLengthUnit) {
+      const config = LENGTH_UNIT_CONFIG[normalizedLengthUnit(unit)];
+      return Number(mm) / config.millimetresPerUnit;
+    }
+
+    function formatLengthValue(mm, unit = currentLengthUnit, options = {}) {
+      const normalizedUnit = normalizedLengthUnit(unit);
+      const config = LENGTH_UNIT_CONFIG[normalizedUnit];
+      return i18n.number(mmToDisplay(mm, normalizedUnit), {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: config.maximumFractionDigits,
+        useGrouping: options.useGrouping === true
+      });
+    }
+
+    function formatLengthInputValue(mm, unit = currentLengthUnit) {
+      return formatLengthValue(mm, unit, { useGrouping: false });
+    }
+
+    function formatLength(mm, unit = currentLengthUnit) {
+      const normalizedUnit = normalizedLengthUnit(unit);
+      return `${formatLengthValue(mm, normalizedUnit)} ${normalizedUnit}`;
+    }
+
+    function formatLengthDimensions(values, unit = currentLengthUnit, compact = false) {
+      const normalizedUnit = normalizedLengthUnit(unit);
+      const separator = compact ? "×" : " × ";
+      return `${values.map(value => formatLengthValue(value, normalizedUnit)).join(separator)} ${normalizedUnit}`;
+    }
+
+    function setLengthInputMm(input, mm, options = {}) {
+      if (!input || !Number.isSafeInteger(mm)) return false;
+      input.dataset.mm = String(mm);
+      if (options.format !== false) {
+        input.value = formatLengthInputValue(mm);
+      }
+      return true;
+    }
+
+    function previousLengthInputMm(input) {
+      const value = Number(input && input.dataset ? input.dataset.mm : Number.NaN);
+      return Number.isSafeInteger(value) ? value : null;
+    }
+
+    function lengthFieldMinimum(input) {
+      const value = Number(input && input.dataset ? input.dataset.minMm : Number.NaN);
+      return Number.isFinite(value) ? value : 1;
+    }
+
+    function lengthFieldLabel(input) {
+      const label = input ? input.closest("label") : null;
+      const caption = label ? label.querySelector("span") : null;
+      return caption ? caption.textContent.trim() : t("units.lengthValue");
+    }
+
+    function parseLengthField(input, label, options, errors) {
+      const result = parseLengthInput(input.value);
+      const minimum = Number.isFinite(options.min) ? options.min : lengthFieldMinimum(input);
+
+      if (result.status === "empty") {
+        return invalidField(input, t("validation.required", { label }), errors);
+      }
+      if (result.status === "incomplete") {
+        return invalidField(input, t("validation.lengthIncomplete", {
+          label,
+          unit: currentLengthUnit
+        }), errors);
+      }
+      if (result.status !== "valid") {
+        const key = currentLengthUnit === "mm"
+          ? "validation.lengthInteger"
+          : "validation.lengthFormat";
+        return invalidField(input, t(key, {
+          label,
+          unit: currentLengthUnit,
+          decimals: formatInt(LENGTH_UNIT_CONFIG[currentLengthUnit].maximumFractionDigits)
+        }), errors);
+      }
+      if (result.mm < minimum) {
+        const key = minimum === 1
+          ? "validation.positiveLength"
+          : "validation.minimumLength";
+        return invalidField(input, t(key, {
+          label,
+          minimum: formatLength(minimum)
+        }), errors);
+      }
+
+      setLengthInputMm(input, result.mm, { format: false });
+      input.setCustomValidity("");
+      input.removeAttribute("aria-invalid");
+      return result.mm;
+    }
+
+    function readLengthInputMm(input) {
+      const result = parseLengthInput(input ? input.value : "");
+      return result.status === "valid" ? result.mm : Number.NaN;
+    }
+
+    const VEHICLE_NOTE_LENGTHS = Object.freeze({
+      "20rf": Object.freeze({
+        lengthMin: 5451, lengthMax: 5456,
+        widthMin: 2290, widthMax: 2294,
+        heightMin: 2167, heightMax: 2273
+      }),
+      "40rh": Object.freeze({
+        lengthMin: 11578, lengthMax: 11584,
+        widthMin: 2275, widthMax: 2294,
+        heightMin: 2415, heightMax: 2557
+      }),
+      "truck-curtain-1360": Object.freeze({
+        prudentialLength: 13600, prudentialWidth: 2450,
+        prudentialHeight: 2600, usableHeight: 2700
+      }),
+      "truck-mega-1360": Object.freeze({
+        prudentialLength: 13600, prudentialWidth: 2450,
+        prudentialHeight: 2900, typicalHeightMin: 2900,
+        typicalHeightMax: 3050, designHeight: 3000
+      }),
+      "truck-reefer-1360": Object.freeze({
+        prudentialLength: 13300, prudentialWidth: 2460,
+        prudentialHeight: 2600, usableLength: 13310,
+        bodyLength: 13410
+      })
+    });
+
+    function vehicleNoteLengthVariables(containerId) {
+      const values = VEHICLE_NOTE_LENGTHS[containerId];
+      if (!values) return {};
+      return Object.fromEntries([
+        ...Object.entries(values).map(([key, value]) => [key, formatLengthValue(value)]),
+        ["unit", currentLengthUnit]
+      ]);
+    }
+
+    window.loadComposerUnits = Object.freeze({
+      get unit() { return currentLengthUnit; },
+      parseLengthInput,
+      normalizeLengthToMm,
+      mmToDisplay,
+      formatLengthValue,
+      formatLength,
+      formatLengthDimensions,
+      setUnit: requestLengthUnit,
+      canonicalInput() {
+        const validation = validateAndReadInput();
+        return validation.valid ? structuredClone(validation.input) : null;
+      },
+      layoutSnapshot() {
+        return lastResults.map(result => ({
+          containerId: result.container.id,
+          ok: result.ok,
+          totalCapacity: result.totalCapacity,
+          placedCount: result.placedCount,
+          usedLength: result.layout.usedLength,
+          usedWidth: result.layout.usedWidth,
+          rects: result.layout.rects.map(rect => ({
+            x: rect.x,
+            y: rect.y,
+            length: rect.length,
+            width: rect.width,
+            rotated: Boolean(rect.rotated),
+            typeIndex: Number.isSafeInteger(rect.typeIndex) ? rect.typeIndex : null
+          }))
+        }));
+      }
+    });
 
     function statusBadge(kind, text) {
       return `<span class="badge ${kind}">${text}</span>`;
@@ -5449,15 +5817,15 @@
        * alla misura reale del mezzo. È distinto dal semplice "carica stretto".
        */
       if (fullFloorUsed && lengthUsageRatio >= 0.9985 && spareLength <= 18) {
-        verificationIssues.push(t("space.issue.longitudinal", { value: formatInt(spareLength) }));
+        verificationIssues.push(t("space.issue.longitudinal", { value: formatLength(spareLength) }));
       }
 
       if (fullFloorUsed && widthUsageRatio >= 0.997 && spareWidth <= 8) {
-        verificationIssues.push(t("space.issue.transverse", { value: formatInt(spareWidth) }));
+        verificationIssues.push(t("space.issue.transverse", { value: formatLength(spareWidth) }));
       }
 
       if (result.okHeight && usedHeight > 0 && spareHeight <= 8) {
-        verificationIssues.push(t("space.issue.height", { value: formatInt(spareHeight) }));
+        verificationIssues.push(t("space.issue.height", { value: formatLength(spareHeight) }));
       }
 
       if (c.accessKnown !== false && result.okDoor) {
@@ -5469,11 +5837,11 @@
           : Infinity;
 
         if (Number.isFinite(minDoorWidthMargin) && minDoorWidthMargin <= 5) {
-          verificationIssues.push(t("space.issue.doorWidth", { value: formatInt(minDoorWidthMargin) }));
+          verificationIssues.push(t("space.issue.doorWidth", { value: formatLength(minDoorWidthMargin) }));
         }
 
         if (Number.isFinite(minDoorHeightMargin) && minDoorHeightMargin <= 5) {
-          verificationIssues.push(t("space.issue.doorHeight", { value: formatInt(minDoorHeightMargin) }));
+          verificationIssues.push(t("space.issue.doorHeight", { value: formatLength(minDoorHeightMargin) }));
         }
       }
 
@@ -5490,7 +5858,7 @@
         Number.isFinite(c.minLength) &&
         result.layout.usedLength > c.minLength
       ) {
-        conservativeIssues.push(t("space.issue.minLength", { value: formatInt(c.minLength) }));
+        conservativeIssues.push(t("space.issue.minLength", { value: formatLength(c.minLength) }));
       }
 
       if (
@@ -5500,7 +5868,7 @@
         Number.isFinite(c.minWidth) &&
         result.layout.usedWidth > c.minWidth
       ) {
-        conservativeIssues.push(t("space.issue.minWidth", { value: formatInt(c.minWidth) }));
+        conservativeIssues.push(t("space.issue.minWidth", { value: formatLength(c.minWidth) }));
       }
 
       if (
@@ -5509,7 +5877,7 @@
         Number.isFinite(c.minHeight) &&
         usedHeight > c.minHeight
       ) {
-        conservativeIssues.push(t("space.issue.minHeight", { value: formatInt(c.minHeight) }));
+        conservativeIssues.push(t("space.issue.minHeight", { value: formatLength(c.minHeight) }));
       }
 
       if (
@@ -5525,9 +5893,9 @@
           reference: c.prudentialLength,
           nominal: c.innerLength,
           message: t("space.issue.prudentialLength", {
-            used: formatInt(result.layout.usedLength),
-            reference: formatInt(c.prudentialLength),
-            nominal: formatInt(c.innerLength)
+            used: formatLength(result.layout.usedLength),
+            reference: formatLength(c.prudentialLength),
+            nominal: formatLength(c.innerLength)
           })
         });
       }
@@ -5545,9 +5913,9 @@
           reference: c.prudentialWidth,
           nominal: c.innerWidth,
           message: t("space.issue.prudentialWidth", {
-            used: formatInt(result.layout.usedWidth),
-            reference: formatInt(c.prudentialWidth),
-            nominal: formatInt(c.innerWidth)
+            used: formatLength(result.layout.usedWidth),
+            reference: formatLength(c.prudentialWidth),
+            nominal: formatLength(c.innerWidth)
           })
         });
       }
@@ -5564,9 +5932,9 @@
           reference: c.prudentialHeight,
           nominal: c.innerHeight,
           message: t("space.issue.prudentialHeight", {
-            used: formatInt(usedHeight),
-            reference: formatInt(c.prudentialHeight),
-            nominal: formatInt(c.innerHeight)
+            used: formatLength(usedHeight),
+            reference: formatLength(c.prudentialHeight),
+            nominal: formatLength(c.innerHeight)
           })
         });
       }
@@ -5598,7 +5966,7 @@
       if (!alert || !alert.hasWarning) return "";
 
       if (alert.level === "verification") {
-        return statusBadge("verify", escapeHtml(t("status.verifyMeasures")));
+        return statusBadge("verify", escapeHtml(t("status.verify")));
       }
 
       if (alert.level === "operational") {
@@ -5616,7 +5984,7 @@
         const note = alert.operationalNote;
         parts.push(
           `<span class="space-alert-text">${escapeHtml(t("space.compactHtml", {
-            margin: formatInt(note.spareLength)
+            margin: formatLength(note.spareLength)
           }))}</span>`
         );
       }
@@ -5655,7 +6023,7 @@
       if (alert.operationalNote) {
         const note = alert.operationalNote;
         parts.push(t("space.compactPlain", {
-          margin: formatInt(note.spareLength)
+          margin: formatLength(note.spareLength)
         }));
       }
 
@@ -5693,6 +6061,41 @@
       return PALLET_PRESETS.find(item => item.id === id) || PALLET_PRESETS[0];
     }
 
+    function presetMeasurementSystem(unit) {
+      return unit === "in" ? "imperial" : "metric";
+    }
+
+    function nativePresetDimensions(preset) {
+      return `${preset.nativeLength} × ${preset.nativeWidth} ${preset.nativeUnit}`;
+    }
+
+    function presetDisplay(preset) {
+      if (preset.id === "custom" || !preset.nativeUnit) {
+        return {
+          primary: localizedPresetText(preset, "primary"),
+          secondary: localizedPresetText(preset, "secondary")
+        };
+      }
+      const name = localizedPresetText(preset, "name");
+      const canonicalDimensions = [preset.length, preset.width];
+      const sameSystem = (
+        presetMeasurementSystem(preset.nativeUnit) ===
+        presetMeasurementSystem(currentLengthUnit)
+      );
+      if (sameSystem) {
+        return {
+          primary: preset.nativeUnit === "in"
+            ? nativePresetDimensions(preset)
+            : formatLengthDimensions(canonicalDimensions),
+          secondary: name
+        };
+      }
+      return {
+        primary: nativePresetDimensions(preset),
+        secondary: `${formatLengthDimensions(canonicalDimensions)} · ${name}`
+      };
+    }
+
     function populatePickerMenu(menu, selectedId) {
       const fragment = document.createDocumentFragment();
       const sections = [
@@ -5718,8 +6121,9 @@
             option.dataset.action = "selectPreset";
             option.dataset.presetId = item.id;
             option.dataset.selectedLabel = t("picker.selected");
-            primary.textContent = localizedPresetText(item, "primary");
-            secondary.textContent = localizedPresetText(item, "secondary");
+            const display = presetDisplay(item);
+            primary.textContent = display.primary;
+            secondary.textContent = display.secondary;
             option.append(primary, secondary);
             fragment.appendChild(option);
           });
@@ -5812,9 +6216,8 @@
               ? "rotation.diagramDescriptionShort"
               : "rotation.diagramDescriptionLong",
             {
-              length: formatInt(length),
-              width: formatInt(width),
-              entry: formatInt(entry)
+              dimensions: formatLengthDimensions([length, width]),
+              entry: formatLength(entry)
             }
           ))}</desc>
           <line class="orientation-dimension" x1="${px.toFixed(1)}" y1="${dimensionY}" x2="${(px + palletW).toFixed(1)}" y2="${dimensionY}"/>
@@ -5822,14 +6225,14 @@
           <line class="orientation-dimension-cap" x1="${(px + palletW).toFixed(1)}" y1="${dimensionY - 4}" x2="${(px + palletW).toFixed(1)}" y2="${dimensionY + 4}"/>
           <line class="orientation-dimension-extension" x1="${px.toFixed(1)}" y1="${dimensionY + 5}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>
           <line class="orientation-dimension-extension" x1="${(px + palletW).toFixed(1)}" y1="${dimensionY + 5}" x2="${(px + palletW).toFixed(1)}" y2="${py.toFixed(1)}"/>
-          <text class="orientation-dimension-label" x="${centerX.toFixed(1)}" y="14" text-anchor="middle">${formatInt(entry)} mm</text>
+          <text class="orientation-dimension-label" x="${centerX.toFixed(1)}" y="14" text-anchor="middle">${formatLength(entry)}</text>
 
           <line class="orientation-dimension" x1="${dimensionX}" y1="${py.toFixed(1)}" x2="${dimensionX}" y2="${palletBottom.toFixed(1)}"/>
           <line class="orientation-dimension-cap" x1="${dimensionX - 4}" y1="${py.toFixed(1)}" x2="${dimensionX + 4}" y2="${py.toFixed(1)}"/>
           <line class="orientation-dimension-cap" x1="${dimensionX - 4}" y1="${palletBottom.toFixed(1)}" x2="${dimensionX + 4}" y2="${palletBottom.toFixed(1)}"/>
           <line class="orientation-dimension-extension" x1="${dimensionX + 5}" y1="${py.toFixed(1)}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>
           <line class="orientation-dimension-extension" x1="${dimensionX + 5}" y1="${palletBottom.toFixed(1)}" x2="${px.toFixed(1)}" y2="${palletBottom.toFixed(1)}"/>
-          <text class="orientation-dimension-label" x="${dimensionX - 5}" y="${(py + palletH / 2).toFixed(1)}" text-anchor="end" dominant-baseline="middle" textLength="49" lengthAdjust="spacingAndGlyphs">${formatInt(along)} mm</text>
+          <text class="orientation-dimension-label" x="${dimensionX - 5}" y="${(py + palletH / 2).toFixed(1)}" text-anchor="end" dominant-baseline="middle" textLength="49" lengthAdjust="spacingAndGlyphs">${formatLength(along)}</text>
 
           <g class="orientation-pallet" transform="${palletTransform}">
             <rect class="orientation-pallet-base" x="${baseX.toFixed(1)}" y="${baseY.toFixed(1)}" width="${basePalletW.toFixed(1)}" height="${basePalletH.toFixed(1)}" rx="3" stroke-width="1.6"/>
@@ -5847,9 +6250,14 @@
     }
 
     function groupDimensions(group) {
+      const presetId = group.querySelector('[data-field="presetId"]')?.value || "eur";
+      const preset = getPreset(presetId);
+      if (presetId !== "custom") {
+        return { length: preset.length, width: preset.width };
+      }
       return {
-        length: Number(group.querySelector('[data-field="length"]').value),
-        width: Number(group.querySelector('[data-field="width"]').value)
+        length: readLengthInputMm(group.querySelector('[data-field="length"]')),
+        width: readLengthInputMm(group.querySelector('[data-field="width"]'))
       };
     }
 
@@ -5896,8 +6304,11 @@
 
       const primary = document.createElement("strong");
       const secondary = document.createElement("small");
-      primary.textContent = `${formatInt(dims.length)} × ${formatInt(dims.width)} mm`;
-      secondary.textContent = name;
+      const display = presetId === "custom"
+        ? { primary: formatLengthDimensions([dims.length, dims.width]), secondary: name }
+        : presetDisplay(preset);
+      primary.textContent = display.primary;
+      secondary.textContent = display.secondary;
       summary.replaceChildren(primary, secondary);
 
       if (isSquare) {
@@ -5927,7 +6338,7 @@
             : "rotation.forkLong"
         );
         small.textContent = t("rotation.entryMeasure", {
-          entry: formatInt(presentation.entry)
+          entry: formatLength(presentation.entry)
         });
         node.replaceChildren(strong, small);
       };
@@ -5949,8 +6360,8 @@
       const preset = getPreset(presetId);
       group.querySelector('[data-field="presetId"]').value = preset.id;
       if (preset.id !== "custom") {
-        group.querySelector('[data-field="length"]').value = preset.length;
-        group.querySelector('[data-field="width"]').value = preset.width;
+        setLengthInputMm(group.querySelector('[data-field="length"]'), preset.length);
+        setLengthInputMm(group.querySelector('[data-field="width"]'), preset.width);
       }
       group.querySelector('[data-role="pickerMenu"]').classList.add("hidden");
       group.querySelector('[data-action="togglePicker"]').setAttribute("aria-expanded", "false");
@@ -5982,6 +6393,9 @@
       mixedRowCounter += 1;
       const rowId = `mix_${mixedRowCounter}`;
       const radioName = `${rowId}_orientation`;
+      const heightMm = Number.isSafeInteger(defaults.height) ? defaults.height : 1500;
+      const lengthMm = Number.isSafeInteger(defaults.length) ? defaults.length : 1200;
+      const widthMm = Number.isSafeInteger(defaults.width) ? defaults.width : 800;
       return `
         <div class="pallet-group mixed-row" data-row-id="${rowId}" data-group-kind="mixed">
           <div class="group-heading mixed-title">
@@ -6009,13 +6423,13 @@
 
             <label>
               <span data-i18n="pallet.loadedHeight">pallet.loadedHeight</span>
-              <input data-field="height" type="number" min="1" step="1" value="${defaults.height ?? 1500}" required>
+              <input data-field="height" data-length-input data-min-mm="1" data-mm="${heightMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(heightMm)}" required>
             </label>
           </div>
 
           <div class="custom-size-fields hidden" data-role="customFields">
-            <label><span data-i18n="pallet.length">pallet.length</span><input data-field="length" type="number" min="1" step="1" value="${defaults.length ?? 1200}" required></label>
-            <label><span data-i18n="pallet.width">pallet.width</span><input data-field="width" type="number" min="1" step="1" value="${defaults.width ?? 800}" required></label>
+            <label><span data-i18n="pallet.length">pallet.length</span><input data-field="length" data-length-input data-min-mm="1" data-mm="${lengthMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(lengthMm)}" required></label>
+            <label><span data-i18n="pallet.width">pallet.width</span><input data-field="width" data-length-input data-min-mm="1" data-mm="${widthMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(widthMm)}" required></label>
             <label><span data-i18n="pallet.customName">pallet.customName</span><input data-field="customName" type="text" maxlength="${MAX_CUSTOM_NAME_LENGTH}" value="${escapeHtml(defaults.customName || "")}"></label>
           </div>
 
@@ -6070,8 +6484,12 @@
       const customName = row.querySelector('[data-field="customName"]');
       if (!customName.value) customName.value = t("pallet.customDefaultName");
       initializeGroup(row, data.presetId || "eur");
-      if (data.length) row.querySelector('[data-field="length"]').value = data.length;
-      if (data.width) row.querySelector('[data-field="width"]').value = data.width;
+      if (Number.isSafeInteger(data.length)) {
+        setLengthInputMm(row.querySelector('[data-field="length"]'), data.length);
+      }
+      if (Number.isSafeInteger(data.width)) {
+        setLengthInputMm(row.querySelector('[data-field="width"]'), data.width);
+      }
       updateGroupVisuals(row);
       if (shouldCalculate) calculate();
     }
@@ -6157,7 +6575,7 @@
         { min: mode === "mixed" ? 0 : 1, max: MAX_TOTAL_PALLETS },
         errors
       );
-      const height = parseIntegerField(
+      const height = parseLengthField(
         heightInput,
         t("validation.field.height", { prefix }),
         { min: 1 },
@@ -6169,13 +6587,13 @@
       let name = preset.name;
 
       if (presetId === "custom") {
-        length = parseIntegerField(
+        length = parseLengthField(
           group.querySelector('[data-field="length"]'),
           t("validation.field.length", { prefix }),
           { min: 1 },
           errors
         );
-        width = parseIntegerField(
+        width = parseLengthField(
           group.querySelector('[data-field="width"]'),
           t("validation.field.width", { prefix }),
           { min: 1 },
@@ -6238,7 +6656,7 @@
 
       if (mode === "mixed") {
         const rows = Array.from(els.mixedRows.querySelectorAll(".mixed-row"));
-        const gap = parseIntegerField(
+        const gap = parseLengthField(
           els.mixedGap,
           t("validation.field.gap"),
           { min: 0 },
@@ -6275,7 +6693,7 @@
         }
       } else {
         const palletData = readValidatedGroup(els.singlePalletGroup, 0, mode, errors);
-        const gap = parseIntegerField(
+        const gap = parseLengthField(
           els.gap,
           t("validation.field.gap"),
           { min: 0 },
@@ -6291,7 +6709,7 @@
             { min: 1, max: MAX_TOTAL_PALLETS },
             errors
           );
-          verticalGap = parseIntegerField(
+          verticalGap = parseLengthField(
             els.verticalGap,
             t("validation.field.verticalGap"),
             { min: 0 },
@@ -6319,6 +6737,121 @@
         errors: Array.from(new Set(errors)),
         firstInvalid: document.querySelector('[aria-invalid="true"]')
       };
+    }
+
+    function activeLengthInputs() {
+      const inputs = [];
+      if (els.loadMode.value === "mixed") {
+        inputs.push(els.mixedGap);
+        els.mixedRows.querySelectorAll(".mixed-row").forEach(row => {
+          inputs.push(row.querySelector('[data-field="height"]'));
+          if (row.querySelector('[data-field="presetId"]')?.value === "custom") {
+            inputs.push(
+              row.querySelector('[data-field="length"]'),
+              row.querySelector('[data-field="width"]')
+            );
+          }
+        });
+      } else {
+        inputs.push(els.palletHeight, els.gap);
+        if (els.singlePalletGroup.querySelector('[data-field="presetId"]')?.value === "custom") {
+          inputs.push(els.palletLength, els.palletWidth);
+        }
+        if (els.stackable.checked) inputs.push(els.verticalGap);
+      }
+      return inputs.filter(Boolean);
+    }
+
+    function consolidateActiveLengthInputs() {
+      const errors = [];
+      let firstInvalid = null;
+      activeLengthInputs().forEach(input => {
+        input.setCustomValidity("");
+        input.removeAttribute("aria-invalid");
+        const value = parseLengthField(
+          input,
+          lengthFieldLabel(input),
+          { min: lengthFieldMinimum(input) },
+          errors
+        );
+        if (value === null && !firstInvalid) firstInvalid = input;
+      });
+      return {
+        valid: errors.length === 0,
+        errors: Array.from(new Set(errors)),
+        firstInvalid
+      };
+    }
+
+    function formatAllLengthInputs() {
+      document.querySelectorAll("[data-length-input]").forEach(input => {
+        const mm = previousLengthInputMm(input);
+        if (mm !== null) input.value = formatLengthInputValue(mm);
+      });
+    }
+
+    function syncUnitRadios() {
+      els.unitRadios.forEach(radio => {
+        radio.checked = radio.value === currentLengthUnit;
+      });
+      document.documentElement.dataset.unit = currentLengthUnit;
+    }
+
+    function refreshUnitPresentation() {
+      document.querySelectorAll(".pallet-group").forEach(group => {
+        const presetId = group.querySelector('[data-field="presetId"]')?.value || "eur";
+        populatePickerMenu(group.querySelector('[data-role="pickerMenu"]'), presetId);
+      });
+      document.querySelectorAll(".pallet-group").forEach(updateGroupVisuals);
+      if (!lastResults.length) return;
+      lastResults.forEach(result => {
+        result.validation = validateResultGeometry(result);
+        result.validationError = result.validation.internalError;
+        result.okDoor = result.validation.okDoor;
+        result.okHeight = result.validation.okHeight;
+        result.spaceAlert = evaluateSpaceAlert(result);
+      });
+      renderSummary(resultVolumeM3(lastResults[0]), lastResults[0].input);
+      renderTable();
+      renderDrawOptions();
+      drawSelected();
+    }
+
+    function requestLengthUnit(nextUnit) {
+      const normalized = normalizedLengthUnit(nextUnit);
+      if (normalized === currentLengthUnit) {
+        syncUnitRadios();
+        return true;
+      }
+
+      const consolidation = consolidateActiveLengthInputs();
+      if (!consolidation.valid) {
+        syncUnitRadios();
+        showValidationMessage(consolidation.errors);
+        if (consolidation.firstInvalid) {
+          consolidation.firstInvalid.focus();
+          consolidation.firstInvalid.reportValidity();
+        }
+        return false;
+      }
+
+      currentLengthUnit = normalized;
+      persistLengthUnit(currentLengthUnit);
+      syncUnitRadios();
+      formatAllLengthInputs();
+      showValidationMessage([]);
+      refreshUnitPresentation();
+      return true;
+    }
+
+    function initializeUnitControl() {
+      syncUnitRadios();
+      formatAllLengthInputs();
+      els.unitRadios.forEach(radio => {
+        radio.addEventListener("change", () => {
+          if (radio.checked) requestLengthUnit(radio.value);
+        });
+      });
     }
 
     function readMixedTypes() {
@@ -6884,10 +7417,15 @@
       const smallest = lastResults
         .filter(item => item.ok)
         .sort((a, b) => (a.container.innerLength * a.container.innerWidth) - (b.container.innerLength * b.container.innerWidth))[0];
-      els.cbmTotal.textContent = `${format1(cbmTotal)} m³`;
+      els.cbmTotal.textContent = formatVolume(cbmTotal);
       els.weightTotal.textContent = t("common.notAvailable");
+      const bestMetricKey = input.mode === "mixed"
+        ? "results.metric.placedLoad"
+        : "results.metric.bestCapacity";
+      els.bestCapacityLabel.dataset.i18n = bestMetricKey;
+      els.bestCapacityLabel.textContent = t(bestMetricKey);
       els.bestCapacity.textContent = input.mode === "mixed"
-        ? (best ? `${formatInt(best.placedCount)}/${formatInt(best.totalItems)}` : "-")
+        ? (best ? `${formatInt(best.placedCount)} / ${formatInt(best.totalItems)} plt` : "-")
         : (best ? `${formatInt(best.totalCapacity)} plt` : "-");
       els.smallestOk.textContent = smallest
         ? localizedContainerName(smallest.container)
@@ -6900,7 +7438,10 @@
       if (result.mode === "mixed") {
         const counts = new Map();
         layout.rects.forEach(rect => {
-          const key = `${localizedPalletName(rect)} ${rect.originalLength || rect.length}×${rect.originalWidth || rect.width}`;
+          const key = `${localizedPalletName(rect)} ${formatLengthDimensions([
+            rect.originalLength || rect.length,
+            rect.originalWidth || rect.width
+          ], currentLengthUnit, true)}`;
           counts.set(key, (counts.get(key) || 0) + 1);
         });
 
@@ -6981,7 +7522,7 @@
       const alert = result.spaceAlert || evaluateSpaceAlert(result);
       if (alert.operationalNote) {
         appendText(parent, t("space.compactHtml", {
-          margin: formatInt(alert.operationalNote.spareLength)
+          margin: formatLength(alert.operationalNote.spareLength)
         }), { tag: "span", className: "space-alert-text" });
       }
       if (alert.verificationIssues.length) {
@@ -7007,36 +7548,171 @@
       appendBreak(cell);
       appendText(
         cell,
-        `${formatInt(container.innerLength)} × ${formatInt(container.innerWidth)} × ${formatInt(container.innerHeight)} mm`,
+        formatLengthDimensions([
+          container.innerLength,
+          container.innerWidth,
+          container.innerHeight
+        ]),
         { tag: "span", className: "small" }
       );
       return cell;
     }
 
+    function requestedPalletCount(result) {
+      return result.mode === "mixed" ? result.totalItems : result.input.quantity;
+    }
+
+    function loadCapacityControlState(result) {
+      const requested = requestedPalletCount(result);
+      if (result.placedCount === requested) {
+        return { kind: "ok", label: t("common.ok"), state: "ok" };
+      }
+      if (result.placedCount > 0) {
+        return { kind: "warn", label: t("status.partial"), state: "partial" };
+      }
+      return { kind: "warn", label: t("status.notOk"), state: "not-ok" };
+    }
+
+    function accessControlSamples(result) {
+      const samples = [];
+
+      if (result.mode === "mixed") {
+        result.layout.rects.forEach(rect => {
+          samples.push({ width: rect.width, height: rect.height });
+        });
+        (result.layout.unplaced || []).forEach(item => {
+          samples.push({ width: palletTransverseSize(item), height: item.height });
+        });
+        return samples;
+      }
+
+      const pallet = result.input.pallet;
+      result.layout.rects.forEach(rect => {
+        const count = Math.max(1, Number(rect.stackCount) || 1);
+        for (let index = 0; index < count; index++) {
+          samples.push({ width: rect.width, height: pallet.height });
+        }
+      });
+      for (let index = result.placedCount; index < result.input.quantity; index++) {
+        samples.push({ width: palletTransverseSize(pallet), height: pallet.height });
+      }
+      return samples;
+    }
+
+    function accessControlState(result) {
+      if (result.validationError) {
+        return { kind: "verify", label: t("status.verify"), state: "verify" };
+      }
+
+      const c = result.container;
+      const samples = accessControlSamples(result);
+      let passed = 0;
+      let failed = 0;
+      let unknown = 0;
+      let requiredWidth = 0;
+      let requiredHeight = 0;
+
+      samples.forEach(sample => {
+        requiredWidth = Math.max(requiredWidth, sample.width);
+        requiredHeight = Math.max(requiredHeight, sample.height);
+        if (c.accessKnown === false) {
+          const internallyCompatible = (
+            sample.width <= c.innerWidth + GEOMETRY_EPSILON &&
+            sample.height <= c.innerHeight + GEOMETRY_EPSILON
+          );
+          if (!internallyCompatible) {
+            failed += 1;
+            return;
+          }
+          const prudentialWidth = Number.isFinite(c.prudentialWidth)
+            ? c.prudentialWidth
+            : c.innerWidth;
+          const automaticallyCompatible = (
+            Number.isFinite(c.accessAutoOkHeight) &&
+            sample.width <= prudentialWidth + GEOMETRY_EPSILON &&
+            sample.height <= c.accessAutoOkHeight + GEOMETRY_EPSILON
+          );
+          if (automaticallyCompatible) passed += 1;
+          else unknown += 1;
+          return;
+        }
+
+        const compatible = (
+          sample.width <= c.doorWidth + GEOMETRY_EPSILON &&
+          sample.height <= c.doorHeight + GEOMETRY_EPSILON
+        );
+        if (compatible) passed += 1;
+        else failed += 1;
+      });
+
+      if (unknown > 0 || samples.length === 0) {
+        return { kind: "verify", label: t("status.verify"), state: "verify", passed, failed, unknown, requiredWidth, requiredHeight };
+      }
+      if (passed > 0 && failed === 0) {
+        return { kind: "ok", label: t("common.ok"), state: "ok", passed, failed, unknown, requiredWidth, requiredHeight };
+      }
+      if (passed > 0 && failed > 0) {
+        return { kind: "warn", label: t("status.partial"), state: "partial", passed, failed, unknown, requiredWidth, requiredHeight };
+      }
+      return { kind: "warn", label: t("status.notOk"), state: "not-ok", passed, failed, unknown, requiredWidth, requiredHeight };
+    }
+
+    function unknownAccessControlLines(result, control) {
+      const c = result.container;
+      const usefulHeight = t("table.usefulHeight", { height: formatLength(c.innerHeight) });
+      if (control.state === "ok" && Number.isFinite(c.accessAutoOkHeight)) {
+        return [
+          usefulHeight,
+          t("table.accessPrudentialReference", { height: formatLength(c.accessAutoOkHeight) })
+        ];
+      }
+      if (control.state === "verify" && control.requiredWidth > 0 && control.requiredHeight > 0) {
+        return [
+          usefulHeight,
+          t("table.accessVerify"),
+          t("table.accessRequiredProfile", {
+            dimensions: formatLengthDimensions([control.requiredWidth, control.requiredHeight])
+          })
+        ];
+      }
+      return [usefulHeight, t("table.rearNotChecked")];
+    }
+
+    function appendOutcomeCell(row, result) {
+      const cell = row.insertCell();
+      if (result.validationError) {
+        cell.append(statusBadgeNode("verify", t("status.verify")));
+        appendText(cell, t("status.validationError"), {
+          tag: "span",
+          className: "small",
+          breakBefore: true
+        });
+        return cell;
+      }
+      cell.append(statusBadgeNode(
+        result.ok ? "ok" : "bad",
+        result.ok ? t("status.fits") : t("status.doesNotFit")
+      ));
+      return cell;
+    }
+
     function appendAccessCell(row, result, maxHeight = null) {
       const c = result.container;
-      const kind = result.okDoor && result.okHeight ? "ok" : "bad";
-      const badgeText = c.accessKnown === false
-        ? (result.okDoor && result.okHeight ? t("status.footprintOk") : t("status.notOk"))
-        : (result.okDoor && result.okHeight ? t("common.ok") : t("common.no"));
+      const control = accessControlState(result);
       const cell = row.insertCell();
-      cell.append(statusBadgeNode(kind, badgeText));
+      cell.append(statusBadgeNode(control.kind, control.label));
       appendBreak(cell);
       const lines = [];
-      if (maxHeight !== null) {
-        lines.push(t("table.maxPalletHeight", { height: formatInt(maxHeight) }));
+      if (maxHeight !== null && (control.state === "partial" || control.state === "not-ok")) {
+        lines.push(t("table.maxPalletHeight", { height: formatLength(maxHeight) }));
       }
       if (c.accessKnown === false) {
-        lines.push(
-          t("table.usefulHeight", { height: formatInt(c.innerHeight) }),
-          t("table.rearNotChecked")
-        );
+        lines.push(...unknownAccessControlLines(result, control));
       } else {
         lines.push(
-          t("table.internalHeight", { height: formatInt(c.innerHeight) }),
+          t("table.internalHeight", { height: formatLength(c.innerHeight) }),
           t("table.door", {
-            width: formatInt(c.doorWidth),
-            height: formatInt(c.doorHeight)
+            dimensions: formatLengthDimensions([c.doorWidth, c.doorHeight])
           })
         );
       }
@@ -7053,7 +7729,7 @@
           ? "space-cell-tight"
           : "";
       if (result.spaceAlert.level === "verification") {
-        cell.append(statusBadgeNode("verify", t("status.verifyMeasures")));
+        cell.append(statusBadgeNode("verify", t("status.verify")));
         appendBreak(cell);
       } else if (result.spaceAlert.level === "operational") {
         cell.append(statusBadgeNode("warn", t("status.compactLoad")));
@@ -7095,10 +7771,8 @@
     }
 
     function renderSingleRow(result) {
-      const { quantity } = result.input;
       const c = result.container;
-      const capKind = result.fitsQtyBySpace ? "ok" : result.totalCapacity > 0 ? "warn" : "bad";
-      const finalKind = result.ok ? "ok" : "bad";
+      const capacityControl = loadCapacityControlState(result);
       const missing = result.unplacedCount;
       const remainingSlots = result.fitsQtyBySpace
         ? Math.max(0, result.totalCapacity - result.placedCount)
@@ -7115,24 +7789,10 @@
       const row = document.createElement("tr");
 
       appendContainerCell(row, c);
-      const outcome = row.insertCell();
-      outcome.append(statusBadgeNode(
-        result.validationError ? "bad" : finalKind,
-        result.validationError
-          ? t("status.validationError")
-          : result.ok
-            ? t("status.fits")
-            : t("status.notOk")
-      ));
+      appendOutcomeCell(row, result);
 
       const capacity = row.insertCell();
-      capacity.append(statusBadgeNode(
-        capKind,
-        pluralText("table.mixedPlaced", quantity, {
-          placed: formatInt(result.placedCount),
-          total: formatInt(quantity)
-        })
-      ));
+      capacity.append(statusBadgeNode(capacityControl.kind, capacityControl.label));
       appendBreak(capacity);
       appendText(capacity, t("table.capacityFound"), { tag: "strong" });
       capacity.append(document.createTextNode(
@@ -7163,7 +7823,7 @@
           breakBefore: true
         });
       }
-      if (remainingSlots > 0) {
+      if (result.fitsQtyBySpace) {
         appendText(capacity, pluralText("table.unusedCapacity", remainingSlots), {
           tag: "span",
           className: "small",
@@ -7173,17 +7833,16 @@
 
       appendAccessCell(row, result);
       appendMarginCell(row, result, [
-        t("table.lengthMargin", { value: formatInt(spareLength) }),
-        t("table.widthMargin", { value: formatInt(spareWidth) }),
-        t("table.heightMargin", { value: formatInt(spareHeight) })
+        t("table.lengthMargin", { value: formatLength(spareLength) }),
+        t("table.widthMargin", { value: formatLength(spareWidth) }),
+        t("table.heightMargin", { value: formatLength(spareHeight) })
       ]);
       return row;
     }
 
     function renderMixedRow(result) {
       const c = result.container;
-      const capKind = result.allPlaced ? "ok" : result.placedCount > 0 ? "warn" : "bad";
-      const finalKind = result.ok ? "ok" : "bad";
+      const capacityControl = loadCapacityControlState(result);
       const missing = Math.max(0, result.totalItems - result.placedCount);
       const spareLength = Math.max(0, c.innerLength - result.layout.usedLength);
       const spareWidth = Math.max(0, c.innerWidth - result.layout.usedWidth);
@@ -7193,30 +7852,15 @@
       const row = document.createElement("tr");
 
       appendContainerCell(row, c);
-      const outcome = row.insertCell();
-      outcome.append(statusBadgeNode(
-        result.validationError ? "bad" : finalKind,
-        result.validationError
-          ? t("status.validationError")
-          : result.ok
-            ? t("status.fits")
-            : t("status.notOk")
-      ));
+      appendOutcomeCell(row, result);
 
       const capacity = row.insertCell();
-      capacity.append(statusBadgeNode(
-        capKind,
-        result.allPlaced ? t("status.allPlaced") : t("status.partial")
-      ));
+      capacity.append(statusBadgeNode(capacityControl.kind, capacityControl.label));
       appendBreak(capacity);
-      capacity.append(document.createTextNode(pluralText(
-        "table.mixedPlaced",
-        result.totalItems,
-        {
-        placed: formatInt(result.placedCount),
-        total: formatInt(result.totalItems)
-        }
-      )));
+      appendText(capacity, t("table.placedQuantity"), { tag: "strong" });
+      capacity.append(document.createTextNode(
+        ` ${formatInt(result.placedCount)} ${pluralText("common.pallet", result.placedCount)}`
+      ));
       if (missing > 0) {
         appendText(capacity, pluralText("table.missing", missing), {
           tag: "span",
@@ -7232,7 +7876,7 @@
         result.layout.unplaced.slice(0, 5).forEach(item => {
           appendBreak(sample);
           sample.append(document.createTextNode(
-            `${localizedPalletName(item)} ${item.length}×${item.width}`
+            `${localizedPalletName(item)} ${formatLengthDimensions([item.length, item.width], currentLengthUnit, true)}`
           ));
         });
         if (result.layout.unplaced.length > 5) {
@@ -7244,8 +7888,8 @@
 
       appendAccessCell(row, result, maxHeight);
       appendMarginCell(row, result, [
-        t("table.lengthMargin", { value: formatInt(spareLength) }),
-        t("table.widthMargin", { value: formatInt(spareWidth) }),
+        t("table.lengthMargin", { value: formatLength(spareLength) }),
+        t("table.widthMargin", { value: formatLength(spareWidth) }),
         t("table.heightIndividual")
       ]);
       return row;
@@ -7260,7 +7904,10 @@
         if (!groups.has(group)) groups.set(group, []);
 
         const resultText = result.mode === "mixed"
-          ? `${result.placedCount}/${result.totalItems}`
+          ? pluralText("table.mixedPlaced", result.totalItems, {
+            placed: formatInt(result.placedCount),
+            total: formatInt(result.totalItems)
+          })
           : t("table.drawSingle", {
             requested: pluralText(
               "table.requestedSummary",
@@ -7458,16 +8105,19 @@
     }
 
     function rectDimensionText(result, rect) {
+      const canvasDimensions = values => currentLengthUnit === "mm"
+        ? values.map(value => String(value)).join("×")
+        : formatLengthDimensions(values, currentLengthUnit, true);
       if (result.mode === "single") {
-        return (
-          `${formatInt(result.input.pallet.length)}` +
-          `×${formatInt(result.input.pallet.width)}`
-        );
+        return canvasDimensions([
+          result.input.pallet.length,
+          result.input.pallet.width
+        ]);
       }
 
       const length = rect.originalLength || rect.length;
       const width = rect.originalWidth || rect.width;
-      return `${formatInt(length)}×${formatInt(width)}`;
+      return canvasDimensions([length, width]);
     }
 
     function frontSideLabel(container) {
@@ -7696,7 +8346,7 @@
       ctx.textAlign = "center";
       ctx.font = "12px system-ui, -apple-system, Segoe UI, sans-serif";
       ctx.fillText(
-        `${formatInt(c.innerLength)} mm`,
+        formatLength(c.innerLength),
         ox + drawW / 2,
         oy + drawH + 23
       );
@@ -7706,7 +8356,7 @@
       ctx.rotate(-Math.PI / 2);
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText(`${formatInt(c.innerWidth)} mm`, 0, 0);
+      ctx.fillText(formatLength(c.innerWidth), 0, 0);
       ctx.restore();
 
       // Riferimenti per chi carica lateralmente.
@@ -7798,31 +8448,14 @@
     }
 
     function drawSingleNotes(result) {
-      const input = result.input;
       const c = result.container;
-      const missing = result.unplacedCount;
-
-      const base = t("preview.singleNotes", {
-        vehicle: localizedContainerName(c),
-        capacity: pluralText("preview.singleCapacity", result.totalCapacity),
-        floor: pluralText("preview.singleFloorCapacity", result.floorCapacity),
-        layers: result.layers > 1
-          ? pluralText("preview.singleLayers", result.layers)
-          : "",
-        requested: formatInt(input.quantity),
-        placed: formatInt(result.placedCount),
-        placement: missing > 0
-          ? pluralText("preview.singleMissing", missing)
-          : t("preview.singleComplete"),
-        usedFloor: pluralText(
-          "preview.singleUsedFloor",
-          result.placedFloorPositions
-        ),
-        usedLayers: result.loadLayers > 1
-          ? pluralText("preview.singleUsedLayers", result.loadLayers)
-          : t("preview.singleOneLayer")
-      });
-      els.layoutNotes.textContent = base;
+      const lines = [localizedContainerName(c), ...buildLoadSummaryLines(result)];
+      if (result.loadLayers > 1 || result.placedFloorPositions !== result.placedCount) {
+        lines.push(
+          `${pluralText("print.floorUsed", result.placedFloorPositions)}. ${pluralText("print.layersUsed", result.loadLayers)}.`
+        );
+      }
+      els.layoutNotes.textContent = lines.join(" · ");
       if (spaceAlertPlainText(result)) {
         els.layoutNotes.append(document.createElement("br"));
         const warning = document.createElement("strong");
@@ -7832,22 +8465,11 @@
     }
 
     function drawMixedNotes(result) {
-      const c = result.container;
-      const missing = Math.max(0, result.totalItems - result.placedCount);
       const bwMode = Boolean(els.printBw && els.printBw.checked);
       els.layoutNotes.replaceChildren();
-      els.layoutNotes.append(document.createTextNode(pluralText(
-        "preview.mixedNotes",
-        result.totalItems,
-        {
-        vehicle: localizedContainerName(c),
-        placed: formatInt(result.placedCount),
-        total: formatInt(result.totalItems),
-        placement: missing > 0
-          ? pluralText("preview.mixedMissing", missing)
-          : pluralText("preview.mixedComplete", result.totalItems)
-        }
-      )));
+      els.layoutNotes.append(document.createTextNode(
+        [localizedContainerName(result.container), ...buildLoadSummaryLines(result)].join(" · ")
+      ));
       appendBreak(els.layoutNotes);
 
       result.input.types.forEach((type, index) => {
@@ -7868,13 +8490,11 @@
           legendItem.append(document.createTextNode(" · "));
         }
         legendItem.append(document.createTextNode(
-          `${localizedPalletName(type)} ${formatInt(type.length)}×${formatInt(type.width)} (${pluralText("common.pieces", type.quantity)})`
+          `${localizedPalletName(type)} ${formatLengthDimensions([type.length, type.width], currentLengthUnit, true)} (${pluralText("common.pieces", type.quantity)})`
         ));
         els.layoutNotes.append(legendItem);
       });
 
-      appendBreak(els.layoutNotes);
-      els.layoutNotes.append(document.createTextNode(t("preview.mixedFloorHelp")));
       const warningText = spaceAlertPlainText(result);
       if (warningText) {
         appendBreak(els.layoutNotes);
@@ -7933,7 +8553,7 @@
           ? "rotation.lockedShort"
           : "rotation.lockedLong",
         {
-          entry: formatInt(presentation.entry)
+          entry: formatLength(presentation.entry)
         }
       );
     }
@@ -7949,7 +8569,7 @@
               <td><span class="marker" style="${markerStyle}"></span> ${index + 1}</td>
               <td>${type.identifier ? escapeHtml(type.identifier) : "—"}</td>
               <td>${escapeHtml(localizedPalletName(type))}</td>
-              <td>${formatInt(type.length)} × ${formatInt(type.width)} × ${formatInt(type.height)} mm</td>
+              <td>${formatLengthDimensions([type.length, type.width, type.height])}</td>
               <td>${formatInt(type.quantity)}</td>
               <td>${escapeHtml(rotationLabel(type))}</td>
             </tr>`;
@@ -7966,62 +8586,72 @@
         <table class="legend"><tbody>
           <tr><th>${escapeHtml(t("print.type"))}</th><td>${escapeHtml(localizedPalletName(pallet))}</td></tr>
           <tr><th>${escapeHtml(t("print.identifierArticle"))}</th><td>${pallet.identifier ? escapeHtml(pallet.identifier) : "—"}</td></tr>
-          <tr><th>${escapeHtml(t("print.dimensions"))}</th><td>${formatInt(pallet.length)} × ${formatInt(pallet.width)} × ${formatInt(pallet.height)} mm</td></tr>
-          <tr><th>${escapeHtml(t("print.requestedQuantity"))}</th><td>${formatInt(result.input.quantity)}</td></tr>
+          <tr><th>${escapeHtml(t("print.dimensions"))}</th><td>${formatLengthDimensions([pallet.length, pallet.width, pallet.height])}</td></tr>
           <tr><th>${escapeHtml(t("print.orientation"))}</th><td>${escapeHtml(rotationLabel(pallet))}</td></tr>
         </tbody></table>`;
+    }
+
+    function resultVolumeM3(result) {
+      if (result.mode === "mixed") {
+        return result.input.types.reduce((sum, item) => (
+          sum + (item.length * item.width * item.height * item.quantity) / 1000000000
+        ), 0);
+      }
+      const pallet = result.input.pallet;
+      return (pallet.length * pallet.width * pallet.height * result.input.quantity) / 1000000000;
+    }
+
+    function buildLoadSummaryLines(result) {
+      const requested = result.mode === "mixed" ? result.totalItems : result.input.quantity;
+      const missing = Math.max(0, requested - result.placedCount);
+      const lines = [
+        `${t("table.requestedQuantity")} ${formatInt(requested)} ${pluralText("common.pallet", requested)}`
+      ];
+
+      if (result.mode === "mixed") {
+        lines.push(
+          `${t("table.placedQuantity")} ${formatInt(result.placedCount)} ${pluralText("common.pallet", result.placedCount)}`
+        );
+      } else {
+        lines.push(
+          `${t("table.capacityFound")} ${formatInt(result.totalCapacity)} ${pluralText("common.pallet", result.totalCapacity)}`
+        );
+      }
+
+      if (missing > 0) {
+        lines.push(pluralText("table.missing", missing));
+      } else if (result.mode === "single") {
+        const freeSlots = Math.max(0, result.totalCapacity - requested);
+        lines.push(pluralText("table.unusedCapacity", freeSlots));
+      }
+      return lines;
     }
 
     function buildPrintDetails(result, options = {}) {
       if (!result) return "";
       const c = result.container;
-      const requestedCount = result.mode === "mixed"
-        ? result.totalItems
-        : result.input.quantity;
-      const capacityText = result.mode === "mixed"
-        ? pluralText("print.mixedCapacity", result.placedCount)
-        : pluralText("print.singleCapacity", result.totalCapacity);
-      const placementText = result.mode === "mixed"
-        ? pluralText("print.mixedPlacement", result.totalItems, {
-          placed: formatInt(result.placedCount),
-          total: formatInt(result.totalItems)
-        })
-        : t("print.singlePlacement", {
-          placed: pluralText("print.placedValue", result.placedCount),
-          requested: pluralText("print.requestedValue", result.input.quantity),
-          capacity: pluralText(
-            "print.foundCapacityValue",
-            result.totalCapacity
-          )
-        });
-      const floorPositionsText = result.mode === "mixed"
-        ? pluralText("print.mixedFloor", result.placedCount)
-        : t("print.singleFloor", {
-          used: pluralText("print.floorUsed", result.placedFloorPositions),
-          capacity: pluralText("print.floorCapacity", result.floorCapacity)
-        });
-      const usedLayerCount = result.mode === "mixed" ? 1 : result.loadLayers;
-      const capacityLayerCount = result.mode === "mixed" ? 1 : result.layers;
-      const layersText = t("print.layerSummary", {
-        used: pluralText("print.layersUsed", usedLayerCount),
-        capacity: pluralText("print.layersCapacity", capacityLayerCount)
-      });
+      const loadSummary = buildLoadSummaryLines(result).map(escapeHtml).join("<br>");
+      const showFloorLayers = result.mode === "single" && (
+        result.loadLayers > 1 || result.placedFloorPositions !== result.placedCount
+      );
+      const floorLayers = showFloorLayers
+        ? `${pluralText("print.floorUsed", result.placedFloorPositions)}. ${pluralText("print.layersUsed", result.loadLayers)}.`
+        : "";
       const status = result.validationError
         ? t("status.validationError")
         : result.ok
           ? t("status.fits")
-          : t("status.notOk");
-      const viewLabel = options.viewLabel || t("print.viewSelected");
-      const colorLabel = options.colorLabel || t("print.modeSelected");
+          : t("status.doesNotFit");
+      const accessControl = accessControlState(result);
       const spareLength = Math.max(0, c.innerLength - result.layout.usedLength);
       const spareWidth = Math.max(0, c.innerWidth - result.layout.usedWidth);
       const remainingSpace = [
-        t("table.lengthMargin", { value: formatInt(spareLength) }),
-        t("table.widthMargin", { value: formatInt(spareWidth) }),
+        t("table.lengthMargin", { value: formatLength(spareLength) }),
+        t("table.widthMargin", { value: formatLength(spareWidth) }),
         result.mode === "mixed"
           ? t("table.heightIndividual")
           : t("table.heightMargin", {
-            value: formatInt(Math.max(0, c.innerHeight - usedLoadHeight(result)))
+            value: formatLength(Math.max(0, c.innerHeight - usedLoadHeight(result)))
           })
       ].join(" · ");
       const operationalSpaceNote = spaceAlertPlainText(result);
@@ -8031,34 +8661,17 @@
         <table class="details"><tbody>
           <tr><th>${escapeHtml(t("print.vehicle"))}</th><td>${escapeHtml(t("print.internalDimensions", {
             vehicle: localizedContainerName(c),
-            length: formatInt(c.innerLength),
-            width: formatInt(c.innerWidth),
-            height: formatInt(c.innerHeight)
+            dimensions: formatLengthDimensions([c.innerLength, c.innerWidth, c.innerHeight])
           }))}</td></tr>
           <tr><th>${escapeHtml(t("print.outcome"))}</th><td><strong>${escapeHtml(status)}</strong></td></tr>
-          <tr><th>${escapeHtml(t("print.viewMode"))}</th><td>${escapeHtml(viewLabel)} — ${escapeHtml(colorLabel)}</td></tr>
-          <tr><th>${escapeHtml(t("print.placement"))}</th><td>${escapeHtml(t("print.requestedPlacedCapacity", {
-            requested: pluralText(
-              "print.requestedQuantityValue",
-              requestedCount
-            ),
-            placed: pluralText(
-              "print.placedQuantityValue",
-              result.placedCount
-            ),
-            capacity: capacityText,
-            placement: placementText
-          }))}</td></tr>
-          <tr><th>${escapeHtml(t("print.floorLayers"))}</th><td>${escapeHtml(t("print.floorLayerSummary", {
-            floor: floorPositionsText,
-            layers: layersText
-          }))}</td></tr>
+          <tr><th>${escapeHtml(t("print.placement"))}</th><td>${loadSummary}</td></tr>
+          <tr><th>${escapeHtml(t("results.metric.volume"))}</th><td>${escapeHtml(formatVolume(resultVolumeM3(result)))}</td></tr>
+          ${showFloorLayers ? `<tr><th>${escapeHtml(t("print.floorLayers"))}</th><td>${escapeHtml(floorLayers)}</td></tr>` : ""}
           <tr><th>${escapeHtml(t("print.access"))}</th><td>${escapeHtml(c.accessKnown === false
-            ? t("print.accessInternalOnly")
+            ? `${accessControl.label} · ${unknownAccessControlLines(result, accessControl).join(" · ")}`
             : t("print.accessDoor", {
-              width: formatInt(c.doorWidth),
-              height: formatInt(c.doorHeight),
-              status: result.okDoor ? t("common.ok") : t("common.no")
+              dimensions: formatLengthDimensions([c.doorWidth, c.doorHeight]),
+              status: accessControl.label
             }))}</td></tr>
           ${operationalSpaceNote ? `<tr><th>${escapeHtml(t("print.margins"))}</th><td>${escapeHtml(remainingSpace)}<br><strong>${escapeHtml(operationalSpaceNote)}</strong></td></tr>` : ""}
           <tr><th>${escapeHtml(t("print.weightBalance"))}</th><td>${escapeHtml(t("print.notIncluded"))}</td></tr>
@@ -8067,28 +8680,7 @@
 
     function buildOperationalPrintNote(result) {
       if (!result) return "";
-      const marginNote = spaceAlertPlainText(result);
-
-      if (result.mode === "mixed") {
-        return [
-          pluralText("print.mixedOperationalNote", result.totalItems),
-          marginNote
-        ].filter(Boolean).join(" ");
-      }
-
-      const layerNote = result.loadLayers > 1
-        ? pluralText("print.layerSuffix", result.loadLayers)
-        : "";
-      return [
-        t("print.singleOperationalNote", {
-          positions: pluralText(
-            "print.floorPositionsUse",
-            result.placedFloorPositions
-          ),
-          layers: layerNote
-        }),
-        marginNote
-      ].filter(Boolean).join(" ");
+      return spaceAlertPlainText(result);
     }
 
     function drawRampCenteredLines(
@@ -8242,7 +8834,7 @@
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.font = "14px system-ui, -apple-system, Segoe UI, sans-serif";
-      ctx.fillText(`${formatInt(c.innerLength)} mm`, 0, 0);
+      ctx.fillText(formatLength(c.innerLength), 0, 0);
       ctx.restore();
 
       // Misura trasversale, parallela alle porte.
@@ -8251,7 +8843,7 @@
       ctx.textBaseline = "alphabetic";
       ctx.font = "14px system-ui, -apple-system, Segoe UI, sans-serif";
       ctx.fillText(
-        `${formatInt(c.innerWidth)} mm`,
+        formatLength(c.innerWidth),
         canvas.width / 2,
         originY + drawHeight + 28
       );
@@ -8317,6 +8909,7 @@
       const dataUrl = getPrintSchemaDataUrl(result, printView, bwMode);
       const now = new Date();
       const title = resultPrintTitle(result);
+      const operationalNote = buildOperationalPrintNote(result);
 
       const printWindow = window.open("", "_blank");
       if (!printWindow) {
@@ -8440,8 +9033,8 @@
               display: block;
               width: auto;
               max-width: 100%;
-              height: 160mm;
-              max-height: 160mm;
+              height: 148mm;
+              max-height: 148mm;
               margin: 0 auto;
               object-fit: contain;
             }
@@ -8451,8 +9044,13 @@
             }
 
             body.ramp-print.mixed-print:not(.long-legend) .schema img {
-              height: 154mm;
-              max-height: 154mm;
+              height: 148mm;
+              max-height: 148mm;
+            }
+
+            body.ramp-print.long-legend .schema img {
+              height: 136mm;
+              max-height: 136mm;
             }
 
             body.ramp-print .side-info {
@@ -8559,6 +9157,14 @@
               width: 34%;
             }
 
+            body.converted-unit .legend th,
+            body.converted-unit .legend td,
+            body.converted-unit .details th,
+            body.converted-unit .details td {
+              padding: 0.7mm 1.1mm;
+              line-height: 1.2;
+            }
+
             .marker {
               display: inline-block;
               width: 5mm;
@@ -8594,7 +9200,7 @@
             }
           </style>
         </head>
-        <body class="${rampView ? "ramp-print" : "side-print"} ${result.mode}-print${longLegend ? " long-legend" : ""}">
+        <body class="${rampView ? "ramp-print" : "side-print"} ${result.mode}-print ${currentLengthUnit === "mm" ? "mm-unit" : "converted-unit"}${longLegend ? " long-legend" : ""}">
           <h1>${escapeHtml(title)}</h1>
           <div class="meta">
             <div>${escapeHtml(t("print.generated", {
@@ -8621,7 +9227,7 @@
                 <div class="details-section">${buildPrintDetails(result, { viewLabel, colorLabel })}</div>
               </div>
 
-              <div class="note"><strong>${escapeHtml(t("print.operationalNote"))}</strong> ${escapeHtml(buildOperationalPrintNote(result))}</div>
+              ${operationalNote ? `<div class="note"><strong>${escapeHtml(t("print.operationalNote"))}</strong> ${escapeHtml(operationalNote)}</div>` : ""}
               <div class="warehouse-note">${escapeHtml(t("print.warehouseNote"))}</div>
             </div>
           </div>
@@ -8665,12 +9271,12 @@
     function resetDefaults() {
       els.loadMode.value = "single";
       els.quantity.value = 10;
-      els.palletHeight.value = 1500;
-      els.gap.value = 0;
-      els.mixedGap.value = 0;
+      setLengthInputMm(els.palletHeight, 1500);
+      setLengthInputMm(els.gap, 0);
+      setLengthInputMm(els.mixedGap, 0);
       els.stackable.checked = false;
       els.maxLayers.value = 2;
-      els.verticalGap.value = 0;
+      setLengthInputMm(els.verticalGap, 0);
       els.stackOptions.classList.add("hidden");
 
       els.singlePalletGroup.querySelector('[data-field="allowRotate"]').checked = true;
@@ -8734,6 +9340,24 @@
       calculate();
     }
 
+    function handleLengthFocusOut(event) {
+      const input = event.target.closest && event.target.closest("[data-length-input]");
+      if (!input) return;
+      const errors = [];
+      const mm = parseLengthField(
+        input,
+        lengthFieldLabel(input),
+        { min: lengthFieldMinimum(input) },
+        errors
+      );
+      if (mm !== null) {
+        input.value = formatLengthInputValue(mm);
+        const group = input.closest(".pallet-group");
+        if (group) updateGroupVisuals(group);
+      }
+      calculate();
+    }
+
     function handleGroupChange(event) {
       if (!event.target.matches('select, input[type="checkbox"], input[type="radio"]')) return;
       const group = event.target.closest('.pallet-group');
@@ -8753,6 +9377,8 @@
         ? i18n.tFor(previousCode, "pallet.customDefaultName")
         : null;
       const currentDefault = t("pallet.customDefaultName");
+      const lengthState = consolidateActiveLengthInputs();
+      if (lengthState.valid) formatAllLengthInputs();
 
       document.querySelectorAll('[data-field="customName"]').forEach(input => {
         if (
@@ -8788,6 +9414,7 @@
       // - select, checkbox e radio: change;
       // - click: sole azioni dei pulsanti/picker;
       // - controlli di vista: solo drawSelected().
+      initializeUnitControl();
       els.loadMode.addEventListener("change", syncModeUI);
       els.stackable.addEventListener("change", () => {
         els.stackOptions.classList.toggle("hidden", !els.stackable.checked);
@@ -8813,12 +9440,16 @@
         if (openToggle) openToggle.focus();
       });
 
+      document.addEventListener("focusout", handleLengthFocusOut);
+
       els.calculateBtn.addEventListener("click", () => calculate({ reportValidity: true }));
       els.resetBtn.addEventListener("click", resetDefaults);
       els.drawSelect.addEventListener("change", drawSelected);
       els.printView.addEventListener("change", drawSelected);
       els.printBw.addEventListener("change", drawSelected);
-      els.printLayoutBtn.addEventListener("click", printCurrentLayout);
+      els.printLayoutBtn.addEventListener("click", () => {
+        if (calculate({ reportValidity: true })) printCurrentLayout();
+      });
 
       [els.gap, els.mixedGap, els.maxLayers, els.verticalGap].forEach(el => {
         el.addEventListener("input", calculate);

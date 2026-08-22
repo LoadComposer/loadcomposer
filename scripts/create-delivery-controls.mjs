@@ -3,8 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve(process.argv[2] || ".");
-const MANIFEST_NAME = "DELIVERY_MANIFEST-v1.2.1.txt";
-const SUMS_NAME = "SHA256SUMS-v1.2.1.txt";
+const MANIFEST_NAME = "DELIVERY_MANIFEST-v1.3.0.txt";
+const SUMS_NAME = "SHA256SUMS-v1.3.0.txt";
 const MANIFEST = path.join(ROOT, MANIFEST_NAME);
 const SUMS = path.join(ROOT, SUMS_NAME);
 
@@ -26,11 +26,11 @@ for (const control of [MANIFEST, SUMS]) {
 
 const payloads = walk(ROOT);
 const manifestLines = [
-  "LoadComposer v1.2.1 delivery manifest",
-  "Release date: 2026-08-14",
-  "Archive root: delivery-v1.2.1/",
-  "Canonical baseline: loadcomposer-v1.2.0-delivery.zip",
-  "Canonical baseline SHA-256: ac4041e9ef6f06ba7e6dee156c2f9bff7a3420964bfb6cacff7066975ffdfc42",
+  "LoadComposer v1.3.0 delivery manifest",
+  "Candidate date: 2026-08-21",
+  "Archive root: delivery-v1.3.0/",
+  "Accepted input candidate: loadcomposer-v1.3.0-delivery.zip",
+  "Accepted input SHA-256: 8c52957d674e31f2cb44f4861bcc0e9d83594200ea8700cda26276395dbacfd6",
   "License: LCCL-1.0 (LicenseRef-LoadComposer-Community-1.0)",
   "Copyright: Copyright © 2026 Marco Pernigotti",
   `Payload files before controls: ${payloads.length}`,

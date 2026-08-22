@@ -40,7 +40,7 @@ const dom = new JSDOM(source);
 try {
   const document = dom.window.document;
   const data = JSON.parse(document.getElementById("loadcomposer-legal-data").textContent);
-  assert.equal(data.version, "1.2.1");
+  assert.equal(data.version, "1.3.0");
   assert.deepEqual(data.languages.map(language => language.code), CODES);
   assert.deepEqual(Object.keys(data.catalogs), CODES);
   assert.ok(document.querySelector("header .brand"), "Secondary-page brand missing.");
@@ -176,6 +176,6 @@ try {
 }
 
 console.log(
-  `Legal v1.2.1 PASS: 7/7 byte-identical documents, ${localeThemeScenarios} language/theme scenarios, ` +
+  `Legal v1.3.0 PASS: 7/7 byte-identical documents, ${localeThemeScenarios} language/theme scenarios, ` +
   `${responsiveScenarios}/${responsiveScenarios} responsive viewports, shared preferences and zero remote requests.`
 );
