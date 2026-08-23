@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const VERSION = "1.3.0";
+const VERSION = "1.3.1";
 const DOWNLOADS = path.join(ROOT, "site", "downloads");
 const TEMPLATE = path.join(ROOT, "scripts", "templates", "downloads-index.html");
 const OUTPUT = path.join(DOWNLOADS, "index.html");

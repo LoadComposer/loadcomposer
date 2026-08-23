@@ -5,9 +5,9 @@ import path from "node:path";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const HTML = path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html");
-const OUTPUT = path.join(ROOT, "linear-units-responsive-v1.3.0");
-const RESULT = path.join(ROOT, "linear-units-responsive-results-v1.3.0.json");
+const HTML = path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html");
+const OUTPUT = path.join(ROOT, "linear-units-responsive-v1.3.1");
+const RESULT = path.join(ROOT, "linear-units-responsive-results-v1.3.1.json");
 const VIEWPORTS = [
   { width: 2560, height: 1440 },
   { width: 1920, height: 1080 },
@@ -312,7 +312,7 @@ try {
   }
 
   fs.writeFileSync(RESULT, `${JSON.stringify({
-    version: "1.3.0",
+    version: "1.3.1",
     generatedAt: new Date().toISOString(),
     viewports: VIEWPORTS.length,
     scenarios: records.length * 3,
@@ -321,7 +321,7 @@ try {
     records
   }, null, 2)}\n`);
   console.log(
-    `Linear units responsive v1.3.0 PASS: ${VIEWPORTS.length}/10 viewports, ` +
+    `Linear units responsive v1.3.1 PASS: ${VIEWPORTS.length}/10 viewports, ` +
     `${records.length * 3} open-picker mm/cm/in micro-fix states, preset dual-display plus ` +
     `trailer access details and ${records.length * 3} single/custom/mixed scenarios.`
   );

@@ -4,10 +4,10 @@ import { pathToFileURL } from "node:url";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const projectDir = path.resolve(import.meta.dirname, "..");
-const outputDir = path.join(projectDir, "screenshots-i18n-v1.3.0");
-const resultPath = path.join(projectDir, "visual-responsive-results-v1.3.0.json");
+const outputDir = path.join(projectDir, "screenshots-i18n-v1.3.1");
+const resultPath = path.join(projectDir, "visual-responsive-results-v1.3.1.json");
 const standaloneUrl = pathToFileURL(
-  path.join(projectDir, "site/downloads/loadcomposer-v1.3.0-standalone.html")
+  path.join(projectDir, "site/downloads/loadcomposer-v1.3.1-standalone.html")
 ).href;
 const widths = [320, 390, 768, 1440];
 const themes = ["light", "dark"];
@@ -255,7 +255,7 @@ try {
   }
 
   const payload = {
-    version: "1.3.0",
+    version: "1.3.1",
     generatedAt: new Date().toISOString(),
     scenarios: results.length,
     screenshots: fs.readdirSync(outputDir).sort(),

@@ -8,8 +8,8 @@ import { launchBrowser } from "./browser-runtime.mjs";
 const TEST_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = path.resolve(TEST_DIR, "..");
 const APP_NAME = "site/index.html";
-const STANDALONE_NAME = "site/downloads/loadcomposer-v1.3.0-standalone.html";
-const RESULT_PATH = path.join(PROJECT_DIR, "i18n-results-v1.3.0.json");
+const STANDALONE_NAME = "site/downloads/loadcomposer-v1.3.1-standalone.html";
+const RESULT_PATH = path.join(PROJECT_DIR, "i18n-results-v1.3.1.json");
 const APP_HTML = fs.readFileSync(path.join(PROJECT_DIR, APP_NAME), "utf8");
 const INDEX = JSON.parse(
   fs.readFileSync(path.join(PROJECT_DIR, "site/lang/index.json"), "utf8")
@@ -396,7 +396,7 @@ try {
         overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth
       }));
       equal(state.lang, code, `${code} manual language`);
-      equal(state.title, "LoadComposer v1.3.0", `${code} document title`);
+      equal(state.title, "LoadComposer v1.3.1", `${code} document title`);
       assert(fitsVisible, `${code} FITS-equivalent result`);
       assert(noLayoutVisible, `${code} no-layout result`);
       equal(state.technical, false, `${code} technical keys`);
@@ -748,7 +748,7 @@ try {
   await browser.close();
   await new Promise(resolve => server.close(resolve));
   fs.writeFileSync(RESULT_PATH, `${JSON.stringify({
-    version: "1.3.0",
+    version: "1.3.1",
     generatedAt: new Date().toISOString(),
     passed: results.filter(result => result.status === "PASS").length,
     failed: results.filter(result => result.status === "FAIL").length,

@@ -5,7 +5,7 @@ import { pathToFileURL } from "node:url";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const APP = path.join(ROOT, "site", "downloads", "loadcomposer-v1.3.0-standalone.html");
+const APP = path.join(ROOT, "site", "downloads", "loadcomposer-v1.3.1-standalone.html");
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const LOCALES = { it: "it-IT", en: "en-GB", de: "de-DE", es: "es-ES", fr: "fr-FR", pt: "pt-PT", nl: "nl-NL" };
 const VIEWPORTS = [
@@ -352,7 +352,7 @@ try {
 }
 
 console.log(
-  `UI consistency v1.3.0 PASS: ${semanticScenarios} localized capacity cases and ` +
+  `UI consistency v1.3.1 PASS: ${semanticScenarios} localized capacity cases and ` +
   `${responsiveScenarios}/${responsiveScenarios} responsive viewports; five-column table, sticky vehicle column, ` +
   "Weight N/A summary retained and no page overflow."
 );

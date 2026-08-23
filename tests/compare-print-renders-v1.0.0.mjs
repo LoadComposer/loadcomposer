@@ -5,23 +5,23 @@ import path from "node:path";
 const projectDir = path.resolve(import.meta.dirname, "..");
 const baselineDir = path.join(
   projectDir,
-  "tests/fixtures/print-evidence-v1.0.0-rc.2",
+  "print-evidence-v1.3.0",
   "pdf-renders"
 );
 const candidateDir = path.join(
   projectDir,
-  "print-evidence-v1.3.0",
+  "print-evidence-v1.3.1",
   "pdf-renders"
 );
-const resultPath = path.join(projectDir, "print-render-parity-results-v1.3.0.json");
+const resultPath = path.join(projectDir, "print-render-parity-results-v1.3.1.json");
 const printResultPath = path.join(
   projectDir,
-  "print-evidence-v1.3.0",
-  "print-results-v1.3.0.json"
+  "print-evidence-v1.3.1",
+  "print-results-v1.3.1.json"
 );
 const geometryResultPath = path.join(
   projectDir,
-  "geometry-full-parity-results-v1.3.0.json"
+  "geometry-full-parity-results-v1.3.1.json"
 );
 
 function files(root) {
@@ -98,6 +98,7 @@ const records = candidateFiles.map(relative => {
   const baselinePath = path.join(baselineDir, relative);
   const candidatePath = path.join(candidateDir, relative);
   const baselineExists = fs.existsSync(baselinePath);
+  if (!baselineExists) throw new Error(`Canonical v1.3.0 print page missing: ${relative}`);
   const baselineHash = baselineExists ? hash(baselinePath) : null;
   const candidateHash = hash(candidatePath);
   const baselineSize = baselineExists ? pngSize(baselinePath) : null;
@@ -113,6 +114,9 @@ const records = candidateFiles.map(relative => {
   if (fs.statSync(candidatePath).size < 5000) {
     throw new Error(`Print render is unexpectedly small: ${relative}`);
   }
+  if (baselineHash !== candidateHash) {
+    throw new Error(`v1.3.0/v1.3.1 print raster differs: ${relative}`);
+  }
   return {
     file: relative,
     width: candidateSize.width,
@@ -124,23 +128,22 @@ const records = candidateFiles.map(relative => {
 });
 
 const payload = {
-  version: "1.3.0",
-  baseline: "v1.0.0-rc.2 verified print renders",
+  version: "1.3.1",
+  baseline: "canonical v1.3.0 verified print renders",
   generatedAt: new Date().toISOString(),
   scenarios: candidateScenarios.length,
   approvedCandidatePages: records.length,
   approvedBaselinePages: baselineFiles.length,
-  authorizedRemovedPages: baselineFiles.length - candidateFiles.length,
+  authorizedRemovedPages: 0,
   pageDimensionDifferences: 0,
   pixelIdentical: records.filter(record => record.pixelIdenticalToApprovedBaseline).length,
   fullPageRasterDifferences: records.filter(
     record => !record.pixelIdenticalToApprovedBaseline
   ).length,
-  authorizedTextChanges:
-    "Volume/unit labels, load/capacity semantics, rear-opening terminology and simplified print copy/layout, including removal of redundant spill pages.",
+  authorizedTextChanges: "None; v1.3.1 changes only the print host transport.",
   palletSchemaGeometry: {
     method:
-      "Independent exact comparison of pallet rectangle coordinates, dimensions, rotation, bounds, overlap, gaps and used spans against the frozen v1.2.1 geometry baseline.",
+      "Independent exact comparison of pallet rectangle coordinates, dimensions, rotation, bounds, overlap, gaps and used spans for v1.3.1 against the frozen geometry baseline.",
     cases: geometryCases,
     differences: geometryEvidence.unexpectedDifferences,
     evidence: path.basename(geometryResultPath),
@@ -153,6 +156,6 @@ fs.writeFileSync(resultPath, `${JSON.stringify(payload, null, 2)}\n`);
 console.log(
   `print render approval: ${candidateScenarios.length}/${candidateScenarios.length} scenarios, ` +
   `${records.length}/${records.length} valid simplified pages, ` +
-  `${payload.fullPageRasterDifferences} authorized full-page raster difference(s); ` +
+  `${payload.fullPageRasterDifferences} full-page raster difference(s); ` +
   `${geometryCases}/${geometryCases} pallet geometry cases exact`
 );

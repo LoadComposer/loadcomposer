@@ -5,9 +5,9 @@ import path from "node:path";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const HTML = path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html");
+const HTML = path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html");
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
-assert.ok(fs.existsSync(HTML), "Standalone v1.3.0 missing; run the build first.");
+assert.ok(fs.existsSync(HTML), "Standalone v1.3.1 missing; run the build first.");
 
 const source = fs.readFileSync(HTML);
 const server = http.createServer((request, response) => {
@@ -232,18 +232,31 @@ try {
 
   await chooseUnit(page, "in");
   await page.selectOption("#loadMode", "single");
-  const [popup] = await Promise.all([
-    page.waitForEvent("popup"),
-    page.click("#printLayoutBtn")
-  ]);
-  await popup.waitForFunction(() => document.body && document.body.innerText.length > 100);
-  const printText = await popup.locator("body").innerText();
+  await page.evaluate(() => {
+    const appendChild = Node.prototype.appendChild;
+    Node.prototype.appendChild = function appendWithPrintStub(child) {
+      const appended = appendChild.call(this, child);
+      if (child instanceof HTMLIFrameElement && child.dataset.loadcomposerPrintFrame === "true") {
+        child.contentWindow.print = () => {};
+      }
+      return appended;
+    };
+  });
+  await page.click("#printLayoutBtn");
+  await page.waitForFunction(() => {
+    const frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+    return Boolean(frame?.contentDocument?.body?.innerText?.length > 100);
+  });
+  const printText = await page.evaluate(() => {
+    const frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+    const text = frame.contentDocument.body.innerText;
+    frame.remove();
+    return text;
+  });
   assert.ok(printText.includes("ft³"), "Print/PDF volume must use cubic feet when inches are selected.");
   assert.equal(printText.includes("m³"), false, "Print/PDF leaked cubic metres while inches were selected.");
   assert.match(printText, /\bin\b/, "Print/PDF representation must use the selected unit.");
   assert.doesNotMatch(printText, /\d\smm\b/, "Print body leaked operational mm values while inches were selected.");
-  await popup.close();
-
   assert.deepEqual(runtimeErrors, [], `Browser errors:\n${runtimeErrors.join("\n")}`);
   await context.close();
 
@@ -277,7 +290,7 @@ try {
   assert.equal(await unavailablePage.evaluate(() => window.loadComposerUnits.unit), "cm");
   await unavailable.close();
 
-  console.log("Linear units v1.3.0 PASS: parser/rounding, 7 locales × 3 units with metric/imperial volume, compact/residual/vehicle/print, 5 mixed groups, persistence, invalid edits and round-trip geometry.");
+  console.log("Linear units v1.3.1 PASS: parser/rounding, 7 locales × 3 units with metric/imperial volume, compact/residual/vehicle/print, 5 mixed groups, persistence, invalid edits and round-trip geometry.");
 } finally {
   await browser.close();
   await new Promise(resolve => server.close(resolve));

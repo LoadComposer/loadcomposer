@@ -2,6 +2,22 @@
 
 All notable project changes are documented here.
 
+## [1.3.1] — 2026-08-22
+
+### Fixed
+
+- Fixed browser print compatibility by printing the operational layout through
+  an isolated in-page print frame instead of a temporary browser tab,
+  preventing focus/input problems observed in Chromium-based browsers.
+- Replaced obsolete popup-blocking guidance with a generic print-dialog error
+  message in all seven enabled languages.
+
+### Unchanged from v1.3.0
+
+- Print content, geometry, placement, capacity, units, status semantics,
+  vehicle and pallet data, native themes, and legal documents are unchanged.
+- No browser-extension or Dark Reader compatibility changes are included.
+
 ## [1.3.0] — 2026-08-14
 
 ### Added

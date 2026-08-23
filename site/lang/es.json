@@ -3,10 +3,10 @@
     "code": "es",
     "name": "Español",
     "dir": "ltr",
-    "version": "1.3.0"
+    "version": "1.3.1"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.0",
+    "meta.documentTitle": "LoadComposer v1.3.1",
     "language.preference": "Preferencia de idioma",
     "language.auto": "Automático",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "PARA ORDENADORES SIN INTERNET",
     "downloads.offline.body": "Pensada para ordenadores que no tienen acceso a Internet o deben permanecer sin conexión. Es una sencilla página web standalone y el planificador funciona sin conexión. No se actualiza automáticamente: para usar nuevas funciones y correcciones debes sustituir manualmente el archivo por una versión más reciente.",
     "downloads.offline.internetNote": "Si tienes acceso a Internet, normalmente no necesitas descargar esta versión.",
-    "downloads.currentVersion": "LoadComposer v1.3.0",
+    "downloads.currentVersion": "LoadComposer v1.3.1",
     "downloads.offline.htmlButton": "Descargar HTML standalone",
     "downloads.offline.htmlHelp": "Un único archivo para copiarlo al ordenador y abrirlo con el navegador.",
     "downloads.offline.zipButton": "Descargar ZIP standalone",
@@ -376,7 +376,7 @@
     "print.schemaAltRamp": "Esquema vertical visto desde la rampa",
     "print.schemaAltSide": "Esquema horizontal visto desde el lateral",
     "print.warehouseNote": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral.",
-    "print.popupBlocked": "El navegador ha bloqueado la ventana de impresión. Permite las ventanas emergentes para esta página y vuelve a intentarlo.",
+    "print.dialogUnavailable": "No se pudo abrir el cuadro de diálogo de impresión del navegador. Inténtalo de nuevo.",
     "geometry.invalidPalletTypeIndex": "{label}: índice de tipo de palé no válido.",
     "geometry.invalidPalletUnit": "{label}: número secuencial de palé no válido.",
     "geometry.inconsistentReference": "{label}: referencia de palé {actual} incoherente; se esperaba {expected}.",

@@ -5,7 +5,7 @@ import path from "node:path";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const BASELINE = path.join(ROOT, "tests/fixtures/baseline-v1.2.1/loadcomposer-v1.2.1-standalone.html");
-const CURRENT = path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html");
+const CURRENT = path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html");
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const LEGAL_HASHES = {
   "LICENSE": "07c8360fa6840b24641b2e9443c82d8001ad8c4d32bc58f43fb04f64a1d080d0",
@@ -50,7 +50,7 @@ function withoutAllowedPresetMetadata(presets) {
 }
 
 assert.ok(fs.existsSync(BASELINE), "Canonical v1.2.1 fixture missing.");
-assert.ok(fs.existsSync(CURRENT), "v1.3.0 standalone missing.");
+assert.ok(fs.existsSync(CURRENT), "v1.3.1 standalone missing.");
 const baselineSource = fs.readFileSync(BASELINE, "utf8");
 const currentSource = fs.readFileSync(CURRENT, "utf8");
 
@@ -108,7 +108,7 @@ assert.ok(main.includes("data-mm="), "Canonical mm input state missing.");
 
 for (const code of CODES) {
   const catalog = JSON.parse(read(`site/lang/${code}.json`));
-  assert.equal(catalog.meta.version, "1.3.0", `${code}: metadata version.`);
+  assert.equal(catalog.meta.version, "1.3.1", `${code}: metadata version.`);
   assert.equal(Object.keys(catalog.translations).length, 530, `${code}: translation count.`);
   for (const key of [
     "units.label", "units.mmAria", "units.cmAria", "units.inAria",
@@ -120,7 +120,7 @@ for (const code of CODES) {
 }
 
 const headers = read("site/_headers");
-for (const version of ["1.0.0", "1.1.0", "1.2.0", "1.2.1", "1.3.0"]) {
+for (const version of ["1.0.0", "1.1.0", "1.2.0", "1.2.1", "1.3.0", "1.3.1"]) {
   for (const suffix of ["", ".html", ".html.sha256", ".zip", ".zip.sha256"]) {
     const artifact = `/downloads/loadcomposer-v${version}-standalone${suffix}`;
     const block = `${artifact}\n  Cache-Control: public, max-age=31536000, immutable`;
@@ -131,14 +131,14 @@ assert.match(headers, /\/downloads\/\n\s+Cache-Control: public, max-age=0, must-
 assert.match(headers, /\/downloads\/index\.html\n\s+Cache-Control: public, max-age=0, must-revalidate/);
 
 for (const file of [
-  "site/downloads/loadcomposer-v1.3.0-standalone.html",
-  "site/downloads/loadcomposer-v1.3.0-standalone.html.sha256",
-  "site/downloads/loadcomposer-v1.3.0-standalone.zip",
-  "site/downloads/loadcomposer-v1.3.0-standalone.zip.sha256",
-  "site/assets/loadcomposer-og-v1.3.0.png",
-  "CHANGELOG-v1.3.0.md"
+  "site/downloads/loadcomposer-v1.3.1-standalone.html",
+  "site/downloads/loadcomposer-v1.3.1-standalone.html.sha256",
+  "site/downloads/loadcomposer-v1.3.1-standalone.zip",
+  "site/downloads/loadcomposer-v1.3.1-standalone.zip.sha256",
+  "site/assets/loadcomposer-og-v1.3.1.png",
+  "CHANGELOG-v1.3.1.md"
 ]) {
   assert.ok(fs.existsSync(path.join(ROOT, file)), `${file} missing.`);
 }
 
-console.log("v1.3.0 scope audit PASS: frozen semantics plus allowed presentation/access metadata, 14 legal copies exact, Main-only unit control, 7 × 530 catalogs.");
+console.log("v1.3.1 scope audit PASS: frozen semantics plus allowed presentation/access metadata, 14 legal copies exact, Main-only unit control, 7 × 530 catalogs.");

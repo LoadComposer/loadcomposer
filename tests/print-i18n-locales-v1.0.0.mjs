@@ -6,10 +6,10 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html")
 ).href;
-const OUTPUT = path.join(ROOT, "print-i18n-v1.3.0");
-const RESULT_PATH = path.join(ROOT, "print-i18n-results-v1.3.0.json");
+const OUTPUT = path.join(ROOT, "print-i18n-v1.3.1");
+const RESULT_PATH = path.join(ROOT, "print-i18n-results-v1.3.1.json");
 const LANGUAGES = ["de", "es", "fr", "pt", "nl"];
 const LOCALES = {
   de: "de-DE",
@@ -155,7 +155,7 @@ async function configureMixed(page, groups) {
 }
 
 async function capturePrint(page, view, bw) {
-  return page.evaluate(({ selectedView, selectedBw }) => {
+  return page.evaluate(async ({ selectedView, selectedBw }) => {
     document.getElementById("printView").value = selectedView;
     document.getElementById("printBw").checked = selectedBw;
     drawSelected();
@@ -184,21 +184,26 @@ async function capturePrint(page, view, bw) {
     };
     window.open = () => {
       openCount += 1;
-      return {
-        document: {
-          open() {},
-          write(value) {
-            html += String(value);
-          },
-          close() {}
-        }
-      };
+      return null;
     };
     try {
       printCurrentLayout();
     } finally {
       CanvasRenderingContext2D.prototype.fillText = originalFillText;
     }
+    let frame = null;
+    const deadline = performance.now() + 2000;
+    while (performance.now() < deadline) {
+      frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+      if (frame?.contentWindow) frame.contentWindow.print = () => {};
+      if (frame?.contentDocument?.body?.dataset.printReady === "true") break;
+      await new Promise(resolve => setTimeout(resolve, 10));
+    }
+    if (frame?.contentWindow) frame.contentWindow.print = () => {};
+    html = frame
+      ? `<!DOCTYPE html>\n${frame.contentDocument.documentElement.outerHTML}`
+      : "";
+    frame?.remove();
     return { html, openCount, expected, canvasText };
   }, { selectedView: view, selectedBw: bw });
 }
@@ -251,7 +256,7 @@ async function renderPdf(browser, language, capture, pdfPath, xssPayload = "") {
     };
   }, xssPayload);
   assert(audit.images === 1, `${language}/${path.basename(pdfPath)}: unexpected images`);
-  assert(audit.scripts === 1, `${language}/${path.basename(pdfPath)}: unexpected scripts`);
+  assert(audit.scripts === 0, `${language}/${path.basename(pdfPath)}: unexpected scripts`);
   assert(audit.injectedImages === 0, `${language}/${path.basename(pdfPath)}: XSS image`);
   assert(audit.handlers === 0, `${language}/${path.basename(pdfPath)}: handler attributes`);
   assert(audit.minFontPt >= 8.4, `${language}/${path.basename(pdfPath)}: font ${audit.minFontPt}`);
@@ -388,8 +393,8 @@ try {
         assert(fixture.placed === fixture.requested, `${language}/${scenario.name}: incomplete load`);
         assert(fixture.rects > 0, `${language}/${scenario.name}: no geometry`);
         const capture = await capturePrint(app.page, scenario.view, scenario.bw);
-        assert(capture.openCount === 1, `${language}/${scenario.name}: print popup`);
-        assert(capture.html.startsWith("\n        <!DOCTYPE html>"), `${language}/${scenario.name}: print HTML`);
+        assert(capture.openCount === 0, `${language}/${scenario.name}: top-level print window`);
+        assert(/^<!DOCTYPE html>/i.test(capture.html), `${language}/${scenario.name}: print HTML`);
         assert(!capture.html.includes("⟦"), `${language}/${scenario.name}: technical key in HTML`);
         const pdfPath = path.join(localeDir, `${scenario.name}.pdf`);
         const hostile = scenario.kind === "hostile" ? XSS_PAYLOAD : "";
@@ -430,7 +435,7 @@ try {
 }
 
 fs.writeFileSync(RESULT_PATH, `${JSON.stringify({
-  version: "1.3.0",
+  version: "1.3.1",
   generatedAt: FIXED_NOW,
   languages: LANGUAGES,
   scenariosPerLanguage: SCENARIOS.length,

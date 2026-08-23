@@ -4,8 +4,8 @@ import path from "node:path";
 import { JSDOM, VirtualConsole } from "jsdom";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const APP = path.join(ROOT, "site", "downloads", "loadcomposer-v1.3.0-standalone.html");
-const OUTPUT = path.join(ROOT, "final-consistency-results-v1.3.0.json");
+const APP = path.join(ROOT, "site", "downloads", "loadcomposer-v1.3.1-standalone.html");
+const OUTPUT = path.join(ROOT, "final-consistency-results-v1.3.1.json");
 
 function canvasContextStub() {
   return new Proxy({}, {
@@ -332,13 +332,13 @@ try {
   checks.push({ id: "access-metadata-scope", profiles: 3, doorHeightUnchanged: true, status: "PASS" });
 
   fs.writeFileSync(OUTPUT, `${JSON.stringify({
-    version: "1.3.0",
+    version: "1.3.1",
     source: path.relative(ROOT, APP),
     checks,
     summary: { passed: checks.length, total: checks.length },
     status: "PASS"
   }, null, 2)}\n`);
-  console.log(`Final consistency v1.3.0 PASS: ${checks.length}/${checks.length} focused checks.`);
+  console.log(`Final consistency v1.3.1 PASS: ${checks.length}/${checks.length} focused checks.`);
 } finally {
   dom.window.close();
 }

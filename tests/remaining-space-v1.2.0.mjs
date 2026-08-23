@@ -6,7 +6,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const BASELINE = path.join(ROOT, "tests", "fixtures", "baseline-v1.1.0", "loadcomposer-v1.1.0-standalone.html");
-const CURRENT = path.join(ROOT, "site", "downloads", "loadcomposer-v1.3.0-standalone.html");
+const CURRENT = path.join(ROOT, "site", "downloads", "loadcomposer-v1.3.1-standalone.html");
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const CHANGED_KEYS = [
   "results.table.margin",

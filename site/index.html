@@ -11,7 +11,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoadComposer v1.3.0</title>
+  <title>LoadComposer v1.3.1</title>
   <meta name="description" content="LoadComposer estimates pallet arrangements in common road and sea freight vehicles directly in your browser." />
   <meta name="application-name" content="LoadComposer" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -19,10 +19,10 @@
   <link rel="canonical" href="https://loadcomposer.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LoadComposer" />
-  <meta property="og:title" content="LoadComposer v1.3.0" />
+  <meta property="og:title" content="LoadComposer v1.3.1" />
   <meta property="og:description" content="Browser-based geometric load-planning estimates, with offline and standalone support." />
   <meta property="og:url" content="https://loadcomposer.com/" />
-  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.0.png" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.1.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -3576,7 +3576,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.3.0</span>
+        <span class="app-version">v1.3.1</span>
       </div>
 
       <div class="header-controls">
@@ -8887,6 +8887,101 @@
       return dataUrl;
     }
 
+    let currentPrintFrame = null;
+
+    function cleanupPrintFrame(printFrame = currentPrintFrame) {
+      if (!printFrame) return;
+      if (printFrame === currentPrintFrame) currentPrintFrame = null;
+      if (printFrame.isConnected) printFrame.remove();
+    }
+
+    function printDocumentInFrame(printHtml) {
+      cleanupPrintFrame();
+
+      let printFrame = null;
+      const fail = () => {
+        cleanupPrintFrame(printFrame);
+        alert(t("print.dialogUnavailable"));
+      };
+
+      try {
+        printFrame = document.createElement("iframe");
+        printFrame.id = "loadcomposer-print-frame";
+        printFrame.dataset.loadcomposerPrintFrame = "true";
+        printFrame.setAttribute("aria-hidden", "true");
+        printFrame.setAttribute("tabindex", "-1");
+        printFrame.setAttribute("scrolling", "no");
+        printFrame.style.cssText = [
+          "position:fixed",
+          "left:-10000px",
+          "top:0",
+          "width:1px",
+          "height:1px",
+          "border:0",
+          "margin:0",
+          "padding:0",
+          "pointer-events:none"
+        ].join(";");
+
+        document.body.appendChild(printFrame);
+        currentPrintFrame = printFrame;
+
+        const printWindow = printFrame.contentWindow;
+        const printDocument = printFrame.contentDocument || printWindow?.document;
+        if (!printWindow || !printDocument) throw new Error("Print frame unavailable");
+
+        let readinessStarted = false;
+        const printWhenReady = async () => {
+          if (readinessStarted || currentPrintFrame !== printFrame) return;
+          readinessStarted = true;
+
+          try {
+            const schemaImage = printDocument.querySelector(".schema img");
+            if (schemaImage && !schemaImage.complete) {
+              await new Promise((resolve, reject) => {
+                schemaImage.addEventListener("load", resolve, { once: true });
+                schemaImage.addEventListener(
+                  "error",
+                  () => reject(new Error("Print schema image unavailable")),
+                  { once: true }
+                );
+              });
+            }
+            if (schemaImage && typeof schemaImage.decode === "function") {
+              await schemaImage.decode();
+            }
+            if (currentPrintFrame !== printFrame || !printFrame.isConnected) return;
+
+            printDocument.body.dataset.printReady = "true";
+            printWindow.addEventListener(
+              "afterprint",
+              () => cleanupPrintFrame(printFrame),
+              { once: true }
+            );
+            setTimeout(() => {
+              if (currentPrintFrame !== printFrame || !printFrame.isConnected) return;
+              try {
+                printWindow.print();
+              } catch {
+                fail();
+              }
+            }, 50);
+          } catch {
+            fail();
+          }
+        };
+
+        printFrame.addEventListener("load", printWhenReady, { once: true });
+
+        printDocument.open();
+        printDocument.write(printHtml);
+        printDocument.close();
+        if (printDocument.readyState === "complete") printWhenReady();
+      } catch {
+        fail();
+      }
+    }
+
     function printCurrentLayout() {
       const index = Number(els.drawSelect.value || 0);
       const result = lastResults[index];
@@ -8911,14 +9006,7 @@
       const title = resultPrintTitle(result);
       const operationalNote = buildOperationalPrintNote(result);
 
-      const printWindow = window.open("", "_blank");
-      if (!printWindow) {
-        alert(t("print.popupBlocked"));
-        return;
-      }
-
-      printWindow.document.open();
-      printWindow.document.write(`
+      const printHtml = `
         <!DOCTYPE html>
         <html lang="${escapeHtml(i18n.language)}" dir="${escapeHtml(document.documentElement.dir)}">
         <head>
@@ -9232,29 +9320,11 @@
             </div>
           </div>
 
-          <script>
-            window.addEventListener("load", function () {
-              const schemaImage = document.querySelector(".schema img");
-              const printWhenReady = function () {
-                document.body.dataset.printReady = "true";
-                setTimeout(function () {
-                  window.focus();
-                  window.print();
-                }, 50);
-              };
-
-              if (!schemaImage || schemaImage.complete) {
-                printWhenReady();
-              } else {
-                schemaImage.addEventListener("load", printWhenReady, { once: true });
-                schemaImage.addEventListener("error", printWhenReady, { once: true });
-              }
-            });
-          <\/script>
         </body>
         </html>
-      `);
-      printWindow.document.close();
+      `;
+
+      printDocumentInFrame(printHtml);
     }
 
     function syncModeUI(options = {}) {

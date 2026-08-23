@@ -14,7 +14,7 @@ const BASELINE_PATH = path.resolve(
 );
 const CURRENT_PATH = path.resolve(
   PROJECT_DIR,
-  process.env.LOADCOMPOSER_HTML || "site/downloads/loadcomposer-v1.3.0-standalone.html"
+  process.env.LOADCOMPOSER_HTML || "site/downloads/loadcomposer-v1.3.1-standalone.html"
 );
 const EXPECTED_BASELINE_SHA256 =
   process.env.LOADCOMPOSER_BASELINE_SHA256 ||
@@ -609,7 +609,7 @@ try {
       fixture.gap
     );
     assertChecks(beforeChecks, `${fixture.id} v1.0.0`);
-    assertChecks(afterChecks, `${fixture.id} v1.3.0`);
+    assertChecks(afterChecks, `${fixture.id} v1.3.1`);
 
     const changed = JSON.stringify(beforeComparable) !== JSON.stringify(afterComparable);
     if (!changed) {

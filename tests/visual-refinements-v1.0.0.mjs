@@ -5,7 +5,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const CURRENT_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html")
 ).href;
 const BASELINE_URL = pathToFileURL(
   path.join(
@@ -14,8 +14,8 @@ const BASELINE_URL = pathToFileURL(
     "loadcomposer-v1.0.0-rc.3-standalone.html"
   )
 ).href;
-const EVIDENCE_DIR = path.join(ROOT, "visual-evidence-v1.3.0");
-const RESULT_PATH = path.join(ROOT, "visual-refinements-results-v1.3.0.json");
+const EVIDENCE_DIR = path.join(ROOT, "visual-evidence-v1.3.1");
+const RESULT_PATH = path.join(ROOT, "visual-refinements-results-v1.3.1.json");
 const LANGUAGES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const VIEWPORTS = [
   { width: 320, height: 568 },
@@ -835,22 +835,16 @@ async function verifyPrintExclusion(browser, records) {
       );
 
       const printed = await page.evaluate(() => {
-        let html = "";
-        const fakeWindow = {
-          document: {
-            open() {},
-            write(value) {
-              html += value;
-            },
-            close() {}
-          },
-          focus() {},
-          print() {}
-        };
         const nativeOpen = window.open;
-        window.open = () => fakeWindow;
+        window.open = () => null;
         try {
           printCurrentLayout();
+          const frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+          if (frame?.contentWindow) frame.contentWindow.print = () => {};
+          const html = frame
+            ? `<!DOCTYPE html>\n${frame.contentDocument.documentElement.outerHTML}`
+            : "";
+          frame?.remove();
           return html;
         } finally {
           window.open = nativeOpen;
@@ -1084,7 +1078,7 @@ async function captureEvidence(browser, url, prefix) {
 async function captureRequiredComparisons(browser) {
   const versions = [
     { url: BASELINE_URL, id: "rc.3" },
-    { url: CURRENT_URL, id: "v1.3.0" }
+    { url: CURRENT_URL, id: "v1.3.1" }
   ];
   const comparisonCases = ORIENTATION_CASES.filter(item => (
     ["euro", "industrial", "north-american", "custom", "elongated"].includes(item.id)
@@ -1185,22 +1179,16 @@ async function captureRequiredComparisons(browser) {
 
 async function generatePrintHtml(page) {
   return page.evaluate(() => {
-    let html = "";
-    const fakeWindow = {
-      document: {
-        open() {},
-        write(value) {
-          html += value;
-        },
-        close() {}
-      },
-      focus() {},
-      print() {}
-    };
     const nativeOpen = window.open;
-    window.open = () => fakeWindow;
+    window.open = () => null;
     try {
       printCurrentLayout();
+      const frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+      if (frame?.contentWindow) frame.contentWindow.print = () => {};
+      const html = frame
+        ? `<!DOCTYPE html>\n${frame.contentDocument.documentElement.outerHTML}`
+        : "";
+      frame?.remove();
       return html;
     } finally {
       window.open = nativeOpen;
@@ -1306,7 +1294,7 @@ async function captureOrientationMatrix(browser) {
         await page.locator("#singlePalletGroup [data-role='orientationPanel']").screenshot({
           path: path.join(
             EVIDENCE_DIR,
-            `v1.3.0-orientation-${language}-${theme}-1200x800-390.png`
+            `v1.3.1-orientation-${language}-${theme}-1200x800-390.png`
           )
         });
       } finally {
@@ -1326,7 +1314,7 @@ async function captureOrientationMatrix(browser) {
       await page.setViewportSize(viewport);
       await configureOrientation(page, { length: 1200, width: 800 });
       await page.locator("#singlePalletGroup [data-role='orientationPanel']").screenshot({
-        path: path.join(EVIDENCE_DIR, `v1.3.0-orientation-viewport-${width}.png`)
+        path: path.join(EVIDENCE_DIR, `v1.3.1-orientation-viewport-${width}.png`)
       });
     } finally {
       await context.close();
@@ -1342,7 +1330,7 @@ async function captureOrientationMatrix(browser) {
     try {
       await configureOrientation(page, dimensions);
       await page.locator("#singlePalletGroup [data-role='orientationPanel']").screenshot({
-        path: path.join(EVIDENCE_DIR, `v1.3.0-orientation-case-${dimensions.id}.png`)
+        path: path.join(EVIDENCE_DIR, `v1.3.1-orientation-case-${dimensions.id}.png`)
       });
     } finally {
       await context.close();
@@ -1360,19 +1348,19 @@ try {
   await verifyPrintExclusion(browser, records);
   await verifyVisualDelta(browser, records);
   await captureEvidence(browser, BASELINE_URL, "before-rc.3");
-  await captureEvidence(browser, CURRENT_URL, "v1.3.0");
+  await captureEvidence(browser, CURRENT_URL, "v1.3.1");
   await captureRequiredComparisons(browser);
   await captureOrientationMatrix(browser);
   await capturePrintLegend(browser, BASELINE_URL, "before-rc.3", "normal");
-  await capturePrintLegend(browser, CURRENT_URL, "v1.3.0", "normal");
-  await capturePrintLegend(browser, CURRENT_URL, "v1.3.0", "rotated");
-  await capturePrintLegend(browser, CURRENT_URL, "v1.3.0", "auto");
+  await capturePrintLegend(browser, CURRENT_URL, "v1.3.1", "normal");
+  await capturePrintLegend(browser, CURRENT_URL, "v1.3.1", "rotated");
+  await capturePrintLegend(browser, CURRENT_URL, "v1.3.1", "auto");
 } finally {
   await browser.close();
 }
 
 const payload = {
-  version: "1.3.0",
+  version: "1.3.1",
   generatedAt: new Date().toISOString(),
   pickerScenarios: records.filter(record => record.type === "picker").length,
   pickerTouchScenarios: records.filter(record => record.type === "picker-touch").length,

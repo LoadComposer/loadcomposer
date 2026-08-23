@@ -3,10 +3,10 @@
     "code": "fr",
     "name": "Français",
     "dir": "ltr",
-    "version": "1.3.0"
+    "version": "1.3.1"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.0",
+    "meta.documentTitle": "LoadComposer v1.3.1",
     "language.preference": "Préférence de langue",
     "language.auto": "Automatique",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "POUR LES ORDINATEURS SANS INTERNET",
     "downloads.offline.body": "Conçue pour les ordinateurs qui n’ont pas accès à Internet ou doivent rester hors ligne. Il s’agit d’une simple page web autonome et le planificateur fonctionne sans connexion. Elle ne se met pas à jour automatiquement : pour bénéficier des nouvelles fonctions et corrections, vous devez remplacer manuellement le fichier par une version plus récente.",
     "downloads.offline.internetNote": "Si vous avez accès à Internet, il n’est normalement pas nécessaire de télécharger cette version.",
-    "downloads.currentVersion": "LoadComposer v1.3.0",
+    "downloads.currentVersion": "LoadComposer v1.3.1",
     "downloads.offline.htmlButton": "Télécharger le HTML autonome",
     "downloads.offline.htmlHelp": "Un seul fichier à copier sur l’ordinateur et à ouvrir avec le navigateur.",
     "downloads.offline.zipButton": "Télécharger le ZIP autonome",
@@ -376,7 +376,7 @@
     "print.schemaAltRamp": "Plan vertical vu depuis le quai",
     "print.schemaAltSide": "Plan horizontal vu de côté",
     "print.warehouseNote": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus.",
-    "print.popupBlocked": "Le navigateur a bloqué la fenêtre d’impression. Autorisez les fenêtres contextuelles pour cette page et réessayez.",
+    "print.dialogUnavailable": "La boîte de dialogue d’impression du navigateur n’a pas pu être ouverte. Réessayez.",
     "geometry.invalidPalletTypeIndex": "{label} : index de type de palette non valide.",
     "geometry.invalidPalletUnit": "{label} : numéro séquentiel de palette non valide.",
     "geometry.inconsistentReference": "{label} : référence de palette incohérente {actual} ; {expected} était attendu.",

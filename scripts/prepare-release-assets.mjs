@@ -7,7 +7,7 @@ const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, "..");
 const APP_PATH = path.join(ROOT, "site", "index.html");
 const ASSET_DIR = path.join(ROOT, "site", "assets");
-const OG_PATH = path.join(ASSET_DIR, "loadcomposer-og-v1.3.0.png");
+const OG_PATH = path.join(ASSET_DIR, "loadcomposer-og-v1.3.1.png");
 const EXPECTED_LOGOS = [
   "loadcomposer-desktop-day.svg",
   "loadcomposer-desktop-night.svg",

@@ -266,18 +266,14 @@ function printPopup(app, result, { view, bwMode, payload, label }) {
   document.getElementById("printBw").checked = bwMode;
   window.drawSelected();
 
-  let writtenHtml = "";
-  const popupDocument = {
-    open() {},
-    write(value) {
-      writtenHtml += String(value);
-    },
-    close() {}
-  };
-  window.open = () => ({ document: popupDocument });
+  window.open = () => null;
   window.printCurrentLayout();
+  const printFrame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+  const writtenHtml = printFrame
+    ? `<!DOCTYPE html>\n${printFrame.contentDocument.documentElement.outerHTML}`
+    : "";
 
-  assert(writtenHtml.startsWith("\n        <!DOCTYPE html>"), `${label}: popup non scritto`);
+  assert(writtenHtml.startsWith("<!DOCTYPE html>"), `${label}: print frame non scritto`);
   const popupErrors = [];
   const virtualConsole = new VirtualConsole();
   virtualConsole.on("jsdomError", error => popupErrors.push(error));
@@ -296,7 +292,7 @@ function printPopup(app, result, { view, bwMode, payload, label }) {
     const popupDoc = popup.window.document;
     assert(popup.window.__xss === undefined, `${label}: window.__xss impostato nel popup`);
     assertEqual(popupDoc.querySelectorAll("img").length, 1, `${label}: numero img popup`);
-    assertEqual(popupDoc.querySelectorAll("script").length, 1, `${label}: numero script popup`);
+    assertEqual(popupDoc.querySelectorAll("script").length, 0, `${label}: numero script print frame`);
     assertEqual(popupDoc.querySelectorAll("svg").length, 0, `${label}: svg aggiuntivo popup`);
     assertEqual(popupDoc.querySelectorAll("input").length, 0, `${label}: input aggiuntivo popup`);
     assertNoHandlerAttributes(popupDoc, `${label} popup`);
@@ -311,6 +307,7 @@ function printPopup(app, result, { view, bwMode, payload, label }) {
     );
   } finally {
     popup.window.close();
+    printFrame?.remove();
   }
 }
 

@@ -5,7 +5,7 @@ import { pathToFileURL } from "node:url";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const STANDALONE = path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html");
+const STANDALONE = path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html");
 const TEMP_ROOT = fs.mkdtempSync(path.join(os.tmpdir(), "loadcomposer-plurals-"));
 const SYNTHETIC_HTML = path.join(TEMP_ROOT, "synthetic-plural-engine.html");
 const EMBEDDED_PATTERN =

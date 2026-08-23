@@ -3,10 +3,10 @@
     "code": "nl",
     "name": "Nederlands",
     "dir": "ltr",
-    "version": "1.3.0"
+    "version": "1.3.1"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.0",
+    "meta.documentTitle": "LoadComposer v1.3.1",
     "language.preference": "Taalvoorkeur",
     "language.auto": "Automatisch",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "VOOR COMPUTERS ZONDER INTERNET",
     "downloads.offline.body": "Bedoeld voor computers die geen internettoegang hebben of offline moeten blijven. Het is één eenvoudige zelfstandige webpagina en de planner werkt zonder verbinding. De versie wordt niet automatisch bijgewerkt: voor nieuwe functies en correcties moet u het bestand handmatig door een nieuwere versie vervangen.",
     "downloads.offline.internetNote": "Als u internettoegang heeft, hoeft u deze versie normaal gesproken niet te downloaden.",
-    "downloads.currentVersion": "LoadComposer v1.3.0",
+    "downloads.currentVersion": "LoadComposer v1.3.1",
     "downloads.offline.htmlButton": "Standalone-HTML downloaden",
     "downloads.offline.htmlHelp": "Eén bestand om naar de computer te kopiëren en in de browser te openen.",
     "downloads.offline.zipButton": "Standalone-ZIP downloaden",
@@ -376,7 +376,7 @@
     "print.schemaAltRamp": "Verticaal laadplan vanaf de laadzijde",
     "print.schemaAltSide": "Horizontaal laadplan van opzij",
     "print.warehouseNote": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten.",
-    "print.popupBlocked": "De browser heeft het afdrukvenster geblokkeerd. Sta pop-ups voor deze pagina toe en probeer het opnieuw.",
+    "print.dialogUnavailable": "Het afdrukdialoogvenster van de browser kon niet worden geopend. Probeer het opnieuw.",
     "geometry.invalidPalletTypeIndex": "{label}: ongeldige index voor pallettype.",
     "geometry.invalidPalletUnit": "{label}: ongeldig volgnummer van pallet.",
     "geometry.inconsistentReference": "{label}: inconsistente palletreferentie {actual}; {expected} werd verwacht.",

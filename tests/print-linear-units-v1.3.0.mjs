@@ -6,9 +6,9 @@ import { spawnSync } from "node:child_process";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const HTML = path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html");
-const OUTPUT = path.join(ROOT, "print-linear-units-v1.3.0");
-const RESULT = path.join(ROOT, "print-linear-units-results-v1.3.0.json");
+const HTML = path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html");
+const OUTPUT = path.join(ROOT, "print-linear-units-v1.3.1");
+const RESULT = path.join(ROOT, "print-linear-units-results-v1.3.1.json");
 fs.mkdirSync(OUTPUT, { recursive: true });
 
 const source = fs.readFileSync(HTML);
@@ -112,12 +112,30 @@ try {
     await page.waitForFunction(unit => window.loadComposerUnits.unit === unit, spec.unit);
     assert.deepEqual(await page.evaluate(() => window.loadComposerUnits.layoutSnapshot()), geometryBefore, `${spec.id}: geometry changed.`);
     await page.locator("#printBw").setChecked(spec.bw);
-
-    const [popup] = await Promise.all([
-      page.waitForEvent("popup"),
-      page.click("#printLayoutBtn")
-    ]);
-    await popup.waitForFunction(() => document.body && document.body.innerText.length > 100);
+    await page.evaluate(() => {
+      const appendChild = Node.prototype.appendChild;
+      Node.prototype.appendChild = function appendWithPrintStub(child) {
+        const appended = appendChild.call(this, child);
+        if (child instanceof HTMLIFrameElement && child.dataset.loadcomposerPrintFrame === "true") {
+          child.contentWindow.print = () => {};
+        }
+        return appended;
+      };
+    });
+    await page.click("#printLayoutBtn");
+    await page.waitForFunction(() => {
+      const frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+      const image = frame?.contentDocument?.querySelector(".schema img");
+      return Boolean(frame?.contentDocument?.body?.innerText?.length > 100 && image?.complete);
+    });
+    const printHtml = await page.evaluate(() => {
+      const frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+      const html = `<!DOCTYPE html>\n${frame.contentDocument.documentElement.outerHTML}`;
+      frame.remove();
+      return html;
+    });
+    const popup = await context.newPage();
+    await popup.setContent(printHtml, { waitUntil: "load" });
     const presentation = await popup.evaluate(() => ({
       text: document.body.innerText,
       documentOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
@@ -164,13 +182,13 @@ try {
   }
 
   fs.writeFileSync(RESULT, `${JSON.stringify({
-    version: "1.3.0",
+    version: "1.3.1",
     generatedAt: new Date().toISOString(),
     scenarios: records.length,
     status: "PASS",
     records
   }, null, 2)}\n`);
-  console.log("Print linear units v1.3.0 PASS: 8/8 single, mixed, compact and custom cm/in PDFs; color/B&W, 1–2 populated pages, no overflow, canonical geometry unchanged.");
+  console.log("Print linear units v1.3.1 PASS: 8/8 single, mixed, compact and custom cm/in PDFs; color/B&W, 1–2 populated pages, no overflow, canonical geometry unchanged.");
 } finally {
   await browser.close();
   await new Promise(resolve => server.close(resolve));

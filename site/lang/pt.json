@@ -3,10 +3,10 @@
     "code": "pt",
     "name": "Português",
     "dir": "ltr",
-    "version": "1.3.0"
+    "version": "1.3.1"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.0",
+    "meta.documentTitle": "LoadComposer v1.3.1",
     "language.preference": "Preferência de idioma",
     "language.auto": "Automático",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "PARA COMPUTADORES SEM INTERNET",
     "downloads.offline.body": "Destina-se a computadores sem acesso à Internet ou que têm de permanecer offline. É uma página web standalone simples e o planeador funciona sem ligação. Não se atualiza automaticamente: para usar novas funções e correções, deve substituir manualmente o ficheiro por uma versão mais recente.",
     "downloads.offline.internetNote": "Se tem acesso à Internet, normalmente não precisa de transferir esta versão.",
-    "downloads.currentVersion": "LoadComposer v1.3.0",
+    "downloads.currentVersion": "LoadComposer v1.3.1",
     "downloads.offline.htmlButton": "Transferir HTML standalone",
     "downloads.offline.htmlHelp": "Um único ficheiro para copiar para o computador e abrir no navegador.",
     "downloads.offline.zipButton": "Transferir ZIP standalone",
@@ -376,7 +376,7 @@
     "print.schemaAltRamp": "Esquema vertical visto da rampa",
     "print.schemaAltSide": "Esquema horizontal visto de lado",
     "print.warehouseNote": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos.",
-    "print.popupBlocked": "O navegador bloqueou a janela de impressão. Permita janelas pop-up para esta página e tente novamente.",
+    "print.dialogUnavailable": "Não foi possível abrir a caixa de diálogo de impressão do navegador. Tente novamente.",
     "geometry.invalidPalletTypeIndex": "{label}: índice de tipo de palete inválido.",
     "geometry.invalidPalletUnit": "{label}: número sequencial de palete inválido.",
     "geometry.inconsistentReference": "{label}: referência de palete {actual} incoerente; era esperada {expected}.",

@@ -6,12 +6,12 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html")
 ).href;
-const OUTPUT = path.join(ROOT, "print-plurals-v1.3.0");
+const OUTPUT = path.join(ROOT, "print-plurals-v1.3.1");
 const RESULT_PATH = path.join(
   ROOT,
-  "print-plural-results-v1.3.0.json"
+  "print-plural-results-v1.3.1.json"
 );
 const LANGUAGES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const INDEX = JSON.parse(fs.readFileSync(path.join(ROOT, "site", "lang", "index.json")));
@@ -252,17 +252,15 @@ async function captureOperationalPrint(page) {
     let openCount = 0;
     window.open = () => {
       openCount += 1;
-      return {
-        document: {
-          open() {},
-          write(value) {
-            html += String(value);
-          },
-          close() {}
-        }
-      };
+      return null;
     };
     printCurrentLayout();
+    const frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+    if (frame?.contentWindow) frame.contentWindow.print = () => {};
+    html = frame
+      ? `<!DOCTYPE html>\n${frame.contentDocument.documentElement.outerHTML}`
+      : "";
+    frame?.remove();
     return { html, openCount };
   });
 }
@@ -453,7 +451,7 @@ try {
         } else {
           assert(state.ok && !state.printDisabled, `${language}/${scenario.name}: printable`);
           const capture = await captureOperationalPrint(app.page);
-          assert(capture.openCount === 1, `${language}/${scenario.name}: print popup`);
+          assert(capture.openCount === 0, `${language}/${scenario.name}: top-level print window`);
           assert(capture.html.includes(identifier), `${language}/${scenario.name}: HTML user text`);
           audit = await renderOperationalPdf(browser, capture, pdfPath);
           assert(audit.images === 1, `${language}/${scenario.name}: schema image`);
@@ -488,7 +486,7 @@ try {
 }
 
 fs.writeFileSync(RESULT_PATH, `${JSON.stringify({
-  version: "1.3.0",
+  version: "1.3.1",
   languages: LANGUAGES,
   scenariosPerLanguage: SCENARIOS.length,
   pdfs: records.length,

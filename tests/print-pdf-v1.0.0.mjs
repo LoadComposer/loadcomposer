@@ -23,7 +23,7 @@ const BASELINE_ONLY = process.env.PRINT_BASELINE_ONLY === "1";
 const RESULT_PATH = path.join(
   OUTPUT_ROOT,
   process.env.PRINT_RESULT_NAME ||
-    (BASELINE_ONLY ? "print-baseline-v1.0.0.json" : "print-results-v1.3.0.json")
+    (BASELINE_ONLY ? "print-baseline-v1.0.0.json" : "print-results-v1.3.1.json")
 );
 const FIXED_NOW = "2026-07-24T10:00:00.000Z";
 const PRINT_MESSAGE =
@@ -398,7 +398,7 @@ async function captureCanvasLabels(page, view, bwMode) {
 }
 
 async function capturePrintHtml(page) {
-  return page.evaluate(() => {
+  return page.evaluate(async () => {
     window.__capturedPrintHtml = "";
     window.__printOpenCount = 0;
     const calls = [];
@@ -412,21 +412,26 @@ async function capturePrintHtml(page) {
     };
     window.open = () => {
       window.__printOpenCount += 1;
-      return {
-        document: {
-          open() {},
-          write(value) {
-            window.__capturedPrintHtml += String(value);
-          },
-          close() {}
-        }
-      };
+      return null;
     };
     try {
       printCurrentLayout();
     } finally {
       CanvasRenderingContext2D.prototype.fillText = originalFillText;
     }
+    let frame = null;
+    const deadline = performance.now() + 2000;
+    while (performance.now() < deadline) {
+      frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+      if (frame?.contentWindow) frame.contentWindow.print = () => {};
+      if (frame?.contentDocument?.body?.dataset.printReady === "true") break;
+      await new Promise(resolve => setTimeout(resolve, 10));
+    }
+    if (frame?.contentWindow) frame.contentWindow.print = () => {};
+    window.__capturedPrintHtml = frame
+      ? `<!DOCTYPE html>\n${frame.contentDocument.documentElement.outerHTML}`
+      : "";
+    frame?.remove();
     const drawnLabelLines = calls
       .filter(call => call.maxWidth !== null)
       .map(call => call.text);
@@ -518,7 +523,7 @@ async function renderPrintDocument(browser, html, pdfPath, expectedPayload = "")
     );
   }
   assertEqual(domAudit.images, 1, `${pdfPath}: immagini inattese`);
-  assertEqual(domAudit.scripts, 1, `${pdfPath}: script inattesi`);
+  assertEqual(domAudit.scripts, 0, `${pdfPath}: script inattesi`);
   assertEqual(domAudit.svgs, 0, `${pdfPath}: SVG creati`);
   assertEqual(domAudit.inputs, 0, `${pdfPath}: input creati`);
   assertEqual(domAudit.handlers.length, 0, `${pdfPath}: handler HTML creati`);
@@ -1540,9 +1545,9 @@ async function run() {
 
       await selectPrintMode(application.page, scenario.view, scenario.bw);
       const capture = await capturePrintHtml(application.page);
-      assertEqual(capture.openCount, 1, `${scenario.file}: popup non aperto una volta`);
+      assertEqual(capture.openCount, 0, `${scenario.file}: finestra top-level aperta`);
       assert(
-        capture.html.startsWith("\n        <!DOCTYPE html>"),
+        /^<!DOCTYPE html>/i.test(capture.html),
         `${scenario.file}: documento stampa non creato`
       );
       assertEqual(
@@ -1641,7 +1646,7 @@ async function run() {
         assertEqual(fixture.ok, true, `XSS ${index + 1}: risultato non CI STA`);
         await selectPrintMode(application.page, view, bw);
         const capture = await capturePrintHtml(application.page);
-        assertEqual(capture.openCount, 1, `XSS ${index + 1}: popup`);
+        assertEqual(capture.openCount, 0, `XSS ${index + 1}: finestra top-level`);
         const filename =
           `xss-${String(index + 1).padStart(2, "0")}-${mixed ? "mixed" : "single"}-${view}-${bw ? "bw" : "color"}.pdf`;
         const pdfPath = path.join(PDF_DIR, "xss", filename);

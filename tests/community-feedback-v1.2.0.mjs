@@ -11,7 +11,7 @@ const STANDALONE_PATH = path.join(
   ROOT,
   "site",
   "downloads",
-  "loadcomposer-v1.3.0-standalone.html"
+  "loadcomposer-v1.3.1-standalone.html"
 );
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const KEYS = ["footer.linksAria", "footer.download", "footer.suggestions", "footer.reportIssue"];
@@ -70,7 +70,7 @@ for (const selector of ["script[src]", "link[rel='stylesheet'][href]", "img[src^
 const keySets = [];
 for (const code of CODES) {
   const catalog = JSON.parse(read(path.join(ROOT, "site", "lang", `${code}.json`)));
-  assert.equal(catalog.meta.version, "1.3.0", `${code}: version.`);
+  assert.equal(catalog.meta.version, "1.3.1", `${code}: version.`);
   for (const key of KEYS) {
     assert.equal(typeof catalog.translations[key], "string", `${code}:${key} missing.`);
     assert.ok(catalog.translations[key].trim(), `${code}:${key} empty.`);

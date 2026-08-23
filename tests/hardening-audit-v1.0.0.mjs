@@ -9,7 +9,7 @@ import { JSDOM } from "jsdom";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const SITE = path.join(ROOT, "site");
 const DOWNLOADS = path.join(SITE, "downloads");
-const VERSION = "1.3.0";
+const VERSION = "1.3.1";
 const PACKAGE_NAME = `loadcomposer-v${VERSION}-standalone`;
 const HTML_NAME = `${PACKAGE_NAME}.html`;
 const ZIP_NAME = `${PACKAGE_NAME}.zip`;
@@ -329,7 +329,7 @@ try {
     "https://loadcomposer.com/",
     "licensing@loadcomposer.com",
     '"AS IS"',
-    "Version 1.3.0"
+    "Version 1.3.1"
   ]) {
     assert.ok(packageReadme.includes(required), `Standalone README is missing: ${required}`);
   }
@@ -350,6 +350,6 @@ assert.ok(readme.includes("Download page"));
 assert.ok(readme.includes("source-available"));
 
 console.log(
-  "v1.3.0 hardening audit PASS: Node/npm metadata, HTML notices, 7 public legal copies, " +
+  "v1.3.1 hardening audit PASS: Node/npm metadata, HTML notices, 7 public legal copies, " +
   "6 localized footer links, standalone ZIP/5 hashes, Download/Legal/404 pages, internal links and no remote resources."
 );

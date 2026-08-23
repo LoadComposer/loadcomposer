@@ -13,9 +13,9 @@ const baselineUrl = pathToFileURL(
   )
 ).href;
 const candidateUrl = pathToFileURL(
-  path.join(projectDir, "site/downloads/loadcomposer-v1.3.0-standalone.html")
+  path.join(projectDir, "site/downloads/loadcomposer-v1.3.1-standalone.html")
 ).href;
-const resultPath = path.join(projectDir, "functional-parity-results-v1.3.0.json");
+const resultPath = path.join(projectDir, "functional-parity-results-v1.3.1.json");
 const browser = await launchBrowser(projectDir);
 const languages = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const localeByLanguage = {
@@ -192,7 +192,7 @@ try {
       assert(after.rowCount === 12, `${scenario.name}/${language}: candidate vehicle rows`);
       assert(
         JSON.stringify(before.geometry) === JSON.stringify(after.geometry),
-        `${scenario.name}/${language}: v1.2.1/v1.3.0 geometry mismatch`
+        `${scenario.name}/${language}: v1.2.1/v1.3.1 geometry mismatch`
       );
       if (language === "it") {
         assert(
@@ -217,7 +217,7 @@ try {
     await baseline.context.close();
   }
   fs.writeFileSync(resultPath, `${JSON.stringify({
-    version: "1.3.0",
+    version: "1.3.1",
     baseline: "1.2.1",
     generatedAt: new Date().toISOString(),
     scenarios: comparisons,

@@ -5,7 +5,7 @@ import { JSDOM } from "jsdom";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_PATH = path.join(ROOT, "site/index.html");
-const STANDALONE_PATH = path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html");
+const STANDALONE_PATH = path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html");
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const OBSOLETE_KEYS = [
   "rotation.alongTitle",

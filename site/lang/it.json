@@ -3,10 +3,10 @@
     "code": "it",
     "name": "Italiano",
     "dir": "ltr",
-    "version": "1.3.0"
+    "version": "1.3.1"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.0",
+    "meta.documentTitle": "LoadComposer v1.3.1",
     "language.preference": "Preferenza lingua",
     "language.auto": "Automatico",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "PER COMPUTER SENZA INTERNET",
     "downloads.offline.body": "Pensata per computer che non hanno accesso a Internet o devono restare offline. È una semplice pagina web standalone e il planner funziona senza connessione. Non si aggiorna automaticamente: per usare nuove funzioni e correzioni devi sostituire manualmente il file con una versione più recente.",
     "downloads.offline.internetNote": "Se hai accesso a Internet, normalmente non serve scaricare questa versione.",
-    "downloads.currentVersion": "LoadComposer v1.3.0",
+    "downloads.currentVersion": "LoadComposer v1.3.1",
     "downloads.offline.htmlButton": "Scarica HTML standalone",
     "downloads.offline.htmlHelp": "Un solo file da copiare sul computer e aprire con il browser.",
     "downloads.offline.zipButton": "Scarica ZIP standalone",
@@ -376,7 +376,7 @@
     "print.schemaAltRamp": "Schema verticale visto dalla rampa",
     "print.schemaAltSide": "Schema orizzontale visto lateralmente",
     "print.warehouseNote": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale.",
-    "print.popupBlocked": "Il browser ha bloccato la finestra di stampa. Consenti i popup per questa pagina e riprova.",
+    "print.dialogUnavailable": "Non è stato possibile aprire la finestra di stampa del browser. Riprova.",
     "geometry.invalidPalletTypeIndex": "{label}: indice tipo pallet non valido.",
     "geometry.invalidPalletUnit": "{label}: numero progressivo pallet non valido.",
     "geometry.inconsistentReference": "{label}: riferimento pallet {actual} incoerente; atteso {expected}.",

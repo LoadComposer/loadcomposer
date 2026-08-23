@@ -5,7 +5,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_URL = pathToFileURL(
-  path.join(ROOT, "site/downloads/loadcomposer-v1.3.0-standalone.html")
+  path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html")
 ).href;
 const LANGUAGES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 const LOCALES = {
@@ -212,17 +212,14 @@ async function configureMixed(page, quantity) {
 
 async function capturePrint(page) {
   return page.evaluate(() => {
-    let html = "";
-    window.open = () => ({
-      document: {
-        open() {},
-        write(value) {
-          html += String(value);
-        },
-        close() {}
-      }
-    });
+    window.open = () => null;
     printCurrentLayout();
+    const frame = document.querySelector("iframe[data-loadcomposer-print-frame='true']");
+    if (frame?.contentWindow) frame.contentWindow.print = () => {};
+    const html = frame
+      ? `<!DOCTYPE html>\n${frame.contentDocument.documentElement.outerHTML}`
+      : "";
+    frame?.remove();
     const documentCopy = new DOMParser().parseFromString(html, "text/html");
     return {
       html,
@@ -399,9 +396,9 @@ try {
 }
 
 fs.writeFileSync(
-  path.join(ROOT, "quantity-rendering-results-v1.3.0.json"),
+  path.join(ROOT, "quantity-rendering-results-v1.3.1.json"),
   `${JSON.stringify({
-    version: "1.3.0",
+    version: "1.3.1",
     languages: LANGUAGES,
     quantities: [0, 1, 2, 5],
     records,

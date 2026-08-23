@@ -1,0 +1,68 @@
+{
+  "baseline": {
+    "file": "loadcomposer-v1.2.1-standalone.html",
+    "sha256": "ef89ada8d55a6273c5ae363216a959f7d4f4a369ef2fef8d0a3a9196a5396fb0"
+  },
+  "current": {
+    "file": "loadcomposer-v1.3.1-standalone.html",
+    "sha256": "1bc68958842532a2017547cd9362d5f9aa96c62f7b7eadb3ced1adaf27ad23b5"
+  },
+  "single": {
+    "capacityLayout": {
+      "cases": 1080,
+      "differences": 0,
+      "status": "PASS"
+    },
+    "loadLayout": {
+      "cases": 4110,
+      "differences": 0,
+      "status": "PASS"
+    },
+    "b10Scenarios": [
+      {
+        "id": "20dc-eur-1",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-10",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-11",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-12",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-stacked-11",
+        "status": "PASS"
+      },
+      {
+        "id": "40dc-door-2345x800-1",
+        "status": "PASS"
+      },
+      {
+        "id": "40dc-door-2345x800-11",
+        "status": "PASS"
+      }
+    ],
+    "b10Status": "PASS"
+  },
+  "mixed": {
+    "cases": 2352,
+    "homogeneousCases": 2160,
+    "heterogeneousCases": 192,
+    "unchangedCases": 2352,
+    "differences": 0,
+    "rules": [
+      "Tra baseline ammessa e candidata non è autorizzata alcuna differenza geometrica mixed a input equivalente.",
+      "Bounds, gap, overlap, conteggi e used spans reali devono essere confermati."
+    ],
+    "differenceDetails": [],
+    "status": "PASS"
+  },
+  "unexpectedDifferences": 0,
+  "status": "PASS"
+}
