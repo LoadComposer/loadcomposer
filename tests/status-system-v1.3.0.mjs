@@ -6,9 +6,9 @@ import { pathToFileURL } from "node:url";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const APP = path.join(ROOT, "site", "downloads", "loadcomposer-v1.3.1-standalone.html");
-const OUTPUT = path.resolve(process.env.STATUS_V130_OUTPUT || path.join(ROOT, "status-visual-evidence-v1.3.1"));
-const RESULT_FILE = path.resolve(process.env.STATUS_V130_RESULT || path.join(ROOT, "status-system-results-v1.3.1.json"));
+const APP = path.join(ROOT, "site", "downloads", "loadcomposer-v1.3.0-standalone.html");
+const OUTPUT = path.resolve(process.env.STATUS_V130_OUTPUT || path.join(ROOT, "status-visual-evidence-v1.3.0"));
+const RESULT_FILE = path.resolve(process.env.STATUS_V130_RESULT || path.join(ROOT, "status-system-results-v1.3.0.json"));
 const LOCALES = { it: "it-IT", en: "en-GB", de: "de-DE" };
 
 fs.mkdirSync(OUTPUT, { recursive: true });
@@ -245,7 +245,7 @@ try {
 }
 
 const report = {
-  release: "1.3.1",
+  release: "1.3.0",
   generatedAt: new Date().toISOString(),
   app: path.relative(ROOT, APP),
   scenarios: results,
@@ -259,4 +259,4 @@ const report = {
   }
 };
 fs.writeFileSync(RESULT_FILE, `${JSON.stringify(report, null, 2)}\n`);
-console.log(`Status system v1.3.1 PASS: ${results.length}/${scenarios.length} semantic/visual scenarios; evidence ${path.relative(ROOT, OUTPUT)}.`);
+console.log(`Status system v1.3.0 PASS: ${results.length}/${scenarios.length} semantic/visual scenarios; evidence ${path.relative(ROOT, OUTPUT)}.`);

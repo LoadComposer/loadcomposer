@@ -63,11 +63,11 @@ Date: 2026-08-22. Scope: print transport/compatibility patch only.
 59. **Download regression:** PASS; 21 mobile and 40 visual scenarios.
 60. **404/Legal regression:** PASS; Legal 7/7 identity, 21 language/theme and 10 responsive; 404 21 language/theme, 8 responsive and 4 routes.
 61. **Historical v1.3.0 artifacts:** retained, including standalone HTML/ZIP and SHA sidecars.
-62. **Final file count:** 1,652.
-63. **Manifest entry count:** 1,650 (N−2).
-64. **SHA256SUMS entry count:** 1,651 (N−1).
+62. **Final file count:** 1,658.
+63. **Manifest entry count:** 1,656 (N−2).
+64. **SHA256SUMS entry count:** 1,657 (N−1).
 65. **SHA-256 delivery v1.3.1:** `__DELIVERY_SHA256__` in the external sealed report; an archive cannot embed its own final digest without changing it.
-66. **SHA-256 test bundle:** `aa4f4e44661ac1663cec7de50c389489cafe93b8506d4d99a0e34ee9fd582e80`.
+66. **SHA-256 test bundle:** `95cb7edf0f580f70999f64761b21360e8526c7ddae51d356b2503c4e7292aad6`.
 67. **SHA-256 standalone HTML:** `1bc68958842532a2017547cd9362d5f9aa96c62f7b7eadb3ced1adaf27ad23b5`.
 68. **SHA-256 standalone ZIP:** `365e8e861f0faf984c1aaec7c11fb23df88f58812ee2df67391d89a725238884`.
 69. **Warnings:** browser coverage is limited to Chromium 149 headless; native browser Print/Cancel UI and branded-browser behavior remain manual external QA. No unreported automated failure remains.
