@@ -2,6 +2,26 @@
 
 All notable project changes are documented here.
 
+## [1.3.2] — 2026-08-25
+
+### Fixed
+
+- Fixed a placement limitation where one pallet group could miss valid floor
+  layouts requiring different 90° orientations within the same load.
+- Added a bounded deterministic mixed-orientation search that can discover
+  local interlocking arrangements while preserving the established row and
+  column heuristics as the unchanged first choice.
+- Added permanent regression, geometry-delta, rotation-constraint,
+  determinism, standalone, print/schema, and performance coverage for the
+  corrected placement path.
+
+### Unchanged from v1.3.1
+
+- Vehicle and pallet dimensions, height/access validation, status wording,
+  translations except release metadata, native themes, Legal UX, print
+  transport, and static-hosting architecture are unchanged.
+- No Legal UX or browser-extension/Dark Reader work is included.
+
 ## [1.3.1] — 2026-08-22
 
 ### Fixed

@@ -3,10 +3,10 @@
     "code": "fr",
     "name": "Français",
     "dir": "ltr",
-    "version": "1.3.1"
+    "version": "1.3.2"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.1",
+    "meta.documentTitle": "LoadComposer v1.3.2",
     "language.preference": "Préférence de langue",
     "language.auto": "Automatique",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "POUR LES ORDINATEURS SANS INTERNET",
     "downloads.offline.body": "Conçue pour les ordinateurs qui n’ont pas accès à Internet ou doivent rester hors ligne. Il s’agit d’une simple page web autonome et le planificateur fonctionne sans connexion. Elle ne se met pas à jour automatiquement : pour bénéficier des nouvelles fonctions et corrections, vous devez remplacer manuellement le fichier par une version plus récente.",
     "downloads.offline.internetNote": "Si vous avez accès à Internet, il n’est normalement pas nécessaire de télécharger cette version.",
-    "downloads.currentVersion": "LoadComposer v1.3.1",
+    "downloads.currentVersion": "LoadComposer v1.3.2",
     "downloads.offline.htmlButton": "Télécharger le HTML autonome",
     "downloads.offline.htmlHelp": "Un seul fichier à copier sur l’ordinateur et à ouvrir avec le navigateur.",
     "downloads.offline.zipButton": "Télécharger le ZIP autonome",

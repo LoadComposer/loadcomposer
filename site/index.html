@@ -11,7 +11,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoadComposer v1.3.1</title>
+  <title>LoadComposer v1.3.2</title>
   <meta name="description" content="LoadComposer estimates pallet arrangements in common road and sea freight vehicles directly in your browser." />
   <meta name="application-name" content="LoadComposer" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -19,10 +19,10 @@
   <link rel="canonical" href="https://loadcomposer.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LoadComposer" />
-  <meta property="og:title" content="LoadComposer v1.3.1" />
+  <meta property="og:title" content="LoadComposer v1.3.2" />
   <meta property="og:description" content="Browser-based geometric load-planning estimates, with offline and standalone support." />
   <meta property="og:url" content="https://loadcomposer.com/" />
-  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.1.png" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.2.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -3576,7 +3576,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.3.1</span>
+        <span class="app-version">v1.3.2</span>
       </div>
 
       <div class="header-controls">
@@ -4265,10 +4265,14 @@
     const MAX_CUSTOM_NAME_LENGTH = 48;
     const MAX_LAYOUT_RECTS = 500;
     const GEOMETRY_EPSILON = 0.0001;
+    const MIXED_ORIENTATION_SEARCH_MAX_ITEMS = 36;
+    const MIXED_ORIENTATION_SEARCH_MAX_STATES = 24000;
+    const MIXED_ORIENTATION_SEARCH_CACHE_LIMIT = 96;
 
     let lastResults = [];
     let mixedRowCounter = 0;
     let selectedContainerId = "20dc";
+    const mixedOrientationSearchCache = new Map();
 
     const els = {
       loadMode: document.getElementById("loadMode"),
@@ -4534,6 +4538,216 @@
       };
     }
 
+    function mixedOrientationFreeSignature(freeRects) {
+      return freeRects
+        .slice()
+        .sort((a, b) => (
+          a.y - b.y || a.x - b.x || a.w - b.w || a.h - b.h
+        ))
+        .map(rect => `${rect.x},${rect.y},${rect.w},${rect.h}`)
+        .join("|");
+    }
+
+    function compareMixedOrientationStates(a, b, container) {
+      const aEnvelopeArea = a.usedLength * a.usedWidth;
+      const bEnvelopeArea = b.usedLength * b.usedWidth;
+      if (aEnvelopeArea !== bEnvelopeArea) return aEnvelopeArea - bEnvelopeArea;
+      if (a.usedWidth !== b.usedWidth) return a.usedWidth - b.usedWidth;
+      if (a.usedLength !== b.usedLength) return a.usedLength - b.usedLength;
+
+      const aLargestFreeArea = Math.max(
+        0,
+        ...a.freeRects.map(rect => rect.w * rect.h)
+      );
+      const bLargestFreeArea = Math.max(
+        0,
+        ...b.freeRects.map(rect => rect.w * rect.h)
+      );
+      if (aLargestFreeArea !== bLargestFreeArea) {
+        return bLargestFreeArea - aLargestFreeArea;
+      }
+      if (a.freeRects.length !== b.freeRects.length) {
+        return a.freeRects.length - b.freeRects.length;
+      }
+
+      const aUnusedEdge = (container.innerLength - a.usedLength) +
+        (container.innerWidth - a.usedWidth);
+      const bUnusedEdge = (container.innerLength - b.usedLength) +
+        (container.innerWidth - b.usedWidth);
+      if (aUnusedEdge !== bUnusedEdge) return aUnusedEdge - bUnusedEdge;
+      return mixedOrientationFreeSignature(a.freeRects)
+        .localeCompare(mixedOrientationFreeSignature(b.freeRects));
+    }
+
+    function mixedOrientationAreaUpperBound(container, pallet, gap) {
+      const footprintArea = (pallet.length + gap) * (pallet.width + gap);
+      if (footprintArea <= 0) return 0;
+      const virtualArea = (container.innerLength + gap) * (container.innerWidth + gap);
+      return Math.min(
+        MAX_LAYOUT_RECTS,
+        Math.floor((virtualArea + GEOMETRY_EPSILON) / footprintArea)
+      );
+    }
+
+    function buildMixedOrientationSearchLayout(
+      container,
+      pallet,
+      gap,
+      baselineCount,
+      baselineType
+    ) {
+      if (pallet.length === pallet.width) return null;
+
+      const targetCount = mixedOrientationAreaUpperBound(container, pallet, gap);
+      if (
+        targetCount <= baselineCount ||
+        targetCount > MIXED_ORIENTATION_SEARCH_MAX_ITEMS
+      ) {
+        return null;
+      }
+
+      const cacheKey = [
+        container.innerLength,
+        container.innerWidth,
+        pallet.length,
+        pallet.width,
+        gap,
+        baselineCount,
+        baselineType
+      ].join("|");
+      if (mixedOrientationSearchCache.has(cacheKey)) {
+        return mixedOrientationSearchCache.get(cacheKey);
+      }
+
+      const virtualLength = container.innerLength + gap;
+      const virtualWidth = container.innerWidth + gap;
+      const orientations = [
+        {
+          rotated: false,
+          length: pallet.length,
+          width: pallet.width,
+          footprintLength: pallet.length + gap,
+          footprintWidth: pallet.width + gap
+        },
+        {
+          rotated: true,
+          length: pallet.width,
+          width: pallet.length,
+          footprintLength: pallet.width + gap,
+          footprintWidth: pallet.length + gap
+        }
+      ];
+      const beamWidth = targetCount <= 16 ? 64 : 32;
+      let generatedStates = 0;
+      let searchBoundReached = false;
+      let beam = [{
+        rects: [],
+        freeRects: [{ x: 0, y: 0, w: virtualLength, h: virtualWidth }],
+        usedLength: 0,
+        usedWidth: 0
+      }];
+
+      searchDepth:
+      for (let depth = 0; depth < targetCount; depth++) {
+        const next = [];
+        const seen = new Set();
+
+        for (const state of beam) {
+          for (const free of state.freeRects) {
+            for (const orientation of orientations) {
+              if (
+                orientation.footprintLength > free.w + GEOMETRY_EPSILON ||
+                orientation.footprintWidth > free.h + GEOMETRY_EPSILON
+              ) {
+                continue;
+              }
+
+              const rect = {
+                x: free.x,
+                y: free.y,
+                length: orientation.length,
+                width: orientation.width,
+                rotated: orientation.rotated
+              };
+              const footprint = {
+                x: rect.x,
+                y: rect.y,
+                w: orientation.footprintLength,
+                h: orientation.footprintWidth
+              };
+              const candidate = {
+                rects: [...state.rects, rect],
+                freeRects: splitFreeRectangles(state.freeRects, footprint),
+                usedLength: Math.max(state.usedLength, rect.x + rect.length),
+                usedWidth: Math.max(state.usedWidth, rect.y + rect.width)
+              };
+              const signature = mixedOrientationFreeSignature(candidate.freeRects);
+
+              if (seen.has(signature)) continue;
+              seen.add(signature);
+              next.push(candidate);
+              generatedStates += 1;
+
+              if (generatedStates >= MIXED_ORIENTATION_SEARCH_MAX_STATES) {
+                searchBoundReached = true;
+                break;
+              }
+            }
+            if (searchBoundReached) break;
+          }
+          if (searchBoundReached) break;
+        }
+
+        if (!next.length) break;
+        next.sort((a, b) => compareMixedOrientationStates(a, b, container));
+        beam = next.slice(0, beamWidth);
+        if (searchBoundReached) break searchDepth;
+      }
+
+      const bestState = beam
+        .slice()
+        .sort((a, b) => (
+          b.rects.length - a.rects.length ||
+          compareMixedOrientationStates(a, b, container)
+        ))[0];
+      let layout = null;
+
+      if (bestState && bestState.rects.length > baselineCount) {
+        const rects = bestState.rects.map((rect, layoutIndex) => ({
+          ...rect,
+          layoutIndex
+        }));
+        const orientationCounts = { normal: 0, rotated: 0 };
+        rects.forEach(rect => {
+          orientationCounts[rect.rotated ? "rotated" : "normal"] += 1;
+        });
+        layout = {
+          mode: "single",
+          type: baselineType || "righe con rotazione",
+          count: rects.length,
+          rects,
+          materializedCount: rects.length,
+          truncated: false,
+          orientationCounts,
+          usedLength: bestState.usedLength,
+          usedWidth: bestState.usedWidth,
+          searchStats: {
+            method: "bounded deterministic mixed-orientation beam",
+            targetCount,
+            beamWidth,
+            generatedStates,
+            searchBoundReached
+          }
+        };
+      }
+
+      if (mixedOrientationSearchCache.size >= MIXED_ORIENTATION_SEARCH_CACHE_LIMIT) {
+        mixedOrientationSearchCache.clear();
+      }
+      mixedOrientationSearchCache.set(cacheKey, layout);
+      return layout;
+    }
+
     function singleLayoutCandidates(container, pallet, gap, rotationMode, lockedOrientation) {
       const isSquare = pallet.length === pallet.width;
       const canRotate = rotationMode === "auto" && !isSquare;
@@ -4552,6 +4766,19 @@
           buildRows(container, pallet, gap, forcedOrientation, false),
           buildColumns(container, pallet, gap, forcedOrientation, false)
         );
+      }
+
+      if (canRotate) {
+        const rankedTraditional = rankSingleCapacityLayouts(candidates.filter(Boolean));
+        const traditionalBest = rankedTraditional[0] || emptySingleLayout();
+        const mixedOrientationLayout = buildMixedOrientationSearchLayout(
+          container,
+          pallet,
+          gap,
+          traditionalBest.count,
+          traditionalBest.type
+        );
+        if (mixedOrientationLayout) candidates.push(mixedOrientationLayout);
       }
 
       return candidates.filter(Boolean);
@@ -4580,12 +4807,142 @@
       };
     }
 
+    function frontCompactionPairSeparated(a, b, gap) {
+      return (
+        a.x + a.length + gap <= b.x + GEOMETRY_EPSILON ||
+        b.x + b.length + gap <= a.x + GEOMETRY_EPSILON ||
+        a.y + a.width + gap <= b.y + GEOMETRY_EPSILON ||
+        b.y + b.width + gap <= a.y + GEOMETRY_EPSILON
+      );
+    }
+
+    function frontCompactionCandidateValid(container, sourceLayout, rects, gap) {
+      if (
+        !container ||
+        !sourceLayout ||
+        !Array.isArray(sourceLayout.rects) ||
+        !Array.isArray(rects) ||
+        rects.length !== sourceLayout.rects.length ||
+        !Number.isFinite(container.innerLength) ||
+        !Number.isFinite(container.innerWidth) ||
+        !Number.isFinite(gap) ||
+        gap < 0
+      ) {
+        return false;
+      }
+
+      for (let index = 0; index < rects.length; index += 1) {
+        const before = sourceLayout.rects[index];
+        const after = rects[index];
+        const beforeKeys = Object.keys(before).sort();
+        const afterKeys = Object.keys(after).sort();
+
+        if (JSON.stringify(beforeKeys) !== JSON.stringify(afterKeys)) return false;
+        if (!beforeKeys.every(key => (
+          key === "x" || Object.is(before[key], after[key])
+        ))) return false;
+        if (![after.x, after.y, after.length, after.width].every(Number.isFinite)) {
+          return false;
+        }
+        if (
+          after.x < -GEOMETRY_EPSILON ||
+          after.y < -GEOMETRY_EPSILON ||
+          after.x > before.x + GEOMETRY_EPSILON ||
+          after.x + after.length > container.innerLength + GEOMETRY_EPSILON ||
+          after.y + after.width > container.innerWidth + GEOMETRY_EPSILON
+        ) {
+          return false;
+        }
+      }
+
+      for (let first = 0; first < rects.length; first += 1) {
+        for (let second = first + 1; second < rects.length; second += 1) {
+          if (!frontCompactionPairSeparated(rects[first], rects[second], gap)) {
+            return false;
+          }
+        }
+      }
+
+      return true;
+    }
+
+    function frontCompactSelectedLayout(container, layout, gap) {
+      if (!layout || !Array.isArray(layout.rects) || layout.rects.length === 0) {
+        return layout;
+      }
+
+      const rects = layout.rects.map(rect => ({ ...rect }));
+      const order = rects
+        .map((rect, sourceIndex) => ({ rect, sourceIndex }))
+        .sort((a, b) => (
+          a.rect.x - b.rect.x ||
+          a.rect.y - b.rect.y ||
+          a.sourceIndex - b.sourceIndex
+        ));
+      const compacted = [];
+
+      for (const entry of order) {
+        const rect = entry.rect;
+        let targetX = 0;
+
+        for (const prior of compacted) {
+          const separatedTransversely = (
+            prior.y + prior.width + gap <= rect.y + GEOMETRY_EPSILON ||
+            rect.y + rect.width + gap <= prior.y + GEOMETRY_EPSILON
+          );
+          if (!separatedTransversely) {
+            targetX = Math.max(targetX, prior.x + prior.length + gap);
+          }
+        }
+
+        if (targetX > rect.x + GEOMETRY_EPSILON) return layout;
+        rect.x = targetX;
+        compacted.push(rect);
+      }
+
+      if (!frontCompactionCandidateValid(container, layout, rects, gap)) {
+        return layout;
+      }
+
+      const usedLength = rects.length
+        ? Math.max(...rects.map(rect => rect.x + rect.length))
+        : 0;
+      const usedWidth = rects.length
+        ? Math.max(...rects.map(rect => rect.y + rect.width))
+        : 0;
+      const normalized = {
+        ...layout,
+        rects,
+        usedLength,
+        usedWidth
+      };
+
+      if (layout.score && typeof layout.score === "object") {
+        const placedArea = rects.reduce(
+          (sum, rect) => sum + rect.length * rect.width,
+          0
+        );
+        const boundingArea = Math.max(1, usedLength * usedWidth);
+        normalized.score = {
+          ...layout.score,
+          placedCount: rects.length,
+          placedArea,
+          compactness: placedArea / boundingArea,
+          usedLength,
+          usedWidth
+        };
+      }
+
+      return normalized;
+    }
+
     function bestLayout(container, pallet, gap, rotationMode, lockedOrientation) {
       const rankedCandidates = rankSingleCapacityLayouts(
         singleLayoutCandidates(container, pallet, gap, rotationMode, lockedOrientation)
       );
 
-      return rankedCandidates[0] || emptySingleLayout();
+      const selected = rankedCandidates[0] || emptySingleLayout();
+      return frontCompactSelectedLayout(container, selected, gap);
     }
 
     function compactRectSubset(rects, targetCount) {
@@ -4736,9 +5093,10 @@
           return a.candidateIndex - b.candidateIndex;
         });
 
-      return ranked.length
+      const selected = ranked.length
         ? ranked[0].layout
         : emptySingleLayout("nessun carico piazzabile");
+      return frontCompactSelectedLayout(container, selected, gap);
     }
 
     function assignLoadStacks(layout, quantity, layers) {
@@ -7173,7 +7531,9 @@
 
     function bestMixedLayout(container, items, gap) {
       const homogeneous = homogeneousMixedLayout(container, items, gap);
-      if (homogeneous) return homogeneous;
+      if (homogeneous) {
+        return frontCompactSelectedLayout(container, homogeneous, gap);
+      }
 
       const orderings = [];
       const byAreaDesc = items.slice().sort((a, b) => (b.length * b.width) - (a.length * a.width));
@@ -7234,7 +7594,7 @@
         }
       });
 
-      return best || {
+      const selected = best || {
         mode: "mixed",
         type: "pallet misti euristico",
         count: 0,
@@ -7246,6 +7606,7 @@
         usedWidth: 0,
         orderingName: "nessuno"
       };
+      return frontCompactSelectedLayout(container, selected, gap);
     }
 
     function showValidationMessage(errors) {

@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const VERSION = "1.3.1";
+const VERSION = "1.3.2";
 const TEMPLATE = path.join(ROOT, "scripts", "templates", "404.html");
 const OUTPUT = path.join(ROOT, "site", "404.html");
 const COMPACT_BRAND_DAY = path.join(ROOT, "site", "assets", "loadcomposer-mobile-day.svg");

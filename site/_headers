@@ -125,6 +125,21 @@
 /downloads/loadcomposer-v1.3.1-standalone.zip.sha256
   Cache-Control: public, max-age=31536000, immutable
 
+/downloads/loadcomposer-v1.3.2-standalone.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/downloads/loadcomposer-v1.3.2-standalone
+  Cache-Control: public, max-age=31536000, immutable
+
+/downloads/loadcomposer-v1.3.2-standalone.html.sha256
+  Cache-Control: public, max-age=31536000, immutable
+
+/downloads/loadcomposer-v1.3.2-standalone.zip
+  Cache-Control: public, max-age=31536000, immutable
+
+/downloads/loadcomposer-v1.3.2-standalone.zip.sha256
+  Cache-Control: public, max-age=31536000, immutable
+
 /legal/LICENSE
   Content-Type: text/plain; charset=utf-8
   Content-Disposition: inline

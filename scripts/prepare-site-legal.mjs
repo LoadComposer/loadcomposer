@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, "..");
 const LEGAL_DIR = path.join(ROOT, "site", "legal");
-const VERSION = "1.3.1";
+const VERSION = "1.3.2";
 const TEMPLATE = path.join(ROOT, "scripts", "templates", "legal-index.html");
 const OUTPUT = path.join(LEGAL_DIR, "index.html");
 const COMPACT_BRAND_DAY = path.join(ROOT, "site", "assets", "loadcomposer-mobile-day.svg");
