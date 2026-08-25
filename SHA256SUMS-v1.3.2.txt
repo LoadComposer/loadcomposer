@@ -26,7 +26,7 @@ a45815a34896c783c5b99a21760799048296fd75d2a65866b2a46602cc66f1bc  CHANGELOG-v1.3
 58aa3f29aa69ccc5f9d244fef334d7f684f42769494be39d93989f8fc7c26921  CODE_OF_CONDUCT.md
 59444c07f5f7286d1e032211b7e933aa9ab357e6d0a66e7c1022e673c3a6e3c4  COMMERCIAL-LICENSING.md
 c28da69410b49c60da85e09eeeba7d621979aeef7757c17c51d5eae3ff4e5a23  CONTRIBUTING.md
-b5e8e6a9fc795ec9dbf6692f9df83d5710ebf978b39b232ea70c3396c8790afa  DELIVERY_MANIFEST-v1.3.2.txt
+3ea68f26f818d032f68f4c3b95b96f1a1d654f1b12db956172937486eb02fa0b  DELIVERY_MANIFEST-v1.3.2.txt
 e14ef0d5dc8b35ac3516f476c572657cec434678bc4d7311298fa98beac927db  DELTA_AUDIT-v1.3.1.md
 984493757ae729730aabf7bb6b2a03f6f2dc9c36546e74c102a6663c535f0c3d  LEGAL_AUDIT-v1.0.0.md
 2eca2826ed62d14353f09e395c95bde6ee24c51b2ff27ea75c886f4e87c1598c  LEGAL_AUDIT-v1.1.0.md
@@ -55,7 +55,7 @@ b49283e51f47b3a05ce229427c5e538cee119659bceb5619c4b781ef4f1bf16b  RELEASE_REPORT
 41f27656c06f55d1ad059f9ec7738bb2ee884270ccae86b0f4d6316a93efe076  SECURITY.md
 b5c578150237e3a131d9c580f0126c582543f3dbe3a930af7bd73aa6a61fb4bf  SEMANTIC_PRINT_POLISH_AUDIT-v1.3.0.md
 4f105fd541975cb4e17bcc7648da77b0fd020aeb34823be60581f0dd18cb1345  STATUS_SYSTEM_FINALIZATION_REPORT-v1.3.0.md
-60bff34f67fedd7373256dfb0492dcf2014dd3763b6c1188308dff7433c60f3d  TEST_BUNDLE_README-v1.3.2.md
+63bcc2ab8396cc17f0b93d6e9d100169e19bf07e869399df147e7d1b2f481a64  TEST_BUNDLE_README-v1.3.2.md
 b908e35be920563781c6c83a54eb3f688c575e9f4bc5070dba8e11f1c7e216e8  TEST_REPORT-v1.0.0.md
 31053edce651d7dbc41616c7f663f0aeb2b3ed1ee4c8f82e0fdb0d90e94972fa  TEST_REPORT-v1.1.0.md
 da8fc66b0f30432acd43282d09f85a2e758a01d8b30553d950333d83ab75277b  TEST_REPORT-v1.2.0.md
@@ -173,10 +173,10 @@ ffc6228b7892449729b3571cfcea9ed4e9d8e38ee4ac77ff82f6128cad5caa5a  linear-units-r
 1bb1a888032ee9abd5f25a02a3760a9762e9211612cb4458d2d7ca056eecb681  linear-units-responsive-v1.3.1/linear-units-mixed-it-390x844.png
 f1589f7a5971243572c54071ce9cdc05e0bace5adbed3a1e691122f4ab6055c6  loadcomposer-v1.3.0-test-bundle.zip
 95cb7edf0f580f70999f64761b21360e8526c7ddae51d356b2503c4e7292aad6  loadcomposer-v1.3.1-test-bundle.zip
-df530b5c535f432f6c2b787a385639696d07748bd2bef7763f85f2882b9f1a41  loadcomposer-v1.3.2-test-bundle.zip
+4fb5df2a3cda53301e9c5972080ae9695822484683674d6d4fc2a10a6dbf420a  loadcomposer-v1.3.2-test-bundle.zip
 5745e995afcfe22b3fdf0d7d9f9c1bcaedd61599c38fa854fc10af2fc41cf36b  mixed-regression-results-v1.3.2.json
 5d6604e6885ae2a97c9d2a3004952c1dbeeb01e41615a908f4179ea6e91a46f9  package-lock.json
-f95433f97b0677c9f84e59482abd22769d8398d0b39a53ab5a829788f61b3f58  package.json
+60165a0419c9825958f599c7599d85b3f193d50ce0b1134e2b9fcc1165a8757c  package.json
 de556afe2aff150a144230344d0a2cbbf55f8da838894c68a59433d0eb15ab85  print-evidence-v1.2.1/pdf-renders/ramp-mixed-bw-1.png
 123bc95f4e12443e3d511edcaf9571045bf7b45a4452400eedd9903afe669dac  print-evidence-v1.2.1/pdf-renders/ramp-mixed-color-1.png
 a90c098be4605d2ef0a408bac2e8d02a4a871de06738d033e4446903d9b61798  print-evidence-v1.2.1/pdf-renders/ramp-mixed-eight-types-bw-1.png
@@ -1226,6 +1226,7 @@ d1583a86689b537d70b55b6427c0ab8ddd63fb5672c45c57d9bf3aeb857c9f2b  tests/cache-po
 b61ede8a5c7bc74786e55b1fee656d5467fad3412aeea7aeb54b960b1a8dc572  tests/check-js-syntax-i18n-v1.0.0.mjs
 891fc94a8adb8c180ba2c085d0ca0ffe6bf1f677135f44885d1b6a370f4d7b17  tests/check-js-syntax-v1.0.0.mjs
 50fa7654b75010f424d39d40cea50faf907e432c7cced684af3f447e1924721e  tests/check-node-syntax-v1.0.0.mjs
+9b3ec3bb0ca04f58a1820023fb08cb569c10befcaff3f3e0f80830f8846f5584  tests/ci-wiring-v1.3.2.mjs
 c82dc93b9836a143205ba83beaaa72d299747052fcd3c6d0c6c894b1c46d4e15  tests/community-feedback-v1.1.0.mjs
 7ba4718f57026c8798cdc345ac4a80dbe24b55c2ae59b5598707cd417972ec27  tests/community-feedback-v1.2.0.mjs
 6d78af4633aafa86987c7a4d4e79be444edba7dda234944350544895dfabb062  tests/community-scope-audit-v1.1.0.mjs
@@ -1361,6 +1362,7 @@ accb5741445e7589719a8a9f7694c4da23806158acd2280b692e4df2e40e1d87  tests/geometry
 8be9893bb93523da7b53c3e228bab8501713640607eb5008a7ac07107fd1ada1  tests/geometry-reference-oracle-v1.3.2.mjs
 7142053a256be52429ff0079cdc653e3164945541d97e23c01ea76b80c68098c  tests/geometry-visual-v1.3.2.mjs
 61577f33480bff16b45ace6de3adc8284f51b2a71e02456eba3590e514fae3ec  tests/hardening-audit-v1.0.0.mjs
+bbd0b40f7fa439a7245620608d424b3a10ec63d05a6eab1c0dee4a7d0ff8da27  tests/hardening-audit-v1.3.2.mjs
 eea031e9af3a93056b6c49607da37cf3c98cb8a7bf6f60309fa08b73d3ea49be  tests/historical-evidence-audit-v1.3.2.mjs
 f3ecd17778d50766f625189d5e2d7d693d3b957ed47f4a14bcdd0727e209421e  tests/i18n-catalogs-v1.0.0.mjs
 978651a3196adbc8ddf8bf26eec00ee66f6815c9a2e4fd0253b5ae647c3306bb  tests/i18n-identical-allowlist-v1.0.0.json

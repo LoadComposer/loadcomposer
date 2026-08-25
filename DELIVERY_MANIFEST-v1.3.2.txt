@@ -5,11 +5,11 @@ Accepted input candidate: loadcomposer-v1.3.1-delivery.zip
 Accepted input SHA-256: 095bedc1c39b8a10969aad594f11cdb07a34cb8294822ef303b16ed91da52709
 License: LCCL-1.0 (LicenseRef-LoadComposer-Community-1.0)
 Copyright: Copyright © 2026 Marco Pernigotti
-Payload files before controls: 1714
-Final file count: 1716
-Manifest entries: 1714 files
+Payload files before controls: 1716
+Final file count: 1718
+Manifest entries: 1716 files
 Manifest exclusions: DELIVERY_MANIFEST-v1.3.2.txt, SHA256SUMS-v1.3.2.txt
-Checksum-list coverage: 1715 files
+Checksum-list coverage: 1717 files
 Checksum-list exclusion: SHA256SUMS-v1.3.2.txt
 
 SHA-256  BYTES  PATH
@@ -69,7 +69,7 @@ b49283e51f47b3a05ce229427c5e538cee119659bceb5619c4b781ef4f1bf16b  6585  RELEASE_
 41f27656c06f55d1ad059f9ec7738bb2ee884270ccae86b0f4d6316a93efe076  1503  SECURITY.md
 b5c578150237e3a131d9c580f0126c582543f3dbe3a930af7bd73aa6a61fb4bf  4483  SEMANTIC_PRINT_POLISH_AUDIT-v1.3.0.md
 4f105fd541975cb4e17bcc7648da77b0fd020aeb34823be60581f0dd18cb1345  6843  STATUS_SYSTEM_FINALIZATION_REPORT-v1.3.0.md
-60bff34f67fedd7373256dfb0492dcf2014dd3763b6c1188308dff7433c60f3d  1382  TEST_BUNDLE_README-v1.3.2.md
+63bcc2ab8396cc17f0b93d6e9d100169e19bf07e869399df147e7d1b2f481a64  1955  TEST_BUNDLE_README-v1.3.2.md
 b908e35be920563781c6c83a54eb3f688c575e9f4bc5070dba8e11f1c7e216e8  3114  TEST_REPORT-v1.0.0.md
 31053edce651d7dbc41616c7f663f0aeb2b3ed1ee4c8f82e0fdb0d90e94972fa  3414  TEST_REPORT-v1.1.0.md
 da8fc66b0f30432acd43282d09f85a2e758a01d8b30553d950333d83ab75277b  6105  TEST_REPORT-v1.2.0.md
@@ -187,10 +187,10 @@ ffc6228b7892449729b3571cfcea9ed4e9d8e38ee4ac77ff82f6128cad5caa5a  476837  linear
 1bb1a888032ee9abd5f25a02a3760a9762e9211612cb4458d2d7ca056eecb681  472940  linear-units-responsive-v1.3.1/linear-units-mixed-it-390x844.png
 f1589f7a5971243572c54071ce9cdc05e0bace5adbed3a1e691122f4ab6055c6  14803356  loadcomposer-v1.3.0-test-bundle.zip
 95cb7edf0f580f70999f64761b21360e8526c7ddae51d356b2503c4e7292aad6  56328613  loadcomposer-v1.3.1-test-bundle.zip
-df530b5c535f432f6c2b787a385639696d07748bd2bef7763f85f2882b9f1a41  9353266  loadcomposer-v1.3.2-test-bundle.zip
+4fb5df2a3cda53301e9c5972080ae9695822484683674d6d4fc2a10a6dbf420a  9358919  loadcomposer-v1.3.2-test-bundle.zip
 5745e995afcfe22b3fdf0d7d9f9c1bcaedd61599c38fa854fc10af2fc41cf36b  475  mixed-regression-results-v1.3.2.json
 5d6604e6885ae2a97c9d2a3004952c1dbeeb01e41615a908f4179ea6e91a46f9  28001  package-lock.json
-f95433f97b0677c9f84e59482abd22769d8398d0b39a53ab5a829788f61b3f58  6370  package.json
+60165a0419c9825958f599c7599d85b3f193d50ce0b1134e2b9fcc1165a8757c  6611  package.json
 de556afe2aff150a144230344d0a2cbbf55f8da838894c68a59433d0eb15ab85  231720  print-evidence-v1.2.1/pdf-renders/ramp-mixed-bw-1.png
 123bc95f4e12443e3d511edcaf9571045bf7b45a4452400eedd9903afe669dac  144777  print-evidence-v1.2.1/pdf-renders/ramp-mixed-color-1.png
 a90c098be4605d2ef0a408bac2e8d02a4a871de06738d033e4446903d9b61798  228446  print-evidence-v1.2.1/pdf-renders/ramp-mixed-eight-types-bw-1.png
@@ -1240,6 +1240,7 @@ d1583a86689b537d70b55b6427c0ab8ddd63fb5672c45c57d9bf3aeb857c9f2b  3826  tests/ca
 b61ede8a5c7bc74786e55b1fee656d5467fad3412aeea7aeb54b960b1a8dc572  1036  tests/check-js-syntax-i18n-v1.0.0.mjs
 891fc94a8adb8c180ba2c085d0ca0ffe6bf1f677135f44885d1b6a370f4d7b17  1197  tests/check-js-syntax-v1.0.0.mjs
 50fa7654b75010f424d39d40cea50faf907e432c7cced684af3f447e1924721e  877  tests/check-node-syntax-v1.0.0.mjs
+9b3ec3bb0ca04f58a1820023fb08cb569c10befcaff3f3e0f80830f8846f5584  3134  tests/ci-wiring-v1.3.2.mjs
 c82dc93b9836a143205ba83beaaa72d299747052fcd3c6d0c6c894b1c46d4e15  6885  tests/community-feedback-v1.1.0.mjs
 7ba4718f57026c8798cdc345ac4a80dbe24b55c2ae59b5598707cd417972ec27  7471  tests/community-feedback-v1.2.0.mjs
 6d78af4633aafa86987c7a4d4e79be444edba7dda234944350544895dfabb062  5217  tests/community-scope-audit-v1.1.0.mjs
@@ -1375,6 +1376,7 @@ accb5741445e7589719a8a9f7694c4da23806158acd2280b692e4df2e40e1d87  6969  tests/ge
 8be9893bb93523da7b53c3e228bab8501713640607eb5008a7ac07107fd1ada1  10101  tests/geometry-reference-oracle-v1.3.2.mjs
 7142053a256be52429ff0079cdc653e3164945541d97e23c01ea76b80c68098c  6841  tests/geometry-visual-v1.3.2.mjs
 61577f33480bff16b45ace6de3adc8284f51b2a71e02456eba3590e514fae3ec  12377  tests/hardening-audit-v1.0.0.mjs
+bbd0b40f7fa439a7245620608d424b3a10ec63d05a6eab1c0dee4a7d0ff8da27  12446  tests/hardening-audit-v1.3.2.mjs
 eea031e9af3a93056b6c49607da37cf3c98cb8a7bf6f60309fa08b73d3ea49be  2688  tests/historical-evidence-audit-v1.3.2.mjs
 f3ecd17778d50766f625189d5e2d7d693d3b957ed47f4a14bcdd0727e209421e  9385  tests/i18n-catalogs-v1.0.0.mjs
 978651a3196adbc8ddf8bf26eec00ee66f6815c9a2e4fd0253b5ae647c3306bb  7107  tests/i18n-identical-allowlist-v1.0.0.json
