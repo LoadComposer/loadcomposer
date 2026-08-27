@@ -70,7 +70,10 @@ async function serve(root) {
 
 function markdownHeadings(file) {
   return fs.readFileSync(file, "utf8").split(/\r?\n/)
-    .map(line => line.match(/^#{1,6}\s+(.+?)\s*$/)?.[1])
+    .map(line => {
+      const match = line.match(/^(#{1,6})\s+(.+?)\s*$/);
+      return match ? { level: match[1].length, text: match[2] } : null;
+    })
     .filter(Boolean);
 }
 
@@ -168,13 +171,39 @@ try {
   assert.equal(document.querySelectorAll("[data-license-panel]").length, 2);
   for (const [code, filename] of [["en", "LICENSE"], ["it", "LICENSE.it.md"]]) {
     const panel = document.querySelector(`[data-license-panel="${code}"]`);
-    const toc = [...panel.querySelectorAll(".toc a")].map(link => link.textContent.trim());
-    assert.deepEqual(toc, markdownHeadings(path.join(ROOT, filename)), `${filename}: TOC from source headings`);
-    assert.ok([...panel.querySelectorAll(".toc a")].every(link => link.getAttribute("href").startsWith(`#${code}-`)));
+    const [documentTitle, ...sectionHeadings] = markdownHeadings(path.join(ROOT, filename));
+    assert.equal(documentTitle.level, 1, `${filename}: canonical document title level`);
+    assert.ok(sectionHeadings.every(heading => heading.level > documentTitle.level), `${filename}: canonical section levels`);
+    const tocList = panel.querySelector(".toc > .toc-list");
+    assert.equal(tocList?.tagName, "UL", `${filename}: TOC must not add ordered-list numbering`);
+    const tocLinks = [...tocList.querySelectorAll("a")];
+    const toc = tocLinks.map(link => link.textContent.trim());
+    assert.deepEqual(toc, sectionHeadings.map(heading => heading.text), `${filename}: TOC from canonical section headings`);
+    assert.equal(toc.includes(documentTitle.text), false, `${filename}: document title must be absent from TOC`);
+    assert.equal(toc.length, 18, `${filename}: numbered section count`);
+    assert.equal(toc.some(text => /^0\.\s/.test(text)), false, `${filename}: artificial zero entry`);
+    for (const [index, link] of tocLinks.entries()) {
+      const expected = sectionHeadings[index].text;
+      const sectionNumber = expected.match(/^(\d+)\.\s/);
+      assert.ok(sectionNumber, `${filename}: canonical numbered heading expected: ${expected}`);
+      assert.equal(Number(sectionNumber[1]), index + 1, `${filename}: canonical section order`);
+      assert.equal((link.textContent.match(/\b\d+\.\s/g) || []).length, 1, `${filename}: section number must appear exactly once`);
+      assert.equal(/^\d+\.\s+\d+\.\s/.test(link.textContent.trim()), false, `${filename}: duplicated TOC numbering`);
+      const href = link.getAttribute("href");
+      assert.ok(href.startsWith(`#${code}-`), `${filename}: stable anchor prefix`);
+      const target = document.getElementById(href.slice(1));
+      assert.ok(target, `${filename}: TOC target missing: ${href}`);
+      assert.equal(target.textContent.trim(), expected, `${filename}: canonical heading text rewritten`);
+    }
     const prose = panel.querySelector(".prose");
     assert.equal(prose.lang, code);
     assert.equal(prose.dataset.sourceFile, filename);
     assert.equal(prose.dataset.sourceSha256, LEGAL_HASHES[filename]);
+    const bodyTitle = [...prose.querySelectorAll("h2, h3, h4, h5, h6")]
+      .find(heading => heading.textContent.trim() === documentTitle.text);
+    assert.ok(bodyTitle, `${filename}: document title missing from body`);
+    assert.equal(bodyTitle.tagName, "H2", `${filename}: document title hierarchy changed`);
+    assert.ok(tocLinks.every(link => document.getElementById(link.getAttribute("href").slice(1))?.tagName === "H3"), `${filename}: section heading hierarchy changed`);
     const expectedBreak = hardBreakExpectation(path.join(ROOT, filename));
     const metadataParagraph = [...prose.querySelectorAll("p")].find(paragraph =>
       paragraph.textContent.includes(expectedBreak.before) && paragraph.textContent.includes(expectedBreak.after)
@@ -279,7 +308,10 @@ try {
             shellWidth: shell.width,
             articleWidth: article.width,
             proseWidth: proseRect.width,
-            duplicateIds: [...document.querySelectorAll("[id]")].length - new Set([...document.querySelectorAll("[id]")].map(element => element.id)).size
+            duplicateIds: [...document.querySelectorAll("[id]")].length - new Set([...document.querySelectorAll("[id]")].map(element => element.id)).size,
+            tocListStyle: document.querySelector(".toc-list") ? getComputedStyle(document.querySelector(".toc-list")).listStyleType : null,
+            documentTitleSize: prose.querySelector("h2") ? parseFloat(getComputedStyle(prose.querySelector("h2")).fontSize) : null,
+            sectionHeadingSize: prose.querySelector("h3") ? parseFloat(getComputedStyle(prose.querySelector("h3")).fontSize) : null
           };
         });
         assert.deepEqual(browserErrors, [], `${pageInfo.route}/${theme.preference}/${viewport.name}: browser errors`);
@@ -294,6 +326,10 @@ try {
         assert.ok(state.articleWidth <= 1100.5);
         assert.ok(state.proseWidth <= 900);
         assert.equal(state.duplicateIds, 0);
+        if (pageInfo.route === "license") {
+          assert.equal(state.tocListStyle, "none", `${pageInfo.route}/${theme.preference}/${viewport.name}: automatic TOC marker`);
+          assert.ok(state.documentTitleSize > state.sectionHeadingSize, `${pageInfo.route}/${theme.preference}/${viewport.name}: document-title hierarchy`);
+        }
 
         const shouldCapture =
           (theme.preference === "light" && viewport.name === "desktop") ||

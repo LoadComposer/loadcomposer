@@ -154,7 +154,7 @@
       border-radius: 14px;
     }
     .toc h2 { margin: 0 0 10px; font-size: 18px; line-height: 1.25; }
-    .toc ol { columns: 2 280px; column-gap: 34px; margin: 0; padding-left: 22px; }
+    .toc .toc-list { columns: 2 280px; column-gap: 34px; margin: 0; padding-left: 22px; list-style: none; }
     .toc li { break-inside: avoid; margin: 5px 0; }
     .toc a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
     .prose { width: min(88ch, 100%); margin: 0 auto; color: var(--text); overflow-wrap: anywhere; }
@@ -227,7 +227,7 @@
       main { padding-top: 30px; }
       .article-shell { padding: 25px 18px; border-radius: 16px; }
       .toc { padding: 16px 17px; }
-      .toc ol { columns: 1; }
+      .toc .toc-list { columns: 1; }
       .prose ul, .prose ol { padding-left: 23px; }
     }
     @media (max-width: 350px) {
@@ -360,8 +360,7 @@
 <p class="legal-note" data-license-note="it" data-i18n="legal.notice.translation" hidden>LICENSE.it.md is provided only as an informational Italian translation.</p>
 <section class="document-panel" data-license-panel="en"><nav class="toc" aria-labelledby="tocTitleEn">
 <h2 id="tocTitleEn" data-i18n="legal.page.tableOfContents">Table of contents</h2>
-<ol>
-<li><a href="#en-loadcomposer-community-license-1-0">LoadComposer Community License 1.0</a></li>
+<ul class="toc-list">
 <li><a href="#en-1-definitions">1. Definitions</a></li>
 <li><a href="#en-2-acceptance-and-scope">2. Acceptance and scope</a></li>
 <li><a href="#en-3-free-permitted-uses">3. Free permitted uses</a></li>
@@ -380,7 +379,7 @@
 <li><a href="#en-16-compliance-and-third-party-rights">16. Compliance and third-party rights</a></li>
 <li><a href="#en-17-governing-law-and-venue">17. Governing law and venue</a></li>
 <li><a href="#en-18-entire-terms-severability-and-versions">18. Entire terms, severability, and versions</a></li>
-</ol>
+</ul>
 </nav><div class="prose" lang="en" data-source-file="LICENSE" data-source-sha256="07c8360fa6840b24641b2e9443c82d8001ad8c4d32bc58f43fb04f64a1d080d0"><h2 id="en-loadcomposer-community-license-1-0">LoadComposer Community License 1.0</h2>
 <p>Identifier: <code>LCCL-1.0</code><br>
 SPDX expression for package metadata: <code>LicenseRef-LoadComposer-Community-1.0</code></p>
@@ -452,8 +451,7 @@ SPDX expression for package metadata: <code>LicenseRef-LoadComposer-Community-1.
 <p>This text has not been certified by a standards body and is not represented as having been reviewed by a lawyer. Professional legal advice should be obtained before relying on it for commercial distribution, consumer-facing services, employment policies, or material transactions.</p></div></section>
 <section class="document-panel" data-license-panel="it" hidden><nav class="toc" aria-labelledby="tocTitleIt">
 <h2 id="tocTitleIt" data-i18n="legal.page.tableOfContents">Table of contents</h2>
-<ol>
-<li><a href="#it-loadcomposer-community-license-1-0-traduzione-italiana-di-cortesia">LoadComposer Community License 1.0 — traduzione italiana di cortesia</a></li>
+<ul class="toc-list">
 <li><a href="#it-1-definizioni">1. Definizioni</a></li>
 <li><a href="#it-2-accettazione-e-ambito">2. Accettazione e ambito</a></li>
 <li><a href="#it-3-usi-gratuiti-consentiti">3. Usi gratuiti consentiti</a></li>
@@ -472,7 +470,7 @@ SPDX expression for package metadata: <code>LicenseRef-LoadComposer-Community-1.
 <li><a href="#it-16-conformita-e-diritti-di-terzi">16. Conformità e diritti di terzi</a></li>
 <li><a href="#it-17-legge-applicabile-e-foro">17. Legge applicabile e foro</a></li>
 <li><a href="#it-18-intero-accordo-separabilita-e-versioni">18. Intero accordo, separabilità e versioni</a></li>
-</ol>
+</ul>
 </nav><div class="prose" lang="it" data-source-file="LICENSE.it.md" data-source-sha256="8b47a93a962da349910972a6125ec7ce1997b07fb951e2c316b10c187c875266"><h2 id="it-loadcomposer-community-license-1-0-traduzione-italiana-di-cortesia">LoadComposer Community License 1.0 — traduzione italiana di cortesia</h2>
 <p>Identificatore: <code>LCCL-1.0</code><br>
 Espressione SPDX per i metadati del pacchetto: <code>LicenseRef-LoadComposer-Community-1.0</code></p>

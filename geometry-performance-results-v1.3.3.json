@@ -24,135 +24,135 @@
       "id": "canonical-20dc-industrial",
       "baseline": {
         "samples": 11,
-        "medianMs": 0.10282499999993888,
-        "minMs": 0.09405199999991964,
-        "maxMs": 0.12322599999993145,
+        "medianMs": 0.10148200000003271,
+        "minMs": 0.09672499999987849,
+        "maxMs": 0.1452679999999873,
         "resultCount": 9
       },
       "currentWarm": {
         "samples": 11,
-        "medianMs": 0.13987100000008468,
-        "minMs": 0.11564499999985856,
-        "maxMs": 0.17464400000017122,
+        "medianMs": 0.13974000000007436,
+        "minMs": 0.1139810000001944,
+        "maxMs": 0.2363350000000537,
         "resultCount": 10
       },
       "currentCold": {
         "samples": 11,
-        "medianMs": 4.523159999999962,
-        "minMs": 3.93797799999993,
-        "maxMs": 5.34051199999999,
+        "medianMs": 5.033110000000079,
+        "minMs": 3.8784159999997883,
+        "maxMs": 10.924931000000015,
         "resultCount": 10
       },
-      "warmMedianRatio": 1.3602820325812577,
-      "coldMedianRatio": 43.988913202068076
+      "warmMedianRatio": 1.3769929642698144,
+      "coldMedianRatio": 49.59608600538476
     },
     {
       "id": "common-20dc-euro",
       "baseline": {
         "samples": 11,
-        "medianMs": 0.0968159999999898,
-        "minMs": 0.0921490000000631,
-        "maxMs": 0.12059100000010403,
+        "medianMs": 0.09429099999988466,
+        "minMs": 0.09051599999997961,
+        "maxMs": 0.3161240000001726,
         "resultCount": 11
       },
       "currentWarm": {
         "samples": 11,
-        "medianMs": 0.05974000000014712,
-        "minMs": 0.05640500000004067,
-        "maxMs": 0.16614100000015242,
+        "medianMs": 0.07466199999998935,
+        "minMs": 0.07025600000019949,
+        "maxMs": 0.17626500000005763,
         "resultCount": 11
       },
       "currentCold": {
         "samples": 11,
-        "medianMs": 4.452152999999953,
-        "minMs": 4.26185600000008,
-        "maxMs": 5.592190999999957,
+        "medianMs": 4.780981000000111,
+        "minMs": 4.347621000000117,
+        "maxMs": 6.228555999999799,
         "resultCount": 11
       },
-      "warmMedianRatio": 0.6170467691306541,
-      "coldMedianRatio": 45.985715171050465
+      "warmMedianRatio": 0.7918253067639613,
+      "coldMedianRatio": 50.70453171570944
     },
     {
       "id": "larger-45hc-euro",
       "baseline": {
         "samples": 11,
-        "medianMs": 0.37843999999995503,
-        "minMs": 0.11549399999989873,
-        "maxMs": 0.4856119999999464,
+        "medianMs": 0.4081029999999828,
+        "minMs": 0.123986000000059,
+        "maxMs": 0.4779680000001463,
         "resultCount": 27
       },
       "currentWarm": {
         "samples": 11,
-        "medianMs": 0.1646690000000035,
-        "minMs": 0.13713699999993878,
-        "maxMs": 0.2577689999998256,
+        "medianMs": 0.17844799999988936,
+        "minMs": 0.14112199999999575,
+        "maxMs": 0.6313290000000507,
         "resultCount": 27
       },
       "currentCold": {
         "samples": 11,
-        "medianMs": 9.420943999999963,
-        "minMs": 8.784424999999828,
-        "maxMs": 11.307389000000057,
+        "medianMs": 9.33631400000013,
+        "minMs": 8.583863999999949,
+        "maxMs": 9.596084000000019,
         "resultCount": 27
       },
-      "warmMedianRatio": 0.43512577951596837,
-      "coldMedianRatio": 24.894154951910693
+      "warmMedianRatio": 0.4372621617579309,
+      "coldMedianRatio": 22.877347140306547
     },
     {
       "id": "high-quantity-500",
       "baseline": {
         "samples": 11,
-        "medianMs": 41.83625800000004,
-        "minMs": 39.759686999999985,
-        "maxMs": 47.725492999999915,
+        "medianMs": 40.250680999999986,
+        "minMs": 37.880170000000135,
+        "maxMs": 45.57616000000007,
         "resultCount": 500
       },
       "currentWarm": {
         "samples": 11,
-        "medianMs": 41.06652200000008,
-        "minMs": 38.96156400000018,
-        "maxMs": 49.01952899999969,
+        "medianMs": 41.21541000000025,
+        "minMs": 39.76377900000034,
+        "maxMs": 45.87130399999978,
         "resultCount": 500
       },
       "currentCold": {
         "samples": 11,
-        "medianMs": 40.93123299999979,
-        "minMs": 38.87853900000027,
-        "maxMs": 58.214988000000176,
+        "medianMs": 39.93550700000014,
+        "minMs": 39.09678799999983,
+        "maxMs": 42.31771600000002,
         "resultCount": 500
       },
-      "warmMedianRatio": 0.9816012225567601,
-      "coldMedianRatio": 0.9783674486374893
+      "warmMedianRatio": 1.0239680168392744,
+      "coldMedianRatio": 0.992169722544574
     },
     {
       "id": "mixed-groups-realistic",
       "baseline": {
         "samples": 11,
-        "medianMs": 0.8043529999999919,
-        "minMs": 0.6815470000001369,
-        "maxMs": 1.0693320000000313,
+        "medianMs": 0.7121000000001914,
+        "minMs": 0.5836770000000797,
+        "maxMs": 4.709204000000227,
         "resultCount": 26
       },
       "currentWarm": {
         "samples": 11,
-        "medianMs": 0.8232910000001539,
-        "minMs": 0.7198860000003151,
-        "maxMs": 1.3341420000001563,
+        "medianMs": 0.7450690000000577,
+        "minMs": 0.6912579999998343,
+        "maxMs": 5.189855999999963,
         "resultCount": 26
       },
       "currentCold": {
         "samples": 11,
-        "medianMs": 0.6258840000000419,
-        "minMs": 0.5762089999998352,
-        "maxMs": 1.37208899999996,
+        "medianMs": 0.6107969999998204,
+        "minMs": 0.5755439999998089,
+        "maxMs": 4.079156999999668,
         "resultCount": 26
       },
-      "warmMedianRatio": 1.0235443890930502,
-      "coldMedianRatio": 0.778121048843043
+      "warmMedianRatio": 1.0462982727143062,
+      "coldMedianRatio": 0.8577404858863309
     }
   ],
   "worstAbsoluteCase": {
     "id": "high-quantity-500",
-    "currentColdMaxMs": 58.214988000000176
+    "currentColdMaxMs": 42.31771600000002
   }
 }

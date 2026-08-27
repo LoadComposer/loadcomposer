@@ -278,12 +278,15 @@ function renderDocument(source, anchorPrefix) {
 
 function renderToc(headings, labelId) {
   if (!headings.length) return "";
+  const documentTitleLevel = Math.min(...headings.map(heading => heading.level));
+  const sectionHeadings = headings.filter(heading => heading.level > documentTitleLevel);
+  if (!sectionHeadings.length) return "";
   return [
     `<nav class="toc" aria-labelledby="${escapeHtml(labelId)}">`,
     `<h2 id="${escapeHtml(labelId)}" data-i18n="legal.page.tableOfContents">Table of contents</h2>`,
-    "<ol>",
-    ...headings.map(heading => `<li><a href="#${escapeHtml(heading.id)}">${escapeHtml(heading.text)}</a></li>`),
-    "</ol>",
+    '<ul class="toc-list">',
+    ...sectionHeadings.map(heading => `<li><a href="#${escapeHtml(heading.id)}">${escapeHtml(heading.text)}</a></li>`),
+    "</ul>",
     "</nav>"
   ].join("\n");
 }

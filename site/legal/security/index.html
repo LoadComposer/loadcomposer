@@ -154,7 +154,7 @@
       border-radius: 14px;
     }
     .toc h2 { margin: 0 0 10px; font-size: 18px; line-height: 1.25; }
-    .toc ol { columns: 2 280px; column-gap: 34px; margin: 0; padding-left: 22px; }
+    .toc .toc-list { columns: 2 280px; column-gap: 34px; margin: 0; padding-left: 22px; list-style: none; }
     .toc li { break-inside: avoid; margin: 5px 0; }
     .toc a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
     .prose { width: min(88ch, 100%); margin: 0 auto; color: var(--text); overflow-wrap: anywhere; }
@@ -227,7 +227,7 @@
       main { padding-top: 30px; }
       .article-shell { padding: 25px 18px; border-radius: 16px; }
       .toc { padding: 16px 17px; }
-      .toc ol { columns: 1; }
+      .toc .toc-list { columns: 1; }
       .prose ul, .prose ol { padding-left: 23px; }
     }
     @media (max-width: 350px) {
