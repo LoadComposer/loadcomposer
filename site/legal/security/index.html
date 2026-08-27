@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!--
+  LoadComposer
+  Copyright © 2026 Marco Pernigotti.
+  Licensed under the LoadComposer Community License 1.0.
+  SPDX-License-Identifier: LicenseRef-LoadComposer-Community-1.0
+  Official repository: https://github.com/LoadComposer/loadcomposer
+  Provided "AS IS", without warranty.
+-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security policy — LoadComposer</title>
+  <meta name="description" content="LoadComposer supported-version and responsible vulnerability-reporting information." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#F4F5F2" />
+  <link rel="canonical" href="https://loadcomposer.com/legal/security/" />
+  <link rel="icon" href="../../assets/loadcomposer-favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="LoadComposer" />
+  <meta property="og:title" content="Security policy — LoadComposer" />
+  <meta property="og:description" content="LoadComposer supported-version and responsible vulnerability-reporting information." />
+  <meta property="og:url" content="https://loadcomposer.com/legal/security/" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.3.png" />
+  <script id="loadcomposer-legal-document-data" type="application/json">{"schemaVersion":1,"version":"1.3.3","defaultLanguage":"en","languages":[{"code":"it","nativeName":"Italiano","locale":"it-IT"},{"code":"en","nativeName":"English","locale":"en-GB"},{"code":"de","nativeName":"Deutsch","locale":"de-DE"},{"code":"es","nativeName":"Español","locale":"es-ES"},{"code":"fr","nativeName":"Français","locale":"fr-FR"},{"code":"pt","nativeName":"Português","locale":"pt-PT"},{"code":"nl","nativeName":"Nederlands","locale":"nl-NL"}],"catalogs":{"it":{"footer.download":"Download","footer.license":"Licenza","footer.privacy":"Privacy","footer.legalInformation":"Informazioni legali","footer.linksAria":"Collegamenti del piè di pagina","downloads.brandHomeAria":"Torna a LoadComposer","downloads.footer.home":"Torna a LoadComposer","downloads.theme.label":"Tema","downloads.theme.auto":"Automatico","downloads.theme.light":"Chiaro","downloads.theme.dark":"Scuro","downloads.language.label":"Lingua","legal.meta.title":"LoadComposer — Informazioni legali","legal.meta.description":"Licenza, privacy, sicurezza, marchi e licenze commerciali di LoadComposer.","legal.title":"Informazioni legali","legal.notice.controlling":"LICENSE è il testo legale inglese controllante.","legal.notice.translation":"LICENSE.it.md è fornito soltanto come traduzione italiana informativa.","legal.notice.sourceAvailable":"LoadComposer è source-available secondo la sua licenza personalizzata.","legal.documents.title":"Documenti","legal.documents.licenseEnglish":"LoadComposer Community License 1.0 — testo inglese controllante","legal.documents.licenseItalian":"Licenza LoadComposer Community 1.0 — traduzione informativa","legal.documents.notice":"Avvisi e attribuzioni","legal.documents.trademarks":"Norme sui marchi","legal.documents.commercial":"Licenze commerciali","legal.documents.privacy":"Informazioni sulla privacy","legal.documents.security":"Politica di sicurezza","legal.contact.title":"Contatti","legal.contact.prefix":"Licenze commerciali e domande sulla licenza:","legal.footer.repository":"Repository ufficiale","legal.page.breadcrumbAria":"Percorso di navigazione","legal.page.licenseText":"Testo della licenza","legal.page.tableOfContents":"Indice","legal.page.viewSource":"Visualizza il documento sorgente"},"en":{"footer.download":"Download","footer.license":"License","footer.privacy":"Privacy","footer.legalInformation":"Legal information","footer.linksAria":"Footer links","downloads.brandHomeAria":"Return to LoadComposer","downloads.footer.home":"Return to LoadComposer","downloads.theme.label":"Theme","downloads.theme.auto":"Automatic","downloads.theme.light":"Light","downloads.theme.dark":"Dark","downloads.language.label":"Language","legal.meta.title":"LoadComposer — Legal information","legal.meta.description":"LoadComposer license, privacy, security, trademark, and commercial-licensing documents.","legal.title":"Legal information","legal.notice.controlling":"LICENSE is the controlling English legal text.","legal.notice.translation":"LICENSE.it.md is provided only as an informational Italian translation.","legal.notice.sourceAvailable":"LoadComposer is source-available under its custom license.","legal.documents.title":"Documents","legal.documents.licenseEnglish":"LoadComposer Community License 1.0 — controlling English text","legal.documents.licenseItalian":"LoadComposer Community License 1.0 — informational Italian translation","legal.documents.notice":"Notice and attribution","legal.documents.trademarks":"Trademark policy","legal.documents.commercial":"Commercial licensing","legal.documents.privacy":"Privacy information","legal.documents.security":"Security policy","legal.contact.title":"Contact","legal.contact.prefix":"Commercial licensing and license questions:","legal.footer.repository":"Official repository","legal.page.breadcrumbAria":"Breadcrumb","legal.page.licenseText":"License text","legal.page.tableOfContents":"Table of contents","legal.page.viewSource":"View source document"},"de":{"footer.download":"Download","footer.license":"Lizenz","footer.privacy":"Datenschutz","footer.legalInformation":"Rechtliche Hinweise","footer.linksAria":"Links im Fußbereich","downloads.brandHomeAria":"Zurück zu LoadComposer","downloads.footer.home":"Zurück zu LoadComposer","downloads.theme.label":"Design","downloads.theme.auto":"Automatisch","downloads.theme.light":"Hell","downloads.theme.dark":"Dunkel","downloads.language.label":"Sprache","legal.meta.title":"LoadComposer — Rechtliche Informationen","legal.meta.description":"Lizenz-, Datenschutz-, Sicherheits-, Marken- und kommerzielle Lizenzdokumente von LoadComposer.","legal.title":"Rechtliche Informationen","legal.notice.controlling":"LICENSE ist der maßgebliche englische Rechtstext.","legal.notice.translation":"LICENSE.it.md wird nur als informative italienische Übersetzung bereitgestellt.","legal.notice.sourceAvailable":"LoadComposer ist unter seiner individuellen Lizenz quelloffen einsehbar.","legal.documents.title":"Dokumente","legal.documents.licenseEnglish":"LoadComposer Community License 1.0 — maßgeblicher englischer Text","legal.documents.licenseItalian":"LoadComposer Community License 1.0 — informative italienische Übersetzung","legal.documents.notice":"Hinweise und Namensnennungen","legal.documents.trademarks":"Markenrichtlinie","legal.documents.commercial":"Kommerzielle Lizenzierung","legal.documents.privacy":"Datenschutzhinweise","legal.documents.security":"Sicherheitsrichtlinie","legal.contact.title":"Kontakt","legal.contact.prefix":"Kommerzielle Lizenzierung und Fragen zur Lizenz:","legal.footer.repository":"Offizielles Repository","legal.page.breadcrumbAria":"Brotkrümelnavigation","legal.page.licenseText":"Lizenztext","legal.page.tableOfContents":"Inhaltsverzeichnis","legal.page.viewSource":"Quelldokument anzeigen"},"es":{"footer.download":"Descargas","footer.license":"Licencia","footer.privacy":"Privacidad","footer.legalInformation":"Información legal","footer.linksAria":"Enlaces del pie de página","downloads.brandHomeAria":"Volver a LoadComposer","downloads.footer.home":"Volver a LoadComposer","downloads.theme.label":"Tema","downloads.theme.auto":"Automático","downloads.theme.light":"Claro","downloads.theme.dark":"Oscuro","downloads.language.label":"Idioma","legal.meta.title":"LoadComposer — Información legal","legal.meta.description":"Documentos de licencia, privacidad, seguridad, marcas y licencias comerciales de LoadComposer.","legal.title":"Información legal","legal.notice.controlling":"LICENSE es el texto legal inglés que prevalece.","legal.notice.translation":"LICENSE.it.md se ofrece únicamente como traducción informativa al italiano.","legal.notice.sourceAvailable":"LoadComposer tiene su código disponible bajo una licencia personalizada.","legal.documents.title":"Documentos","legal.documents.licenseEnglish":"LoadComposer Community License 1.0 — texto inglés que prevalece","legal.documents.licenseItalian":"LoadComposer Community License 1.0 — traducción informativa al italiano","legal.documents.notice":"Avisos y atribuciones","legal.documents.trademarks":"Política de marcas","legal.documents.commercial":"Licencias comerciales","legal.documents.privacy":"Información de privacidad","legal.documents.security":"Política de seguridad","legal.contact.title":"Contacto","legal.contact.prefix":"Licencias comerciales y consultas sobre la licencia:","legal.footer.repository":"Repositorio oficial","legal.page.breadcrumbAria":"Ruta de navegación","legal.page.licenseText":"Texto de la licencia","legal.page.tableOfContents":"Índice","legal.page.viewSource":"Ver documento fuente"},"fr":{"footer.download":"Téléchargement","footer.license":"Licence","footer.privacy":"Confidentialité","footer.legalInformation":"Informations légales","footer.linksAria":"Liens du pied de page","downloads.brandHomeAria":"Revenir à LoadComposer","downloads.footer.home":"Revenir à LoadComposer","downloads.theme.label":"Thème","downloads.theme.auto":"Automatique","downloads.theme.light":"Clair","downloads.theme.dark":"Sombre","downloads.language.label":"Langue","legal.meta.title":"LoadComposer — Informations légales","legal.meta.description":"Documents de licence, de confidentialité, de sécurité, de marques et de licences commerciales de LoadComposer.","legal.title":"Informations légales","legal.notice.controlling":"LICENSE est le texte juridique anglais qui fait foi.","legal.notice.translation":"LICENSE.it.md est fourni uniquement à titre de traduction italienne informative.","legal.notice.sourceAvailable":"Le code source de LoadComposer est accessible sous sa licence personnalisée.","legal.documents.title":"Documents","legal.documents.licenseEnglish":"LoadComposer Community License 1.0 — texte anglais faisant foi","legal.documents.licenseItalian":"LoadComposer Community License 1.0 — traduction italienne informative","legal.documents.notice":"Mentions et attributions","legal.documents.trademarks":"Politique relative aux marques","legal.documents.commercial":"Licences commerciales","legal.documents.privacy":"Informations sur la confidentialité","legal.documents.security":"Politique de sécurité","legal.contact.title":"Contact","legal.contact.prefix":"Licences commerciales et questions sur la licence :","legal.footer.repository":"Dépôt officiel","legal.page.breadcrumbAria":"Fil d’Ariane","legal.page.licenseText":"Texte de la licence","legal.page.tableOfContents":"Sommaire","legal.page.viewSource":"Afficher le document source"},"pt":{"footer.download":"Transferências","footer.license":"Licença","footer.privacy":"Privacidade","footer.legalInformation":"Informações legais","footer.linksAria":"Ligações do rodapé","downloads.brandHomeAria":"Voltar ao LoadComposer","downloads.footer.home":"Voltar ao LoadComposer","downloads.theme.label":"Tema","downloads.theme.auto":"Automático","downloads.theme.light":"Claro","downloads.theme.dark":"Escuro","downloads.language.label":"Idioma","legal.meta.title":"LoadComposer — Informações legais","legal.meta.description":"Documentos de licença, privacidade, segurança, marcas e licenciamento comercial do LoadComposer.","legal.title":"Informações legais","legal.notice.controlling":"LICENSE é o texto jurídico inglês prevalecente.","legal.notice.translation":"LICENSE.it.md é fornecido apenas como tradução informativa para italiano.","legal.notice.sourceAvailable":"O código-fonte do LoadComposer está disponível sob a sua licença personalizada.","legal.documents.title":"Documentos","legal.documents.licenseEnglish":"LoadComposer Community License 1.0 — texto inglês prevalecente","legal.documents.licenseItalian":"LoadComposer Community License 1.0 — tradução informativa para italiano","legal.documents.notice":"Avisos e atribuições","legal.documents.trademarks":"Política de marcas","legal.documents.commercial":"Licenciamento comercial","legal.documents.privacy":"Informações de privacidade","legal.documents.security":"Política de segurança","legal.contact.title":"Contacto","legal.contact.prefix":"Licenciamento comercial e questões sobre a licença:","legal.footer.repository":"Repositório oficial","legal.page.breadcrumbAria":"Navegação estrutural","legal.page.licenseText":"Texto da licença","legal.page.tableOfContents":"Índice","legal.page.viewSource":"Ver documento de origem"},"nl":{"footer.download":"Download","footer.license":"Licentie","footer.privacy":"Privacy","footer.legalInformation":"Juridische informatie","footer.linksAria":"Links in de voettekst","downloads.brandHomeAria":"Terug naar LoadComposer","downloads.footer.home":"Terug naar LoadComposer","downloads.theme.label":"Thema","downloads.theme.auto":"Automatisch","downloads.theme.light":"Licht","downloads.theme.dark":"Donker","downloads.language.label":"Taal","legal.meta.title":"LoadComposer — Juridische informatie","legal.meta.description":"Documenten over de licentie, privacy, beveiliging, merken en commerciële licenties van LoadComposer.","legal.title":"Juridische informatie","legal.notice.controlling":"LICENSE is de bepalende Engelse juridische tekst.","legal.notice.translation":"LICENSE.it.md wordt alleen aangeboden als informatieve Italiaanse vertaling.","legal.notice.sourceAvailable":"De broncode van LoadComposer is beschikbaar onder de aangepaste licentie.","legal.documents.title":"Documenten","legal.documents.licenseEnglish":"LoadComposer Community License 1.0 — bepalende Engelse tekst","legal.documents.licenseItalian":"LoadComposer Community License 1.0 — informatieve Italiaanse vertaling","legal.documents.notice":"Kennisgevingen en naamsvermeldingen","legal.documents.trademarks":"Merkenbeleid","legal.documents.commercial":"Commerciële licenties","legal.documents.privacy":"Privacy-informatie","legal.documents.security":"Beveiligingsbeleid","legal.contact.title":"Contact","legal.contact.prefix":"Commerciële licenties en vragen over de licentie:","legal.footer.repository":"Officiële repository","legal.page.breadcrumbAria":"Broodkruimelnavigatie","legal.page.licenseText":"Licentietekst","legal.page.tableOfContents":"Inhoudsopgave","legal.page.viewSource":"Brondocument bekijken"}},"page":{"route":"security","titleKey":"legal.documents.security","fallbackTitle":"Security policy","sources":["SECURITY.md"],"licenseSelector":false}}</script>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themes = new Set(["auto", "light", "dark"]);
+      let preference = "auto";
+      try {
+        const stored = localStorage.getItem("loadcomposer.theme");
+        if (themes.has(stored)) preference = stored;
+      } catch (_) {}
+      const systemDark = Boolean(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      const resolved = preference === "auto" ? (systemDark ? "dark" : "light") : preference;
+      root.dataset.themePreference = preference;
+      root.dataset.theme = resolved;
+      root.style.colorScheme = resolved;
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #F4F5F2;
+      --surface: #FFFFFF;
+      --surface-soft: #F1F5F3;
+      --text: #13272F;
+      --muted: #52656C;
+      --border: #D2DCD8;
+      --accent: #0D7C75;
+      --accent-hover: #096C66;
+      --accent-soft: #DDF3F0;
+      --focus: #007C73;
+      --shadow: 0 1px 2px rgba(16, 36, 46, .05), 0 8px 24px rgba(16, 36, 46, .07);
+    }
+    :root[data-theme="dark"] {
+      --bg: #050D16;
+      --surface: #0D1B27;
+      --surface-soft: #122330;
+      --text: #E2E9EC;
+      --muted: #AAB7BE;
+      --border: #263B4A;
+      --accent: #3BC0B5;
+      --accent-hover: #4ACBC0;
+      --accent-soft: #102F33;
+      --focus: #60D5CB;
+      --shadow: 0 1px 0 rgba(255, 255, 255, .035), 0 12px 28px rgba(0, 0, 0, .16);
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 0; scroll-behavior: smooth; background: var(--bg); }
+    html:not([data-i18n-ready]) body { visibility: hidden; }
+    body {
+      margin: 0;
+      min-width: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.62;
+    }
+    a { color: inherit; }
+    button, select { font: inherit; }
+    .shell { width: min(1100px, 100%); margin: 0 auto; padding: 20px 22px 44px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: inline-flex; min-width: 0; align-items: center; color: var(--text); text-decoration: none; }
+    .brand-logo { display: none; width: 170px; max-width: 100%; height: auto; }
+    .brand-logo svg { display: block; width: 100%; height: auto; }
+    :root[data-theme="light"] .brand-logo.day,
+    :root[data-theme="dark"] .brand-logo.night { display: block; }
+    .controls { display: flex; flex-wrap: wrap; align-items: end; justify-content: flex-end; gap: 10px; }
+    .control { display: grid; gap: 4px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .control select {
+      min-height: 44px;
+      max-width: min(340px, 100%);
+      padding: 8px 34px 8px 12px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    main { padding-top: 38px; }
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 9px;
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .breadcrumb a { min-height: 36px; display: inline-flex; align-items: center; text-underline-offset: 3px; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb [aria-current="page"] { color: var(--text); font-weight: 750; }
+    .article-shell {
+      min-width: 0;
+      padding: clamp(24px, 4.5vw, 52px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .article-head { width: min(88ch, 100%); margin: 0 auto 30px; }
+    h1 { margin: 0; font-size: clamp(32px, 5vw, 50px); line-height: 1.08; letter-spacing: -.035em; overflow-wrap: anywhere; }
+    .license-control { width: min(88ch, 100%); display: grid; gap: 8px; margin: 0 auto 26px; }
+    .license-control label { color: var(--muted); font-size: 13px; font-weight: 800; }
+    .license-control select {
+      width: min(660px, 100%);
+      min-height: 48px;
+      padding: 9px 38px 9px 13px;
+      color: var(--text);
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      font-weight: 750;
+    }
+    .legal-note {
+      width: min(88ch, 100%);
+      margin: 0 auto 28px;
+      padding: 14px 17px;
+      color: var(--text);
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+    }
+    .document-panel[hidden] { display: none; }
+    .toc {
+      width: min(88ch, 100%);
+      margin: 0 auto 34px;
+      padding: 18px 20px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .toc h2 { margin: 0 0 10px; font-size: 18px; line-height: 1.25; }
+    .toc ol { columns: 2 280px; column-gap: 34px; margin: 0; padding-left: 22px; }
+    .toc li { break-inside: avoid; margin: 5px 0; }
+    .toc a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
+    .prose { width: min(88ch, 100%); margin: 0 auto; color: var(--text); overflow-wrap: anywhere; }
+    .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+      scroll-margin-top: 18px;
+      line-height: 1.22;
+      letter-spacing: -.012em;
+      overflow-wrap: anywhere;
+    }
+    .prose h2 { margin: 42px 0 15px; font-size: clamp(25px, 3.2vw, 32px); }
+    .prose h3 { margin: 34px 0 12px; font-size: 22px; }
+    .prose h4, .prose h5, .prose h6 { margin: 28px 0 10px; font-size: 18px; }
+    .prose > :first-child { margin-top: 0; }
+    .prose p { margin: 0 0 17px; }
+    .prose ul, .prose ol { margin: 0 0 20px; padding-left: 28px; }
+    .prose li { margin: 7px 0; padding-left: 3px; }
+    .prose li > ul, .prose li > ol { margin: 7px 0 0; }
+    .prose a, .source-links a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
+    .prose code {
+      padding: .12em .36em;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: .92em;
+      word-break: break-word;
+    }
+    .prose pre {
+      max-width: 100%;
+      overflow-x: auto;
+      padding: 15px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    .source-links {
+      width: min(88ch, 100%);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin: 42px auto 0;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .source-links a { min-height: 38px; display: inline-flex; align-items: center; }
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 18px;
+      margin-top: 44px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { min-height: 36px; display: inline-flex; align-items: center; padding: 5px; text-underline-offset: 3px; }
+    footer a:hover, .breadcrumb a:hover, .source-links a:hover { color: var(--accent-hover); }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    @media (max-width: 760px) {
+      .shell { padding: 16px 14px 34px; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .controls { width: 100%; justify-content: stretch; }
+      .control { flex: 1 1 135px; min-width: 0; }
+      .control select { width: 100%; max-width: none; }
+      main { padding-top: 30px; }
+      .article-shell { padding: 25px 18px; border-radius: 16px; }
+      .toc { padding: 16px 17px; }
+      .toc ol { columns: 1; }
+      .prose ul, .prose ol { padding-left: 23px; }
+    }
+    @media (max-width: 350px) {
+      .shell { padding-inline: 10px; }
+      .brand-logo { width: 150px; }
+      .controls { display: grid; grid-template-columns: 1fr; }
+      h1 { font-size: 32px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Back to LoadComposer" data-i18n-aria-label="downloads.brandHomeAria">
+        <span class="brand-logo day" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="746.224" height="175.996" viewBox="20 26.5538 746.224 175.996" role="img" aria-label="LoadComposer mobile day logo without payoff">
+  <!--FINAL OUTLINED SVG — no font or external resource dependency.-->
+  <g id="legal-day-lc-symbol" transform="matrix(0.55,0,0,0.55,-8.9,-24.3)" data-source="LoadComposer-logo-pack-v1">
+    <path id="legal-day-lc-block-01" style="fill:#10242e" d="m 85.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-02" style="fill:#10242e" d="m 292.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-03" style="fill:#10242e" d="m 361.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-04" style="fill:#10242e" d="m 85.5,195 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-05" style="fill:#10242e" d="m 292.5,195 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-06" style="fill:#10242e" d="m 85.5,264 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-07" style="fill:#10242e" d="m 292.5,264 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-08" style="fill:#10242e" d="m 85.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-09" style="fill:#10242e" d="m 154.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-10" style="fill:#10242e" d="m 223.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-11" style="fill:#10242e" d="m 292.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-12" style="fill:#10242e" d="m 361.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-block-13" style="fill:#10242e" d="m 430.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-day-lc-rotated-module" transform="rotate(45,454.05,153)" style="fill:#2bafa3" d="m 434.54999,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+  </g>
+  <g id="legal-day-lc-wordmark">
+    <g aria-label="Load" id="legal-day-lc-wordmark-load" style="fill:#10242e">
+      <path d="m 299.94,107.008 h 20.844 V 115 H 290.256 V 62.944 h 9.684 z" id="legal-day-path41"/>
+      <path d="m 339.17608,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="legal-day-path43"/>
+      <path d="m 391.08411,115 h -3.996 q -1.26,0 -1.98,-0.36 -0.72,-0.396 -1.08,-1.548 l -0.792,-2.628 q -1.404,1.26 -2.772,2.232 -1.332,0.936 -2.772,1.584 -1.44,0.648 -3.06,0.972 -1.62,0.324 -3.6,0.324 -2.34,0 -4.32,-0.612 -1.98,-0.648 -3.42,-1.908 -1.404,-1.26 -2.196,-3.132 -0.792,-1.872 -0.792,-4.356 0,-2.088 1.08,-4.104 1.116,-2.052 3.672,-3.672 2.556,-1.656 6.804,-2.736 4.248,-1.08 10.548,-1.224 v -2.16 q 0,-3.708 -1.584,-5.472 -1.548,-1.8 -4.536,-1.8 -2.16,0 -3.6,0.504 -1.44,0.504 -2.52,1.152 -1.044,0.612 -1.944,1.116 -0.9,0.504 -1.98,0.504 -0.9,0 -1.548,-0.468 -0.648,-0.468 -1.044,-1.152 l -1.62,-2.844 q 6.372,-5.832 15.372,-5.832 3.24,0 5.76,1.08 2.556,1.044 4.32,2.952 1.764,1.872 2.664,4.5 0.936,2.628 0.936,5.76 z m -17.28,-5.544 q 1.368,0 2.52,-0.252 1.152,-0.252 2.16,-0.756 1.044,-0.504 1.98,-1.224 0.972,-0.756 1.944,-1.764 v -6.228 q -3.888,0.18 -6.516,0.684 -2.592,0.468 -4.176,1.224 -1.584,0.756 -2.268,1.764 -0.648,1.008 -0.648,2.196 0,2.34 1.368,3.348 1.404,1.008 3.636,1.008 z" id="legal-day-path45"/>
+      <path d="m 423.62415,115 q -1.728,0 -2.268,-1.62 l -0.72,-3.564 q -1.152,1.296 -2.412,2.34 -1.26,1.044 -2.736,1.8 -1.44,0.756 -3.132,1.152 -1.656,0.432 -3.6,0.432 -3.024,0 -5.544,-1.26 -2.52,-1.26 -4.356,-3.636 -1.8,-2.412 -2.808,-5.94 -0.972,-3.528 -0.972,-8.064 0,-4.104 1.116,-7.632 1.116,-3.528 3.204,-6.12 2.088,-2.592 5.004,-4.032 2.916,-1.476 6.552,-1.476 3.096,0 5.292,1.008 2.196,0.972 3.924,2.628 V 61.504 h 8.892 V 115 Z m -11.844,-6.516 q 2.772,0 4.716,-1.152 1.944,-1.152 3.672,-3.276 v -16.56 q -1.512,-1.836 -3.312,-2.592 -1.764,-0.756 -3.816,-0.756 -2.016,0 -3.672,0.756 -1.62,0.756 -2.772,2.304 -1.116,1.512 -1.728,3.888 -0.612,2.34 -0.612,5.544 0,3.24 0.504,5.508 0.54,2.232 1.512,3.672 0.972,1.404 2.376,2.052 1.404,0.612 3.132,0.612 z" id="legal-day-path47"/>
+    </g>
+    <g aria-label="Composer" id="legal-day-lc-wordmark-composer" style="fill:#0d7c75">
+      <path d="m 481.04,102.724 q 0.792,0 1.368,0.612 l 3.816,4.14 q -3.168,3.924 -7.812,6.012 -4.608,2.088 -11.088,2.088 -5.796,0 -10.44,-1.98 -4.608,-1.98 -7.884,-5.508 -3.276,-3.528 -5.04,-8.424 -1.728,-4.896 -1.728,-10.692 0,-5.868 1.944,-10.728 1.944,-4.896 5.472,-8.424 3.528,-3.528 8.424,-5.472 4.932,-1.98 10.872,-1.98 5.796,0 10.116,1.872 4.356,1.836 7.452,4.896 l -3.24,4.5 q -0.288,0.432 -0.756,0.756 -0.432,0.324 -1.224,0.324 -0.828,0 -1.692,-0.648 -0.864,-0.648 -2.196,-1.404 -1.332,-0.756 -3.384,-1.404 -2.016,-0.648 -5.148,-0.648 -3.672,0 -6.768,1.296 -3.06,1.26 -5.292,3.636 -2.196,2.376 -3.456,5.796 -1.224,3.384 -1.224,7.632 0,4.392 1.224,7.812 1.26,3.42 3.384,5.76 2.124,2.34 5.004,3.6 2.88,1.224 6.192,1.224 1.98,0 3.564,-0.216 1.62,-0.216 2.952,-0.684 1.368,-0.468 2.556,-1.188 1.224,-0.756 2.412,-1.836 0.36,-0.324 0.756,-0.504 0.396,-0.216 0.864,-0.216 z" id="legal-day-path50"/>
+      <path d="m 506.29599,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="legal-day-path52"/>
+      <path d="M 528.96002,115 V 78.064 h 5.436 q 1.728,0 2.268,1.62 l 0.576,2.736 q 0.972,-1.08 2.016,-1.98 1.08,-0.9 2.268,-1.548 1.224,-0.648 2.592,-1.008 1.404,-0.396 3.06,-0.396 3.492,0 5.724,1.908 2.268,1.872 3.384,5.004 0.864,-1.836 2.16,-3.132 1.296,-1.332 2.844,-2.16 1.548,-0.828 3.276,-1.224 1.764,-0.396 3.528,-0.396 3.06,0 5.436,0.936 2.376,0.936 3.996,2.736 1.62,1.8 2.448,4.392 0.864,2.592 0.864,5.94 V 115 h -8.892 V 91.492 q 0,-3.528 -1.548,-5.292 -1.548,-1.8 -4.536,-1.8 -1.368,0 -2.556,0.468 -1.152,0.468 -2.052,1.368 -0.864,0.864 -1.368,2.196 -0.504,1.332 -0.504,3.06 V 115 h -8.928 V 91.492 q 0,-3.708 -1.512,-5.4 -1.476,-1.692 -4.392,-1.692 -1.908,0 -3.6,0.972 -1.656,0.936 -3.096,2.592 V 115 Z" id="legal-day-path54"/>
+      <path d="M 587.08409,127.06 V 78.064 h 5.436 q 0.864,0 1.476,0.396 0.612,0.396 0.792,1.224 l 0.72,3.42 q 2.232,-2.556 5.112,-4.14 2.916,-1.584 6.804,-1.584 3.024,0 5.508,1.26 2.52,1.26 4.32,3.672 1.836,2.376 2.808,5.904 1.008,3.492 1.008,8.028 0,4.14 -1.116,7.668 -1.116,3.528 -3.204,6.12 -2.052,2.592 -5.004,4.068 -2.916,1.44 -6.552,1.44 -3.132,0 -5.328,-0.936 -2.16,-0.972 -3.888,-2.664 v 15.12 z m 17.28,-42.66 q -2.772,0 -4.752,1.188 -1.944,1.152 -3.636,3.276 v 16.56 q 1.512,1.872 3.276,2.628 1.8,0.72 3.852,0.72 2.016,0 3.636,-0.756 1.656,-0.756 2.772,-2.304 1.152,-1.548 1.764,-3.888 0.612,-2.376 0.612,-5.58 0,-3.24 -0.54,-5.472 -0.504,-2.268 -1.476,-3.672 -0.972,-1.404 -2.376,-2.052 -1.368,-0.648 -3.132,-0.648 z" id="legal-day-path56"/>
+      <path d="m 641.06811,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="legal-day-path58"/>
+      <path d="m 685.65615,85.264 q -0.36,0.576 -0.756,0.828 -0.396,0.216 -1.008,0.216 -0.648,0 -1.404,-0.36 -0.72,-0.36 -1.692,-0.792 -0.972,-0.468 -2.232,-0.828 -1.224,-0.36 -2.916,-0.36 -2.628,0 -4.14,1.116 -1.512,1.116 -1.512,2.916 0,1.188 0.756,2.016 0.792,0.792 2.052,1.404 1.296,0.612 2.916,1.116 1.62,0.468 3.312,1.044 1.692,0.576 3.312,1.332 1.62,0.72 2.88,1.872 1.296,1.116 2.052,2.7 0.792,1.584 0.792,3.816 0,2.664 -0.972,4.932 -0.972,2.232 -2.844,3.888 -1.872,1.62 -4.644,2.556 -2.736,0.9 -6.3,0.9 -1.908,0 -3.744,-0.36 -1.8,-0.324 -3.492,-0.936 -1.656,-0.612 -3.096,-1.44 -1.404,-0.828 -2.484,-1.8 l 2.052,-3.384 q 0.396,-0.612 0.936,-0.936 0.54,-0.324 1.368,-0.324 0.828,0 1.548,0.468 0.756,0.468 1.728,1.008 0.972,0.54 2.268,1.008 1.332,0.468 3.348,0.468 1.584,0 2.7,-0.36 1.152,-0.396 1.872,-1.008 0.756,-0.612 1.08,-1.404 0.36,-0.828 0.36,-1.692 0,-1.296 -0.792,-2.124 -0.756,-0.828 -2.052,-1.44 -1.26,-0.612 -2.916,-1.08 -1.62,-0.504 -3.348,-1.08 -1.692,-0.576 -3.348,-1.332 -1.62,-0.792 -2.916,-1.98 -1.26,-1.188 -2.052,-2.916 -0.756,-1.728 -0.756,-4.176 0,-2.268 0.9,-4.32 0.9,-2.052 2.628,-3.564 1.764,-1.548 4.356,-2.448 2.628,-0.936 6.048,-0.936 3.816,0 6.948,1.26 3.132,1.26 5.22,3.312 z" id="legal-day-path60"/>
+      <path d="m 707.96017,77.488 q 3.492,0 6.408,1.116 2.952,1.116 5.076,3.276 2.124,2.124 3.312,5.256 1.188,3.096 1.188,7.092 0,1.008 -0.108,1.692 -0.072,0.648 -0.324,1.044 -0.216,0.36 -0.612,0.54 -0.396,0.144 -1.008,0.144 h -22.824 q 0.396,5.688 3.06,8.352 2.664,2.664 7.056,2.664 2.16,0 3.708,-0.504 1.584,-0.504 2.736,-1.116 1.188,-0.612 2.052,-1.116 0.9,-0.504 1.728,-0.504 0.54,0 0.936,0.216 0.396,0.216 0.684,0.612 l 2.592,3.24 q -1.476,1.728 -3.312,2.916 -1.836,1.152 -3.852,1.872 -1.98,0.684 -4.068,0.972 -2.052,0.288 -3.996,0.288 -3.852,0 -7.164,-1.26 -3.312,-1.296 -5.76,-3.78 -2.448,-2.52 -3.852,-6.192 -1.404,-3.708 -1.404,-8.568 0,-3.78 1.224,-7.092 1.224,-3.348 3.492,-5.796 2.304,-2.484 5.58,-3.924 3.312,-1.44 7.452,-1.44 z m 0.18,6.372 q -3.888,0 -6.084,2.196 -2.196,2.196 -2.808,6.228 h 16.704 q 0,-1.728 -0.468,-3.24 -0.468,-1.548 -1.44,-2.7 -0.972,-1.152 -2.448,-1.8 -1.476,-0.684 -3.456,-0.684 z" id="legal-day-path62"/>
+      <path d="M 728.68016,115 V 78.064 h 5.22 q 1.368,0 1.908,0.504 0.54,0.504 0.72,1.728 l 0.54,4.464 q 1.98,-3.42 4.644,-5.4 2.664,-1.98 5.976,-1.98 2.736,0 4.536,1.26 l -1.152,6.66 q -0.108,0.648 -0.468,0.936 -0.36,0.252 -0.972,0.252 -0.54,0 -1.476,-0.252 -0.936,-0.252 -2.484,-0.252 -2.772,0 -4.752,1.548 -1.98,1.512 -3.348,4.464 V 115 Z" id="legal-day-path64"/>
+    </g>
+  </g>
+  <rect id="legal-day-lc-underline" x="285" y="145" width="132" height="7" rx="3.5" fill="#2BAFA3"/>
+</svg></span>
+        <span class="brand-logo night" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="746.224" height="175.996" viewBox="20 26.5538 746.224 175.996" role="img" aria-label="LoadComposer mobile night logo without payoff">
+  <!--FINAL OUTLINED SVG — no font or external resource dependency.-->
+  <g id="legal-night-lc-symbol" transform="matrix(0.55,0,0,0.55,-8.9,-24.3)" data-source="LoadComposer-logo-pack-v1">
+    <path id="legal-night-lc-block-01" style="fill:#e3ebed" d="m 85.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-02" style="fill:#e3ebed" d="m 292.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-03" style="fill:#e3ebed" d="m 361.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-04" style="fill:#e3ebed" d="m 85.5,195 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-05" style="fill:#e3ebed" d="m 292.5,195 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-06" style="fill:#e3ebed" d="m 85.5,264 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-07" style="fill:#e3ebed" d="m 292.5,264 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-08" style="fill:#e3ebed" d="m 85.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-09" style="fill:#e3ebed" d="m 154.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-10" style="fill:#e3ebed" d="m 223.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-11" style="fill:#e3ebed" d="m 292.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-12" style="fill:#e3ebed" d="m 361.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-block-13" style="fill:#e3ebed" d="m 430.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="legal-night-lc-rotated-module" transform="rotate(45,454.05,153)" style="fill:#35beb2" d="m 434.54999,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+  </g>
+  <g id="legal-night-lc-wordmark">
+    <g aria-label="Load" id="legal-night-lc-wordmark-load" style="fill:#e3ebed">
+      <path d="m 299.94,107.008 h 20.844 V 115 H 290.256 V 62.944 h 9.684 z" id="legal-night-path41"/>
+      <path d="m 339.17608,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="legal-night-path43"/>
+      <path d="m 391.08411,115 h -3.996 q -1.26,0 -1.98,-0.36 -0.72,-0.396 -1.08,-1.548 l -0.792,-2.628 q -1.404,1.26 -2.772,2.232 -1.332,0.936 -2.772,1.584 -1.44,0.648 -3.06,0.972 -1.62,0.324 -3.6,0.324 -2.34,0 -4.32,-0.612 -1.98,-0.648 -3.42,-1.908 -1.404,-1.26 -2.196,-3.132 -0.792,-1.872 -0.792,-4.356 0,-2.088 1.08,-4.104 1.116,-2.052 3.672,-3.672 2.556,-1.656 6.804,-2.736 4.248,-1.08 10.548,-1.224 v -2.16 q 0,-3.708 -1.584,-5.472 -1.548,-1.8 -4.536,-1.8 -2.16,0 -3.6,0.504 -1.44,0.504 -2.52,1.152 -1.044,0.612 -1.944,1.116 -0.9,0.504 -1.98,0.504 -0.9,0 -1.548,-0.468 -0.648,-0.468 -1.044,-1.152 l -1.62,-2.844 q 6.372,-5.832 15.372,-5.832 3.24,0 5.76,1.08 2.556,1.044 4.32,2.952 1.764,1.872 2.664,4.5 0.936,2.628 0.936,5.76 z m -17.28,-5.544 q 1.368,0 2.52,-0.252 1.152,-0.252 2.16,-0.756 1.044,-0.504 1.98,-1.224 0.972,-0.756 1.944,-1.764 v -6.228 q -3.888,0.18 -6.516,0.684 -2.592,0.468 -4.176,1.224 -1.584,0.756 -2.268,1.764 -0.648,1.008 -0.648,2.196 0,2.34 1.368,3.348 1.404,1.008 3.636,1.008 z" id="legal-night-path45"/>
+      <path d="m 423.62415,115 q -1.728,0 -2.268,-1.62 l -0.72,-3.564 q -1.152,1.296 -2.412,2.34 -1.26,1.044 -2.736,1.8 -1.44,0.756 -3.132,1.152 -1.656,0.432 -3.6,0.432 -3.024,0 -5.544,-1.26 -2.52,-1.26 -4.356,-3.636 -1.8,-2.412 -2.808,-5.94 -0.972,-3.528 -0.972,-8.064 0,-4.104 1.116,-7.632 1.116,-3.528 3.204,-6.12 2.088,-2.592 5.004,-4.032 2.916,-1.476 6.552,-1.476 3.096,0 5.292,1.008 2.196,0.972 3.924,2.628 V 61.504 h 8.892 V 115 Z m -11.844,-6.516 q 2.772,0 4.716,-1.152 1.944,-1.152 3.672,-3.276 v -16.56 q -1.512,-1.836 -3.312,-2.592 -1.764,-0.756 -3.816,-0.756 -2.016,0 -3.672,0.756 -1.62,0.756 -2.772,2.304 -1.116,1.512 -1.728,3.888 -0.612,2.34 -0.612,5.544 0,3.24 0.504,5.508 0.54,2.232 1.512,3.672 0.972,1.404 2.376,2.052 1.404,0.612 3.132,0.612 z" id="legal-night-path47"/>
+    </g>
+    <g aria-label="Composer" id="legal-night-lc-wordmark-composer" style="fill:#35beb2">
+      <path d="m 481.04,102.724 q 0.792,0 1.368,0.612 l 3.816,4.14 q -3.168,3.924 -7.812,6.012 -4.608,2.088 -11.088,2.088 -5.796,0 -10.44,-1.98 -4.608,-1.98 -7.884,-5.508 -3.276,-3.528 -5.04,-8.424 -1.728,-4.896 -1.728,-10.692 0,-5.868 1.944,-10.728 1.944,-4.896 5.472,-8.424 3.528,-3.528 8.424,-5.472 4.932,-1.98 10.872,-1.98 5.796,0 10.116,1.872 4.356,1.836 7.452,4.896 l -3.24,4.5 q -0.288,0.432 -0.756,0.756 -0.432,0.324 -1.224,0.324 -0.828,0 -1.692,-0.648 -0.864,-0.648 -2.196,-1.404 -1.332,-0.756 -3.384,-1.404 -2.016,-0.648 -5.148,-0.648 -3.672,0 -6.768,1.296 -3.06,1.26 -5.292,3.636 -2.196,2.376 -3.456,5.796 -1.224,3.384 -1.224,7.632 0,4.392 1.224,7.812 1.26,3.42 3.384,5.76 2.124,2.34 5.004,3.6 2.88,1.224 6.192,1.224 1.98,0 3.564,-0.216 1.62,-0.216 2.952,-0.684 1.368,-0.468 2.556,-1.188 1.224,-0.756 2.412,-1.836 0.36,-0.324 0.756,-0.504 0.396,-0.216 0.864,-0.216 z" id="legal-night-path50"/>
+      <path d="m 506.29599,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="legal-night-path52"/>
+      <path d="M 528.96002,115 V 78.064 h 5.436 q 1.728,0 2.268,1.62 l 0.576,2.736 q 0.972,-1.08 2.016,-1.98 1.08,-0.9 2.268,-1.548 1.224,-0.648 2.592,-1.008 1.404,-0.396 3.06,-0.396 3.492,0 5.724,1.908 2.268,1.872 3.384,5.004 0.864,-1.836 2.16,-3.132 1.296,-1.332 2.844,-2.16 1.548,-0.828 3.276,-1.224 1.764,-0.396 3.528,-0.396 3.06,0 5.436,0.936 2.376,0.936 3.996,2.736 1.62,1.8 2.448,4.392 0.864,2.592 0.864,5.94 V 115 h -8.892 V 91.492 q 0,-3.528 -1.548,-5.292 -1.548,-1.8 -4.536,-1.8 -1.368,0 -2.556,0.468 -1.152,0.468 -2.052,1.368 -0.864,0.864 -1.368,2.196 -0.504,1.332 -0.504,3.06 V 115 h -8.928 V 91.492 q 0,-3.708 -1.512,-5.4 -1.476,-1.692 -4.392,-1.692 -1.908,0 -3.6,0.972 -1.656,0.936 -3.096,2.592 V 115 Z" id="legal-night-path54"/>
+      <path d="M 587.08409,127.06 V 78.064 h 5.436 q 0.864,0 1.476,0.396 0.612,0.396 0.792,1.224 l 0.72,3.42 q 2.232,-2.556 5.112,-4.14 2.916,-1.584 6.804,-1.584 3.024,0 5.508,1.26 2.52,1.26 4.32,3.672 1.836,2.376 2.808,5.904 1.008,3.492 1.008,8.028 0,4.14 -1.116,7.668 -1.116,3.528 -3.204,6.12 -2.052,2.592 -5.004,4.068 -2.916,1.44 -6.552,1.44 -3.132,0 -5.328,-0.936 -2.16,-0.972 -3.888,-2.664 v 15.12 z m 17.28,-42.66 q -2.772,0 -4.752,1.188 -1.944,1.152 -3.636,3.276 v 16.56 q 1.512,1.872 3.276,2.628 1.8,0.72 3.852,0.72 2.016,0 3.636,-0.756 1.656,-0.756 2.772,-2.304 1.152,-1.548 1.764,-3.888 0.612,-2.376 0.612,-5.58 0,-3.24 -0.54,-5.472 -0.504,-2.268 -1.476,-3.672 -0.972,-1.404 -2.376,-2.052 -1.368,-0.648 -3.132,-0.648 z" id="legal-night-path56"/>
+      <path d="m 641.06811,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="legal-night-path58"/>
+      <path d="m 685.65615,85.264 q -0.36,0.576 -0.756,0.828 -0.396,0.216 -1.008,0.216 -0.648,0 -1.404,-0.36 -0.72,-0.36 -1.692,-0.792 -0.972,-0.468 -2.232,-0.828 -1.224,-0.36 -2.916,-0.36 -2.628,0 -4.14,1.116 -1.512,1.116 -1.512,2.916 0,1.188 0.756,2.016 0.792,0.792 2.052,1.404 1.296,0.612 2.916,1.116 1.62,0.468 3.312,1.044 1.692,0.576 3.312,1.332 1.62,0.72 2.88,1.872 1.296,1.116 2.052,2.7 0.792,1.584 0.792,3.816 0,2.664 -0.972,4.932 -0.972,2.232 -2.844,3.888 -1.872,1.62 -4.644,2.556 -2.736,0.9 -6.3,0.9 -1.908,0 -3.744,-0.36 -1.8,-0.324 -3.492,-0.936 -1.656,-0.612 -3.096,-1.44 -1.404,-0.828 -2.484,-1.8 l 2.052,-3.384 q 0.396,-0.612 0.936,-0.936 0.54,-0.324 1.368,-0.324 0.828,0 1.548,0.468 0.756,0.468 1.728,1.008 0.972,0.54 2.268,1.008 1.332,0.468 3.348,0.468 1.584,0 2.7,-0.36 1.152,-0.396 1.872,-1.008 0.756,-0.612 1.08,-1.404 0.36,-0.828 0.36,-1.692 0,-1.296 -0.792,-2.124 -0.756,-0.828 -2.052,-1.44 -1.26,-0.612 -2.916,-1.08 -1.62,-0.504 -3.348,-1.08 -1.692,-0.576 -3.348,-1.332 -1.62,-0.792 -2.916,-1.98 -1.26,-1.188 -2.052,-2.916 -0.756,-1.728 -0.756,-4.176 0,-2.268 0.9,-4.32 0.9,-2.052 2.628,-3.564 1.764,-1.548 4.356,-2.448 2.628,-0.936 6.048,-0.936 3.816,0 6.948,1.26 3.132,1.26 5.22,3.312 z" id="legal-night-path60"/>
+      <path d="m 707.96017,77.488 q 3.492,0 6.408,1.116 2.952,1.116 5.076,3.276 2.124,2.124 3.312,5.256 1.188,3.096 1.188,7.092 0,1.008 -0.108,1.692 -0.072,0.648 -0.324,1.044 -0.216,0.36 -0.612,0.54 -0.396,0.144 -1.008,0.144 h -22.824 q 0.396,5.688 3.06,8.352 2.664,2.664 7.056,2.664 2.16,0 3.708,-0.504 1.584,-0.504 2.736,-1.116 1.188,-0.612 2.052,-1.116 0.9,-0.504 1.728,-0.504 0.54,0 0.936,0.216 0.396,0.216 0.684,0.612 l 2.592,3.24 q -1.476,1.728 -3.312,2.916 -1.836,1.152 -3.852,1.872 -1.98,0.684 -4.068,0.972 -2.052,0.288 -3.996,0.288 -3.852,0 -7.164,-1.26 -3.312,-1.296 -5.76,-3.78 -2.448,-2.52 -3.852,-6.192 -1.404,-3.708 -1.404,-8.568 0,-3.78 1.224,-7.092 1.224,-3.348 3.492,-5.796 2.304,-2.484 5.58,-3.924 3.312,-1.44 7.452,-1.44 z m 0.18,6.372 q -3.888,0 -6.084,2.196 -2.196,2.196 -2.808,6.228 h 16.704 q 0,-1.728 -0.468,-3.24 -0.468,-1.548 -1.44,-2.7 -0.972,-1.152 -2.448,-1.8 -1.476,-0.684 -3.456,-0.684 z" id="legal-night-path62"/>
+      <path d="M 728.68016,115 V 78.064 h 5.22 q 1.368,0 1.908,0.504 0.54,0.504 0.72,1.728 l 0.54,4.464 q 1.98,-3.42 4.644,-5.4 2.664,-1.98 5.976,-1.98 2.736,0 4.536,1.26 l -1.152,6.66 q -0.108,0.648 -0.468,0.936 -0.36,0.252 -0.972,0.252 -0.54,0 -1.476,-0.252 -0.936,-0.252 -2.484,-0.252 -2.772,0 -4.752,1.548 -1.98,1.512 -3.348,4.464 V 115 Z" id="legal-night-path64"/>
+    </g>
+  </g>
+  <rect id="legal-night-lc-underline" x="285" y="145" width="132" height="7" rx="3.5" fill="#35BEB2"/>
+</svg></span>
+      </a>
+      <div class="controls">
+        <label class="control">
+          <span data-i18n="downloads.language.label">Language</span>
+          <select id="languageSelect" aria-label="Language" data-i18n-aria-label="downloads.language.label"></select>
+        </label>
+        <label class="control">
+          <span data-i18n="downloads.theme.label">Theme</span>
+          <select id="themeSelect" aria-label="Theme" data-i18n-aria-label="downloads.theme.label">
+            <option value="auto" data-i18n="downloads.theme.auto">Automatic</option>
+            <option value="light" data-i18n="downloads.theme.light">Light</option>
+            <option value="dark" data-i18n="downloads.theme.dark">Dark</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <nav class="breadcrumb" aria-label="Breadcrumb" data-i18n-aria-label="legal.page.breadcrumbAria">
+        <a href="/" data-i18n="downloads.footer.home">Back to LoadComposer</a>
+        <span aria-hidden="true">/</span>
+        <a href="/legal/" data-i18n="legal.title">Legal information</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page" data-i18n="legal.documents.security">Security policy</span>
+      </nav>
+
+      <article class="article-shell">
+        <header class="article-head">
+          <h1 data-i18n="legal.documents.security">Security policy</h1>
+        </header>
+        <section class="document-panel"><div class="prose" lang="en" data-source-file="SECURITY.md" data-source-sha256="41f27656c06f55d1ad059f9ec7738bb2ee884270ccae86b0f4d6316a93efe076"><h2 id="security-security-policy">Security policy</h2>
+<h3 id="security-supported-version">Supported version</h3>
+<p>Security reports are evaluated for the latest published release candidate and later official releases. Historical alpha artifacts are retained only as test fixtures and are not supported.</p>
+<h3 id="security-reporting-a-vulnerability">Reporting a vulnerability</h3>
+<p>Do not open a public issue for a suspected vulnerability. Send a concise report to <code>security@loadcomposer.com</code> with:</p>
+<ul><li>affected version and execution mode (<code>https://</code>, local server, or standalone <code>file://</code>);</li><li>reproduction steps and a minimal proof of concept;</li><li>expected and observed impact;</li><li>affected browser and operating system; and</li><li>whether any data has been accessed or disclosed.</li></ul>
+<p>If <code>security@loadcomposer.com</code> is unavailable, use <code>licensing@loadcomposer.com</code> and put “SECURITY” in the subject. Do not send secrets, active credentials, unnecessary personal data, or weaponized payloads.</p>
+<p>The project will aim to acknowledge a complete report within seven days, assess severity, and coordinate disclosure. These are targets, not a service-level agreement or bounty promise. Please allow a reasonable remediation period before public disclosure.</p>
+<p>LoadComposer processes entered planning data locally in the browser and has no application backend, but hosting infrastructure may keep ordinary request logs. Reports about unsupported browsers, inaccurate loading estimates, social engineering, or availability of third-party hosting are normally outside the security scope unless they demonstrate a concrete software vulnerability.</p></div></section>
+        <div class="source-links"><a href="/legal/raw/SECURITY.md" target="_blank" rel="noopener noreferrer"><span data-i18n="legal.page.viewSource">View source document</span><span aria-hidden="true">&nbsp;—&nbsp;</span><span>SECURITY.md</span></a></div>
+      </article>
+    </main>
+
+    <footer aria-label="Footer links" data-i18n-aria-label="footer.linksAria">
+      <a href="/" data-i18n="downloads.footer.home">Back to LoadComposer</a>
+      <a href="/downloads/" data-i18n="footer.download">Download</a>
+      <a href="/legal/privacy/" data-i18n="footer.privacy">Privacy</a>
+      <a href="/legal/" data-i18n="footer.legalInformation">Legal information</a>
+      <a href="https://github.com/LoadComposer/loadcomposer" target="_blank" rel="noopener noreferrer" data-i18n="legal.footer.repository">Official repository</a>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+      const data = JSON.parse(document.getElementById("loadcomposer-legal-document-data").textContent);
+      const root = document.documentElement;
+      const languageSelect = document.getElementById("languageSelect");
+      const themeSelect = document.getElementById("themeSelect");
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      const systemTheme = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+      function browserLanguage() {
+        const raw = String((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+        const prefix = raw.split("-")[0];
+        return data.languages.some(item => item.code === prefix) ? prefix : data.defaultLanguage;
+      }
+
+      function savedLanguage() {
+        try {
+          const stored = localStorage.getItem("loadcomposer.language");
+          if (data.languages.some(item => item.code === stored)) return stored;
+        } catch (_) {}
+        return browserLanguage();
+      }
+
+      function translate(code) {
+        const catalog = data.catalogs[code] || data.catalogs[data.defaultLanguage];
+        root.lang = code;
+        root.dir = "ltr";
+        root.dataset.language = code;
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+          if (typeof catalog[key] === "string") element.textContent = catalog[key];
+        });
+        document.querySelectorAll("[data-i18n-aria-label]").forEach(element => {
+          const key = element.dataset.i18nAriaLabel;
+          if (typeof catalog[key] === "string") element.setAttribute("aria-label", catalog[key]);
+        });
+        const localizedTitle = catalog[data.page.titleKey] || data.page.fallbackTitle;
+        const localizedDescription = `${localizedTitle}. ${catalog["legal.meta.description"]}`;
+        document.title = `${localizedTitle} — LoadComposer`;
+        document.querySelector('meta[name="description"]').setAttribute("content", localizedDescription);
+        document.querySelector('meta[property="og:title"]').setAttribute("content", `${localizedTitle} — LoadComposer`);
+        document.querySelector('meta[property="og:description"]').setAttribute("content", localizedDescription);
+        languageSelect.value = code;
+        try { localStorage.setItem("loadcomposer.language", code); } catch (_) {}
+        root.dataset.i18nReady = "true";
+      }
+
+      function resolveTheme(preference) {
+        return preference === "auto" ? (systemTheme && systemTheme.matches ? "dark" : "light") : preference;
+      }
+
+      function setTheme(preference) {
+        root.dataset.themePreference = preference;
+        root.dataset.theme = resolveTheme(preference);
+        root.style.colorScheme = root.dataset.theme;
+        themeMeta.setAttribute("content", root.dataset.theme === "dark" ? "#050D16" : "#F4F5F2");
+        themeSelect.value = preference;
+        try { localStorage.setItem("loadcomposer.theme", preference); } catch (_) {}
+      }
+
+      function requestedLicenseLanguage() {
+        if (!data.page.licenseSelector) return null;
+        const selected = new URL(window.location.href).searchParams.get("lang");
+        return selected === "it" ? "it" : "en";
+      }
+
+      function selectLicenseLanguage(code, updateHistory) {
+        if (!data.page.licenseSelector) return;
+        const selected = code === "it" ? "it" : "en";
+        root.dataset.licenseLanguage = selected;
+        document.querySelectorAll("[data-license-panel]").forEach(panel => {
+          panel.hidden = panel.dataset.licensePanel !== selected;
+        });
+        document.querySelectorAll("[data-license-note]").forEach(note => {
+          note.hidden = note.dataset.licenseNote !== selected;
+        });
+        const selector = document.getElementById("licenseTextSelect");
+        if (selector) selector.value = selected;
+        if (updateHistory) {
+          const url = new URL(window.location.href);
+          url.searchParams.set("lang", selected);
+          history.pushState({ licenseLanguage: selected }, "", url);
+        }
+      }
+
+      data.languages.forEach(language => {
+        const option = document.createElement("option");
+        option.value = language.code;
+        option.textContent = language.nativeName;
+        languageSelect.append(option);
+      });
+      languageSelect.addEventListener("change", () => translate(languageSelect.value));
+      themeSelect.addEventListener("change", () => setTheme(themeSelect.value));
+      if (systemTheme) systemTheme.addEventListener("change", () => {
+        if (root.dataset.themePreference === "auto") setTheme("auto");
+      });
+      const licenseTextSelect = document.getElementById("licenseTextSelect");
+      if (licenseTextSelect) {
+        licenseTextSelect.addEventListener("change", () => selectLicenseLanguage(licenseTextSelect.value, true));
+        window.addEventListener("popstate", () => selectLicenseLanguage(requestedLicenseLanguage(), false));
+        selectLicenseLanguage(requestedLicenseLanguage(), false);
+      }
+      translate(savedLanguage());
+      setTheme(root.dataset.themePreference || "auto");
+    })();
+  </script>
+</body>
+</html>

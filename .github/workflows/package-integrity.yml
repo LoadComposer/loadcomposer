@@ -45,5 +45,6 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run test:hardening
+      - run: npm run test:path-portability
       - run: npm run test:workflow-policy
       - run: git diff --exit-code -- site/downloads site/legal site/assets docs/translations

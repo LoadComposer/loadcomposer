@@ -3,10 +3,10 @@
     "code": "it",
     "name": "Italiano",
     "dir": "ltr",
-    "version": "1.3.2"
+    "version": "1.3.3"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.2",
+    "meta.documentTitle": "LoadComposer v1.3.3",
     "language.preference": "Preferenza lingua",
     "language.auto": "Automatico",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "PER COMPUTER SENZA INTERNET",
     "downloads.offline.body": "Pensata per computer che non hanno accesso a Internet o devono restare offline. È una semplice pagina web standalone e il planner funziona senza connessione. Non si aggiorna automaticamente: per usare nuove funzioni e correzioni devi sostituire manualmente il file con una versione più recente.",
     "downloads.offline.internetNote": "Se hai accesso a Internet, normalmente non serve scaricare questa versione.",
-    "downloads.currentVersion": "LoadComposer v1.3.2",
+    "downloads.currentVersion": "LoadComposer v1.3.3",
     "downloads.offline.htmlButton": "Scarica HTML standalone",
     "downloads.offline.htmlHelp": "Un solo file da copiare sul computer e aprire con il browser.",
     "downloads.offline.zipButton": "Scarica ZIP standalone",
@@ -225,6 +225,10 @@
     "legal.contact.title": "Contatti",
     "legal.contact.prefix": "Licenze commerciali e domande sulla licenza:",
     "legal.footer.repository": "Repository ufficiale",
+    "legal.page.breadcrumbAria": "Percorso di navigazione",
+    "legal.page.licenseText": "Testo della licenza",
+    "legal.page.tableOfContents": "Indice",
+    "legal.page.viewSource": "Visualizza il documento sorgente",
     "404.meta.title": "LoadComposer — Pagina non trovata",
     "404.meta.description": "L'indirizzo LoadComposer richiesto non esiste.",
     "404.title": "Pagina non trovata",

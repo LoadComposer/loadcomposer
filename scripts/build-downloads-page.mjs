@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const VERSION = "1.3.2";
+const VERSION = fs.readFileSync(path.join(ROOT, "VERSION"), "utf8").trim();
 const DOWNLOADS = path.join(ROOT, "site", "downloads");
 const TEMPLATE = path.join(ROOT, "scripts", "templates", "downloads-index.html");
 const OUTPUT = path.join(DOWNLOADS, "index.html");
@@ -92,12 +92,13 @@ const replacements = new Map([
   ["__DOWNLOADS_DATA__", pageData],
   ["__COMPACT_BRAND_DAY__", fs.readFileSync(COMPACT_BRAND_DAY, "utf8").trim()],
   ["__COMPACT_BRAND_NIGHT__", fs.readFileSync(COMPACT_BRAND_NIGHT, "utf8").trim()],
+  ["__VERSION__", VERSION],
   ["__HTML_SHA256__", sha256(HTML_PATH)],
   ["__ZIP_SHA256__", sha256(ZIP_PATH)]
 ]);
 for (const [marker, value] of replacements) {
   if (!output.includes(marker)) throw new Error(`Template marker missing: ${marker}`);
-  output = output.replace(marker, value);
+  output = output.replaceAll(marker, value);
 }
 if (/__[A-Z0-9_]+__/.test(output)) throw new Error("Unresolved download page marker.");
 

@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const VERSION = "1.3.2";
+const VERSION = fs.readFileSync(path.join(ROOT, "VERSION"), "utf8").trim();
 const TEMPLATE = path.join(ROOT, "scripts", "templates", "404.html");
 const OUTPUT = path.join(ROOT, "site", "404.html");
 const COMPACT_BRAND_DAY = path.join(ROOT, "site", "assets", "loadcomposer-mobile-day.svg");
@@ -71,10 +71,11 @@ for (const [marker, value] of [
   ["__404_DATA__", pageData],
   ["__LANGUAGE_OPTIONS__", languageOptions],
   ["__COMPACT_BRAND_DAY__", fs.readFileSync(COMPACT_BRAND_DAY, "utf8").trim()],
-  ["__COMPACT_BRAND_NIGHT__", fs.readFileSync(COMPACT_BRAND_NIGHT, "utf8").trim()]
+  ["__COMPACT_BRAND_NIGHT__", fs.readFileSync(COMPACT_BRAND_NIGHT, "utf8").trim()],
+  ["__VERSION__", VERSION]
 ]) {
   if (!output.includes(marker)) throw new Error(`404 template marker missing: ${marker}`);
-  output = output.replace(marker, value);
+  output = output.replaceAll(marker, value);
 }
 if (/__[A-Z0-9_]+__/.test(output)) throw new Error("Unresolved 404 page marker.");
 fs.writeFileSync(OUTPUT, output, "utf8");

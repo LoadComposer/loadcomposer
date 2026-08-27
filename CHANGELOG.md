@@ -2,6 +2,29 @@
 
 All notable project changes are documented here.
 
+## [1.3.3] — 2026-08-26
+
+### Added
+
+- Added static, LoadComposer-styled pages for all public legal documents.
+- Added a governing-English/informational-Italian license selector and an
+  in-page table of contents generated from the existing license headings.
+
+### Changed
+
+- Updated the Legal hub and application footer to keep normal legal-document
+  navigation inside the styled site experience.
+- Improved long-form legal readability and navigation while preserving every
+  canonical legal source byte-identically.
+
+### Unchanged from v1.3.2
+
+- Geometry, capacity, pallet coordinates, mixed-orientation search,
+  front-compaction, vehicle and pallet data, units, status semantics, themes,
+  and print behavior are unchanged.
+- No Dark Reader, SEO/Discovery, analytics, advertising, Quick Entry, new
+  legal wording, or new legal-body translation work is included.
+
 ## [1.3.2] — 2026-08-25
 
 ### Fixed

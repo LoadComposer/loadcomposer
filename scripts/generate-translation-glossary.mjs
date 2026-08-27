@@ -9,8 +9,8 @@ const LANG_DIR = path.join(PROJECT_DIR, "site", "lang");
 const OUTPUT_DIR = path.join(PROJECT_DIR, "docs", "translations");
 const IT_PATH = path.join(LANG_DIR, "it.json");
 const TARGET_CODES = ["en", "de", "es", "fr", "pt", "nl"];
-const VERSION = "v1.3.2";
-const EXPECTED_COUNT = 530;
+const VERSION = `v${fs.readFileSync(path.join(PROJECT_DIR, "VERSION"), "utf8").trim()}`;
+const EXPECTED_COUNT = Object.keys(JSON.parse(fs.readFileSync(IT_PATH, "utf8")).translations).length;
 const CHECK_ONLY = process.argv.includes("--check");
 
 const CONTEXT_BY_PREFIX = {
