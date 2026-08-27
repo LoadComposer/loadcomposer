@@ -1,0 +1,158 @@
+{
+  "version": "1.3.4",
+  "status": "PASS",
+  "methodology": {
+    "runtime": "v24.19.0",
+    "environment": "JSDOM, monotonic performance.now(), 1 warm-up plus 11 measured samples",
+    "baseline": "published v1.3.1 standalone",
+    "current": "generated v1.3.4 standalone",
+    "coldCurrent": "v1.3.4 search cache cleared before each measured sample",
+    "thresholdsMs": {
+      "coldMaximum": 1000,
+      "warmMaximum": 500
+    }
+  },
+  "searchLimits": {
+    "maximumItems": 36,
+    "maximumGeneratedStates": 24000,
+    "beamWidth": "64 through 16 target items; 32 otherwise",
+    "cacheEntries": 96,
+    "bypass": "square pallets, prohibited rotation, area bound <= established result, or area bound > 36"
+  },
+  "cases": [
+    {
+      "id": "canonical-20dc-industrial",
+      "baseline": {
+        "samples": 11,
+        "medianMs": 0.03902899999957299,
+        "minMs": 0.03521299999920302,
+        "maxMs": 0.0723390000002837,
+        "resultCount": 9
+      },
+      "currentWarm": {
+        "samples": 11,
+        "medianMs": 0.15428199999951175,
+        "minMs": 0.11544400000093447,
+        "maxMs": 0.19736699999884877,
+        "resultCount": 10
+      },
+      "currentCold": {
+        "samples": 11,
+        "medianMs": 4.071657000000414,
+        "minMs": 3.9713860000010754,
+        "maxMs": 5.900878999998895,
+        "resultCount": 10
+      },
+      "warmMedianRatio": 3.9530093008070852,
+      "coldMedianRatio": 104.32388736695691
+    },
+    {
+      "id": "common-20dc-euro",
+      "baseline": {
+        "samples": 11,
+        "medianMs": 0.044255999999222695,
+        "minMs": 0.03811700000005658,
+        "maxMs": 0.07585400000061782,
+        "resultCount": 11
+      },
+      "currentWarm": {
+        "samples": 11,
+        "medianMs": 0.06212299999970128,
+        "minMs": 0.0585079999982554,
+        "maxMs": 0.09475299999940034,
+        "resultCount": 11
+      },
+      "currentCold": {
+        "samples": 11,
+        "medianMs": 4.4469219999991765,
+        "minMs": 4.247341000000233,
+        "maxMs": 5.711944999999105,
+        "resultCount": 11
+      },
+      "warmMedianRatio": 1.4037192697214478,
+      "coldMedianRatio": 100.48178778193423
+    },
+    {
+      "id": "larger-45hc-euro",
+      "baseline": {
+        "samples": 11,
+        "medianMs": 0.12039100000038161,
+        "minMs": 0.10807199999908335,
+        "maxMs": 0.16201400000136346,
+        "resultCount": 27
+      },
+      "currentWarm": {
+        "samples": 11,
+        "medianMs": 0.17069699999956356,
+        "minMs": 0.13520299999981944,
+        "maxMs": 0.23239900000044145,
+        "resultCount": 27
+      },
+      "currentCold": {
+        "samples": 11,
+        "medianMs": 8.940682999998899,
+        "minMs": 8.524266000000353,
+        "maxMs": 9.536629999998695,
+        "resultCount": 27
+      },
+      "warmMedianRatio": 1.4178551552775747,
+      "coldMedianRatio": 74.26371572601406
+    },
+    {
+      "id": "high-quantity-500",
+      "baseline": {
+        "samples": 11,
+        "medianMs": 40.12924400000156,
+        "minMs": 39.532837000000654,
+        "maxMs": 46.003247999999076,
+        "resultCount": 500
+      },
+      "currentWarm": {
+        "samples": 11,
+        "medianMs": 41.79018200000064,
+        "minMs": 40.22822199999973,
+        "maxMs": 46.193750000000364,
+        "resultCount": 500
+      },
+      "currentCold": {
+        "samples": 11,
+        "medianMs": 40.60212499999943,
+        "minMs": 39.80470500000047,
+        "maxMs": 45.58078099999875,
+        "resultCount": 500
+      },
+      "warmMedianRatio": 1.0413897156896106,
+      "coldMedianRatio": 1.0117839498794907
+    },
+    {
+      "id": "mixed-groups-realistic",
+      "baseline": {
+        "samples": 11,
+        "medianMs": 0.9621669999996811,
+        "minMs": 0.7241490000014892,
+        "maxMs": 1.6469679999991058,
+        "resultCount": 26
+      },
+      "currentWarm": {
+        "samples": 11,
+        "medianMs": 0.8942950000000565,
+        "minMs": 0.7040589999996882,
+        "maxMs": 4.226150000000416,
+        "resultCount": 26
+      },
+      "currentCold": {
+        "samples": 11,
+        "medianMs": 0.6378499999991618,
+        "minMs": 0.5774590000000899,
+        "maxMs": 1.2320440000003146,
+        "resultCount": 26
+      },
+      "warmMedianRatio": 0.9294592310901879,
+      "coldMedianRatio": 0.6629306554884684
+    }
+  ],
+  "worstAbsoluteCase": {
+    "id": "high-quantity-500",
+    "currentColdMaxMs": 45.58078099999875
+  }
+}

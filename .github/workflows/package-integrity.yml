@@ -44,6 +44,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - run: npm run test:dark-reader
       - run: npm run test:hardening
       - run: npm run test:path-portability
       - run: npm run test:workflow-policy

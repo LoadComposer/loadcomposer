@@ -3,10 +3,10 @@
     "code": "de",
     "name": "Deutsch",
     "dir": "ltr",
-    "version": "1.3.3"
+    "version": "1.3.4"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.3",
+    "meta.documentTitle": "LoadComposer v1.3.4",
     "language.preference": "Spracheinstellung",
     "language.auto": "Automatisch",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "FÜR COMPUTER OHNE INTERNET",
     "downloads.offline.body": "Für Computer gedacht, die keinen Internetzugang haben oder offline bleiben müssen. Es handelt sich um eine einfache eigenständige Webseite; der Ladeplaner funktioniert ohne Verbindung. Die Datei wird nicht automatisch aktualisiert: Für neue Funktionen und Korrekturen müssen Sie sie manuell durch eine neuere Version ersetzen.",
     "downloads.offline.internetNote": "Wenn Sie Internetzugang haben, müssen Sie diese Version normalerweise nicht herunterladen.",
-    "downloads.currentVersion": "LoadComposer v1.3.3",
+    "downloads.currentVersion": "LoadComposer v1.3.4",
     "downloads.offline.htmlButton": "Standalone-HTML herunterladen",
     "downloads.offline.htmlHelp": "Eine einzelne Datei, die auf den Computer kopiert und im Browser geöffnet wird.",
     "downloads.offline.zipButton": "Standalone-ZIP herunterladen",

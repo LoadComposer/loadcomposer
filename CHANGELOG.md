@@ -2,6 +2,25 @@
 
 All notable project changes are documented here.
 
+## [1.3.4] — 2026-08-27
+
+### Added
+
+- Added Dark Reader's documented website opt-out marker,
+  `<meta name="darkreader-lock">`, to every current HTML entry point that uses
+  LoadComposer's native theme system, including the standalone planner.
+- Added a current-version regression covering tag placement and uniqueness,
+  native Auto/Light/Dark behavior, historical standalone integrity, and the
+  absence of remote or extension-specific runtime workarounds.
+
+### Unchanged from v1.3.3
+
+- Native theme logic, palette, logos, Legal UX and sources, solver geometry,
+  pallet coordinates, status semantics, print behavior, and standalone
+  functionality are unchanged.
+- No detection, CSS, JavaScript, or compatibility workaround was added for any
+  other browser color-transforming extension.
+
 ## [1.3.3] — 2026-08-26
 
 ### Added

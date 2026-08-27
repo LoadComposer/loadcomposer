@@ -1,0 +1,186 @@
+{
+  "version": "1.3.4",
+  "status": "PASS",
+  "runtime": "Chromium standalone file://",
+  "remoteRuntimeRequests": 0,
+  "canonical": {
+    "dimensions": [
+      5896,
+      2350
+    ],
+    "requested": 10,
+    "capacity": 10,
+    "placed": 10,
+    "unplaced": 0,
+    "ok": true,
+    "rowText": "20' Dry 5896 × 2350 × 2393 mm CI STA OK Capacità trovata: 10 pallet 0 posti liberi OK Altezza interna: 2393 mm Apertura posteriore: 2340 × 2280 mm Lunghezza residua: 296 mm Larghezza residua: 150 mm Altezza residua: 893 mm",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 0,
+        "y": 1200,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 1000,
+        "y": 0,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 1200,
+        "y": 1200,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 2000,
+        "y": 0,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 2400,
+        "y": 1200,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 3000,
+        "y": 0,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 3600,
+        "y": 1000,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 4200,
+        "y": 0,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 4600,
+        "y": 1000,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      }
+    ],
+    "envelope": [
+      5600,
+      2200
+    ],
+    "screenshot": "geometry-visual-evidence-v1.3.4/canonical-20dc-industrial-10-it-light.png",
+    "screenshotSha256": "6419e04bd8b829c057ac4ad7b5597157fa614374645ce719137cb6ec38cc9acf"
+  },
+  "unchangedSample": {
+    "dimensions": [
+      5896,
+      2350
+    ],
+    "requested": 10,
+    "capacity": 11,
+    "placed": 10,
+    "unplaced": 0,
+    "ok": true,
+    "rowText": "20' Dry 5896 × 2350 × 2393 mm CI STA OK Capacità trovata: 11 pallet 1 posto libero OK Altezza interna: 2393 mm Apertura posteriore: 2340 × 2280 mm Lunghezza residua: 1096 mm Larghezza residua: 350 mm Altezza residua: 893 mm",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "length": 1200,
+        "width": 800,
+        "rotated": false
+      },
+      {
+        "x": 1200,
+        "y": 0,
+        "length": 1200,
+        "width": 800,
+        "rotated": false
+      },
+      {
+        "x": 2400,
+        "y": 0,
+        "length": 1200,
+        "width": 800,
+        "rotated": false
+      },
+      {
+        "x": 3600,
+        "y": 0,
+        "length": 1200,
+        "width": 800,
+        "rotated": false
+      },
+      {
+        "x": 0,
+        "y": 800,
+        "length": 800,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 800,
+        "y": 800,
+        "length": 800,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 1600,
+        "y": 800,
+        "length": 800,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 2400,
+        "y": 800,
+        "length": 800,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 3200,
+        "y": 800,
+        "length": 800,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 4000,
+        "y": 800,
+        "length": 800,
+        "width": 1200,
+        "rotated": true
+      }
+    ],
+    "envelope": [
+      4800,
+      2000
+    ],
+    "screenshot": "geometry-visual-evidence-v1.3.4/unchanged-20dc-euro-10-it-light.png",
+    "screenshotSha256": "ded301be711f0a0f2feec82e2da5589c762685e4cda668974d59edf0cdeb08fa"
+  }
+}

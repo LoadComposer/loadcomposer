@@ -1,0 +1,80 @@
+{
+  "version": "1.3.4",
+  "baseline": {
+    "label": "v1.3.2",
+    "file": "loadcomposer-v1.3.2-standalone.html",
+    "sha256": "8acaf11503acc5cba79d9e3117f6ee70531a2e1680777184608f36c9e2e2b539"
+  },
+  "current": {
+    "file": "loadcomposer-v1.3.4-standalone.html",
+    "sha256": "c99ee3a0200f8a32b00d638e5f1a72f7f68a9380b1e85897030fdf015181209e"
+  },
+  "single": {
+    "capacityLayout": {
+      "cases": 1080,
+      "changes": 0,
+      "changeDetails": [],
+      "status": "PASS"
+    },
+    "loadLayout": {
+      "cases": 4110,
+      "changes": 0,
+      "changeDetails": [],
+      "status": "PASS"
+    },
+    "b10Scenarios": [
+      {
+        "id": "20dc-eur-1",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-10",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-11",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-12",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-stacked-11",
+        "status": "PASS"
+      },
+      {
+        "id": "40dc-door-2345x800-1",
+        "status": "PASS"
+      },
+      {
+        "id": "40dc-door-2345x800-11",
+        "status": "PASS"
+      }
+    ],
+    "b10Status": "PASS"
+  },
+  "mixed": {
+    "cases": 2352,
+    "homogeneousCases": 2160,
+    "heterogeneousCases": 192,
+    "unchangedCases": 2352,
+    "changes": 0,
+    "rules": [
+      "Il conteggio piazzato deve essere identico alla baseline v1.3.2.",
+      "Bounds, gap, overlap, conteggi, identità, rotazioni e used spans reali devono essere confermati."
+    ],
+    "changeDetails": [],
+    "status": "PASS"
+  },
+  "summary": {
+    "totalCases": 7542,
+    "unchangedCases": 7542,
+    "expectedImprovements": 0,
+    "frontCompactedLayouts": 0,
+    "maximumUsedLengthReduction": 0,
+    "unexpectedRegressions": 0
+  },
+  "changedCases": [],
+  "status": "PASS"
+}
