@@ -1,0 +1,578 @@
+{
+  "version": "1.3.5",
+  "source": "site/downloads/loadcomposer-v1.3.5-standalone.html",
+  "checks": [
+    {
+      "id": "preset-census",
+      "metricNative": [
+        "eur",
+        "industrial",
+        "asian",
+        "australian",
+        "half-euro"
+      ],
+      "imperialNative": [
+        "north-american",
+        "42x42",
+        "48x45",
+        "48x48"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "preset-eur-mm",
+      "primary": "1200 × 800 mm",
+      "secondary": "Euro pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "preset-eur-cm",
+      "primary": "120 × 80 cm",
+      "secondary": "Euro pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "preset-industrial-cm",
+      "primary": "120 × 100 cm",
+      "secondary": "Pallet industriale",
+      "status": "PASS"
+    },
+    {
+      "id": "preset-asian-cm",
+      "primary": "110 × 110 cm",
+      "secondary": "Pallet standard asiatico",
+      "status": "PASS"
+    },
+    {
+      "id": "preset-eur-in",
+      "primary": "1200 × 800 mm",
+      "secondary": "47,24 × 31,5 in · Euro pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "preset-north-american-mm",
+      "primary": "48 × 40 in",
+      "secondary": "1219 × 1016 mm · Pallet nordamericano",
+      "status": "PASS"
+    },
+    {
+      "id": "preset-north-american-cm",
+      "primary": "48 × 40 in",
+      "secondary": "121,9 × 101,6 cm · Pallet nordamericano",
+      "status": "PASS"
+    },
+    {
+      "id": "preset-north-american-in",
+      "primary": "48 × 40 in",
+      "secondary": "Pallet nordamericano",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-it-mm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "1067 × 1067 mm · Pallet telecom / vernici",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-it-mm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "1219 × 1143 mm · Pallet automotive",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-it-mm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "1219 × 1219 mm · Pallet per fusti",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-it-cm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "106,7 × 106,7 cm · Pallet telecom / vernici",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-it-cm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "121,9 × 114,3 cm · Pallet automotive",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-it-cm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "121,9 × 121,9 cm · Pallet per fusti",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-it-in-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "Pallet telecom / vernici",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-it-in-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "Pallet automotive",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-it-in-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "Pallet per fusti",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-en-mm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "1067 × 1067 mm · Telecom / paint pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-en-mm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "1219 × 1143 mm · Automotive pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-en-mm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "1219 × 1219 mm · Drum pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-en-cm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "106.7 × 106.7 cm · Telecom / paint pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-en-cm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "121.9 × 114.3 cm · Automotive pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-en-cm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "121.9 × 121.9 cm · Drum pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-en-in-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "Telecom / paint pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-en-in-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "Automotive pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-en-in-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "Drum pallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-de-mm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "1067 × 1067 mm · Palette für Telekommunikation / Lacke",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-de-mm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "1219 × 1143 mm · Automobilpalette",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-de-mm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "1219 × 1219 mm · Fasspalette",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-de-cm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "106,7 × 106,7 cm · Palette für Telekommunikation / Lacke",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-de-cm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "121,9 × 114,3 cm · Automobilpalette",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-de-cm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "121,9 × 121,9 cm · Fasspalette",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-de-in-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "Palette für Telekommunikation / Lacke",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-de-in-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "Automobilpalette",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-de-in-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "Fasspalette",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-es-mm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "1067 × 1067 mm · Palé para telecomunicaciones / pinturas",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-es-mm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "1219 × 1143 mm · Palé para automoción",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-es-mm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "1219 × 1219 mm · Palé para bidones",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-es-cm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "106,7 × 106,7 cm · Palé para telecomunicaciones / pinturas",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-es-cm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "121,9 × 114,3 cm · Palé para automoción",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-es-cm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "121,9 × 121,9 cm · Palé para bidones",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-es-in-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "Palé para telecomunicaciones / pinturas",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-es-in-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "Palé para automoción",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-es-in-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "Palé para bidones",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-fr-mm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "1067 × 1067 mm · Palette télécom / peinture",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-fr-mm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "1219 × 1143 mm · Palette automobile",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-fr-mm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "1219 × 1219 mm · Palette pour fûts",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-fr-cm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "106,7 × 106,7 cm · Palette télécom / peinture",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-fr-cm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "121,9 × 114,3 cm · Palette automobile",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-fr-cm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "121,9 × 121,9 cm · Palette pour fûts",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-fr-in-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "Palette télécom / peinture",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-fr-in-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "Palette automobile",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-fr-in-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "Palette pour fûts",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-pt-mm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "1067 × 1067 mm · Palete para telecomunicações / tintas",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-pt-mm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "1219 × 1143 mm · Palete para o setor automóvel",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-pt-mm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "1219 × 1219 mm · Palete para bidões",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-pt-cm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "106,7 × 106,7 cm · Palete para telecomunicações / tintas",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-pt-cm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "121,9 × 114,3 cm · Palete para o setor automóvel",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-pt-cm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "121,9 × 121,9 cm · Palete para bidões",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-pt-in-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "Palete para telecomunicações / tintas",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-pt-in-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "Palete para o setor automóvel",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-pt-in-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "Palete para bidões",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-nl-mm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "1067 × 1067 mm · Pallet voor telecom / verf",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-nl-mm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "1219 × 1143 mm · Automotivepallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-nl-mm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "1219 × 1219 mm · Vatenpallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-nl-cm-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "106,7 × 106,7 cm · Pallet voor telecom / verf",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-nl-cm-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "121,9 × 114,3 cm · Automotivepallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-nl-cm-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "121,9 × 121,9 cm · Vatenpallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-nl-in-42x42",
+      "primary": "42 × 42 in",
+      "secondary": "Pallet voor telecom / verf",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-nl-in-48x45",
+      "primary": "48 × 45 in",
+      "secondary": "Automotivepallet",
+      "status": "PASS"
+    },
+    {
+      "id": "microfix-nl-in-48x48",
+      "primary": "48 × 48 in",
+      "secondary": "Vatenpallet",
+      "status": "PASS"
+    },
+    {
+      "id": "all-current-presets-redundant-fallback-audit",
+      "languages": 7,
+      "presets": 9,
+      "redundantFallbacks": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "preset-custom-global-unit-only",
+      "primary": "120 × 80 cm",
+      "secondary": "Pallet personalizzato",
+      "status": "PASS"
+    },
+    {
+      "id": "truck-curtain-1360-2499",
+      "access": "ok",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-curtain-1360-2500",
+      "access": "ok",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-curtain-1360-2501",
+      "access": "verify",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-curtain-1360-2651",
+      "access": "not-ok",
+      "geometryOk": false,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-mega-1360-2549",
+      "access": "ok",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-mega-1360-2550",
+      "access": "ok",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-mega-1360-2551",
+      "access": "verify",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-mega-1360-2800",
+      "access": "verify",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-mega-1360-3001",
+      "access": "not-ok",
+      "geometryOk": false,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-reefer-1360-2499",
+      "access": "ok",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-reefer-1360-2500",
+      "access": "ok",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-reefer-1360-2501",
+      "access": "verify",
+      "geometryOk": true,
+      "status": "PASS"
+    },
+    {
+      "id": "truck-reefer-1360-2651",
+      "access": "not-ok",
+      "geometryOk": false,
+      "status": "PASS"
+    },
+    {
+      "id": "curtain-width-prudential-boundary",
+      "at2450": "ok",
+      "at2451": "verify",
+      "status": "PASS"
+    },
+    {
+      "id": "container-door-height-unchanged",
+      "at2280": "ok",
+      "at2281": "not-ok",
+      "status": "PASS"
+    },
+    {
+      "id": "single-stacking-2x1200",
+      "stackHeight": 2400,
+      "access": "ok",
+      "geometry": "unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "load-access-independence",
+      "cases": [
+        "capacity-ok/access-verify",
+        "capacity-partial/access-ok"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "access-metadata-scope",
+      "profiles": 3,
+      "doorHeightUnchanged": true,
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "passed": 92,
+    "total": 92
+  },
+  "status": "PASS"
+}

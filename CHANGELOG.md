@@ -2,6 +2,24 @@
 
 All notable project changes are documented here.
 
+## [1.3.5] — 2026-08-28
+
+### Changed
+
+- Centered the selected cargo envelope transversely in on-screen and print
+  diagrams whenever the vehicle has unused internal width.
+- Applied one deterministic presentation-only offset to the complete layout in
+  Side and Ramp views, colour and black-and-white output, and the standalone
+  planner.
+
+### Unchanged from v1.3.4
+
+- Solver-selected rectangles, capacity, ranking, front compaction,
+  `usedLength`, `usedWidth`, result/status text, print transport, Dark Reader
+  protection, Legal UX, themes, languages, and unit conversion are unchanged.
+- The centering is not weight balancing and adds no mass, centre-of-gravity,
+  axle-load, stability, or securing logic.
+
 ## [1.3.4] — 2026-08-27
 
 ### Added

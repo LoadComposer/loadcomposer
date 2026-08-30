@@ -12,7 +12,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="darkreader-lock">
-  <title>LoadComposer v1.3.4</title>
+  <title>LoadComposer v1.3.5</title>
   <meta name="description" content="LoadComposer estimates pallet arrangements in common road and sea freight vehicles directly in your browser." />
   <meta name="application-name" content="LoadComposer" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -20,10 +20,10 @@
   <link rel="canonical" href="https://loadcomposer.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LoadComposer" />
-  <meta property="og:title" content="LoadComposer v1.3.4" />
+  <meta property="og:title" content="LoadComposer v1.3.5" />
   <meta property="og:description" content="Browser-based geometric load-planning estimates, with offline and standalone support." />
   <meta property="og:url" content="https://loadcomposer.com/" />
-  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.4.png" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.5.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -3577,7 +3577,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.3.4</span>
+        <span class="app-version">v1.3.5</span>
       </div>
 
       <div class="header-controls">
@@ -8528,6 +8528,27 @@
       };
     }
 
+    function transversePresentationOffset(container, layout) {
+      return Math.floor(
+        Math.max(0, container.innerWidth - layout.usedWidth) / 2
+      );
+    }
+
+    function prepareLayoutForPresentation(result) {
+      const transverseOffset = transversePresentationOffset(
+        result.container,
+        result.layout
+      );
+      return {
+        transverseOffset,
+        rects: result.layout.rects.map(rect => ({
+          ...rect,
+          displayX: rect.x,
+          displayY: rect.y + transverseOffset
+        }))
+      };
+    }
+
     function drawStackedWord(
       ctx,
       word,
@@ -8625,7 +8646,8 @@
 
       const ctx = canvas.getContext("2d");
       const c = result.container;
-      const rects = result.layout.rects;
+      const presentation = prepareLayoutForPresentation(result);
+      const rects = presentation.rects;
       const palette = canvasPreviewPalette({
         bwMode,
         forPrint: Boolean(options.forPrint)
@@ -8665,8 +8687,8 @@
       ctx.strokeRect(ox, oy, drawW, drawH);
 
       rects.forEach((rect, index) => {
-        const x = ox + rect.x * scale;
-        const y = oy + rect.y * scale;
+        const x = ox + rect.displayX * scale;
+        const y = oy + rect.displayY * scale;
         const width = rect.length * scale;
         const height = rect.width * scale;
         const patternIndex = rectPatternIndex(result, rect, index);
@@ -9078,7 +9100,8 @@
 
       const ctx = canvas.getContext("2d");
       const c = result.container;
-      const rects = result.layout.rects;
+      const presentation = prepareLayoutForPresentation(result);
+      const rects = presentation.rects;
       const palette = canvasPreviewPalette({
         bwMode,
         forPrint: options.preview !== true
@@ -9133,8 +9156,8 @@
          * - x grafico = posizione trasversale;
          * - y grafico = avanzamento lungo il vano.
          */
-        const x = originX + rect.y * scale;
-        const y = originY + rect.x * scale;
+        const x = originX + rect.displayY * scale;
+        const y = originY + rect.displayX * scale;
         const width = rect.width * scale;
         const height = rect.length * scale;
         const patternIndex = rectPatternIndex(result, rect, index);

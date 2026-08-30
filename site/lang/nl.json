@@ -3,10 +3,10 @@
     "code": "nl",
     "name": "Nederlands",
     "dir": "ltr",
-    "version": "1.3.4"
+    "version": "1.3.5"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.4",
+    "meta.documentTitle": "LoadComposer v1.3.5",
     "language.preference": "Taalvoorkeur",
     "language.auto": "Automatisch",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "VOOR COMPUTERS ZONDER INTERNET",
     "downloads.offline.body": "Bedoeld voor computers die geen internettoegang hebben of offline moeten blijven. Het is één eenvoudige zelfstandige webpagina en de planner werkt zonder verbinding. De versie wordt niet automatisch bijgewerkt: voor nieuwe functies en correcties moet u het bestand handmatig door een nieuwere versie vervangen.",
     "downloads.offline.internetNote": "Als u internettoegang heeft, hoeft u deze versie normaal gesproken niet te downloaden.",
-    "downloads.currentVersion": "LoadComposer v1.3.4",
+    "downloads.currentVersion": "LoadComposer v1.3.5",
     "downloads.offline.htmlButton": "Standalone-HTML downloaden",
     "downloads.offline.htmlHelp": "Eén bestand om naar de computer te kopiëren en in de browser te openen.",
     "downloads.offline.zipButton": "Standalone-ZIP downloaden",

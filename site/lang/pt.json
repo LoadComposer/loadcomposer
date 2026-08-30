@@ -3,10 +3,10 @@
     "code": "pt",
     "name": "Português",
     "dir": "ltr",
-    "version": "1.3.4"
+    "version": "1.3.5"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.4",
+    "meta.documentTitle": "LoadComposer v1.3.5",
     "language.preference": "Preferência de idioma",
     "language.auto": "Automático",
     "language.italian": "Italiano",
@@ -192,7 +192,7 @@
     "downloads.offline.badge": "PARA COMPUTADORES SEM INTERNET",
     "downloads.offline.body": "Destina-se a computadores sem acesso à Internet ou que têm de permanecer offline. É uma página web standalone simples e o planeador funciona sem ligação. Não se atualiza automaticamente: para usar novas funções e correções, deve substituir manualmente o ficheiro por uma versão mais recente.",
     "downloads.offline.internetNote": "Se tem acesso à Internet, normalmente não precisa de transferir esta versão.",
-    "downloads.currentVersion": "LoadComposer v1.3.4",
+    "downloads.currentVersion": "LoadComposer v1.3.5",
     "downloads.offline.htmlButton": "Transferir HTML standalone",
     "downloads.offline.htmlHelp": "Um único ficheiro para copiar para o computador e abrir no navegador.",
     "downloads.offline.zipButton": "Transferir ZIP standalone",

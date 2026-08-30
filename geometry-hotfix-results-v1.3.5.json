@@ -1,0 +1,74 @@
+{
+  "version": "1.3.5",
+  "source": "site/downloads/loadcomposer-v1.3.5-standalone.html",
+  "status": "PASS",
+  "canonical": {
+    "container": {
+      "id": "20dc",
+      "innerLength": 5896,
+      "innerWidth": 2350
+    },
+    "requested": 10,
+    "capacity": 10,
+    "placed": 10,
+    "unplaced": 0,
+    "ok": true,
+    "orientations": {
+      "normal": 5,
+      "rotated": 5
+    },
+    "usedLength": 5600,
+    "usedWidth": 2200,
+    "geometryValid": true,
+    "searchStats": {
+      "method": "bounded deterministic mixed-orientation beam",
+      "targetCount": 11,
+      "beamWidth": 64,
+      "generatedStates": 1093,
+      "searchBoundReached": false
+    },
+    "previewPallets": 10,
+    "printPallets": 10
+  },
+  "independentReference": {
+    "witness": {
+      "count": 10,
+      "usedLength": 5800,
+      "usedWidth": 2200,
+      "valid": true
+    },
+    "upperBound": {
+      "exactCapacityUpperBound": 10,
+      "proofForEleven": {
+        "maxSimultaneousIntervals": 2,
+        "maxRotated": 5,
+        "minNormal": 6,
+        "minimumIntervalMeasure": 12200,
+        "availableIntervalMeasure": 11792,
+        "contradiction": true
+      }
+    }
+  },
+  "rotation": {
+    "allowedCapacity": 10,
+    "lockedNormalCapacity": 8,
+    "lockedRotatedCapacity": 5
+  },
+  "gap10Capacity": 10,
+  "units": [
+    "mm",
+    "cm",
+    "in"
+  ],
+  "deterministicRuns": 25,
+  "mixedGroups": {
+    "requested": 10,
+    "placed": 10,
+    "groupsPreserved": 2
+  },
+  "stress": {
+    "quantity": 500,
+    "placed": 500,
+    "milliseconds": 46.497319999999945
+  }
+}

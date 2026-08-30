@@ -47,5 +47,6 @@ jobs:
       - run: npm run test:dark-reader
       - run: npm run test:hardening
       - run: npm run test:path-portability
+      - run: npm run test:transverse-centering
       - run: npm run test:workflow-policy
       - run: git diff --exit-code -- site/downloads site/legal site/assets docs/translations
