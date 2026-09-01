@@ -47,6 +47,7 @@ enabledCodes.forEach(code => {
 
 const embedded = JSON.stringify({
   standalone: true,
+  standaloneTitle: `LoadComposer v${VERSION} — Pallet Loading Calculator`,
   index,
   catalogs
 })
@@ -67,6 +68,9 @@ const standalone = html.replace(
 ).replace(
   /href="[^"]+"\s+data-standalone-href="([^"]+)"/g,
   'href="$1"'
+).replace(
+  /<title>[^<]*<\/title>/,
+  `<title>LoadComposer v${VERSION} — Pallet Loading Calculator</title>`
 );
 
 fs.writeFileSync(outputPath, standalone, "utf8");

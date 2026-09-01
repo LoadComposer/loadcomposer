@@ -3,10 +3,10 @@
     "code": "it",
     "name": "Italiano",
     "dir": "ltr",
-    "version": "1.3.5"
+    "version": "1.3.6"
   },
   "translations": {
-    "meta.documentTitle": "LoadComposer v1.3.5",
+    "meta.documentTitle": "Calcolatore di carico pallet per container e bilici | LoadComposer",
     "language.preference": "Preferenza lingua",
     "language.auto": "Automatico",
     "language.italian": "Italiano",
@@ -173,6 +173,8 @@
     "footer.privacy": "Privacy",
     "footer.legalInformation": "Informazioni legali",
     "footer.download": "Download",
+    "footer.guides": "Guide",
+    "footer.about": "Il progetto",
     "footer.linksAria": "Collegamenti del piè di pagina",
     "footer.suggestions": "Suggerimenti",
     "footer.reportIssue": "Segnala un problema",
@@ -192,7 +194,7 @@
     "downloads.offline.badge": "PER COMPUTER SENZA INTERNET",
     "downloads.offline.body": "Pensata per computer che non hanno accesso a Internet o devono restare offline. È una semplice pagina web standalone e il planner funziona senza connessione. Non si aggiorna automaticamente: per usare nuove funzioni e correzioni devi sostituire manualmente il file con una versione più recente.",
     "downloads.offline.internetNote": "Se hai accesso a Internet, normalmente non serve scaricare questa versione.",
-    "downloads.currentVersion": "LoadComposer v1.3.5",
+    "downloads.currentVersion": "LoadComposer v1.3.6",
     "downloads.offline.htmlButton": "Scarica HTML standalone",
     "downloads.offline.htmlHelp": "Un solo file da copiare sul computer e aprire con il browser.",
     "downloads.offline.zipButton": "Scarica ZIP standalone",

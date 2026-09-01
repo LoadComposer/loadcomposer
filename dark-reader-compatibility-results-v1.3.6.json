@@ -1,0 +1,323 @@
+{
+  "version": "1.3.6",
+  "status": "PASS",
+  "mechanism": "<meta name=\"darkreader-lock\">",
+  "currentThemedEntryPoints": [
+    "site/404.html",
+    "site/about/index.html",
+    "site/downloads/index.html",
+    "site/downloads/loadcomposer-v1.3.6-standalone.html",
+    "site/guides/index.html",
+    "site/guides/pallets-in-20ft-container/index.html",
+    "site/guides/pallets-in-20ft-reefer/index.html",
+    "site/guides/pallets-in-40ft-container/index.html",
+    "site/guides/pallets-in-40ft-high-cube/index.html",
+    "site/guides/pallets-in-40ft-pallet-wide-container/index.html",
+    "site/guides/pallets-in-40ft-reefer/index.html",
+    "site/index.html",
+    "site/legal/commercial/index.html",
+    "site/legal/index.html",
+    "site/legal/license/index.html",
+    "site/legal/notices/index.html",
+    "site/legal/privacy/index.html",
+    "site/legal/security/index.html",
+    "site/legal/trademarks/index.html"
+  ],
+  "currentThemedEntryPointCount": 19,
+  "exactlyOnePerEntryPoint": true,
+  "rawLegalDocuments": "7/7 byte-identical and unmodified",
+  "historicalStandaloneArtifacts": "32/32 byte-identical",
+  "staticChecks": [
+    {
+      "path": "site/404.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/about/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/downloads/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/downloads/loadcomposer-v1.3.6-standalone.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/guides/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/guides/pallets-in-20ft-container/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/guides/pallets-in-20ft-reefer/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/guides/pallets-in-40ft-container/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/guides/pallets-in-40ft-high-cube/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/guides/pallets-in-40ft-pallet-wide-container/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/guides/pallets-in-40ft-reefer/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/legal/commercial/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/legal/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/legal/license/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/legal/notices/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/legal/privacy/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/legal/security/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    },
+    {
+      "path": "site/legal/trademarks/index.html",
+      "lockTags": 1,
+      "themeControls": "PASS",
+      "bootstrap": "PASS"
+    }
+  ],
+  "browserQa": {
+    "scenarios": [
+      {
+        "route": "/",
+        "preference": "light",
+        "colorScheme": "dark",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/",
+        "preference": "dark",
+        "colorScheme": "light",
+        "resolved": "dark",
+        "status": "PASS"
+      },
+      {
+        "route": "/",
+        "preference": "auto",
+        "colorScheme": "light",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/",
+        "preference": "auto",
+        "colorScheme": "dark",
+        "resolved": "dark",
+        "status": "PASS"
+      },
+      {
+        "route": "/downloads/",
+        "preference": "light",
+        "colorScheme": "dark",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/downloads/",
+        "preference": "dark",
+        "colorScheme": "light",
+        "resolved": "dark",
+        "status": "PASS"
+      },
+      {
+        "route": "/downloads/",
+        "preference": "auto",
+        "colorScheme": "light",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/downloads/",
+        "preference": "auto",
+        "colorScheme": "dark",
+        "resolved": "dark",
+        "status": "PASS"
+      },
+      {
+        "route": "/legal/",
+        "preference": "light",
+        "colorScheme": "dark",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/legal/",
+        "preference": "dark",
+        "colorScheme": "light",
+        "resolved": "dark",
+        "status": "PASS"
+      },
+      {
+        "route": "/legal/",
+        "preference": "auto",
+        "colorScheme": "light",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/legal/",
+        "preference": "auto",
+        "colorScheme": "dark",
+        "resolved": "dark",
+        "status": "PASS"
+      },
+      {
+        "route": "/legal/license/?lang=en",
+        "preference": "light",
+        "colorScheme": "dark",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/legal/license/?lang=en",
+        "preference": "dark",
+        "colorScheme": "light",
+        "resolved": "dark",
+        "status": "PASS"
+      },
+      {
+        "route": "/legal/license/?lang=en",
+        "preference": "auto",
+        "colorScheme": "light",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/legal/license/?lang=en",
+        "preference": "auto",
+        "colorScheme": "dark",
+        "resolved": "dark",
+        "status": "PASS"
+      },
+      {
+        "route": "/404.html",
+        "preference": "light",
+        "colorScheme": "dark",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/404.html",
+        "preference": "dark",
+        "colorScheme": "light",
+        "resolved": "dark",
+        "status": "PASS"
+      },
+      {
+        "route": "/404.html",
+        "preference": "auto",
+        "colorScheme": "light",
+        "resolved": "light",
+        "status": "PASS"
+      },
+      {
+        "route": "/404.html",
+        "preference": "auto",
+        "colorScheme": "dark",
+        "resolved": "dark",
+        "status": "PASS"
+      }
+    ],
+    "scenarioCount": 20,
+    "routes": [
+      "/",
+      "/downloads/",
+      "/legal/",
+      "/legal/license/?lang=en",
+      "/404.html"
+    ],
+    "modes": [
+      "Light",
+      "Dark",
+      "Auto resolving Light",
+      "Auto resolving Dark"
+    ],
+    "liveHomeTransition": [
+      {
+        "preference": "dark",
+        "resolved": "dark",
+        "stored": "dark"
+      },
+      {
+        "preference": "light",
+        "resolved": "light",
+        "stored": "light"
+      },
+      {
+        "preference": "auto",
+        "resolved": "light",
+        "stored": "auto"
+      }
+    ]
+  },
+  "otherExtensionWorkarounds": 0,
+  "remoteRuntimeDependenciesAdded": 0
+}

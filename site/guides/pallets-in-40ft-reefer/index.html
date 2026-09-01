@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--
+  LoadComposer
+  Copyright © 2026 Marco Pernigotti.
+  Licensed under the LoadComposer Community License 1.0.
+  SPDX-License-Identifier: LicenseRef-LoadComposer-Community-1.0
+  Official repository: https://github.com/LoadComposer/loadcomposer
+  Provided "AS IS", without warranty.
+-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="darkreader-lock">
+  <title>How Many Pallets Fit in a 40 ft Reefer Container? | LoadComposer</title>
+  <meta name="description" content="LoadComposer results for its current 40 ft HC Reefer reference, compared with 40 ft Dry dimensions and pallet capacity." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#F4F5F2" />
+  <link rel="canonical" href="https://loadcomposer.com/guides/pallets-in-40ft-reefer/" />
+  <link rel="icon" href="/assets/loadcomposer-favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="LoadComposer" />
+  <meta property="og:title" content="How Many Pallets Fit in a 40 ft Reefer Container? | LoadComposer" />
+  <meta property="og:description" content="LoadComposer results for its current 40 ft HC Reefer reference, compared with 40 ft Dry dimensions and pallet capacity." />
+  <meta property="og:url" content="https://loadcomposer.com/guides/pallets-in-40ft-reefer/" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/guides/40ft-hc-reefer-euro-pallet-layout.png" />
+  <meta property="og:image:width" content="1100" />
+  <meta property="og:image:height" content="470" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"LoadComposer","item":"https://loadcomposer.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://loadcomposer.com/guides/"},{"@type":"ListItem","position":3,"name":"40 ft Reefer","item":"https://loadcomposer.com/guides/pallets-in-40ft-reefer/"}]}</script>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const allowed = new Set(["auto", "light", "dark"]);
+      let preference = "auto";
+      try {
+        const stored = localStorage.getItem("loadcomposer.theme");
+        if (allowed.has(stored)) preference = stored;
+      } catch (_) {}
+      const systemDark = Boolean(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      const resolved = preference === "auto" ? (systemDark ? "dark" : "light") : preference;
+      root.dataset.themePreference = preference;
+      root.dataset.theme = resolved;
+      root.style.colorScheme = resolved;
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #F4F5F2;
+      --surface: #FFFFFF;
+      --surface-soft: #F1F5F3;
+      --text: #13272F;
+      --muted: #52656C;
+      --border: #D2DCD8;
+      --accent: #0D7C75;
+      --accent-hover: #096C66;
+      --accent-soft: #DDF3F0;
+      --focus: #007C73;
+      --shadow: 0 1px 2px rgba(16, 36, 46, .05), 0 8px 24px rgba(16, 36, 46, .07);
+    }
+    :root[data-theme="dark"] {
+      --bg: #050D16;
+      --surface: #0D1B27;
+      --surface-soft: #122330;
+      --text: #E2E9EC;
+      --muted: #AAB7BE;
+      --border: #263B4A;
+      --accent: #3BC0B5;
+      --accent-hover: #4ACBC0;
+      --accent-soft: #102F33;
+      --focus: #60D5CB;
+      --shadow: 0 1px 0 rgba(255, 255, 255, .035), 0 12px 28px rgba(0, 0, 0, .16);
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 0; background: var(--bg); }
+    body {
+      margin: 0;
+      min-width: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.62;
+    }
+    a { color: inherit; }
+    button, select { font: inherit; }
+    .shell { width: min(1120px, 100%); margin: 0 auto; padding: 20px 22px 44px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: inline-flex; min-width: 0; align-items: center; color: var(--text); text-decoration: none; }
+    .brand-logo { display: none; width: 170px; max-width: 100%; height: auto; }
+    .brand-logo svg { display: block; width: 100%; height: auto; }
+    :root[data-theme="light"] .brand-logo.day,
+    :root[data-theme="dark"] .brand-logo.night { display: block; }
+    .control { display: grid; gap: 4px; color: var(--muted); font-size: 12px; font-weight: 750; }
+    .control select {
+      min-height: 44px;
+      padding: 8px 34px 8px 12px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    main { padding-top: 38px; }
+    .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 9px; margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+    .breadcrumb a { min-height: 36px; display: inline-flex; align-items: center; text-underline-offset: 3px; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb [aria-current="page"] { color: var(--text); font-weight: 750; }
+    .article-shell { min-width: 0; padding: clamp(24px, 4.5vw, 52px); background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); }
+    .prose { width: min(88ch, 100%); margin: 0 auto; overflow-wrap: anywhere; }
+    h1 { margin: 0 0 20px; font-size: clamp(34px, 5vw, 50px); line-height: 1.08; letter-spacing: -.035em; }
+    h2 { margin: 42px 0 14px; font-size: clamp(25px, 3.1vw, 32px); line-height: 1.2; letter-spacing: -.015em; }
+    h3 { margin: 30px 0 10px; font-size: 21px; line-height: 1.25; }
+    p { margin: 0 0 17px; }
+    .lede { color: var(--text); font-size: clamp(18px, 2.4vw, 21px); line-height: 1.52; }
+    .muted { color: var(--muted); }
+    .answer { margin: 22px 0 28px; padding: 17px 19px; background: var(--accent-soft); border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 12px; }
+    .answer strong { font-weight: 850; }
+    .table-wrap { max-width: 100%; overflow-x: auto; margin: 18px 0 26px; border: 1px solid var(--border); border-radius: 12px; }
+    table { width: 100%; min-width: 560px; border-collapse: collapse; background: var(--surface); }
+    th, td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    th { background: var(--surface-soft); font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    figure { margin: 26px 0; }
+    figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 14px; background: #fff; }
+    figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 8px; }
+    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border: 1px solid var(--accent); border-radius: 11px; color: #fff; background: var(--accent); font-weight: 800; text-decoration: none; }
+    .button:hover { background: var(--accent-hover); }
+    .button.secondary { color: var(--accent); background: transparent; }
+    .button.secondary:hover { color: var(--text); background: var(--accent-soft); }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
+    .card { display: grid; gap: 8px; min-height: 150px; padding: 20px; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 14px; text-decoration: none; }
+    .card:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .card strong { font-size: 19px; }
+    .card span { color: var(--muted); }
+    .related { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 0; padding: 0; list-style: none; }
+    .related a { color: var(--accent); font-weight: 750; text-underline-offset: 3px; }
+    footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 18px; margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+    footer a { min-height: 36px; display: inline-flex; align-items: center; padding: 5px; text-underline-offset: 3px; }
+    footer a:hover { color: var(--accent-hover); }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    @media (max-width: 760px) {
+      .shell { padding: 16px 14px 34px; }
+      .topbar { align-items: flex-start; }
+      main { padding-top: 30px; }
+      .article-shell { padding: 25px 18px; border-radius: 16px; }
+      .cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 420px) {
+      .shell { padding-inline: 10px; }
+      .topbar { align-items: stretch; flex-direction: column; }
+      .brand-logo { width: 150px; }
+      .control select { width: 100%; }
+      h1 { font-size: 32px; }
+      .actions { display: grid; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Back to LoadComposer">
+        <span class="brand-logo day" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="746.224" height="175.996" viewBox="20 26.5538 746.224 175.996" role="img" aria-label="LoadComposer mobile day logo without payoff">
+  <!--FINAL OUTLINED SVG — no font or external resource dependency.-->
+  <g id="guide-pallets-in-40ft-reefer-day-lc-symbol" transform="matrix(0.55,0,0,0.55,-8.9,-24.3)" data-source="LoadComposer-logo-pack-v1">
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-01" style="fill:#10242e" d="m 85.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-02" style="fill:#10242e" d="m 292.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-03" style="fill:#10242e" d="m 361.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-04" style="fill:#10242e" d="m 85.5,195 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-05" style="fill:#10242e" d="m 292.5,195 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-06" style="fill:#10242e" d="m 85.5,264 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-07" style="fill:#10242e" d="m 292.5,264 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-08" style="fill:#10242e" d="m 85.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-09" style="fill:#10242e" d="m 154.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-10" style="fill:#10242e" d="m 223.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-11" style="fill:#10242e" d="m 292.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-12" style="fill:#10242e" d="m 361.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-block-13" style="fill:#10242e" d="m 430.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-day-lc-rotated-module" transform="rotate(45,454.05,153)" style="fill:#2bafa3" d="m 434.54999,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+  </g>
+  <g id="guide-pallets-in-40ft-reefer-day-lc-wordmark">
+    <g aria-label="Load" id="guide-pallets-in-40ft-reefer-day-lc-wordmark-load" style="fill:#10242e">
+      <path d="m 299.94,107.008 h 20.844 V 115 H 290.256 V 62.944 h 9.684 z" id="guide-pallets-in-40ft-reefer-day-path41"/>
+      <path d="m 339.17608,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="guide-pallets-in-40ft-reefer-day-path43"/>
+      <path d="m 391.08411,115 h -3.996 q -1.26,0 -1.98,-0.36 -0.72,-0.396 -1.08,-1.548 l -0.792,-2.628 q -1.404,1.26 -2.772,2.232 -1.332,0.936 -2.772,1.584 -1.44,0.648 -3.06,0.972 -1.62,0.324 -3.6,0.324 -2.34,0 -4.32,-0.612 -1.98,-0.648 -3.42,-1.908 -1.404,-1.26 -2.196,-3.132 -0.792,-1.872 -0.792,-4.356 0,-2.088 1.08,-4.104 1.116,-2.052 3.672,-3.672 2.556,-1.656 6.804,-2.736 4.248,-1.08 10.548,-1.224 v -2.16 q 0,-3.708 -1.584,-5.472 -1.548,-1.8 -4.536,-1.8 -2.16,0 -3.6,0.504 -1.44,0.504 -2.52,1.152 -1.044,0.612 -1.944,1.116 -0.9,0.504 -1.98,0.504 -0.9,0 -1.548,-0.468 -0.648,-0.468 -1.044,-1.152 l -1.62,-2.844 q 6.372,-5.832 15.372,-5.832 3.24,0 5.76,1.08 2.556,1.044 4.32,2.952 1.764,1.872 2.664,4.5 0.936,2.628 0.936,5.76 z m -17.28,-5.544 q 1.368,0 2.52,-0.252 1.152,-0.252 2.16,-0.756 1.044,-0.504 1.98,-1.224 0.972,-0.756 1.944,-1.764 v -6.228 q -3.888,0.18 -6.516,0.684 -2.592,0.468 -4.176,1.224 -1.584,0.756 -2.268,1.764 -0.648,1.008 -0.648,2.196 0,2.34 1.368,3.348 1.404,1.008 3.636,1.008 z" id="guide-pallets-in-40ft-reefer-day-path45"/>
+      <path d="m 423.62415,115 q -1.728,0 -2.268,-1.62 l -0.72,-3.564 q -1.152,1.296 -2.412,2.34 -1.26,1.044 -2.736,1.8 -1.44,0.756 -3.132,1.152 -1.656,0.432 -3.6,0.432 -3.024,0 -5.544,-1.26 -2.52,-1.26 -4.356,-3.636 -1.8,-2.412 -2.808,-5.94 -0.972,-3.528 -0.972,-8.064 0,-4.104 1.116,-7.632 1.116,-3.528 3.204,-6.12 2.088,-2.592 5.004,-4.032 2.916,-1.476 6.552,-1.476 3.096,0 5.292,1.008 2.196,0.972 3.924,2.628 V 61.504 h 8.892 V 115 Z m -11.844,-6.516 q 2.772,0 4.716,-1.152 1.944,-1.152 3.672,-3.276 v -16.56 q -1.512,-1.836 -3.312,-2.592 -1.764,-0.756 -3.816,-0.756 -2.016,0 -3.672,0.756 -1.62,0.756 -2.772,2.304 -1.116,1.512 -1.728,3.888 -0.612,2.34 -0.612,5.544 0,3.24 0.504,5.508 0.54,2.232 1.512,3.672 0.972,1.404 2.376,2.052 1.404,0.612 3.132,0.612 z" id="guide-pallets-in-40ft-reefer-day-path47"/>
+    </g>
+    <g aria-label="Composer" id="guide-pallets-in-40ft-reefer-day-lc-wordmark-composer" style="fill:#0d7c75">
+      <path d="m 481.04,102.724 q 0.792,0 1.368,0.612 l 3.816,4.14 q -3.168,3.924 -7.812,6.012 -4.608,2.088 -11.088,2.088 -5.796,0 -10.44,-1.98 -4.608,-1.98 -7.884,-5.508 -3.276,-3.528 -5.04,-8.424 -1.728,-4.896 -1.728,-10.692 0,-5.868 1.944,-10.728 1.944,-4.896 5.472,-8.424 3.528,-3.528 8.424,-5.472 4.932,-1.98 10.872,-1.98 5.796,0 10.116,1.872 4.356,1.836 7.452,4.896 l -3.24,4.5 q -0.288,0.432 -0.756,0.756 -0.432,0.324 -1.224,0.324 -0.828,0 -1.692,-0.648 -0.864,-0.648 -2.196,-1.404 -1.332,-0.756 -3.384,-1.404 -2.016,-0.648 -5.148,-0.648 -3.672,0 -6.768,1.296 -3.06,1.26 -5.292,3.636 -2.196,2.376 -3.456,5.796 -1.224,3.384 -1.224,7.632 0,4.392 1.224,7.812 1.26,3.42 3.384,5.76 2.124,2.34 5.004,3.6 2.88,1.224 6.192,1.224 1.98,0 3.564,-0.216 1.62,-0.216 2.952,-0.684 1.368,-0.468 2.556,-1.188 1.224,-0.756 2.412,-1.836 0.36,-0.324 0.756,-0.504 0.396,-0.216 0.864,-0.216 z" id="guide-pallets-in-40ft-reefer-day-path50"/>
+      <path d="m 506.29599,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="guide-pallets-in-40ft-reefer-day-path52"/>
+      <path d="M 528.96002,115 V 78.064 h 5.436 q 1.728,0 2.268,1.62 l 0.576,2.736 q 0.972,-1.08 2.016,-1.98 1.08,-0.9 2.268,-1.548 1.224,-0.648 2.592,-1.008 1.404,-0.396 3.06,-0.396 3.492,0 5.724,1.908 2.268,1.872 3.384,5.004 0.864,-1.836 2.16,-3.132 1.296,-1.332 2.844,-2.16 1.548,-0.828 3.276,-1.224 1.764,-0.396 3.528,-0.396 3.06,0 5.436,0.936 2.376,0.936 3.996,2.736 1.62,1.8 2.448,4.392 0.864,2.592 0.864,5.94 V 115 h -8.892 V 91.492 q 0,-3.528 -1.548,-5.292 -1.548,-1.8 -4.536,-1.8 -1.368,0 -2.556,0.468 -1.152,0.468 -2.052,1.368 -0.864,0.864 -1.368,2.196 -0.504,1.332 -0.504,3.06 V 115 h -8.928 V 91.492 q 0,-3.708 -1.512,-5.4 -1.476,-1.692 -4.392,-1.692 -1.908,0 -3.6,0.972 -1.656,0.936 -3.096,2.592 V 115 Z" id="guide-pallets-in-40ft-reefer-day-path54"/>
+      <path d="M 587.08409,127.06 V 78.064 h 5.436 q 0.864,0 1.476,0.396 0.612,0.396 0.792,1.224 l 0.72,3.42 q 2.232,-2.556 5.112,-4.14 2.916,-1.584 6.804,-1.584 3.024,0 5.508,1.26 2.52,1.26 4.32,3.672 1.836,2.376 2.808,5.904 1.008,3.492 1.008,8.028 0,4.14 -1.116,7.668 -1.116,3.528 -3.204,6.12 -2.052,2.592 -5.004,4.068 -2.916,1.44 -6.552,1.44 -3.132,0 -5.328,-0.936 -2.16,-0.972 -3.888,-2.664 v 15.12 z m 17.28,-42.66 q -2.772,0 -4.752,1.188 -1.944,1.152 -3.636,3.276 v 16.56 q 1.512,1.872 3.276,2.628 1.8,0.72 3.852,0.72 2.016,0 3.636,-0.756 1.656,-0.756 2.772,-2.304 1.152,-1.548 1.764,-3.888 0.612,-2.376 0.612,-5.58 0,-3.24 -0.54,-5.472 -0.504,-2.268 -1.476,-3.672 -0.972,-1.404 -2.376,-2.052 -1.368,-0.648 -3.132,-0.648 z" id="guide-pallets-in-40ft-reefer-day-path56"/>
+      <path d="m 641.06811,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="guide-pallets-in-40ft-reefer-day-path58"/>
+      <path d="m 685.65615,85.264 q -0.36,0.576 -0.756,0.828 -0.396,0.216 -1.008,0.216 -0.648,0 -1.404,-0.36 -0.72,-0.36 -1.692,-0.792 -0.972,-0.468 -2.232,-0.828 -1.224,-0.36 -2.916,-0.36 -2.628,0 -4.14,1.116 -1.512,1.116 -1.512,2.916 0,1.188 0.756,2.016 0.792,0.792 2.052,1.404 1.296,0.612 2.916,1.116 1.62,0.468 3.312,1.044 1.692,0.576 3.312,1.332 1.62,0.72 2.88,1.872 1.296,1.116 2.052,2.7 0.792,1.584 0.792,3.816 0,2.664 -0.972,4.932 -0.972,2.232 -2.844,3.888 -1.872,1.62 -4.644,2.556 -2.736,0.9 -6.3,0.9 -1.908,0 -3.744,-0.36 -1.8,-0.324 -3.492,-0.936 -1.656,-0.612 -3.096,-1.44 -1.404,-0.828 -2.484,-1.8 l 2.052,-3.384 q 0.396,-0.612 0.936,-0.936 0.54,-0.324 1.368,-0.324 0.828,0 1.548,0.468 0.756,0.468 1.728,1.008 0.972,0.54 2.268,1.008 1.332,0.468 3.348,0.468 1.584,0 2.7,-0.36 1.152,-0.396 1.872,-1.008 0.756,-0.612 1.08,-1.404 0.36,-0.828 0.36,-1.692 0,-1.296 -0.792,-2.124 -0.756,-0.828 -2.052,-1.44 -1.26,-0.612 -2.916,-1.08 -1.62,-0.504 -3.348,-1.08 -1.692,-0.576 -3.348,-1.332 -1.62,-0.792 -2.916,-1.98 -1.26,-1.188 -2.052,-2.916 -0.756,-1.728 -0.756,-4.176 0,-2.268 0.9,-4.32 0.9,-2.052 2.628,-3.564 1.764,-1.548 4.356,-2.448 2.628,-0.936 6.048,-0.936 3.816,0 6.948,1.26 3.132,1.26 5.22,3.312 z" id="guide-pallets-in-40ft-reefer-day-path60"/>
+      <path d="m 707.96017,77.488 q 3.492,0 6.408,1.116 2.952,1.116 5.076,3.276 2.124,2.124 3.312,5.256 1.188,3.096 1.188,7.092 0,1.008 -0.108,1.692 -0.072,0.648 -0.324,1.044 -0.216,0.36 -0.612,0.54 -0.396,0.144 -1.008,0.144 h -22.824 q 0.396,5.688 3.06,8.352 2.664,2.664 7.056,2.664 2.16,0 3.708,-0.504 1.584,-0.504 2.736,-1.116 1.188,-0.612 2.052,-1.116 0.9,-0.504 1.728,-0.504 0.54,0 0.936,0.216 0.396,0.216 0.684,0.612 l 2.592,3.24 q -1.476,1.728 -3.312,2.916 -1.836,1.152 -3.852,1.872 -1.98,0.684 -4.068,0.972 -2.052,0.288 -3.996,0.288 -3.852,0 -7.164,-1.26 -3.312,-1.296 -5.76,-3.78 -2.448,-2.52 -3.852,-6.192 -1.404,-3.708 -1.404,-8.568 0,-3.78 1.224,-7.092 1.224,-3.348 3.492,-5.796 2.304,-2.484 5.58,-3.924 3.312,-1.44 7.452,-1.44 z m 0.18,6.372 q -3.888,0 -6.084,2.196 -2.196,2.196 -2.808,6.228 h 16.704 q 0,-1.728 -0.468,-3.24 -0.468,-1.548 -1.44,-2.7 -0.972,-1.152 -2.448,-1.8 -1.476,-0.684 -3.456,-0.684 z" id="guide-pallets-in-40ft-reefer-day-path62"/>
+      <path d="M 728.68016,115 V 78.064 h 5.22 q 1.368,0 1.908,0.504 0.54,0.504 0.72,1.728 l 0.54,4.464 q 1.98,-3.42 4.644,-5.4 2.664,-1.98 5.976,-1.98 2.736,0 4.536,1.26 l -1.152,6.66 q -0.108,0.648 -0.468,0.936 -0.36,0.252 -0.972,0.252 -0.54,0 -1.476,-0.252 -0.936,-0.252 -2.484,-0.252 -2.772,0 -4.752,1.548 -1.98,1.512 -3.348,4.464 V 115 Z" id="guide-pallets-in-40ft-reefer-day-path64"/>
+    </g>
+  </g>
+  <rect id="guide-pallets-in-40ft-reefer-day-lc-underline" x="285" y="145" width="132" height="7" rx="3.5" fill="#2BAFA3"/>
+</svg>
+</span>
+        <span class="brand-logo night" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="746.224" height="175.996" viewBox="20 26.5538 746.224 175.996" role="img" aria-label="LoadComposer mobile night logo without payoff">
+  <!--FINAL OUTLINED SVG — no font or external resource dependency.-->
+  <g id="guide-pallets-in-40ft-reefer-night-lc-symbol" transform="matrix(0.55,0,0,0.55,-8.9,-24.3)" data-source="LoadComposer-logo-pack-v1">
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-01" style="fill:#e3ebed" d="m 85.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-02" style="fill:#e3ebed" d="m 292.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-03" style="fill:#e3ebed" d="m 361.5,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-04" style="fill:#e3ebed" d="m 85.5,195 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-05" style="fill:#e3ebed" d="m 292.5,195 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-06" style="fill:#e3ebed" d="m 85.5,264 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-07" style="fill:#e3ebed" d="m 292.5,264 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-08" style="fill:#e3ebed" d="m 85.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-09" style="fill:#e3ebed" d="m 154.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-10" style="fill:#e3ebed" d="m 223.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-11" style="fill:#e3ebed" d="m 292.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-12" style="fill:#e3ebed" d="m 361.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-block-13" style="fill:#e3ebed" d="m 430.5,333 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+    <path id="guide-pallets-in-40ft-reefer-night-lc-rotated-module" transform="rotate(45,454.05,153)" style="fill:#35beb2" d="m 434.54999,126 h 39 c 4.155,0 7.5,3.345 7.5,7.5 v 39 c 0,4.155 -3.345,7.5 -7.5,7.5 h -39 c -4.155,0 -7.5,-3.345 -7.5,-7.5 v -39 c 0,-4.155 3.345,-7.5 7.5,-7.5 z"/>
+  </g>
+  <g id="guide-pallets-in-40ft-reefer-night-lc-wordmark">
+    <g aria-label="Load" id="guide-pallets-in-40ft-reefer-night-lc-wordmark-load" style="fill:#e3ebed">
+      <path d="m 299.94,107.008 h 20.844 V 115 H 290.256 V 62.944 h 9.684 z" id="guide-pallets-in-40ft-reefer-night-path41"/>
+      <path d="m 339.17608,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="guide-pallets-in-40ft-reefer-night-path43"/>
+      <path d="m 391.08411,115 h -3.996 q -1.26,0 -1.98,-0.36 -0.72,-0.396 -1.08,-1.548 l -0.792,-2.628 q -1.404,1.26 -2.772,2.232 -1.332,0.936 -2.772,1.584 -1.44,0.648 -3.06,0.972 -1.62,0.324 -3.6,0.324 -2.34,0 -4.32,-0.612 -1.98,-0.648 -3.42,-1.908 -1.404,-1.26 -2.196,-3.132 -0.792,-1.872 -0.792,-4.356 0,-2.088 1.08,-4.104 1.116,-2.052 3.672,-3.672 2.556,-1.656 6.804,-2.736 4.248,-1.08 10.548,-1.224 v -2.16 q 0,-3.708 -1.584,-5.472 -1.548,-1.8 -4.536,-1.8 -2.16,0 -3.6,0.504 -1.44,0.504 -2.52,1.152 -1.044,0.612 -1.944,1.116 -0.9,0.504 -1.98,0.504 -0.9,0 -1.548,-0.468 -0.648,-0.468 -1.044,-1.152 l -1.62,-2.844 q 6.372,-5.832 15.372,-5.832 3.24,0 5.76,1.08 2.556,1.044 4.32,2.952 1.764,1.872 2.664,4.5 0.936,2.628 0.936,5.76 z m -17.28,-5.544 q 1.368,0 2.52,-0.252 1.152,-0.252 2.16,-0.756 1.044,-0.504 1.98,-1.224 0.972,-0.756 1.944,-1.764 v -6.228 q -3.888,0.18 -6.516,0.684 -2.592,0.468 -4.176,1.224 -1.584,0.756 -2.268,1.764 -0.648,1.008 -0.648,2.196 0,2.34 1.368,3.348 1.404,1.008 3.636,1.008 z" id="guide-pallets-in-40ft-reefer-night-path45"/>
+      <path d="m 423.62415,115 q -1.728,0 -2.268,-1.62 l -0.72,-3.564 q -1.152,1.296 -2.412,2.34 -1.26,1.044 -2.736,1.8 -1.44,0.756 -3.132,1.152 -1.656,0.432 -3.6,0.432 -3.024,0 -5.544,-1.26 -2.52,-1.26 -4.356,-3.636 -1.8,-2.412 -2.808,-5.94 -0.972,-3.528 -0.972,-8.064 0,-4.104 1.116,-7.632 1.116,-3.528 3.204,-6.12 2.088,-2.592 5.004,-4.032 2.916,-1.476 6.552,-1.476 3.096,0 5.292,1.008 2.196,0.972 3.924,2.628 V 61.504 h 8.892 V 115 Z m -11.844,-6.516 q 2.772,0 4.716,-1.152 1.944,-1.152 3.672,-3.276 v -16.56 q -1.512,-1.836 -3.312,-2.592 -1.764,-0.756 -3.816,-0.756 -2.016,0 -3.672,0.756 -1.62,0.756 -2.772,2.304 -1.116,1.512 -1.728,3.888 -0.612,2.34 -0.612,5.544 0,3.24 0.504,5.508 0.54,2.232 1.512,3.672 0.972,1.404 2.376,2.052 1.404,0.612 3.132,0.612 z" id="guide-pallets-in-40ft-reefer-night-path47"/>
+    </g>
+    <g aria-label="Composer" id="guide-pallets-in-40ft-reefer-night-lc-wordmark-composer" style="fill:#35beb2">
+      <path d="m 481.04,102.724 q 0.792,0 1.368,0.612 l 3.816,4.14 q -3.168,3.924 -7.812,6.012 -4.608,2.088 -11.088,2.088 -5.796,0 -10.44,-1.98 -4.608,-1.98 -7.884,-5.508 -3.276,-3.528 -5.04,-8.424 -1.728,-4.896 -1.728,-10.692 0,-5.868 1.944,-10.728 1.944,-4.896 5.472,-8.424 3.528,-3.528 8.424,-5.472 4.932,-1.98 10.872,-1.98 5.796,0 10.116,1.872 4.356,1.836 7.452,4.896 l -3.24,4.5 q -0.288,0.432 -0.756,0.756 -0.432,0.324 -1.224,0.324 -0.828,0 -1.692,-0.648 -0.864,-0.648 -2.196,-1.404 -1.332,-0.756 -3.384,-1.404 -2.016,-0.648 -5.148,-0.648 -3.672,0 -6.768,1.296 -3.06,1.26 -5.292,3.636 -2.196,2.376 -3.456,5.796 -1.224,3.384 -1.224,7.632 0,4.392 1.224,7.812 1.26,3.42 3.384,5.76 2.124,2.34 5.004,3.6 2.88,1.224 6.192,1.224 1.98,0 3.564,-0.216 1.62,-0.216 2.952,-0.684 1.368,-0.468 2.556,-1.188 1.224,-0.756 2.412,-1.836 0.36,-0.324 0.756,-0.504 0.396,-0.216 0.864,-0.216 z" id="guide-pallets-in-40ft-reefer-night-path50"/>
+      <path d="m 506.29599,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="guide-pallets-in-40ft-reefer-night-path52"/>
+      <path d="M 528.96002,115 V 78.064 h 5.436 q 1.728,0 2.268,1.62 l 0.576,2.736 q 0.972,-1.08 2.016,-1.98 1.08,-0.9 2.268,-1.548 1.224,-0.648 2.592,-1.008 1.404,-0.396 3.06,-0.396 3.492,0 5.724,1.908 2.268,1.872 3.384,5.004 0.864,-1.836 2.16,-3.132 1.296,-1.332 2.844,-2.16 1.548,-0.828 3.276,-1.224 1.764,-0.396 3.528,-0.396 3.06,0 5.436,0.936 2.376,0.936 3.996,2.736 1.62,1.8 2.448,4.392 0.864,2.592 0.864,5.94 V 115 h -8.892 V 91.492 q 0,-3.528 -1.548,-5.292 -1.548,-1.8 -4.536,-1.8 -1.368,0 -2.556,0.468 -1.152,0.468 -2.052,1.368 -0.864,0.864 -1.368,2.196 -0.504,1.332 -0.504,3.06 V 115 h -8.928 V 91.492 q 0,-3.708 -1.512,-5.4 -1.476,-1.692 -4.392,-1.692 -1.908,0 -3.6,0.972 -1.656,0.936 -3.096,2.592 V 115 Z" id="guide-pallets-in-40ft-reefer-night-path54"/>
+      <path d="M 587.08409,127.06 V 78.064 h 5.436 q 0.864,0 1.476,0.396 0.612,0.396 0.792,1.224 l 0.72,3.42 q 2.232,-2.556 5.112,-4.14 2.916,-1.584 6.804,-1.584 3.024,0 5.508,1.26 2.52,1.26 4.32,3.672 1.836,2.376 2.808,5.904 1.008,3.492 1.008,8.028 0,4.14 -1.116,7.668 -1.116,3.528 -3.204,6.12 -2.052,2.592 -5.004,4.068 -2.916,1.44 -6.552,1.44 -3.132,0 -5.328,-0.936 -2.16,-0.972 -3.888,-2.664 v 15.12 z m 17.28,-42.66 q -2.772,0 -4.752,1.188 -1.944,1.152 -3.636,3.276 v 16.56 q 1.512,1.872 3.276,2.628 1.8,0.72 3.852,0.72 2.016,0 3.636,-0.756 1.656,-0.756 2.772,-2.304 1.152,-1.548 1.764,-3.888 0.612,-2.376 0.612,-5.58 0,-3.24 -0.54,-5.472 -0.504,-2.268 -1.476,-3.672 -0.972,-1.404 -2.376,-2.052 -1.368,-0.648 -3.132,-0.648 z" id="guide-pallets-in-40ft-reefer-night-path56"/>
+      <path d="m 641.06811,77.488 q 4.14,0 7.488,1.332 3.384,1.332 5.76,3.78 2.376,2.448 3.672,5.976 1.296,3.528 1.296,7.884 0,4.392 -1.296,7.92 -1.296,3.528 -3.672,6.012 -2.376,2.484 -5.76,3.816 -3.348,1.332 -7.488,1.332 -4.14,0 -7.524,-1.332 -3.384,-1.332 -5.796,-3.816 -2.376,-2.484 -3.708,-6.012 -1.296,-3.528 -1.296,-7.92 0,-4.356 1.296,-7.884 1.332,-3.528 3.708,-5.976 2.412,-2.448 5.796,-3.78 3.384,-1.332 7.524,-1.332 z m 0,31.212 q 4.608,0 6.804,-3.096 2.232,-3.096 2.232,-9.072 0,-5.976 -2.232,-9.108 -2.196,-3.132 -6.804,-3.132 -4.68,0 -6.912,3.168 -2.232,3.132 -2.232,9.072 0,5.94 2.232,9.072 2.232,3.096 6.912,3.096 z" id="guide-pallets-in-40ft-reefer-night-path58"/>
+      <path d="m 685.65615,85.264 q -0.36,0.576 -0.756,0.828 -0.396,0.216 -1.008,0.216 -0.648,0 -1.404,-0.36 -0.72,-0.36 -1.692,-0.792 -0.972,-0.468 -2.232,-0.828 -1.224,-0.36 -2.916,-0.36 -2.628,0 -4.14,1.116 -1.512,1.116 -1.512,2.916 0,1.188 0.756,2.016 0.792,0.792 2.052,1.404 1.296,0.612 2.916,1.116 1.62,0.468 3.312,1.044 1.692,0.576 3.312,1.332 1.62,0.72 2.88,1.872 1.296,1.116 2.052,2.7 0.792,1.584 0.792,3.816 0,2.664 -0.972,4.932 -0.972,2.232 -2.844,3.888 -1.872,1.62 -4.644,2.556 -2.736,0.9 -6.3,0.9 -1.908,0 -3.744,-0.36 -1.8,-0.324 -3.492,-0.936 -1.656,-0.612 -3.096,-1.44 -1.404,-0.828 -2.484,-1.8 l 2.052,-3.384 q 0.396,-0.612 0.936,-0.936 0.54,-0.324 1.368,-0.324 0.828,0 1.548,0.468 0.756,0.468 1.728,1.008 0.972,0.54 2.268,1.008 1.332,0.468 3.348,0.468 1.584,0 2.7,-0.36 1.152,-0.396 1.872,-1.008 0.756,-0.612 1.08,-1.404 0.36,-0.828 0.36,-1.692 0,-1.296 -0.792,-2.124 -0.756,-0.828 -2.052,-1.44 -1.26,-0.612 -2.916,-1.08 -1.62,-0.504 -3.348,-1.08 -1.692,-0.576 -3.348,-1.332 -1.62,-0.792 -2.916,-1.98 -1.26,-1.188 -2.052,-2.916 -0.756,-1.728 -0.756,-4.176 0,-2.268 0.9,-4.32 0.9,-2.052 2.628,-3.564 1.764,-1.548 4.356,-2.448 2.628,-0.936 6.048,-0.936 3.816,0 6.948,1.26 3.132,1.26 5.22,3.312 z" id="guide-pallets-in-40ft-reefer-night-path60"/>
+      <path d="m 707.96017,77.488 q 3.492,0 6.408,1.116 2.952,1.116 5.076,3.276 2.124,2.124 3.312,5.256 1.188,3.096 1.188,7.092 0,1.008 -0.108,1.692 -0.072,0.648 -0.324,1.044 -0.216,0.36 -0.612,0.54 -0.396,0.144 -1.008,0.144 h -22.824 q 0.396,5.688 3.06,8.352 2.664,2.664 7.056,2.664 2.16,0 3.708,-0.504 1.584,-0.504 2.736,-1.116 1.188,-0.612 2.052,-1.116 0.9,-0.504 1.728,-0.504 0.54,0 0.936,0.216 0.396,0.216 0.684,0.612 l 2.592,3.24 q -1.476,1.728 -3.312,2.916 -1.836,1.152 -3.852,1.872 -1.98,0.684 -4.068,0.972 -2.052,0.288 -3.996,0.288 -3.852,0 -7.164,-1.26 -3.312,-1.296 -5.76,-3.78 -2.448,-2.52 -3.852,-6.192 -1.404,-3.708 -1.404,-8.568 0,-3.78 1.224,-7.092 1.224,-3.348 3.492,-5.796 2.304,-2.484 5.58,-3.924 3.312,-1.44 7.452,-1.44 z m 0.18,6.372 q -3.888,0 -6.084,2.196 -2.196,2.196 -2.808,6.228 h 16.704 q 0,-1.728 -0.468,-3.24 -0.468,-1.548 -1.44,-2.7 -0.972,-1.152 -2.448,-1.8 -1.476,-0.684 -3.456,-0.684 z" id="guide-pallets-in-40ft-reefer-night-path62"/>
+      <path d="M 728.68016,115 V 78.064 h 5.22 q 1.368,0 1.908,0.504 0.54,0.504 0.72,1.728 l 0.54,4.464 q 1.98,-3.42 4.644,-5.4 2.664,-1.98 5.976,-1.98 2.736,0 4.536,1.26 l -1.152,6.66 q -0.108,0.648 -0.468,0.936 -0.36,0.252 -0.972,0.252 -0.54,0 -1.476,-0.252 -0.936,-0.252 -2.484,-0.252 -2.772,0 -4.752,1.548 -1.98,1.512 -3.348,4.464 V 115 Z" id="guide-pallets-in-40ft-reefer-night-path64"/>
+    </g>
+  </g>
+  <rect id="guide-pallets-in-40ft-reefer-night-lc-underline" x="285" y="145" width="132" height="7" rx="3.5" fill="#35BEB2"/>
+</svg>
+</span>
+      </a>
+      <label class="control">
+        <span>Theme</span>
+        <select id="themeSelect" aria-label="Theme">
+          <option value="auto">Automatic</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+    </header>
+
+    <main>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">LoadComposer</a>
+<span aria-hidden="true">›</span>
+<a href="/guides/">Guides</a>
+<span aria-hidden="true">›</span>
+<span aria-current="page">40 ft Reefer</span></nav>
+      <article class="article-shell">
+        <div class="prose"><h1>How many pallets fit in a 40 ft reefer container?</h1>
+      <p class="answer"><strong>For LoadComposer's current 40' HC Reefer reference,</strong> the planner finds 23 Euro pallet floor positions, 20 industrial pallet positions, or 20 North American pallet positions with rotation allowed, zero modeled clearance, and no stacking.</p>
+      <p>The LoadComposer reference is specifically <strong>40' HC Reefer</strong>; it is not a claim that every generic 40-foot reefer has one universal internal size. Insulation, machinery, air channels, floor profile, manufacturer, series, condition, and tolerances can change usable dimensions and operating clearance.</p>
+      <h2>40' Dry versus the current 40' HC Reefer reference</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">Reference</th><th scope="col">Internal L × W × H</th><th scope="col">Door W × H</th><th scope="col">Euro / Industrial / North American</th></tr></thead>
+        <tbody>
+          <tr><td>40' Dry</td><td>12,032 × 2,350 × 2,393 mm</td><td>2,340 × 2,280 mm</td><td>25 / 22 / 20</td></tr>
+          <tr><td>40' HC Reefer</td><td>11,584 × 2,294 × 2,557 mm</td><td>2,290 × 2,569 mm</td><td>23 / 20 / 20</td></tr>
+        </tbody>
+      </table></div>
+      <p>In the current data, the reefer reference is shorter and narrower internally than 40' Dry. The recorded series range behind this LoadComposer reference is approximately 11,578–11,584 mm long, 2,275–2,294 mm wide, and 2,415–2,557 mm high. The planner uses the displayed reference values above; the real unit still needs verification.</p>
+      <h2>Common pallet results</h2>
+      <div class="table-wrap"><table><caption class="muted">Floor positions found for LoadComposer&#39;s 40&#39; HC Reefer reference and the stated settings.</caption>
+<thead><tr><th scope="col">Pallet preset</th><th scope="col">Footprint</th><th scope="col">Floor positions found</th></tr></thead>
+<tbody><tr><td>Euro pallet</td><td>1200 × 800 mm</td><td>23</td></tr>
+<tr><td>Industrial pallet</td><td>1200 × 1000 mm</td><td>20</td></tr>
+<tr><td>North American pallet</td><td>1219 × 1016 mm</td><td>20</td></tr></tbody></table></div>
+      <h2>Reefer floor-layout example</h2>
+      <figure>
+<img src="/assets/guides/40ft-hc-reefer-euro-pallet-layout.png" width="1100" height="470" alt="LoadComposer floor layout of 23 Euro pallets in the 40 foot High Cube Reefer reference" />
+<figcaption>LoadComposer floor-layout result for 23 Euro pallets in the current 40&#39; HC Reefer reference; rotation allowed, zero modeled clearance, no stacking.</figcaption>
+</figure>
+      <p>This is an actual 40' HC Reefer result, not a Dry-container layout relabeled as refrigerated equipment. Before substituting equipment, confirm the actual unit, required airflow and operational spacing, rear access, temperature-control requirements, securing, weight, and floor-loading rules.</p>
+      <div class="actions" aria-label="Planner actions">
+<a class="button" href="/?example=40ft-reefer-euro">Try this example</a>
+<a class="button secondary" href="/">Use LoadComposer for free</a>
+</div>
+      <h2>Related guides</h2>
+<ul class="related">
+<li><a href="/guides/pallets-in-40ft-container/">40 ft Dry</a></li>
+<li><a href="/guides/pallets-in-40ft-high-cube/">40 ft High Cube</a></li>
+</ul></div>
+      </article>
+    </main>
+
+    <footer aria-label="Footer links">
+      <a href="/">LoadComposer</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+      <a href="/downloads/">Download</a>
+      <a href="/legal/privacy/">Privacy</a>
+      <a href="/legal/">Legal information</a>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const select = document.getElementById("themeSelect");
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      const systemTheme = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      function resolve(preference) {
+        return preference === "auto" ? (systemTheme && systemTheme.matches ? "dark" : "light") : preference;
+      }
+      function apply(preference) {
+        const value = ["auto", "light", "dark"].includes(preference) ? preference : "auto";
+        root.dataset.themePreference = value;
+        root.dataset.theme = resolve(value);
+        root.style.colorScheme = root.dataset.theme;
+        themeMeta.setAttribute("content", root.dataset.theme === "dark" ? "#050D16" : "#F4F5F2");
+        select.value = value;
+        try { localStorage.setItem("loadcomposer.theme", value); } catch (_) {}
+      }
+      select.addEventListener("change", () => apply(select.value));
+      if (systemTheme) systemTheme.addEventListener("change", () => {
+        if (root.dataset.themePreference === "auto") apply("auto");
+      });
+      apply(root.dataset.themePreference || "auto");
+    })();
+  </script>
+</body>
+</html>

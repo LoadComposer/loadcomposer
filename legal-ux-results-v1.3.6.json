@@ -1,0 +1,164 @@
+{
+  "version": "1.3.6",
+  "status": "PASS",
+  "sourceInventory": [
+    {
+      "path": "LICENSE",
+      "publicPath": "site/legal/raw/LICENSE",
+      "sha256": "07c8360fa6840b24641b2e9443c82d8001ad8c4d32bc58f43fb04f64a1d080d0",
+      "identical": true
+    },
+    {
+      "path": "LICENSE.it.md",
+      "publicPath": "site/legal/raw/LICENSE.it.md",
+      "sha256": "8b47a93a962da349910972a6125ec7ce1997b07fb951e2c316b10c187c875266",
+      "identical": true
+    },
+    {
+      "path": "NOTICE",
+      "publicPath": "site/legal/raw/NOTICE",
+      "sha256": "0b1322e4517d715f95e44d63d576b663b2b9c65e8e97caed2fc6e7cae86e266f",
+      "identical": true
+    },
+    {
+      "path": "TRADEMARKS.md",
+      "publicPath": "site/legal/raw/TRADEMARKS.md",
+      "sha256": "5c69098cb03d6033200b42edb4eefb1b9a0a0542e91f05a57ec58c61f5337490",
+      "identical": true
+    },
+    {
+      "path": "COMMERCIAL-LICENSING.md",
+      "publicPath": "site/legal/raw/COMMERCIAL-LICENSING.md",
+      "sha256": "59444c07f5f7286d1e032211b7e933aa9ab357e6d0a66e7c1022e673c3a6e3c4",
+      "identical": true
+    },
+    {
+      "path": "PRIVACY.md",
+      "publicPath": "site/legal/raw/PRIVACY.md",
+      "sha256": "13ba9454ebab8c3bbaf195e978c3b2e7a4cf0f69bc0d732bd622e35d811f5e28",
+      "identical": true
+    },
+    {
+      "path": "SECURITY.md",
+      "publicPath": "site/legal/raw/SECURITY.md",
+      "sha256": "41f27656c06f55d1ad059f9ec7738bb2ee884270ccae86b0f4d6316a93efe076",
+      "identical": true
+    }
+  ],
+  "routes": [
+    "/legal/license/",
+    "/legal/notices/",
+    "/legal/trademarks/",
+    "/legal/commercial/",
+    "/legal/privacy/",
+    "/legal/security/"
+  ],
+  "rendering": {
+    "static": true,
+    "runtimeMarkdownFetches": 0,
+    "legalBodyLanguages": [
+      "en",
+      "it"
+    ],
+    "newLegalTranslations": 0,
+    "shellLanguages": [
+      "it",
+      "en",
+      "de",
+      "es",
+      "fr",
+      "pt",
+      "nl"
+    ],
+    "outerMaxWidthPx": 1100,
+    "proseMaxMeasureCh": 88
+  },
+  "visualQa": {
+    "scenarios": 72,
+    "expectedScenarios": 72,
+    "themes": [
+      "Light",
+      "Dark",
+      "Auto light",
+      "Auto dark"
+    ],
+    "viewports": [
+      "desktop",
+      "tablet",
+      "mobile"
+    ],
+    "screenshots": [
+      {
+        "file": "legal-visual-evidence-v1.3.6/license-light-light-desktop.png",
+        "sha256": "3b8f1637473b2d57247fbde740624db8b8b80da2ade6428a045c58d50ad08b8c"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/license-dark-dark-mobile.png",
+        "sha256": "653557236f0cec4a60f787154f0af82e19e413bafaf5d732b404b814b1786b71"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/license-auto-light-tablet.png",
+        "sha256": "9e0f996d11fcbeeeff34249a99e410cf72e6d6083ec332ecefc2981ce57a533d"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/license-auto-dark-tablet.png",
+        "sha256": "c0a41640f23e9b637eadae61f6458038a248252b0088a2440db03bc32bbfa0ff"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/notices-light-light-desktop.png",
+        "sha256": "3aa606e255ad1b2c283016f863e3df8a4bc29063395cbdb3ad16af27602a73b5"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/notices-dark-dark-mobile.png",
+        "sha256": "1d8503655673d7edc41dadda5a43cb60f993ea1333d6ab6b31e2fd5c83ad20e2"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/trademarks-light-light-desktop.png",
+        "sha256": "4802c3cecffda8ef76bccf6254f8d13b2791c94c9e3ad894d30893ba755e63c0"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/trademarks-dark-dark-mobile.png",
+        "sha256": "5cfccbaeba060a9bb928918429058eb74f64c33168e6c877438858ad2af16943"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/commercial-light-light-desktop.png",
+        "sha256": "55d65165b14bff4452d80576a65512ed5335be67b41409bd185b36ae1d744b1e"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/commercial-dark-dark-mobile.png",
+        "sha256": "a2188f6a6e199c2ad485df5784c95739ea895c1aaf392ae8407c0bd5d3882705"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/privacy-light-light-desktop.png",
+        "sha256": "472da4e51080cf1b422a8b1723a5b4f8a493c904ab04ecc4111695f6f17be89b"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/privacy-dark-dark-mobile.png",
+        "sha256": "6d9d87d3a10ec2f5379dee724e227514768d0afc64fa3e6f96849edd85893669"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/security-light-light-desktop.png",
+        "sha256": "76920eedbefc225a3ced4f73214c190bb848f97d329f9898176cbffb4ec84802"
+      },
+      {
+        "file": "legal-visual-evidence-v1.3.6/security-dark-dark-mobile.png",
+        "sha256": "55a4a9f8c43ec201c1e6c156d70d509bfb4db2b4402e4e251340270840d31a51"
+      }
+    ]
+  },
+  "license": {
+    "selector": "PASS",
+    "states": [
+      "en governing",
+      "it informational"
+    ],
+    "historyNavigation": "PASS",
+    "tocFromCanonicalHeadings": "PASS"
+  },
+  "navigation": {
+    "hubStyledRoutes": "PASS",
+    "internalSameTab": "PASS",
+    "externalNewTabNoopener": "PASS",
+    "directHttpRoutes": "PASS"
+  }
+}

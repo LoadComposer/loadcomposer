@@ -12,21 +12,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="darkreader-lock">
-  <title>LoadComposer v1.3.5</title>
-  <meta name="description" content="LoadComposer estimates pallet arrangements in common road and sea freight vehicles directly in your browser." />
+  <title>Pallet Loading Calculator for Containers &amp; Trailers | LoadComposer</title>
+  <meta name="description" content="Calculate pallet layouts for shipping containers and 13.60 m trailers using common or custom pallet sizes, directly in your browser." />
   <meta name="application-name" content="LoadComposer" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#071a24" />
   <link rel="canonical" href="https://loadcomposer.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LoadComposer" />
-  <meta property="og:title" content="LoadComposer v1.3.5" />
-  <meta property="og:description" content="Browser-based geometric load-planning estimates, with offline and standalone support." />
+  <meta property="og:title" content="Pallet Loading Calculator for Containers &amp; Trailers | LoadComposer" />
+  <meta property="og:description" content="Calculate pallet layouts for shipping containers and 13.60 m trailers using common or custom pallet sizes, directly in your browser." />
   <meta property="og:url" content="https://loadcomposer.com/" />
-  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.5.png" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.6.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "LoadComposer",
+      "url": "https://loadcomposer.com/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "description": "Browser-based geometric pallet load planning for shipping containers and 13.60 m trailers, with offline standalone support."
+    }
+  </script>
   <script id="loadcomposer-theme-bootstrap">
     (() => {
       const root = document.documentElement;
@@ -522,7 +532,10 @@
       }
 
       function applyDocumentTranslations() {
-        document.title = translate("meta.documentTitle");
+        const embeddedData = readEmbeddedData();
+        document.title = embeddedData.standalone === true
+          ? embeddedData.standaloneTitle
+          : translate("meta.documentTitle");
         syncLanguageOptions();
         applyLocalizedAttributes(document);
         root.lang = activeCode;
@@ -3577,7 +3590,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.3.5</span>
+        <span class="app-version">v1.3.6</span>
       </div>
 
       <div class="header-controls">
@@ -3644,7 +3657,7 @@
     <p data-i18n="app.description">app.description</p>
   </header>
 
-  <main>
+  <main id="planner">
     <section class="card">
       <h2 data-i18n="load.title">load.title</h2>
       <div class="sub" data-i18n="load.subtitle">load.subtitle</div>
@@ -3885,7 +3898,7 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-note" data-i18n="footer.note">footer.note</div>
+    <div class="footer-note" data-i18n="footer.note">Note: this tool performs an indicative geometry check and does not replace operational verification with the freight forwarder or checks relating to packaging, load securing, safety, pallet bulging, actual vehicle tolerances, and operating constraints. This version calculates floor-level arrangements for rear loading. Weight, load balance, and side loading are not yet included.</div>
     <nav
       class="footer-links"
       aria-label="footer.linksAria"
@@ -3915,6 +3928,18 @@
         data-standalone-href="https://loadcomposer.com/downloads/"
         data-i18n="footer.download"
       >footer.download</a>
+      <a
+        class="footer-link"
+        href="./guides/"
+        data-standalone-href="https://loadcomposer.com/guides/"
+        data-i18n="footer.guides"
+      >footer.guides</a>
+      <a
+        class="footer-link"
+        href="./about/"
+        data-standalone-href="https://loadcomposer.com/about/"
+        data-i18n="footer.about"
+      >footer.about</a>
       <a
         class="footer-link"
         href="https://github.com/LoadComposer/loadcomposer/discussions"
@@ -4261,6 +4286,15 @@
       { section: "other", id: "48x48", length: 1219, width: 1219, nativeUnit: "in", nativeLength: 48, nativeWidth: 48, primary: "48 × 48 in", secondary: "1219 × 1219 mm", name: "Pallet per fusti" },
       { section: "custom", id: "custom", length: 1200, width: 800, primary: "Inserisci dimensioni…", secondary: "Lunghezza e larghezza personalizzate", name: "Pallet personalizzato" }
     ];
+
+    const PUBLIC_EXAMPLES = Object.freeze({
+      "20ft-euro": Object.freeze({ containerId: "20dc", presetId: "eur", quantity: 11, height: 1500 }),
+      "20ft-reefer-euro": Object.freeze({ containerId: "20rf", presetId: "eur", quantity: 10, height: 1500 }),
+      "40ft-euro": Object.freeze({ containerId: "40dc", presetId: "eur", quantity: 25, height: 1500 }),
+      "40ft-hc-euro": Object.freeze({ containerId: "40hc", presetId: "eur", quantity: 25, height: 1500 }),
+      "40ft-reefer-euro": Object.freeze({ containerId: "40rh", presetId: "eur", quantity: 23, height: 1500 }),
+      "40ft-pallet-wide-euro": Object.freeze({ containerId: "40hwpw", presetId: "eur", quantity: 30, height: 1500 })
+    });
 
     const MAX_TOTAL_PALLETS = 500;
     const MAX_CUSTOM_NAME_LENGTH = 48;
@@ -6418,6 +6452,43 @@
 
     function getPreset(id) {
       return PALLET_PRESETS.find(item => item.id === id) || PALLET_PRESETS[0];
+    }
+
+    function requestedPublicExampleId() {
+      try {
+        const parameters = new URLSearchParams(window.location.search);
+        const values = parameters.getAll("example");
+        if (values.length !== 1) return null;
+        return Object.hasOwn(PUBLIC_EXAMPLES, values[0]) ? values[0] : null;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function applyPublicExample(exampleId) {
+      const example = PUBLIC_EXAMPLES[exampleId];
+      if (!example) return false;
+
+      els.loadMode.value = "single";
+      els.quantity.value = String(example.quantity);
+      setLengthInputMm(els.palletHeight, example.height);
+      setLengthInputMm(els.gap, 0);
+      els.stackable.checked = false;
+      els.maxLayers.value = 2;
+      setLengthInputMm(els.verticalGap, 0);
+      els.stackOptions.classList.add("hidden");
+
+      const group = els.singlePalletGroup;
+      group.querySelector('[data-field="allowRotate"]').checked = true;
+      group.querySelector('[data-field="lockedOrientation"][value="normal"]').checked = true;
+      group.querySelector('[data-field="customName"]').value = t("pallet.customDefaultName");
+      group.querySelector('[data-field="identifier"]').value = "";
+      initializeGroup(group, example.presetId);
+
+      selectedContainerId = example.containerId;
+      lastResults = [];
+      document.documentElement.dataset.example = exampleId;
+      return true;
     }
 
     function presetMeasurementSystem(unit) {
@@ -9753,6 +9824,7 @@
         { calculate: false }
       );
       syncModeUI({ calculate: false });
+      delete document.documentElement.dataset.example;
       calculate();
     }
 
@@ -9924,7 +9996,13 @@
         { calculate: false }
       );
       syncModeUI({ calculate: false });
-      calculate();
+      const publicExampleId = requestedPublicExampleId();
+      if (publicExampleId) {
+        applyPublicExample(publicExampleId);
+        syncModeUI({ calculate: false });
+      } else {
+        calculate();
+      }
     }
 
     window.addEventListener("loadcomposer:languagechange", refreshLocalizedApplication);
