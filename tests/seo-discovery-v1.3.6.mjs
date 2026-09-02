@@ -91,6 +91,12 @@ async function loadStandalone(url) {
     url,
     virtualConsole,
     beforeParse(window) {
+      window.__calculateButtonClickEvents = 0;
+      window.document.addEventListener("click", event => {
+        if (event.target && event.target.id === "calculateBtn") {
+          window.__calculateButtonClickEvents += 1;
+        }
+      }, true);
       window.localStorage.setItem("loadcomposer.language", "en");
       window.localStorage.setItem("loadcomposer.theme", "light");
       window.localStorage.setItem("loadcomposer.unit", "mm");
@@ -381,19 +387,29 @@ for (const example of Object.values(PUBLIC_EXAMPLES)) {
     assert.equal(group.querySelector('[data-field="allowRotate"]').checked, true);
     assert.equal(document.getElementById("stackable").checked, false);
     assert.equal(window.eval("selectedContainerId"), example.vehicleId);
-    assert.equal(window.eval("lastResults.length"), 0, `${example.id}: must not auto-calculate`);
-    document.getElementById("calculateBtn").click();
+    assert.equal(window.__calculateButtonClickEvents, 1, `${example.id}: normal Calculate path must run exactly once automatically`);
+    assert.ok(window.eval("lastResults.length") > 0, `${example.id}: normal results must be populated automatically`);
+    assert.ok(document.querySelectorAll("#resultsBody tr").length > 0, `${example.id}: result table remains empty`);
+    assert.ok(document.querySelectorAll("#drawSelect option").length > 0, `${example.id}: layout selector remains empty`);
     const result = resultFor(window, example.vehicleId);
     assert.equal(result.floorCapacity, FLOOR_CAPACITIES[example.vehicleId][example.palletId]);
     assert.equal(result.placedCount, example.quantity);
     assert.equal(result.unplacedCount, 0);
     assert.equal(result.ok, true);
+    const editedQuantity = Math.max(1, example.quantity - 1);
+    group.querySelector('[data-field="quantity"]').value = String(editedQuantity);
+    document.getElementById("calculateBtn").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+    assert.equal(window.__calculateButtonClickEvents, 2, `${example.id}: user Calculate path unavailable`);
+    const editedResult = resultFor(window, example.vehicleId);
+    assert.equal(editedResult.placedCount, editedQuantity, `${example.id}: edited quantity did not recalculate normally`);
+    assert.equal(editedResult.ok, true, `${example.id}: edited result invalid`);
     document.getElementById("resetBtn").click();
     assert.equal(document.documentElement.hasAttribute("data-example"), false);
     assert.equal(group.querySelector('[data-field="presetId"]').value, "eur");
     assert.equal(Number(group.querySelector('[data-field="quantity"]').value), 10);
     assert.equal(window.eval("selectedContainerId"), "20dc");
     assert.ok(window.eval("lastResults.length") > 0, `${example.id}: reset must restore normal calculated state`);
+    assert.equal(window.__calculateButtonClickEvents, 2, `${example.id}: Reset reapplied query-string example`);
     exampleResults.push({
       id: example.id,
       vehicleId: example.vehicleId,
@@ -406,7 +422,9 @@ for (const example of Object.values(PUBLIC_EXAMPLES)) {
       capacity: result.floorCapacity,
       placed: result.placedCount,
       unplaced: result.unplacedCount,
-      automaticCalculation: false,
+      automaticCalculation: true,
+      automaticCalculatePathInvocations: 1,
+      editableRecalculation: "PASS",
       reset: "PASS"
     });
   } finally {
@@ -414,15 +432,31 @@ for (const example of Object.values(PUBLIC_EXAMPLES)) {
   }
 }
 
-for (const unknown of ["unknown", "20ft-euro&example=40ft-euro", "<script>alert(1)</script>"]) {
-  const dom = await loadStandalone(`https://loadcomposer.test/?example=${encodeURIComponent(unknown)}`);
+const rejectedExampleUrls = [
+  ["unknown", "https://loadcomposer.test/?example=unknown"],
+  ["malformed", `https://loadcomposer.test/?example=${encodeURIComponent("<script>alert(1)</script>")}`],
+  ["blank", "https://loadcomposer.test/?example="],
+  ["duplicate/conflicting", "https://loadcomposer.test/?example=20ft-euro&example=40ft-euro"]
+];
+for (const [label, url] of rejectedExampleUrls) {
+  const dom = await loadStandalone(url);
   try {
-    assert.equal(dom.window.document.documentElement.hasAttribute("data-example"), false, "unknown example accepted");
-    assert.ok(dom.window.eval("lastResults.length") > 0, "unknown example did not fall back safely");
+    assert.equal(dom.window.document.documentElement.hasAttribute("data-example"), false, `${label}: rejected example accepted`);
+    assert.equal(dom.window.__calculateButtonClickEvents, 0, `${label}: rejected example triggered automatic Calculate path`);
+    assert.ok(dom.window.eval("lastResults.length") > 0, `${label}: normal Home fallback changed`);
     assert.equal(dom.window.document.querySelector('[data-field="presetId"]').value, "eur");
   } finally {
     dom.window.close();
   }
+}
+
+const directHomeDom = await loadStandalone("https://loadcomposer.test/");
+try {
+  assert.equal(directHomeDom.window.document.documentElement.hasAttribute("data-example"), false);
+  assert.equal(directHomeDom.window.__calculateButtonClickEvents, 0, "normal Home triggered the example Calculate path");
+  assert.ok(directHomeDom.window.eval("lastResults.length") > 0, "normal Home initialization changed");
+} finally {
+  directHomeDom.window.close();
 }
 
 const publicAssets = [];
@@ -520,6 +554,10 @@ try {
 
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: "en-US", colorScheme: "light" });
   await context.addInitScript(() => {
+    window.__calculateButtonClickEvents = 0;
+    document.addEventListener("click", event => {
+      if (event.target && event.target.id === "calculateBtn") window.__calculateButtonClickEvents += 1;
+    }, true);
     localStorage.setItem("loadcomposer.theme", "light");
     localStorage.setItem("loadcomposer.language", "en");
     localStorage.setItem("loadcomposer.unit", "mm");
@@ -533,8 +571,10 @@ try {
     await page.goto(`${localOrigin}${href}`, { waitUntil: "load" });
     await page.waitForFunction(() => document.documentElement.dataset.i18nReady === "true");
     await page.waitForFunction(() => window.eval("applicationInitialized") === true);
-    assert.equal(await page.evaluate(() => window.eval("lastResults.length")), 0, `${example.id}: browser auto-calculated`);
-    await page.click("#calculateBtn");
+    assert.equal(await page.evaluate(() => window.__calculateButtonClickEvents), 1, `${example.id}: browser automatic Calculate count`);
+    assert.ok(await page.evaluate(() => window.eval("lastResults.length")) > 0, `${example.id}: browser results empty`);
+    assert.ok(await page.locator("#resultsBody tr").count() > 0, `${example.id}: browser result table empty`);
+    assert.equal(await page.evaluate(() => window.scrollY), 0, `${example.id}: automatic calculation forced scroll`);
     const result = await page.evaluate(vehicleId => {
       const item = window.eval("lastResults").find(result => result.container.id === vehicleId);
       return {
@@ -552,15 +592,23 @@ try {
     const renderedPng = Buffer.from(result.png.replace(/^data:image\/png;base64,/, ""), "base64");
     const publicPng = fs.readFileSync(path.join(SITE, "assets", "guides", example.image));
     assert.equal(sha256(renderedPng), sha256(publicPng), `${example.id}: public image differs from current canvas output`);
+    await page.locator('#singlePalletGroup [data-field="quantity"]').fill(String(Math.max(1, example.quantity - 1)));
+    await page.click("#calculateBtn");
+    const edited = await page.evaluate(vehicleId => {
+      const item = window.eval("lastResults").find(result => result.container.id === vehicleId);
+      return { placed: item.placedCount, ok: item.ok, clickEvents: window.__calculateButtonClickEvents };
+    }, example.vehicleId);
+    assert.deepEqual(edited, { placed: Math.max(1, example.quantity - 1), ok: true, clickEvents: 2 }, `${example.id}: normal edit/recalculate path`);
     await page.click("#resetBtn");
     const reset = await page.evaluate(() => ({
       example: document.documentElement.dataset.example || null,
       preset: document.querySelector('[data-field="presetId"]').value,
       quantity: Number(document.querySelector('[data-field="quantity"]').value),
-      selectedContainerId: window.eval("selectedContainerId")
+      selectedContainerId: window.eval("selectedContainerId"),
+      clickEvents: window.__calculateButtonClickEvents
     }));
-    assert.deepEqual(reset, { example: null, preset: "eur", quantity: 10, selectedContainerId: "20dc" });
-    browserExampleResults.push({ id: example.id, route, destination: href, currentCanvasHash: sha256(renderedPng), status: "PASS" });
+    assert.deepEqual(reset, { example: null, preset: "eur", quantity: 10, selectedContainerId: "20dc", clickEvents: 2 });
+    browserExampleResults.push({ id: example.id, route, destination: href, automaticCalculatePathInvocations: 1, currentCanvasHash: sha256(renderedPng), editableRecalculation: "PASS", reset: "PASS", status: "PASS" });
     await page.close();
   }
   await context.close();

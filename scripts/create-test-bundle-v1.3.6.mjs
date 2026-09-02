@@ -8,7 +8,7 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 const VERSION = fs.readFileSync(path.join(ROOT, "VERSION"), "utf8").trim();
 const BUNDLE_NAME = `loadcomposer-v${VERSION}-test-bundle`;
 const OUTPUT = path.join(ROOT, `${BUNDLE_NAME}.zip`);
-const FIXED_TIME = new Date("2026-09-01T00:00:00Z");
+const FIXED_TIME = new Date("2026-09-02T00:00:00Z");
 
 function sha256(file) {
   return crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");

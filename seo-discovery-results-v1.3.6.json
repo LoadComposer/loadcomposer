@@ -33,7 +33,9 @@
       "capacity": 11,
       "placed": 11,
       "unplaced": 0,
-      "automaticCalculation": false,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
       "reset": "PASS"
     },
     {
@@ -48,7 +50,9 @@
       "capacity": 10,
       "placed": 10,
       "unplaced": 0,
-      "automaticCalculation": false,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
       "reset": "PASS"
     },
     {
@@ -63,7 +67,9 @@
       "capacity": 25,
       "placed": 25,
       "unplaced": 0,
-      "automaticCalculation": false,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
       "reset": "PASS"
     },
     {
@@ -78,7 +84,9 @@
       "capacity": 25,
       "placed": 25,
       "unplaced": 0,
-      "automaticCalculation": false,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
       "reset": "PASS"
     },
     {
@@ -93,7 +101,9 @@
       "capacity": 23,
       "placed": 23,
       "unplaced": 0,
-      "automaticCalculation": false,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
       "reset": "PASS"
     },
     {
@@ -108,7 +118,9 @@
       "capacity": 30,
       "placed": 30,
       "unplaced": 0,
-      "automaticCalculation": false,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
       "reset": "PASS"
     }
   ],
@@ -623,42 +635,60 @@
       "id": "20ft-euro",
       "route": "/guides/pallets-in-20ft-container/",
       "destination": "/?example=20ft-euro",
+      "automaticCalculatePathInvocations": 1,
       "currentCanvasHash": "5d57ecccb0a1372f30ee33f03b5e9cc0bae297e30c9745216a70b0076fb90461",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
       "status": "PASS"
     },
     {
       "id": "20ft-reefer-euro",
       "route": "/guides/pallets-in-20ft-reefer/",
       "destination": "/?example=20ft-reefer-euro",
+      "automaticCalculatePathInvocations": 1,
       "currentCanvasHash": "08303014d633eedcb6e745852235d497f99e46dbecd95b3936c5af99c766c208",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
       "status": "PASS"
     },
     {
       "id": "40ft-euro",
       "route": "/guides/pallets-in-40ft-container/",
       "destination": "/?example=40ft-euro",
+      "automaticCalculatePathInvocations": 1,
       "currentCanvasHash": "327b36cfca95b282b743402f1fe978b7cd4fa5b7c37f98281cd6564f0ee70d22",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
       "status": "PASS"
     },
     {
       "id": "40ft-hc-euro",
       "route": "/guides/pallets-in-40ft-high-cube/",
       "destination": "/?example=40ft-hc-euro",
+      "automaticCalculatePathInvocations": 1,
       "currentCanvasHash": "6fac075be571fe73651fc89ea4507e23eb5d5dd4341aa5c9f72c536684ca5e0e",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
       "status": "PASS"
     },
     {
       "id": "40ft-reefer-euro",
       "route": "/guides/pallets-in-40ft-reefer/",
       "destination": "/?example=40ft-reefer-euro",
+      "automaticCalculatePathInvocations": 1,
       "currentCanvasHash": "4c3197ece89665a1d93ed0964c7463ac5501db2cd5d3c603648a8813904c7ea0",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
       "status": "PASS"
     },
     {
       "id": "40ft-pallet-wide-euro",
       "route": "/guides/pallets-in-40ft-pallet-wide-container/",
       "destination": "/?example=40ft-pallet-wide-euro",
+      "automaticCalculatePathInvocations": 1,
       "currentCanvasHash": "deae2ec2f6efd118e99e10d63b8bae0d23ec256af81d3b5e81c5aefc3de126ec",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
       "status": "PASS"
     }
   ],

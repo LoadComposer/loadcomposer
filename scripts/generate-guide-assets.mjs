@@ -33,6 +33,10 @@ try {
     colorScheme: "light"
   });
   await context.addInitScript(() => {
+    window.__calculateButtonClickEvents = 0;
+    document.addEventListener("click", event => {
+      if (event.target && event.target.id === "calculateBtn") window.__calculateButtonClickEvents += 1;
+    }, true);
     localStorage.setItem("loadcomposer.language", "en");
     localStorage.setItem("loadcomposer.theme", "light");
     localStorage.setItem("loadcomposer.unit", "mm");
@@ -67,7 +71,8 @@ try {
         stackable: document.getElementById("stackable").checked,
         gap: Number(document.getElementById("gap").value),
         selectedContainerId: window.eval("selectedContainerId"),
-        resultCount: window.eval("lastResults.length")
+        resultCount: window.eval("lastResults.length"),
+        automaticCalculatePathInvocations: window.__calculateButtonClickEvents
       };
     });
     if (
@@ -79,12 +84,12 @@ try {
       prefill.stackable !== false ||
       prefill.gap !== example.gap ||
       prefill.selectedContainerId !== example.vehicleId ||
-      prefill.resultCount !== 0
+      prefill.resultCount === 0 ||
+      prefill.automaticCalculatePathInvocations !== 1
     ) {
       throw new Error(`${example.id}: planner prefill differs from the public example contract.`);
     }
 
-    await page.click("#calculateBtn");
     const rendered = await page.evaluate(vehicleId => {
       const result = window.eval("lastResults").find(item => item.container.id === vehicleId);
       if (!result) return null;

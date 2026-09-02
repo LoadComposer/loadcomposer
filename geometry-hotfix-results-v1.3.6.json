@@ -69,6 +69,6 @@
   "stress": {
     "quantity": 500,
     "placed": 500,
-    "milliseconds": 62.467527999999675
+    "milliseconds": 50.36166500000013
   }
 }
