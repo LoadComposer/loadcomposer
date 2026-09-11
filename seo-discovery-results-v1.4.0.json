@@ -1,0 +1,748 @@
+{
+  "version": "1.4.0",
+  "status": "PASS",
+  "routes": [
+    "/guides/",
+    "/guides/pallets-in-20ft-container/",
+    "/guides/pallets-in-20ft-reefer/",
+    "/guides/pallets-in-40ft-container/",
+    "/guides/pallets-in-40ft-high-cube/",
+    "/guides/pallets-in-40ft-reefer/",
+    "/guides/pallets-in-40ft-pallet-wide-container/"
+  ],
+  "guideCount": 7,
+  "leafGuideCount": 6,
+  "sitemapUrls": 17,
+  "metadata": {
+    "uniqueTitles": 7,
+    "uniqueDescriptions": 7,
+    "canonicalCoverage": "7/7",
+    "openGraphCoverage": "7/7",
+    "twitterMetadata": "absent from current generated HTML"
+  },
+  "examples": [
+    {
+      "id": "20ft-euro",
+      "vehicleId": "20dc",
+      "palletId": "eur",
+      "quantity": 11,
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "capacity": 11,
+      "placed": 11,
+      "unplaced": 0,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
+      "reset": "PASS"
+    },
+    {
+      "id": "20ft-reefer-euro",
+      "vehicleId": "20rf",
+      "palletId": "eur",
+      "quantity": 10,
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "capacity": 10,
+      "placed": 10,
+      "unplaced": 0,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
+      "reset": "PASS"
+    },
+    {
+      "id": "40ft-euro",
+      "vehicleId": "40dc",
+      "palletId": "eur",
+      "quantity": 25,
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "capacity": 25,
+      "placed": 25,
+      "unplaced": 0,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
+      "reset": "PASS"
+    },
+    {
+      "id": "40ft-hc-euro",
+      "vehicleId": "40hc",
+      "palletId": "eur",
+      "quantity": 25,
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "capacity": 25,
+      "placed": 25,
+      "unplaced": 0,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
+      "reset": "PASS"
+    },
+    {
+      "id": "40ft-reefer-euro",
+      "vehicleId": "40rh",
+      "palletId": "eur",
+      "quantity": 23,
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "capacity": 23,
+      "placed": 23,
+      "unplaced": 0,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
+      "reset": "PASS"
+    },
+    {
+      "id": "40ft-pallet-wide-euro",
+      "vehicleId": "40hwpw",
+      "palletId": "eur",
+      "quantity": 30,
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "capacity": 30,
+      "placed": 30,
+      "unplaced": 0,
+      "automaticCalculation": true,
+      "automaticCalculatePathInvocations": 1,
+      "editableRecalculation": "PASS",
+      "reset": "PASS"
+    }
+  ],
+  "engineResults": [
+    {
+      "vehicleId": "20dc",
+      "palletId": "eur",
+      "palletDimensions": [
+        1200,
+        800
+      ],
+      "vehicleDimensions": [
+        5896,
+        2350,
+        2393
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 11,
+      "orientationCounts": {
+        "normal": 4,
+        "rotated": 7
+      },
+      "usedLength": 5600,
+      "usedWidth": 2000
+    },
+    {
+      "vehicleId": "20rf",
+      "palletId": "eur",
+      "palletDimensions": [
+        1200,
+        800
+      ],
+      "vehicleDimensions": [
+        5456,
+        2294,
+        2273
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 10,
+      "orientationCounts": {
+        "normal": 4,
+        "rotated": 6
+      },
+      "usedLength": 4800,
+      "usedWidth": 2000
+    },
+    {
+      "vehicleId": "40dc",
+      "palletId": "eur",
+      "palletDimensions": [
+        1200,
+        800
+      ],
+      "vehicleDimensions": [
+        12032,
+        2350,
+        2393
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 25,
+      "orientationCounts": {
+        "normal": 10,
+        "rotated": 15
+      },
+      "usedLength": 12000,
+      "usedWidth": 2000
+    },
+    {
+      "vehicleId": "40hc",
+      "palletId": "eur",
+      "palletDimensions": [
+        1200,
+        800
+      ],
+      "vehicleDimensions": [
+        12032,
+        2350,
+        2697
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 25,
+      "orientationCounts": {
+        "normal": 10,
+        "rotated": 15
+      },
+      "usedLength": 12000,
+      "usedWidth": 2000
+    },
+    {
+      "vehicleId": "40rh",
+      "palletId": "eur",
+      "palletDimensions": [
+        1200,
+        800
+      ],
+      "vehicleDimensions": [
+        11584,
+        2294,
+        2557
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 23,
+      "orientationCounts": {
+        "normal": 9,
+        "rotated": 14
+      },
+      "usedLength": 11200,
+      "usedWidth": 2000
+    },
+    {
+      "vehicleId": "40hwpw",
+      "palletId": "eur",
+      "palletDimensions": [
+        1200,
+        800
+      ],
+      "vehicleDimensions": [
+        12095,
+        2444,
+        2692
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 30,
+      "orientationCounts": {
+        "normal": 0,
+        "rotated": 30
+      },
+      "usedLength": 12000,
+      "usedWidth": 2400
+    },
+    {
+      "vehicleId": "20dc",
+      "palletId": "industrial",
+      "palletDimensions": [
+        1200,
+        1000
+      ],
+      "vehicleDimensions": [
+        5896,
+        2350,
+        2393
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 10,
+      "orientationCounts": {
+        "normal": 5,
+        "rotated": 5
+      },
+      "usedLength": 5600,
+      "usedWidth": 2200
+    },
+    {
+      "vehicleId": "20rf",
+      "palletId": "industrial",
+      "palletDimensions": [
+        1200,
+        1000
+      ],
+      "vehicleDimensions": [
+        5456,
+        2294,
+        2273
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 9,
+      "orientationCounts": {
+        "normal": 4,
+        "rotated": 5
+      },
+      "usedLength": 5000,
+      "usedWidth": 2200
+    },
+    {
+      "vehicleId": "40dc",
+      "palletId": "industrial",
+      "palletDimensions": [
+        1200,
+        1000
+      ],
+      "vehicleDimensions": [
+        12032,
+        2350,
+        2393
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 22,
+      "orientationCounts": {
+        "normal": 10,
+        "rotated": 12
+      },
+      "usedLength": 12000,
+      "usedWidth": 2200
+    },
+    {
+      "vehicleId": "40hc",
+      "palletId": "industrial",
+      "palletDimensions": [
+        1200,
+        1000
+      ],
+      "vehicleDimensions": [
+        12032,
+        2350,
+        2697
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 22,
+      "orientationCounts": {
+        "normal": 10,
+        "rotated": 12
+      },
+      "usedLength": 12000,
+      "usedWidth": 2200
+    },
+    {
+      "vehicleId": "40rh",
+      "palletId": "industrial",
+      "palletDimensions": [
+        1200,
+        1000
+      ],
+      "vehicleDimensions": [
+        11584,
+        2294,
+        2557
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 20,
+      "orientationCounts": {
+        "normal": 9,
+        "rotated": 11
+      },
+      "usedLength": 11000,
+      "usedWidth": 2200
+    },
+    {
+      "vehicleId": "40hwpw",
+      "palletId": "industrial",
+      "palletDimensions": [
+        1200,
+        1000
+      ],
+      "vehicleDimensions": [
+        12095,
+        2444,
+        2692
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 24,
+      "orientationCounts": {
+        "normal": 0,
+        "rotated": 24
+      },
+      "usedLength": 12000,
+      "usedWidth": 2400
+    },
+    {
+      "vehicleId": "20dc",
+      "palletId": "north-american",
+      "palletDimensions": [
+        1219,
+        1016
+      ],
+      "vehicleDimensions": [
+        5896,
+        2350,
+        2393
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 10,
+      "orientationCounts": {
+        "normal": 5,
+        "rotated": 5
+      },
+      "usedLength": 5689,
+      "usedWidth": 2235
+    },
+    {
+      "vehicleId": "20rf",
+      "palletId": "north-american",
+      "palletDimensions": [
+        1219,
+        1016
+      ],
+      "vehicleDimensions": [
+        5456,
+        2294,
+        2273
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 9,
+      "orientationCounts": {
+        "normal": 4,
+        "rotated": 5
+      },
+      "usedLength": 5080,
+      "usedWidth": 2235
+    },
+    {
+      "vehicleId": "40dc",
+      "palletId": "north-american",
+      "palletDimensions": [
+        1219,
+        1016
+      ],
+      "vehicleDimensions": [
+        12032,
+        2350,
+        2393
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 20,
+      "orientationCounts": {
+        "normal": 9,
+        "rotated": 11
+      },
+      "usedLength": 11176,
+      "usedWidth": 2235
+    },
+    {
+      "vehicleId": "40hc",
+      "palletId": "north-american",
+      "palletDimensions": [
+        1219,
+        1016
+      ],
+      "vehicleDimensions": [
+        12032,
+        2350,
+        2697
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 20,
+      "orientationCounts": {
+        "normal": 9,
+        "rotated": 11
+      },
+      "usedLength": 11176,
+      "usedWidth": 2235
+    },
+    {
+      "vehicleId": "40rh",
+      "palletId": "north-american",
+      "palletDimensions": [
+        1219,
+        1016
+      ],
+      "vehicleDimensions": [
+        11584,
+        2294,
+        2557
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 20,
+      "orientationCounts": {
+        "normal": 9,
+        "rotated": 11
+      },
+      "usedLength": 11176,
+      "usedWidth": 2235
+    },
+    {
+      "vehicleId": "40hwpw",
+      "palletId": "north-american",
+      "palletDimensions": [
+        1219,
+        1016
+      ],
+      "vehicleDimensions": [
+        12095,
+        2444,
+        2692
+      ],
+      "loadedHeight": 1500,
+      "gap": 0,
+      "rotation": "allowed",
+      "stacking": false,
+      "floorCapacity": 22,
+      "orientationCounts": {
+        "normal": 0,
+        "rotated": 22
+      },
+      "usedLength": 11176,
+      "usedWidth": 2438
+    }
+  ],
+  "publicAssets": [
+    {
+      "file": "site/assets/guides/20ft-container-euro-pallet-layout.png",
+      "scenario": "20ft-euro",
+      "vehicleId": "20dc",
+      "palletId": "eur",
+      "quantity": 11,
+      "width": 1100,
+      "height": 470,
+      "alt": "LoadComposer floor layout of 11 Euro pallets in the 20 foot Dry container reference",
+      "sha256": "291a06f73430179f5319677fb8336fe7739700279f4a64c1e5a8a0ee1d14a8f3"
+    },
+    {
+      "file": "site/assets/guides/20ft-reefer-euro-pallet-layout.png",
+      "scenario": "20ft-reefer-euro",
+      "vehicleId": "20rf",
+      "palletId": "eur",
+      "quantity": 10,
+      "width": 1100,
+      "height": 470,
+      "alt": "LoadComposer floor layout of 10 Euro pallets in the 20 foot Reefer container reference",
+      "sha256": "48866deae68562d6573ebc9d1de71bb62b97735d79e2d54004b82672ccceb62b"
+    },
+    {
+      "file": "site/assets/guides/40ft-dry-euro-pallet-layout.png",
+      "scenario": "40ft-euro",
+      "vehicleId": "40dc",
+      "palletId": "eur",
+      "quantity": 25,
+      "width": 1100,
+      "height": 470,
+      "alt": "LoadComposer floor layout of 25 Euro pallets in the 40 foot Dry container reference",
+      "sha256": "78a09a005e4f4d90107c39801b65e7e5313ab2a29008c6f9ceb93ac619b8a51c"
+    },
+    {
+      "file": "site/assets/guides/40ft-high-cube-euro-pallet-floor-layout.png",
+      "scenario": "40ft-hc-euro",
+      "vehicleId": "40hc",
+      "palletId": "eur",
+      "quantity": 25,
+      "width": 1100,
+      "height": 470,
+      "alt": "LoadComposer top-view floor layout of 25 Euro pallets in the 40 foot High Cube reference",
+      "sha256": "88f84335a5bd69ab007725256e3e04a5e828164e2f3c7b1a6edc36891e10083d"
+    },
+    {
+      "file": "site/assets/guides/40ft-hc-reefer-euro-pallet-layout.png",
+      "scenario": "40ft-reefer-euro",
+      "vehicleId": "40rh",
+      "palletId": "eur",
+      "quantity": 23,
+      "width": 1100,
+      "height": 470,
+      "alt": "LoadComposer floor layout of 23 Euro pallets in the 40 foot High Cube Reefer reference",
+      "sha256": "ba70c2afc7c32d640b0081a2ad61d47cb613a00ed2ec895f9071c8d1bf10f498"
+    },
+    {
+      "file": "site/assets/guides/40ft-hc-pallet-wide-euro-pallet-layout.png",
+      "scenario": "40ft-pallet-wide-euro",
+      "vehicleId": "40hwpw",
+      "palletId": "eur",
+      "quantity": 30,
+      "width": 1100,
+      "height": 470,
+      "alt": "LoadComposer floor layout of 30 Euro pallets in the 40 foot High Cube Pallet Wide container reference",
+      "sha256": "ff94c26a8c88bb3a8ea0ada0f9adc154203985b8d3d623ca7109955a3d30cd58"
+    }
+  ],
+  "browserScenarios": {
+    "total": 72,
+    "passed": 72
+  },
+  "browserExampleResults": [
+    {
+      "id": "20ft-euro",
+      "route": "/guides/pallets-in-20ft-container/",
+      "destination": "/?example=20ft-euro",
+      "automaticCalculatePathInvocations": 1,
+      "currentCanvasHash": "291a06f73430179f5319677fb8336fe7739700279f4a64c1e5a8a0ee1d14a8f3",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
+      "status": "PASS"
+    },
+    {
+      "id": "20ft-reefer-euro",
+      "route": "/guides/pallets-in-20ft-reefer/",
+      "destination": "/?example=20ft-reefer-euro",
+      "automaticCalculatePathInvocations": 1,
+      "currentCanvasHash": "48866deae68562d6573ebc9d1de71bb62b97735d79e2d54004b82672ccceb62b",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
+      "status": "PASS"
+    },
+    {
+      "id": "40ft-euro",
+      "route": "/guides/pallets-in-40ft-container/",
+      "destination": "/?example=40ft-euro",
+      "automaticCalculatePathInvocations": 1,
+      "currentCanvasHash": "78a09a005e4f4d90107c39801b65e7e5313ab2a29008c6f9ceb93ac619b8a51c",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
+      "status": "PASS"
+    },
+    {
+      "id": "40ft-hc-euro",
+      "route": "/guides/pallets-in-40ft-high-cube/",
+      "destination": "/?example=40ft-hc-euro",
+      "automaticCalculatePathInvocations": 1,
+      "currentCanvasHash": "88f84335a5bd69ab007725256e3e04a5e828164e2f3c7b1a6edc36891e10083d",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
+      "status": "PASS"
+    },
+    {
+      "id": "40ft-reefer-euro",
+      "route": "/guides/pallets-in-40ft-reefer/",
+      "destination": "/?example=40ft-reefer-euro",
+      "automaticCalculatePathInvocations": 1,
+      "currentCanvasHash": "ba70c2afc7c32d640b0081a2ad61d47cb613a00ed2ec895f9071c8d1bf10f498",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
+      "status": "PASS"
+    },
+    {
+      "id": "40ft-pallet-wide-euro",
+      "route": "/guides/pallets-in-40ft-pallet-wide-container/",
+      "destination": "/?example=40ft-pallet-wide-euro",
+      "automaticCalculatePathInvocations": 1,
+      "currentCanvasHash": "ff94c26a8c88bb3a8ea0ada0f9adc154203985b8d3d623ca7109955a3d30cd58",
+      "editableRecalculation": "PASS",
+      "reset": "PASS",
+      "status": "PASS"
+    }
+  ],
+  "standalone": {
+    "title": "LoadComposer v1.4.0 — Pallet Loading Calculator",
+    "embeddedFavicon": true,
+    "faviconNetworkRequests": 0,
+    "fileProtocolOffline": "PASS",
+    "footerNoteFallback": "human-readable",
+    "explorerIconScope": "unchanged by design"
+  },
+  "highCubeDryWordJaccard": 0.3744,
+  "pageFacts": [
+    {
+      "route": "/guides/",
+      "title": "Pallet Capacity Guides for Shipping Containers | LoadComposer",
+      "description": "Practical LoadComposer pallet-capacity guides for 20 ft and 40 ft Dry, Reefer, High Cube, and Pallet Wide container references.",
+      "h1": "LoadComposer pallet capacity guides"
+    },
+    {
+      "route": "/guides/pallets-in-20ft-container/",
+      "title": "How Many Pallets Fit in a 20 ft Container? | LoadComposer",
+      "description": "LoadComposer results for Euro, industrial, and North American pallets in its nominal 20 ft Dry container reference.",
+      "h1": "How many pallets fit in a 20 ft container?"
+    },
+    {
+      "route": "/guides/pallets-in-20ft-reefer/",
+      "title": "How Many Pallets Fit in a 20 ft Reefer? | LoadComposer",
+      "description": "LoadComposer pallet-capacity results for its current 20 ft Reefer reference, compared with the nominal 20 ft Dry reference.",
+      "h1": "How many pallets fit in a 20 ft reefer container?"
+    },
+    {
+      "route": "/guides/pallets-in-40ft-container/",
+      "title": "How Many Pallets Fit in a 40 ft Container? | LoadComposer",
+      "description": "LoadComposer floor-capacity results for common pallets in its 40 ft Dry container reference, with a real generated layout.",
+      "h1": "How many pallets fit in a 40 ft container?"
+    },
+    {
+      "route": "/guides/pallets-in-40ft-high-cube/",
+      "title": "Does a 40 ft High Cube Fit More Pallets? | LoadComposer",
+      "description": "A LoadComposer comparison of 40 ft Dry and High Cube floor capacity, internal height, and door clearance for common pallets.",
+      "h1": "Does a 40 ft High Cube fit more pallets?"
+    },
+    {
+      "route": "/guides/pallets-in-40ft-reefer/",
+      "title": "How Many Pallets Fit in a 40 ft Reefer Container? | LoadComposer",
+      "description": "LoadComposer results for its current 40 ft HC Reefer reference, compared with 40 ft Dry dimensions and pallet capacity.",
+      "h1": "How many pallets fit in a 40 ft reefer container?"
+    },
+    {
+      "route": "/guides/pallets-in-40ft-pallet-wide-container/",
+      "title": "How Many Euro Pallets Fit in a 40 ft Pallet Wide Container? | LoadComposer",
+      "description": "LoadComposer pallet-capacity results for its current 40 ft High Cube Pallet Wide reference, compared with 40 ft Dry.",
+      "h1": "How many Euro pallets fit in a 40 ft Pallet Wide container?"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "version": "1.4.0",
+  "status": "PASS",
+  "admittedDeliverySha256": "d3f7271ac430275a6c28be1bfac9b5b5a668f266a0e0f03acf4d40af6847c894",
+  "admission": {
+    "files": 705,
+    "manifest": 703,
+    "checksums": 704,
+    "collisions": 0
+  },
+  "computationalBaseline": {
+    "version": "1.3.6",
+    "commit": "ffb36bd",
+    "standaloneSha256": "0a6d16890a9043c251e37f574e31167da3a0ce64a3af9d328ce44856653288e7"
+  },
+  "legalSourceHashes": {
+    "LICENSE": "07c8360fa6840b24641b2e9443c82d8001ad8c4d32bc58f43fb04f64a1d080d0",
+    "LICENSE.it.md": "8b47a93a962da349910972a6125ec7ce1997b07fb951e2c316b10c187c875266",
+    "NOTICE": "0b1322e4517d715f95e44d63d576b663b2b9c65e8e97caed2fc6e7cae86e266f",
+    "TRADEMARKS.md": "5c69098cb03d6033200b42edb4eefb1b9a0a0542e91f05a57ec58c61f5337490",
+    "COMMERCIAL-LICENSING.md": "59444c07f5f7286d1e032211b7e933aa9ab357e6d0a66e7c1022e673c3a6e3c4",
+    "PRIVACY.md": "13ba9454ebab8c3bbaf195e978c3b2e7a4cf0f69bc0d732bd622e35d811f5e28",
+    "SECURITY.md": "41f27656c06f55d1ad059f9ec7738bb2ee884270ccae86b0f4d6316a93efe076"
+  },
+  "protectedFunctions": {
+    "calculateSingle": "5c23252c1a187fccef06032a84373a94debc3deaf4e51e962326040cea72487d",
+    "calculateMixed": "8097cea7f9406b284adc76a3a7c53c806c4cb1026b9677366bf9ca05b5a9cc5d",
+    "layersFor": "17504ce8d58543162f28b1e34c75567b6a3533857228448fdfd29ed7a139ea85",
+    "frontCompactSelectedLayout": "29a0d6452e475bde007b22de4a89bfe42dc0bc9c7f164036922291d44d440880",
+    "rankSingleCapacityLayouts": "10fae027942966b2a76e8c0f3e91dbc8e216310237367f893773c858467b2e16",
+    "bestLayout": "ff64713ad08bafaed5323d3c9bfde521e5efad560617f5564c26afba329061f2",
+    "bestLoadLayout": "c9f1159bd3935942bef0b3000539e36c6c4472ee013f02cabb692e29074f07c3",
+    "deriveLoadLayout": "4ceab5d4f1b0912b5828cb0b4dd5041a382882b32215b63ff8d905bc9a046744",
+    "prepareLayoutForPresentation": "e6b5485ee40564c5479103a8161d4b873f3a5de2044c6cc519dc70bd7e1b6ded",
+    "bestMixedLayout": "b8475eab5d04f980af2daca12a98f34642174f511ff6bbbfe86b106c7bdb1828",
+    "validateResultGeometry": "753a3a993ceaf36e6f504644df0400fb06bc44f4a8954b5bbe92b251e91c03de"
+  },
+  "printCurrentLayoutSha256": "b71c844dcfaad6d8060b5e29a45c21f69bc3b8742be2c7d7ced3e0419ede4152",
+  "historicalFilesUnchanged": 474,
+  "publishedHistoricalFilesUnchanged": 44,
+  "frozenContentFilesUnchanged": 28,
+  "changedFunctionRegions": [
+    "localizedOrderingName",
+    "applyPublicExample",
+    "mixedGroupHtml",
+    "validateAndReadInput",
+    "activeLengthInputs",
+    "calculate",
+    "resultMatchesActiveFilter",
+    "syncFilterControls",
+    "setSecondaryFilter",
+    "syncUnifiedMode",
+    "resetDefaults",
+    "initializeApplication"
+  ],
+  "newUiFunctions": [
+    "setStackingReasonOpen",
+    "syncStackingControls"
+  ]
+}

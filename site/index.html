@@ -23,7 +23,7 @@
   <meta property="og:title" content="Pallet Loading Calculator for Containers &amp; Trailers | LoadComposer" />
   <meta property="og:description" content="Calculate pallet layouts for shipping containers and 13.60 m trailers using common or custom pallet sizes, directly in your browser." />
   <meta property="og:url" content="https://loadcomposer.com/" />
-  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.3.6.png" />
+  <meta property="og:image" content="https://loadcomposer.com/assets/loadcomposer-og-v1.4.0.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <script type="application/ld+json">
@@ -790,7 +790,8 @@
     header p {
       margin: 12px 0 0;
       color: var(--muted);
-      max-width: 880px;
+      max-width: none;
+      text-wrap: balance;
       line-height: 1.55;
     }
 
@@ -799,7 +800,7 @@
       margin: 0 auto;
       padding: 18px 22px 36px;
       display: grid;
-      grid-template-columns: 430px minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 18px;
       align-items: start;
       min-width: 0;
@@ -837,7 +838,74 @@
     .form {
       padding: 0 18px 18px;
       display: grid;
-      gap: 13px;
+      gap: 18px;
+    }
+
+    .internal-state {
+      display: none !important;
+    }
+
+    .entry-block {
+      display: grid;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .entry-block > h3,
+    .result-filters > strong {
+      margin: 0;
+      color: var(--lc-text-secondary, var(--muted));
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .general-settings {
+      padding: 14px;
+      border: 1px solid var(--lc-border, rgba(148, 163, 184, .18));
+      border-radius: 15px;
+      background: var(--lc-surface-secondary, rgba(15, 23, 42, .42));
+    }
+
+    .general-settings-grid {
+      display: grid;
+      grid-template-columns: minmax(230px, .65fr) minmax(230px, 1fr);
+      gap: 16px;
+      align-items: end;
+    }
+
+    .measurement-input {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      min-width: 0;
+    }
+
+    .measurement-input input {
+      border-radius: 12px 0 0 12px;
+    }
+
+    .unit-suffix {
+      display: grid;
+      place-items: center;
+      min-width: 52px;
+      padding: 0 11px;
+      color: var(--lc-text-secondary, var(--muted));
+      background: var(--lc-surface-secondary, rgba(15, 23, 42, .72));
+      border: 1px solid var(--line);
+      border-left: 0;
+      border-radius: 0 12px 12px 0;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .measurement-input:focus-within .unit-suffix {
+      border-color: var(--accent);
+    }
+
+    .add-group-button {
+      justify-self: start;
+      min-height: 44px;
     }
 
     .unit-preference {
@@ -1323,6 +1391,15 @@
       min-width: 0;
     }
 
+    .preview-stage {
+      min-width: 0;
+      box-sizing: border-box;
+      padding: 0;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 16px;
+    }
+
     .drawtop {
       display: flex;
       justify-content: space-between;
@@ -1533,7 +1610,7 @@
     .pallet-group {
       position: relative;
       display: grid;
-      gap: 14px;
+      gap: 0;
       padding: 15px;
       border-radius: 16px;
       background: rgba(15, 23, 42, 0.58);
@@ -1545,6 +1622,119 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+    }
+
+    .group-disclosure {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+      min-height: 48px;
+      padding: 7px 9px;
+      color: var(--text);
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      text-align: left;
+    }
+
+    .group-disclosure:hover {
+      background: rgba(56, 189, 248, .07);
+      filter: none;
+    }
+
+    .group-disclosure-icon {
+      flex: 0 0 auto;
+      color: var(--accent);
+      font-size: 18px;
+      transition: transform .16s ease;
+    }
+
+    .group-disclosure[aria-expanded="false"] .group-disclosure-icon {
+      transform: rotate(-90deg);
+    }
+
+    .group-heading-copy {
+      display: grid;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .group-summary {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .group-body {
+      display: grid;
+      gap: 14px;
+      padding-top: 13px;
+    }
+
+    .group-body[hidden] {
+      display: none;
+    }
+
+    .orientation-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 9px 10px;
+      border-radius: 10px;
+      color: var(--text);
+      background: rgba(56, 189, 248, .07);
+      border: 1px solid rgba(56, 189, 248, .16);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .orientation-summary .smallbtn {
+      min-height: 38px;
+    }
+
+    .result-filters {
+      display: grid;
+      gap: 10px;
+      padding: 13px;
+      border-radius: 14px;
+      background: var(--lc-surface-secondary, rgba(15, 23, 42, .45));
+      border: 1px solid var(--lc-border, rgba(148, 163, 184, .16));
+    }
+
+    .filter-segments {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .filter-chip {
+      min-height: 42px;
+      padding: 8px 13px;
+      color: var(--lc-text-secondary, var(--muted));
+      background: var(--lc-control-bg, rgba(15, 23, 42, .55));
+      border: 1px solid var(--lc-border, rgba(148, 163, 184, .22));
+      border-radius: 999px;
+      box-shadow: none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .filter-chip:hover,
+    .filter-chip.selected,
+    .filter-chip[aria-pressed="true"] {
+      color: var(--lc-selected-text, var(--text));
+      background: var(--lc-selected-bg, rgba(56, 189, 248, .12));
+      border-color: var(--lc-selected-border, var(--accent));
+      filter: none;
+    }
+
+    #layoutSection .drawcard {
+      padding-top: 4px;
     }
 
     .group-heading strong {
@@ -1597,9 +1787,9 @@
       align-items: center;
       gap: 12px;
       text-align: left;
-      background: #0b1220;
-      color: var(--text);
-      border: 1px solid var(--line);
+      background: var(--lc-control-bg, var(--panel-2));
+      color: var(--lc-text, var(--text));
+      border: 1px solid var(--lc-border-strong, var(--line));
       box-shadow: none;
       font-size: 13px;
       letter-spacing: .035em;
@@ -1633,14 +1823,14 @@
       overscroll-behavior: contain;
       padding: 8px;
       border-radius: 14px;
-      background: #0b1220;
-      border: 1px solid #475569;
+      background: var(--lc-surface-main, var(--panel));
+      border: 1px solid var(--lc-border-strong, var(--line));
       box-shadow: 0 22px 55px rgba(0, 0, 0, .42);
     }
 
     .picker-section-title {
       padding: 9px 9px 6px;
-      color: #7dd3fc;
+      color: var(--lc-accent, var(--accent));
       font-size: 10px;
       font-weight: 900;
       letter-spacing: .09em;
@@ -2044,9 +2234,29 @@
       }
 
       .group-top-grid,
+      .general-settings-grid,
       .custom-size-fields,
       .orientation-grid {
         grid-template-columns: 1fr;
+      }
+
+      .filter-segments {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 3px;
+        overscroll-behavior-x: contain;
+      }
+
+      .filter-chip {
+        flex: 0 0 auto;
+      }
+
+      .group-heading {
+        align-items: flex-start;
+      }
+
+      .group-remove {
+        margin-top: 6px;
       }
 
       .picker-menu {
@@ -2363,7 +2573,8 @@
     header.app-header > p {
       margin: 8px 0 0;
       color: var(--lc-text-secondary);
-      max-width: 880px;
+      max-width: none;
+      text-wrap: balance;
       font-size: 13px;
       line-height: 1.5;
     }
@@ -3079,9 +3290,9 @@
     }
 
     html[data-theme="dark"] .picker-button {
-      color: #EEF3F4;
-      background: #0B1A26;
-      border-color: #708794;
+      color: var(--lc-text);
+      background: var(--lc-control-bg);
+      border-color: var(--lc-border-strong);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035);
     }
 
@@ -3109,16 +3320,16 @@
     }
 
     html[data-theme="dark"] .picker-menu {
-      color: #E8EEF0;
-      background: #091722;
-      border-color: #58717F;
+      color: var(--lc-text);
+      background: var(--lc-surface-main);
+      border-color: var(--lc-border-strong);
       box-shadow:
         0 1px 0 rgba(255, 255, 255, .035),
         0 22px 50px rgba(0, 0, 0, .58);
     }
 
     html[data-theme="dark"] .picker-section-title {
-      color: #71D9D0;
+      color: var(--lc-accent);
     }
 
     html[data-theme="dark"] .picker-option {
@@ -3502,6 +3713,288 @@
       }
     }
 
+
+    /* v1.4.0 planner density: intrinsic field sizing on a wider working canvas. */
+    header, main, footer { max-width: 1800px; }
+    #planner { display: flex; flex-direction: column; align-items: stretch; gap: 16px; }
+    #planner .planner-section { padding: 18px; }
+    #planner .planner-section h2 { margin: 0 0 12px; padding: 0; }
+    #planner .planner-section > .sub { padding: 0; margin: 0 0 12px; }
+    #planner .results { padding: 0; }
+    #planner #loadSettingsSection { overflow: visible; }
+    #planner .unit-suffix { min-width: 41px; }
+    #planner .rotation-box:has([data-field="allowRotate"]:checked) [data-role="rotationDescription"] { display: none; }
+    #planner .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    #planner .general-settings-grid { display: flex; flex-wrap: wrap; align-items: end; gap: 16px 32px; }
+    #planner .unit-preference { margin: 0; }
+    #planner .general-settings-grid > label:has(#gap) { flex: 0 0 auto; }
+    #planner .general-settings-grid .measurement-input { width: 130px; }
+    #planner #maxLayers { width: 80px; }
+    #planner .stacking-setting { position: relative; padding-bottom: 0; }
+    #planner .stacking-toggle { display: flex; align-items: center; min-height: 44px; gap: 6px; }
+    #planner .stacking-toggle .checkline { margin: 0; min-height: 44px; }
+    #planner .stacking-tooltip { position: absolute; z-index: 20; left: 0; top: 100%; width: max-content; max-width: min(290px, calc(100vw - 46px)); padding: 10px; margin-top: 6px; background: var(--lc-surface); box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+    #planner #stackable:disabled, #planner #maxLayers:disabled { cursor: not-allowed; }
+    #planner .pallets-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    #planner .pallets-section-heading h2 { margin: 0; }
+    #planner .pallets-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    #planner .pallets-actions button { min-height: 44px; padding: 8px 12px; width: auto; }
+    #planner .footprint-hint { margin: 8px 0 12px; }
+    #planner .pallet-group { padding: 6px 14px; }
+    #planner .group-remove { flex-shrink: 0; min-width: 68px; padding: 8px; font-size: 12px; }
+    #planner .group-heading-copy { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; }
+    #planner .group-disclosure { min-height: 48px; padding: 6px 3px; }
+    #planner .group-disclosure-icon { display: block; width: 10px; height: 10px; margin: 0 5px 4px 2px; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(45deg); font-size: 0; }
+    #planner .group-disclosure[aria-expanded="false"] .group-disclosure-icon { transform: rotate(-45deg); }
+    #planner .group-body { display: grid; grid-template-columns: minmax(280px,350px) 90px 145px minmax(240px,1fr) minmax(200px,260px); align-items: end; gap: 12px 18px; padding: 8px 0 10px; }
+    #planner .group-body[hidden] { display: none; }
+    #planner .group-top-grid { display: contents; }
+    #planner .group-top-grid > :first-child { grid-column: 1; }
+    #planner .group-body label > span:first-child, #planner .group-body .field-caption { margin: 0 0 7px; }
+    #planner .group-body > .identifier-field { grid-column: 4; grid-row: 1; gap: 0; }
+    #planner .optional-label { font-weight: 400; font-size: 12px; }
+    #planner .group-body .rotation-box { grid-column: 5; grid-row: 1; padding: 0; border: 0; background: transparent; }
+    #planner .rotation-row { min-height: 44px; gap: 12px; }
+    #planner .rotation-copy { gap: 0; }
+    #planner .rotation-copy strong { font-size: 13px; }
+    #planner .group-body .custom-size-fields { grid-column: 1 / -1; grid-row: 2; grid-template-columns: minmax(220px,350px) 145px 145px; align-items: end; gap: 18px; margin: 0; }
+    #planner .custom-size-fields > label:nth-child(3) { grid-column: 1; grid-row: 1; }
+    #planner .custom-size-fields > label:nth-child(1) { grid-column: 2; grid-row: 1; }
+    #planner .custom-size-fields > label:nth-child(2) { grid-column: 3; grid-row: 1; }
+    #planner .orientation-panel { grid-column: 1 / -1; }
+    #planner .orientation-summary { flex-wrap: wrap; gap: 6px; padding: 6px; }
+    #planner .picker-button { min-height: 44px; padding: 8px 12px; letter-spacing: 0; }
+    #planner .picker-chevron { width: 8px; height: 8px; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(45deg); font-size: 0; flex-shrink: 0; }
+    #planner .selected-pallet { display: flex; flex-wrap: wrap; gap: 3px 10px; min-height: 0; padding: 0; margin: 0; border: 0; background: transparent; box-shadow: none; }
+    #planner .selected-pallet::before, #planner .selected-pallet::after { display: none; }
+    #planner .selected-pallet strong { font-size: 13px; }
+    #planner .selected-pallet small { font-size: 12px; }
+    #planner .results { gap: 12px; }
+    #planner .results-top-band { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+    #planner .result-filters { padding: 0; border: 0; background: transparent; display: flex; flex-wrap: wrap; gap: 8px; }
+    #planner .filter-segments { padding: 4px; gap: 3px; border: 1px solid var(--lc-border); border-radius: 12px; background: var(--lc-surface-secondary); align-items: center; }
+    #planner .filter-chip { min-height: 44px; padding: 8px 10px; border: 1px solid transparent; border-radius: 8px; background: transparent; color: var(--lc-text-secondary); font-size: 13px; box-shadow: none; }
+    #planner .filter-chip[aria-pressed="true"] { border-color: var(--lc-selected-border); background: var(--lc-selected-bg); color: var(--lc-selected-text); }
+    #planner .filter-chip[aria-pressed="true"]::before { content: ""; display: inline-block; width: 6px; height: 10px; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(45deg); margin-right: 8px; }
+    #planner .summary { display: grid; flex: 1 1 650px; grid-template-columns: .9fr .65fr 1.15fr 1.6fr; gap: 0; border: 1px solid var(--lc-border); border-radius: 12px; overflow: hidden; }
+    #planner .metric { grid-template-rows: auto auto; min-height: 62px; padding: 9px 12px; border: 0; border-right: 1px solid var(--lc-border); border-radius: 0; background: var(--lc-surface-secondary); }
+    #planner .metric:last-child { border-right: 0; }
+    #planner .metric .k { min-height: 0; font-size: 11px; line-height: 1.3; margin-bottom: 2px; }
+    #planner .metric .v, #planner .summary .metric:first-child .v { font-size: 19px; line-height: 1.2; margin-top: 0; }
+    @media (min-width: 1400px) {
+      #planner .group-body .group-top-grid label > span:first-child, #planner .group-body .field-caption, #planner .identifier-field > span:first-child { display: flex; align-items: end; min-height: 32px; }
+      #planner .group-body .rotation-row { min-height: 83px; }
+    }
+    @media (max-width: 1399px) and (min-width: 980px) {
+      #planner .group-body { grid-template-columns: minmax(240px,1.2fr) 90px 145px minmax(240px,1fr); }
+      #planner .group-body .rotation-box { grid-column: 4; grid-row: 2; }
+      #planner .group-body .custom-size-fields { grid-row: 3; }
+    }
+    @media (max-width: 979px) and (min-width: 600px) {
+      #planner .group-body { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      #planner .group-body > .identifier-field { grid-column: 2; grid-row: 1; }
+      #planner .group-body .rotation-box { grid-column: 1 / -1; grid-row: 3; }
+      #planner .group-body .custom-size-fields { grid-row: 4; grid-template-columns: minmax(160px,1fr) 130px 130px; }
+      #planner [data-field="quantity"] { max-width: 100px; }
+      #planner label:has(> .measurement-input > [data-field="height"]) .measurement-input { max-width: 150px; }
+    }
+    @media (max-width: 599px) {
+      #planner .planner-section { padding: 12px; }
+      #planner .pallets-section-heading { flex-wrap: wrap; }
+      #planner .general-settings-grid { gap: 12px 18px; }
+      #planner .general-settings-grid > .unit-preference { flex: 0 0 100%; }
+      #planner .general-settings-grid > label:has(#gap) { flex: 0 0 100%; }
+      #planner .group-heading-copy { display: grid; gap: 3px; }
+      #planner .pallet-group { padding: 6px 10px; }
+      #planner .group-body { display: flex; flex-direction: column; align-items: stretch; }
+      #planner .group-top-grid { display: flex; flex-direction: column; gap: 12px; }
+      #planner .group-body .custom-size-fields { grid-template-columns: 1fr; gap: 12px; }
+      #planner .custom-size-fields > label:nth-child(n) { grid-column: auto; grid-row: auto; }
+      #planner .summary { flex-basis: 100%; grid-template-columns: repeat(2,minmax(0,1fr)); }
+      #planner .metric { border-bottom: 1px solid var(--lc-border); }
+      #planner .metric .v { font-size: 18px; }
+    }
+
+
+    /* Current correction: shared form tracks, bounded overlays and a stable Results band. */
+    #planner { --planner-control-height: 44px; --planner-label-gap: 7px; --planner-row-gap: 12px; }
+    #planner #palletsSection { overflow: visible; }
+    #planner .picker-menu { position: fixed; right: auto; z-index: 30; }
+    #planner .load-settings-band { display: grid; gap: 12px; }
+    #planner .load-settings-band > h2 { margin: 0; align-self: center; }
+    #planner .general-settings-grid { align-items: end; }
+    #planner .general-settings-grid > label, #planner .unit-preference { margin: 0; }
+    #planner .general-settings-grid > label > span:first-child { margin: 0; line-height: 1.4; }
+    #planner .unit-preference legend { margin: 0 0 var(--planner-label-gap); line-height: 1.4; }
+    #planner .unit-preference { width: 229px; flex: 0 0 229px; }
+    #planner .unit-segments { box-sizing: border-box; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); width: 100%; height: var(--planner-control-height); min-height: 0; padding: 3px; }
+    #planner .unit-option, #planner .unit-option span { width: 100%; min-height: 0; height: 36px; padding: 0; }
+    #planner .general-settings-grid .measurement-input, #planner #maxLayers { height: var(--planner-control-height); }
+    #planner .stacking-toggle .checkline { display: grid; grid-template-rows: auto var(--planner-control-height); gap: var(--planner-label-gap); align-items: center; }
+    #planner .stacking-toggle .checkline > span { grid-row: 1; margin: 0; font-size: 13px; line-height: 1.4; }
+    #planner .stacking-toggle .checkline > input { grid-row: 2; margin: 0; justify-self: start; align-self: center; }
+    #planner .stacking-toggle[aria-disabled="true"] { cursor: not-allowed; }
+    #planner .stacking-toggle[aria-disabled="true"] .checkline { pointer-events: none; }
+    #planner .stacking-tooltip { background: var(--lc-tooltip-bg); color: var(--lc-tooltip-text); border-radius: 5px; padding: 8px 10px; font-size: 12px; line-height: 1.4; }
+    #planner .group-body { display: flex; flex-direction: column; align-items: stretch; gap: var(--planner-row-gap); }
+    #planner .group-top-grid { display: grid; grid-template-columns: minmax(240px,350px) 90px 145px minmax(180px,1fr) minmax(220px,260px); gap: var(--planner-label-gap) 18px; align-items: start; }
+    #planner .group-top-grid > * { display: grid; grid-template-rows: subgrid; grid-row: span 2; grid-column: auto; gap: var(--planner-label-gap); min-width: 0; margin: 0; padding: 0; }
+    #planner .group-top-grid > :first-child { grid-column: auto; }
+    #planner .identifier-field > span:first-child { gap: 3px; flex-wrap: wrap; }
+    #planner .group-top-grid > label > span:first-child, #planner .group-top-grid .field-caption, #planner .rotation-copy strong { margin: 0; min-height: 0; align-self: end; line-height: 1.4; font-size: 13px; }
+    #planner .group-body .group-top-grid label > span:first-child { min-height: 0; margin: 0; }
+    #planner .group-top-grid > label > input, #planner .group-top-grid .measurement-input, #planner .picker-button { height: var(--planner-control-height); min-height: var(--planner-control-height); align-self: start; }
+    #planner .group-top-grid .measurement-input > input { height: 100%; }
+    #planner .group-top-grid .rotation-box { display: grid; grid-template-rows: subgrid; grid-column: auto; grid-row: span 2; }
+    #planner .group-body .rotation-row, #planner .rotation-copy { display: contents; min-height: 0; }
+    #planner .rotation-copy strong { grid-row: 1; grid-column: 1; }
+    #planner [data-role="rotationDescription"] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    #planner .rotation-box .switch-control { grid-row: 2; grid-column: 1; align-self: start; height: var(--planner-control-height); display: flex; align-items: center; margin: 0; }
+    #planner .rotation-box .switch-control .switch-track { margin: 0; }
+    #planner .rotation-box .orientation-summary, #planner .rotation-box .square-note { grid-row: 2; grid-column: 1; margin: 0 0 0 60px; padding: 0; min-width: 0; align-self: start; }
+    #planner .orientation-summary { border: 0; background: transparent; gap: 4px; font-size: 12px; }
+    #planner .orientation-summary button { padding: 4px 8px; min-height: 32px; }
+    #planner .group-body .custom-size-fields { gap: var(--planner-row-gap) 18px; }
+    #planner .group-disclosure:hover, #planner .group-disclosure:active { background: var(--lc-selected-bg); color: var(--lc-text); filter: none; }
+    #planner .group-disclosure:hover .group-summary, #planner .group-disclosure:active .group-summary { color: var(--lc-text-secondary); }
+    #planner .group-disclosure:focus-visible { outline: 2px solid var(--lc-focus); outline-offset: 3px; }
+    #planner .results-top-band { display: grid; grid-template-columns: minmax(360px,440px) minmax(0,1fr); align-items: start; gap: 16px; }
+    #planner .result-filters { display: grid; justify-items: start; min-width: 0; gap: 8px; }
+    #planner .summary { min-width: 0; grid-template-columns: .9fr .65fr 1.15fr 1.6fr; }
+    #planner .general-settings-grid > label > span:first-child,
+    #planner .unit-preference legend,
+    #planner .stacking-toggle .checkline > span {
+      color: var(--lc-text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    #planner .stacking-toggle,
+    #planner .stacking-toggle[aria-disabled="true"],
+    #planner .stacking-toggle:focus,
+    #planner .stacking-toggle:focus-visible {
+      padding: 0;
+      color: inherit;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    #planner .stacking-toggle .checkline:has(input:focus-visible) { outline: none; }
+    #planner .stacking-toggle input:focus { box-shadow: none; }
+    #planner .stacking-toggle input:focus-visible { outline: 2px solid var(--lc-focus); outline-offset: 3px; box-shadow: none; }
+    #planner .stacking-toggle[aria-disabled="true"]:focus-visible { outline: 2px solid var(--lc-focus); outline-offset: 3px; }
+    #planner .rotation-box .square-note {
+      padding-inline: 7px;
+      padding-block: 0;
+    }
+    #planner .group-heading-copy { min-width: 0; }
+    #planner .group-heading-copy > strong { flex: 0 0 auto; }
+    #planner .group-summary {
+      flex: 1 1 320px;
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    #planner .picker-button {
+      color: var(--lc-text);
+      background: var(--lc-control-bg);
+      border-color: var(--lc-border-strong);
+    }
+    #planner .picker-button:hover,
+    #planner .picker-button[aria-expanded="true"] {
+      color: var(--lc-text);
+      background: var(--lc-selected-bg);
+      border-color: var(--lc-selected-border);
+    }
+    #planner .picker-menu {
+      color: var(--lc-text);
+      background: var(--lc-surface-main);
+      border-color: var(--lc-border-strong);
+      box-shadow: var(--lc-shadow-menu);
+    }
+    #planner .picker-section-title { color: var(--lc-accent); }
+    #planner button.picker-option,
+    #planner button.picker-option strong { color: var(--lc-text); }
+    #planner button.picker-option small { color: var(--lc-text-secondary); }
+    #planner button.picker-option:hover,
+    #planner button.picker-option:focus-visible,
+    #planner button.picker-option.selected {
+      color: var(--lc-text);
+      background: var(--lc-selected-bg);
+      border-color: var(--lc-selected-border);
+      filter: none;
+    }
+    #planner button.picker-option:hover strong,
+    #planner button.picker-option:focus-visible strong,
+    #planner button.picker-option.selected strong { color: var(--lc-text); }
+    #planner button.picker-option:hover small,
+    #planner button.picker-option:focus-visible small,
+    #planner button.picker-option.selected small { color: var(--lc-text-secondary); }
+    #planner button.picker-option:focus-visible {
+      outline: 3px solid var(--lc-focus);
+      outline-offset: 2px;
+      box-shadow: none;
+    }
+    #planner button.picker-option.selected::after {
+      color: var(--lc-accent);
+      background: var(--lc-surface-main);
+      border-color: var(--lc-selected-border);
+    }
+    #planner .results-table {
+      table-layout: fixed;
+      min-width: 1080px;
+    }
+    #planner .results-table col:nth-child(1) { width: 21%; }
+    #planner .results-table col:nth-child(2) { width: 12%; }
+    #planner .results-table col:nth-child(3) { width: 25%; }
+    #planner .results-table col:nth-child(4) { width: 20%; }
+    #planner .results-table col:nth-child(5) { width: 22%; }
+    #planner .filter-segments { min-height: var(--planner-control-height); padding: 3px; }
+    #planner .filter-chip { min-height: 36px; padding-block: 6px; }
+    #planner .metric { padding-block: 6px; }
+    #planner .metric .v,
+    #planner .summary .metric:first-child .v {
+      font-size: 18px;
+      line-height: 1.15;
+    }
+    #planner .metric .v, #planner .summary .metric:first-child .v { min-height: 0; }
+    #planner .pallets-section-heading { align-items: end; }
+    #planner .pallets-heading-copy { display: grid; gap: 5px; min-width: 0; }
+    #planner .pallets-heading-copy > h2 { margin: 0; }
+    #planner .pallets-heading-copy > .sub { margin: 0; padding: 0; }
+    #planner .pallets-section-heading + #singleModeForm { margin-top: 14px; }
+    @media (min-width: 1400px) {
+      #planner .load-settings-band { grid-template-columns: minmax(180px,200px) minmax(0,1fr); align-items: center; column-gap: 38px; }
+      #planner .general-settings-grid { flex-wrap: nowrap; }
+    }
+    @media (max-width: 1399px) {
+      #planner .load-settings-band { grid-template-columns: minmax(0,1fr); }
+    }
+    @media (max-width: 1199px) {
+      #planner .group-top-grid { grid-template-columns: repeat(2,minmax(0,1fr)); row-gap: var(--planner-label-gap); }
+      #planner .group-top-grid > * { margin-bottom: 5px; }
+      #planner .group-top-grid .rotation-box { grid-column: 1 / -1; }
+    }
+    @media (max-width: 979px) {
+      #planner .results-top-band { grid-template-columns: minmax(0,1fr); }
+      #planner .summary { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      #planner .pallets-section-heading { display: grid; grid-template-columns: minmax(0,1fr); align-items: start; }
+      #planner .pallets-actions { justify-content: end; }
+    }
+    @media (max-width: 599px) {
+      #planner .group-top-grid { grid-template-columns: minmax(0,1fr); row-gap: var(--planner-label-gap); }
+      #planner .group-top-grid > * { grid-column: 1; margin-bottom: 5px; }
+      #planner .general-settings-grid .unit-preference { width: 100%; flex-basis: 100%; }
+      #planner .pallets-section-heading { align-items: stretch; }
+      #planner .pallets-actions { width: 100%; }
+      #planner .pallets-actions button { flex: 1 1 auto; }
+      #planner .group-summary { white-space: normal; }
+      #planner .metric .v,
+      #planner .summary .metric:first-child .v { min-height: 0; }
+    }
+
     @media (forced-colors: active) {
       .card,
       input,
@@ -3590,7 +4083,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.3.6</span>
+        <span class="app-version">v1.4.0</span>
       </div>
 
       <div class="header-controls">
@@ -3658,55 +4151,83 @@
   </header>
 
   <main id="planner">
-    <section class="card">
-      <h2 data-i18n="load.title">load.title</h2>
-      <div class="sub" data-i18n="load.subtitle">load.subtitle</div>
+    <section class="card planner-section" id="loadSettingsSection">
+      <select id="loadMode" class="internal-state" aria-hidden="true" tabindex="-1"><option value="single">single</option><option value="mixed">mixed</option></select>
+      <div class="load-settings-band">
+        <h2 id="generalSettingsTitle" data-i18n="planner.generalSettings">planner.generalSettings</h2>
+          <div class="general-settings-grid">
+            <fieldset class="unit-preference">
+              <legend data-i18n="units.label">units.label</legend>
+              <div class="unit-segments">
+                <label class="unit-option">
+                  <input type="radio" name="linearUnit" value="mm" checked data-i18n-aria-label="units.mmAria">
+                  <span>mm</span>
+                </label>
+                <label class="unit-option">
+                  <input type="radio" name="linearUnit" value="cm" data-i18n-aria-label="units.cmAria">
+                  <span>cm</span>
+                </label>
+                <label class="unit-option">
+                  <input type="radio" name="linearUnit" value="in" data-i18n-aria-label="units.inAria">
+                  <span>in</span>
+                </label>
+              </div>
+            </fieldset>
 
-      <div class="form">
-        <label>
-          <span data-i18n="load.mode">load.mode</span>
-          <select id="loadMode">
-            <option value="single" data-i18n="load.mode.single">load.mode.single</option>
-            <option value="mixed" data-i18n="load.mode.mixed">load.mode.mixed</option>
-          </select>
-        </label>
-
-        <fieldset class="unit-preference">
-          <legend data-i18n="units.label">units.label</legend>
-          <div class="unit-segments">
-            <label class="unit-option">
-              <input type="radio" name="linearUnit" value="mm" checked data-i18n-aria-label="units.mmAria">
-              <span>mm</span>
+            <label>
+              <span data-i18n="pallet.gap">pallet.gap</span>
+              <span class="measurement-input">
+                <input id="gap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0" required>
+                <span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span>
+              </span>
             </label>
-            <label class="unit-option">
-              <input type="radio" name="linearUnit" value="cm" data-i18n-aria-label="units.cmAria">
-              <span>cm</span>
-            </label>
-            <label class="unit-option">
-              <input type="radio" name="linearUnit" value="in" data-i18n-aria-label="units.inAria">
-              <span>in</span>
-            </label>
-          </div>
-        </fieldset>
-
-        <div id="singleModeForm">
-          <div id="singlePalletGroup" class="pallet-group" data-group-kind="single">
-            <div class="group-heading">
-              <strong data-i18n="pallet.groupSettings">pallet.groupSettings</strong>
+            <div id="singleStackBlock" class="stacking-setting">
+              <div id="stackingUnavailable" class="stacking-toggle" aria-controls="mixedStackNote" aria-expanded="false">
+                <label class="checkline"><input id="stackable" type="checkbox" aria-describedby="mixedStackNote"><span data-i18n="pallet.stackable">pallet.stackable</span></label>
+              </div>
+              <div id="mixedStackNote" class="hidden stacking-tooltip" role="tooltip" data-i18n="planner.stackingUnavailableTitle">planner.stackingUnavailableTitle</div>
             </div>
+            <label class="layers-setting" title="pallet.maxLayersHelp" data-i18n-title="pallet.maxLayersHelp"><span data-i18n="pallet.maxLayers">pallet.maxLayers</span><input id="maxLayers" type="number" min="1" max="500" step="1" value="2" required disabled aria-describedby="maxLayersHelp"><span id="maxLayersHelp" class="visually-hidden" data-i18n="pallet.maxLayersHelp">pallet.maxLayersHelp</span></label>
+          </div>
+      </div>
+    </section>
+    <section class="card planner-section" id="palletsSection">
+      <div class="pallets-section-heading">
+        <div class="pallets-heading-copy">
+          <h2 id="palletGroupsTitle" data-i18n="planner.palletGroups">planner.palletGroups</h2>
+          <div class="sub footprint-hint" data-i18n="planner.footprintHint">planner.footprintHint</div>
+        </div>
+        <div class="pallets-actions">
+          <button id="addMixedRowBtn" class="secondary" type="button" data-i18n="pallet.addGroup">pallet.addGroup</button>
+          <button id="resetBtn" class="secondary" type="button" data-i18n="actions.reset">actions.reset</button>
+        </div>
+      </div>
+          <div id="singleModeForm">
+          <div id="singlePalletGroup" class="pallet-group" data-group-kind="single" data-expanded="true">
+            <div class="group-heading">
+              <button class="group-disclosure" type="button" data-action="toggleGroup" aria-expanded="true" aria-controls="group_1_body">
+                <span class="group-disclosure-icon" aria-hidden="true">▾</span>
+                <span class="group-heading-copy">
+                  <strong data-role="groupTitle">Group 1</strong>
+                  <span class="group-summary" data-role="groupSummary"></span>
+                </span>
+              </button>
+              <button class="danger group-remove hidden" type="button" data-action="removeGroup" data-i18n="pallet.remove">pallet.remove</button>
+            </div>
+
+            <div class="group-body" id="group_1_body" data-role="groupBody">
 
             <div class="group-top-grid">
               <div>
                 <span class="field-caption" data-i18n="pallet.type">pallet.type</span>
                 <div class="pallet-picker" data-role="palletPicker">
                   <button class="picker-button" type="button" data-action="togglePicker" aria-expanded="false">
-                    <span data-i18n="pallet.selectSize">pallet.selectSize</span>
+                    <span class="selected-pallet" data-role="selectedSummary"></span>
                     <span class="picker-chevron">⌄</span>
                   </button>
                   <div class="picker-menu hidden" data-role="pickerMenu"></div>
                   <input data-field="presetId" type="hidden" value="eur">
                 </div>
-                <div class="selected-pallet" data-role="selectedSummary"></div>
               </div>
 
               <label>
@@ -3716,30 +4237,17 @@
 
               <label>
                 <span data-i18n="pallet.loadedHeight">pallet.loadedHeight</span>
-                <input id="palletHeight" data-field="height" data-length-input data-min-mm="1" data-mm="1500" type="text" inputmode="decimal" value="1500" required>
+                <span class="measurement-input">
+                  <input id="palletHeight" data-field="height" data-length-input data-min-mm="1" data-mm="1500" type="text" inputmode="decimal" value="1500" required>
+                  <span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span>
+                </span>
               </label>
-            </div>
-
-            <div class="custom-size-fields hidden" data-role="customFields">
-              <label>
-                <span data-i18n="pallet.length">pallet.length</span>
-                <input id="palletLength" data-field="length" data-length-input data-min-mm="1" data-mm="1200" type="text" inputmode="decimal" value="1200" required>
-              </label>
-              <label>
-                <span data-i18n="pallet.width">pallet.width</span>
-                <input id="palletWidth" data-field="width" data-length-input data-min-mm="1" data-mm="800" type="text" inputmode="decimal" value="800" required>
-              </label>
-              <label>
-                <span data-i18n="pallet.customName">pallet.customName</span>
-                <input data-field="customName" type="text" maxlength="48" value="pallet.customDefaultName">
-              </label>
-            </div>
+            
 
             <label class="identifier-field">
-              <span data-i18n="pallet.identifier">pallet.identifier</span>
-              <span style="font-weight:500;" data-i18n="pallet.optional">pallet.optional</span>
-              <input data-field="identifier" type="text" maxlength="36" placeholder="pallet.identifierPlaceholder" data-i18n-placeholder="pallet.identifierPlaceholder">
-              <span class="field-help" data-i18n="pallet.identifierHelpSingle">pallet.identifierHelpSingle</span>
+              <span><span data-i18n="pallet.identifier">pallet.identifier</span> <span class="optional-label" data-i18n="pallet.optional">pallet.optional</span></span>
+              <input data-field="identifier" type="text" maxlength="36" aria-describedby="single_identifierHelp" placeholder="pallet.identifierPlaceholder" data-i18n-placeholder="pallet.identifierPlaceholder">
+              <span id="single_identifierHelp" class="field-help visually-hidden" data-i18n="pallet.identifierHelpSingle">pallet.identifierHelpSingle</span>
             </label>
 
             <div class="rotation-box" data-role="rotationBox">
@@ -3755,12 +4263,34 @@
               </div>
 
               <div class="square-note hidden" data-role="squareNote" data-i18n="rotation.squareNote">rotation.squareNote</div>
+              <div class="orientation-summary hidden" data-role="orientationSummary">
+                <span data-role="orientationSummaryText"></span>
+                <button class="secondary smallbtn" type="button" data-action="changeOrientation" data-i18n="rotation.change">rotation.change</button>
+              </div>
+            </div>
+            </div>
+
+
+            <div class="custom-size-fields hidden" data-role="customFields">
+              <label>
+                <span data-i18n="pallet.length">pallet.length</span>
+                <span class="measurement-input"><input id="palletLength" data-field="length" data-length-input data-min-mm="1" data-mm="1200" type="text" inputmode="decimal" value="1200" required><span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span></span>
+              </label>
+              <label>
+                <span data-i18n="pallet.width">pallet.width</span>
+                <span class="measurement-input"><input id="palletWidth" data-field="width" data-length-input data-min-mm="1" data-mm="800" type="text" inputmode="decimal" value="800" required><span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span></span>
+              </label>
+              <label>
+                <span data-i18n="pallet.customName">pallet.customName</span>
+                <input data-field="customName" type="text" maxlength="48" value="pallet.customDefaultName">
+              </label>
+            </div>
 
               <div class="orientation-panel hidden" data-role="orientationPanel">
                 <strong data-i18n="rotation.chooseRequired">rotation.chooseRequired</strong>
                 <div class="orientation-grid">
                   <label class="orientation-card">
-                    <input data-field="lockedOrientation" name="single_locked_orientation" type="radio" value="normal" checked>
+                    <input data-field="lockedOrientation" name="single_locked_orientation" type="radio" value="normal">
                     <span class="orientation-title" data-role="normalTitle"></span>
                     <span class="orientation-diagram" data-role="normalDiagram"></span>
                   </label>
@@ -3773,66 +4303,38 @@
               </div>
             </div>
           </div>
-
-          <div class="row" style="margin-top:13px;">
-            <label>
-              <span data-i18n="pallet.gap">pallet.gap</span>
-              <input id="gap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0" required>
-            </label>
-            <div></div>
-          </div>
-        </div>
-
-        <div id="mixedModeForm" class="hidden">
-          <div class="mode-note" data-i18n="pallet.mixedNote">pallet.mixedNote</div>
-
-          <label>
-            <span data-i18n="pallet.gap">pallet.gap</span>
-            <input id="mixedGap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0" required>
-          </label>
-
-          <div id="mixedRows" class="mixed-list"></div>
-
-          <button id="addMixedRowBtn" class="secondary smallbtn" type="button" data-i18n="pallet.addGroup">pallet.addGroup</button>
-        </div>
-
-        <div class="checks">
-          <div id="singleStackBlock">
-            <label class="checkline">
-              <input id="stackable" type="checkbox">
-              <span data-i18n="pallet.stackable">pallet.stackable</span>
-            </label>
-
-            <div id="stackOptions" class="row hidden">
-              <label>
-                <span data-i18n="pallet.maxLayers">pallet.maxLayers</span>
-                <input id="maxLayers" type="number" min="1" max="500" step="1" value="2" required>
-              </label>
-
-              <label>
-                <span data-i18n="pallet.verticalGap">pallet.verticalGap</span>
-                <input id="verticalGap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0" required>
-              </label>
-            </div>
           </div>
 
-          <div id="mixedStackNote" class="mode-note hidden" data-i18n="pallet.mixedStackNote">pallet.mixedStackNote</div>
-        </div>
+          <div id="mixedModeForm">
+            <div id="mixedRows" class="mixed-list"></div>
+          </div>
 
-        <div id="formValidationMessage" class="mode-note hidden" role="alert" aria-live="polite"></div>
-
-        <div class="buttons">
-          <button id="calculateBtn" data-i18n="actions.calculate">actions.calculate</button>
-          <button id="resetBtn" class="secondary" data-i18n="actions.reset">actions.reset</button>
-        </div>
-      </div>
+      <div id="formValidationMessage" class="mode-note hidden" role="alert" aria-live="polite"></div>
     </section>
 
-    <section class="card">
+    <section class="card planner-section" id="resultsSection">
       <h2 data-i18n="results.title">results.title</h2>
       <div class="sub" data-i18n="results.subtitle">results.subtitle</div>
 
       <div class="results">
+        <div class="results-top-band">
+        <div class="result-filters" aria-labelledby="resultFiltersTitle">
+          <strong class="visually-hidden" id="resultFiltersTitle" data-i18n="filters.title">filters.title</strong>
+          <div class="filter-segments" role="group" data-i18n-aria-label="filters.primaryAria">
+            <button type="button" class="filter-chip selected" data-filter-primary="all" aria-pressed="true" data-i18n="filters.all">filters.all</button>
+            <button type="button" class="filter-chip" data-filter-primary="containers" aria-pressed="false" data-i18n="filters.containers">filters.containers</button>
+            <button type="button" class="filter-chip" data-filter-primary="trailers" aria-pressed="false" data-i18n="filters.trailers">filters.trailers</button>
+          </div>
+          <div id="containerSecondaryFilters" class="filter-segments secondary-filters hidden" role="group" data-i18n-aria-label="filters.containerAria">
+            <button type="button" class="filter-chip selected" data-filter-container="all" aria-pressed="true" data-i18n="filters.all">filters.all</button>
+            <button type="button" class="filter-chip" data-filter-container="20" aria-pressed="false">20'</button>
+            <button type="button" class="filter-chip" data-filter-container="40" aria-pressed="false">40'</button>
+            <button type="button" class="filter-chip" data-filter-container="45" aria-pressed="false">45'</button>
+            <button type="button" class="filter-chip" data-filter-container="reefer" aria-pressed="false" data-i18n="filters.reefer">filters.reefer</button>
+            <button type="button" class="filter-chip" data-filter-container="pallet-wide" aria-pressed="false" data-i18n="filters.palletWide">filters.palletWide</button>
+          </div>
+        </div>
+
         <div class="summary">
           <div class="metric">
             <div class="k" data-i18n="results.metric.volume">results.metric.volume</div>
@@ -3852,8 +4354,10 @@
           </div>
         </div>
 
+        </div>
         <div class="tablewrap">
           <table class="results-table">
+            <colgroup><col><col><col><col><col></colgroup>
             <thead>
               <tr>
                 <th scope="col" data-i18n="results.table.vehicle">results.table.vehicle</th>
@@ -3866,10 +4370,15 @@
             <tbody id="resultsBody"></tbody>
           </table>
         </div>
+        <div id="filterEmptyState" class="mode-note hidden" role="status" data-i18n="filters.empty">filters.empty</div>
+      </div>
+    </section>
 
-        <div class="drawcard">
+    <section class="card planner-section" id="layoutSection">
+      <h2 data-i18n="preview.sectionTitle">preview.sectionTitle</h2>
+      <div class="drawcard">
           <div class="drawtop">
-            <h3 data-i18n="preview.title">preview.title</h3>
+            <h3 class="visually-hidden" data-i18n="preview.title">preview.title</h3>
             <div class="draw-actions">
               <div class="select-inline">
                 <span data-i18n="preview.display">preview.display</span>
@@ -3883,16 +4392,17 @@
                 </select>
               </div>
               <label class="print-toggle" title="preview.bwTitle" data-i18n-title="preview.bwTitle">
-                <input id="printBw" type="checkbox" checked>
+                <input id="printBw" type="checkbox">
                 <span data-i18n="preview.bw">preview.bw</span>
               </label>
               <button id="printLayoutBtn" class="secondary smallbtn" type="button" data-i18n="preview.print">preview.print</button>
             </div>
           </div>
-          <canvas id="layoutCanvas" width="1100" height="430"></canvas>
+          <div id="previewStage" class="preview-stage" data-preview-mode="colour">
+            <canvas id="layoutCanvas" width="1100" height="430"></canvas>
+          </div>
           <div class="print-help" data-i18n="preview.help">preview.help</div>
           <div id="layoutNotes" class="notes"></div>
-        </div>
       </div>
     </section>
   </main>
@@ -4305,9 +4815,20 @@
     const MIXED_ORIENTATION_SEARCH_CACHE_LIMIT = 96;
 
     let lastResults = [];
+    let lastCbmTotal = 0;
+    let lastCalculationInput = null;
     let mixedRowCounter = 0;
     let selectedContainerId = "20dc";
+    let resultFilterPrimary = "all";
+    let resultFilterSecondary = "all";
     const mixedOrientationSearchCache = new Map();
+
+    window.loadComposerDiagnostics = {
+      calculationCycles: 0,
+      filterChanges: 0,
+      previewChanges: 0,
+      exampleCalculations: 0
+    };
 
     const els = {
       loadMode: document.getElementById("loadMode"),
@@ -4320,16 +4841,13 @@
       palletHeight: document.getElementById("palletHeight"),
       quantity: document.getElementById("quantity"),
       gap: document.getElementById("gap"),
-      mixedGap: document.getElementById("mixedGap"),
       mixedRows: document.getElementById("mixedRows"),
       addMixedRowBtn: document.getElementById("addMixedRowBtn"),
       singleStackBlock: document.getElementById("singleStackBlock"),
+      stackingUnavailable: document.getElementById("stackingUnavailable"),
       mixedStackNote: document.getElementById("mixedStackNote"),
       stackable: document.getElementById("stackable"),
-      stackOptions: document.getElementById("stackOptions"),
       maxLayers: document.getElementById("maxLayers"),
-      verticalGap: document.getElementById("verticalGap"),
-      calculateBtn: document.getElementById("calculateBtn"),
       resetBtn: document.getElementById("resetBtn"),
       resultsBody: document.getElementById("resultsBody"),
       cbmTotal: document.getElementById("cbmTotal"),
@@ -4341,9 +4859,12 @@
       printView: document.getElementById("printView"),
       printBw: document.getElementById("printBw"),
       printLayoutBtn: document.getElementById("printLayoutBtn"),
+      previewStage: document.getElementById("previewStage"),
       layoutCanvas: document.getElementById("layoutCanvas"),
       layoutNotes: document.getElementById("layoutNotes"),
-      formValidationMessage: document.getElementById("formValidationMessage")
+      formValidationMessage: document.getElementById("formValidationMessage"),
+      containerSecondaryFilters: document.getElementById("containerSecondaryFilters"),
+      filterEmptyState: document.getElementById("filterEmptyState")
     };
 
     function num(el, fallback = 0) {
@@ -5136,17 +5657,25 @@
 
     function assignLoadStacks(layout, quantity, layers) {
       let remaining = Math.max(0, quantity);
-      let loadLayers = 0;
+      const availableLayers = Math.max(0, layers);
 
       layout.rects.forEach(rect => {
-        const stackCount = Math.min(Math.max(0, layers), remaining);
-        rect.stackCount = stackCount;
-        remaining -= stackCount;
-        loadLayers = Math.max(loadLayers, stackCount);
+        rect.stackCount = 0;
       });
+
+      for (let layer = 1; layer <= availableLayers && remaining > 0; layer += 1) {
+        for (const rect of layout.rects) {
+          if (remaining <= 0) break;
+          rect.stackCount += 1;
+          remaining -= 1;
+        }
+      }
 
       layout.stackCounts = layout.rects.map(rect => rect.stackCount);
       layout.loadedPalletCount = quantity - remaining;
+      const loadLayers = layout.stackCounts.length
+        ? Math.max(...layout.stackCounts)
+        : 0;
 
       return {
         layout,
@@ -5155,18 +5684,24 @@
       };
     }
 
+    function physicalLayersFor(container, palletHeight, verticalGap) {
+      if (palletHeight <= 0) return 0;
+      if (verticalGap <= 0) {
+        return Math.max(0, Math.floor(container.innerHeight / palletHeight));
+      }
+      return Math.max(
+        0,
+        Math.floor((container.innerHeight + verticalGap) / (palletHeight + verticalGap))
+      );
+    }
+
     function layersFor(container, palletHeight, stackable, maxLayers, verticalGap) {
       if (palletHeight <= 0) return 0;
       if (!stackable) return palletHeight <= container.innerHeight ? 1 : 0;
-
-      let byHeight = 0;
-      if (verticalGap <= 0) {
-        byHeight = Math.floor(container.innerHeight / palletHeight);
-      } else {
-        byHeight = Math.floor((container.innerHeight + verticalGap) / (palletHeight + verticalGap));
-      }
-
-      return Math.max(0, Math.min(maxLayers, byHeight));
+      return Math.max(
+        0,
+        Math.min(maxLayers, physicalLayersFor(container, palletHeight, verticalGap))
+      );
     }
 
     function palletTransverseSize(pallet) {
@@ -5695,13 +6230,38 @@
           ));
         }
 
-        const expectedRequestedFloorPositions = result.layers > 0
-          ? Math.ceil(input.quantity / result.layers)
+        const expectedPhysicalLayers = physicalLayersFor(
+          container,
+          pallet.height,
+          input.verticalGap
+        );
+        const expectedRequiredLayers = capacityLayout.count > 0
+          ? Math.ceil(input.quantity / capacityLayout.count)
           : 0;
         const expectedPlacedCount = Math.min(
           input.quantity,
-          layout.count * Math.max(0, result.layers)
+          capacityLayout.count * Math.max(0, result.layers)
         );
+        const expectedRequestedFloorPositions = result.layers > 0
+          ? input.stackable
+            ? Math.min(expectedPlacedCount, capacityLayout.count)
+            : input.quantity
+          : 0;
+        const expectedRequiredStackHeight = usedSpan(
+          expectedRequiredLayers,
+          pallet.height,
+          input.verticalGap
+        );
+        let expectedStackingLimitReason = null;
+        if (input.stackable && expectedRequiredLayers > result.layers) {
+          if (expectedPhysicalLayers < input.maxLayers) {
+            expectedStackingLimitReason = "height";
+          } else if (input.maxLayers < expectedPhysicalLayers) {
+            expectedStackingLimitReason = "max-layers";
+          } else {
+            expectedStackingLimitReason = "height-and-max-layers";
+          }
+        }
 
         if (
           !capacityLayout ||
@@ -5709,6 +6269,11 @@
           capacityLayout.count < 0 ||
           result.floorCapacity !== capacityLayout.count ||
           result.totalCapacity !== result.floorCapacity * result.layers ||
+          result.physicalLayers !== expectedPhysicalLayers ||
+          result.availableLayers !== result.layers ||
+          result.requiredLayers !== expectedRequiredLayers ||
+          result.requiredStackHeight !== expectedRequiredStackHeight ||
+          result.stackingLimitReason !== expectedStackingLimitReason ||
           result.requestedFloorPositions !== expectedRequestedFloorPositions ||
           result.placedFloorPositions !== layout.count ||
           result.placedCount !== expectedPlacedCount ||
@@ -5739,12 +6304,22 @@
           }
 
           const stackCounts = layout.stackCounts;
+          const expectedStackCounts = Array.from({ length: layout.count }, () => 0);
+          let expectedRemaining = expectedPlacedCount;
+          for (let layer = 1; layer <= result.layers && expectedRemaining > 0; layer += 1) {
+            for (let index = 0; index < expectedStackCounts.length; index += 1) {
+              if (expectedRemaining <= 0) break;
+              expectedStackCounts[index] += 1;
+              expectedRemaining -= 1;
+            }
+          }
           const stackSum = Array.isArray(stackCounts)
             ? stackCounts.reduce((sum, count) => sum + count, 0)
             : Number.NaN;
           const stackCountsValid = (
             Array.isArray(stackCounts) &&
             stackCounts.length === layout.count &&
+            stackCounts.every((count, index) => count === expectedStackCounts[index]) &&
             stackCounts.every(count => (
               Number.isSafeInteger(count) &&
               count > 0 &&
@@ -5768,6 +6343,18 @@
             heightFailures.push(
               t("geometry.loadHeightFailure", {
                 height: formatLength(usedHeight),
+                limit: formatLength(container.innerHeight)
+              })
+            );
+          }
+          if (
+            input.stackable &&
+            ["height", "height-and-max-layers"].includes(result.stackingLimitReason) &&
+            result.requiredStackHeight > container.innerHeight + GEOMETRY_EPSILON
+          ) {
+            heightFailures.push(
+              t("geometry.loadHeightFailure", {
+                height: formatLength(result.requiredStackHeight),
                 limit: formatLength(container.innerHeight)
               })
             );
@@ -6116,9 +6703,7 @@
     function usesFullFloorLayout(result) {
       if (result.mode === "mixed") return result.ok;
       if (!result.layers || !result.floorCapacity) return false;
-
-      const requiredFloorPositions = Math.ceil(result.input.quantity / result.layers);
-      return requiredFloorPositions >= result.floorCapacity && result.fitsQtyBySpace;
+      return result.placedFloorPositions >= result.floorCapacity && result.fitsQtyBySpace;
     }
 
     function maxPalletsOnScanLine(rects, axis) {
@@ -6475,15 +7060,17 @@
       setLengthInputMm(els.gap, 0);
       els.stackable.checked = false;
       els.maxLayers.value = 2;
-      setLengthInputMm(els.verticalGap, 0);
-      els.stackOptions.classList.add("hidden");
 
       const group = els.singlePalletGroup;
       group.querySelector('[data-field="allowRotate"]').checked = true;
-      group.querySelector('[data-field="lockedOrientation"][value="normal"]').checked = true;
+      group.querySelectorAll('[data-field="lockedOrientation"]').forEach(radio => { radio.checked = false; });
       group.querySelector('[data-field="customName"]').value = t("pallet.customDefaultName");
       group.querySelector('[data-field="identifier"]').value = "";
       initializeGroup(group, example.presetId);
+      els.mixedRows.replaceChildren();
+      mixedRowCounter = 0;
+      syncUnifiedMode({ calculate: false });
+      setGroupExpanded(group, true);
 
       selectedContainerId = example.containerId;
       lastResults = [];
@@ -6695,6 +7282,108 @@
       return Number.isSafeInteger(value) && value > 0;
     }
 
+    function allGroupElements() {
+      return [els.singlePalletGroup, ...els.mixedRows.querySelectorAll(".mixed-row")]
+        .filter(Boolean);
+    }
+
+    function groupDisplayCode(typeIndex) {
+      let value = Number(typeIndex) + 1;
+      if (!Number.isSafeInteger(value) || value < 1) return "";
+      let code = "";
+      while (value > 0) {
+        value -= 1;
+        code = String.fromCharCode(65 + (value % 26)) + code;
+        value = Math.floor(value / 26);
+      }
+      return code;
+    }
+
+    function palletDisplayReference(rect) {
+      if (!rect || !Number.isSafeInteger(rect.typeIndex) || !Number.isSafeInteger(rect.unitNo)) return "";
+      return `${groupDisplayCode(rect.typeIndex)}.${rect.unitNo}`;
+    }
+
+    function setGroupExpanded(group, expanded, options = {}) {
+      const toggle = group.querySelector('[data-action="toggleGroup"]');
+      const body = group.querySelector('[data-role="groupBody"]');
+      if (!toggle || !body) return;
+      if (expanded && allGroupElements().length > 1) {
+        allGroupElements().forEach(other => { if (other !== group) setGroupExpanded(other, false); });
+      }
+      if (!expanded && body.contains(document.activeElement)) toggle.focus({ preventScroll: true });
+      group.dataset.expanded = expanded ? "true" : "false";
+      toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+      body.hidden = !expanded;
+      if (options.focus) toggle.focus({ preventScroll: true });
+    }
+
+    function syncGroupTitles() {
+      const groups = allGroupElements();
+      groups.forEach((group, index) => {
+        const title = group.querySelector('[data-role="groupTitle"]');
+        if (title) title.textContent = t("pallet.groupTitle", { number: groupDisplayCode(index) });
+        const remove = group.querySelector('[data-action="removeGroup"]');
+        if (remove) remove.classList.toggle("hidden", groups.length <= 1);
+      });
+      return groups;
+    }
+
+    function updateMeasurementSuffixes() {
+      document.querySelectorAll("[data-unit-suffix]").forEach(node => {
+        node.textContent = currentLengthUnit;
+      });
+      document.querySelectorAll("[data-length-input]").forEach(input => {
+        input.setAttribute("aria-description", t("units.inputUnit", { unit: currentLengthUnit }));
+      });
+    }
+
+    function groupSummaryParts(group, name, dims, dimensionsValid, allowRotate, isSquare, accessible = false) {
+      const quantity = Math.max(0, Number(group.querySelector('[data-field="quantity"]')?.value) || 0);
+      const height = readLengthInputMm(group.querySelector('[data-field="height"]'));
+      const quantityText = accessible
+        ? `${formatInt(quantity)} ${pluralText("common.pallet", quantity)}`
+        : `${formatInt(quantity)} PLT`;
+      const parts = [quantityText];
+      if (dimensionsValid && validPositiveInteger(height)) {
+        parts.push(
+          `${formatLengthValue(dims.length)} × ${formatLengthValue(dims.width)} × H ${formatLengthValue(height)} ${currentLengthUnit}`
+        );
+      } else if (dimensionsValid) {
+        parts.push(formatLengthDimensions([dims.length, dims.width]));
+      }
+      parts.push(name);
+      if (isSquare) {
+        parts.push(t("rotation.square"));
+      } else if (allowRotate.checked) {
+        parts.push(t("rotation.allowed"));
+      } else {
+        const selected = group.querySelector('[data-field="lockedOrientation"]:checked');
+        if (selected && dimensionsValid) {
+          const presentation = orientationPresentation(dims.length, dims.width, selected.value);
+          parts.push(t(
+            presentation.entryKind === "short" ? "rotation.lockedShort" : "rotation.lockedLong",
+            { entry: formatLength(presentation.entry) }
+          ));
+        } else {
+          parts.push(t("rotation.chooseRequired"));
+        }
+      }
+      const identifier = group.querySelector('[data-field="identifier"]')?.value.trim();
+      if (identifier) parts.push(identifier);
+      return parts;
+    }
+
+    function updateGroupSummary(group, name, dims, dimensionsValid, allowRotate, isSquare) {
+      const node = group.querySelector('[data-role="groupSummary"]');
+      if (!node) return;
+      const visible = groupSummaryParts(group, name, dims, dimensionsValid, allowRotate, isSquare).join(" · ");
+      const accessible = groupSummaryParts(group, name, dims, dimensionsValid, allowRotate, isSquare, true).join(" · ");
+      node.textContent = visible;
+      node.title = visible;
+      node.setAttribute("aria-label", accessible);
+    }
+
     function updateGroupVisuals(group) {
       const presetId = group.querySelector('[data-field="presetId"]').value || "eur";
       const preset = getPreset(presetId);
@@ -6710,8 +7399,11 @@
       const squareNote = group.querySelector('[data-role="squareNote"]');
       const rotationTitle = group.querySelector('[data-role="rotationTitle"]');
       const rotationDescription = group.querySelector('[data-role="rotationDescription"]');
+      const orientationSummary = group.querySelector('[data-role="orientationSummary"]');
+      const orientationSummaryText = group.querySelector('[data-role="orientationSummaryText"]');
       const dimensionsValid = validPositiveInteger(dims.length) && validPositiveInteger(dims.width);
       const isSquare = dimensionsValid && dims.length === dims.width;
+      const wasSquare = group.dataset.wasSquare === "true";
 
       customFields.classList.toggle("hidden", presetId !== "custom");
 
@@ -6726,9 +7418,12 @@
         secondary.textContent = name;
         summary.replaceChildren(primary, secondary);
         orientationPanel.classList.add("hidden");
+        if (orientationSummary) orientationSummary.classList.add("hidden");
         squareNote.classList.add("hidden");
         rotationTitle.textContent = t("rotation.pendingTitle");
         rotationDescription.textContent = t("rotation.pendingDescription");
+        group.dataset.wasSquare = "false";
+        updateGroupSummary(group, name, dims, false, allowRotate, false);
         return;
       }
 
@@ -6744,19 +7439,26 @@
       if (isSquare) {
         allowRotate.checked = false;
         allowRotate.disabled = true;
+        group.dataset.orientationEditing = "false";
         orientationPanel.classList.add("hidden");
+        if (orientationSummary) orientationSummary.classList.add("hidden");
         squareNote.classList.remove("hidden");
         rotationTitle.textContent = t("rotation.unnecessaryTitle");
         rotationDescription.textContent = t("rotation.unnecessaryDescription");
       } else {
         allowRotate.disabled = false;
+        if (wasSquare) allowRotate.checked = true;
         squareNote.classList.add("hidden");
-        orientationPanel.classList.toggle("hidden", allowRotate.checked);
+        const selected = group.querySelector('[data-field="lockedOrientation"]:checked');
+        const editing = group.dataset.orientationEditing === "true" || (!allowRotate.checked && !selected);
+        orientationPanel.classList.toggle("hidden", allowRotate.checked || !editing);
+        if (orientationSummary) orientationSummary.classList.toggle("hidden", allowRotate.checked || editing || !selected);
         rotationTitle.textContent = allowRotate.checked ? t("rotation.allow") : t("rotation.disallowedTitle");
         rotationDescription.textContent = allowRotate.checked
           ? t("rotation.allowDescription")
           : t("rotation.lockedDescription");
       }
+      group.dataset.wasSquare = isSquare ? "true" : "false";
 
       const setOrientationTitle = (node, orientation) => {
         const presentation = orientationPresentation(dims.length, dims.width, orientation);
@@ -6776,6 +7478,16 @@
       setOrientationTitle(group.querySelector('[data-role="rotatedTitle"]'), "rotated");
       group.querySelector('[data-role="normalDiagram"]').innerHTML = orientationDiagramSvg(dims.length, dims.width, "normal");
       group.querySelector('[data-role="rotatedDiagram"]').innerHTML = orientationDiagramSvg(dims.length, dims.width, "rotated");
+
+      const selected = group.querySelector('[data-field="lockedOrientation"]:checked');
+      if (orientationSummaryText && selected && !isSquare) {
+        const presentation = orientationPresentation(dims.length, dims.width, selected.value);
+        orientationSummaryText.textContent = t(
+          presentation.entryKind === "short" ? "rotation.lockedShort" : "rotation.lockedLong",
+          { entry: formatLength(presentation.entry) }
+        );
+      }
+      updateGroupSummary(group, name, dims, true, allowRotate, isSquare);
     }
 
     function initializeGroup(group, presetId = "eur") {
@@ -6797,6 +7509,22 @@
       group.querySelector('[data-action="togglePicker"]').setAttribute("aria-expanded", "false");
       updateGroupVisuals(group);
       if (shouldCalculate) calculate();
+    }
+
+    function positionPicker(group) {
+      const menu = group.querySelector('[data-role="pickerMenu"]');
+      if (menu.classList.contains("hidden")) return;
+      const box = group.querySelector('[data-action="togglePicker"]').getBoundingClientRect();
+      const margin = 8, gap = 7;
+      const width = Math.min(Math.max(box.width, 290), innerWidth - margin * 2);
+      const below = innerHeight - box.bottom - gap - margin;
+      const above = box.top - gap - margin;
+      const upward = below < 240 && above > below;
+      const available = Math.max(80, upward ? above : below);
+      menu.style.width = `${width}px`;
+      menu.style.maxHeight = `${Math.min(440, available)}px`;
+      menu.style.left = `${Math.max(margin, Math.min(box.left, innerWidth - width - margin))}px`;
+      menu.style.top = `${Math.max(margin, upward ? box.top - gap - menu.getBoundingClientRect().height : box.bottom + gap)}px`;
     }
 
     function closeAllPickers(exceptGroup = null) {
@@ -6826,24 +7554,30 @@
       const heightMm = Number.isSafeInteger(defaults.height) ? defaults.height : 1500;
       const lengthMm = Number.isSafeInteger(defaults.length) ? defaults.length : 1200;
       const widthMm = Number.isSafeInteger(defaults.width) ? defaults.width : 800;
+      const checkedNormal = defaults.lockedOrientation === "normal" ? "checked" : "";
+      const checkedRotated = defaults.lockedOrientation === "rotated" ? "checked" : "";
       return `
-        <div class="pallet-group mixed-row" data-row-id="${rowId}" data-group-kind="mixed">
+        <div class="pallet-group mixed-row" data-row-id="${rowId}" data-group-kind="mixed" data-expanded="true">
           <div class="group-heading mixed-title">
-            <strong data-role="mixedGroupTitle"></strong>
-            <button class="danger" type="button" data-action="removeMixedRow" data-i18n="pallet.remove">pallet.remove</button>
+            <button class="group-disclosure" type="button" data-action="toggleGroup" aria-expanded="true" aria-controls="${rowId}_body">
+              <span class="group-disclosure-icon" aria-hidden="true">▾</span>
+              <span class="group-heading-copy"><strong data-role="groupTitle"></strong><span class="group-summary" data-role="groupSummary"></span></span>
+            </button>
+            <button class="danger group-remove" type="button" data-action="removeGroup" data-i18n="pallet.remove">pallet.remove</button>
           </div>
+
+          <div class="group-body" id="${rowId}_body" data-role="groupBody">
 
           <div class="group-top-grid">
             <div>
               <span class="field-caption" data-i18n="pallet.type">pallet.type</span>
               <div class="pallet-picker" data-role="palletPicker">
                 <button class="picker-button" type="button" data-action="togglePicker" aria-expanded="false">
-                  <span data-i18n="pallet.selectSize">pallet.selectSize</span><span class="picker-chevron">⌄</span>
+                  <span class="selected-pallet" data-role="selectedSummary"></span><span class="picker-chevron">⌄</span>
                 </button>
                 <div class="picker-menu hidden" data-role="pickerMenu"></div>
                 <input data-field="presetId" type="hidden" value="${escapeHtml(defaults.presetId || "eur")}">
               </div>
-              <div class="selected-pallet" data-role="selectedSummary"></div>
             </div>
 
             <label>
@@ -6853,23 +7587,16 @@
 
             <label>
               <span data-i18n="pallet.loadedHeight">pallet.loadedHeight</span>
-              <input data-field="height" data-length-input data-min-mm="1" data-mm="${heightMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(heightMm)}" required>
+              <span class="measurement-input"><input data-field="height" data-length-input data-min-mm="1" data-mm="${heightMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(heightMm)}" required><span class="unit-suffix" data-unit-suffix aria-hidden="true">${currentLengthUnit}</span></span>
             </label>
-          </div>
-
-          <div class="custom-size-fields hidden" data-role="customFields">
-            <label><span data-i18n="pallet.length">pallet.length</span><input data-field="length" data-length-input data-min-mm="1" data-mm="${lengthMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(lengthMm)}" required></label>
-            <label><span data-i18n="pallet.width">pallet.width</span><input data-field="width" data-length-input data-min-mm="1" data-mm="${widthMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(widthMm)}" required></label>
-            <label><span data-i18n="pallet.customName">pallet.customName</span><input data-field="customName" type="text" maxlength="${MAX_CUSTOM_NAME_LENGTH}" value="${escapeHtml(defaults.customName || "")}"></label>
-          </div>
+          
 
           <label class="identifier-field">
-            <span data-i18n="pallet.identifier">pallet.identifier</span>
-            <span style="font-weight:500;" data-i18n="pallet.optional">pallet.optional</span>
-            <input data-field="identifier" type="text" maxlength="36"
+            <span><span data-i18n="pallet.identifier">pallet.identifier</span> <span class="optional-label" data-i18n="pallet.optional">pallet.optional</span></span>
+            <input data-field="identifier" type="text" maxlength="36" aria-describedby="${rowId}_identifierHelp"
               value="${escapeHtml(defaults.identifier || "")}"
               placeholder="pallet.identifierPlaceholder" data-i18n-placeholder="pallet.identifierPlaceholder">
-            <span class="field-help" data-i18n="pallet.identifierHelpMixed">pallet.identifierHelpMixed</span>
+            <span id="${rowId}_identifierHelp" class="field-help visually-hidden" data-i18n="pallet.identifierHelpMixed">pallet.identifierHelpMixed</span>
           </label>
 
           <div class="rotation-box" data-role="rotationBox">
@@ -6881,16 +7608,29 @@
               <label class="switch-control" title="rotation.switchTitle" data-i18n-title="rotation.switchTitle"><input data-field="allowRotate" type="checkbox" ${defaults.allowRotate === false ? "" : "checked"}><span class="switch-track"></span></label>
             </div>
             <div class="square-note hidden" data-role="squareNote" data-i18n="rotation.squareNote">rotation.squareNote</div>
+              <div class="orientation-summary hidden" data-role="orientationSummary">
+                <span data-role="orientationSummaryText"></span>
+                <button class="secondary smallbtn" type="button" data-action="changeOrientation" data-i18n="rotation.change">rotation.change</button>
+              </div>
+          </div>
+            </div>
+
+
+          <div class="custom-size-fields hidden" data-role="customFields">
+            <label><span data-i18n="pallet.length">pallet.length</span><span class="measurement-input"><input data-field="length" data-length-input data-min-mm="1" data-mm="${lengthMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(lengthMm)}" required><span class="unit-suffix" data-unit-suffix aria-hidden="true">${currentLengthUnit}</span></span></label>
+            <label><span data-i18n="pallet.width">pallet.width</span><span class="measurement-input"><input data-field="width" data-length-input data-min-mm="1" data-mm="${widthMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(widthMm)}" required><span class="unit-suffix" data-unit-suffix aria-hidden="true">${currentLengthUnit}</span></span></label>
+            <label><span data-i18n="pallet.customName">pallet.customName</span><input data-field="customName" type="text" maxlength="${MAX_CUSTOM_NAME_LENGTH}" value="${escapeHtml(defaults.customName || "")}"></label>
+          </div>
               <div class="orientation-panel hidden" data-role="orientationPanel">
                 <strong data-i18n="rotation.chooseRequired">rotation.chooseRequired</strong>
                 <div class="orientation-grid">
                 <label class="orientation-card">
-                  <input data-field="lockedOrientation" name="${radioName}" type="radio" value="normal" ${defaults.lockedOrientation === "rotated" ? "" : "checked"}>
+                  <input data-field="lockedOrientation" name="${radioName}" type="radio" value="normal" ${checkedNormal}>
                   <span class="orientation-title" data-role="normalTitle"></span>
                   <span class="orientation-diagram" data-role="normalDiagram"></span>
                 </label>
                 <label class="orientation-card">
-                  <input data-field="lockedOrientation" name="${radioName}" type="radio" value="rotated" ${defaults.lockedOrientation === "rotated" ? "checked" : ""}>
+                  <input data-field="lockedOrientation" name="${radioName}" type="radio" value="rotated" ${checkedRotated}>
                   <span class="orientation-title" data-role="rotatedTitle"></span>
                     <span class="orientation-diagram" data-role="rotatedDiagram"></span>
                   </label>
@@ -6906,11 +7646,9 @@
       const wrapper = document.createElement("div");
       wrapper.innerHTML = mixedGroupHtml(data).trim();
       const row = wrapper.firstElementChild;
+      const previousGroups = allGroupElements();
       els.mixedRows.appendChild(row);
       i18n.apply(row);
-      row.querySelector('[data-role="mixedGroupTitle"]').textContent = t("pallet.groupTitle", {
-        number: mixedRowCounter
-      });
       const customName = row.querySelector('[data-field="customName"]');
       if (!customName.value) customName.value = t("pallet.customDefaultName");
       initializeGroup(row, data.presetId || "eur");
@@ -6921,7 +7659,14 @@
         setLengthInputMm(row.querySelector('[data-field="width"]'), data.width);
       }
       updateGroupVisuals(row);
-      if (shouldCalculate) calculate();
+      updateMeasurementSuffixes();
+      if (options.open !== false) {
+        previousGroups.forEach(group => setGroupExpanded(group, false));
+        setGroupExpanded(row, true);
+      }
+      syncUnifiedMode({ calculate: shouldCalculate });
+      syncGroupTitles();
+      return row;
     }
 
     function clearInputValidation() {
@@ -6992,7 +7737,7 @@
       const presetId = group.querySelector('[data-field="presetId"]').value;
       const preset = getPreset(presetId);
       const prefix = mode === "mixed"
-        ? t("validation.groupPrefix", { number: formatInt(index + 1) })
+        ? t("validation.groupPrefix", { number: groupDisplayCode(index) })
         : t("validation.palletPrefix");
       const quantityInput = group.querySelector('[data-field="quantity"]');
       const heightInput = group.querySelector('[data-field="height"]');
@@ -7033,7 +7778,7 @@
           customNameInput,
           t("validation.field.customName", { prefix }),
           mode === "mixed"
-            ? t("pallet.customFallbackType", { number: formatInt(index + 1) })
+            ? t("pallet.customFallbackType", { number: groupDisplayCode(index) })
             : t("pallet.customDefaultName"),
           errors
         );
@@ -7046,6 +7791,19 @@
         width === null ||
         name === null
       ) {
+        return null;
+      }
+
+      const allowRotate = group.querySelector('[data-field="allowRotate"]');
+      const orientation = group.querySelector('[data-field="lockedOrientation"]:checked');
+      if (length !== width && !allowRotate.checked && !orientation) {
+        invalidField(
+          group.querySelector('[data-field="lockedOrientation"]'),
+          t("validation.orientationRequired", { prefix }),
+          errors
+        );
+        group.dataset.orientationEditing = "true";
+        updateGroupVisuals(group);
         return null;
       }
 
@@ -7085,9 +7843,9 @@
       let input = null;
 
       if (mode === "mixed") {
-        const rows = Array.from(els.mixedRows.querySelectorAll(".mixed-row"));
+        const rows = allGroupElements();
         const gap = parseLengthField(
-          els.mixedGap,
+          els.gap,
           t("validation.field.gap"),
           { min: 0 },
           errors
@@ -7130,19 +7888,13 @@
           errors
         );
         let maxLayers = 1;
-        let verticalGap = 0;
+        const verticalGap = 0;
 
         if (els.stackable.checked) {
           maxLayers = parseIntegerField(
             els.maxLayers,
             t("validation.field.maxLayers"),
             { min: 1, max: MAX_TOTAL_PALLETS },
-            errors
-          );
-          verticalGap = parseLengthField(
-            els.verticalGap,
-            t("validation.field.verticalGap"),
-            { min: 0 },
             errors
           );
         }
@@ -7172,8 +7924,8 @@
     function activeLengthInputs() {
       const inputs = [];
       if (els.loadMode.value === "mixed") {
-        inputs.push(els.mixedGap);
-        els.mixedRows.querySelectorAll(".mixed-row").forEach(row => {
+        inputs.push(els.gap);
+        allGroupElements().forEach(row => {
           inputs.push(row.querySelector('[data-field="height"]'));
           if (row.querySelector('[data-field="presetId"]')?.value === "custom") {
             inputs.push(
@@ -7187,7 +7939,6 @@
         if (els.singlePalletGroup.querySelector('[data-field="presetId"]')?.value === "custom") {
           inputs.push(els.palletLength, els.palletWidth);
         }
-        if (els.stackable.checked) inputs.push(els.verticalGap);
       }
       return inputs.filter(Boolean);
     }
@@ -7233,6 +7984,7 @@
         populatePickerMenu(group.querySelector('[data-role="pickerMenu"]'), presetId);
       });
       document.querySelectorAll(".pallet-group").forEach(updateGroupVisuals);
+      updateMeasurementSuffixes();
       if (!lastResults.length) return;
       lastResults.forEach(result => {
         result.validation = validateResultGeometry(result);
@@ -7277,6 +8029,7 @@
     function initializeUnitControl() {
       syncUnitRadios();
       formatAllLengthInputs();
+      updateMeasurementSuffixes();
       els.unitRadios.forEach(radio => {
         radio.addEventListener("change", () => {
           if (radio.checked) requestLengthUnit(radio.value);
@@ -7727,6 +8480,7 @@
 
       showValidationMessage([]);
       const input = validation.input;
+      window.loadComposerDiagnostics.calculationCycles += 1;
 
       if (input.mode === "mixed") {
         calculateMixed(input);
@@ -7741,6 +8495,8 @@
       const { pallet, quantity, gap, stackable, maxLayers, verticalGap } = input;
       const cbmEach = (pallet.length * pallet.width * pallet.height) / 1000000000;
       const cbmTotal = cbmEach * quantity;
+      lastCbmTotal = cbmTotal;
+      lastCalculationInput = input;
 
       lastResults = CONTAINERS.map(container => {
         const capacityLayout = bestLayout(
@@ -7750,8 +8506,21 @@
           pallet.rotationMode,
           pallet.lockedOrientation
         );
+        const floorCapacity = capacityLayout.count;
+        const physicalLayers = physicalLayersFor(
+          container,
+          pallet.height,
+          verticalGap
+        );
         const layers = layersFor(container, pallet.height, stackable, maxLayers, verticalGap);
-        const requestedFloorPositions = layers > 0 ? Math.ceil(quantity / layers) : 0;
+        const availableLayers = layers;
+        const totalCapacity = floorCapacity * availableLayers;
+        const placedTarget = Math.min(quantity, totalCapacity);
+        const requestedFloorPositions = availableLayers > 0
+          ? stackable
+            ? Math.min(placedTarget, floorCapacity)
+            : quantity
+          : 0;
         const selectedLoad = assignLoadStacks(
           bestLoadLayout(
             container,
@@ -7765,12 +8534,24 @@
           layers
         );
         const loadLayout = selectedLoad.layout;
-        const floorCapacity = capacityLayout.count;
-        const totalCapacity = floorCapacity * layers;
         const placedFloorPositions = loadLayout.count;
         const placedCount = selectedLoad.placedCount;
         const unplacedCount = Math.max(0, quantity - placedCount);
         const fitsQtyBySpace = placedCount === quantity;
+        const requiredLayers = floorCapacity > 0
+          ? Math.ceil(quantity / floorCapacity)
+          : 0;
+        const requiredStackHeight = usedSpan(requiredLayers, pallet.height, verticalGap);
+        let stackingLimitReason = null;
+        if (stackable && requiredLayers > availableLayers) {
+          if (physicalLayers < maxLayers) {
+            stackingLimitReason = "height";
+          } else if (maxLayers < physicalLayers) {
+            stackingLimitReason = "max-layers";
+          } else {
+            stackingLimitReason = "height-and-max-layers";
+          }
+        }
 
         const result = {
           mode: "single", container,
@@ -7778,6 +8559,11 @@
           loadLayout,
           layout: loadLayout,
           layers,
+          availableLayers,
+          physicalLayers,
+          requiredLayers,
+          requiredStackHeight,
+          stackingLimitReason,
           loadLayers: selectedLoad.loadLayers,
           floorCapacity,
           totalCapacity,
@@ -7808,6 +8594,8 @@
       const cbmTotal = input.types.reduce((sum, item) => {
         return sum + (item.length * item.width * item.height * item.quantity) / 1000000000;
       }, 0);
+      lastCbmTotal = cbmTotal;
+      lastCalculationInput = input;
 
       lastResults = CONTAINERS.map(container => {
         const layout = bestMixedLayout(container, items, input.gap);
@@ -7837,8 +8625,64 @@
       drawSelected();
     }
 
+    function resultMatchesActiveFilter(result) {
+      const id = result.container.id;
+      const type = result.container.vehicleType;
+      if (resultFilterPrimary === "containers" && type !== "container") return false;
+      if (resultFilterPrimary === "trailers" && type !== "truck") return false;
+      if (resultFilterPrimary === "containers") {
+        if (resultFilterSecondary === "20" && !id.startsWith("20")) return false;
+        if (resultFilterSecondary === "40" && !id.startsWith("40")) return false;
+        if (resultFilterSecondary === "45" && !id.startsWith("45")) return false;
+        if (resultFilterSecondary === "reefer" && !["20rf", "40rh", "45rhpw"].includes(id)) return false;
+        if (resultFilterSecondary === "pallet-wide" && !id.includes("pw")) return false;
+      }
+      return true;
+    }
+
+    function visibleResults() {
+      return lastResults.filter(resultMatchesActiveFilter);
+    }
+
+    function syncFilterControls() {
+      document.querySelectorAll("[data-filter-primary]").forEach(button => {
+        const selected = button.dataset.filterPrimary === resultFilterPrimary;
+        button.classList.toggle("selected", selected);
+        button.setAttribute("aria-pressed", selected ? "true" : "false");
+      });
+      document.querySelectorAll("[data-filter-container]").forEach(button => {
+        const selected = button.dataset.filterContainer === resultFilterSecondary;
+        button.classList.toggle("selected", selected);
+        button.setAttribute("aria-pressed", selected ? "true" : "false");
+      });
+      els.containerSecondaryFilters.classList.toggle("hidden", resultFilterPrimary !== "containers");
+    }
+
+    function applyResultFilter() {
+      syncFilterControls();
+      if (lastCalculationInput) renderSummary(lastCbmTotal, lastCalculationInput);
+      renderTable();
+      renderDrawOptions();
+      drawSelected();
+    }
+
+    function setPrimaryFilter(value) {
+      if (!["all", "containers", "trailers"].includes(value)) return;
+      resultFilterPrimary = value;
+      resultFilterSecondary = "all";
+      window.loadComposerDiagnostics.filterChanges += 1;
+      applyResultFilter();
+    }
+
+    function setSecondaryFilter(value) {
+      resultFilterSecondary = resultFilterPrimary === "containers" && ["all", "20", "40", "45", "reefer", "pallet-wide"].includes(value) ? value : "all";
+      window.loadComposerDiagnostics.filterChanges += 1;
+      applyResultFilter();
+    }
+
     function renderSummary(cbmTotal, input) {
-      const best = lastResults.filter(item => !item.validationError).reduce((acc, item) => {
+      const filtered = visibleResults();
+      const best = filtered.filter(item => !item.validationError).reduce((acc, item) => {
         if (!acc) return item;
         if (input.mode === "mixed") {
           if (item.placedCount !== acc.placedCount) return item.placedCount > acc.placedCount ? item : acc;
@@ -7847,7 +8691,7 @@
         return item.totalCapacity > acc.totalCapacity ? item : acc;
       }, null);
 
-      const smallest = lastResults
+      const smallest = filtered
         .filter(item => item.ok)
         .sort((a, b) => (a.container.innerLength * a.container.innerWidth) - (b.container.innerLength * b.container.innerWidth))[0];
       els.cbmTotal.textContent = formatVolume(cbmTotal);
@@ -8132,8 +8976,17 @@
     function appendAccessCell(row, result, maxHeight = null) {
       const c = result.container;
       const control = accessControlState(result);
+      const stackingHeightFailure = (
+        result.mode === "single" &&
+        result.input.stackable &&
+        ["height", "height-and-max-layers"].includes(result.stackingLimitReason) &&
+        result.requiredStackHeight > c.innerHeight + GEOMETRY_EPSILON
+      );
       const cell = row.insertCell();
-      cell.append(statusBadgeNode(control.kind, control.label));
+      cell.append(statusBadgeNode(
+        stackingHeightFailure ? "warn" : control.kind,
+        stackingHeightFailure ? t("status.notOk") : control.label
+      ));
       appendBreak(cell);
       const lines = [];
       if (maxHeight !== null && (control.state === "partial" || control.state === "not-ok")) {
@@ -8148,6 +9001,19 @@
             dimensions: formatLengthDimensions([c.doorWidth, c.doorHeight])
           })
         );
+      }
+      if (result.mode === "single" && result.input.stackable) {
+        lines.push(t("table.stackHeightUsed", {
+          height: formatLength(usedLoadHeight(result))
+        }));
+        if (stackingHeightFailure) {
+          lines.push(
+            t("table.requiredStackHeight", {
+              height: formatLength(result.requiredStackHeight)
+            }),
+            t("table.stackingLimitedByHeight")
+          );
+        }
       }
       appendMultiline(cell, lines, { tag: "span", className: "small" });
       return cell;
@@ -8185,8 +9051,9 @@
     function renderTable() {
       let currentGroup = "";
       const fragment = document.createDocumentFragment();
+      const filtered = visibleResults();
 
-      lastResults.forEach(result => {
+      filtered.forEach(result => {
         const group = localizedContainerGroup(result.container);
         if (group !== currentGroup) {
           const groupRow = document.createElement("tr");
@@ -8201,6 +9068,7 @@
       });
 
       els.resultsBody.replaceChildren(fragment);
+      els.filterEmptyState.classList.toggle("hidden", filtered.length > 0 || lastResults.length === 0);
     }
 
     function renderSingleRow(result) {
@@ -8210,12 +9078,6 @@
       const remainingSlots = result.fitsQtyBySpace
         ? Math.max(0, result.totalCapacity - result.placedCount)
         : 0;
-      const showFloorPositions = (
-        result.layers > 1 ||
-        result.loadLayers > 1 ||
-        result.floorCapacity !== result.totalCapacity ||
-        result.placedFloorPositions !== result.placedCount
-      );
       const spareLength = Math.max(0, c.innerLength - result.layout.usedLength);
       const spareWidth = Math.max(0, c.innerWidth - result.layout.usedWidth);
       const spareHeight = Math.max(0, c.innerHeight - usedLoadHeight(result));
@@ -8234,16 +9096,13 @@
           result.totalCapacity
         )}`
       ));
-      if (showFloorPositions) {
-        appendText(capacity, pluralText("table.floorPositions", result.floorCapacity), {
-          tag: "span",
-          className: "small",
-          breakBefore: true
-        });
-        appendText(capacity, pluralText(
-          "table.usedFloorPositions",
-          result.placedFloorPositions
-        ), {
+      if (result.input.stackable) {
+        const floorForm = result.floorCapacity === 1 ? "one" : "other";
+        const layerForm = result.availableLayers === 1 ? "One" : "Other";
+        appendText(capacity, t(`table.capacityComposition.${floorForm}${layerForm}`, {
+          floor: formatInt(result.floorCapacity),
+          layers: formatInt(result.availableLayers)
+        }), {
           tag: "span",
           className: "small",
           breakBefore: true
@@ -8256,7 +9115,7 @@
           breakBefore: true
         });
       }
-      if (result.fitsQtyBySpace) {
+      if (result.fitsQtyBySpace && remainingSlots > 0) {
         appendText(capacity, pluralText("table.unusedCapacity", remainingSlots), {
           tag: "span",
           className: "small",
@@ -8331,8 +9190,10 @@
     function renderDrawOptions() {
       const groups = new Map();
       const previousContainerId = selectedContainerId;
+      const filtered = visibleResults();
 
-      lastResults.forEach((result, index) => {
+      filtered.forEach(result => {
+        const index = lastResults.indexOf(result);
         const group = localizedContainerGroup(result.container);
         if (!groups.has(group)) groups.set(group, []);
 
@@ -8376,16 +9237,14 @@
       });
       els.drawSelect.replaceChildren(fragment);
 
-      const selectedIndex = lastResults.findIndex(
-        result => result.container.id === previousContainerId
-      );
-      const nextIndex = selectedIndex >= 0 ? selectedIndex : 0;
-      if (lastResults[nextIndex]) {
+      const selectedResult = filtered.find(result => result.container.id === previousContainerId) || filtered[0];
+      const nextIndex = selectedResult ? lastResults.indexOf(selectedResult) : -1;
+      if (selectedResult) {
         els.drawSelect.value = String(nextIndex);
-        selectedContainerId = lastResults[nextIndex].container.id;
+        selectedContainerId = selectedResult.container.id;
       }
-      els.drawSelect.disabled = !lastResults.length;
-      updateOperationalPrintState(lastResults[nextIndex]);
+      els.drawSelect.disabled = !filtered.length;
+      updateOperationalPrintState(nextIndex >= 0 ? lastResults[nextIndex] : null);
     }
 
     function isOperationalPrintAvailable(result) {
@@ -8493,7 +9352,7 @@
     }
 
     function rectReferenceCode(result, rect, index) {
-      if (result.mode === "mixed") return `${rect.typeIndex + 1}.${rect.unitNo}`;
+      if (result.mode === "mixed") return palletDisplayReference(rect);
       return `P${index + 1}`;
     }
 
@@ -8572,7 +9431,7 @@
       const bwMode = Boolean(options.bwMode);
       const forPrint = Boolean(options.forPrint);
 
-      if (bwMode || forPrint) {
+      if (forPrint) {
         return {
           background: "#ffffff",
           ink: "#0f172a",
@@ -8586,7 +9445,7 @@
         };
       }
 
-      return {
+      const themePalette = {
         background: cssToken("--lc-canvas-bg", "#F8FBFA"),
         ink: cssToken("--lc-canvas-ink", "#13272F"),
         floor: cssToken("--lc-canvas-floor", "#EAF1EF"),
@@ -8597,6 +9456,31 @@
         error: cssToken("--lc-error", "#9B2418"),
         mixedColors: TYPE_COLORS
       };
+
+      if (bwMode && document.documentElement.dataset.theme === "dark") {
+        return {
+          ...themePalette,
+          palletNormal: "#ffffff",
+          palletRotated: "#ffffff",
+          palletStroke: "#111827"
+        };
+      }
+
+      if (bwMode) {
+        return {
+          background: "#ffffff",
+          ink: "#0f172a",
+          floor: "#ffffff",
+          grid: "#0f172a",
+          palletNormal: "#bbf7d0",
+          palletRotated: "#bfdbfe",
+          palletStroke: "#111827",
+          error: "#991b1b",
+          mixedColors: TYPE_COLORS
+        };
+      }
+
+      return themePalette;
     }
 
     function transversePresentationOffset(container, layout) {
@@ -8874,9 +9758,20 @@
     }
 
     function drawSelected() {
+      const bwMode = Boolean(els.printBw && els.printBw.checked);
+      els.previewStage.dataset.previewMode = bwMode ? "bw" : "colour";
       const index = Number(els.drawSelect.value || 0);
       const result = lastResults[index];
-      if (!result) return;
+      if (!result || !resultMatchesActiveFilter(result)) {
+        updateOperationalPrintState(null);
+        els.layoutNotes.textContent = lastResults.length ? t("filters.emptyPreview") : "";
+        const ctx = els.layoutCanvas.getContext("2d");
+        const palette = canvasPreviewPalette();
+        ctx.clearRect(0, 0, els.layoutCanvas.width, els.layoutCanvas.height);
+        ctx.fillStyle = palette.background;
+        ctx.fillRect(0, 0, els.layoutCanvas.width, els.layoutCanvas.height);
+        return;
+      }
       selectedContainerId = result.container.id;
       updateOperationalPrintState(result);
 
@@ -8885,7 +9780,6 @@
         return;
       }
 
-      const bwMode = Boolean(els.printBw && els.printBw.checked);
       const view = els.printView ? els.printView.value : "side";
 
       if (view === "ramp") {
@@ -8939,7 +9833,7 @@
           "display:inline-block",
           "border-radius:3px"
         ].join(";");
-        legendItem.append(marker, document.createTextNode(`${formatInt(index + 1)}: `));
+        legendItem.append(marker, document.createTextNode(`${groupDisplayCode(index)}: `));
         if (type.identifier) {
           appendText(legendItem, type.identifier, { tag: "strong" });
           legendItem.append(document.createTextNode(" · "));
@@ -9021,7 +9915,7 @@
           const markerStyle = bwMode ? bwLegendCss(index) : `background:${TYPE_COLORS[index % TYPE_COLORS.length]};`;
           return `
             <tr>
-              <td><span class="marker" style="${markerStyle}"></span> ${index + 1}</td>
+              <td><span class="marker" style="${markerStyle}"></span> ${groupDisplayCode(index)}</td>
               <td>${type.identifier ? escapeHtml(type.identifier) : "—"}</td>
               <td>${escapeHtml(localizedPalletName(type))}</td>
               <td>${formatLengthDimensions([type.length, type.width, type.height])}</td>
@@ -9783,15 +10677,67 @@
       printDocumentInFrame(printHtml);
     }
 
-    function syncModeUI(options = {}) {
+    function setStackingReasonOpen(open) {
+      const visible = open && els.stackable.disabled;
+      els.mixedStackNote.classList.toggle("hidden", !visible);
+      els.stackingUnavailable.setAttribute("aria-expanded", String(visible));
+    }
+
+    function syncStackingControls() {
+      els.maxLayers.disabled = els.stackable.disabled || !els.stackable.checked;
+      els.stackable.removeAttribute("title");
+      const wrapper = els.stackingUnavailable;
+      for (const [name, value] of Object.entries({ tabindex: "0", role: "button", "aria-disabled": "true", "aria-describedby": "mixedStackNote" })) {
+        if (els.stackable.disabled) wrapper.setAttribute(name, value);
+        else wrapper.removeAttribute(name);
+      }
+      setStackingReasonOpen(false);
+    }
+
+    function syncUnifiedMode(options = {}) {
       const shouldCalculate = options.calculate !== false;
-      const isMixed = els.loadMode.value === "mixed";
-      els.singleModeForm.classList.toggle("hidden", isMixed);
-      els.mixedModeForm.classList.toggle("hidden", !isMixed);
-      els.singleStackBlock.classList.toggle("hidden", isMixed);
-      els.mixedStackNote.classList.toggle("hidden", !isMixed);
+      const groups = syncGroupTitles();
+      const isMixed = groups.length > 1;
+      els.loadMode.value = isMixed ? "mixed" : "single";
+      els.singleModeForm.classList.remove("hidden");
+      els.mixedModeForm.classList.remove("hidden");
+      if (isMixed) els.stackable.checked = false;
+      els.stackable.disabled = isMixed;
+      syncStackingControls();
       closeAllPickers();
       if (shouldCalculate) calculate();
+    }
+
+    function groupState(group) {
+      return {
+        presetId: group.querySelector('[data-field="presetId"]').value,
+        quantity: Number(group.querySelector('[data-field="quantity"]').value),
+        height: readLengthInputMm(group.querySelector('[data-field="height"]')),
+        length: readLengthInputMm(group.querySelector('[data-field="length"]')),
+        width: readLengthInputMm(group.querySelector('[data-field="width"]')),
+        customName: group.querySelector('[data-field="customName"]').value,
+        identifier: group.querySelector('[data-field="identifier"]').value,
+        allowRotate: group.querySelector('[data-field="allowRotate"]').checked,
+        lockedOrientation: group.querySelector('[data-field="lockedOrientation"]:checked')?.value || null
+      };
+    }
+
+    function applyGroupState(group, state) {
+      initializeGroup(group, state.presetId || "eur");
+      group.querySelector('[data-field="quantity"]').value = String(state.quantity ?? 1);
+      setLengthInputMm(group.querySelector('[data-field="height"]'), state.height || 1500);
+      if (state.presetId === "custom") {
+        setLengthInputMm(group.querySelector('[data-field="length"]'), state.length || 1200);
+        setLengthInputMm(group.querySelector('[data-field="width"]'), state.width || 800);
+      }
+      group.querySelector('[data-field="customName"]').value = state.customName || t("pallet.customDefaultName");
+      group.querySelector('[data-field="identifier"]').value = state.identifier || "";
+      group.querySelector('[data-field="allowRotate"]').checked = state.allowRotate !== false;
+      group.querySelectorAll('[data-field="lockedOrientation"]').forEach(radio => {
+        radio.checked = radio.value === state.lockedOrientation;
+      });
+      group.dataset.orientationEditing = "false";
+      updateGroupVisuals(group);
     }
 
     function resetDefaults() {
@@ -9799,31 +10745,26 @@
       els.quantity.value = 10;
       setLengthInputMm(els.palletHeight, 1500);
       setLengthInputMm(els.gap, 0);
-      setLengthInputMm(els.mixedGap, 0);
       els.stackable.checked = false;
+      els.stackable.disabled = false;
       els.maxLayers.value = 2;
-      setLengthInputMm(els.verticalGap, 0);
-      els.stackOptions.classList.add("hidden");
 
       els.singlePalletGroup.querySelector('[data-field="allowRotate"]').checked = true;
-      els.singlePalletGroup.querySelector('[data-field="lockedOrientation"][value="normal"]').checked = true;
+      els.singlePalletGroup.querySelectorAll('[data-field="lockedOrientation"]').forEach(radio => { radio.checked = false; });
       els.singlePalletGroup.querySelector('[data-field="customName"]').value = t("pallet.customDefaultName");
       els.singlePalletGroup.querySelector('[data-field="identifier"]').value = "";
       els.printView.value = "side";
       selectedContainerId = "20dc";
       initializeGroup(els.singlePalletGroup, "eur");
+      els.singlePalletGroup.dataset.orientationEditing = "false";
+      setGroupExpanded(els.singlePalletGroup, true);
 
       els.mixedRows.replaceChildren();
       mixedRowCounter = 0;
-      addMixedRow(
-        { presetId: "eur", height: 1500, quantity: 10, allowRotate: true },
-        { calculate: false }
-      );
-      addMixedRow(
-        { presetId: "industrial", height: 1500, quantity: 1, allowRotate: true },
-        { calculate: false }
-      );
-      syncModeUI({ calculate: false });
+      resultFilterPrimary = "all";
+      resultFilterSecondary = "all";
+      syncFilterControls();
+      syncUnifiedMode({ calculate: false });
       delete document.documentElement.dataset.example;
       calculate();
     }
@@ -9834,12 +10775,27 @@
       const group = actionTarget.closest('.pallet-group');
       const action = actionTarget.dataset.action;
 
+      if (action === "toggleGroup") {
+        setGroupExpanded(group, actionTarget.getAttribute("aria-expanded") !== "true");
+        return;
+      }
+
+      if (action === "changeOrientation") {
+        group.dataset.orientationEditing = "true";
+        setGroupExpanded(group, true);
+        updateGroupVisuals(group);
+        const selected = group.querySelector('[data-field="lockedOrientation"]:checked');
+        (selected || group.querySelector('[data-field="lockedOrientation"]'))?.focus();
+        return;
+      }
+
       if (action === "togglePicker") {
         const menu = group.querySelector('[data-role="pickerMenu"]');
         const willOpen = menu.classList.contains("hidden");
         closeAllPickers(group);
         menu.classList.toggle("hidden", !willOpen);
         actionTarget.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        if (willOpen) positionPicker(group);
         return;
       }
 
@@ -9849,10 +10805,22 @@
         return;
       }
 
-      if (action === "removeMixedRow") {
-        const rows = els.mixedRows.querySelectorAll('.mixed-row');
-        if (rows.length <= 1) return;
-        group.remove();
+      if (action === "removeGroup") {
+        const groups = allGroupElements();
+        if (groups.length <= 1) return;
+        const index = groups.indexOf(group);
+        if (group === els.singlePalletGroup) {
+          const promoted = groups[1];
+          const state = groupState(promoted);
+          promoted.remove();
+          applyGroupState(els.singlePalletGroup, state);
+        } else {
+          group.remove();
+        }
+        syncUnifiedMode({ calculate: false });
+        const remaining = allGroupElements();
+        const focusGroup = remaining[Math.max(0, Math.min(index, remaining.length - 1))];
+        setGroupExpanded(focusGroup, true, { focus: true });
         calculate();
       }
     }
@@ -9864,12 +10832,14 @@
       if (event.target.matches('[data-field="length"], [data-field="width"], [data-field="customName"]')) {
         updateGroupVisuals(group);
       }
+      updateGroupVisuals(group);
       calculate();
     }
 
     function handleLengthFocusOut(event) {
       const input = event.target.closest && event.target.closest("[data-length-input]");
       if (!input) return;
+      const previousMm = input.dataset.mm;
       const errors = [];
       const mm = parseLengthField(
         input,
@@ -9882,7 +10852,7 @@
         const group = input.closest(".pallet-group");
         if (group) updateGroupVisuals(group);
       }
-      calculate();
+      if (input.dataset.mm !== previousMm) calculate();
     }
 
     function handleGroupChange(event) {
@@ -9890,7 +10860,20 @@
       const group = event.target.closest('.pallet-group');
       if (!group) return;
       if (event.target.matches('[data-field="allowRotate"]')) {
+        if (!event.target.checked) {
+          group.querySelectorAll('[data-field="lockedOrientation"]').forEach(radio => { radio.checked = false; });
+          group.dataset.orientationEditing = "true";
+          setGroupExpanded(group, true);
+        } else {
+          group.dataset.orientationEditing = "false";
+        }
         updateGroupVisuals(group);
+      }
+      if (event.target.matches('[data-field="lockedOrientation"]')) {
+        group.dataset.orientationEditing = "false";
+        updateGroupVisuals(group);
+        const change = group.querySelector('[data-action="changeOrientation"]');
+        if (change && !change.classList.contains("hidden")) change.focus();
       }
       calculate();
     }
@@ -9923,11 +10906,8 @@
         updateGroupVisuals(group);
       });
 
-      Array.from(els.mixedRows.querySelectorAll(".mixed-row")).forEach((row, index) => {
-        row.querySelector('[data-role="mixedGroupTitle"]').textContent = t("pallet.groupTitle", {
-          number: formatInt(index + 1)
-        });
-      });
+      syncGroupTitles();
+      updateMeasurementSuffixes();
 
       calculate();
     }
@@ -9942,9 +10922,8 @@
       // - click: sole azioni dei pulsanti/picker;
       // - controlli di vista: solo drawSelected().
       initializeUnitControl();
-      els.loadMode.addEventListener("change", syncModeUI);
       els.stackable.addEventListener("change", () => {
-        els.stackOptions.classList.toggle("hidden", !els.stackable.checked);
+        syncStackingControls();
         calculate();
       });
       els.addMixedRowBtn.addEventListener("click", () => addMixedRow({ presetId: "eur", quantity: 1, height: 1500 }));
@@ -9955,31 +10934,90 @@
       els.mixedRows.addEventListener("input", handleGroupInput);
       els.mixedRows.addEventListener("change", handleGroupChange);
 
+      let pointerFocusGroup = null;
+      let confirmedOrientation = null;
+      document.addEventListener("pointerdown", event => {
+        pointerFocusGroup = document.activeElement?.closest?.('.pallet-group') || null;
+        const radio = event.target.closest('.orientation-card')?.querySelector('[data-field="lockedOrientation"]');
+        confirmedOrientation = radio?.checked ? radio : null;
+      });
       document.addEventListener("click", event => {
         if (!event.target.closest('[data-role="palletPicker"]')) closeAllPickers();
+        if (confirmedOrientation && event.target.closest('.orientation-card')?.contains(confirmedOrientation)) {
+          const group = confirmedOrientation.closest('.pallet-group');
+          group.dataset.orientationEditing = "false";
+          updateGroupVisuals(group);
+          group.querySelector('[data-action="changeOrientation"]').focus({ preventScroll: true });
+        }
+        confirmedOrientation = null;
+        if (event.detail > 0 && allGroupElements().length > 1 && !event.target.closest('#palletsSection, #singleStackBlock, [data-role="palletPicker"], [role="tooltip"]')) {
+          allGroupElements().forEach(group => setGroupExpanded(group, false));
+          if (pointerFocusGroup && document.activeElement === document.body) pointerFocusGroup.querySelector('[data-action="toggleGroup"]')?.focus({ preventScroll: true });
+        }
+        pointerFocusGroup = null;
       });
       document.addEventListener("keydown", event => {
+        if (event.key === " " && event.target.matches('[data-field="lockedOrientation"]')) confirmedOrientation = event.target.checked ? event.target : null;
+        const menu = event.target.closest('[data-role="pickerMenu"]');
+        const picker = event.target.closest('[data-role="palletPicker"]');
+        if (picker && ['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+          const group = picker.closest('.pallet-group');
+          const list = picker.querySelector('[data-role="pickerMenu"]');
+          list.classList.remove("hidden");
+          picker.querySelector('[data-action="togglePicker"]').setAttribute("aria-expanded", "true");
+          positionPicker(group);
+          const choices = [...list.querySelectorAll('[data-action="selectPreset"]')];
+          const current = choices.indexOf(document.activeElement);
+          const index = event.key === 'Home' ? 0 : event.key === 'End' ? choices.length - 1 : (current + (event.key === 'ArrowUp' ? -1 : 1) + choices.length) % choices.length;
+          choices[index]?.focus(); event.preventDefault();
+        }
         if (event.key !== "Escape") return;
-        const openToggle = document.querySelector(
-          '[data-action="togglePicker"][aria-expanded="true"]'
-        );
+        const openToggle = document.querySelector('[data-action="togglePicker"][aria-expanded="true"]');
         closeAllPickers();
-        if (openToggle) openToggle.focus();
+        if (openToggle) openToggle.focus({ preventScroll: true });
       });
+      const repositionPickers = () => allGroupElements().forEach(positionPicker);
+      window.addEventListener("resize", repositionPickers);
+      document.addEventListener("scroll", repositionPickers, true);
 
       document.addEventListener("focusout", handleLengthFocusOut);
 
-      els.calculateBtn.addEventListener("click", () => calculate({ reportValidity: true }));
       els.resetBtn.addEventListener("click", resetDefaults);
-      els.drawSelect.addEventListener("change", drawSelected);
+      els.stackingUnavailable.addEventListener("pointerenter", () => setStackingReasonOpen(true));
+      els.stackingUnavailable.addEventListener("pointerleave", () => { if (!els.stackingUnavailable.contains(document.activeElement)) setStackingReasonOpen(false); });
+      els.stackingUnavailable.addEventListener("focus", () => setStackingReasonOpen(true));
+      els.stackingUnavailable.addEventListener("keydown", event => {
+        if (els.stackable.disabled && ["Enter", " "].includes(event.key)) { event.preventDefault(); setStackingReasonOpen(true); }
+      });
+      els.stackingUnavailable.addEventListener("click", () => setStackingReasonOpen(true));
+      els.singleStackBlock.addEventListener("focusout", event => {
+        if (!els.singleStackBlock.contains(event.relatedTarget)) setStackingReasonOpen(false);
+      });
+      document.addEventListener("click", event => {
+        if (!els.singleStackBlock.contains(event.target)) setStackingReasonOpen(false);
+      });
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape") setStackingReasonOpen(false);
+      });
+      els.drawSelect.addEventListener("change", () => {
+        window.loadComposerDiagnostics.previewChanges += 1;
+        drawSelected();
+      });
       els.printView.addEventListener("change", drawSelected);
       els.printBw.addEventListener("change", drawSelected);
       els.printLayoutBtn.addEventListener("click", () => {
         if (calculate({ reportValidity: true })) printCurrentLayout();
       });
 
-      [els.gap, els.mixedGap, els.maxLayers, els.verticalGap].forEach(el => {
+      [els.gap, els.maxLayers].forEach(el => {
         el.addEventListener("input", calculate);
+      });
+
+      document.querySelectorAll("[data-filter-primary]").forEach(button => {
+        button.addEventListener("click", () => setPrimaryFilter(button.dataset.filterPrimary));
+      });
+      document.querySelectorAll("[data-filter-container]").forEach(button => {
+        button.addEventListener("click", () => setSecondaryFilter(button.dataset.filterContainer));
       });
 
       const singleCustomName = els.singlePalletGroup.querySelector('[data-field="customName"]');
@@ -9987,20 +11025,12 @@
         singleCustomName.value = t("pallet.customDefaultName");
       }
       initializeGroup(els.singlePalletGroup, "eur");
-      addMixedRow(
-        { presetId: "eur", height: 1500, quantity: 10, allowRotate: true },
-        { calculate: false }
-      );
-      addMixedRow(
-        { presetId: "industrial", height: 1500, quantity: 1, allowRotate: true },
-        { calculate: false }
-      );
-      syncModeUI({ calculate: false });
+      syncUnifiedMode({ calculate: false });
+      syncFilterControls();
       const publicExampleId = requestedPublicExampleId();
       if (publicExampleId) {
         applyPublicExample(publicExampleId);
-        syncModeUI({ calculate: false });
-        els.calculateBtn.click();
+        if (calculate({ reportValidity: true })) window.loadComposerDiagnostics.exampleCalculations += 1;
       } else {
         calculate();
       }

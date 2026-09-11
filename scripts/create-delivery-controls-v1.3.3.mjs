@@ -27,10 +27,12 @@ for (const control of [MANIFEST, SUMS]) if (fs.existsSync(control)) fs.unlinkSyn
 const payloads = walk(ROOT);
 const manifestLines = [
   `LoadComposer v${VERSION} delivery manifest`,
-  "Candidate date: 2026-08-26",
+  "Candidate date: 2026-09-09",
   `Archive root: delivery-v${VERSION}/`,
-  "Accepted input candidate: loadcomposer-v1.3.2-delivery.zip",
-  "Accepted input SHA-256: 145bdacbb8dd9c81af486c7393b6392123f66369f66959d4a0c5bbf99723813f",
+  "Accepted correction input: loadcomposer-v1.4.0-delivery.zip",
+  "Accepted correction input SHA-256: 95c7b267089856551ad6426ed1c600eb499f4e943c38af2d55196665b08f43f9",
+  "Approved regression baseline: LoadComposer v1.3.6 standalone",
+  "Approved regression baseline SHA-256: 0a6d16890a9043c251e37f574e31167da3a0ce64a3af9d328ce44856653288e7",
   "License: LCCL-1.0 (LicenseRef-LoadComposer-Community-1.0)",
   "Copyright: Copyright © 2026 Marco Pernigotti",
   `Payload files before controls: ${payloads.length}`,

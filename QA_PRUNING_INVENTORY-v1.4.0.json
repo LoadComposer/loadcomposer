@@ -1,0 +1,215 @@
+{
+  "version": "1.4.0",
+  "policy": "Historical QA evidence is not cumulative.",
+  "safeguards": {
+    "topLevelOnly": true,
+    "protectedTreesNeverSelected": [
+      "site",
+      "tests",
+      "scripts",
+      "docs",
+      "legal"
+    ],
+    "canonicalLegalSourcesNeverSelected": true,
+    "publishedHistoricalDownloadsNeverSelected": true
+  },
+  "removedPaths": 28,
+  "removedFiles": 58,
+  "removedBytes": 34095243,
+  "categories": [
+    {
+      "category": "old test bundles",
+      "paths": 1,
+      "files": 1,
+      "bytes": 25414738
+    },
+    {
+      "category": "prior-release screenshots/PDF/raster evidence",
+      "paths": 4,
+      "files": 34,
+      "bytes": 8414331
+    },
+    {
+      "category": "superseded current root release controls",
+      "paths": 4,
+      "files": 4,
+      "bytes": 153795
+    },
+    {
+      "category": "superseded QA results",
+      "paths": 19,
+      "files": 19,
+      "bytes": 112379
+    }
+  ],
+  "entries": [
+    {
+      "path": "DELIVERY_MANIFEST-v1.3.6.txt",
+      "category": "superseded current root release controls",
+      "bytes": 76165,
+      "files": 1
+    },
+    {
+      "path": "QA_PRUNING_INVENTORY-v1.3.6.json",
+      "category": "superseded current root release controls",
+      "bytes": 5133,
+      "files": 1
+    },
+    {
+      "path": "SHA256SUMS-v1.3.6.txt",
+      "category": "superseded current root release controls",
+      "bytes": 71128,
+      "files": 1
+    },
+    {
+      "path": "TEST_BUNDLE_README-v1.3.6.md",
+      "category": "superseded current root release controls",
+      "bytes": 1369,
+      "files": 1
+    },
+    {
+      "path": "dark-reader-compatibility-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 7837,
+      "files": 1
+    },
+    {
+      "path": "final-consistency-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 14570,
+      "files": 1
+    },
+    {
+      "path": "front-compaction-focused-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 2728,
+      "files": 1
+    },
+    {
+      "path": "functional-regression-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 10446,
+      "files": 1
+    },
+    {
+      "path": "geometry-hotfix-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 1558,
+      "files": 1
+    },
+    {
+      "path": "geometry-parity-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 1824,
+      "files": 1
+    },
+    {
+      "path": "geometry-performance-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 4418,
+      "files": 1
+    },
+    {
+      "path": "geometry-reference-oracle-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 6812,
+      "files": 1
+    },
+    {
+      "path": "geometry-visual-evidence-v1.3.6",
+      "category": "prior-release screenshots/PDF/raster evidence",
+      "bytes": 344929,
+      "files": 2
+    },
+    {
+      "path": "geometry-visual-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 3925,
+      "files": 1
+    },
+    {
+      "path": "historical-evidence-audit-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 7730,
+      "files": 1
+    },
+    {
+      "path": "input-admission-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 1166,
+      "files": 1
+    },
+    {
+      "path": "legal-ux-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 5122,
+      "files": 1
+    },
+    {
+      "path": "legal-visual-evidence-v1.3.6",
+      "category": "prior-release screenshots/PDF/raster evidence",
+      "bytes": 4823594,
+      "files": 14
+    },
+    {
+      "path": "loadcomposer-v1.3.6-test-bundle.zip",
+      "category": "old test bundles",
+      "bytes": 25414738,
+      "files": 1
+    },
+    {
+      "path": "mixed-regression-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 475,
+      "files": 1
+    },
+    {
+      "path": "print-transport-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 513,
+      "files": 1
+    },
+    {
+      "path": "seo-discovery-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 19336,
+      "files": 1
+    },
+    {
+      "path": "status-system-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 4264,
+      "files": 1
+    },
+    {
+      "path": "status-visual-evidence-v1.3.6",
+      "category": "prior-release screenshots/PDF/raster evidence",
+      "bytes": 2835389,
+      "files": 6
+    },
+    {
+      "path": "trailer-prudential-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 13271,
+      "files": 1
+    },
+    {
+      "path": "transverse-centering-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 5816,
+      "files": 1
+    },
+    {
+      "path": "transverse-centering-visual-evidence-v1.3.6",
+      "category": "prior-release screenshots/PDF/raster evidence",
+      "bytes": 410419,
+      "files": 12
+    },
+    {
+      "path": "version-consistency-results-v1.3.6.json",
+      "category": "superseded QA results",
+      "bytes": 568,
+      "files": 1
+    }
+  ]
+}

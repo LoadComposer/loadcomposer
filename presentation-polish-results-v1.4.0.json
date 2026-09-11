@@ -1,0 +1,14 @@
+{
+  "version": "1.4.0",
+  "status": "PASS",
+  "files": [
+    {
+      "file": "site/index.html",
+      "status": "PASS"
+    },
+    {
+      "file": "site/downloads/loadcomposer-v1.4.0-standalone.html",
+      "status": "PASS"
+    }
+  ]
+}

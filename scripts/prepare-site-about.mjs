@@ -76,7 +76,7 @@ const output = fillTemplate({
   PAGE_DESCRIPTION: DESCRIPTION,
   CANONICAL_URL: `${ORIGIN}${ROUTE}`,
   OG_TYPE: "website",
-  OG_IMAGE: `${ORIGIN}/assets/loadcomposer-og-v1.3.6.png`,
+  OG_IMAGE: `${ORIGIN}/assets/loadcomposer-og-v1.4.0.png`,
   OG_IMAGE_WIDTH: "1200",
   OG_IMAGE_HEIGHT: "630",
   BREADCRUMB_JSON: JSON.stringify(schema).replaceAll("<", "\\u003c"),

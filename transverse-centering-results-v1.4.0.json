@@ -1,0 +1,205 @@
+{
+  "version": "1.4.0",
+  "status": "PASS",
+  "scope": "presentation-only transverse whole-envelope translation",
+  "formula": "Math.floor(Math.max(0, container.innerWidth - layout.usedWidth) / 2)",
+  "longitudinalCoordinatesChanged": 0,
+  "canonicalTransverseCoordinatesChanged": 0,
+  "canonicalUsedLengthChanged": 0,
+  "canonicalUsedWidthChanged": 0,
+  "claimsWeightBalance": false,
+  "fixtures": [
+    {
+      "id": "strongly-under-filled",
+      "mode": "single",
+      "offset": 700,
+      "leftClearance": 700,
+      "rightClearance": 700,
+      "rectangles": 1,
+      "sourceImmutable": true,
+      "sidePreviewPrintAndBw": "PASS",
+      "rampPreviewPrintAndBw": "PASS"
+    },
+    {
+      "id": "near-full-width",
+      "mode": "single",
+      "offset": 25,
+      "leftClearance": 25,
+      "rightClearance": 25,
+      "rectangles": 2,
+      "sourceImmutable": true,
+      "sidePreviewPrintAndBw": "PASS",
+      "rampPreviewPrintAndBw": "PASS"
+    },
+    {
+      "id": "mixed-rigid-envelope",
+      "mode": "mixed",
+      "offset": 300,
+      "leftClearance": 300,
+      "rightClearance": 300,
+      "rectangles": 3,
+      "sourceImmutable": true,
+      "sidePreviewPrintAndBw": "PASS",
+      "rampPreviewPrintAndBw": "PASS"
+    },
+    {
+      "id": "full-width",
+      "mode": "single",
+      "offset": 0,
+      "leftClearance": 0,
+      "rightClearance": 0,
+      "rectangles": 2,
+      "sourceImmutable": true,
+      "sidePreviewPrintAndBw": "PASS",
+      "rampPreviewPrintAndBw": "PASS"
+    }
+  ],
+  "canonical": {
+    "container": "20dc",
+    "capacity": 10,
+    "placed": 10,
+    "unplaced": 0,
+    "orientations": {
+      "normal": 5,
+      "rotated": 5
+    },
+    "usedLength": 5600,
+    "usedWidth": 2200,
+    "remainingWidth": 150,
+    "presentationOffset": 75,
+    "capacityLayoutImmutable": true,
+    "loadLayoutImmutable": true,
+    "canonicalCoordinates": [
+      {
+        "x": 0,
+        "y": 0,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 0,
+        "y": 1200,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 1000,
+        "y": 0,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 1200,
+        "y": 1200,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 2000,
+        "y": 0,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 2400,
+        "y": 1200,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 3000,
+        "y": 0,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 3600,
+        "y": 1000,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      },
+      {
+        "x": 4200,
+        "y": 0,
+        "length": 1200,
+        "width": 1000,
+        "rotated": false
+      },
+      {
+        "x": 4600,
+        "y": 1000,
+        "length": 1000,
+        "width": 1200,
+        "rotated": true
+      }
+    ]
+  },
+  "coverage": {
+    "sidePreview": "PASS",
+    "rampPreview": "PASS",
+    "sidePrint": "PASS",
+    "rampPrint": "PASS",
+    "colourBlackWhiteGeometryParity": "PASS",
+    "mixedWholeEnvelope": "PASS",
+    "sourceImmutability": "PASS",
+    "onlineStandaloneHelperParity": "PASS"
+  },
+  "visualEvidence": [
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/strongly-under-filled-side-preview-colour.png",
+      "sha256": "754a29e709f78e05dfb3605e320482cb68b474561ff95eb3ce0262b2c807cb8e"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/strongly-under-filled-ramp-preview-colour.png",
+      "sha256": "ac485e747f837ec248b0933e215746364f460681b90be8155f55007de7431850"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/strongly-under-filled-side-print-bw.png",
+      "sha256": "ec35f8456d63183f84f1e804ec915fb49b5ca0907fb368a874af4c0cfaf2a52f"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/strongly-under-filled-ramp-print-bw.png",
+      "sha256": "4fc7e111e18773d78f6af12faf94f044b3192e36e627d5ac582be0544546d2b3"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/near-full-width-side-preview-colour.png",
+      "sha256": "c58f4840a041f462e62c7e66f338882edc60f101f99678c5d5e43f92632da856"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/near-full-width-ramp-preview-colour.png",
+      "sha256": "31d5013750233822b00fdfcf29f4fa0f147c71e17d3099aee2543227207a9c3f"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/mixed-rigid-envelope-side-preview-colour.png",
+      "sha256": "56fe2bf82fb10afa2b23586fc3490e0a266e07dc212c079b1952dfe63bf05369"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/mixed-rigid-envelope-ramp-preview-colour.png",
+      "sha256": "0af9eb80d9688c2d5bda91f2cec1c09124146d17ad7ed563a726281c0479a454"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/mixed-rigid-envelope-side-print-bw.png",
+      "sha256": "66a183c11c42f85e33509825ab9b85b9adb58a013fa2d174e973bdae207fee5d"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/mixed-rigid-envelope-ramp-print-bw.png",
+      "sha256": "8bd0cdba33ff96de7abc9cfe05e77084c24fe472af339a18c8943bfa45acff90"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/full-width-side-preview-colour.png",
+      "sha256": "e5cb133c91875d4ae89bb63407a05e4894f4350e898351a3fc983d08d78935a3"
+    },
+    {
+      "file": "transverse-centering-visual-evidence-v1.4.0/full-width-ramp-preview-colour.png",
+      "sha256": "10c8159e081c983228c4bd00a4757d1d2d6f5b3aa3a379f512e45169b3c55c4f"
+    }
+  ]
+}

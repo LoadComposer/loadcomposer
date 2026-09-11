@@ -1,0 +1,74 @@
+{
+  "version": "1.4.0",
+  "baselineSha256": "d3f7271ac430275a6c28be1bfac9b5b5a668f266a0e0f03acf4d40af6847c894",
+  "measurements": [
+    {
+      "width": 2560,
+      "height": 1440,
+      "group": {
+        "width": 1438,
+        "height": 520.875,
+        "y": 467.5625
+      },
+      "gap": {
+        "width": 791.625,
+        "height": 44,
+        "y": 361.5625
+      },
+      "quantity": {
+        "width": 698,
+        "height": 44,
+        "y": 714.046875
+      },
+      "results": {
+        "width": 1476,
+        "height": 1713.140625,
+        "y": 1247.4375
+      },
+      "table": {
+        "width": 1438,
+        "height": 1333.453125,
+        "y": 1608.125
+      },
+      "canvas": {
+        "width": 1520,
+        "height": 3710.1875,
+        "y": 159.875
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "group": {
+        "width": 1438,
+        "height": 520.875,
+        "y": 467.5625
+      },
+      "gap": {
+        "width": 791.625,
+        "height": 44,
+        "y": 361.5625
+      },
+      "quantity": {
+        "width": 698,
+        "height": 44,
+        "y": 714.046875
+      },
+      "results": {
+        "width": 1476,
+        "height": 1713.140625,
+        "y": 1247.4375
+      },
+      "table": {
+        "width": 1438,
+        "height": 1333.453125,
+        "y": 1608.125
+      },
+      "canvas": {
+        "width": 1520,
+        "height": 3710.1875,
+        "y": 159.875
+      }
+    }
+  ]
+}

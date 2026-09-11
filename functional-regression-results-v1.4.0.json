@@ -1,0 +1,428 @@
+{
+  "version": "1.4.0",
+  "baseline": "1.2.1",
+  "generatedAt": "2026-09-11T14:17:21.089Z",
+  "scenarios": [
+    {
+      "scenario": "default-euro",
+      "language": "it",
+      "geometryHash": "ed4f70372a2954379143d4d79b5960ad1fa9c80dba49834dbe404722bd5e850a",
+      "metrics": [
+        "14,4 m³",
+        "N/A",
+        "34 plt",
+        "20' Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "default-euro",
+      "language": "en",
+      "geometryHash": "ed4f70372a2954379143d4d79b5960ad1fa9c80dba49834dbe404722bd5e850a",
+      "metrics": [
+        "14.4 m³",
+        "N/A",
+        "34 plt",
+        "20' Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "default-euro",
+      "language": "de",
+      "geometryHash": "ed4f70372a2954379143d4d79b5960ad1fa9c80dba49834dbe404722bd5e850a",
+      "metrics": [
+        "14,4 m³",
+        "N/V",
+        "34 plt",
+        "20' Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "default-euro",
+      "language": "es",
+      "geometryHash": "ed4f70372a2954379143d4d79b5960ad1fa9c80dba49834dbe404722bd5e850a",
+      "metrics": [
+        "14,4 m³",
+        "N/D",
+        "34 plt",
+        "20' Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "default-euro",
+      "language": "fr",
+      "geometryHash": "ed4f70372a2954379143d4d79b5960ad1fa9c80dba49834dbe404722bd5e850a",
+      "metrics": [
+        "14,4 m³",
+        "N/D",
+        "34 plt",
+        "20' Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "default-euro",
+      "language": "pt",
+      "geometryHash": "ed4f70372a2954379143d4d79b5960ad1fa9c80dba49834dbe404722bd5e850a",
+      "metrics": [
+        "14,4 m³",
+        "N/D",
+        "34 plt",
+        "20' Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "default-euro",
+      "language": "nl",
+      "geometryHash": "ed4f70372a2954379143d4d79b5960ad1fa9c80dba49834dbe404722bd5e850a",
+      "metrics": [
+        "14,4 m³",
+        "N.v.t.",
+        "34 plt",
+        "20' Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "north-american-gap",
+      "language": "it",
+      "geometryHash": "2ae1875b299022072b7639ea60f622c9d4de0ecb3c388ec00aa45e8af311cd72",
+      "metrics": [
+        "30,6 m³",
+        "N/A",
+        "33 plt",
+        "40' HC Pallet Wide"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "north-american-gap",
+      "language": "en",
+      "geometryHash": "2ae1875b299022072b7639ea60f622c9d4de0ecb3c388ec00aa45e8af311cd72",
+      "metrics": [
+        "30.6 m³",
+        "N/A",
+        "33 plt",
+        "40' HC Pallet Wide"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "north-american-gap",
+      "language": "de",
+      "geometryHash": "2ae1875b299022072b7639ea60f622c9d4de0ecb3c388ec00aa45e8af311cd72",
+      "metrics": [
+        "30,6 m³",
+        "N/V",
+        "33 plt",
+        "40' HC Pallet Wide"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "north-american-gap",
+      "language": "es",
+      "geometryHash": "2ae1875b299022072b7639ea60f622c9d4de0ecb3c388ec00aa45e8af311cd72",
+      "metrics": [
+        "30,6 m³",
+        "N/D",
+        "33 plt",
+        "40' HC Pallet Wide"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "north-american-gap",
+      "language": "fr",
+      "geometryHash": "2ae1875b299022072b7639ea60f622c9d4de0ecb3c388ec00aa45e8af311cd72",
+      "metrics": [
+        "30,6 m³",
+        "N/D",
+        "33 plt",
+        "40' HC Pallet Wide"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "north-american-gap",
+      "language": "pt",
+      "geometryHash": "2ae1875b299022072b7639ea60f622c9d4de0ecb3c388ec00aa45e8af311cd72",
+      "metrics": [
+        "30,6 m³",
+        "N/D",
+        "33 plt",
+        "40' HC Pallet Wide"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "north-american-gap",
+      "language": "nl",
+      "geometryHash": "2ae1875b299022072b7639ea60f622c9d4de0ecb3c388ec00aa45e8af311cd72",
+      "metrics": [
+        "30,6 m³",
+        "N.v.t.",
+        "33 plt",
+        "40' HC Pallet Wide"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "custom",
+      "language": "it",
+      "geometryHash": "bc71ec5b8205b4603414267b5d7875b4134b8138896e34f1bcabcee0ce798b41",
+      "metrics": [
+        "17,9 m³",
+        "N/A",
+        "38 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "custom",
+      "language": "en",
+      "geometryHash": "bc71ec5b8205b4603414267b5d7875b4134b8138896e34f1bcabcee0ce798b41",
+      "metrics": [
+        "17.9 m³",
+        "N/A",
+        "38 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "custom",
+      "language": "de",
+      "geometryHash": "bc71ec5b8205b4603414267b5d7875b4134b8138896e34f1bcabcee0ce798b41",
+      "metrics": [
+        "17,9 m³",
+        "N/V",
+        "38 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "custom",
+      "language": "es",
+      "geometryHash": "bc71ec5b8205b4603414267b5d7875b4134b8138896e34f1bcabcee0ce798b41",
+      "metrics": [
+        "17,9 m³",
+        "N/D",
+        "38 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "custom",
+      "language": "fr",
+      "geometryHash": "bc71ec5b8205b4603414267b5d7875b4134b8138896e34f1bcabcee0ce798b41",
+      "metrics": [
+        "17,9 m³",
+        "N/D",
+        "38 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "custom",
+      "language": "pt",
+      "geometryHash": "bc71ec5b8205b4603414267b5d7875b4134b8138896e34f1bcabcee0ce798b41",
+      "metrics": [
+        "17,9 m³",
+        "N/D",
+        "38 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "custom",
+      "language": "nl",
+      "geometryHash": "bc71ec5b8205b4603414267b5d7875b4134b8138896e34f1bcabcee0ce798b41",
+      "metrics": [
+        "17,9 m³",
+        "N.v.t.",
+        "38 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "stackable",
+      "language": "it",
+      "geometryHash": "57b81843366b0b10c2f1517a802e954c4ce80d64ecb1c540364f734f1b1b40ae",
+      "metrics": [
+        "27 m³",
+        "N/A",
+        "99 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "stackable",
+      "language": "en",
+      "geometryHash": "57b81843366b0b10c2f1517a802e954c4ce80d64ecb1c540364f734f1b1b40ae",
+      "metrics": [
+        "27 m³",
+        "N/A",
+        "99 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "stackable",
+      "language": "de",
+      "geometryHash": "57b81843366b0b10c2f1517a802e954c4ce80d64ecb1c540364f734f1b1b40ae",
+      "metrics": [
+        "27 m³",
+        "N/V",
+        "99 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "stackable",
+      "language": "es",
+      "geometryHash": "57b81843366b0b10c2f1517a802e954c4ce80d64ecb1c540364f734f1b1b40ae",
+      "metrics": [
+        "27 m³",
+        "N/D",
+        "99 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "stackable",
+      "language": "fr",
+      "geometryHash": "57b81843366b0b10c2f1517a802e954c4ce80d64ecb1c540364f734f1b1b40ae",
+      "metrics": [
+        "27 m³",
+        "N/D",
+        "99 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "stackable",
+      "language": "pt",
+      "geometryHash": "57b81843366b0b10c2f1517a802e954c4ce80d64ecb1c540364f734f1b1b40ae",
+      "metrics": [
+        "27 m³",
+        "N/D",
+        "99 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "stackable",
+      "language": "nl",
+      "geometryHash": "57b81843366b0b10c2f1517a802e954c4ce80d64ecb1c540364f734f1b1b40ae",
+      "metrics": [
+        "27 m³",
+        "N.v.t.",
+        "99 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "mixed-two-groups",
+      "language": "it",
+      "geometryHash": "fcd8719202a4a0ab98ad26a5c87fb69a707f63a11740d1279df8126ceab00181",
+      "metrics": [
+        "24,6 m³",
+        "N/A",
+        "20 / 20 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "mixed-two-groups",
+      "language": "en",
+      "geometryHash": "fcd8719202a4a0ab98ad26a5c87fb69a707f63a11740d1279df8126ceab00181",
+      "metrics": [
+        "24.6 m³",
+        "N/A",
+        "20 / 20 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "mixed-two-groups",
+      "language": "de",
+      "geometryHash": "fcd8719202a4a0ab98ad26a5c87fb69a707f63a11740d1279df8126ceab00181",
+      "metrics": [
+        "24,6 m³",
+        "N/V",
+        "20 / 20 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "mixed-two-groups",
+      "language": "es",
+      "geometryHash": "fcd8719202a4a0ab98ad26a5c87fb69a707f63a11740d1279df8126ceab00181",
+      "metrics": [
+        "24,6 m³",
+        "N/D",
+        "20 / 20 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "mixed-two-groups",
+      "language": "fr",
+      "geometryHash": "fcd8719202a4a0ab98ad26a5c87fb69a707f63a11740d1279df8126ceab00181",
+      "metrics": [
+        "24,6 m³",
+        "N/D",
+        "20 / 20 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "mixed-two-groups",
+      "language": "pt",
+      "geometryHash": "fcd8719202a4a0ab98ad26a5c87fb69a707f63a11740d1279df8126ceab00181",
+      "metrics": [
+        "24,6 m³",
+        "N/D",
+        "20 / 20 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    },
+    {
+      "scenario": "mixed-two-groups",
+      "language": "nl",
+      "geometryHash": "fcd8719202a4a0ab98ad26a5c87fb69a707f63a11740d1279df8126ceab00181",
+      "metrics": [
+        "24,6 m³",
+        "N.v.t.",
+        "20 / 20 plt",
+        "40' HC Reefer"
+      ],
+      "canvas": "1100x470"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,153 @@
+{
+  "release": "1.4.0",
+  "generatedAt": "2026-09-11T14:15:13.809Z",
+  "app": "site/downloads/loadcomposer-v1.4.0-standalone.html",
+  "scenarios": [
+    {
+      "id": "it-light-desktop-all-ok",
+      "locale": "it",
+      "theme": "light",
+      "viewport": "1920x1080",
+      "container": "20dc",
+      "requested": 10,
+      "placed": 10,
+      "capacity": 11,
+      "badges": {
+        "outcome": "CI STA",
+        "load": "OK",
+        "access": "OK"
+      },
+      "contrasts": {
+        "outcome": 5.57,
+        "load": 5.57,
+        "access": 5.57
+      },
+      "screenshot": "status-visual-evidence-v1.4.0/it-light-desktop-all-ok.png",
+      "screenshotSha256": "89f69db99bb397314c709fee2eafc07840efbf7d8eb51d9a418a09c18130b58f",
+      "status": "PASS"
+    },
+    {
+      "id": "it-dark-desktop-capacity-partial",
+      "locale": "it",
+      "theme": "dark",
+      "viewport": "1920x1080",
+      "container": "20dc",
+      "requested": 12,
+      "placed": 11,
+      "capacity": 11,
+      "badges": {
+        "outcome": "NON CI STA",
+        "load": "PARZIALE",
+        "access": "OK"
+      },
+      "contrasts": {
+        "outcome": 8,
+        "load": 10.14,
+        "access": 8.92
+      },
+      "screenshot": "status-visual-evidence-v1.4.0/it-dark-desktop-capacity-partial.png",
+      "screenshotSha256": "68104c041528d6ffef75ccd63c804b71f0d65171a3d46d50b8d689eab856e7e6",
+      "status": "PASS"
+    },
+    {
+      "id": "en-dark-desktop-capacity-non-ok",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": "1920x1080",
+      "container": "20dc",
+      "requested": 1,
+      "placed": 0,
+      "capacity": 0,
+      "badges": {
+        "outcome": "DOES NOT FIT",
+        "load": "NOT OK",
+        "access": "OK"
+      },
+      "contrasts": {
+        "outcome": 8,
+        "load": 10.14,
+        "access": 8.92
+      },
+      "screenshot": "status-visual-evidence-v1.4.0/en-dark-desktop-capacity-non-ok.png",
+      "screenshotSha256": "534a88931311e90a0353e37072f15018183b9569526b5b08c265124c22ff4cca",
+      "status": "PASS"
+    },
+    {
+      "id": "de-dark-desktop-access-partial",
+      "locale": "de",
+      "theme": "dark",
+      "viewport": "1920x1080",
+      "container": "20dc",
+      "requested": 11,
+      "placed": 11,
+      "capacity": null,
+      "badges": {
+        "outcome": "PASST NICHT",
+        "load": "OK",
+        "access": "TEILWEISE"
+      },
+      "contrasts": {
+        "outcome": 8,
+        "load": 8.92,
+        "access": 10.14
+      },
+      "screenshot": "status-visual-evidence-v1.4.0/de-dark-desktop-access-partial.png",
+      "screenshotSha256": "ee4b2e6013765cfd4131e87f33879a1825a3f89168e5e288832ca7508f6f6c7f",
+      "status": "PASS"
+    },
+    {
+      "id": "it-light-mobile-390-access-non-ok",
+      "locale": "it",
+      "theme": "light",
+      "viewport": "390x844",
+      "container": "20dc",
+      "requested": 11,
+      "placed": 11,
+      "capacity": null,
+      "badges": {
+        "outcome": "NON CI STA",
+        "load": "OK",
+        "access": "NON OK"
+      },
+      "contrasts": {
+        "outcome": 6.71,
+        "load": 5.57,
+        "access": 6.89
+      },
+      "screenshot": "status-visual-evidence-v1.4.0/it-light-mobile-390-access-non-ok.png",
+      "screenshotSha256": "a7be1081248739712169785f04755f5e668831d04a4bf8763fd238f7329a8df0",
+      "status": "PASS"
+    },
+    {
+      "id": "it-dark-mobile-320-access-auto-ok",
+      "locale": "it",
+      "theme": "dark",
+      "viewport": "320x568",
+      "container": "truck-curtain-1360",
+      "requested": 10,
+      "placed": 10,
+      "capacity": 34,
+      "badges": {
+        "outcome": "CI STA",
+        "load": "OK",
+        "access": "OK"
+      },
+      "contrasts": {
+        "outcome": 8.92,
+        "load": 8.92,
+        "access": 8.92
+      },
+      "screenshot": "status-visual-evidence-v1.4.0/it-dark-mobile-320-access-auto-ok.png",
+      "screenshotSha256": "842253653efdfa1bb893a608a85789cdb0458f1e8ef839f319638e171a5b79c1",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "total": 6,
+    "finalVerdictColours": "positive green; negative red",
+    "diagnosticColours": "partial, non-OK and verify amber",
+    "badges": "state-only, centered, nowrap, unclipped",
+    "printVerdictParity": true
+  }
+}

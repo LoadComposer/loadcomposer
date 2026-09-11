@@ -1,0 +1,81 @@
+{
+  "version": "1.4.0",
+  "baseline": {
+    "label": "v1.3.6",
+    "file": "loadcomposer-v1.3.6-standalone.html",
+    "sha256": "0a6d16890a9043c251e37f574e31167da3a0ce64a3af9d328ce44856653288e7"
+  },
+  "current": {
+    "file": "loadcomposer-v1.4.0-standalone.html",
+    "sha256": "fd0ccd86e2fed4e5cb9b37851870dfccdef82c811eec1a490c02160302d76647"
+  },
+  "single": {
+    "capacityLayout": {
+      "cases": 1080,
+      "changes": 0,
+      "changeDetails": [],
+      "status": "PASS"
+    },
+    "loadLayout": {
+      "cases": 4110,
+      "changes": 0,
+      "changeDetails": [],
+      "status": "PASS"
+    },
+    "b10Scenarios": [
+      {
+        "id": "20dc-eur-1",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-10",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-11",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-12",
+        "status": "PASS"
+      },
+      {
+        "id": "20dc-eur-stacked-11",
+        "status": "PASS",
+        "classification": "INTENTIONAL FLOOR-FIRST CORRECTION"
+      },
+      {
+        "id": "40dc-door-2345x800-1",
+        "status": "PASS"
+      },
+      {
+        "id": "40dc-door-2345x800-11",
+        "status": "PASS"
+      }
+    ],
+    "b10Status": "PASS"
+  },
+  "mixed": {
+    "cases": 2352,
+    "homogeneousCases": 2160,
+    "heterogeneousCases": 192,
+    "unchangedCases": 2352,
+    "changes": 0,
+    "rules": [
+      "Il conteggio piazzato deve essere identico alla baseline v1.3.6.",
+      "Bounds, gap, overlap, conteggi, identità, rotazioni e used spans reali devono essere confermati."
+    ],
+    "changeDetails": [],
+    "status": "PASS"
+  },
+  "summary": {
+    "totalCases": 7542,
+    "unchangedCases": 7542,
+    "expectedImprovements": 0,
+    "frontCompactedLayouts": 0,
+    "maximumUsedLengthReduction": 0,
+    "unexpectedRegressions": 0
+  },
+  "changedCases": [],
+  "status": "PASS"
+}

@@ -49,5 +49,7 @@ jobs:
       - run: npm run test:seo
       - run: npm run test:path-portability
       - run: npm run test:transverse-centering
+      - run: npm run test:planner-ux
+      - run: npm run test:stacking-floor-first
       - run: npm run test:workflow-policy
       - run: git diff --exit-code -- site/downloads site/legal site/assets docs/translations

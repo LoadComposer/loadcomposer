@@ -1,0 +1,137 @@
+{
+  "version": "1.4.0",
+  "status": "PASS",
+  "architecture": {
+    "sections": [
+      "Load settings",
+      "Pallets to load",
+      "Results",
+      "Load layout"
+    ]
+  },
+  "parity": [
+    {
+      "id": "single-euro-mm",
+      "status": "PASS",
+      "mode": "single",
+      "unit": "mm"
+    },
+    {
+      "id": "single-industrial-cm",
+      "status": "PASS",
+      "mode": "single",
+      "unit": "cm"
+    },
+    {
+      "id": "single-custom-in",
+      "status": "PASS",
+      "mode": "single",
+      "unit": "in"
+    },
+    {
+      "id": "single-locked-short",
+      "status": "PASS",
+      "mode": "single",
+      "unit": "mm"
+    },
+    {
+      "id": "single-locked-long",
+      "status": "PASS",
+      "mode": "single",
+      "unit": "mm"
+    },
+    {
+      "id": "mixed-two",
+      "status": "PASS",
+      "mode": "mixed",
+      "unit": "mm"
+    },
+    {
+      "id": "mixed-three-cm",
+      "status": "PASS",
+      "mode": "mixed",
+      "unit": "cm"
+    },
+    {
+      "id": "mixed-several-in",
+      "status": "PASS",
+      "mode": "mixed",
+      "unit": "in"
+    },
+    {
+      "id": "mixed-identifiers",
+      "status": "PASS",
+      "mode": "mixed",
+      "unit": "mm"
+    }
+  ],
+  "languages": [
+    "it",
+    "en",
+    "de",
+    "es",
+    "fr",
+    "pt",
+    "nl"
+  ],
+  "examples": [
+    {
+      "id": "20ft-euro",
+      "capacity": 11,
+      "calculations": 1,
+      "status": "PASS"
+    },
+    {
+      "id": "20ft-reefer-euro",
+      "capacity": 10,
+      "calculations": 1,
+      "status": "PASS"
+    },
+    {
+      "id": "40ft-euro",
+      "capacity": 25,
+      "calculations": 1,
+      "status": "PASS"
+    },
+    {
+      "id": "40ft-hc-euro",
+      "capacity": 25,
+      "calculations": 1,
+      "status": "PASS"
+    },
+    {
+      "id": "40ft-reefer-euro",
+      "capacity": 23,
+      "calculations": 1,
+      "status": "PASS"
+    },
+    {
+      "id": "40ft-pallet-wide-euro",
+      "capacity": 30,
+      "calculations": 1,
+      "status": "PASS"
+    }
+  ],
+  "internalVerticalGap": [
+    {
+      "gap": 0,
+      "status": "PASS",
+      "capacity20dc": 22
+    },
+    {
+      "gap": 20,
+      "status": "PASS",
+      "capacity20dc": 22
+    },
+    {
+      "gap": 40,
+      "status": "PASS",
+      "capacity20dc": 11
+    },
+    {
+      "gap": 100,
+      "status": "PASS",
+      "capacity20dc": 11
+    }
+  ]
+}

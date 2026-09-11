@@ -1,0 +1,17 @@
+{
+  "version": "1.4.0",
+  "status": "PASS",
+  "files": 167,
+  "directories": [
+    "site/downloads",
+    "site/legal",
+    "site/about",
+    "site/guides",
+    "site/assets",
+    "docs/translations"
+  ],
+  "changedFiles": 0,
+  "aggregateSha256": "cf34be12af6ebab0e4058ef0e2ac2db69a51d21c19c048a8afb6253b17120ba7",
+  "normalCI": "self-contained; no external delivery ZIP",
+  "npmTestExitCode": 0
+}

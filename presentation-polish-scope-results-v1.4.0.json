@@ -1,0 +1,51 @@
+{
+  "version": "1.4.0",
+  "status": "PASS",
+  "admission": {
+    "deliverySha256": "91a8e482b64bf8d58c12a469f8cb87831a846d3bca7093031128e2893b1b6e48",
+    "testBundleSha256": "db2ab56ac165994da19c31bcae31dd34661fb4aac4a72b9e648efcef38d54921",
+    "standaloneHtmlSha256": "2d9ff6be51f76cdbbea4286fe9b8061980b3c76d21e1a7017ab8f841f002565d",
+    "standaloneZipSha256": "149333059927e5268e3430428978ce9ace591d2447756cd92b27613418a27c86",
+    "finalReportSha256": "20a9544a71b69565167be111abf60851effbebc9e6b93aa6bd7304e1d0902e16",
+    "zipIntegrity": "PASS",
+    "manifestEntries": 824,
+    "checksumEntries": 825,
+    "caseInsensitivePathCollisions": 0
+  },
+  "scope": {
+    "applicationFilesChanged": [
+      "site/index.html",
+      "site/downloads/loadcomposer-v1.4.0-standalone.html",
+      "site/downloads/loadcomposer-v1.4.0-standalone.html.sha256",
+      "site/downloads/loadcomposer-v1.4.0-standalone.zip",
+      "site/downloads/loadcomposer-v1.4.0-standalone.zip.sha256",
+      "site/downloads/index.html"
+    ],
+    "testAndControlFilesChanged": [
+      "tests/planner-alignment-v1.4.0.mjs",
+      "tests/planner-ux-v1.4.0.mjs",
+      "tests/presentation-polish-v1.4.0.mjs",
+      "scripts/create-delivery-controls-v1.4.0.mjs",
+      "TEST_BUNDLE_README-v1.4.0.md"
+    ],
+    "canonicalLegalSourcesChanged": 0,
+    "historicalPublishedArtifactsChanged": 0
+  },
+  "computationalFreeze": {
+    "singleLayoutCandidates": "3b100e81693cd46c403ce3654cddd04fbe10f50a041112d9a091fdf87faf9dc2",
+    "buildMixedOrientationSearchLayout": "9a52214fd4a1086be4d96160e41b30d8d05cb02bb25799e816dac0085f540fa1",
+    "rankSingleCapacityLayouts": "cec67708f92ab31c9397e52ee15ebe705751aac94bb762b9eabb380a61361c26",
+    "frontCompactSelectedLayout": "e9bdc70d222e4c9b0919c5dac6ba400da3696b8db81cc5c492a5f3748b806dcb",
+    "bestLayout": "368a55456f32f197bcf18b18bbff9e00a43040939bd01ae170f73d1f38ade624",
+    "validateResultGeometry": "195f57b87fbe1326b82c7a5f02e7ce371a2a7ca116680fa98be594c6f44602e0",
+    "calculateSingle": "05f3980df602f3a3b1b49153a1a1d3197a3d65537716a432d184c319db8de050",
+    "calculateMixed": "56b46a2d23a75bbf37ee66efca1ad72180538b5307473bf7c4d820957a35ed44",
+    "transversePresentationOffset": "3bbe6a63b73ce27205a65ebf73deed012db8cbbba4d0d4d067d0169f07dbb007",
+    "allFunctionsByteIdenticalToAdmittedCandidate": true
+  },
+  "operatorReferences": {
+    "groupExamples": ["A", "B", "Z", "AA", "AB"],
+    "palletExamples": ["A.1", "A.2", "B.1"],
+    "internalRectangleIdsRemainNumeric": ["1.1", "1.2", "2.1"]
+  }
+}

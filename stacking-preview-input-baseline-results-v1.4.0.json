@@ -1,0 +1,78 @@
+{
+  "version": "1.4.0",
+  "status": "PASS",
+  "captures": [
+    {
+      "name": "results-fridge-h1500-q33",
+      "selector": "#resultsSection"
+    },
+    {
+      "name": "results-fridge-h1500-q34",
+      "selector": "#resultsSection"
+    },
+    {
+      "name": "results-fridge-h500-q66",
+      "selector": "#resultsSection"
+    },
+    {
+      "name": "results-fridge-h500-q67",
+      "selector": "#resultsSection"
+    },
+    {
+      "name": "results-mega-h1000-q100-max20",
+      "selector": "#resultsSection"
+    },
+    {
+      "name": "results-fridge-h1000-q100-max20",
+      "selector": "#resultsSection"
+    },
+    {
+      "name": "results-mega-h1000-q100-max2",
+      "selector": "#resultsSection"
+    },
+    {
+      "name": "preview-mega-h1500-q34",
+      "selector": "#layoutSection"
+    },
+    {
+      "name": "preview-mega-h1500-q35",
+      "selector": "#layoutSection"
+    },
+    {
+      "name": "preview-mega-h1500-q68",
+      "selector": "#layoutSection"
+    },
+    {
+      "name": "screen-light-colour",
+      "selector": "#layoutCanvas"
+    },
+    {
+      "name": "screen-light-bw",
+      "selector": "#layoutCanvas"
+    },
+    {
+      "name": "screen-dark-colour",
+      "selector": "#layoutCanvas"
+    },
+    {
+      "name": "screen-dark-bw",
+      "selector": "#layoutCanvas"
+    },
+    {
+      "name": "actual-print-bw-white",
+      "selector": "print canvas data URL"
+    }
+  ],
+  "print": {
+    "baseline": "loadcomposer-v1.4.0-standalone(4).html",
+    "themeInvariant": true,
+    "baselineEquivalent": true,
+    "backgroundRgba": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "sha256": "15f5f204b19df890f238c74539994907d7c06dbff12f37d6036dabf7aecb1c36"
+  }
+}

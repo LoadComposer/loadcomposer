@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { launchBrowser } from "../tests/browser-runtime.mjs";
-import { FLOOR_CAPACITIES, PUBLIC_EXAMPLES } from "./guide-scenarios-v1.3.6.mjs";
+import { FLOOR_CAPACITIES, PUBLIC_EXAMPLES } from "./guide-scenarios-v1.4.0.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const VERSION = fs.readFileSync(path.join(ROOT, "VERSION"), "utf8").trim();
@@ -33,10 +33,6 @@ try {
     colorScheme: "light"
   });
   await context.addInitScript(() => {
-    window.__calculateButtonClickEvents = 0;
-    document.addEventListener("click", event => {
-      if (event.target && event.target.id === "calculateBtn") window.__calculateButtonClickEvents += 1;
-    }, true);
     localStorage.setItem("loadcomposer.language", "en");
     localStorage.setItem("loadcomposer.theme", "light");
     localStorage.setItem("loadcomposer.unit", "mm");
@@ -72,7 +68,7 @@ try {
         gap: Number(document.getElementById("gap").value),
         selectedContainerId: window.eval("selectedContainerId"),
         resultCount: window.eval("lastResults.length"),
-        automaticCalculatePathInvocations: window.__calculateButtonClickEvents
+        automaticCalculatePathInvocations: window.loadComposerDiagnostics.calculationCycles
       };
     });
     if (

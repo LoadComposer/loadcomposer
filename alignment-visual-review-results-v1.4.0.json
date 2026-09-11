@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "review": "Manual inspection of current browser screenshots in addition to DOM assertions",
+  "inspected": [
+    "normal-1920.png",
+    "mobile-field-rhythm.png",
+    "picker-file-1920.png",
+    "picker-edge-file-1920.png",
+    "picker-contrast-light.png",
+    "picker-contrast-dark.png",
+    "locked-normal-file-1920.png",
+    "hover-light-light.png",
+    "hover-dark-dark.png",
+    "five-collapsed-1920.png",
+    "three-group2-1920.png",
+    "stacking-help-1920.png",
+    "results-1920-all.png",
+    "results-1920-containers.png",
+    "results-1920-trailers.png"
+  ],
+  "findings": [
+    "Shared label/control alignment and attached suffixes are readable.",
+    "Resolved locked orientation shares the main desktop row.",
+    "Picker overlays Results, with internal scrolling.",
+    "Mobile group field rhythm is consistent.",
+    "Exclusive open group and collapsed summaries remain readable.",
+    "Single disabled-stacking help is opaque and readable, without a separate info icon.",
+    "Light/Dark hover and picker text remain readable.",
+    "All, Containers and Trailers preserve the metric band and result-column geometry while long vehicle names remain complete.",
+    "Header uses available desktop width without manual line breaks."
+  ]
+}

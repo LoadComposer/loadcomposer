@@ -7,7 +7,7 @@ import {
   PALLETS,
   PUBLIC_EXAMPLES,
   VEHICLES
-} from "./guide-scenarios-v1.3.6.mjs";
+} from "./guide-scenarios-v1.4.0.mjs";
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, "..");

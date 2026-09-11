@@ -1,0 +1,733 @@
+{
+  "version": "1.4.0",
+  "status": "PASS",
+  "measures": [
+    {
+      "width": 2560,
+      "height": 1440,
+      "overflow": false,
+      "canvas": {
+        "x": 380,
+        "y": 140.375,
+        "width": 1800,
+        "height": 3017.34375,
+        "bottom": 3157.71875
+      },
+      "group": {
+        "x": 421,
+        "y": 362.40625,
+        "width": 1718,
+        "height": 149.1875,
+        "bottom": 511.59375
+      },
+      "gap": {
+        "x": 920,
+        "y": 202.5625,
+        "width": 81,
+        "height": 44,
+        "bottom": 246.5625
+      },
+      "gapControl": 130,
+      "quantity": {
+        "x": 804,
+        "y": 450.59375,
+        "width": 90,
+        "height": 44,
+        "bottom": 494.59375
+      },
+      "layers": {
+        "x": 1247,
+        "y": 202.5625,
+        "width": 80,
+        "height": 44,
+        "bottom": 246.5625
+      },
+      "preset": {
+        "x": 436,
+        "y": 450.59375,
+        "width": 350,
+        "height": 44,
+        "bottom": 494.59375
+      },
+      "heightInput": {
+        "x": 912,
+        "y": 450.59375,
+        "width": 96,
+        "height": 44,
+        "bottom": 494.59375
+      },
+      "identifier": {
+        "x": 1075,
+        "y": 450.59375,
+        "width": 771,
+        "height": 44,
+        "bottom": 494.59375
+      },
+      "results": {
+        "x": 402,
+        "y": 546.59375,
+        "width": 1756,
+        "height": 1611.25,
+        "bottom": 2157.84375
+      },
+      "table": {
+        "x": 421,
+        "y": 708.4375,
+        "width": 1718,
+        "height": 1430.40625,
+        "bottom": 2138.84375
+      },
+      "metrics": {
+        "x": 877,
+        "y": 632.4375,
+        "width": 1262,
+        "height": 64,
+        "bottom": 696.4375
+      },
+      "filters": {
+        "x": 421,
+        "y": 632.4375,
+        "width": 440,
+        "height": 44,
+        "bottom": 676.4375
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "overflow": false,
+      "canvas": {
+        "x": 60,
+        "y": 140.375,
+        "width": 1800,
+        "height": 3017.34375,
+        "bottom": 3157.71875
+      },
+      "group": {
+        "x": 101,
+        "y": 362.40625,
+        "width": 1718,
+        "height": 149.1875,
+        "bottom": 511.59375
+      },
+      "gap": {
+        "x": 600,
+        "y": 202.5625,
+        "width": 81,
+        "height": 44,
+        "bottom": 246.5625
+      },
+      "gapControl": 130,
+      "quantity": {
+        "x": 484,
+        "y": 450.59375,
+        "width": 90,
+        "height": 44,
+        "bottom": 494.59375
+      },
+      "layers": {
+        "x": 927,
+        "y": 202.5625,
+        "width": 80,
+        "height": 44,
+        "bottom": 246.5625
+      },
+      "preset": {
+        "x": 116,
+        "y": 450.59375,
+        "width": 350,
+        "height": 44,
+        "bottom": 494.59375
+      },
+      "heightInput": {
+        "x": 592,
+        "y": 450.59375,
+        "width": 96,
+        "height": 44,
+        "bottom": 494.59375
+      },
+      "identifier": {
+        "x": 755,
+        "y": 450.59375,
+        "width": 771,
+        "height": 44,
+        "bottom": 494.59375
+      },
+      "results": {
+        "x": 82,
+        "y": 546.59375,
+        "width": 1756,
+        "height": 1611.25,
+        "bottom": 2157.84375
+      },
+      "table": {
+        "x": 101,
+        "y": 708.4375,
+        "width": 1718,
+        "height": 1430.40625,
+        "bottom": 2138.84375
+      },
+      "metrics": {
+        "x": 557,
+        "y": 632.4375,
+        "width": 1262,
+        "height": 64,
+        "bottom": 696.4375
+      },
+      "filters": {
+        "x": 101,
+        "y": 632.4375,
+        "width": 440,
+        "height": 44,
+        "bottom": 676.4375
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "overflow": false,
+      "canvas": {
+        "x": 0,
+        "y": 140.375,
+        "width": 1366,
+        "height": 2978.140625,
+        "bottom": 3118.515625
+      },
+      "group": {
+        "x": 41,
+        "y": 398.40625,
+        "width": 1284,
+        "height": 149.796875,
+        "bottom": 548.203125
+      },
+      "gap": {
+        "x": 302,
+        "y": 238.5625,
+        "width": 81,
+        "height": 44,
+        "bottom": 282.5625
+      },
+      "gapControl": 130,
+      "quantity": {
+        "x": 424,
+        "y": 487.203125,
+        "width": 90,
+        "height": 44,
+        "bottom": 531.203125
+      },
+      "layers": {
+        "x": 629,
+        "y": 238.5625,
+        "width": 80,
+        "height": 44,
+        "bottom": 282.5625
+      },
+      "preset": {
+        "x": 56,
+        "y": 487.203125,
+        "width": 350,
+        "height": 44,
+        "bottom": 531.203125
+      },
+      "heightInput": {
+        "x": 532,
+        "y": 487.203125,
+        "width": 96,
+        "height": 44,
+        "bottom": 531.203125
+      },
+      "identifier": {
+        "x": 695,
+        "y": 487.203125,
+        "width": 337,
+        "height": 44,
+        "bottom": 531.203125
+      },
+      "results": {
+        "x": 22,
+        "y": 583.203125,
+        "width": 1322,
+        "height": 1649.484375,
+        "bottom": 2232.6875
+      },
+      "table": {
+        "x": 41,
+        "y": 763.890625,
+        "width": 1284,
+        "height": 1449.796875,
+        "bottom": 2213.6875
+      },
+      "metrics": {
+        "x": 497,
+        "y": 687.890625,
+        "width": 828,
+        "height": 64,
+        "bottom": 751.890625
+      },
+      "filters": {
+        "x": 41,
+        "y": 687.890625,
+        "width": 440,
+        "height": 44,
+        "bottom": 731.890625
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "canvas": {
+        "x": 0,
+        "y": 159.875,
+        "width": 768,
+        "height": 3471.546875,
+        "bottom": 3631.421875
+      },
+      "group": {
+        "x": 41,
+        "y": 473.90625,
+        "width": 686,
+        "height": 317.171875,
+        "bottom": 791.078125
+      },
+      "gap": {
+        "x": 302,
+        "y": 258.0625,
+        "width": 81,
+        "height": 44,
+        "bottom": 302.0625
+      },
+      "gapControl": 130,
+      "quantity": {
+        "x": 393,
+        "y": 562.09375,
+        "width": 100,
+        "height": 44,
+        "bottom": 606.09375
+      },
+      "layers": {
+        "x": 629,
+        "y": 258.0625,
+        "width": 80,
+        "height": 44,
+        "bottom": 302.0625
+      },
+      "preset": {
+        "x": 56,
+        "y": 562.09375,
+        "width": 319,
+        "height": 44,
+        "bottom": 606.09375
+      },
+      "heightInput": {
+        "x": 56,
+        "y": 643.890625,
+        "width": 101,
+        "height": 44,
+        "bottom": 687.890625
+      },
+      "identifier": {
+        "x": 393,
+        "y": 643.890625,
+        "width": 319,
+        "height": 44,
+        "bottom": 687.890625
+      },
+      "results": {
+        "x": 22,
+        "y": 826.078125,
+        "width": 724,
+        "height": 1984.234375,
+        "bottom": 2810.3125
+      },
+      "table": {
+        "x": 41,
+        "y": 1147.609375,
+        "width": 686,
+        "height": 1643.703125,
+        "bottom": 2791.3125
+      },
+      "metrics": {
+        "x": 41,
+        "y": 1009.609375,
+        "width": 686,
+        "height": 126,
+        "bottom": 1135.609375
+      },
+      "filters": {
+        "x": 41,
+        "y": 949.609375,
+        "width": 686,
+        "height": 44,
+        "bottom": 993.609375
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "canvas": {
+        "x": 0,
+        "y": 186.5,
+        "width": 390,
+        "height": 3756.65625,
+        "bottom": 3943.15625
+      },
+      "group": {
+        "x": 23,
+        "y": 659.75,
+        "width": 344,
+        "height": 500.140625,
+        "bottom": 1159.890625
+      },
+      "gap": {
+        "x": 23,
+        "y": 355.875,
+        "width": 81,
+        "height": 44,
+        "bottom": 399.875
+      },
+      "gapControl": 130,
+      "quantity": {
+        "x": 34,
+        "y": 849.71875,
+        "width": 322,
+        "height": 44,
+        "bottom": 893.71875
+      },
+      "layers": {
+        "x": 174,
+        "y": 437.0625,
+        "width": 80,
+        "height": 44,
+        "bottom": 481.0625
+      },
+      "preset": {
+        "x": 34,
+        "y": 768.53125,
+        "width": 322,
+        "height": 44,
+        "bottom": 812.53125
+      },
+      "heightInput": {
+        "x": 34,
+        "y": 930.90625,
+        "width": 273,
+        "height": 44,
+        "bottom": 974.90625
+      },
+      "identifier": {
+        "x": 34,
+        "y": 1012.703125,
+        "width": 322,
+        "height": 44,
+        "bottom": 1056.703125
+      },
+      "results": {
+        "x": 10,
+        "y": 1188.890625,
+        "width": 370,
+        "height": 2012.203125,
+        "bottom": 3201.09375
+      },
+      "table": {
+        "x": 23,
+        "y": 1544.390625,
+        "width": 344,
+        "height": 1643.703125,
+        "bottom": 3188.09375
+      },
+      "metrics": {
+        "x": 23,
+        "y": 1404.109375,
+        "width": 344,
+        "height": 128.28125,
+        "bottom": 1532.390625
+      },
+      "filters": {
+        "x": 23,
+        "y": 1344.109375,
+        "width": 344,
+        "height": 44,
+        "bottom": 1388.109375
+      }
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "overflow": false,
+      "canvas": {
+        "x": 0,
+        "y": 206,
+        "width": 320,
+        "height": 3901.75,
+        "bottom": 4107.75
+      },
+      "group": {
+        "x": 23,
+        "y": 750.09375,
+        "width": 274,
+        "height": 500.140625,
+        "bottom": 1250.234375
+      },
+      "gap": {
+        "x": 23,
+        "y": 375.375,
+        "width": 81,
+        "height": 44,
+        "bottom": 419.375
+      },
+      "gapControl": 130,
+      "quantity": {
+        "x": 34,
+        "y": 940.0625,
+        "width": 252,
+        "height": 44,
+        "bottom": 984.0625
+      },
+      "layers": {
+        "x": 174,
+        "y": 456.5625,
+        "width": 80,
+        "height": 44,
+        "bottom": 500.5625
+      },
+      "preset": {
+        "x": 34,
+        "y": 858.875,
+        "width": 252,
+        "height": 44,
+        "bottom": 902.875
+      },
+      "heightInput": {
+        "x": 34,
+        "y": 1021.25,
+        "width": 203,
+        "height": 44,
+        "bottom": 1065.25
+      },
+      "identifier": {
+        "x": 34,
+        "y": 1103.046875,
+        "width": 252,
+        "height": 44,
+        "bottom": 1147.046875
+      },
+      "results": {
+        "x": 10,
+        "y": 1279.234375,
+        "width": 300,
+        "height": 2064.1875,
+        "bottom": 3343.421875
+      },
+      "table": {
+        "x": 23,
+        "y": 1686.71875,
+        "width": 274,
+        "height": 1643.703125,
+        "bottom": 3330.421875
+      },
+      "metrics": {
+        "x": 23,
+        "y": 1532.140625,
+        "width": 274,
+        "height": 142.578125,
+        "bottom": 1674.71875
+      },
+      "filters": {
+        "x": 23,
+        "y": 1472.140625,
+        "width": 274,
+        "height": 44,
+        "bottom": 1516.140625
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "width": 1920,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "status": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "01-qhd-standard",
+      "width": 2560,
+      "height": 1440,
+      "state": "default"
+    },
+    {
+      "name": "02-fhd-standard",
+      "width": 1920,
+      "height": 1080,
+      "state": "default"
+    },
+    {
+      "name": "03-hd-standard",
+      "width": 1366,
+      "height": 768,
+      "state": "default"
+    },
+    {
+      "name": "04-qhd-five-collapsed",
+      "width": 2560,
+      "height": 1440,
+      "state": "five"
+    },
+    {
+      "name": "05-qhd-second-open",
+      "width": 2560,
+      "height": 1440,
+      "state": "second"
+    },
+    {
+      "name": "06-custom",
+      "width": 1920,
+      "height": 1080,
+      "state": "custom"
+    },
+    {
+      "name": "07-rotation-required",
+      "width": 1920,
+      "height": 1080,
+      "state": "rotation"
+    },
+    {
+      "name": "08-rotation-locked",
+      "width": 1920,
+      "height": 1080,
+      "state": "locked"
+    },
+    {
+      "name": "09-stack-off",
+      "width": 1920,
+      "height": 1080,
+      "state": "default"
+    },
+    {
+      "name": "10-stack-on",
+      "width": 1920,
+      "height": 1080,
+      "state": "stack"
+    },
+    {
+      "name": "11-stack-unavailable",
+      "width": 1920,
+      "height": 1080,
+      "state": "multi"
+    },
+    {
+      "name": "12-results-all",
+      "width": 2560,
+      "height": 1440,
+      "state": "all"
+    },
+    {
+      "name": "13-results-containers",
+      "width": 2560,
+      "height": 1440,
+      "state": "containers"
+    },
+    {
+      "name": "14-results-20",
+      "width": 2560,
+      "height": 1440,
+      "state": "20"
+    },
+    {
+      "name": "15-results-reefer",
+      "width": 2560,
+      "height": 1440,
+      "state": "reefer"
+    },
+    {
+      "name": "16-results-trailers",
+      "width": 2560,
+      "height": 1440,
+      "state": "trailers"
+    },
+    {
+      "name": "17-preview",
+      "width": 2560,
+      "height": 1440,
+      "state": "preview"
+    },
+    {
+      "name": "18-mobile-standard",
+      "width": 390,
+      "height": 844,
+      "state": "default"
+    },
+    {
+      "name": "19-mobile-rotation",
+      "width": 390,
+      "height": 844,
+      "state": "rotation"
+    },
+    {
+      "name": "20-mobile-stacking-help",
+      "width": 390,
+      "height": 844,
+      "state": "multi"
+    },
+    {
+      "name": "21-mobile-results",
+      "width": 390,
+      "height": 844,
+      "state": "20"
+    },
+    {
+      "name": "22-mobile-preview",
+      "width": 390,
+      "height": 844,
+      "state": "preview"
+    },
+    {
+      "name": "23-tablet-custom",
+      "width": 768,
+      "height": 1024,
+      "state": "custom"
+    },
+    {
+      "name": "24-results-fhd",
+      "width": 1920,
+      "height": 1080,
+      "state": "all"
+    },
+    {
+      "name": "25-results-hd",
+      "width": 1366,
+      "height": 768,
+      "state": "all"
+    }
+  ],
+  "themes": [
+    {
+      "preference": "light",
+      "scheme": "dark",
+      "resolved": "light"
+    },
+    {
+      "preference": "dark",
+      "scheme": "light",
+      "resolved": "dark"
+    },
+    {
+      "preference": "auto",
+      "scheme": "light",
+      "resolved": "light"
+    },
+    {
+      "preference": "auto",
+      "scheme": "dark",
+      "resolved": "dark"
+    }
+  ],
+  "normalVerticalGap": 0,
+  "liveCalculation": true,
+  "trailerSecondaryFilter": false
+}
