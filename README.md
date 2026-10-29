@@ -8,7 +8,7 @@
 
 LoadComposer is a browser-based planning aid that estimates how pallets fit geometrically in common maritime containers and 13.60 m semi-trailers. It supports single-pallet and mixed-pallet scenarios, rotation and mandatory fork-entry orientation, layered quantities, responsive previews, localized operational printouts, and an offline standalone page.
 
-> **Current candidate:** `v1.5.0` (C4a), awaiting independent delta verification and manual approval. It has not been published. Verify results before operational use.
+> **Approved release candidate:** `v1.5.0` (C4c), independently verified through C4d and manually approved for publication. Production deployment has not yet occurred. Verify results before operational use.
 
 | Day | Night |
 |---|---|
@@ -108,12 +108,12 @@ LoadComposer is source-available under the custom [LoadComposer Community Licens
 Official site: [loadcomposer.com](https://loadcomposer.com/)  
 Official repository: [github.com/LoadComposer/loadcomposer](https://github.com/LoadComposer/loadcomposer)  
 Download options: [loadcomposer.com/downloads/](https://loadcomposer.com/downloads/)  
-Candidate standalone HTML: [v1.5.0](site/downloads/loadcomposer-v1.5.0-standalone.html)
+Approved candidate standalone HTML: [v1.5.0](site/downloads/loadcomposer-v1.5.0-standalone.html)
 
 Copyright © 2026 Marco Pernigotti.
 
-## Candidate verification and approval
+## Final verification and release status
 
-Check `SHA256SUMS-C4a-v1.5.0.txt` and `PACKAGE_VERIFICATION-C4a-v1.5.0.json` supplied beside the archives. Verify CRC and internal manifests after extraction. The QA bundle contains the complete `npm test` suite, including `test:c4a`; the delivery contains the build inputs, without heavy QA evidence. See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for prerequisites and future publication steps.
+Verify the six final C4c distribution artifacts against the external `SHA256SUMS-C4c-CLEAN.txt` manifest and check ZIP CRC plus internal manifests. Keep `PACKAGE_VERIFICATION-C4c-v1.5.0.json` as historical packaging evidence rather than a publication asset list: its temporary `.PfeItk` entry is not a distribution artifact. The QA bundle includes the complete `npm test` suite, including `test:c4c`; the delivery contains build inputs without heavy QA evidence. The GitHub release branch also passed its full CI test run. See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for prerequisites and the subsequent production publication steps.
 
-S02 remains an accepted MINOR within the controlled mutation/restore sequence documented by C4: the ramp preview can remain stale until redrawn, while the print document is correct. It is not fixed by C4a. No deploy, publication, tag or GitHub Release is authorized by this candidate.
+S02 remains a manually accepted MINOR within the controlled mutation/restore sequence documented by C4: the ramp preview can remain stale until redrawn, while the print document is correct. It remains unfixed in C4c. Independent C4d verification confirmed the U02 responsive fix. The release is approved for publication, but no production deploy, version tag or GitHub Release has yet been performed.

@@ -8,7 +8,7 @@
 
 LoadComposer è un ausilio alla pianificazione nel browser che stima la disposizione geometrica dei pallet nei principali container marittimi e bilici da 13,60 m. Gestisce carichi a pallet singolo e misti, rotazione e orientamento obbligatorio dell’inforcamento, quantità su livelli, anteprime responsive, stampa operativa localizzata e una pagina standalone offline.
 
-> **Candidata corrente:** `v1.5.0` (C4a), in attesa della verifica indipendente del delta e dell’approvazione manuale. Non ancora pubblicata. Verificare i risultati prima dell’uso operativo.
+> **Candidata approvata:** `v1.5.0` (C4c), verificata indipendentemente fino a C4d e approvata manualmente per la pubblicazione. Il deploy in produzione non è ancora stato eseguito. Verificare i risultati prima dell’uso operativo.
 
 | Giorno | Notte |
 |---|---|
@@ -96,8 +96,8 @@ Pagina Download: [loadcomposer.com/downloads/](https://loadcomposer.com/download
 
 Copyright © 2026 Marco Pernigotti.
 
-## Verifica e approvazione della candidata
+## Verifica finale e stato della pubblicazione
 
-Usare Node.js conforme a `^22.17.0 || >=24.0.0` e npm 11.9.0. C3j/C4 sono stati verificati con Node.js 24.22.1. Controllare `SHA256SUMS-C4a-v1.5.0.txt` e `PACKAGE_VERIFICATION-C4a-v1.5.0.json` forniti accanto agli archivi, quindi CRC e manifesti interni dopo l’estrazione. Il test bundle contiene la suite `npm test` completa, incluso `test:c4a`; la delivery contiene gli input di build senza le prove QA pesanti. Consultare [DEPLOYMENT.md](docs/DEPLOYMENT.md) per la verifica e l’eventuale pubblicazione futura.
+Usare Node.js conforme a `^22.17.0 || >=24.0.0` e npm 11.9.0. C3j/C4 sono stati verificati con Node.js 24.22.1. Verificare i sei artefatti C4c definitivi tramite il manifesto esterno `SHA256SUMS-C4c-CLEAN.txt`, poi CRC e manifesti interni. Conservare `PACKAGE_VERIFICATION-C4c-v1.5.0.json` come evidenza storica, non come elenco degli asset pubblicabili: la voce temporanea `.PfeItk` non appartiene alla distribuzione. Il test bundle contiene `npm test` completo, incluso `test:c4c`; la delivery contiene gli input di build senza le prove QA pesanti. Anche la CI del ramo GitHub di release è passata. Consultare [DEPLOYMENT.md](docs/DEPLOYMENT.md) per la verifica e la successiva pubblicazione in produzione.
 
-S02 resta MINOR accettato nel perimetro della mutazione/ripristino controllati documentato da C4: la preview rampa può restare obsoleta fino al ridisegno, mentre il documento stampato è corretto. C4a non lo risolve. La candidata non autorizza deploy, pubblicazione, tag o GitHub Release.
+S02 resta MINOR accettato esplicitamente nel perimetro della mutazione/ripristino controllati documentato da C4: la preview rampa può restare obsoleta fino al ridisegno, mentre il documento stampato è corretto. Non è risolto nella C4c. La verifica indipendente C4d ha confermato la correzione responsive U02. La pubblicazione è approvata, ma deploy in produzione, tag e GitHub Release non sono ancora stati eseguiti.

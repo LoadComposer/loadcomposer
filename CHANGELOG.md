@@ -2,7 +2,7 @@
 
 All notable project changes are documented here.
 
-## [1.5.0] — Unreleased candidate (C4a)
+## [1.5.0] — Approved release candidate (C4c; not yet published)
 
 ### Added and corrected in the v1.5.0 candidate
 
@@ -13,16 +13,23 @@ All notable project changes are documented here.
 
 ### C4a final polish
 
-- Updated current documentation and standalone references to v1.5.0, explicitly pending independent delta verification and manual approval.
+- Updated current documentation and standalone references to v1.5.0 during the C4a candidate stage.
 - Corrected print context for single floor/multilayer, mixed floor-only and Advanced with/without actual stacks; retained physical stability, tolerances, securing, rear-loading and unimplemented weight/balance/side-loading warnings.
 - Removed the unit-label overlap at tablet widths with a scoped responsive CSS change.
 - Associated the localized vehicle caption with the preview vehicle selector's accessible name.
+
+### C4b–C4d independent verification and final responsive fix
+
+- C4b independently confirmed the four C4a polish corrections (D01, P01, U01 and A01).
+- C4c resolved U02, horizontal overflow of Custom pallet group summaries at tablet widths, using a scoped CSS-only fix without changing the solver, core, Worker or application JavaScript.
+- C4d independently reproduced the original U02 issue (26/42 cases) and verified its absence after the fix (0/42 cases), with targeted regressions passing.
+- The final C4c archives and clean external checksum manifest are approved for publication; the historical `.PfeItk` temporary file is not a release asset.
 
 ### Known limits and publication status
 
 - S02 remains an accepted MINOR in the controlled mutation/restore sequence documented by C4; it is not fixed here.
 - Geometric heuristic estimates do not certify physical loading safety or optimality. Dense PDF and extreme fallback performance limitations remain documented.
-- No publication date, approval, tag, deployment or GitHub Release is asserted. Independent verification of the C3j→C4a delta and manual approval remain required.
+- Independent C4d verification is complete and the user has manually approved C4c for publication, explicitly accepting S02. No production deployment, publication date, version tag or GitHub Release has yet been recorded.
 
 ## [1.3.5] — 2026-08-28
 
