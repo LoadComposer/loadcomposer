@@ -1,0 +1,86 @@
+{
+  "id": "C1A1783",
+  "container": {
+    "id": "synthetic-C1A1783",
+    "name": "Audit synthetic",
+    "innerLength": 800,
+    "innerWidth": 600,
+    "innerHeight": 900,
+    "doorWidth": 600,
+    "doorHeight": 900,
+    "accessKnown": true
+  },
+  "input": {
+    "mode": "mixed",
+    "advancedStacking": true,
+    "types": [
+      {
+        "typeIndex": 0,
+        "presetId": "custom",
+        "name": "Article 0",
+        "identifier": "ID-0",
+        "quantity": 3,
+        "length": 200,
+        "width": 200,
+        "height": 200,
+        "rotationMode": "locked",
+        "lockedOrientation": "normal",
+        "stackingEnabled": true,
+        "stackRole": "base",
+        "maxLayers": 4,
+        "allowedAbove": []
+      },
+      {
+        "typeIndex": 1,
+        "presetId": "custom",
+        "name": "Article 1",
+        "identifier": "ID-1",
+        "quantity": 1,
+        "length": 400,
+        "width": 100,
+        "height": 200,
+        "rotationMode": "auto",
+        "lockedOrientation": "rotated",
+        "stackingEnabled": true,
+        "stackRole": "base",
+        "maxLayers": 6,
+        "allowedAbove": []
+      },
+      {
+        "typeIndex": 2,
+        "presetId": "custom",
+        "name": "Article 3",
+        "identifier": "ID-3",
+        "quantity": 1,
+        "length": 300,
+        "width": 100,
+        "height": 300,
+        "rotationMode": "auto",
+        "lockedOrientation": "normal",
+        "stackingEnabled": true,
+        "stackRole": "any",
+        "maxLayers": 4,
+        "allowedAbove": []
+      },
+      {
+        "typeIndex": 3,
+        "presetId": "custom",
+        "name": "Article 4",
+        "identifier": "ID-4",
+        "quantity": 2,
+        "length": 300,
+        "width": 100,
+        "height": 100,
+        "rotationMode": "locked",
+        "lockedOrientation": "rotated",
+        "stackingEnabled": true,
+        "stackRole": "any",
+        "maxLayers": 5,
+        "allowedAbove": []
+      }
+    ],
+    "quantity": 7,
+    "gap": 100,
+    "verticalGap": 25
+  }
+}

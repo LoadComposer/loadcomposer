@@ -1,0 +1,1102 @@
+{
+  "test": {
+    "id": "O0065",
+    "container": {
+      "id": "synthetic-O0065",
+      "name": "Audit synthetic",
+      "innerLength": 500,
+      "innerWidth": 400,
+      "innerHeight": 500,
+      "doorWidth": 400,
+      "doorHeight": 500,
+      "accessKnown": true
+    },
+    "input": {
+      "mode": "mixed",
+      "advancedStacking": true,
+      "types": [
+        {
+          "typeIndex": 0,
+          "presetId": "custom",
+          "name": "Article 0",
+          "identifier": "ID-0",
+          "quantity": 2,
+          "length": 200,
+          "width": 100,
+          "height": 300,
+          "rotationMode": "auto",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 1,
+          "allowedAbove": [
+            1
+          ]
+        },
+        {
+          "typeIndex": 1,
+          "presetId": "custom",
+          "name": "Article 1",
+          "identifier": "ID-1",
+          "quantity": 2,
+          "length": 200,
+          "width": 100,
+          "height": 400,
+          "rotationMode": "locked",
+          "lockedOrientation": "rotated",
+          "stackingEnabled": true,
+          "stackRole": "top",
+          "maxLayers": 1,
+          "allowedAbove": []
+        },
+        {
+          "typeIndex": 2,
+          "presetId": "custom",
+          "name": "Article 2",
+          "identifier": "ID-2",
+          "quantity": 1,
+          "length": 200,
+          "width": 100,
+          "height": 300,
+          "rotationMode": "locked",
+          "lockedOrientation": "rotated",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 1,
+          "allowedAbove": [
+            1
+          ]
+        }
+      ],
+      "quantity": 5,
+      "gap": 100,
+      "verticalGap": 0
+    }
+  },
+  "out": {
+    "result": {
+      "mode": "mixed",
+      "input": {
+        "mode": "mixed",
+        "advancedStacking": true,
+        "types": [
+          {
+            "typeIndex": 0,
+            "presetId": "custom",
+            "name": "Article 0",
+            "identifier": "ID-0",
+            "quantity": 2,
+            "length": 200,
+            "width": 100,
+            "height": 300,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "stackingEnabled": true,
+            "stackRole": "any",
+            "maxLayers": 1,
+            "allowedAbove": [
+              1
+            ]
+          },
+          {
+            "typeIndex": 1,
+            "presetId": "custom",
+            "name": "Article 1",
+            "identifier": "ID-1",
+            "quantity": 2,
+            "length": 200,
+            "width": 100,
+            "height": 400,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "stackingEnabled": true,
+            "stackRole": "top",
+            "maxLayers": 1,
+            "allowedAbove": []
+          },
+          {
+            "typeIndex": 2,
+            "presetId": "custom",
+            "name": "Article 2",
+            "identifier": "ID-2",
+            "quantity": 1,
+            "length": 200,
+            "width": 100,
+            "height": 300,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "stackingEnabled": true,
+            "stackRole": "any",
+            "maxLayers": 1,
+            "allowedAbove": [
+              1
+            ]
+          }
+        ],
+        "quantity": 5,
+        "gap": 100,
+        "verticalGap": 0
+      },
+      "container": {
+        "id": "synthetic-O0065",
+        "name": "Audit synthetic",
+        "innerLength": 500,
+        "innerWidth": 400,
+        "innerHeight": 500,
+        "doorWidth": 400,
+        "doorHeight": 500,
+        "accessKnown": true
+      },
+      "layout": {
+        "mode": "mixed",
+        "type": "pallet misti euristico",
+        "count": 4,
+        "rects": [
+          {
+            "id": "1.1",
+            "typeIndex": 0,
+            "presetId": "custom",
+            "name": "Article 0",
+            "identifier": "ID-0",
+            "length": 100,
+            "width": 200,
+            "height": 300,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 1,
+            "x": 0,
+            "y": 0,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 200,
+            "footprintWidth": 300,
+            "rotated": true,
+            "positionId": "P01"
+          },
+          {
+            "id": "1.2",
+            "typeIndex": 0,
+            "presetId": "custom",
+            "name": "Article 0",
+            "identifier": "ID-0",
+            "length": 200,
+            "width": 100,
+            "height": 300,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 2,
+            "x": 0,
+            "y": 300,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 300,
+            "footprintWidth": 200,
+            "rotated": false,
+            "positionId": "P02"
+          },
+          {
+            "id": "2.1",
+            "typeIndex": 1,
+            "presetId": "custom",
+            "name": "Article 1",
+            "identifier": "ID-1",
+            "length": 100,
+            "width": 200,
+            "height": 400,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "unitNo": 1,
+            "x": 200,
+            "y": 0,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 200,
+            "footprintWidth": 300,
+            "rotated": true,
+            "positionId": "P03"
+          },
+          {
+            "id": "2.2",
+            "typeIndex": 1,
+            "presetId": "custom",
+            "name": "Article 1",
+            "identifier": "ID-1",
+            "length": 100,
+            "width": 200,
+            "height": 400,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "unitNo": 2,
+            "x": 400,
+            "y": 0,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 200,
+            "footprintWidth": 300,
+            "rotated": true,
+            "positionId": "P04"
+          }
+        ],
+        "materializedCount": 4,
+        "truncated": false,
+        "unplaced": [
+          {
+            "id": "3.1",
+            "typeIndex": 2,
+            "presetId": "custom",
+            "name": "Article 2",
+            "identifier": "ID-2",
+            "length": 200,
+            "width": 100,
+            "height": 300,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "unitNo": 1
+          }
+        ],
+        "usedLength": 500,
+        "usedWidth": 400,
+        "orderingName": "area decrescente",
+        "score": {
+          "placedCount": 4,
+          "placedArea": 80000,
+          "compactness": 0.4,
+          "usedLength": 500,
+          "usedWidth": 400
+        }
+      },
+      "layers": 1,
+      "floorCapacity": 4,
+      "totalCapacity": 4,
+      "totalItems": 5,
+      "placedCount": 4,
+      "allPlaced": false,
+      "fitsQtyBySpace": false,
+      "advancedStacking": true
+    },
+    "validation": {
+      "valid": true,
+      "general": {
+        "valid": true,
+        "internalError": false,
+        "okDoor": true,
+        "okHeight": true,
+        "errors": [],
+        "accessFailures": [],
+        "heightFailures": [],
+        "minDoorWidthMargin": 200,
+        "minDoorHeightMargin": 100
+      },
+      "advanced": {
+        "valid": true
+      }
+    },
+    "solverMs": 0.7156280000017432,
+    "validatorMs": 0.4394900000006601,
+    "diagnostics": {
+      "floorAttempts": 19,
+      "candidates": 6,
+      "strategies": 5,
+      "solverMs": 0.7138049999994109
+    },
+    "layouts": [],
+    "raw": {
+      "layout": {
+        "mode": "mixed",
+        "type": "pallet misti euristico",
+        "count": 4,
+        "rects": [
+          {
+            "id": "1.1",
+            "typeIndex": 0,
+            "presetId": "custom",
+            "name": "Article 0",
+            "identifier": "ID-0",
+            "length": 100,
+            "width": 200,
+            "height": 300,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 1,
+            "x": 0,
+            "y": 0,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 200,
+            "footprintWidth": 300,
+            "rotated": true,
+            "positionId": "P01"
+          },
+          {
+            "id": "1.2",
+            "typeIndex": 0,
+            "presetId": "custom",
+            "name": "Article 0",
+            "identifier": "ID-0",
+            "length": 200,
+            "width": 100,
+            "height": 300,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 2,
+            "x": 0,
+            "y": 300,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 300,
+            "footprintWidth": 200,
+            "rotated": false,
+            "positionId": "P02"
+          },
+          {
+            "id": "2.1",
+            "typeIndex": 1,
+            "presetId": "custom",
+            "name": "Article 1",
+            "identifier": "ID-1",
+            "length": 100,
+            "width": 200,
+            "height": 400,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "unitNo": 1,
+            "x": 200,
+            "y": 0,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 200,
+            "footprintWidth": 300,
+            "rotated": true,
+            "positionId": "P03"
+          },
+          {
+            "id": "2.2",
+            "typeIndex": 1,
+            "presetId": "custom",
+            "name": "Article 1",
+            "identifier": "ID-1",
+            "length": 100,
+            "width": 200,
+            "height": 400,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "unitNo": 2,
+            "x": 400,
+            "y": 0,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 200,
+            "footprintWidth": 300,
+            "rotated": true,
+            "positionId": "P04"
+          }
+        ],
+        "materializedCount": 4,
+        "truncated": false,
+        "unplaced": [
+          {
+            "id": "3.1",
+            "typeIndex": 2,
+            "presetId": "custom",
+            "name": "Article 2",
+            "identifier": "ID-2",
+            "length": 200,
+            "width": 100,
+            "height": 300,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "unitNo": 1
+          }
+        ],
+        "usedLength": 500,
+        "usedWidth": 400,
+        "orderingName": "area decrescente",
+        "score": {
+          "placedCount": 4,
+          "placedArea": 80000,
+          "compactness": 0.4,
+          "usedLength": 500,
+          "usedWidth": 400
+        }
+      },
+      "stacks": [
+        {
+          "rect": {
+            "id": "1.1",
+            "typeIndex": 0,
+            "presetId": "custom",
+            "name": "Article 0",
+            "identifier": "ID-0",
+            "length": 100,
+            "width": 200,
+            "height": 300,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 1,
+            "x": 0,
+            "y": 0,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 200,
+            "footprintWidth": 300,
+            "rotated": true,
+            "positionId": "P01"
+          },
+          "layers": [
+            {
+              "id": "1.1",
+              "typeIndex": 0,
+              "presetId": "custom",
+              "name": "Article 0",
+              "identifier": "ID-0",
+              "length": 100,
+              "width": 200,
+              "height": 300,
+              "rotationMode": "auto",
+              "lockedOrientation": "normal",
+              "unitNo": 1,
+              "x": 0,
+              "y": 0,
+              "originalLength": 200,
+              "originalWidth": 100,
+              "footprintLength": 200,
+              "footprintWidth": 300,
+              "rotated": true,
+              "layer": 1,
+              "positionId": "P01"
+            }
+          ],
+          "height": 300,
+          "positionId": "P01"
+        },
+        {
+          "rect": {
+            "id": "1.2",
+            "typeIndex": 0,
+            "presetId": "custom",
+            "name": "Article 0",
+            "identifier": "ID-0",
+            "length": 200,
+            "width": 100,
+            "height": 300,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 2,
+            "x": 0,
+            "y": 300,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 300,
+            "footprintWidth": 200,
+            "rotated": false,
+            "positionId": "P02"
+          },
+          "layers": [
+            {
+              "id": "1.2",
+              "typeIndex": 0,
+              "presetId": "custom",
+              "name": "Article 0",
+              "identifier": "ID-0",
+              "length": 200,
+              "width": 100,
+              "height": 300,
+              "rotationMode": "auto",
+              "lockedOrientation": "normal",
+              "unitNo": 2,
+              "x": 0,
+              "y": 300,
+              "originalLength": 200,
+              "originalWidth": 100,
+              "footprintLength": 300,
+              "footprintWidth": 200,
+              "rotated": false,
+              "layer": 1,
+              "positionId": "P02"
+            }
+          ],
+          "height": 300,
+          "positionId": "P02"
+        },
+        {
+          "rect": {
+            "id": "2.1",
+            "typeIndex": 1,
+            "presetId": "custom",
+            "name": "Article 1",
+            "identifier": "ID-1",
+            "length": 100,
+            "width": 200,
+            "height": 400,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "unitNo": 1,
+            "x": 200,
+            "y": 0,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 200,
+            "footprintWidth": 300,
+            "rotated": true,
+            "positionId": "P03"
+          },
+          "layers": [
+            {
+              "id": "2.1",
+              "typeIndex": 1,
+              "presetId": "custom",
+              "name": "Article 1",
+              "identifier": "ID-1",
+              "length": 100,
+              "width": 200,
+              "height": 400,
+              "rotationMode": "locked",
+              "lockedOrientation": "rotated",
+              "unitNo": 1,
+              "x": 200,
+              "y": 0,
+              "originalLength": 200,
+              "originalWidth": 100,
+              "footprintLength": 200,
+              "footprintWidth": 300,
+              "rotated": true,
+              "layer": 1,
+              "positionId": "P03"
+            }
+          ],
+          "height": 400,
+          "positionId": "P03"
+        },
+        {
+          "rect": {
+            "id": "2.2",
+            "typeIndex": 1,
+            "presetId": "custom",
+            "name": "Article 1",
+            "identifier": "ID-1",
+            "length": 100,
+            "width": 200,
+            "height": 400,
+            "rotationMode": "locked",
+            "lockedOrientation": "rotated",
+            "unitNo": 2,
+            "x": 400,
+            "y": 0,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "footprintLength": 200,
+            "footprintWidth": 300,
+            "rotated": true,
+            "positionId": "P04"
+          },
+          "layers": [
+            {
+              "id": "2.2",
+              "typeIndex": 1,
+              "presetId": "custom",
+              "name": "Article 1",
+              "identifier": "ID-1",
+              "length": 100,
+              "width": 200,
+              "height": 400,
+              "rotationMode": "locked",
+              "lockedOrientation": "rotated",
+              "unitNo": 2,
+              "x": 400,
+              "y": 0,
+              "originalLength": 200,
+              "originalWidth": 100,
+              "footprintLength": 200,
+              "footprintWidth": 300,
+              "rotated": true,
+              "layer": 1,
+              "positionId": "P04"
+            }
+          ],
+          "height": 400,
+          "positionId": "P04"
+        }
+      ],
+      "unplaced": [
+        {
+          "id": "3.1",
+          "typeIndex": 2,
+          "presetId": "custom",
+          "name": "Article 2",
+          "identifier": "ID-2",
+          "length": 200,
+          "width": 100,
+          "height": 300,
+          "rotationMode": "locked",
+          "lockedOrientation": "rotated",
+          "unitNo": 1
+        }
+      ],
+      "placedCount": 4,
+      "floorPlacedCount": 4,
+      "stackedCount": 0,
+      "maxLayersUsed": 1,
+      "mixedGroupStacks": 0,
+      "passes": 0,
+      "strategy": "constrained",
+      "tieKey": "0000:constrained",
+      "configured": true,
+      "used": false,
+      "diagnostics": {
+        "floorAttempts": 19,
+        "candidates": 6,
+        "strategies": 5,
+        "solverMs": 0.7138049999994109
+      }
+    }
+  },
+  "oracle": {
+    "status": "EXACT OPTIMUM",
+    "timeout": false,
+    "nodes": 3055,
+    "ms": 2.0425880000002508,
+    "scale": 100,
+    "grid": [
+      6,
+      5
+    ],
+    "configs": 7,
+    "placed": 5,
+    "floor": 5,
+    "stacks": [
+      {
+        "mask": 1,
+        "L": 200,
+        "W": 100,
+        "seq": [
+          {
+            "i": 0,
+            "rotated": false
+          }
+        ],
+        "height": 300,
+        "count": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "mask": 4,
+        "L": 100,
+        "W": 200,
+        "seq": [
+          {
+            "i": 2,
+            "rotated": true
+          }
+        ],
+        "height": 400,
+        "count": 1,
+        "x": 0,
+        "y": 200
+      },
+      {
+        "mask": 8,
+        "L": 100,
+        "W": 200,
+        "seq": [
+          {
+            "i": 3,
+            "rotated": true
+          }
+        ],
+        "height": 400,
+        "count": 1,
+        "x": 200,
+        "y": 200
+      },
+      {
+        "mask": 2,
+        "L": 200,
+        "W": 100,
+        "seq": [
+          {
+            "i": 1,
+            "rotated": false
+          }
+        ],
+        "height": 300,
+        "count": 1,
+        "x": 300,
+        "y": 0
+      },
+      {
+        "mask": 16,
+        "L": 100,
+        "W": 200,
+        "seq": [
+          {
+            "i": 4,
+            "rotated": true
+          }
+        ],
+        "height": 300,
+        "count": 1,
+        "x": 400,
+        "y": 200
+      }
+    ]
+  },
+  "witness": {
+    "mode": "mixed",
+    "input": {
+      "mode": "mixed",
+      "advancedStacking": true,
+      "types": [
+        {
+          "typeIndex": 0,
+          "presetId": "custom",
+          "name": "Article 0",
+          "identifier": "ID-0",
+          "quantity": 2,
+          "length": 200,
+          "width": 100,
+          "height": 300,
+          "rotationMode": "auto",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 1,
+          "allowedAbove": [
+            1
+          ]
+        },
+        {
+          "typeIndex": 1,
+          "presetId": "custom",
+          "name": "Article 1",
+          "identifier": "ID-1",
+          "quantity": 2,
+          "length": 200,
+          "width": 100,
+          "height": 400,
+          "rotationMode": "locked",
+          "lockedOrientation": "rotated",
+          "stackingEnabled": true,
+          "stackRole": "top",
+          "maxLayers": 1,
+          "allowedAbove": []
+        },
+        {
+          "typeIndex": 2,
+          "presetId": "custom",
+          "name": "Article 2",
+          "identifier": "ID-2",
+          "quantity": 1,
+          "length": 200,
+          "width": 100,
+          "height": 300,
+          "rotationMode": "locked",
+          "lockedOrientation": "rotated",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 1,
+          "allowedAbove": [
+            1
+          ]
+        }
+      ],
+      "quantity": 5,
+      "gap": 100,
+      "verticalGap": 0
+    },
+    "container": {
+      "id": "synthetic-O0065",
+      "name": "Audit synthetic",
+      "innerLength": 500,
+      "innerWidth": 400,
+      "innerHeight": 500,
+      "doorWidth": 400,
+      "doorHeight": 500,
+      "accessKnown": true
+    },
+    "advancedStacking": true,
+    "layout": {
+      "mode": "mixed",
+      "count": 5,
+      "materializedCount": 5,
+      "truncated": false,
+      "rects": [
+        {
+          "id": "1.1",
+          "typeIndex": 0,
+          "unitNo": 1,
+          "length": 200,
+          "width": 100,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 300,
+          "rotated": false,
+          "x": 0,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P01"
+        },
+        {
+          "id": "2.1",
+          "typeIndex": 1,
+          "unitNo": 1,
+          "length": 100,
+          "width": 200,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 400,
+          "rotated": true,
+          "x": 0,
+          "y": 200,
+          "layer": 1,
+          "positionId": "P02"
+        },
+        {
+          "id": "2.2",
+          "typeIndex": 1,
+          "unitNo": 2,
+          "length": 100,
+          "width": 200,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 400,
+          "rotated": true,
+          "x": 200,
+          "y": 200,
+          "layer": 1,
+          "positionId": "P03"
+        },
+        {
+          "id": "1.2",
+          "typeIndex": 0,
+          "unitNo": 2,
+          "length": 200,
+          "width": 100,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 300,
+          "rotated": false,
+          "x": 300,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P04"
+        },
+        {
+          "id": "3.1",
+          "typeIndex": 2,
+          "unitNo": 1,
+          "length": 100,
+          "width": 200,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 300,
+          "rotated": true,
+          "x": 400,
+          "y": 200,
+          "layer": 1,
+          "positionId": "P05"
+        }
+      ],
+      "unplaced": [],
+      "usedLength": 500,
+      "usedWidth": 400
+    },
+    "stacks": [
+      {
+        "rect": {
+          "id": "1.1",
+          "typeIndex": 0,
+          "unitNo": 1,
+          "length": 200,
+          "width": 100,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 300,
+          "rotated": false,
+          "x": 0,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P01"
+        },
+        "layers": [
+          {
+            "id": "1.1",
+            "typeIndex": 0,
+            "unitNo": 1,
+            "length": 200,
+            "width": 100,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "height": 300,
+            "rotated": false,
+            "x": 0,
+            "y": 0,
+            "layer": 1,
+            "positionId": "P01"
+          }
+        ],
+        "height": 300,
+        "positionId": "P01"
+      },
+      {
+        "rect": {
+          "id": "2.1",
+          "typeIndex": 1,
+          "unitNo": 1,
+          "length": 100,
+          "width": 200,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 400,
+          "rotated": true,
+          "x": 0,
+          "y": 200,
+          "layer": 1,
+          "positionId": "P02"
+        },
+        "layers": [
+          {
+            "id": "2.1",
+            "typeIndex": 1,
+            "unitNo": 1,
+            "length": 100,
+            "width": 200,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "height": 400,
+            "rotated": true,
+            "x": 0,
+            "y": 200,
+            "layer": 1,
+            "positionId": "P02"
+          }
+        ],
+        "height": 400,
+        "positionId": "P02"
+      },
+      {
+        "rect": {
+          "id": "2.2",
+          "typeIndex": 1,
+          "unitNo": 2,
+          "length": 100,
+          "width": 200,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 400,
+          "rotated": true,
+          "x": 200,
+          "y": 200,
+          "layer": 1,
+          "positionId": "P03"
+        },
+        "layers": [
+          {
+            "id": "2.2",
+            "typeIndex": 1,
+            "unitNo": 2,
+            "length": 100,
+            "width": 200,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "height": 400,
+            "rotated": true,
+            "x": 200,
+            "y": 200,
+            "layer": 1,
+            "positionId": "P03"
+          }
+        ],
+        "height": 400,
+        "positionId": "P03"
+      },
+      {
+        "rect": {
+          "id": "1.2",
+          "typeIndex": 0,
+          "unitNo": 2,
+          "length": 200,
+          "width": 100,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 300,
+          "rotated": false,
+          "x": 300,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P04"
+        },
+        "layers": [
+          {
+            "id": "1.2",
+            "typeIndex": 0,
+            "unitNo": 2,
+            "length": 200,
+            "width": 100,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "height": 300,
+            "rotated": false,
+            "x": 300,
+            "y": 0,
+            "layer": 1,
+            "positionId": "P04"
+          }
+        ],
+        "height": 300,
+        "positionId": "P04"
+      },
+      {
+        "rect": {
+          "id": "3.1",
+          "typeIndex": 2,
+          "unitNo": 1,
+          "length": 100,
+          "width": 200,
+          "originalLength": 200,
+          "originalWidth": 100,
+          "height": 300,
+          "rotated": true,
+          "x": 400,
+          "y": 200,
+          "layer": 1,
+          "positionId": "P05"
+        },
+        "layers": [
+          {
+            "id": "3.1",
+            "typeIndex": 2,
+            "unitNo": 1,
+            "length": 100,
+            "width": 200,
+            "originalLength": 200,
+            "originalWidth": 100,
+            "height": 300,
+            "rotated": true,
+            "x": 400,
+            "y": 200,
+            "layer": 1,
+            "positionId": "P05"
+          }
+        ],
+        "height": 300,
+        "positionId": "P05"
+      }
+    ],
+    "placedCount": 5,
+    "floorPlacedCount": 5,
+    "stackedCount": 0,
+    "maxLayersUsed": 1,
+    "mixedGroupStacks": 0,
+    "totalItems": 5,
+    "totalCapacity": 5,
+    "floorCapacity": 5,
+    "allPlaced": true
+  },
+  "independent": {
+    "valid": true,
+    "errors": [],
+    "placed": 5,
+    "floor": 5
+  }
+}

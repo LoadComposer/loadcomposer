@@ -1,0 +1,447 @@
+{
+  "test": {
+    "id": "minimal-validator-copy",
+    "container": {
+      "id": "box",
+      "innerLength": 1,
+      "innerWidth": 1,
+      "innerHeight": 2,
+      "doorWidth": 1,
+      "doorHeight": 2
+    },
+    "input": {
+      "mode": "mixed",
+      "advancedStacking": true,
+      "quantity": 2,
+      "gap": 0,
+      "verticalGap": 0,
+      "types": [
+        {
+          "typeIndex": 0,
+          "name": "A",
+          "quantity": 2,
+          "length": 1,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "auto",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 2,
+          "allowedAbove": [
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "valid": {
+    "mode": "mixed",
+    "input": {
+      "mode": "mixed",
+      "advancedStacking": true,
+      "quantity": 2,
+      "gap": 0,
+      "verticalGap": 0,
+      "types": [
+        {
+          "typeIndex": 0,
+          "name": "A",
+          "quantity": 2,
+          "length": 1,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "auto",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 2,
+          "allowedAbove": [
+            0
+          ]
+        }
+      ]
+    },
+    "container": {
+      "id": "box",
+      "innerLength": 1,
+      "innerWidth": 1,
+      "innerHeight": 2,
+      "doorWidth": 1,
+      "doorHeight": 2
+    },
+    "layout": {
+      "mode": "mixed",
+      "type": "pallet misti omogenei · motore single",
+      "count": 1,
+      "rects": [
+        {
+          "id": "1.1",
+          "typeIndex": 0,
+          "name": "A",
+          "identifier": "",
+          "length": 1,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "auto",
+          "lockedOrientation": "normal",
+          "unitNo": 1,
+          "x": 0,
+          "y": 0,
+          "rotated": false,
+          "layoutIndex": 0,
+          "originalLength": 1,
+          "originalWidth": 1,
+          "footprintLength": 1,
+          "footprintWidth": 1,
+          "positionId": "P01"
+        }
+      ],
+      "materializedCount": 1,
+      "truncated": false,
+      "unplaced": [],
+      "usedLength": 1,
+      "usedWidth": 1,
+      "orderingName": "ponte omogeneo deterministico",
+      "score": {
+        "placedCount": 1,
+        "placedArea": 1,
+        "compactness": 1,
+        "usedLength": 1,
+        "usedWidth": 1
+      }
+    },
+    "layers": 1,
+    "floorCapacity": 1,
+    "totalCapacity": 2,
+    "totalItems": 2,
+    "placedCount": 2,
+    "allPlaced": true,
+    "fitsQtyBySpace": true,
+    "advancedStacking": true,
+    "stacks": [
+      {
+        "rect": {
+          "id": "1.1",
+          "typeIndex": 0,
+          "name": "A",
+          "identifier": "",
+          "length": 1,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "auto",
+          "lockedOrientation": "normal",
+          "unitNo": 1,
+          "x": 0,
+          "y": 0,
+          "rotated": false,
+          "layoutIndex": 0,
+          "originalLength": 1,
+          "originalWidth": 1,
+          "footprintLength": 1,
+          "footprintWidth": 1,
+          "positionId": "P01"
+        },
+        "layers": [
+          {
+            "id": "1.1",
+            "typeIndex": 0,
+            "name": "A",
+            "identifier": "",
+            "length": 1,
+            "width": 1,
+            "height": 1,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 1,
+            "x": 0,
+            "y": 0,
+            "rotated": false,
+            "layoutIndex": 0,
+            "originalLength": 1,
+            "originalWidth": 1,
+            "footprintLength": 1,
+            "footprintWidth": 1,
+            "layer": 1,
+            "positionId": "P01"
+          },
+          {
+            "id": "1.2",
+            "typeIndex": 0,
+            "name": "A",
+            "identifier": "",
+            "length": 1,
+            "width": 1,
+            "height": 1,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 2,
+            "layer": 2,
+            "rotated": false,
+            "originalLength": 1,
+            "originalWidth": 1,
+            "x": 0,
+            "y": 0,
+            "positionId": "P01"
+          }
+        ],
+        "height": 2,
+        "positionId": "P01"
+      }
+    ],
+    "floorPlacedCount": 1,
+    "stackedCount": 1,
+    "maxLayersUsed": 2,
+    "mixedGroupStacks": 0
+  },
+  "bad": {
+    "mode": "mixed",
+    "input": {
+      "mode": "mixed",
+      "advancedStacking": true,
+      "quantity": 2,
+      "gap": 0,
+      "verticalGap": 0,
+      "types": [
+        {
+          "typeIndex": 0,
+          "name": "A",
+          "quantity": 2,
+          "length": 1,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "auto",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 2,
+          "allowedAbove": [
+            0
+          ]
+        }
+      ]
+    },
+    "container": {
+      "id": "box",
+      "innerLength": 1,
+      "innerWidth": 1,
+      "innerHeight": 2,
+      "doorWidth": 1,
+      "doorHeight": 2
+    },
+    "layout": {
+      "mode": "mixed",
+      "type": "pallet misti omogenei · motore single",
+      "count": 1,
+      "rects": [
+        {
+          "id": "1.1",
+          "typeIndex": 0,
+          "name": "A",
+          "identifier": "",
+          "length": 1,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "auto",
+          "lockedOrientation": "normal",
+          "unitNo": 1,
+          "x": 0,
+          "y": 0,
+          "rotated": false,
+          "layoutIndex": 0,
+          "originalLength": 1,
+          "originalWidth": 1,
+          "footprintLength": 1,
+          "footprintWidth": 1,
+          "positionId": "P01"
+        }
+      ],
+      "materializedCount": 1,
+      "truncated": false,
+      "unplaced": [],
+      "usedLength": 1,
+      "usedWidth": 1,
+      "orderingName": "ponte omogeneo deterministico",
+      "score": {
+        "placedCount": 1,
+        "placedArea": 1,
+        "compactness": 1,
+        "usedLength": 1,
+        "usedWidth": 1
+      }
+    },
+    "layers": 1,
+    "floorCapacity": 1,
+    "totalCapacity": 2,
+    "totalItems": 2,
+    "placedCount": 2,
+    "allPlaced": true,
+    "fitsQtyBySpace": true,
+    "advancedStacking": true,
+    "stacks": [
+      {
+        "rect": {
+          "id": "1.1",
+          "typeIndex": 0,
+          "name": "A",
+          "identifier": "",
+          "length": 1,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "auto",
+          "lockedOrientation": "normal",
+          "unitNo": 1,
+          "x": 1,
+          "y": 0,
+          "rotated": false,
+          "layoutIndex": 0,
+          "originalLength": 1,
+          "originalWidth": 1,
+          "footprintLength": 1,
+          "footprintWidth": 1,
+          "positionId": "P01"
+        },
+        "layers": [
+          {
+            "id": "1.1",
+            "typeIndex": 0,
+            "name": "A",
+            "identifier": "",
+            "length": 1,
+            "width": 1,
+            "height": 1,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 1,
+            "x": 1,
+            "y": 0,
+            "rotated": false,
+            "layoutIndex": 0,
+            "originalLength": 1,
+            "originalWidth": 1,
+            "footprintLength": 1,
+            "footprintWidth": 1,
+            "layer": 1,
+            "positionId": "P01"
+          },
+          {
+            "id": "1.2",
+            "typeIndex": 0,
+            "name": "A",
+            "identifier": "",
+            "length": 1,
+            "width": 1,
+            "height": 1,
+            "rotationMode": "auto",
+            "lockedOrientation": "normal",
+            "unitNo": 2,
+            "layer": 2,
+            "rotated": false,
+            "originalLength": 1,
+            "originalWidth": 1,
+            "x": 1,
+            "y": 0,
+            "positionId": "P01"
+          }
+        ],
+        "height": 2,
+        "positionId": "P01"
+      }
+    ],
+    "floorPlacedCount": 1,
+    "stackedCount": 1,
+    "maxLayersUsed": 2,
+    "mixedGroupStacks": 0,
+    "validation": {
+      "valid": true,
+      "internalError": false,
+      "okDoor": true,
+      "okHeight": true,
+      "errors": [],
+      "accessFailures": [],
+      "heightFailures": [],
+      "minDoorWidthMargin": 0,
+      "minDoorHeightMargin": 1
+    },
+    "validationError": false,
+    "ok": true
+  },
+  "productionValidation": {
+    "valid": true,
+    "general": {
+      "valid": true,
+      "internalError": false,
+      "okDoor": true,
+      "okHeight": true,
+      "errors": [],
+      "accessFailures": [],
+      "heightFailures": [],
+      "minDoorWidthMargin": 0,
+      "minDoorHeightMargin": 1
+    },
+    "advanced": {
+      "valid": true,
+      "errors": []
+    }
+  },
+  "independent": {
+    "valid": false,
+    "errors": [
+      {
+        "code": "STACK_FLOOR_COPY_MISMATCH",
+        "detail": "x"
+      }
+    ],
+    "placed": 2,
+    "floor": 1
+  },
+  "operational": {
+    "printAvailable": true,
+    "overview": [
+      {
+        "id": "1.1",
+        "typeIndex": 0,
+        "name": "A",
+        "identifier": "",
+        "length": 1,
+        "width": 1,
+        "height": 1,
+        "rotationMode": "auto",
+        "lockedOrientation": "normal",
+        "unitNo": 1,
+        "x": 1,
+        "y": 0,
+        "rotated": false,
+        "layoutIndex": 0,
+        "originalLength": 1,
+        "originalWidth": 1,
+        "footprintLength": 1,
+        "footprintWidth": 1,
+        "positionId": "P01",
+        "stackCount": 2
+      }
+    ],
+    "layer2": [
+      {
+        "id": "1.2",
+        "typeIndex": 0,
+        "name": "A",
+        "identifier": "",
+        "length": 1,
+        "width": 1,
+        "height": 1,
+        "rotationMode": "auto",
+        "lockedOrientation": "normal",
+        "unitNo": 2,
+        "layer": 2,
+        "rotated": false,
+        "originalLength": 1,
+        "originalWidth": 1,
+        "x": 1,
+        "y": 0,
+        "positionId": "P01"
+      }
+    ]
+  },
+  "qualification": "Injected result mutation; not observed as natural solver output"
+}

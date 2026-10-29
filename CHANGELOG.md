@@ -2,6 +2,28 @@
 
 All notable project changes are documented here.
 
+## [1.5.0] — Unreleased candidate (C4a)
+
+### Added and corrected in the v1.5.0 candidate
+
+- Advanced Stacking for mixed pallet groups, explicit stacks/layers, stacking roles and allowed-above compatibility, with geometric validation and operational print detail.
+- Browser-local computation core and Worker with fallback/inline execution, job cancellation and result provenance checks.
+- Geometry, capacity, operational eligibility and print consistency corrections covered by the preserved C1–C4 evidence, including truncated capacity handling and rejection of stale-input prints.
+- Localized UI and operational printing in all seven enabled languages, with offline HTML/ZIP generated from the same candidate.
+
+### C4a final polish
+
+- Updated current documentation and standalone references to v1.5.0, explicitly pending independent delta verification and manual approval.
+- Corrected print context for single floor/multilayer, mixed floor-only and Advanced with/without actual stacks; retained physical stability, tolerances, securing, rear-loading and unimplemented weight/balance/side-loading warnings.
+- Removed the unit-label overlap at tablet widths with a scoped responsive CSS change.
+- Associated the localized vehicle caption with the preview vehicle selector's accessible name.
+
+### Known limits and publication status
+
+- S02 remains an accepted MINOR in the controlled mutation/restore sequence documented by C4; it is not fixed here.
+- Geometric heuristic estimates do not certify physical loading safety or optimality. Dense PDF and extreme fallback performance limitations remain documented.
+- No publication date, approval, tag, deployment or GitHub Release is asserted. Independent verification of the C3j→C4a delta and manual approval remain required.
+
 ## [1.3.5] — 2026-08-28
 
 ### Changed

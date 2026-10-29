@@ -1,9 +1,15 @@
-# Deployment
+# Candidate verification and future deployment — v1.5.0 C4a
 
-## Prerequisites
+This is an unpublished candidate. Independent verification of the C3j→C4a delta and manual approval are required before any publication. These instructions prepare a possible future deployment; they do not record an approval, deployment, release date or Git tag.
 
-Repository and distribution checks use Node.js 22.17.0 with npm 11.9.0.
-Serving the already generated static site does not require a Node runtime.
+## Prerequisites and clean verification
+
+Use Node.js matching `^22.17.0 || >=24.0.0`, npm 11.9.0, Python 3, and Linux for the pinned Chromium build/test launcher. Node 24.22.1 was used in C3j/C4. Poppler is needed to inspect PDF evidence. Installing development dependencies requires access to the npm registry or a complete cache; offline operation refers to the generated application.
+
+1. Verify the external SHA-256 list and package-verification JSON against the exact C4a artifacts. Do not mix identically named files from earlier candidates.
+2. Extract delivery and QA into separate clean directories. Check ZIP CRC and the internal `SHA256SUMS-v1.5.0.txt`; delivery additionally contains `DELIVERY_MANIFEST-v1.5.0.txt` with sizes and hashes.
+3. From the delivery directory, run `npm ci` and `npm run build` to rebuild the static candidate.
+4. From each clean QA directory, run `npm ci` and `npm test`. The targeted `npm run test:c4a` is included in the complete suite. Retain logs and exit codes; previous C4 evidence is historical, not a new C4a execution.
 
 ```bash
 node --version
@@ -12,57 +18,22 @@ npm ci
 npm test
 ```
 
-The expected baseline is `v22.17.0` and `11.9.0`. Node versions matching
-`^22.17.0 || >=24.0.0` are declared compatible, but the private stable
-validation and GitHub workflows use exactly 22.17.0.
+Serve the generated site locally with `python3 -m http.server 8000 --directory site`. Inspect `http://127.0.0.1:8000/`, seven languages, light/dark themes, mobile/desktop, vehicle selection, units, side/ramp preview, and colour/B&W print. Check single one/two/three layers, mixed floor-only and Advanced with/without actual stacks. Verify localized context and safety notes in the actual print HTML/PDF.
 
-## Cloudflare Pages preview
+Current offline artifacts are `site/downloads/loadcomposer-v1.5.0-standalone.html` and `site/downloads/loadcomposer-v1.5.0-standalone.zip`, each with a `.sha256` sidecar. Verify the ZIP's internal `SHA256SUMS.txt`, then open both the HTML and extracted ZIP HTML using `file://` with the network disabled. Keep historical downloads intact.
 
-Allow the existing Pages project to deploy `v1.3.0` only after the controlled
-repository push and both GitHub workflows have completed successfully.
+## Future static hosting, only after approval
 
 | Setting | Value |
 |---|---|
 | Framework preset | None |
 | Root directory | Repository root |
-| Build command | Leave blank |
+| Build command | Leave blank when serving verified prebuilt output |
 | Build output directory | `site` |
-| Production branch | The repository default branch |
+| Production branch | The repository default branch, selected during the approved publication |
 
-Cloudflare serves the committed output in `site/`; it does not need to rebuild
-the application. Verify both the existing `pages.dev` address and
-`loadcomposer.com` after deployment. Do not change DNS, the domain attachment,
-or the apex/`www` redirect as part of the stable promotion.
+Cloudflare Pages can serve the verified `site/` output. Other hosts must translate `_headers` and `_redirects` to their native configuration. Review the same-origin CSP, redirects, preview non-indexing, `robots.txt`, `sitemap.xml`, legal pages and downloads. Existing hostnames are verification targets after a separately authorized deployment, not evidence that this candidate is online. Do not change DNS or domain settings as part of this verification.
 
-`site/_headers` applies a same-origin content-security policy and related
-response headers. Inline scripts and styles are required by the canonical
-single-page application. `site/_redirects` canonicalizes `/index.html` to `/`.
-Preview deployments are marked non-indexable by the host-specific rules in
-`_headers`.
+S02 remains ACCEPT within the C4 controlled mutation/restore sequence, not resolved. Preserve the documented limits on geometric heuristics, weight/balance, physical stability, securing, tolerances, rear loading, dense PDFs and extreme-case responsiveness. C4a does not certify other browsers, physical devices or printers.
 
-## Preview verification
-
-Follow [CLOUDFLARE_PREVIEW_CHECKLIST.md](CLOUDFLARE_PREVIEW_CHECKLIST.md).
-At minimum, verify:
-
-- `/` in all seven enabled languages and both themes;
-- `/legal/` and all seven public legal documents;
-- `/downloads/`;
-- `/downloads/loadcomposer-v1.3.0-standalone.html` and `.zip`;
-- both v1.3.0 `.sha256` sidecars and retained v1.0.0/v1.1.0/v1.2.0/v1.2.1 artifacts;
-- response headers, CSP, redirect behavior, `robots.txt`, and `sitemap.xml`;
-- desktop and mobile layouts;
-- colour and black-and-white print;
-- extraction and checksum verification of the standalone ZIP;
-- offline `file://` use of the packaged HTML; and
-- absence of external scripts, fonts, analytics, trackers, and other remote
-  runtime resources.
-
-## Other static hosts
-
-Serve the contents of `site/` as the document root. Translate `_headers` and
-`_redirects` to the host’s native configuration where necessary. Production
-metadata intentionally points to `https://loadcomposer.com/`.
-
-No deployment, repository push, DNS mutation, domain attachment, or Cloudflare
-account change is performed by this release bundle.
+No repository push, deployment, publication, DNS change, tag or GitHub Release is performed by this candidate. After independent delta verification, obtain manual approval before deciding whether and when to publish.

@@ -1,0 +1,57 @@
+{
+  "id": "C1G00034",
+  "container": {
+    "id": "synthetic-C1G00034",
+    "name": "Audit synthetic",
+    "innerLength": 1100,
+    "innerWidth": 300,
+    "innerHeight": 2400,
+    "doorWidth": 300,
+    "doorHeight": 2400,
+    "accessKnown": true
+  },
+  "input": {
+    "mode": "mixed",
+    "advancedStacking": true,
+    "types": [
+      {
+        "typeIndex": 0,
+        "presetId": "custom",
+        "name": "Article 0",
+        "identifier": "ID-0",
+        "quantity": 7,
+        "length": 100,
+        "width": 100,
+        "height": 1000,
+        "rotationMode": "auto",
+        "lockedOrientation": "rotated",
+        "stackingEnabled": true,
+        "stackRole": "base",
+        "maxLayers": 3,
+        "allowedAbove": [
+          0,
+          1
+        ]
+      },
+      {
+        "typeIndex": 1,
+        "presetId": "custom",
+        "name": "Article 1",
+        "identifier": "ID-1",
+        "quantity": 3,
+        "length": 200,
+        "width": 400,
+        "height": 1100,
+        "rotationMode": "locked",
+        "lockedOrientation": "normal",
+        "stackingEnabled": true,
+        "stackRole": "top",
+        "maxLayers": 1,
+        "allowedAbove": []
+      }
+    ],
+    "quantity": 10,
+    "gap": 50,
+    "verticalGap": 5
+  }
+}

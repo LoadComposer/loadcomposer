@@ -1,0 +1,223 @@
+{
+  "test": {
+    "input": {
+      "mode": "mixed",
+      "advancedStacking": true,
+      "quantity": 2,
+      "gap": 0,
+      "verticalGap": 0,
+      "types": [
+        {
+          "typeIndex": 0,
+          "name": "G0",
+          "quantity": 1,
+          "length": 2,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "locked",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 1,
+          "allowedAbove": [
+            1
+          ]
+        },
+        {
+          "typeIndex": 1,
+          "name": "G1",
+          "quantity": 1,
+          "length": 2,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "locked",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 2,
+          "allowedAbove": []
+        }
+      ]
+    },
+    "container": {
+      "id": "box",
+      "innerLength": 2,
+      "innerWidth": 1,
+      "innerHeight": 4,
+      "doorWidth": 1,
+      "doorHeight": 4
+    }
+  },
+  "result": {
+    "mode": "mixed",
+    "input": {
+      "mode": "mixed",
+      "advancedStacking": true,
+      "quantity": 2,
+      "gap": 0,
+      "verticalGap": 0,
+      "types": [
+        {
+          "typeIndex": 0,
+          "name": "G0",
+          "quantity": 1,
+          "length": 2,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "locked",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 1,
+          "allowedAbove": [
+            1
+          ]
+        },
+        {
+          "typeIndex": 1,
+          "name": "G1",
+          "quantity": 1,
+          "length": 2,
+          "width": 1,
+          "height": 1,
+          "rotationMode": "locked",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "any",
+          "maxLayers": 2,
+          "allowedAbove": []
+        }
+      ]
+    },
+    "container": {
+      "id": "box",
+      "innerLength": 2,
+      "innerWidth": 1,
+      "innerHeight": 4,
+      "doorWidth": 1,
+      "doorHeight": 4
+    },
+    "advancedStacking": true,
+    "layout": {
+      "mode": "mixed",
+      "count": 1,
+      "materializedCount": 1,
+      "truncated": false,
+      "rects": [
+        {
+          "id": "1.1",
+          "typeIndex": 0,
+          "unitNo": 1,
+          "length": 2,
+          "width": 1,
+          "originalLength": 2,
+          "originalWidth": 1,
+          "height": 1,
+          "rotated": false,
+          "x": 0,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P01"
+        }
+      ],
+      "unplaced": [],
+      "usedLength": 2,
+      "usedWidth": 1
+    },
+    "stacks": [
+      {
+        "rect": {
+          "id": "1.1",
+          "typeIndex": 1,
+          "unitNo": 1,
+          "length": 2,
+          "width": 1,
+          "originalLength": 2,
+          "originalWidth": 1,
+          "height": 1,
+          "rotated": false,
+          "x": 0,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P01"
+        },
+        "layers": [
+          {
+            "id": "1.1",
+            "typeIndex": 0,
+            "unitNo": 1,
+            "length": 2,
+            "width": 1,
+            "originalLength": 2,
+            "originalWidth": 1,
+            "height": 1,
+            "rotated": false,
+            "x": 0,
+            "y": 0,
+            "layer": 1,
+            "positionId": "P01"
+          },
+          {
+            "id": "2.1",
+            "typeIndex": 1,
+            "unitNo": 1,
+            "length": 2,
+            "width": 1,
+            "originalLength": 2,
+            "originalWidth": 1,
+            "height": 1,
+            "rotated": false,
+            "x": 0,
+            "y": 0,
+            "layer": 2,
+            "positionId": "P01"
+          }
+        ],
+        "height": 2,
+        "positionId": "P01"
+      }
+    ],
+    "placedCount": 2,
+    "floorPlacedCount": 1,
+    "stackedCount": 1,
+    "maxLayersUsed": 2,
+    "mixedGroupStacks": 1,
+    "totalItems": 2,
+    "totalCapacity": 2,
+    "floorCapacity": 1,
+    "allPlaced": true
+  },
+  "independent": {
+    "valid": false,
+    "errors": [
+      {
+        "code": "STACK_FLOOR_COPY_MISMATCH",
+        "detail": "typeIndex"
+      },
+      {
+        "code": "MAX_LAYERS",
+        "detail": "1.1"
+      }
+    ],
+    "placed": 2,
+    "floor": 1
+  },
+  "production": {
+    "valid": true,
+    "general": {
+      "valid": true,
+      "internalError": false,
+      "okDoor": true,
+      "okHeight": true,
+      "errors": [],
+      "accessFailures": [],
+      "heightFailures": [],
+      "minDoorWidthMargin": 0,
+      "minDoorHeightMargin": 3
+    },
+    "advanced": {
+      "valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,8 @@
+export function performanceCases(){
+ const specs=[['identical',2,'dense','normal'],['heterogeneous',20,'dense','mixed'],['many-small-groups',100,'dense','normal'],['sparse',50,'sparse','normal'],['directional-chain',50,'chain','normal'],['deep-50',50,'dense','deep'],['deep-500',500,'dense','deep'],['equivalent-rotations',30,'dense','square'],['near-limits',25,'dense','near'],['few-fit',100,'sparse','few'],['no-complete',20,'sparse','mixed'],['off-500-groups',500,'off','normal']];
+ return specs.map(([id,n,compat,shape])=>{const c={id:'perf-'+id,innerLength:shape==='deep'?100:13600,innerWidth:shape==='deep'?100:2450,innerHeight:shape==='deep'?5000:2800,doorWidth:shape==='deep'?100:2450,doorHeight:shape==='deep'?5000:2800,accessKnown:true};
+  const types=Array.from({length:n},(_,g)=>({typeIndex:g,name:`Perf ${g}`,identifier:`P${g}`,quantity:Math.floor(500/n)+(g<500%n?1:0),length:shape==='deep'?100:shape==='square'?500:shape==='near'?13590:shape==='few'?14000:(shape==='mixed'?800+(g%5)*100:1200),width:shape==='deep'?100:shape==='square'?500:shape==='near'?1200:shape==='few'?2500:(shape==='mixed'?500+(g%7)*100:800),height:shape==='deep'?5:shape==='mixed'?200+(g%9)*100:600,
+   rotationMode:shape==='near'?'locked':'auto',lockedOrientation:'normal',stackingEnabled:compat!=='off',stackRole:'any',maxLayers:shape==='deep'?500:6,
+   allowedAbove:Array.from({length:n},(_,j)=>j).filter(j=>compat==='dense'||compat==='chain'&&j===g+1||compat==='sparse'&&(j===g||j===(g+7)%n))}));
+  return {id,container:c,input:{mode:'mixed',advancedStacking:true,quantity:500,types,gap:shape==='near'?1:0,verticalGap:shape==='deep'?0:5}};});
+}

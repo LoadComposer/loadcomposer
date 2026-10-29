@@ -1,0 +1,14 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';
+import {launchBrowser} from '../scripts/browser-runtime.mjs';import {setup} from '../provenance-c3j-v1.5.0/tools/setup.mjs';
+const root=path.resolve(import.meta.dirname,'..'),browser=await launchBrowser(root),rows=[];
+try{for(const mode of ['worker','fallback','inline']){const cx=await browser.newContext();await cx.setOffline(true);if(mode==='fallback')await cx.addInitScript(()=>Worker=undefined);const p=await cx.newPage();await p.goto('file://'+root+'/site/downloads/loadcomposer-v1.5.0-standalone.html');await p.waitForFunction(()=>document.documentElement.dataset.i18nReady==='true');
+await setup(p,{quantity:mode==='inline'?4:31,groups:2,stack:true,maxLayers:3,length:900,width:600,height:600});
+const data=await p.evaluate(async()=>{window.__docs=[];printDocumentInFrame=html=>__docs.push(html);window.alert=()=>{};calculate();await loadComposerComputation.whenIdle();let valid=[];
+for(let index=0;index<lastResults.length;index++){els.drawSelect.value=String(index);drawSelected();const r=lastResults[index],before=__docs.length;els.printLayoutBtn.click();const html=__docs.at(-1)||'';valid.push({index,id:r.container.id,ok:r.ok,delta:__docs.length-before,title:html.match(/<title>(.*?)<\/title>/)?.[1],expectedTitle:escapeHtml(resultPrintTitle(r)),dimensions:formatLengthDimensions([r.container.innerLength,r.container.innerWidth,r.container.innerHeight]),dimensionPresent:html.includes(escapeHtml(formatLengthDimensions([r.container.innerLength,r.container.innerWidth,r.container.innerHeight])))});}
+let index=lastResults.findIndex(r=>r.ok);els.drawSelect.value=String(index);drawSelected();const healthy=lastResults[index];const frozen={input:Object.isFrozen(healthy.input),types:Object.isFrozen(healthy.input.types),type:Object.isFrozen(healthy.input.types[0]),container:Object.isFrozen(healthy.container)};
+// Compatibility changes are read from live controls at the final boundary.
+allGroupElements()[0].dataset.allowedAbove='[]';const before=__docs.length;printCurrentLayout();const compatibility={newDocuments:__docs.length-before,disabled:els.printLayoutBtn.disabled};
+return {valid,frozen,compatibility,documents:__docs};});
+assert.equal(data.valid.length,12);assert.ok(data.valid.every(r=>r.delta===Number(r.ok)&&(!r.ok||r.title===r.expectedTitle&&r.dimensionPresent)));assert.ok(Object.values(data.frozen).every(Boolean));assert.equal(data.compatibility.newDocuments,0);assert.equal(data.compatibility.disabled,true);
+for(let j=0;j<data.documents.length;j++)fs.writeFileSync(root+`/provenance-c3j-v1.5.0/results/selected-${mode}-${j}.html`,data.documents[j]);delete data.documents;rows.push({mode,...data});await cx.close();}
+fs.writeFileSync(root+'/provenance-c3j-v1.5.0/results/documents.json',JSON.stringify({rows},null,2));console.log('C3j documents PASS',rows.length*12,'vehicle selections');}finally{await browser.close();}

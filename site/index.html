@@ -1955,8 +1955,12 @@
 
     .switch-control input {
       position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       opacity: 0;
-      pointer-events: none;
+      cursor: pointer;
+      z-index: 1;
     }
 
     .switch-track {
@@ -3822,10 +3826,19 @@
     #planner .picker-menu { position: fixed; right: auto; z-index: 30; }
     #planner .load-settings-band { display: grid; gap: 12px; }
     #planner .load-settings-band > h2 { margin: 0; align-self: center; }
-    #planner .general-settings-grid { align-items: end; }
-    #planner .general-settings-grid > label, #planner .unit-preference { margin: 0; }
+    #planner .general-settings-grid {
+      display: grid;
+      grid-template-columns: 229px repeat(2, 180px);
+      align-items: stretch;
+      justify-content: start;
+      gap: 12px 22px;
+    }
+    #planner .general-settings-grid > label { display: grid; grid-template-rows: minmax(0, 1fr) var(--planner-control-height); gap: var(--planner-label-gap); min-width: 0; margin: 0; }
+    #planner .general-settings-grid > label.hidden { display: none; }
+    #planner .general-settings-grid > label .measurement-input { width: 100%; }
+    #planner .unit-preference { position: relative; display: flex; align-items: end; margin: 0; }
     #planner .general-settings-grid > label > span:first-child { margin: 0; line-height: 1.4; }
-    #planner .unit-preference legend { margin: 0 0 var(--planner-label-gap); line-height: 1.4; }
+    #planner .unit-preference legend { position: absolute; top: 0; left: 0; margin: 0; line-height: 1.4; }
     #planner .unit-preference { width: 229px; flex: 0 0 229px; }
     #planner .unit-segments { box-sizing: border-box; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); width: 100%; height: var(--planner-control-height); min-height: 0; padding: 3px; }
     #planner .unit-option, #planner .unit-option span { width: 100%; min-height: 0; height: 36px; padding: 0; }
@@ -3837,7 +3850,7 @@
     #planner .stacking-toggle[aria-disabled="true"] .checkline { pointer-events: none; }
     #planner .stacking-tooltip { background: var(--lc-tooltip-bg); color: var(--lc-tooltip-text); border-radius: 5px; padding: 8px 10px; font-size: 12px; line-height: 1.4; }
     #planner .group-body { display: flex; flex-direction: column; align-items: stretch; gap: var(--planner-row-gap); }
-    #planner .group-top-grid { display: grid; grid-template-columns: minmax(240px,350px) 90px 145px minmax(180px,1fr) minmax(220px,260px); gap: var(--planner-label-gap) 18px; align-items: start; }
+    #planner .group-top-grid { display: grid; grid-template-columns: minmax(220px,320px) 80px 180px minmax(150px,1fr) minmax(210px,235px); gap: var(--planner-label-gap) 14px; align-items: start; }
     #planner .group-top-grid > * { display: grid; grid-template-rows: subgrid; grid-row: span 2; grid-column: auto; gap: var(--planner-label-gap); min-width: 0; margin: 0; padding: 0; }
     #planner .group-top-grid > :first-child { grid-column: auto; }
     #planner .identifier-field > span:first-child { gap: 3px; flex-wrap: wrap; }
@@ -3897,6 +3910,14 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+    /* C4c U02: keep group actions reachable and summaries fully readable. */
+    #planner .pallet-group, #planner .mixed-list, #planner .group-body { min-width: 0; max-width: 100%; }
+    #planner .group-heading { display: grid; grid-template-columns: minmax(0,1fr) auto; }
+    #planner .group-disclosure { min-width: 0; max-width: 100%; }
+    #planner .group-heading-copy { min-width: 0; overflow-wrap: anywhere; }
+    #planner .group-heading-copy > strong { max-width: 100%; }
+    #planner .group-summary { white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }
+
     #planner .picker-button {
       color: var(--lc-text);
       background: var(--lc-control-bg);
@@ -3965,17 +3986,46 @@
     #planner .pallets-heading-copy > h2 { margin: 0; }
     #planner .pallets-heading-copy > .sub { margin: 0; padding: 0; }
     #planner .pallets-section-heading + #singleModeForm { margin-top: 14px; }
+    #planner .group-top-grid > .group-options { display: flex; flex-direction: column; gap: 2px; justify-content: center; align-self: start; min-height: 69px; }
+    #planner .group-options .rotation-box, #planner .group-options .advanced-stack-settings { display: block; margin: 0; padding: 0; border: 0; background: transparent; min-width: 0; }
+    #planner .group-options .rotation-row, #planner .group-options .rotation-copy { display: flex; align-items: center; min-width: 0; }
+    #planner .group-options .rotation-row, #planner .group-options .stack-switch-row { justify-content: space-between; gap: 8px; min-height: 32px; }
+    #planner .group-options .rotation-copy strong, #planner .group-options .stack-switch-row > span { font-size: 13px; line-height: 1.25; font-weight: 600; color: var(--lc-text-secondary); }
+    #planner .group-options .switch-control { height: 32px; margin: 0; flex: 0 0 48px; }
+    #planner .group-options .switch-track { inset: 2px 0 3px; margin: 0; }
+    #planner .group-options .rotation-box .orientation-summary, #planner .group-options .rotation-box .square-note { margin: 2px 0 0; }
+    #planner .advanced-stack-settings .stack-switch-row { display: flex; align-items: center; cursor: pointer; }
+    #planner .advanced-stack-panel { display: grid; gap: 8px; padding: 10px 0 0; border-top: 1px solid var(--lc-border-strong); }
+    #planner .advanced-stack-panel.hidden { display: none; }
+    #planner .stack-role-row { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 18px; }
+    #planner .stack-role-row > label { display: grid; gap: 5px; min-width: 0; }
+    #planner .stack-role-row select { width: min(280px, 100%); height: 40px; }
+    #planner .stack-role-row .layers-setting { margin: 0; }
+    #planner .stack-role-row .layers-setting input { width: 78px; height: 40px; }
+    #planner .advanced-stack-detail { --stack-detail-gap: 6px; display: grid; gap: var(--stack-detail-gap); }
+    #planner .stack-help { color: var(--lc-text-secondary); font-size: 12px; line-height: 1.35; margin: 0; }
+    #planner .allowed-above-heading { font-size: 13px; margin-top: var(--stack-detail-gap); }
+    #planner .allowed-above-list { display: flex; gap: 8px; flex-wrap: wrap; }
+    #planner .allowed-above-list label.filter-chip { display: inline-flex; align-items: center; gap: 8px; min-width: 125px; width: auto; max-width: none; white-space: nowrap; padding: 7px 11px; min-height: 40px; cursor: pointer; }
+    #planner .allowed-above-list input { accent-color: var(--lc-accent); width: 16px; height: 16px; flex: none; margin: 0; }
+    #planner .advanced-stack-detail.hidden, #planner #verticalGapSetting.hidden { display: none; }
     @media (min-width: 1400px) {
       #planner .load-settings-band { grid-template-columns: minmax(180px,200px) minmax(0,1fr); align-items: center; column-gap: 38px; }
-      #planner .general-settings-grid { flex-wrap: nowrap; }
     }
     @media (max-width: 1399px) {
       #planner .load-settings-band { grid-template-columns: minmax(0,1fr); }
     }
+    @media (max-width: 900px) {
+      #planner .general-settings-grid { grid-template-columns: minmax(190px,1fr) minmax(0,1fr); align-items: start; }
+      #planner .unit-preference { display: block; width: min(229px,100%); }
+      #planner .unit-preference legend { position: static; margin: 0 0 var(--planner-label-gap); }
+      #planner .general-settings-grid > label:has(#gap) { grid-column: 2; grid-row: 1; }
+      #planner #verticalGapSetting { grid-column: 2; grid-row: 2; }
+    }
     @media (max-width: 1199px) {
       #planner .group-top-grid { grid-template-columns: repeat(2,minmax(0,1fr)); row-gap: var(--planner-label-gap); }
       #planner .group-top-grid > * { margin-bottom: 5px; }
-      #planner .group-top-grid .rotation-box { grid-column: 1 / -1; }
+      #planner .group-top-grid .group-options { grid-column: auto; }
     }
     @media (max-width: 979px) {
       #planner .results-top-band { grid-template-columns: minmax(0,1fr); }
@@ -3986,7 +4036,10 @@
     @media (max-width: 599px) {
       #planner .group-top-grid { grid-template-columns: minmax(0,1fr); row-gap: var(--planner-label-gap); }
       #planner .group-top-grid > * { grid-column: 1; margin-bottom: 5px; }
-      #planner .general-settings-grid .unit-preference { width: 100%; flex-basis: 100%; }
+      #planner .general-settings-grid { grid-template-columns: minmax(0,1fr); }
+      #planner .general-settings-grid > label:has(#gap), #planner #verticalGapSetting { grid-column: auto; grid-row: auto; }
+      #planner .general-settings-grid .unit-preference { display: block; width: 100%; flex-basis: 100%; }
+      #planner .unit-preference legend { position: static; margin: 0 0 var(--planner-label-gap); }
       #planner .pallets-section-heading { align-items: stretch; }
       #planner .pallets-actions { width: 100%; }
       #planner .pallets-actions button { flex: 1 1 auto; }
@@ -4083,7 +4136,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.4.0</span>
+        <span class="app-version">v1.5.0</span>
       </div>
 
       <div class="header-controls">
@@ -4181,13 +4234,7 @@
                 <span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span>
               </span>
             </label>
-            <div id="singleStackBlock" class="stacking-setting">
-              <div id="stackingUnavailable" class="stacking-toggle" aria-controls="mixedStackNote" aria-expanded="false">
-                <label class="checkline"><input id="stackable" type="checkbox" aria-describedby="mixedStackNote"><span data-i18n="pallet.stackable">pallet.stackable</span></label>
-              </div>
-              <div id="mixedStackNote" class="hidden stacking-tooltip" role="tooltip" data-i18n="planner.stackingUnavailableTitle">planner.stackingUnavailableTitle</div>
-            </div>
-            <label class="layers-setting" title="pallet.maxLayersHelp" data-i18n-title="pallet.maxLayersHelp"><span data-i18n="pallet.maxLayers">pallet.maxLayers</span><input id="maxLayers" type="number" min="1" max="500" step="1" value="2" required disabled aria-describedby="maxLayersHelp"><span id="maxLayersHelp" class="visually-hidden" data-i18n="pallet.maxLayersHelp">pallet.maxLayersHelp</span></label>
+            <label id="verticalGapSetting" class="hidden"><span data-i18n="pallet.verticalGap">pallet.verticalGap</span><span class="measurement-input"><input id="verticalGap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0"><span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span></span></label>
           </div>
       </div>
     </section>
@@ -4203,7 +4250,7 @@
         </div>
       </div>
           <div id="singleModeForm">
-          <div id="singlePalletGroup" class="pallet-group" data-group-kind="single" data-expanded="true">
+          <div id="singlePalletGroup" class="pallet-group" data-row-id="single" data-group-kind="single" data-expanded="true" data-stack-role="any">
             <div class="group-heading">
               <button class="group-disclosure" type="button" data-action="toggleGroup" aria-expanded="true" aria-controls="group_1_body">
                 <span class="group-disclosure-icon" aria-hidden="true">▾</span>
@@ -4286,6 +4333,12 @@
               </label>
             </div>
 
+            <div id="singleStackBlock" class="advanced-stack-settings" data-role="stackSettings">
+              <label class="stack-switch-row"><span data-i18n="advanced.stacking">advanced.stacking</span><span class="switch-control"><input id="stackable" data-field="stackingEnabled" type="checkbox"><span class="switch-track"></span></span></label>
+              <label class="layers-setting" title="pallet.maxLayersHelp" data-i18n-title="pallet.maxLayersHelp"><span data-i18n="pallet.maxLayers">pallet.maxLayers</span><input id="maxLayers" data-field="stackMaxLayers" type="number" min="1" max="500" step="1" value="2" disabled aria-describedby="maxLayersHelp"><span id="maxLayersHelp" class="visually-hidden" data-i18n="pallet.maxLayersHelp">pallet.maxLayersHelp</span></label>
+              <div class="advanced-stack-detail hidden" data-role="stackDetail"></div>
+            </div>
+
               <div class="orientation-panel hidden" data-role="orientationPanel">
                 <strong data-i18n="rotation.chooseRequired">rotation.chooseRequired</strong>
                 <div class="orientation-grid">
@@ -4356,7 +4409,8 @@
 
         </div>
         <div class="tablewrap">
-          <table class="results-table">
+          <p id="calculationStatus" class="small hidden" role="status" aria-live="polite"></p>
+            <table class="results-table">
             <colgroup><col><col><col><col><col></colgroup>
             <thead>
               <tr>
@@ -4381,8 +4435,8 @@
             <h3 class="visually-hidden" data-i18n="preview.title">preview.title</h3>
             <div class="draw-actions">
               <div class="select-inline">
-                <span data-i18n="preview.display">preview.display</span>
-                <select id="drawSelect"></select>
+                <span id="drawSelectLabel" data-i18n="preview.display">preview.display</span>
+                <select id="drawSelect" aria-labelledby="drawSelectLabel"></select>
               </div>
               <div class="select-inline">
                 <span data-i18n="preview.view">preview.view</span>
@@ -4391,6 +4445,8 @@
                   <option value="ramp" data-i18n="preview.ramp">preview.ramp</option>
                 </select>
               </div>
+              <div class="select-inline hidden" id="stackViewControl"><span data-i18n="advanced.previewLayer">advanced.previewLayer</span><select id="stackView"></select></div>
+              <div class="select-inline hidden" id="printDetailControl"><span data-i18n="advanced.printDetail">advanced.printDetail</span><select id="printDetail"><option value="standard" data-i18n="advanced.printStandard">advanced.printStandard</option><option value="layers" data-i18n="advanced.printLayers">advanced.printLayers</option><option value="complete" data-i18n="advanced.printComplete">advanced.printComplete</option></select></div>
               <label class="print-toggle" title="preview.bwTitle" data-i18n-title="preview.bwTitle">
                 <input id="printBw" type="checkbox">
                 <span data-i18n="preview.bw">preview.bw</span>
@@ -4408,7 +4464,7 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-note" data-i18n="footer.note">Note: this tool performs an indicative geometry check and does not replace operational verification with the freight forwarder or checks relating to packaging, load securing, safety, pallet bulging, actual vehicle tolerances, and operating constraints. This version calculates floor-level arrangements for rear loading. Weight, load balance, and side loading are not yet included.</div>
+    <div class="footer-note" data-i18n="footer.note">Note: this tool performs an indicative geometry check and does not replace operational verification with the freight forwarder or checks relating to packaging, load securing, safety, pallet bulging, actual vehicle tolerances, and operating constraints. This version plans rear loading; stacking follows the pallet-group settings. Weight, load balance, and side loading are not yet included.</div>
     <nav
       class="footer-links"
       aria-label="footer.linksAria"
@@ -4483,6 +4539,11 @@
     </div>
   </footer>
 
+  <script src="./advanced-stacking-engine.js"></script>
+  <script src="./advanced-stacking-validator.js"></script>
+  <script src="./computation-core.js"></script>
+  <script src="./computation-worker-source.js"></script>
+  <script src="./computation-runtime.js"></script>
   <script id="loadcomposer-application">
     /*
      * Fonti dimensionali verificate il 23/07/2026:
@@ -4815,6 +4876,12 @@
     const MIXED_ORIENTATION_SEARCH_CACHE_LIMIT = 96;
 
     let lastResults = [];
+    const renderedOperationalState = new WeakMap();
+    function operationalPresentationKey(result) {
+      return [result.ok, result.validationError, result.fitsQtyBySpace, result.allPlaced,
+        result.placedCount, result.unplacedCount, result.floorCapacity, result.totalCapacity,
+        result.layout?.count, result.loadLayers, result.stackedCount, result.maxLayersUsed].join();
+    }
     let lastCbmTotal = 0;
     let lastCalculationInput = null;
     let mixedRowCounter = 0;
@@ -4848,6 +4915,12 @@
       mixedStackNote: document.getElementById("mixedStackNote"),
       stackable: document.getElementById("stackable"),
       maxLayers: document.getElementById("maxLayers"),
+      verticalGap: document.getElementById("verticalGap"),
+      verticalGapSetting: document.getElementById("verticalGapSetting"),
+      stackView: document.getElementById("stackView"),
+      stackViewControl: document.getElementById("stackViewControl"),
+      printDetail: document.getElementById("printDetail"),
+      printDetailControl: document.getElementById("printDetailControl"),
       resetBtn: document.getElementById("resetBtn"),
       resultsBody: document.getElementById("resultsBody"),
       cbmTotal: document.getElementById("cbmTotal"),
@@ -5750,10 +5823,12 @@
     }
 
     function validateMixedReference(rect, types, seenReferences, errors, label) {
+      // Valid references need no localized diagnostic label.
+      const labelText = () => typeof label === "function" ? (label = label()) : label;
       if (!Number.isSafeInteger(rect.typeIndex) || rect.typeIndex < 0 || rect.typeIndex >= types.length) {
         errors.push(geometryIssue(
           "INVALID_PALLET_REFERENCE",
-          t("geometry.invalidPalletTypeIndex", { label })
+          t("geometry.invalidPalletTypeIndex", { label: labelText() })
         ));
         return null;
       }
@@ -5762,7 +5837,7 @@
       if (!Number.isSafeInteger(rect.unitNo) || rect.unitNo < 1 || rect.unitNo > type.quantity) {
         errors.push(geometryIssue(
           "INVALID_PALLET_REFERENCE",
-          t("geometry.invalidPalletUnit", { label })
+          t("geometry.invalidPalletUnit", { label: labelText() })
         ));
       }
 
@@ -5771,7 +5846,7 @@
         errors.push(geometryIssue(
           "INVALID_PALLET_REFERENCE",
           t("geometry.inconsistentReference", {
-            label,
+            label: labelText(),
             actual: String(rect.id),
             expected: expectedId
           })
@@ -5782,7 +5857,7 @@
         errors.push(geometryIssue(
           "DUPLICATE_PALLET_REFERENCE",
           t("geometry.duplicateReference", {
-            label,
+            label: labelText(),
             reference: String(rect.id)
           })
         ));
@@ -5792,6 +5867,84 @@
 
       return type;
     }
+
+    // The theoretical capacity and the loaded plan have separate witnesses.
+    // Check every materialized position in O(n log n), without changing it.
+    function singleCapacityRectsSeparated(rects, gap) {
+      if (rects.length < 2) return true;
+      const events = [], ordinates = [];
+      for (const rect of rects) {
+        const right = rect.x + rect.length + gap - GEOMETRY_EPSILON;
+        const top = rect.y + rect.width + gap - GEOMETRY_EPSILON;
+        events.push({ x: rect.x, delta: 1, low: rect.y, high: top });
+        events.push({ x: right, delta: -1, low: rect.y, high: top });
+        ordinates.push(rect.y, top);
+      }
+      const ys = [...new Set(ordinates)].sort((a, b) => a - b);
+      const indices = new Map(ys.map((value, index) => [value, index]));
+      const size = ys.length - 1;
+      const maximum = new Int32Array(size * 4), lazy = new Int32Array(size * 4);
+      function add(node, low, high, from, to, delta) {
+        if (from <= low && high <= to) {
+          maximum[node] += delta; lazy[node] += delta; return;
+        }
+        const middle = (low + high) >> 1;
+        if (from <= middle) add(node * 2, low, middle, from, to, delta);
+        if (to > middle) add(node * 2 + 1, middle + 1, high, from, to, delta);
+        maximum[node] = lazy[node] + Math.max(maximum[node * 2], maximum[node * 2 + 1]);
+      }
+      // End events first: exact contact at the permitted gap is not overlap.
+      events.sort((a, b) => a.x - b.x || a.delta - b.delta);
+      for (const event of events) {
+        add(1, 0, size - 1, indices.get(event.low), indices.get(event.high) - 1, event.delta);
+        if (maximum[1] > 1) return false;
+      }
+      return true;
+    }
+
+    const singleCapacityWitnessMatches = (() => {
+      // A private, bounded cache of canonical reconstructions, never of a
+      // positive validation flag or a reference supplied by a Worker.
+      const witnesses = new Map();
+      function canonical(container, pallet, gap) {
+        const key = JSON.stringify([container.innerLength, container.innerWidth,
+          pallet.length, pallet.width, gap, pallet.rotationMode, pallet.lockedOrientation]);
+        if (witnesses.has(key)) {
+          const value = witnesses.get(key); witnesses.delete(key); witnesses.set(key, value);
+          return value;
+        }
+        const found = bestLayout(container, pallet, gap, pallet.rotationMode, pallet.lockedOrientation);
+        // Retain only independent primitive copies of the witness fields.
+        const value = { count: found.count, usedLength: found.usedLength, usedWidth: found.usedWidth,
+          normal: found.orientationCounts.normal, rotated: found.orientationCounts.rotated,
+          rects: found.rects.map(({ x, y, length, width, rotated, layoutIndex }) =>
+            ({ x, y, length, width, rotated, layoutIndex })) };
+        if (witnesses.size >= 32) witnesses.delete(witnesses.keys().next().value);
+        witnesses.set(key, value); return value;
+      }
+      return (capacity, container, pallet, gap) => {
+        if (capacity.rects.length !== Math.min(capacity.count, MAX_LAYOUT_RECTS) ||
+            !capacity.rects.every((rect, index) => rect.layoutIndex === index) ||
+            !singleCapacityRectsSeparated(capacity.rects, gap)) return false;
+        if (!capacity.truncated && capacity.count > 0) {
+          return capacity.usedLength === Math.max(...capacity.rects.map(rect => rect.x + rect.length)) &&
+            capacity.usedWidth === Math.max(...capacity.rects.map(rect => rect.y + rect.width));
+        }
+        // A prefix alone cannot prove its full count. Reconstruct the original
+        // deterministic row/column capacity search from canonical dimensions.
+        // Mixed-orientation search is bounded at 500; truncated capacities are
+        // backed by the full arithmetic row/column plans, not an area bound.
+        // Empty plans also preserve the generator's legacy envelope metadata.
+        const expected = canonical(container, pallet, gap);
+        return capacity.count === expected.count && capacity.usedLength === expected.usedLength &&
+          capacity.usedWidth === expected.usedWidth &&
+          capacity.orientationCounts.normal === expected.normal &&
+          capacity.orientationCounts.rotated === expected.rotated &&
+          capacity.rects.length === expected.rects.length &&
+          capacity.rects.every((rect, index) => Object.keys(expected.rects[index]).every(
+            key => rect[key] === expected.rects[index][key]));
+      };
+    })();
 
     function validateResultGeometry(result) {
       const errors = [];
@@ -5818,7 +5971,8 @@
       const input = result.input;
       const layout = result.mode === "single" ? result.loadLayout : result.layout;
 
-      if (!container || !layout || !input || !Array.isArray(layout.rects)) {
+      if (!container || !layout || !input || !Array.isArray(layout.rects) ||
+          !["single", "mixed"].includes(result.mode) || input.mode !== result.mode) {
         errors.push(geometryIssue(
           "INVALID_RESULT_STRUCTURE",
           t("geometry.invalidStructure")
@@ -5837,6 +5991,16 @@
           "INVALID_SINGLE_LAYOUT_STRUCTURE",
           t("geometry.invalidSingleStructure")
         ));
+      }
+
+      if (result.mode === "single" && input && (
+          !input.pallet || typeof input.stackable !== "boolean" ||
+          ![input.pallet.length, input.pallet.width, input.pallet.height, input.quantity, input.maxLayers].every(
+            value => Number.isSafeInteger(value) && value > 0) ||
+          input.quantity > MAX_TOTAL_PALLETS || input.maxLayers > MAX_TOTAL_PALLETS ||
+          !Number.isSafeInteger(input.verticalGap) || input.verticalGap < 0 ||
+          !Number.isSafeInteger(layout?.count) || layout.count < 0 || layout.count > input.quantity)) {
+        errors.push(geometryIssue("INVALID_SINGLE_INPUT", t("geometry.invalidSingleStructure")));
       }
 
       if (errors.length) {
@@ -6119,6 +6283,50 @@
         const counts = layout.orientationCounts;
         const capacityLayout = result.capacityLayout;
 
+        // Single results carry theoretical capacity and the actual loaded plan.
+        // Derive limits from the canonical input, never from Worker metadata.
+        const canonicalLayers = layersFor(container, pallet.height, input.stackable,
+          input.maxLayers, input.verticalGap);
+
+        // Capacity is a floor-only theoretical plan: door access belongs to the
+        // selected loaded plan below. Its summaries must nevertheless reconcile.
+        const capacityCounts = capacityLayout.orientationCounts;
+        const capacityRects = capacityLayout.rects;
+        const capacityAreaBound = Math.floor(((container.innerLength + input.gap) *
+          (container.innerWidth + input.gap) + GEOMETRY_EPSILON) /
+          ((pallet.length + input.gap) * (pallet.width + input.gap)));
+        const capacityConsistent = capacityLayout.mode === "single" &&
+          Number.isSafeInteger(capacityLayout.count) && capacityLayout.count >= 0 &&
+          capacityLayout.count <= capacityAreaBound && Array.isArray(capacityRects) &&
+          capacityRects.length <= MAX_LAYOUT_RECTS && capacityRects.length <= capacityLayout.count &&
+          capacityLayout.materializedCount === capacityRects.length &&
+          capacityLayout.truncated === (capacityLayout.count > capacityRects.length) &&
+          capacityCounts && [capacityCounts.normal, capacityCounts.rotated].every(
+            value => Number.isSafeInteger(value) && value >= 0) &&
+          capacityCounts.normal + capacityCounts.rotated === capacityLayout.count &&
+          [capacityLayout.usedLength, capacityLayout.usedWidth].every(value => Number.isFinite(value) && value >= 0) &&
+          capacityLayout.usedLength <= container.innerLength + GEOMETRY_EPSILON &&
+          capacityLayout.usedWidth <= container.innerWidth + GEOMETRY_EPSILON &&
+          capacityRects.every(rect => rect && typeof rect.rotated === "boolean" &&
+            [rect.x, rect.y, rect.length, rect.width].every(Number.isFinite) && rect.x >= 0 && rect.y >= 0 &&
+            rect.length === (rect.rotated ? pallet.width : pallet.length) &&
+            rect.width === (rect.rotated ? pallet.length : pallet.width) &&
+            orientationAllowed(pallet, rect.rotated) &&
+            rect.x + rect.length <= capacityLayout.usedLength + GEOMETRY_EPSILON &&
+            rect.y + rect.width <= capacityLayout.usedWidth + GEOMETRY_EPSILON) &&
+          [false, true].every(rotated => {
+            const declared = capacityCounts[rotated ? "rotated" : "normal"];
+            const materialized = capacityRects.filter(rect => rect.rotated === rotated).length;
+            return (!declared || orientationAllowed(pallet, rotated)) &&
+              (capacityLayout.truncated ? materialized <= declared : materialized === declared);
+          });
+        if (!capacityConsistent || !singleCapacityWitnessMatches(capacityLayout, container, pallet, input.gap) ||
+            ((layout.count > 0 || Object.hasOwn(layout, "sourceCapacityCount")) &&
+              (!Number.isSafeInteger(layout.sourceCapacityCount) ||
+              layout.sourceCapacityCount < layout.count || layout.sourceCapacityCount > capacityLayout.count))) {
+          errors.push(geometryIssue("RESULT_COUNT_INCOHERENT", t("geometry.resultCount")));
+        }
+
         if (
           !counts ||
           !Number.isSafeInteger(counts.normal) ||
@@ -6142,10 +6350,10 @@
             ));
           }
 
-          if (!layout.truncated && (
+          if (
             materializedOrientations.normal !== counts.normal ||
             materializedOrientations.rotated !== counts.rotated
-          )) {
+          ) {
             errors.push(geometryIssue(
               "ORIENTATION_COUNT_INCOHERENT",
               t("geometry.materializedOrientationsMismatch")
@@ -6216,18 +6424,26 @@
           ));
         }
 
-        if (layout.truncated !== (layout.count > rects.length)) {
+        // Operational loads contain at most 500 pallets and must be complete.
+        // A partial load is allowed; omitting its declared floor positions is not.
+        if (layout.truncated !== false) {
           errors.push(geometryIssue(
             "TRUNCATION_INCOHERENT",
             t("geometry.truncation")
           ));
         }
 
-        if (!layout.truncated && layout.count !== rects.length) {
+        if (layout.count !== rects.length) {
           errors.push(geometryIssue(
             "LAYOUT_COUNT_INCOHERENT",
             t("geometry.layoutCount")
           ));
+        }
+
+        // Unlike legacy theoretical capacity envelopes, the loaded envelope
+        // describes every represented floor position, including an empty load.
+        if (layout.usedLength !== maximumRectLength || layout.usedWidth !== maximumRectWidth) {
+          errors.push(geometryIssue("INVALID_USED_SPAN", t("geometry.invalidUsedSpan")));
         }
 
         const expectedPhysicalLayers = physicalLayersFor(
@@ -6240,9 +6456,9 @@
           : 0;
         const expectedPlacedCount = Math.min(
           input.quantity,
-          capacityLayout.count * Math.max(0, result.layers)
+          capacityLayout.count * canonicalLayers
         );
-        const expectedRequestedFloorPositions = result.layers > 0
+        const expectedRequestedFloorPositions = canonicalLayers > 0
           ? input.stackable
             ? Math.min(expectedPlacedCount, capacityLayout.count)
             : input.quantity
@@ -6253,7 +6469,7 @@
           input.verticalGap
         );
         let expectedStackingLimitReason = null;
-        if (input.stackable && expectedRequiredLayers > result.layers) {
+        if (input.stackable && expectedRequiredLayers > canonicalLayers) {
           if (expectedPhysicalLayers < input.maxLayers) {
             expectedStackingLimitReason = "height";
           } else if (input.maxLayers < expectedPhysicalLayers) {
@@ -6268,17 +6484,17 @@
           !Number.isSafeInteger(capacityLayout.count) ||
           capacityLayout.count < 0 ||
           result.floorCapacity !== capacityLayout.count ||
-          result.totalCapacity !== result.floorCapacity * result.layers ||
+          result.totalCapacity !== result.floorCapacity * canonicalLayers ||
+          result.layers !== canonicalLayers ||
           result.physicalLayers !== expectedPhysicalLayers ||
-          result.availableLayers !== result.layers ||
+          result.availableLayers !== canonicalLayers ||
           result.requiredLayers !== expectedRequiredLayers ||
           result.requiredStackHeight !== expectedRequiredStackHeight ||
           result.stackingLimitReason !== expectedStackingLimitReason ||
           result.requestedFloorPositions !== expectedRequestedFloorPositions ||
           result.placedFloorPositions !== layout.count ||
           result.placedCount !== expectedPlacedCount ||
-          result.unplacedCount !== input.quantity - result.placedCount ||
-          result.fitsQtyBySpace !== (result.placedCount === input.quantity)
+          result.unplacedCount !== input.quantity - result.placedCount
         ) {
           errors.push(geometryIssue(
             "RESULT_COUNT_INCOHERENT",
@@ -6286,7 +6502,7 @@
           ));
         }
 
-        if (!Number.isSafeInteger(result.layers) || result.layers < 0) {
+        if (!Number.isSafeInteger(result.layers) || result.layers < 0 || result.layers !== canonicalLayers) {
           errors.push(geometryIssue(
             "INVALID_LAYER_COUNT",
             t("geometry.invalidLayerCount")
@@ -6373,21 +6589,21 @@
               input.types,
               seenReferences,
               errors,
-              t("geometry.unplacedPallet", { number: formatInt(index + 1) })
+              () => t("geometry.unplacedPallet", { number: formatInt(index + 1) })
             );
           });
 
           const totalItems = input.types.reduce((sum, type) => sum + type.quantity, 0);
+          const advanced = Boolean(result.advancedStacking && result.stacks);
           if (
             result.totalItems !== totalItems ||
-            result.placedCount !== layout.count ||
+            (!advanced && result.placedCount !== layout.count) ||
             result.floorCapacity !== layout.count ||
-            result.totalCapacity !== layout.count ||
+            (!advanced && result.totalCapacity !== layout.count) ||
             layout.count !== rects.length ||
             layout.materializedCount !== rects.length ||
             layout.truncated !== false ||
-            layout.count + layout.unplaced.length !== totalItems ||
-            result.allPlaced !== (layout.count === totalItems)
+            (advanced ? result.placedCount : layout.count) + layout.unplaced.length !== totalItems
           ) {
             errors.push(geometryIssue(
               "RESULT_COUNT_INCOHERENT",
@@ -6688,6 +6904,7 @@
 
     function usedLoadHeight(result) {
       if (result.mode === "mixed") {
+        if (result.stacks) return Math.max(0, ...result.stacks.map(stack => stack.height));
         return result.input.types.length
           ? Math.max(...result.input.types.map(item => item.height))
           : 0;
@@ -7315,6 +7532,7 @@
       group.dataset.expanded = expanded ? "true" : "false";
       toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
       body.hidden = !expanded;
+      if (expanded && group.querySelector('[data-role="stackPanel"]')?.dataset.pending === "true") syncAdvancedStackingUI();
       if (options.focus) toggle.focus({ preventScroll: true });
     }
 
@@ -7326,7 +7544,104 @@
         const remove = group.querySelector('[data-action="removeGroup"]');
         if (remove) remove.classList.toggle("hidden", groups.length <= 1);
       });
+      syncAdvancedStackingUI(groups);
       return groups;
+    }
+
+    function selectedAboveIds(group) {
+      if (!group.dataset.allowedAbove) group.dataset.allowedAbove = JSON.stringify([group.dataset.rowId]);
+      try { return JSON.parse(group.dataset.allowedAbove); } catch { return [group.dataset.rowId]; }
+    }
+
+    function syncAdvancedStackingUI(groups = allGroupElements()) {
+      const ids = new Set(groups.map(group => group.dataset.rowId));
+      let enabled = false;
+      groups.forEach(group => {
+        const checkbox = group.querySelector('[data-field="stackingEnabled"]');
+        const max = group.querySelector('[data-field="stackMaxLayers"]');
+        const detail = group.querySelector('[data-role="stackDetail"]');
+        if (!checkbox || !max || !detail) return;
+        const settings = group.querySelector('[data-role="stackSettings"]');
+        const topGrid = group.querySelector('.group-top-grid');
+        let options = topGrid.querySelector('.group-options');
+        if (!options) {
+          options = document.createElement('div');
+          options.className = 'group-options';
+          topGrid.append(options);
+          options.append(group.querySelector('[data-role="rotationBox"]'), settings);
+        }
+        let panel = group.querySelector('[data-role="stackPanel"]');
+        if (!panel) {
+          panel = document.createElement('div');
+          panel.className = 'advanced-stack-panel hidden';
+          panel.dataset.role = 'stackPanel';
+          topGrid.after(panel);
+          const roleRow = document.createElement('div');
+          roleRow.className = 'stack-role-row';
+          panel.append(roleRow, detail);
+        }
+        enabled ||= checkbox.checked;
+        const role = group.dataset.stackRole || 'any';
+        max.disabled = !checkbox.checked || (groups.length > 1 && role === 'top');
+        panel.classList.toggle('hidden', !checkbox.checked);
+        const roleRow = panel.querySelector('.stack-role-row');
+        const maxLabel = max.closest('label');
+        maxLabel.classList.toggle('hidden', groups.length > 1 && role === 'top');
+        detail.classList.toggle('hidden', !checkbox.checked || groups.length < 2);
+        roleRow.replaceChildren();
+        detail.replaceChildren();
+        roleRow.append(maxLabel);
+        if (groups.length > 1 && group.dataset.expanded !== "true") {
+          panel.dataset.pending = "true";
+          return;
+        }
+        delete panel.dataset.pending;
+        if (detail.classList.contains('hidden')) return;
+        const allowed = selectedAboveIds(group).filter(id => ids.has(id));
+        group.dataset.allowedAbove = JSON.stringify(allowed);
+        const roleLabel = document.createElement('label');
+        const roleCaption = document.createElement('span');
+        roleCaption.textContent = t('advanced.role');
+        roleLabel.append(roleCaption);
+        const select = document.createElement('select');
+        select.dataset.field = 'stackRole';
+        for (const value of ['any', 'base', 'top']) {
+          const option = document.createElement('option');
+          option.value = value;
+          option.textContent = t(`advanced.role.${value}`);
+          select.append(option);
+        }
+        select.value = role;
+        roleLabel.append(select);
+        roleRow.prepend(roleLabel);
+        const help = document.createElement('p');
+        help.className = 'stack-help';
+        help.id = `${group.dataset.rowId}_stackRoleHelp`;
+        help.textContent = t(`advanced.roleHelp.${role}`);
+        select.setAttribute('aria-describedby', help.id);
+        detail.append(help);
+        if (role !== 'top') {
+          const heading = document.createElement('strong');
+          heading.className = 'allowed-above-heading';
+          heading.textContent = t('advanced.allowedAbove');
+          detail.append(heading);
+          const list = document.createElement('div');
+          list.className = 'allowed-above-list';
+          groups.forEach((target, targetIndex) => {
+            const label = document.createElement('label');
+            label.className = 'filter-chip';
+            const chip = document.createElement('input');
+            chip.type = 'checkbox';
+            chip.dataset.field = 'allowAbove';
+            chip.dataset.targetGroup = target.dataset.rowId;
+            chip.checked = allowed.includes(target.dataset.rowId);
+            label.append(chip, document.createTextNode(` ${t('pallet.groupTitle', { number: groupDisplayCode(targetIndex) })}`));
+            list.append(label);
+          });
+          detail.append(list);
+        }
+      });
+      els.verticalGapSetting.classList.toggle('hidden', !enabled);
     }
 
     function updateMeasurementSuffixes() {
@@ -7371,6 +7686,15 @@
       }
       const identifier = group.querySelector('[data-field="identifier"]')?.value.trim();
       if (identifier) parts.push(identifier);
+      if (group.querySelector('[data-field="stackingEnabled"]')?.checked) {
+        const role = group.dataset.stackRole || 'any';
+        const layers = group.querySelector('[data-field="stackMaxLayers"]')?.value || '2';
+        parts.push(allGroupElements().length < 2
+          ? t('advanced.summary', { layers })
+          : role === 'top'
+            ? `${t('advanced.stacking')} · ${t('advanced.role.top')}`
+            : `${t('advanced.stacking')} · ${t(`advanced.role.${role}`)} · ${t('pallet.maxLayers')} ${layers}`);
+      }
       return parts;
     }
 
@@ -7557,7 +7881,7 @@
       const checkedNormal = defaults.lockedOrientation === "normal" ? "checked" : "";
       const checkedRotated = defaults.lockedOrientation === "rotated" ? "checked" : "";
       return `
-        <div class="pallet-group mixed-row" data-row-id="${rowId}" data-group-kind="mixed" data-expanded="true">
+        <div class="pallet-group mixed-row" data-row-id="${rowId}" data-group-kind="mixed" data-expanded="true" data-stack-role="${escapeHtml(defaults.stackRole || "any")}">
           <div class="group-heading mixed-title">
             <button class="group-disclosure" type="button" data-action="toggleGroup" aria-expanded="true" aria-controls="${rowId}_body">
               <span class="group-disclosure-icon" aria-hidden="true">▾</span>
@@ -7621,6 +7945,11 @@
             <label><span data-i18n="pallet.width">pallet.width</span><span class="measurement-input"><input data-field="width" data-length-input data-min-mm="1" data-mm="${widthMm}" type="text" inputmode="decimal" value="${formatLengthInputValue(widthMm)}" required><span class="unit-suffix" data-unit-suffix aria-hidden="true">${currentLengthUnit}</span></span></label>
             <label><span data-i18n="pallet.customName">pallet.customName</span><input data-field="customName" type="text" maxlength="${MAX_CUSTOM_NAME_LENGTH}" value="${escapeHtml(defaults.customName || "")}"></label>
           </div>
+          <div class="advanced-stack-settings" data-role="stackSettings">
+            <label class="stack-switch-row"><span data-i18n="advanced.stacking">advanced.stacking</span><span class="switch-control"><input data-field="stackingEnabled" type="checkbox" ${defaults.stackingEnabled ? "checked" : ""}><span class="switch-track"></span></span></label>
+            <label class="layers-setting"><span data-i18n="pallet.maxLayers">pallet.maxLayers</span><input data-field="stackMaxLayers" type="number" min="1" max="500" step="1" value="${defaults.maxLayers ?? 2}" disabled></label>
+            <div class="advanced-stack-detail hidden" data-role="stackDetail"></div>
+          </div>
               <div class="orientation-panel hidden" data-role="orientationPanel">
                 <strong data-i18n="rotation.chooseRequired">rotation.chooseRequired</strong>
                 <div class="orientation-grid">
@@ -7646,6 +7975,7 @@
       const wrapper = document.createElement("div");
       wrapper.innerHTML = mixedGroupHtml(data).trim();
       const row = wrapper.firstElementChild;
+      if (Array.isArray(data.allowedAbove)) row.dataset.allowedAbove = JSON.stringify(data.allowedAbove);
       const previousGroups = allGroupElements();
       els.mixedRows.appendChild(row);
       i18n.apply(row);
@@ -7809,7 +8139,7 @@
 
       const rotation = groupRotationData(group);
 
-      return {
+      const data = {
         typeIndex: index,
         presetId,
         name,
@@ -7821,6 +8151,25 @@
         rotationMode: rotation.rotationMode,
         lockedOrientation: rotation.lockedOrientation
       };
+      const stackingEnabled = Boolean(group.querySelector('[data-field="stackingEnabled"]')?.checked);
+      const stackRole = group.dataset.stackRole || "any";
+      let stackMaxLayers = Math.max(1, Number(group.querySelector('[data-field="stackMaxLayers"]')?.value || 2));
+      if (mode === "mixed" && stackingEnabled && stackRole !== "top") {
+        stackMaxLayers = parseIntegerField(
+          group.querySelector('[data-field="stackMaxLayers"]'),
+          t("validation.field.maxLayers"),
+          { min: 1, max: MAX_TOTAL_PALLETS },
+          errors
+        );
+        if (stackMaxLayers === null) return null;
+      }
+      if (mode === "mixed") Object.assign(data, {
+        stackingEnabled,
+        stackRole,
+        maxLayers: stackRole === "top" ? 1 : stackMaxLayers,
+        allowedAboveIds: selectedAboveIds(group)
+      });
+      return data;
     }
 
     function aggregateQuantityError(rows, message, errors) {
@@ -7869,15 +8218,26 @@
         }
 
         if (!errors.length) {
+          const advancedStacking = validGroups.some(item => item.stackingEnabled);
+          const activeRows = rows.filter((_, rowIndex) => groups[rowIndex]?.quantity > 0);
           input = {
             mode,
-            types: validGroups.filter(item => item.quantity > 0),
+            types: validGroups.filter(item => item.quantity > 0).map((item, index) => {
+              const { stackingEnabled, stackRole, maxLayers, allowedAboveIds, ...plainItem } = item;
+              if (!advancedStacking) return plainItem;
+              const allowedRowIds = new Set(allowedAboveIds);
+              return {
+                ...item, typeIndex: index,
+                allowedAbove: activeRows.flatMap((row, target) => allowedRowIds.has(row.dataset.rowId) ? [target] : [])
+              };
+            }),
             quantity,
             gap,
             stackable: false,
             maxLayers: 1,
-            verticalGap: 0
+            verticalGap: advancedStacking ? parseLengthField(els.verticalGap, t("validation.field.gap"), { min: 0 }, errors) : 0
           };
+          if (advancedStacking) input.advancedStacking = true;
         }
       } else {
         const palletData = readValidatedGroup(els.singlePalletGroup, 0, mode, errors);
@@ -7888,7 +8248,7 @@
           errors
         );
         let maxLayers = 1;
-        const verticalGap = 0;
+        const verticalGap = els.stackable.checked ? parseLengthField(els.verticalGap, t("validation.field.gap"), { min: 0 }, errors) : 0;
 
         if (els.stackable.checked) {
           maxLayers = parseIntegerField(
@@ -8471,6 +8831,7 @@
     function calculate(options = {}) {
       const validation = validateAndReadInput();
       if (!validation.valid) {
+        loadComposerComputation.cancel(false);
         suspendCalculation(validation.errors);
         if (options.reportValidity && validation.firstInvalid) {
           validation.firstInvalid.reportValidity();
@@ -8482,13 +8843,7 @@
       const input = validation.input;
       window.loadComposerDiagnostics.calculationCycles += 1;
 
-      if (input.mode === "mixed") {
-        calculateMixed(input);
-        return true;
-      }
-
-      calculateSingle(input);
-      return true;
+      return loadComposerComputation.request(input, { debounce: options.type === "input" });
     }
 
     function calculateSingle(input) {
@@ -8578,7 +8933,7 @@
         result.validationError = result.validation.internalError;
         result.okDoor = result.validation.okDoor;
         result.okHeight = result.validation.okHeight;
-        result.ok = fitsQtyBySpace && result.validation.valid;
+        reconcileOperationalEligibility(result);
         result.spaceAlert = evaluateSpaceAlert(result);
         return result;
       });
@@ -8598,23 +8953,41 @@
       lastCalculationInput = input;
 
       lastResults = CONTAINERS.map(container => {
-        const layout = bestMixedLayout(container, items, input.gap);
+        const advanced = input.advancedStacking
+          ? loadComposerAdvancedStacking.solve(container, items, input, {
+            bestMixedLayout, packItems, frontCompactSelectedLayout, seededShuffle
+          })
+          : null;
+        const layout = advanced ? advanced.layout : bestMixedLayout(container, items, input.gap);
         const totalItems = items.length;
-        const placedCount = layout.count;
+        const placedCount = advanced?.used ? advanced.placedCount : layout.count;
         const allPlaced = placedCount === totalItems;
 
         const result = {
           mode: "mixed", container, layout, layers: 1,
-          floorCapacity: placedCount, totalCapacity: placedCount,
+          floorCapacity: layout.count, totalCapacity: placedCount,
           totalItems, placedCount, allPlaced, fitsQtyBySpace: allPlaced,
           okDoor: false, okHeight: false,
           loadedWeight: 0, okWeight: true, ok: false, input
         };
+        if (advanced) {
+          result.advancedStacking = true;
+          result.advancedDiagnostics = advanced.diagnostics;
+          if (advanced.used) {
+            result.stacks = advanced.stacks;
+            result.floorPlacedCount = advanced.floorPlacedCount;
+            result.stackedCount = advanced.stackedCount;
+            result.maxLayersUsed = advanced.maxLayersUsed;
+            result.mixedGroupStacks = advanced.mixedGroupStacks;
+            result.totalCapacity = placedCount;
+          }
+        }
         result.validation = validateResultGeometry(result);
+        validateAdvancedOperationalResult(result);
         result.validationError = result.validation.internalError;
         result.okDoor = result.validation.okDoor;
         result.okHeight = result.validation.okHeight;
-        result.ok = allPlaced && totalItems > 0 && result.validation.valid;
+        reconcileOperationalEligibility(result);
         result.spaceAlert = evaluateSpaceAlert(result);
         return result;
       });
@@ -8681,6 +9054,7 @@
     }
 
     function renderSummary(cbmTotal, input) {
+      loadComposerComputation.installInlineResults(lastResults);
       const filtered = visibleResults();
       const best = filtered.filter(item => !item.validationError).reduce((acc, item) => {
         if (!acc) return item;
@@ -8836,7 +9210,9 @@
     }
 
     function requestedPalletCount(result) {
-      return result.mode === "mixed" ? result.totalItems : result.input.quantity;
+      return result.mode === "mixed"
+        ? result.input.types.reduce((sum, type) => sum + type.quantity, 0)
+        : result.input.quantity;
     }
 
     function loadCapacityControlState(result) {
@@ -8854,7 +9230,7 @@
       const samples = [];
 
       if (result.mode === "mixed") {
-        result.layout.rects.forEach(rect => {
+        (result.stacks ? result.stacks.flatMap(stack => stack.layers) : result.layout.rects).forEach(rect => {
           samples.push({ width: rect.width, height: rect.height });
         });
         (result.layout.unplaced || []).forEach(item => {
@@ -9054,6 +9430,8 @@
       const filtered = visibleResults();
 
       filtered.forEach(result => {
+        validateAdvancedOperationalResult(result);
+        renderedOperationalState.set(result, operationalPresentationKey(result));
         const group = localizedContainerGroup(result.container);
         if (group !== currentGroup) {
           const groupRow = document.createElement("tr");
@@ -9153,6 +9531,13 @@
       capacity.append(document.createTextNode(
         ` ${formatInt(result.placedCount)} ${pluralText("common.pallet", result.placedCount)}`
       ));
+      if (result.stacks) {
+        appendText(capacity, t("advanced.metrics", {
+          floor: formatInt(result.floorPlacedCount),
+          upper: formatInt(result.stackedCount),
+          layers: formatInt(result.maxLayersUsed)
+        }), { tag: "span", className: "small", breakBefore: true });
+      }
       if (missing > 0) {
         appendText(capacity, pluralText("table.missing", missing), {
           tag: "span",
@@ -9193,6 +9578,7 @@
       const filtered = visibleResults();
 
       filtered.forEach(result => {
+        validateAdvancedOperationalResult(result);
         const index = lastResults.indexOf(result);
         const group = localizedContainerGroup(result.container);
         if (!groups.has(group)) groups.set(group, []);
@@ -9244,10 +9630,125 @@
         selectedContainerId = selectedResult.container.id;
       }
       els.drawSelect.disabled = !filtered.length;
+      renderStackViewOptions(selectedResult);
       updateOperationalPrintState(nextIndex >= 0 ? lastResults[nextIndex] : null);
     }
 
+    function renderStackViewOptions(result) {
+      validateAdvancedOperationalResult(result);
+      const show = Boolean(!result?.validationError && result?.stacks?.length);
+      els.stackViewControl.classList.toggle("hidden", !show);
+      els.printDetailControl.classList.toggle("hidden", !show);
+      if (!show) { els.stackView.replaceChildren(); return; }
+      const current = els.stackView.value;
+      const options = [{ value: "complete", text: t("advanced.viewComplete") }];
+      for (let index = 1; index <= result.maxLayersUsed; index++) {
+        options.push({ value: String(index), text: t("advanced.viewLayer", { number: index }) });
+      }
+      els.stackView.replaceChildren(...options.map(({ value, text }) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = text;
+        return option;
+      }));
+      els.stackView.value = options.some(option => option.value === current) ? current : "complete";
+    }
+
+    function stackViewResult(result, view) {
+      if (!result.stacks) return result;
+      const layer = Number(view);
+      const rects = Number.isSafeInteger(layer) && layer > 0
+        ? result.stacks.flatMap(stack => stack.layers[layer - 1] ? [{ ...stack.layers[layer - 1], positionId: stack.positionId }] : [])
+        : result.stacks.map(stack => ({ ...stack.rect, stackCount: stack.layers.length, positionId: stack.positionId }));
+      return { ...result, layout: { ...result.layout, rects } };
+    }
+
+    // Precondition: this result has just passed the appropriate fresh geometry
+    // validation (including V-01 for stacks). Those validators reconcile actual
+    // pallet identities/counts, not just floor rectangles, with canonical input.
+    // Success and completeness flags are outputs, never evidence of eligibility.
+    function reconcileOperationalEligibility(result) {
+      if (result.validation.internalError) { result.ok = false; return; }
+      const requested = requestedPalletCount(result);
+      const complete = Number.isSafeInteger(requested) && requested > 0 &&
+        requested <= MAX_TOTAL_PALLETS && result.placedCount === requested;
+      if (!result.validation.internalError) {
+        result.fitsQtyBySpace = complete;
+        if (result.mode === "mixed") result.allPlaced = complete;
+      }
+      result.ok = complete && result.validation.valid === true &&
+        result.validation.internalError === false && loadComposerComputation.matchesCanonicalResult(result);
+    }
+
+    // Recheck advanced representations at operational boundaries, including
+    // already calculated results. Never repair a disagreeing geometry.
+    function validateAdvancedOperationalResult(result) {
+      if (!result) return;
+      // Recheck all ordinary operational plans, including floor-only mixed
+      // results whose previous successful flags may no longer describe the load.
+      // Advanced results retain their separate V-01 copy/stack contract below.
+      if (result.mode === "single" || !(Object.hasOwn(result, "stacks") ||
+          result.advancedValidation || (result.advancedStacking && result.stackedCount > 0))) {
+        try { result.validation = validateResultGeometry(result); }
+        catch { result.validation = { valid: false, internalError: true, okDoor: false,
+          okHeight: false, errors: [{ code: result.mode === "single" ? "INVALID_SINGLE_LAYOUT_STRUCTURE" : "INVALID_RESULT_STRUCTURE",
+            message: t(result.mode === "single" ? "geometry.invalidSingleStructure" : "geometry.invalidStructure") }] }; }
+        result.validationError = result.validation.internalError;
+        result.okDoor = result.validation.okDoor;
+        result.okHeight = result.validation.okHeight;
+        reconcileOperationalEligibility(result);
+        return;
+      }
+      let check;
+      try {
+        check = loadComposerAdvancedStackingValidator.validate(result);
+        result.validation = validateResultGeometry(result);
+      } catch {
+        check = { valid: false, errors: [{ code: "INVALID_STACK_STRUCTURE" }] };
+        result.validation = { valid: false, internalError: true, okDoor: false,
+          okHeight: false, errors: [] };
+      }
+      result.advancedValidation = check;
+      if (!check.valid) {
+        // V-01 remains read-only and unchanged. Only individually unfit pallets
+        // are per-vehicle operational failures; malformed stacks still fail closed.
+        const operationalCodesOnly = check.errors.every(issue =>
+          ["INDIVIDUAL_ACCESS_FAILURE", "STACK_HEIGHT_MISMATCH"].includes(issue.code));
+        const solitaryHeightFailure = operationalCodesOnly && result.stacks?.some(stack =>
+          stack.layers?.length === 1 && stack.layers[0]?.height > result.container.innerHeight) &&
+          result.stacks.every(stack => {
+            const expected = stack.layers.reduce((sum, layer, index) => sum +
+              result.input.types[layer.typeIndex].height + (index ? result.input.verticalGap : 0), 0);
+            return stack.height === expected && (expected <= result.container.innerHeight || stack.layers.length === 1);
+          });
+        const internal = check.errors.filter(issue => issue.code !== "INDIVIDUAL_ACCESS_FAILURE" &&
+          !(issue.code === "STACK_HEIGHT_MISMATCH" && solitaryHeightFailure));
+        result.validation.errors.push(...internal.map(issue => ({
+          code: issue.code, message: t("preview.validationFallback")
+        })));
+        result.validation.valid = false;
+        if (internal.length) result.validation.internalError = true;
+        // Access may concern an upper unit, absent from the general floor check.
+        if (!internal.length && check.errors.some(issue => issue.code === "INDIVIDUAL_ACCESS_FAILURE")) {
+          const width = result.container.accessKnown === false ? result.container.innerWidth : result.container.doorWidth;
+          const height = result.container.accessKnown === false ? result.container.innerHeight : result.container.doorHeight;
+          for (const stack of result.stacks || []) for (const layer of stack.layers || []) {
+            const type = result.input.types[layer.typeIndex];
+            if (layer.width > width) result.validation.okDoor = false;
+            if (type?.height > height) result.validation.okHeight = false;
+          }
+        }
+        if (solitaryHeightFailure) result.validation.okHeight = false;
+      }
+      result.validationError = result.validation.internalError;
+      result.okDoor = result.validation.okDoor;
+      result.okHeight = result.validation.okHeight;
+      reconcileOperationalEligibility(result);
+    }
+
     function isOperationalPrintAvailable(result) {
+      validateAdvancedOperationalResult(result);
+      if (!loadComposerComputation.isCurrent(result)) return false;
       return Boolean(
         result &&
         result.ok === true &&
@@ -9352,6 +9853,7 @@
     }
 
     function rectReferenceCode(result, rect, index) {
+      if (result.stacks && rect.positionId) return rect.positionId;
       if (result.mode === "mixed") return palletDisplayReference(rect);
       return `P${index + 1}`;
     }
@@ -9392,6 +9894,7 @@
       if (result.mode === "single" && rect.stackCount > 1) {
         lines.push(pluralText("preview.stackCount", rect.stackCount));
       }
+      if (result.stacks && rect.stackCount > 1) lines.push(t("advanced.positionLayers", { count: rect.stackCount }));
 
       return lines;
     }
@@ -9758,6 +10261,10 @@
     }
 
     function drawSelected() {
+      if (loadComposerComputation.pending()) {
+        loadComposerComputation.announce(loadComposerComputation.state.mode === "fallback" ? "compute.fallback" : "compute.busy");
+        return;
+      }
       const bwMode = Boolean(els.printBw && els.printBw.checked);
       els.previewStage.dataset.previewMode = bwMode ? "bw" : "colour";
       const index = Number(els.drawSelect.value || 0);
@@ -9772,20 +10279,32 @@
         ctx.fillRect(0, 0, els.layoutCanvas.width, els.layoutCanvas.height);
         return;
       }
+      const previousEligibility = [result.ok, result.validationError, result.fitsQtyBySpace, result.allPlaced].join();
       selectedContainerId = result.container.id;
+      renderStackViewOptions(result);
       updateOperationalPrintState(result);
+      // A coherent complete-to-partial transition may be detected here after
+      // the table was rendered. Synchronize once without re-entering preview.
+      if (!result.validationError && previousEligibility !==
+          [result.ok, result.validationError, result.fitsQtyBySpace, result.allPlaced].join()) {
+        renderTable();
+        renderDrawOptions();
+      }
 
       if (result.validationError) {
+        renderTable();
+        renderDrawOptions();
         drawValidationError(result);
         return;
       }
 
       const view = els.printView ? els.printView.value : "side";
 
+      const displayResult = stackViewResult(result, els.stackView.value);
       if (view === "ramp") {
-        drawRampPreview(result, bwMode);
+        drawRampPreview(displayResult, bwMode);
       } else {
-        drawSidePreview(result, bwMode);
+        drawSidePreview(displayResult, bwMode);
       }
 
       if (result.mode === "mixed") {
@@ -10286,8 +10805,9 @@
           readinessStarted = true;
 
           try {
-            const schemaImage = printDocument.querySelector(".schema img");
-            if (schemaImage && !schemaImage.complete) {
+            const schemaImages = [...printDocument.querySelectorAll(".schema img")];
+            await Promise.all(schemaImages.map(async schemaImage => {
+            if (!schemaImage.complete) {
               await new Promise((resolve, reject) => {
                 schemaImage.addEventListener("load", resolve, { once: true });
                 schemaImage.addEventListener(
@@ -10300,6 +10820,7 @@
             if (schemaImage && typeof schemaImage.decode === "function") {
               await schemaImage.decode();
             }
+            }));
             if (currentPrintFrame !== printFrame || !printFrame.isConnected) return;
 
             printDocument.body.dataset.printReady = "true";
@@ -10333,10 +10854,23 @@
     }
 
     function printCurrentLayout() {
+      const currentResult = lastResults[Number(els.drawSelect.value || 0)];
+      if (!loadComposerComputation.printMatchesCurrentInput(currentResult)) {
+        drawSelected();
+        updateOperationalPrintState(null);
+        return;
+      }
       const index = Number(els.drawSelect.value || 0);
       const result = lastResults[index];
       if (!result) return;
-      if (!isOperationalPrintAvailable(result)) {
+      const previousEligibility = renderedOperationalState.get(result);
+      const available = updateOperationalPrintState(result);
+      if (previousEligibility !== operationalPresentationKey(result)) {
+        renderTable();
+        renderDrawOptions();
+      }
+      if (!available) {
+        drawSelected();
         alert(t("preview.operationalPrintUnavailable"));
         return;
       }
@@ -10351,10 +10885,25 @@
       const colorLabel = bwMode ? t("preview.bw") : t("print.color");
       const longLegend = result.mode === "mixed" && result.input.types.length >= 5;
 
-      const dataUrl = getPrintSchemaDataUrl(result, printView, bwMode);
+      const dataUrl = getPrintSchemaDataUrl(stackViewResult(result, "complete"), printView, bwMode);
+      const detailMode = result.stacks ? els.printDetail.value : "standard";
+      const layerManifest = result.stacks && detailMode === "complete"
+        ? `<section class="advanced-manifest"><h2>${escapeHtml(t("advanced.manifest"))}</h2><table><thead><tr><th>${escapeHtml(t("advanced.position"))}</th><th>${escapeHtml(t("advanced.layers"))}</th><th>${escapeHtml(t("advanced.stackHeight"))}</th></tr></thead><tbody>${result.stacks.map(stack => `<tr><td>${escapeHtml(stack.positionId)}</td><td>${stack.layers.map(layer => `${escapeHtml(groupDisplayCode(layer.typeIndex))}.${layer.unitNo}`).join(" → ")}</td><td>${escapeHtml(formatLength(stack.height))}</td></tr>`).join("")}</tbody></table></section>`
+        : "";
+      const layerSchemes = result.stacks && detailMode !== "standard"
+        ? Array.from({ length: result.maxLayersUsed }, (_, index) => {
+          const label = t("advanced.viewLayer", { number: index + 1 });
+          const image = getPrintSchemaDataUrl(stackViewResult(result, String(index + 1)), printView, bwMode);
+          return `<section class="advanced-layer"><h2>${escapeHtml(label)}</h2><div class="schema"><img src="${image}" alt="${escapeHtml(label)}"></div></section>`;
+        }).join("") : "";
       const now = new Date();
       const title = resultPrintTitle(result);
       const operationalNote = buildOperationalPrintNote(result);
+      const warehouseNoteKey = result.advancedStacking
+        ? (result.stacks?.some(stack => stack.layers.length > 1) ? "advanced.warehouseNote" : "advanced.warehouseNoteFloor")
+        : result.mode === "mixed" ? "print.warehouseNoteMixed"
+        : result.layout.rects.some(rect => rect.stackCount > 1) ? "print.warehouseNoteLayers"
+        : "print.warehouseNoteFloor";
 
       const printHtml = `
         <!DOCTYPE html>
@@ -10453,7 +11002,7 @@
             .note,
             .warehouse-note {
               break-inside: avoid-page;
-            }
+            }${result.stacks ? '\n\n            .advanced-layer { break-before: page; }\n            .advanced-manifest { margin-top: 4mm; }' : ''}
 
             body.ramp-print .print-body {
               display: block;
@@ -10666,9 +11215,9 @@
               </div>
 
               ${operationalNote ? `<div class="note"><strong>${escapeHtml(t("print.operationalNote"))}</strong> ${escapeHtml(operationalNote)}</div>` : ""}
-              <div class="warehouse-note">${escapeHtml(t("print.warehouseNote"))}</div>
+              <div class="warehouse-note">${escapeHtml(t(warehouseNoteKey))} ${escapeHtml(t("print.warehouseNote"))}</div>
             </div>
-          </div>
+          </div>${result.stacks ? `\n          ${layerSchemes}${layerManifest}` : ''}
 
         </body>
         </html>
@@ -10677,21 +11226,8 @@
       printDocumentInFrame(printHtml);
     }
 
-    function setStackingReasonOpen(open) {
-      const visible = open && els.stackable.disabled;
-      els.mixedStackNote.classList.toggle("hidden", !visible);
-      els.stackingUnavailable.setAttribute("aria-expanded", String(visible));
-    }
-
     function syncStackingControls() {
-      els.maxLayers.disabled = els.stackable.disabled || !els.stackable.checked;
-      els.stackable.removeAttribute("title");
-      const wrapper = els.stackingUnavailable;
-      for (const [name, value] of Object.entries({ tabindex: "0", role: "button", "aria-disabled": "true", "aria-describedby": "mixedStackNote" })) {
-        if (els.stackable.disabled) wrapper.setAttribute(name, value);
-        else wrapper.removeAttribute(name);
-      }
-      setStackingReasonOpen(false);
+      syncAdvancedStackingUI();
     }
 
     function syncUnifiedMode(options = {}) {
@@ -10701,8 +11237,6 @@
       els.loadMode.value = isMixed ? "mixed" : "single";
       els.singleModeForm.classList.remove("hidden");
       els.mixedModeForm.classList.remove("hidden");
-      if (isMixed) els.stackable.checked = false;
-      els.stackable.disabled = isMixed;
       syncStackingControls();
       closeAllPickers();
       if (shouldCalculate) calculate();
@@ -10718,7 +11252,11 @@
         customName: group.querySelector('[data-field="customName"]').value,
         identifier: group.querySelector('[data-field="identifier"]').value,
         allowRotate: group.querySelector('[data-field="allowRotate"]').checked,
-        lockedOrientation: group.querySelector('[data-field="lockedOrientation"]:checked')?.value || null
+        lockedOrientation: group.querySelector('[data-field="lockedOrientation"]:checked')?.value || null,
+        stackingEnabled: group.querySelector('[data-field="stackingEnabled"]')?.checked || false,
+        maxLayers: Number(group.querySelector('[data-field="stackMaxLayers"]')?.value || 2),
+        stackRole: group.dataset.stackRole || "any",
+        allowedAbove: selectedAboveIds(group)
       };
     }
 
@@ -10733,6 +11271,10 @@
       group.querySelector('[data-field="customName"]').value = state.customName || t("pallet.customDefaultName");
       group.querySelector('[data-field="identifier"]').value = state.identifier || "";
       group.querySelector('[data-field="allowRotate"]').checked = state.allowRotate !== false;
+      group.querySelector('[data-field="stackingEnabled"]').checked = Boolean(state.stackingEnabled);
+      group.querySelector('[data-field="stackMaxLayers"]').value = String(state.maxLayers || 2);
+      group.dataset.stackRole = state.stackRole || "any";
+      group.dataset.allowedAbove = JSON.stringify(state.allowedAbove || [group.dataset.rowId]);
       group.querySelectorAll('[data-field="lockedOrientation"]').forEach(radio => {
         radio.checked = radio.value === state.lockedOrientation;
       });
@@ -10746,8 +11288,10 @@
       setLengthInputMm(els.palletHeight, 1500);
       setLengthInputMm(els.gap, 0);
       els.stackable.checked = false;
-      els.stackable.disabled = false;
       els.maxLayers.value = 2;
+      els.singlePalletGroup.dataset.stackRole = "any";
+      delete els.singlePalletGroup.dataset.allowedAbove;
+      setLengthInputMm(els.verticalGap, 0);
 
       els.singlePalletGroup.querySelector('[data-field="allowRotate"]').checked = true;
       els.singlePalletGroup.querySelectorAll('[data-field="lockedOrientation"]').forEach(radio => { radio.checked = false; });
@@ -10829,9 +11373,6 @@
       if (!event.target.matches('input[type="number"], input[type="text"]')) return;
       const group = event.target.closest('.pallet-group');
       if (!group) return;
-      if (event.target.matches('[data-field="length"], [data-field="width"], [data-field="customName"]')) {
-        updateGroupVisuals(group);
-      }
       updateGroupVisuals(group);
       calculate();
     }
@@ -10859,6 +11400,27 @@
       if (!event.target.matches('select, input[type="checkbox"], input[type="radio"]')) return;
       const group = event.target.closest('.pallet-group');
       if (!group) return;
+      if (event.target.matches('[data-field="stackingEnabled"], [data-field="stackRole"], [data-field="allowAbove"]')) {
+        const focusField = event.target.dataset.field;
+        const focusTarget = event.target.dataset.targetGroup;
+        if (event.target.dataset.field === "stackRole") group.dataset.stackRole = event.target.value;
+        if (event.target.dataset.field === "allowAbove") {
+          const allowed = new Set(selectedAboveIds(group));
+          if (event.target.checked) allowed.add(event.target.dataset.targetGroup);
+          else allowed.delete(event.target.dataset.targetGroup);
+          group.dataset.allowedAbove = JSON.stringify([...allowed]);
+        }
+        syncAdvancedStackingUI();
+        if (focusField === "stackRole" || focusField === "allowAbove") {
+          const replacement = focusField === "stackRole"
+            ? group.querySelector('[data-field="stackRole"]')
+            : [...group.querySelectorAll('[data-field="allowAbove"]')].find(chip => chip.dataset.targetGroup === focusTarget);
+          replacement?.focus({ preventScroll: true });
+        }
+        updateGroupVisuals(group);
+        calculate();
+        return;
+      }
       if (event.target.matches('[data-field="allowRotate"]')) {
         if (!event.target.checked) {
           group.querySelectorAll('[data-field="lockedOrientation"]').forEach(radio => { radio.checked = false; });
@@ -10915,6 +11477,7 @@
     function initializeApplication() {
       if (applicationInitialized) return;
       applicationInitialized = true;
+      loadComposerComputation.install();
 
       // Modello eventi:
       // - numeri e testo: input;
@@ -10922,10 +11485,7 @@
       // - click: sole azioni dei pulsanti/picker;
       // - controlli di vista: solo drawSelected().
       initializeUnitControl();
-      els.stackable.addEventListener("change", () => {
-        syncStackingControls();
-        calculate();
-      });
+      els.verticalGap.addEventListener("input", calculate);
       els.addMixedRowBtn.addEventListener("click", () => addMixedRow({ presetId: "eur", quantity: 1, height: 1500 }));
       els.singlePalletGroup.addEventListener("click", handleGroupClick);
       els.singlePalletGroup.addEventListener("input", handleGroupInput);
@@ -10983,30 +11543,17 @@
       document.addEventListener("focusout", handleLengthFocusOut);
 
       els.resetBtn.addEventListener("click", resetDefaults);
-      els.stackingUnavailable.addEventListener("pointerenter", () => setStackingReasonOpen(true));
-      els.stackingUnavailable.addEventListener("pointerleave", () => { if (!els.stackingUnavailable.contains(document.activeElement)) setStackingReasonOpen(false); });
-      els.stackingUnavailable.addEventListener("focus", () => setStackingReasonOpen(true));
-      els.stackingUnavailable.addEventListener("keydown", event => {
-        if (els.stackable.disabled && ["Enter", " "].includes(event.key)) { event.preventDefault(); setStackingReasonOpen(true); }
-      });
-      els.stackingUnavailable.addEventListener("click", () => setStackingReasonOpen(true));
-      els.singleStackBlock.addEventListener("focusout", event => {
-        if (!els.singleStackBlock.contains(event.relatedTarget)) setStackingReasonOpen(false);
-      });
-      document.addEventListener("click", event => {
-        if (!els.singleStackBlock.contains(event.target)) setStackingReasonOpen(false);
-      });
-      document.addEventListener("keydown", event => {
-        if (event.key === "Escape") setStackingReasonOpen(false);
-      });
       els.drawSelect.addEventListener("change", () => {
         window.loadComposerDiagnostics.previewChanges += 1;
         drawSelected();
       });
+      els.stackView.addEventListener("change", drawSelected);
       els.printView.addEventListener("change", drawSelected);
       els.printBw.addEventListener("change", drawSelected);
       els.printLayoutBtn.addEventListener("click", () => {
-        if (calculate({ reportValidity: true })) printCurrentLayout();
+        const candidate = lastResults[Number(els.drawSelect.value || 0)];
+        if (loadComposerComputation.printMatchesCurrentInput(candidate) && isOperationalPrintAvailable(candidate)) printCurrentLayout();
+        else if (!loadComposerComputation.pending()) calculate({ reportValidity: true });
       });
 
       [els.gap, els.maxLayers].forEach(el => {
