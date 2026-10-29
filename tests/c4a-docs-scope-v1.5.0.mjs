@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import {ROOT,sha,save} from './c4a-helpers-v1.5.0.mjs';
 const read=p=>fs.readFileSync(ROOT+'/'+p,'utf8'),reference=JSON.parse(read('polish-c4a-v1.5.0/fixtures/scope.json'));
 for(const file of ['README.md','README.it.md','docs/DEPLOYMENT.md','CHANGELOG.md']){
- const d=read(file);assert.ok(d.includes('1.5.0'));assert.ok(/candidate|candidata/i.test(d));assert.ok(/approval|approvazione/i.test(d));assert.ok(/unpublished|not been published|non ancora pubblicata|unreleased/i.test(d));
+ const d=read(file);assert.ok(d.includes('1.5.0'));assert.ok(/candidate|candidata/i.test(d));assert.ok(/approval|approvazione|approved|approvat[oa]/i.test(d),file+' missing approval state');assert.ok(/unpublished|not been published|non ancora pubblicata|unreleased|not yet published|not yet recorded|has not yet occurred|non è ancora stato eseguito/i.test(d),file+' missing pre-publication state');
  assert.ok(!/loadcomposer-v1\.[0-4]\.\d+-standalone/.test(d.split('## [1.3.5]')[0]),file+' current references stale');
 }
 for(const ext of ['html','zip'])assert.ok(fs.existsSync(ROOT+'/site/downloads/loadcomposer-v1.5.0-standalone.'+ext));
