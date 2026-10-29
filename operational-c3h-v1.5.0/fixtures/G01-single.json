@@ -1,0 +1,141 @@
+{
+  "mode": "single",
+  "container": {
+    "id": "G01",
+    "innerLength": 2000,
+    "innerWidth": 1000,
+    "innerHeight": 2400,
+    "doorWidth": 1000,
+    "doorHeight": 2400,
+    "accessKnown": true
+  },
+  "capacityLayout": {
+    "mode": "single",
+    "type": "orientamento bloccato",
+    "count": 1,
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "length": 1000,
+        "width": 1000,
+        "rotated": false,
+        "layoutIndex": 0
+      }
+    ],
+    "materializedCount": 1,
+    "truncated": false,
+    "orientationCounts": {
+      "normal": 1,
+      "rotated": 0
+    },
+    "usedLength": 1000,
+    "usedWidth": 1000
+  },
+  "loadLayout": {
+    "mode": "single",
+    "type": "orientamento bloccato",
+    "count": 1,
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "length": 1000,
+        "width": 1000,
+        "rotated": false,
+        "layoutIndex": 0,
+        "stackCount": 1
+      }
+    ],
+    "materializedCount": 1,
+    "truncated": false,
+    "orientationCounts": {
+      "normal": 1,
+      "rotated": 0
+    },
+    "usedLength": 1000,
+    "usedWidth": 1000,
+    "sourceCapacityCount": 1,
+    "selectionStrategy": "sottoinsieme compatto deterministico",
+    "stackCounts": [
+      1
+    ],
+    "loadedPalletCount": 1
+  },
+  "layout": {
+    "mode": "single",
+    "type": "orientamento bloccato",
+    "count": 1,
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "length": 1000,
+        "width": 1000,
+        "rotated": false,
+        "layoutIndex": 0,
+        "stackCount": 1
+      }
+    ],
+    "materializedCount": 1,
+    "truncated": false,
+    "orientationCounts": {
+      "normal": 1,
+      "rotated": 0
+    },
+    "usedLength": 1000,
+    "usedWidth": 1000,
+    "sourceCapacityCount": 1,
+    "selectionStrategy": "sottoinsieme compatto deterministico",
+    "stackCounts": [
+      1
+    ],
+    "loadedPalletCount": 1
+  },
+  "layers": 1,
+  "availableLayers": 1,
+  "physicalLayers": 4,
+  "requiredLayers": 2,
+  "requiredStackHeight": 1000,
+  "stackingLimitReason": "max-layers",
+  "loadLayers": 1,
+  "floorCapacity": 1,
+  "totalCapacity": 1,
+  "requestedFloorPositions": 1,
+  "placedFloorPositions": 1,
+  "placedCount": 1,
+  "unplacedCount": 1,
+  "fitsQtyBySpace": false,
+  "okDoor": true,
+  "okHeight": true,
+  "loadedWeight": 0,
+  "okWeight": true,
+  "ok": true,
+  "input": {
+    "mode": "single",
+    "pallet": {
+      "length": 1000,
+      "width": 1000,
+      "height": 500,
+      "rotationMode": "auto",
+      "lockedOrientation": "normal"
+    },
+    "quantity": 2,
+    "gap": 0,
+    "verticalGap": 0,
+    "stackable": true,
+    "maxLayers": 1
+  },
+  "validation": {
+    "valid": true,
+    "internalError": false,
+    "okDoor": true,
+    "okHeight": true,
+    "errors": [],
+    "accessFailures": [],
+    "heightFailures": [],
+    "minDoorWidthMargin": 0,
+    "minDoorHeightMargin": 1900
+  },
+  "validationError": false
+}
