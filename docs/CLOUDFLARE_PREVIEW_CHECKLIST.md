@@ -1,4 +1,6 @@
-# Cloudflare Pages preview checklist
+# Cloudflare Pages preview checklist (historical v1.3.0)
+
+> Historical checklist for v1.3.0, retained for release evidence. It is not the current v1.5.0 C4e publication checklist; see [DEPLOYMENT.md](DEPLOYMENT.md) for the published release status.
 
 Do not create the stable tag or GitHub Release until this checklist is complete
 on the deployed `v1.3.0` commit.
