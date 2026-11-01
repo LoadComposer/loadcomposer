@@ -95,7 +95,7 @@
     "test:workflow-policy": "node tests/workflow-policy-v1.0.0.mjs",
     "test:delivery": "node tests/delivery-packaging-v1.5.0.mjs",
     "test:legacy": "npm run test:version && npm run test:regression && npm run test:security && npm run test:events && npm run test:responsive",
-    "test": "npm run build && npm run check:glossary && npm run check:i18n-js && npm run test:catalogs && npm run check:node && npm run test:version && npm run test:ci-wiring && npm run test:dark-reader && npm run test:legal-ux && npm run test:seo && npm run test:path-portability && npm run test:transverse-centering && npm run test:planner-ux && npm run test:advanced-stacking && npm run test:hotfix-v01 && npm run test:advanced-performance && npm run test:advanced-visual && npm run test:final-ux && npm run test:stacking-floor-first && npm run test:geometry-hotfix && npm run test:front-compaction && npm run test:geometry-oracle && npm run test:geometry && npm run test:geometry-performance && npm run test:mixed && npm run test:trailer-prudential && npm run test:status-system && npm run test:units && npm run test:final-consistency && npm run test:print-transport && npm run test:parity && npm run test:geometry-visual && npm run test:c3b && npm run test:c3d && npm run test:c3f && npm run test:c3h && npm run test:c3j && npm run test:c4a && npm run test:c4c",
+    "test": "npm run build && npm run check:glossary && npm run check:i18n-js && npm run test:catalogs && npm run check:node && npm run test:version && npm run test:ci-wiring && npm run test:dark-reader && npm run test:legal-ux && npm run test:seo && npm run test:path-portability && npm run test:transverse-centering && npm run test:planner-ux && npm run test:advanced-stacking && npm run test:hotfix-v01 && npm run test:advanced-performance && npm run test:advanced-visual && npm run test:final-ux && npm run test:stacking-floor-first && npm run test:geometry-hotfix && npm run test:front-compaction && npm run test:geometry-oracle && npm run test:geometry && npm run test:geometry-performance && npm run test:mixed && npm run test:trailer-prudential && npm run test:status-system && npm run test:units && npm run test:final-consistency && npm run test:print-transport && npm run test:parity && npm run test:geometry-visual && npm run test:c3b && npm run test:c3d && npm run test:c3f && npm run test:c3h && npm run test:c3j && npm run test:c4a && npm run test:c4c && npm run test:c4e",
     "test:release": "npm test && npm run test:release-input-admission && npm run test:release-historical && npm run test:delivery",
     "test:advanced-stacking": "node tests/advanced-stacking-v1.5.0.mjs && npm run test:c1-quality && npm run test:c1b-quality && npm run test:c2-computation",
     "test:advanced-performance": "node tests/advanced-stacking-performance-v1.5.0.mjs",
@@ -119,7 +119,8 @@
     "test:c3h": "node tests/c3h-eligibility-v1.5.0.mjs && node tests/c3h-eligibility-browser-v1.5.0.mjs && node tests/c3h-arrival-v1.5.0.mjs && node tests/c3h-current-state-v1.5.0.mjs",
     "test:c3j": "node tests/c3j-provenance-v1.5.0.mjs && node tests/c3j-transitions-v1.5.0.mjs && node tests/c3j-documents-v1.5.0.mjs",
     "test:c4a": "node tests/c4a-docs-scope-v1.5.0.mjs && node tests/c4a-ui-v1.5.0.mjs && node tests/c4a-print-v1.5.0.mjs",
-    "test:c4c": "node tests/c4c-u02-v1.5.0.mjs"
+    "test:c4c": "node tests/c4c-u02-v1.5.0.mjs",
+    "test:c4e": "node tests/c4e-stacking-ux-v1.5.0.mjs && node tests/c4e-async-and-failure-v1.5.0.mjs"
   },
   "devDependencies": {
     "@sparticuz/chromium": "149.0.0",

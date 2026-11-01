@@ -67,7 +67,7 @@
     "pallet.stackable": "Palés apilables",
     "pallet.maxLayers": "Máx. niveles",
     "pallet.maxLayersHelp": "Número máximo de niveles de palés permitidos en cada posición de suelo. El palé apoyado en el suelo cuenta como primer nivel. El vehículo puede admitir menos niveles por su altura útil.",
-    "pallet.verticalGap": "Espacio entre capas (p. ej., separadores)",
+    "pallet.verticalGap": "Espacio entre capas",
     "pallet.gap": "Espacio entre palés (en el suelo)",
     "pallet.mixedNote": "Cada grupo puede tener sus propias medidas, identificador y giro. Configura el apilado por grupo.",
     "pallet.mixedStackNote": "Para apilar grupos distintos, activa el apilado en los grupos implicados y elige la compatibilidad.",

@@ -67,7 +67,7 @@
     "pallet.stackable": "Stackable pallets",
     "pallet.maxLayers": "Max layers",
     "pallet.maxLayersHelp": "Maximum pallet layers allowed at each floor position. The pallet on the floor counts as the first layer. The vehicle may allow fewer layers because of its usable height.",
-    "pallet.verticalGap": "Space between layers (e.g. separators)",
+    "pallet.verticalGap": "Space between layers",
     "pallet.gap": "Space between pallets (on the floor)",
     "pallet.mixedNote": "Each group can have its own size, identifier, and rotation. Configure stacking for each group.",
     "pallet.mixedStackNote": "To stack different groups, enable Stacking for the groups involved and choose their compatibility.",

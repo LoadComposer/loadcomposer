@@ -67,7 +67,7 @@
     "pallet.stackable": "Paletes empilháveis",
     "pallet.maxLayers": "Máx. níveis",
     "pallet.maxLayersHelp": "Número máximo de níveis de paletes permitido em cada posição no piso. A palete apoiada no piso conta como primeiro nível. O veículo pode permitir menos níveis devido à sua altura útil.",
-    "pallet.verticalGap": "Espaço entre camadas (ex.: separadores)",
+    "pallet.verticalGap": "Espaço entre camadas",
     "pallet.gap": "Espaço entre paletes (no piso)",
     "pallet.mixedNote": "Cada grupo pode ter dimensões, identificador e rotação próprios. Configure o empilhamento por grupo.",
     "pallet.mixedStackNote": "Para empilhar grupos diferentes, ative o empilhamento nos grupos envolvidos e escolha a compatibilidade.",

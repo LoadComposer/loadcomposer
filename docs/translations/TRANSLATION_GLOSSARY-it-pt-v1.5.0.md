@@ -3,8 +3,8 @@
 Generato automaticamente dai cataloghi canonici `lang/it.json` e `lang/pt.json`.
 
 - Chiavi di traduzione: **610**
-- SHA-256 `lang/it.json`: `ee627bea272031cb48247e25422ece35d34c35f7e9c6dea89f82fc66b71e2dad`
-- SHA-256 `lang/pt.json`: `9d8fd787c202160186cffc00c52745b5ca4345542df54ecabe0fa961aa11488d`
+- SHA-256 `lang/it.json`: `baeddb2626408cf8aa367e573dbc4810a3ebe8d09e862d529ea205c62a6951cd`
+- SHA-256 `lang/pt.json`: `51d478b62d9cb523b051a7b8612ee30721ddcbd049fb0768dfa28bebd18aa3a6`
 - Ordine delle righe: ordine canonico di `lang/it.json`.
 - I segnaposto sono verificati automaticamente e coincidono nei due cataloghi.
 
@@ -71,7 +71,7 @@ Generato automaticamente dai cataloghi canonici `lang/it.json` e `lang/pt.json`.
 | pallet.stackable | Pallet sovrapponibili | Paletes empilháveis | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.maxLayers | Max strati | Máx. níveis | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.maxLayersHelp | Numero massimo di strati di pallet consentiti per ogni posizione a pavimento. Il pallet sul pavimento conta come primo strato. Il mezzo può consentire meno strati in base all'altezza utile. | Número máximo de níveis de paletes permitido em cada posição no piso. A palete apoiada no piso conta como primeiro nível. O veículo pode permitir menos níveis devido à sua altura útil. | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
-| pallet.verticalGap | Spazio tra strati (es. separatori) | Espaço entre camadas (ex.: separadores) | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
+| pallet.verticalGap | Spazio tra strati | Espaço entre camadas | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.gap | Gioco tra pallet (a pavimento) | Espaço entre paletes (no piso) | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.mixedNote | Ogni gruppo può avere misura, identificativo e rotazione propri. La sovrapposizione si configura per gruppo. | Cada grupo pode ter dimensões, identificador e rotação próprios. Configure o empilhamento por grupo. | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.mixedStackNote | Per sovrapporre gruppi diversi, attiva Sovrapposizione sui gruppi coinvolti e scegli le compatibilità. | Para empilhar grupos diferentes, ative o empilhamento nos grupos envolvidos e escolha a compatibilidade. | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |

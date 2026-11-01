@@ -594,6 +594,14 @@ try {
       return { placed: item.placedCount, ok: item.ok, calculationCycles: window.loadComposerDiagnostics.calculationCycles };
     }, example.vehicleId);
     assert.deepEqual(edited, { placed: Math.max(1, example.quantity - 1), ok: true, calculationCycles: 2 }, `${example.id}: normal edit/recalculate path`);
+    // C4e: committing a numeric edit invalidates and recomputes on change.
+    await page.locator('#singlePalletGroup [data-field="quantity"]').press("Tab");
+    await page.evaluate(() => loadComposerComputation.whenIdle());
+    const committed = await page.evaluate(vehicleId => {
+      const item = lastResults.find(result => result.container.id === vehicleId);
+      return { placed: item.placedCount, ok: item.ok, calculationCycles: loadComposerDiagnostics.calculationCycles };
+    }, example.vehicleId);
+    assert.deepEqual(committed, { ...edited, calculationCycles: 3 }, `${example.id}: committed edit must retain current results`);
     await page.click("#resetBtn");
     const reset = await page.evaluate(() => ({
       example: document.documentElement.dataset.example || null,
@@ -602,7 +610,7 @@ try {
       selectedContainerId: window.eval("selectedContainerId"),
       calculationCycles: window.loadComposerDiagnostics.calculationCycles
     }));
-    assert.deepEqual(reset, { example: null, preset: "eur", quantity: 10, selectedContainerId: "20dc", calculationCycles: 3 });
+    assert.deepEqual(reset, { example: null, preset: "eur", quantity: 10, selectedContainerId: "20dc", calculationCycles: 4 });
     browserExampleResults.push({ id: example.id, route, destination: href, automaticCalculatePathInvocations: 1, currentCanvasHash: sha256(renderedPng), editableRecalculation: "PASS", reset: "PASS", status: "PASS" });
     await page.close();
   }

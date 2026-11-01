@@ -67,7 +67,7 @@
     "pallet.stackable": "Pallet sovrapponibili",
     "pallet.maxLayers": "Max strati",
     "pallet.maxLayersHelp": "Numero massimo di strati di pallet consentiti per ogni posizione a pavimento. Il pallet sul pavimento conta come primo strato. Il mezzo può consentire meno strati in base all'altezza utile.",
-    "pallet.verticalGap": "Spazio tra strati (es. separatori)",
+    "pallet.verticalGap": "Spazio tra strati",
     "pallet.gap": "Gioco tra pallet (a pavimento)",
     "pallet.mixedNote": "Ogni gruppo può avere misura, identificativo e rotazione propri. La sovrapposizione si configura per gruppo.",
     "pallet.mixedStackNote": "Per sovrapporre gruppi diversi, attiva Sovrapposizione sui gruppi coinvolti e scegli le compatibilità.",

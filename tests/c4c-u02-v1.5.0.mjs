@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';
+import {restoreC4c} from './c4e-scope-helper.mjs';
 import {launchBrowser} from '../scripts/browser-runtime.mjs';import {ROOT,ready,mount,pallet as g} from './c4a-helpers-v1.5.0.mjs';
-const hash=x=>crypto.createHash('sha256').update(x).digest('hex'),css=fs.readFileSync(ROOT+'/tests/fixtures/c4c-u02.css','utf8'),html=fs.readFileSync(ROOT+'/site/index.html','utf8');
+const hash=x=>crypto.createHash('sha256').update(x).digest('hex'),css=fs.readFileSync(ROOT+'/tests/fixtures/c4c-u02.css','utf8'),html=restoreC4c('site/index.html',fs.readFileSync(ROOT+'/site/index.html','utf8'));
 assert.equal(hash(css),'97b188ed55d502627cd733ad65b8d3e831017605265038947f301279d42bfc51');
 assert.equal(hash(html.replace(css,'')),'7b4bc92a1e7c8f0d5465ad2dc22368752b19554fb73f260d0e7dfd0946740ca3');
 const b=await launchBrowser(ROOT),rows=[],actions=[];

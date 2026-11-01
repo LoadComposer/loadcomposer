@@ -3,8 +3,8 @@
 Generato automaticamente dai cataloghi canonici `lang/it.json` e `lang/nl.json`.
 
 - Chiavi di traduzione: **610**
-- SHA-256 `lang/it.json`: `ee627bea272031cb48247e25422ece35d34c35f7e9c6dea89f82fc66b71e2dad`
-- SHA-256 `lang/nl.json`: `1f5819779314c4cdb217258c4747804db1ca769cb8dcd802e815063038b46791`
+- SHA-256 `lang/it.json`: `baeddb2626408cf8aa367e573dbc4810a3ebe8d09e862d529ea205c62a6951cd`
+- SHA-256 `lang/nl.json`: `b35d7bb9c9b1eb391a9d6164c86dd6b9f6479fdfae7a7c4afe0c84ec88224506`
 - Ordine delle righe: ordine canonico di `lang/it.json`.
 - I segnaposto sono verificati automaticamente e coincidono nei due cataloghi.
 
@@ -71,7 +71,7 @@ Generato automaticamente dai cataloghi canonici `lang/it.json` e `lang/nl.json`.
 | pallet.stackable | Pallet sovrapponibili | Stapelbare pallets | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.maxLayers | Max strati | Max. lagen | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.maxLayersHelp | Numero massimo di strati di pallet consentiti per ogni posizione a pavimento. Il pallet sul pavimento conta come primo strato. Il mezzo può consentire meno strati in base all'altezza utile. | Maximaal aantal palletlagen per vloerpositie. De pallet op de voertuigvloer telt als de eerste laag. Door de bruikbare hoogte kan het voertuig minder lagen toestaan. | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
-| pallet.verticalGap | Spazio tra strati (es. separatori) | Ruimte tussen lagen (bijv. scheidingslagen) | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
+| pallet.verticalGap | Spazio tra strati | Ruimte tussen lagen | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.gap | Gioco tra pallet (a pavimento) | Ruimte tussen pallets (op de vloer) | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.mixedNote | Ogni gruppo può avere misura, identificativo e rotazione propri. La sovrapposizione si configura per gruppo. | Elke groep kan eigen maten, identificatie en draaiing hebben. Stel stapelen per groep in. | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |
 | pallet.mixedStackNote | Per sovrapporre gruppi diversi, attiva Sovrapposizione sui gruppi coinvolti e scegli le compatibilità. | Schakel stapelen in voor de betrokken groepen en kies welke groepen op elkaar mogen. | Configurazione dei gruppi pallet | Distinguere misura, tipo, gruppo, quantità e identità del pallet. |

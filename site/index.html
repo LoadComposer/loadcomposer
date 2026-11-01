@@ -4098,6 +4098,15 @@
     .hidden {
       display: none !important;
     }
+    /* C4e UX01: align stacking controls and allow full numeric text height. */
+    #planner .stack-role-row .layers-setting input { height: 44px; padding: 8px 10px; line-height: 1.25; box-sizing: border-box; }
+    #planner .stack-role-row .layers-setting { max-width: 100%; }
+    #planner .stack-role-row .layers-setting > span:not(.visually-hidden) { white-space: normal; overflow-wrap: anywhere; }
+    @media (min-width: 600px) and (max-width: 900px) {
+      #planner .general-settings-grid { grid-template-columns: minmax(0,1.2fr) repeat(2,minmax(0,1fr)); align-items: stretch; }
+      #planner .general-settings-grid > .unit-preference { display: flex; align-items: end; min-width: 0; width: 100%; }
+      #planner .general-settings-grid > label:has(#gap), #planner #verticalGapSetting { grid-column: auto; grid-row: auto; }
+    }
   </style>
 </head>
 <body>
@@ -4234,7 +4243,8 @@
                 <span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span>
               </span>
             </label>
-            <label id="verticalGapSetting" class="hidden"><span data-i18n="pallet.verticalGap">pallet.verticalGap</span><span class="measurement-input"><input id="verticalGap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0"><span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span></span></label>
+            <label id="verticalGapSetting" class="hidden"><span data-i18n="pallet.verticalGap">pallet.verticalGap</span><span class="measurement-input"><input id="verticalGap" aria-describedby="verticalGapHelp" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0"><span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span></span></label>
+            <span id="verticalGapHelp" class="visually-hidden" data-i18n="pallet.verticalGapHelp">pallet.verticalGapHelp</span>
           </div>
       </div>
     </section>
@@ -11397,7 +11407,7 @@
     }
 
     function handleGroupChange(event) {
-      if (!event.target.matches('select, input[type="checkbox"], input[type="radio"]')) return;
+      if (!event.target.matches('select, input[type="checkbox"], input[type="radio"], input[type="number"], input[type="text"]')) return;
       const group = event.target.closest('.pallet-group');
       if (!group) return;
       if (event.target.matches('[data-field="stackingEnabled"], [data-field="stackRole"], [data-field="allowAbove"]')) {
@@ -11486,6 +11496,7 @@
       // - controlli di vista: solo drawSelected().
       initializeUnitControl();
       els.verticalGap.addEventListener("input", calculate);
+      els.verticalGap.addEventListener("change", calculate);
       els.addMixedRowBtn.addEventListener("click", () => addMixedRow({ presetId: "eur", quantity: 1, height: 1500 }));
       els.singlePalletGroup.addEventListener("click", handleGroupClick);
       els.singlePalletGroup.addEventListener("input", handleGroupInput);
@@ -11556,8 +11567,9 @@
         else if (!loadComposerComputation.pending()) calculate({ reportValidity: true });
       });
 
-      [els.gap, els.maxLayers].forEach(el => {
+      [els.gap].forEach(el => {
         el.addEventListener("input", calculate);
+        el.addEventListener("change", calculate);
       });
 
       document.querySelectorAll("[data-filter-primary]").forEach(button => {

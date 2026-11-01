@@ -67,7 +67,7 @@
     "pallet.stackable": "Palettes gerbables",
     "pallet.maxLayers": "Niveaux max.",
     "pallet.maxLayersHelp": "Nombre maximal de niveaux de palettes autorisés à chaque position au sol. La palette posée au sol compte comme premier niveau. Le véhicule peut autoriser moins de niveaux en raison de sa hauteur utile.",
-    "pallet.verticalGap": "Espace entre niveaux (ex. séparateurs)",
+    "pallet.verticalGap": "Espace entre couches",
     "pallet.gap": "Espace entre palettes (au sol)",
     "pallet.mixedNote": "Chaque groupe peut avoir ses propres dimensions, identifiant et rotation. Réglez le gerbage par groupe.",
     "pallet.mixedStackNote": "Pour gerber différents groupes, activez le gerbage des groupes concernés et choisissez leur compatibilité.",

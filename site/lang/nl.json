@@ -67,7 +67,7 @@
     "pallet.stackable": "Stapelbare pallets",
     "pallet.maxLayers": "Max. lagen",
     "pallet.maxLayersHelp": "Maximaal aantal palletlagen per vloerpositie. De pallet op de voertuigvloer telt als de eerste laag. Door de bruikbare hoogte kan het voertuig minder lagen toestaan.",
-    "pallet.verticalGap": "Ruimte tussen lagen (bijv. scheidingslagen)",
+    "pallet.verticalGap": "Ruimte tussen lagen",
     "pallet.gap": "Ruimte tussen pallets (op de vloer)",
     "pallet.mixedNote": "Elke groep kan eigen maten, identificatie en draaiing hebben. Stel stapelen per groep in.",
     "pallet.mixedStackNote": "Schakel stapelen in voor de betrokken groepen en kies welke groepen op elkaar mogen.",

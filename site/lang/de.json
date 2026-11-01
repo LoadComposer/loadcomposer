@@ -67,7 +67,7 @@
     "pallet.stackable": "Paletten stapelbar",
     "pallet.maxLayers": "Max. Lagen",
     "pallet.maxLayersHelp": "Maximale Anzahl Palettenlagen pro Bodenposition. Die Palette auf dem Fahrzeugboden zählt als erste Lage. Je nach nutzbarer Höhe kann das Fahrzeug weniger Lagen zulassen.",
-    "pallet.verticalGap": "Abstand zwischen Lagen (z. B. Trennlagen)",
+    "pallet.verticalGap": "Abstand zwischen Lagen",
     "pallet.gap": "Abstand zwischen Paletten (am Boden)",
     "pallet.mixedNote": "Jede Gruppe kann eigene Maße, Kennung und Drehung haben. Das Stapeln wird je Gruppe eingestellt.",
     "pallet.mixedStackNote": "Für verschiedene Gruppen Stapeln bei den beteiligten Gruppen aktivieren und die Verträglichkeit wählen.",

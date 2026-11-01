@@ -48,8 +48,11 @@ try {
         await page.locator("#stackable").check();
         assert.equal(await page.locator("#verticalGapSetting").isVisible(), true);
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+        // C4e exposes existing helper text to assistive technology; it is not a grid control.
+        assert.equal(await page.locator("#verticalGap").getAttribute("aria-describedby"), "verticalGapHelp");
+        assert.equal(await page.locator("#verticalGapHelp").textContent(), catalog["pallet.verticalGapHelp"]);
         const measurements = await settings.evaluate(section => {
-          const visible = [...section.querySelectorAll(".general-settings-grid > *")]
+          const visible = [...section.querySelectorAll(".general-settings-grid > fieldset, .general-settings-grid > label")]
             .filter(element => getComputedStyle(element).display !== "none")
             .map(element => {
               const bounds = element.getBoundingClientRect();
