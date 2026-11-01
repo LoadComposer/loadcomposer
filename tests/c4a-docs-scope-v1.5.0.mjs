@@ -14,7 +14,7 @@ for(const file of currentDocs){
  assert.ok(current.includes(releaseUrl),file+' missing official release link');
  assert.ok(/published|pubblicat[ao]|deployed/i.test(current),file+' missing published state');
  assert.ok(!/not yet published|not yet recorded|has not yet occurred|deployment pending|no production deployment|non ancora pubblicata|non è ancora stato eseguito/i.test(current),file+' has obsolete pre-publication status');
- assert.ok(!/loadcomposer-v1\\.[0-4]\\.\\d+-standalone/.test(current),file+' current references stale');
+ assert.ok(!/loadcomposer-v1\.[0-4]\.\d+-standalone/.test(current),file+' current references stale');
 }
 for(const ext of ['html','zip'])assert.ok(fs.existsSync(ROOT+'/site/downloads/loadcomposer-v1.5.0-standalone.'+ext));
 assert.equal(sha(Buffer.from(read('CHANGELOG.md').split('## [1.3.5]')[1])),reference.historyHash,'historical changelog modified');
