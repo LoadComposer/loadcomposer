@@ -2,9 +2,19 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';import {restoreC4c} from './c4e-scope-helper.mjs';
 import {ROOT,sha,save} from './c4a-helpers-v1.5.0.mjs';
 const read=p=>restoreC4c(p,fs.readFileSync(ROOT+'/'+p,'utf8')),reference=JSON.parse(read('polish-c4a-v1.5.0/fixtures/scope.json'));
-for(const file of ['README.md','README.it.md','docs/DEPLOYMENT.md','CHANGELOG.md']){
- const d=read(file);assert.ok(d.includes('1.5.0'));assert.ok(/candidate|candidata/i.test(d));assert.ok(/approval|approvazione|approved|approvat[oa]/i.test(d),file+' missing approval state');assert.ok(/unpublished|not been published|non ancora pubblicata|unreleased|not yet published|not yet recorded|has not yet occurred|non è ancora stato eseguito/i.test(d),file+' missing pre-publication state');
- assert.ok(!/loadcomposer-v1\.[0-4]\.\d+-standalone/.test(d.split('## [1.3.5]')[0]),file+' current references stale');
+// The C4a document-scope regression must follow the published C4e status.
+// Preserve all historical and application-source hash checks below.
+const releaseUrl='https://github.com/LoadComposer/loadcomposer/releases/tag/v1.5.0';
+const currentDocs=['README.md','README.it.md','docs/DEPLOYMENT.md','CHANGELOG.md'];
+for(const file of currentDocs){
+ const current=read(file).split('## [1.3.5]')[0];
+ assert.ok(current.includes('1.5.0'),file+' missing version');
+ assert.ok(current.includes('C4e'),file+' missing final C4e status');
+ assert.ok(/2026-11-01|1 novembre 2026/i.test(current),file+' missing publication date');
+ assert.ok(current.includes(releaseUrl),file+' missing official release link');
+ assert.ok(/published|pubblicat[ao]|deployed/i.test(current),file+' missing published state');
+ assert.ok(!/not yet published|not yet recorded|has not yet occurred|deployment pending|no production deployment|non ancora pubblicata|non è ancora stato eseguito/i.test(current),file+' has obsolete pre-publication status');
+ assert.ok(!/loadcomposer-v1\\.[0-4]\\.\\d+-standalone/.test(current),file+' current references stale');
 }
 for(const ext of ['html','zip'])assert.ok(fs.existsSync(ROOT+'/site/downloads/loadcomposer-v1.5.0-standalone.'+ext));
 assert.equal(sha(Buffer.from(read('CHANGELOG.md').split('## [1.3.5]')[1])),reference.historyHash,'historical changelog modified');
@@ -14,4 +24,4 @@ for(const [file,expected] of Object.entries(reference.catalogs)){
  const d=JSON.parse(read('site/lang/'+file));assert.deepEqual(d.meta??null,expected.meta);const unchanged=Object.fromEntries(Object.entries(d.translations||{}).filter(([k])=>!reference.allowedKeys.includes(k)));assert.equal(sha(JSON.stringify(unchanged)),expected.hash,file+' unrelated translation changed');
 }
 save('docs-scope',{pass:true,frozen:Object.keys(reference.frozen),sourceHunks:reference.patches.length,catalogKeysAllowed:reference.allowedKeys,historyPreserved:true});
-console.log('C4a D01/scope PASS: current candidate docs, previous changelog, frozen JS/lock and unrelated translations');
+console.log('C4a D01/scope PASS: published C4e docs, previous changelog, frozen JS/lock and unrelated translations');
