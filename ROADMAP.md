@@ -2,14 +2,11 @@
 
 This roadmap is directional and creates no commitment, deadline, or warranty.
 
-## Current release
+## Current stable release
 
-`v1.3.0` adds a global linear-unit preference for millimetres, centimetres,
-and inches. User input and presentation are converted at the application
-boundary while the geometric engine, presets, coordinates, capacities, and
-all canonical data continue to use integer millimetres only.
+`v1.5.0` (final C4e) was published on 2026-11-01. It includes Advanced Stacking for mixed pallet groups, browser-local Worker computation with fallback, geometry and print safeguards, responsive corrections, and synchronized offline standalone downloads. The seven supported languages are English, Italian, German, Spanish, French, Portuguese, and Dutch. The engine remains heuristic and does not certify physical loading safety.
 
-## Successive work not included in v1.3.0
+## Future work not included in v1.5.0
 
 - Rapid entry / compact editing for mixed-pallet groups.
 - Additional languages: Polish, Turkish, Simplified Chinese, and Arabic with RTL support.
@@ -33,5 +30,6 @@ evaluated progressively as separate, small releases.
 
 Weight, balance, axle loads, load securing, route compliance, and regulatory certification are not implied by this roadmap. They require dedicated domain models, qualified review, and separate validation before any implementation claim.
 
-The `v1.3.0` release adds no hosted commercial service, new language, PWA,
-service worker, backend, analytics, or new distribution channel.
+## Historical note — v1.3.0
+
+`v1.3.0` introduced the global mm/cm/in unit preference, with conversion at the application boundary and integer-millimetre geometric data. That release added no hosted commercial service, new language, PWA, service worker, backend, analytics, or new distribution channel.
