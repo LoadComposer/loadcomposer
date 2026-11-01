@@ -2,14 +2,14 @@
 
 All notable project changes are documented here.
 
-## [1.5.0] — Approved release candidate (C4c; not yet published)
+## [1.5.0] — 2026-11-01 (final C4e; stable release)
 
-### Added and corrected in the v1.5.0 candidate
+### Added and corrected in v1.5.0
 
 - Advanced Stacking for mixed pallet groups, explicit stacks/layers, stacking roles and allowed-above compatibility, with geometric validation and operational print detail.
 - Browser-local computation core and Worker with fallback/inline execution, job cancellation and result provenance checks.
 - Geometry, capacity, operational eligibility and print consistency corrections covered by the preserved C1–C4 evidence, including truncated capacity handling and rejection of stale-input prints.
-- Localized UI and operational printing in all seven enabled languages, with offline HTML/ZIP generated from the same candidate.
+- Localized UI and operational printing in all seven enabled languages, with offline HTML/ZIP generated from the same release sources.
 
 ### C4a final polish
 
@@ -18,18 +18,24 @@ All notable project changes are documented here.
 - Removed the unit-label overlap at tablet widths with a scoped responsive CSS change.
 - Associated the localized vehicle caption with the preview vehicle selector's accessible name.
 
-### C4b–C4d independent verification and final responsive fix
+### C4b–C4d independent verification and responsive fix
 
 - C4b independently confirmed the four C4a polish corrections (D01, P01, U01 and A01).
 - C4c resolved U02, horizontal overflow of Custom pallet group summaries at tablet widths, using a scoped CSS-only fix without changing the solver, core, Worker or application JavaScript.
 - C4d independently reproduced the original U02 issue (26/42 cases) and verified its absence after the fix (0/42 cases), with targeted regressions passing.
-- The final C4c archives and clean external checksum manifest are approved for publication; the historical `.PfeItk` temporary file is not a release asset.
+- The C4c archives and clean external checksum manifest remain historical pre-release verification evidence; the historical `.PfeItk` temporary file is not a release asset.
+
+### C4e final UX and functional hotfix
+
+- UX01: shortened the inter-layer spacing label and corrected the stacking-control layout so the Max layers field remains readable and accessible.
+- FUNC01: corrected input/change event handling to prevent results from disappearing after Max layers is changed (including the 2 → 3 edit-and-blur sequence).
+- Full C4e `npm test` and deterministic packaging checks passed; preview and production site were manually verified.
 
 ### Known limits and publication status
 
-- S02 remains an accepted MINOR in the controlled mutation/restore sequence documented by C4; it is not fixed here.
+- S02 remains an accepted MINOR in the controlled mutation/restore sequence documented by C4; it is not fixed in v1.5.0. The Ramp preview can be temporarily out of sync in that artificial sequence, while print remains correct.
 - Geometric heuristic estimates do not certify physical loading safety or optimality. Dense PDF and extreme fallback performance limitations remain documented.
-- Independent C4d verification is complete and the user has manually approved C4c for publication, explicitly accepting S02. No production deployment, publication date, version tag or GitHub Release has yet been recorded.
+- C4d independently verified the U02 responsive fix; C4e is the final published candidate. [PR #1](https://github.com/LoadComposer/loadcomposer/pull/1) merged on 2026-11-01 into `main` at `e75e188e6c6aeddac4b910a3cac5949c27a5f087` (tree `733d6c98b689ba579f912a1485f7790a3d52afe0`). The stable [v1.5.0 GitHub Release](https://github.com/LoadComposer/loadcomposer/releases/tag/v1.5.0) and Cloudflare Pages production deployment are published; the four release assets are standalone HTML/ZIP plus their SHA-256 sidecars.
 
 ## [1.3.5] — 2026-08-28
 
