@@ -8,7 +8,7 @@
 
 LoadComposer is a browser-based planning aid that estimates how pallets fit geometrically in common maritime containers and 13.60 m semi-trailers. It supports single-pallet and mixed-pallet scenarios, rotation and mandatory fork-entry orientation, layered quantities, responsive previews, localized operational printouts, and an offline standalone page.
 
-> **Approved release candidate:** `v1.5.0` (C4c), independently verified through C4d and manually approved for publication. Production deployment has not yet occurred. Verify results before operational use.
+> **Current stable release:** `v1.5.0` (final C4e), published on 2026-11-01. The official [GitHub Release](https://github.com/LoadComposer/loadcomposer/releases/tag/v1.5.0) includes standalone HTML/ZIP plus SHA-256 sidecars. Verify results before operational use.
 
 | Day | Night |
 |---|---|
@@ -82,7 +82,7 @@ Confirm measurements and the actual equipment, then obtain qualified operational
 
 ## Project map
 
-- `site/` — candidate static site and Cloudflare Pages output.
+- `site/` — production static site and Cloudflare Pages output.
 - `site/guides/` — static planning guides and allowlisted planner examples.
 - `site/about/` — static English About page describing the practical origin and scope of LoadComposer.
 - `site/downloads/` — localized Download page, current and historical standalone artifacts, and SHA-256 sidecars.
@@ -108,12 +108,16 @@ LoadComposer is source-available under the custom [LoadComposer Community Licens
 Official site: [loadcomposer.com](https://loadcomposer.com/)  
 Official repository: [github.com/LoadComposer/loadcomposer](https://github.com/LoadComposer/loadcomposer)  
 Download options: [loadcomposer.com/downloads/](https://loadcomposer.com/downloads/)  
-Approved candidate standalone HTML: [v1.5.0](site/downloads/loadcomposer-v1.5.0-standalone.html)
+Current standalone HTML: [v1.5.0](site/downloads/loadcomposer-v1.5.0-standalone.html)
 
 Copyright © 2026 Marco Pernigotti.
 
-## Final verification and release status
+## v1.5.0 release verification and publication
 
-Verify the six final C4c distribution artifacts against the external `SHA256SUMS-C4c-CLEAN.txt` manifest and check ZIP CRC plus internal manifests. Keep `PACKAGE_VERIFICATION-C4c-v1.5.0.json` as historical packaging evidence rather than a publication asset list: its temporary `.PfeItk` entry is not a distribution artifact. The QA bundle includes the complete `npm test` suite, including `test:c4c`; the delivery contains build inputs without heavy QA evidence. The GitHub release branch also passed its full CI test run. See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for prerequisites and the subsequent production publication steps.
+The final C4e candidate was merged through [PR #1](https://github.com/LoadComposer/loadcomposer/pull/1) into `main` on 2026-11-01 (merge commit `e75e188e6c6aeddac4b910a3cac5949c27a5f087`, tree `733d6c98b689ba579f912a1485f7790a3d52afe0`). The stable [GitHub Release v1.5.0](https://github.com/LoadComposer/loadcomposer/releases/tag/v1.5.0) points to that commit and includes standalone HTML, ZIP, and their SHA-256 sidecars. Cloudflare Pages production deployment was confirmed on the same commit; GitHub Actions CI and Package integrity checks passed.
 
-S02 remains a manually accepted MINOR within the controlled mutation/restore sequence documented by C4: the ramp preview can remain stale until redrawn, while the print document is correct. It remains unfixed in C4c. Independent C4d verification confirmed the U02 responsive fix. The release is approved for publication, but no production deploy, version tag or GitHub Release has yet been performed.
+C4e corrected UX01 (inter-layer spacing label and stacking-control layout) and FUNC01 (Max layers input/change consistency). The full `npm test` and deterministic packaging checks passed, and the preview and production site were manually verified.
+
+The C4c/C4d archives and `SHA256SUMS-C4c-CLEAN.txt` remain historical pre-release QA evidence. `PACKAGE_VERIFICATION-C4c-v1.5.0.json` is also historical: its `.PfeItk` temporary-file entry is not a release asset.
+
+**Accepted residual S02:** an artificial controlled mutation/restore sequence may leave the Ramp preview temporarily out of sync until redraw; operational print remains correct. S02 is an accepted MINOR, not fixed in v1.5.0. The geometric and physical-safety limitations above still apply.

@@ -8,7 +8,7 @@
 
 LoadComposer è un ausilio alla pianificazione nel browser che stima la disposizione geometrica dei pallet nei principali container marittimi e bilici da 13,60 m. Gestisce carichi a pallet singolo e misti, rotazione e orientamento obbligatorio dell’inforcamento, quantità su livelli, anteprime responsive, stampa operativa localizzata e una pagina standalone offline.
 
-> **Candidata approvata:** `v1.5.0` (C4c), verificata indipendentemente fino a C4d e approvata manualmente per la pubblicazione. Il deploy in produzione non è ancora stato eseguito. Verificare i risultati prima dell’uso operativo.
+> **Versione stabile corrente:** `v1.5.0` (C4e finale), pubblicata il 1 novembre 2026. La [GitHub Release ufficiale](https://github.com/LoadComposer/loadcomposer/releases/tag/v1.5.0) comprende HTML/ZIP standalone e i relativi file SHA-256. Verificare i risultati prima dell’uso operativo.
 
 | Giorno | Notte |
 |---|---|
@@ -96,8 +96,12 @@ Pagina Download: [loadcomposer.com/downloads/](https://loadcomposer.com/download
 
 Copyright © 2026 Marco Pernigotti.
 
-## Verifica finale e stato della pubblicazione
+## Verifica v1.5.0 e pubblicazione
 
-Usare Node.js conforme a `^22.17.0 || >=24.0.0` e npm 11.9.0. C3j/C4 sono stati verificati con Node.js 24.22.1. Verificare i sei artefatti C4c definitivi tramite il manifesto esterno `SHA256SUMS-C4c-CLEAN.txt`, poi CRC e manifesti interni. Conservare `PACKAGE_VERIFICATION-C4c-v1.5.0.json` come evidenza storica, non come elenco degli asset pubblicabili: la voce temporanea `.PfeItk` non appartiene alla distribuzione. Il test bundle contiene `npm test` completo, incluso `test:c4c`; la delivery contiene gli input di build senza le prove QA pesanti. Anche la CI del ramo GitHub di release è passata. Consultare [DEPLOYMENT.md](docs/DEPLOYMENT.md) per la verifica e la successiva pubblicazione in produzione.
+La candidata finale C4e è stata integrata con la [PR #1](https://github.com/LoadComposer/loadcomposer/pull/1) nel branch `main` il 1 novembre 2026 (commit di merge `e75e188e6c6aeddac4b910a3cac5949c27a5f087`, albero Git `733d6c98b689ba579f912a1485f7790a3d52afe0`). La [GitHub Release v1.5.0](https://github.com/LoadComposer/loadcomposer/releases/tag/v1.5.0) è stabile e contiene HTML/ZIP standalone con due file SHA-256. Il deployment Cloudflare Pages è stato confermato sullo stesso commit; i workflow GitHub Actions CI e Package integrity della release sono passati.
 
-S02 resta MINOR accettato esplicitamente nel perimetro della mutazione/ripristino controllati documentato da C4: la preview rampa può restare obsoleta fino al ridisegno, mentre il documento stampato è corretto. Non è risolto nella C4c. La verifica indipendente C4d ha confermato la correzione responsive U02. La pubblicazione è approvata, ma deploy in produzione, tag e GitHub Release non sono ancora stati eseguiti.
+L'hotfix C4e ha corretto UX01 (etichetta e layout dei controlli dello spazio tra strati) e FUNC01 (coerenza dei risultati in seguito agli eventi input/change del campo Max strati). Il test completo `npm test` e le verifiche di packaging deterministico della candidata finale sono passati; anteprima e sito pubblicato sono stati controllati manualmente.
+
+Gli archivi C4c/C4d e `SHA256SUMS-C4c-CLEAN.txt` rimangono prove storiche delle verifiche precedenti. Anche `PACKAGE_VERIFICATION-C4c-v1.5.0.json` è un documento storico: la voce temporanea `.PfeItk` non è un asset della release.
+
+**Limite residuo S02 — MINOR ACCETTATO:** in una sequenza artificiale di mutazione/ripristino la preview dalla rampa può risultare temporaneamente non aggiornata fino al ridisegno, mentre il documento stampato resta corretto. S02 non è stato corretto in v1.5.0. Restano applicabili tutte le limitazioni relative alla geometria euristica e alla sicurezza fisica del carico.
