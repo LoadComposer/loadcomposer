@@ -1,0 +1,108 @@
+{
+  "source": "f991d625af236ca27dd111969b4c79dcdc3b2403bb14949f674611f8e29bcc1a",
+  "patches": [
+    {
+      "before": "",
+      "after": "      #planner .unit-preference { display: block; width: min(229px,100%); }\n      #planner .unit-preference legend { position: static; margin: 0 0 var(--planner-label-gap); }\n"
+    },
+    {
+      "before": "                <span data-i18n=\"preview.display\">preview.display</span>\n                <select id=\"drawSelect\"></select>\n",
+      "after": "                <span id=\"drawSelectLabel\" data-i18n=\"preview.display\">preview.display</span>\n                <select id=\"drawSelect\" aria-labelledby=\"drawSelectLabel\"></select>\n"
+    },
+    {
+      "before": "",
+      "after": "      const warehouseNoteKey = result.advancedStacking\n        ? (result.stacks?.some(stack => stack.layers.length > 1) ? \"advanced.warehouseNote\" : \"advanced.warehouseNoteFloor\")\n        : result.mode === \"mixed\" ? \"print.warehouseNoteMixed\"\n        : result.layout.rects.some(rect => rect.stackCount > 1) ? \"print.warehouseNoteLayers\"\n        : \"print.warehouseNoteFloor\";\n"
+    },
+    {
+      "before": "              <div class=\"warehouse-note\">${escapeHtml(t(result.stacks ? \"advanced.warehouseNote\" : \"print.warehouseNote\"))}</div>\n",
+      "after": "              <div class=\"warehouse-note\">${escapeHtml(t(warehouseNoteKey))} ${escapeHtml(t(\"print.warehouseNote\"))}</div>\n"
+    }
+  ],
+  "frozen": {
+    "site/computation-worker-source.js": "aa5c1574ded005f7dc3b935aece06384c1e1a354147ec236612bd815e752d20e",
+    "site/computation-core.js": "1d698cf6702e3a014a7a75a74b27910548978791e47b7ef83c15a80438fda52e",
+    "site/computation-runtime.js": "44af339f0d4388f9e7f015feda1f17bffc3706f56d37136d90c67ac009216539",
+    "site/advanced-stacking-engine.js": "978878099a535179b209446401fcecf9aeb6d18b6836662663aa9d504a6bb047",
+    "site/advanced-stacking-validator.js": "2f0e1733b0f1dd4ed57eed3fecf219cba68916daa5b698bb8906dae48e65ac4a",
+    "package-lock.json": "f81c53d6155d7c9366ea3c860fe731b9110e06991c616fea2f486db226f3850f"
+  },
+  "catalogs": {
+    "fr.json": {
+      "meta": {
+        "code": "fr",
+        "name": "Français",
+        "dir": "ltr",
+        "version": "1.5.0"
+      },
+      "hash": "e982487a37e1680364fc2e46d057dcd6a9c62efdb1adb14ad9c4032a2bf81d30"
+    },
+    "index.json": {
+      "meta": null,
+      "hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    "es.json": {
+      "meta": {
+        "code": "es",
+        "name": "Español",
+        "dir": "ltr",
+        "version": "1.5.0"
+      },
+      "hash": "72d74f10a5e7b74a9d417e26ca80f72c9706eb032e16e8195b0de30aa4401417"
+    },
+    "en.json": {
+      "meta": {
+        "code": "en",
+        "name": "English",
+        "dir": "ltr",
+        "version": "1.5.0"
+      },
+      "hash": "d54ec7bce90266641d6a8c390f673eb2e8f9011a0be0ba7c4bb1ab46e14e6948"
+    },
+    "it.json": {
+      "meta": {
+        "code": "it",
+        "name": "Italiano",
+        "dir": "ltr",
+        "version": "1.5.0"
+      },
+      "hash": "f95bff4f154eb9d93b4a6946087bd51e35b42f09ae9a14ac1f4e391a16134f61"
+    },
+    "pt.json": {
+      "meta": {
+        "code": "pt",
+        "name": "Português",
+        "dir": "ltr",
+        "version": "1.5.0"
+      },
+      "hash": "d4c77a704580aec10449d9c0124e9fbb8ca60f67688929c7c70a357e1813e55e"
+    },
+    "nl.json": {
+      "meta": {
+        "code": "nl",
+        "name": "Nederlands",
+        "dir": "ltr",
+        "version": "1.5.0"
+      },
+      "hash": "7a9b8b207da252c8b7db24d821068e71cad7b8210d9668e799202557d6cd5a28"
+    },
+    "de.json": {
+      "meta": {
+        "code": "de",
+        "name": "Deutsch",
+        "dir": "ltr",
+        "version": "1.5.0"
+      },
+      "hash": "58a8e811f3d45a6f569f8104bd6f09868e11987355080db1999e8412cb0cba2f"
+    }
+  },
+  "allowedKeys": [
+    "preview.display",
+    "print.warehouseNote",
+    "print.warehouseNoteFloor",
+    "print.warehouseNoteLayers",
+    "print.warehouseNoteMixed",
+    "advanced.warehouseNote",
+    "advanced.warehouseNoteFloor"
+  ],
+  "historyHash": "d37b4945f6d57b2528d83d31eb7d8e660897a543bd668222eec52069a834cd6a"
+}

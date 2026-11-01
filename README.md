@@ -8,7 +8,7 @@
 
 LoadComposer is a browser-based planning aid that estimates how pallets fit geometrically in common maritime containers and 13.60 m semi-trailers. It supports single-pallet and mixed-pallet scenarios, rotation and mandatory fork-entry orientation, layered quantities, responsive previews, localized operational printouts, and an offline standalone page.
 
-> **Current release:** `v1.4.0` (first stable release: `v1.0.0`). Verify results before operational use.
+> **Approved release candidate:** `v1.5.0` (C4c), independently verified through C4d and manually approved for publication. Production deployment has not yet occurred. Verify results before operational use.
 
 | Day | Night |
 |---|---|
@@ -20,7 +20,7 @@ LoadComposer is a browser-based planning aid that estimates how pallets fit geom
 
 ## Capabilities
 
-- Single-type and mixed-pallet composition with floor and layer quantities.
+- Single-type loads on one or more layers; mixed floor-only loads; Advanced Stacking with explicit stacks and per-group compatibility constraints.
 - Pallet presets plus custom dimensions and orientation constraints.
 - Maritime equipment: 20' Dry, 40' Dry, 40' High Cube, 45' High Cube, 20' Reefer, 40' HC Reefer, 40' HC Pallet Wide, 45' HC Pallet Wide, and 45' Reefer Pallet Wide.
 - 13.60 m curtain-side, mega, and refrigerated semi-trailers.
@@ -49,22 +49,27 @@ site/downloads/index.html
 For offline use, the simplest download is the standalone HTML:
 
 ```text
-site/downloads/loadcomposer-v1.4.0-standalone.html
+site/downloads/loadcomposer-v1.5.0-standalone.html
 ```
 
 Copy it to the offline computer and open it in a browser. A compressed ZIP for
 archiving or internal distribution is also available as
-`site/downloads/loadcomposer-v1.4.0-standalone.zip`.
+`site/downloads/loadcomposer-v1.5.0-standalone.zip`.
 
-To reproduce the application and run all checks:
+To rebuild the product from the delivery archive:
 
 ```bash
 node --version  # v22.17.0, or a compatible >=24.0.0 release
 npm ci
-npm test
+npm run build
 ```
 
-The verified baseline is Node.js 22.17.0 with npm 11.9.0. Cloudflare Pages
+The delivery includes `package.json`, `package-lock.json` and the build runtime.
+Automated tests and their fixtures are distributed in the separate v1.5.0 test
+bundle. Run `npm ci` and `npm test` from that bundle to execute the full suite.
+Builds that generate guide images use the bundled Linux Chromium launcher.
+
+Use Node.js matching `^22.17.0 || >=24.0.0` and npm 11.9.0. C3j/C4 validation used Node.js 24.22.1; this does not certify every compatible runtime. Cloudflare Pages
 requires no framework and no build command; set the output directory to `site`.
 See the [first-push guide](docs/GITHUB_FIRST_PUSH.md), [deployment instructions](docs/DEPLOYMENT.md),
 and [Cloudflare preview checklist](docs/CLOUDFLARE_PREVIEW_CHECKLIST.md).
@@ -77,7 +82,7 @@ Confirm measurements and the actual equipment, then obtain qualified operational
 
 ## Project map
 
-- `site/` — production-ready static site and Cloudflare Pages output.
+- `site/` — candidate static site and Cloudflare Pages output.
 - `site/guides/` — static planning guides and allowlisted planner examples.
 - `site/about/` — static English About page describing the practical origin and scope of LoadComposer.
 - `site/downloads/` — localized Download page, current and historical standalone artifacts, and SHA-256 sidecars.
@@ -103,6 +108,12 @@ LoadComposer is source-available under the custom [LoadComposer Community Licens
 Official site: [loadcomposer.com](https://loadcomposer.com/)  
 Official repository: [github.com/LoadComposer/loadcomposer](https://github.com/LoadComposer/loadcomposer)  
 Download options: [loadcomposer.com/downloads/](https://loadcomposer.com/downloads/)  
-Current standalone HTML: [v1.4.0](https://loadcomposer.com/downloads/loadcomposer-v1.4.0-standalone.html)
+Approved candidate standalone HTML: [v1.5.0](site/downloads/loadcomposer-v1.5.0-standalone.html)
 
 Copyright © 2026 Marco Pernigotti.
+
+## Final verification and release status
+
+Verify the six final C4c distribution artifacts against the external `SHA256SUMS-C4c-CLEAN.txt` manifest and check ZIP CRC plus internal manifests. Keep `PACKAGE_VERIFICATION-C4c-v1.5.0.json` as historical packaging evidence rather than a publication asset list: its temporary `.PfeItk` entry is not a distribution artifact. The QA bundle includes the complete `npm test` suite, including `test:c4c`; the delivery contains build inputs without heavy QA evidence. The GitHub release branch also passed its full CI test run. See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for prerequisites and the subsequent production publication steps.
+
+S02 remains a manually accepted MINOR within the controlled mutation/restore sequence documented by C4: the ramp preview can remain stale until redrawn, while the print document is correct. It remains unfixed in C4c. Independent C4d verification confirmed the U02 responsive fix. The release is approved for publication, but no production deploy, version tag or GitHub Release has yet been performed.

@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { launchBrowser } from "../tests/browser-runtime.mjs";
+import { launchBrowser } from "./browser-runtime.mjs";
 import { FLOOR_CAPACITIES, PUBLIC_EXAMPLES } from "./guide-scenarios-v1.4.0.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
@@ -55,6 +55,8 @@ try {
     await page.goto(url.href, { waitUntil: "load" });
     await page.waitForFunction(() => document.documentElement.dataset.i18nReady === "true");
     await page.waitForFunction(() => window.eval("applicationInitialized") === true);
+
+    await page.waitForFunction(() => !window.loadComposerComputation?.pending());
 
     const prefill = await page.evaluate(() => {
       const group = document.getElementById("singlePalletGroup");

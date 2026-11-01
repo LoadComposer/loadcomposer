@@ -1,0 +1,8 @@
+    /* C4c U02: keep group actions reachable and summaries fully readable. */
+    #planner .pallet-group, #planner .mixed-list, #planner .group-body { min-width: 0; max-width: 100%; }
+    #planner .group-heading { display: grid; grid-template-columns: minmax(0,1fr) auto; }
+    #planner .group-disclosure { min-width: 0; max-width: 100%; }
+    #planner .group-heading-copy { min-width: 0; overflow-wrap: anywhere; }
+    #planner .group-heading-copy > strong { max-width: 100%; }
+    #planner .group-summary { white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }
+

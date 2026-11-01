@@ -1,0 +1,1040 @@
+{
+  "single-floor": {
+    "geometry": "3f27117b1a9278728fbc96e903089fa128ed6c2d0d02b0de28782fa826de2a61",
+    "prints": {
+      "en-ramp-colour": {
+        "imageHashes": [
+          "b84c0f8d7ad3d1ab6de51dce6e9b583bdcd86628b263047be2d1acfb1a036187"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-ramp-bw": {
+        "imageHashes": [
+          "d0b2bdc896cf39fd0fe4c47ac089421759f25ad7b7f568b9054f4b9228d92164"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-colour": {
+        "imageHashes": [
+          "5b82bd906d299f7143ab6f979e25a9dc6950f35f6d3e1a4c6adc19a5903f5632"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-bw": {
+        "imageHashes": [
+          "2df8a9c91e4bfdfd1b63f9b5e3b119c0898de97073666dac1e1c51ccb90ed5c8"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "it-ramp-colour": {
+        "imageHashes": [
+          "9a697cf9cadf9cdcf91b52abfedf433a5827d699189f867c512dd91e0c10cb16"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-ramp-bw": {
+        "imageHashes": [
+          "52b0239595a9def8d9bb96866f131ffead1e8fed1882d270faa37b4ec8bddebf"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-colour": {
+        "imageHashes": [
+          "e89173d10da31a68afb77200b4f7ff365ba32f55092e8668333f07dad3da4986"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-bw": {
+        "imageHashes": [
+          "db93970fb51b97235f14737852dafc6258694b07b06ba3197a7f9ab1cc9e48e3"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "de-ramp-colour": {
+        "imageHashes": [
+          "e2a689414e84963383e74bf6f821eadba18879ae6e709c4ee3779a1885cebd14"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-ramp-bw": {
+        "imageHashes": [
+          "8c199ce2ea575d233c4a7d23a44bffa2667709d8d9435195a2f3e80c7d6d7144"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-colour": {
+        "imageHashes": [
+          "992c0382d6e13ba1e0ae536498a5cc2cdd48ec911d142e03fe5055c4b4a4b158"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-bw": {
+        "imageHashes": [
+          "f6285ecaf29519f92c4c42e57e585126e6ffeffc695ac07600a63b0b43971eb6"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "es-ramp-colour": {
+        "imageHashes": [
+          "1af38ccc4726d75e00282ca29f5b7027c55739133dff79e6756a33e76e38b1d0"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-ramp-bw": {
+        "imageHashes": [
+          "e6d7498a546bb129529766e6d1f1bd6eddbff41e3b9ca01a3b23fb043cf947cb"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-colour": {
+        "imageHashes": [
+          "691303fe1cc8af27739fc26d61c987e24c14c2c97d5bff689842c0a3bbd3fda8"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-bw": {
+        "imageHashes": [
+          "5aba444a1984456f1bf1a0c3fbee9a80f490f3fdc545ac5b96918e0968602ecb"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "fr-ramp-colour": {
+        "imageHashes": [
+          "fc795d1be5541c272c98a4e4db87dc26a8a80a57e184365bc55ae0110785d596"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-ramp-bw": {
+        "imageHashes": [
+          "fff0c10ffa47c876a3d9bb01a1b1bb9d1c6d2fa3008e1c867d3f55d5de25ea8e"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-colour": {
+        "imageHashes": [
+          "ef050d27b446ee0896e79e161f88a0e1f9e8dc761d92deca144ea0f956dd55f3"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-bw": {
+        "imageHashes": [
+          "298e25db366e5158a2fe08edfdb347748f97ed31732588dad816485464c8bb64"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "pt-ramp-colour": {
+        "imageHashes": [
+          "efc662c83de51672c4fc8a9e41327958133a2010cce4b74b1f22fc6572016a19"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-ramp-bw": {
+        "imageHashes": [
+          "87bb9628f43c6ece6378686f01edf5b8c834760daf44c35a9b70af2e9d2b382d"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-colour": {
+        "imageHashes": [
+          "bed0e467d967a6d2bb56526df95654e13296938104e636a9aee6c0cef463f710"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-bw": {
+        "imageHashes": [
+          "2b6c619a345bec82470f38981da1df8b224e9f25d09e4fc5e3b238274625aadd"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "nl-ramp-colour": {
+        "imageHashes": [
+          "276a9f05e5b4c1680a31790dcc64206390d34a3a85006ffef49610ec571eb408"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-ramp-bw": {
+        "imageHashes": [
+          "224aaff35c4efe8e14294ad3d623db0de05905b9f5e05cd8d0512e60a0bcf9a8"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-colour": {
+        "imageHashes": [
+          "11602cc10095ecf0f74c1270a37c9e2f88324147ed8847aae1e71a83578dc7b3"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-bw": {
+        "imageHashes": [
+          "93278013920104d238d61529a251b20e72e15fd2b38f61a20e765825eb8ce28e"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      }
+    }
+  },
+  "single-two": {
+    "geometry": "cf72fe1439169f175f8500e194f7bd5b805ee393789db511887971393efb1f76",
+    "prints": {
+      "en-ramp-colour": {
+        "imageHashes": [
+          "02a345a5761904b8c192dd4645850095c696a6386b9fcbd64377b188c952b857"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-ramp-bw": {
+        "imageHashes": [
+          "b07400cf66b24db4348447cae4e983a8b0257cf324c56af6d2b76fa1bd5c28b2"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-colour": {
+        "imageHashes": [
+          "1a81fd35107ec16e3619847d3b23b7a18289538a0734e9e9cdb767f4e550a970"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-bw": {
+        "imageHashes": [
+          "278ab202eb1a1ceb778133ae45bc8a15029517fc44350b2233c6e42277a33f59"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "it-ramp-colour": {
+        "imageHashes": [
+          "429eccde810bb60a5fefbf828b0a5efd98188b0ff07331c26a475525ec39805e"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-ramp-bw": {
+        "imageHashes": [
+          "ce1716b0f2f3e200e16aae5b7814917d05b49b0a2742209a7d366883632ee609"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-colour": {
+        "imageHashes": [
+          "8e2f1bcad3db20ea164c17b5c6d2c62677ebac9008a056d2bbc9fbe05faebf4c"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-bw": {
+        "imageHashes": [
+          "ed96b8c1119228adab789585ca6b2ff8cf2adb9057f642cef4a022cec3894d03"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "de-ramp-colour": {
+        "imageHashes": [
+          "9ce9b4c2bdaa8399a7bd611fcc8619442a2f1f6434680a628f28a09b32fc9bd6"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-ramp-bw": {
+        "imageHashes": [
+          "045a86ffa5a142639faeb67dffab6547b75127c6a6aad4c5a7e051706193468d"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-colour": {
+        "imageHashes": [
+          "ed2a495e7379abf02d812535f30f646cf1336aedea277ef7df6ff5aa5e31c838"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-bw": {
+        "imageHashes": [
+          "6002aa5c8315428e2863955dbd893709cb732cfb239a9d2b0504b620431785b6"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "es-ramp-colour": {
+        "imageHashes": [
+          "3bdf67aa56f77ffd98cf0090c0ccfba5d4bc375f6a4fce5714e4678546012a13"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-ramp-bw": {
+        "imageHashes": [
+          "ff30c069b6e418c8eb9b3e2755b9cb60fb7d1bed4c126da369314024bee2a7f1"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-colour": {
+        "imageHashes": [
+          "ea377d9765baf6652ac3fb045cc4f900244e7a83a77f6f78d3d317be26ab5d51"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-bw": {
+        "imageHashes": [
+          "7937e07d3725b76e0ced94bab5504937244ed405f742ecd2631e1c4e76d1130f"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "fr-ramp-colour": {
+        "imageHashes": [
+          "95be59303290368c4a0abc946317851baaed35e34752c1e12b053da4f93e5af7"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-ramp-bw": {
+        "imageHashes": [
+          "620bad2153ef19459310cdfd8063db9904a16428cf5cf09c33c2eeb8b5d401b7"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-colour": {
+        "imageHashes": [
+          "930f0ad13f6eb77c584a986f2e90b456e8278b4c8ddc5ac7f549a75f27decb19"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-bw": {
+        "imageHashes": [
+          "0ed4e0934b7afcf6432a95284323ae84e676c1e8ff7398c218441f16fc2ea537"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "pt-ramp-colour": {
+        "imageHashes": [
+          "c293a4252596721cfcbcbae000c3e68355b5fef0052ae2adc3790869b52620ae"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-ramp-bw": {
+        "imageHashes": [
+          "ef5d13bfb39ebc51b988aa21558f66076cf4c6dc7be006351957b0998e3c6393"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-colour": {
+        "imageHashes": [
+          "ff68ac6df7a6e7c9fae1f141fd07ac864c1664727d2a5bd0130782666f697ef7"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-bw": {
+        "imageHashes": [
+          "9134a3d81f3f9a042215b4b3e78eb19691d1ffac304046c16a85cc65ec89d7a5"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "nl-ramp-colour": {
+        "imageHashes": [
+          "8a8058f6df3457ee59917cc4b7229c7a6e3392b6f8f5c6a7d1d296c4372d8f93"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-ramp-bw": {
+        "imageHashes": [
+          "bc1574697215505652a0b754fafe8e3028b66ed084a8ea2e484a1af6dd57bf37"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-colour": {
+        "imageHashes": [
+          "95e2aec6ca0857b345f8ca10b074d7f9d35da858f1e9a478685f436610c2cf84"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-bw": {
+        "imageHashes": [
+          "a48d8409fe45623c963fd7f13fc4e9e5ac6b2650659bfdb26a433d92e7d69a57"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      }
+    }
+  },
+  "single-three": {
+    "geometry": "14f951d820151d199f42f9f85d2229efd665513a6d7a3cd7ea493a5a34e894ee",
+    "prints": {
+      "en-ramp-colour": {
+        "imageHashes": [
+          "9633dad3ab513ebbf534ea1fb3df8f9745665f3d3629c1f8395c9e6704ac1139"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-ramp-bw": {
+        "imageHashes": [
+          "4e63f4c0929bd0a3d2ac9c12fbe81fdf1dc307b39dfcaa6d42e92871d2f5ee33"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-colour": {
+        "imageHashes": [
+          "e421494f821438b777420a2e74d3087d6c9d571f711932f95713462c7421fdb1"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-bw": {
+        "imageHashes": [
+          "16fcfa5e98e6b46eafdef0c174bdee582e2fd77c868b439328570fc212c28e00"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "it-ramp-colour": {
+        "imageHashes": [
+          "3b765ed2ffd43b8f3341b33da4b1730dd8be81a5728fc76dc163df6c5f787e8f"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-ramp-bw": {
+        "imageHashes": [
+          "5ca60a50ea08d9dea3dfaaedcc0b20a3c834af74dd62a190f4cfea0ac819bf41"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-colour": {
+        "imageHashes": [
+          "6aa54f7f2855b383e81a098da8ee0ae89b3af88ff712230e158bfb95f1f1ee3f"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-bw": {
+        "imageHashes": [
+          "f872aef702f2edeaa84befff51ae483a5a79cac16557694b6c34a18ef920156f"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "de-ramp-colour": {
+        "imageHashes": [
+          "01deebb109c438885eb5ba73f7acee3e2eff5212a670d350c47f735d634fec7f"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-ramp-bw": {
+        "imageHashes": [
+          "3e9b21e9f12b7145fb9b3b658fed1d96f093260f61793d8aa0e905bbf534b478"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-colour": {
+        "imageHashes": [
+          "b9b3f90fd5de2da26ce2d2231c8a13e5f45d059e279532cbdc770d2362168e4e"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-bw": {
+        "imageHashes": [
+          "d5d11556a9f3b3bc32f3a487d0c1b49124268c880b19539eaca3ffd3b8be9405"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "es-ramp-colour": {
+        "imageHashes": [
+          "c54ef17caf396b3b0ea212cd86cfe1e0b7eac3fdf30e32cd45b4e875ad734794"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-ramp-bw": {
+        "imageHashes": [
+          "57c6a8fbdfb373025c95a0d91f8250b35a4cd780dc7975f83dc2b1516cc005aa"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-colour": {
+        "imageHashes": [
+          "1d8c960b6b98256c09ebe6751989017dad4769e62d77d082caa76934761f5634"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-bw": {
+        "imageHashes": [
+          "2b5a2b01fe46b3e2a02dcbfc03c2438d87b395d06ec9ec35b2baa4290ebab9f0"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "fr-ramp-colour": {
+        "imageHashes": [
+          "2553b8faa74f7f3056a5d061c10e9271ffc0728189899cf2aff6ca6906710dba"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-ramp-bw": {
+        "imageHashes": [
+          "2f82a9c54d0792ead3f297c96a1506d82b4a798569b58383fb72e04911360029"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-colour": {
+        "imageHashes": [
+          "0fd0a93cc51bb85cf99d99460686254d242eebaa832c386b8bedb89a3781490c"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-bw": {
+        "imageHashes": [
+          "e26713430430f4cbd611244a0930edf2cd3a60847a8df3e7e1760426925cc3a1"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "pt-ramp-colour": {
+        "imageHashes": [
+          "993257fe0567d51503c6e74ef586a92fe2c14d07fcefccd5463d239ead0d1f30"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-ramp-bw": {
+        "imageHashes": [
+          "4f10c0c106874c009a5db3b4d7a9ca9aedfc79e2ff6657af79c1d56b41360a45"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-colour": {
+        "imageHashes": [
+          "1b10b2f6e50af7aeab00c652d5010ff980f0a58fcfc6d0691b665cb6df97611a"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-bw": {
+        "imageHashes": [
+          "afb402dfda804b9fdb782fb57a4ec624ad222467fec57ca48ccd39b092bd20b7"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "nl-ramp-colour": {
+        "imageHashes": [
+          "9c944bf679450d2dfa381ed8b020c23bef8fef989513eb91e53030dc92be9a72"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-ramp-bw": {
+        "imageHashes": [
+          "ecd344cdab797c94ba59a5e17e7964bec4258e5f614de740baddeccfa3073079"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-colour": {
+        "imageHashes": [
+          "25d94b7c9a472a50cb0f591a5d8f5d2c2ffc17d0a4d5518589e4ac9b9c9792a1"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-bw": {
+        "imageHashes": [
+          "6b4de90e3b57dd0feb12102e4a926ae8466ba5fcb4ff40201a97f281c8b2334a"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      }
+    }
+  },
+  "mixed-floor": {
+    "geometry": "8fb0d3757c8623ba04fdca4a810d95b324efedcf6e58a932c6c2f8908fbae4be",
+    "prints": {
+      "en-ramp-colour": {
+        "imageHashes": [
+          "62bf437280fd7402fb9051fba62032a870371efd318b3e825973cbe1a4f19b77"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-ramp-bw": {
+        "imageHashes": [
+          "85fa9c4995a1c6e05c2e4be8ae3068990a1b9ab818c2ab5c4421befadb502f58"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-colour": {
+        "imageHashes": [
+          "cbaf875fef1b11e81235ef3aac2d899c110941025b25c103b65f7ae78ab984d5"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-bw": {
+        "imageHashes": [
+          "272a207a3411f84d5995590cf99b301db16935e3d5631d14dd20d390f870a8b4"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "it-ramp-colour": {
+        "imageHashes": [
+          "cea2a00484d6e0dc70bdb53dbc12dd27792a9e55ccc5b1b6a825bb6825775a89"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-ramp-bw": {
+        "imageHashes": [
+          "ef0e4fc35697f2326899b6d1e733d9ff84dd1a08e55efd2202e27ce15c0e01ba"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-colour": {
+        "imageHashes": [
+          "430d26bf585db1d814209912418273f98f2fb1b5a25b6978d44fbe7acc8e5295"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-bw": {
+        "imageHashes": [
+          "8a3827dee395a5334c9e270984dd72c26c76a7cd8891414bbbf2f84e56c54d5b"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "de-ramp-colour": {
+        "imageHashes": [
+          "1a0eca364597f598e91d4281152b89d42a3f60f1fcb52e4746d4cdd1dd8f335d"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-ramp-bw": {
+        "imageHashes": [
+          "34a728d0f2a977291560e68f78346edc99f9ffae6cfc37c572811f8fd34fad73"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-colour": {
+        "imageHashes": [
+          "e7fbb4d2e6bf9f4af8ef082b3d8f64fe0a523c1701e7d37901cdefc3050d10d5"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-bw": {
+        "imageHashes": [
+          "31c4d37468fd2e27c9c10f4217392e54b816e0abc94ee610804ce8614241eeb6"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "es-ramp-colour": {
+        "imageHashes": [
+          "2687d8f7e7be4562c33f7ffa68ff31e0ea551ce20217077ff7b80cdbcd3d145c"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-ramp-bw": {
+        "imageHashes": [
+          "494139c24a42c1e4ad1e6427e7528d11355f7f80390ec4215ddc1a009287f48d"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-colour": {
+        "imageHashes": [
+          "9bdf98239a56b3f7e156aee3aab669ab6e79c06dae58d223fecbe7787a918ae0"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-bw": {
+        "imageHashes": [
+          "b832079fcc468c98942efab0647172ca1be7e1abfc19d72eab4bd23ec1baa5dd"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "fr-ramp-colour": {
+        "imageHashes": [
+          "3b1d1d4cfa2e9ace243a607ee62ed8ffbb34c87b4567ede14b41b003d8ab3389"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-ramp-bw": {
+        "imageHashes": [
+          "f80c551809b2d08679f88d6cc0660e56afb8ee1193a9c277a8f0c92cf0e2083d"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-colour": {
+        "imageHashes": [
+          "dc0c752ab7e8eed9d9731768b8dec3fbc16460d454feaddfc96f589364ab175b"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-bw": {
+        "imageHashes": [
+          "821fa913983939a2a5a0dc17e9412cf45efb330b7e4012e1e64e5568dc64c716"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "pt-ramp-colour": {
+        "imageHashes": [
+          "350c892b1cec295b8c2ef4096db1d7f664d818ca74e7d2c498b7474b08467513"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-ramp-bw": {
+        "imageHashes": [
+          "96ec3630ef69fb142af5487e1983c23322132518007464fe447d74bd56d16d07"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-colour": {
+        "imageHashes": [
+          "bba52fd03a768f39640ac8fdeb7ec598dd690b933e8a6ecc62ede5d711403566"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-bw": {
+        "imageHashes": [
+          "c8004c5f7ec9f37cdcf479005d8901ba36dd7ab39d93c1f225e93973668d7114"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "nl-ramp-colour": {
+        "imageHashes": [
+          "8c0417c0673404d78f81d86f29b8284f552229b1218131b1094bad368f37971b"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-ramp-bw": {
+        "imageHashes": [
+          "532e5ff9d2c38b120daee2fbcb6beb100998454e88ba8ec43cdbfdb9e305782f"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-colour": {
+        "imageHashes": [
+          "e169f5db69c29a81cdf5b3257912d63213a8c7d02199522b281172f8532a007b"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-bw": {
+        "imageHashes": [
+          "6eca80c1d97d3b97e06b80ee5bf75c39819ecbc7633f3f1c94513e63e96fc87e"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      }
+    }
+  },
+  "advanced-piles": {
+    "geometry": "600a71613a842afe734df61514aea492936c693e5522a7bcaee6d1eccd3fa69b",
+    "prints": {
+      "en-ramp-colour": {
+        "imageHashes": [
+          "129749d44747d845bdc21f29817787b5ca6e298fd9851c8a95d247d355cf6ee7"
+        ],
+        "note": "Indicative final stacked layout: verify pallet stability, load securing and carrier instructions. Weight and load balance are not calculated."
+      },
+      "en-ramp-bw": {
+        "imageHashes": [
+          "9948ab16b5ec06c82c0399770ffe4c6d277d04589614aa244c95c2b95f2e7a3d"
+        ],
+        "note": "Indicative final stacked layout: verify pallet stability, load securing and carrier instructions. Weight and load balance are not calculated."
+      },
+      "en-side-colour": {
+        "imageHashes": [
+          "1b5d903e2c21c199335e4594f0eb5d07470ffe455d0f60992d9eac73c7ea484d"
+        ],
+        "note": "Indicative final stacked layout: verify pallet stability, load securing and carrier instructions. Weight and load balance are not calculated."
+      },
+      "en-side-bw": {
+        "imageHashes": [
+          "dc9beccb7b5ad9c011f0f5107a9d55f925ddf3bb1b0c23e4da37b86786ca919b"
+        ],
+        "note": "Indicative final stacked layout: verify pallet stability, load securing and carrier instructions. Weight and load balance are not calculated."
+      },
+      "it-ramp-colour": {
+        "imageHashes": [
+          "2b6912e77a54bf2d2b8ea79dc2de7ac9beb2a30b4db1a3ffbdc1dc0aa26ee612"
+        ],
+        "note": "Schema finale di sovrapposizione indicativo: verificare stabilità dei pallet, fissaggio del carico e istruzioni del trasportatore. Peso e bilanciamento non sono calcolati."
+      },
+      "it-ramp-bw": {
+        "imageHashes": [
+          "117f1fd4bc9153e2fb563c6533d5baf7c708b941391bce3e9779720c70a6c96b"
+        ],
+        "note": "Schema finale di sovrapposizione indicativo: verificare stabilità dei pallet, fissaggio del carico e istruzioni del trasportatore. Peso e bilanciamento non sono calcolati."
+      },
+      "it-side-colour": {
+        "imageHashes": [
+          "f4ca72977ea792bd63b5ecd655289f8010b264d02dd7c77f38d49f779dee701d"
+        ],
+        "note": "Schema finale di sovrapposizione indicativo: verificare stabilità dei pallet, fissaggio del carico e istruzioni del trasportatore. Peso e bilanciamento non sono calcolati."
+      },
+      "it-side-bw": {
+        "imageHashes": [
+          "e0ede804396a8b706dad2ee7042e03d406ec05bee638167be156c806d9ab3507"
+        ],
+        "note": "Schema finale di sovrapposizione indicativo: verificare stabilità dei pallet, fissaggio del carico e istruzioni del trasportatore. Peso e bilanciamento non sono calcolati."
+      },
+      "de-ramp-colour": {
+        "imageHashes": [
+          "aa18d3aa0e9413b92078e9c3cfaa3f3384fe99bb17dc0dd871ae69c1ac57d87f"
+        ],
+        "note": "Indikativer gestapelter Endplan: Palettenstabilität, Ladungssicherung und Anweisungen des Frachtführers prüfen. Gewicht und Lastverteilung werden nicht berechnet."
+      },
+      "de-ramp-bw": {
+        "imageHashes": [
+          "9446eff6fcb340544b10d40d12131d26a6969a109279d7b25845e8226a2fb502"
+        ],
+        "note": "Indikativer gestapelter Endplan: Palettenstabilität, Ladungssicherung und Anweisungen des Frachtführers prüfen. Gewicht und Lastverteilung werden nicht berechnet."
+      },
+      "de-side-colour": {
+        "imageHashes": [
+          "bd7a90c4559f95df18a998fc5cfaf68e0eca92678c348ca98cbd5d2adcb9b3c1"
+        ],
+        "note": "Indikativer gestapelter Endplan: Palettenstabilität, Ladungssicherung und Anweisungen des Frachtführers prüfen. Gewicht und Lastverteilung werden nicht berechnet."
+      },
+      "de-side-bw": {
+        "imageHashes": [
+          "bdec09d48a3b9c40653ff0bb7a94c70cd82d5dc5f1ef3e7fddaf7f5b06c1ca56"
+        ],
+        "note": "Indikativer gestapelter Endplan: Palettenstabilität, Ladungssicherung und Anweisungen des Frachtführers prüfen. Gewicht und Lastverteilung werden nicht berechnet."
+      },
+      "es-ramp-colour": {
+        "imageHashes": [
+          "1312928ad02fc453a6015940af2e8e0546cd149a26eccde98f907ca60f4c8328"
+        ],
+        "note": "Disposición apilada final indicativa: compruebe la estabilidad de los palés, la sujeción de la carga y las instrucciones del transportista. No se calculan el peso ni el equilibrio de la carga."
+      },
+      "es-ramp-bw": {
+        "imageHashes": [
+          "181d31115acb4f632194d1f98c3783db12234e819acf684d2e7d443596199e74"
+        ],
+        "note": "Disposición apilada final indicativa: compruebe la estabilidad de los palés, la sujeción de la carga y las instrucciones del transportista. No se calculan el peso ni el equilibrio de la carga."
+      },
+      "es-side-colour": {
+        "imageHashes": [
+          "fcb4858a1a39e76c7809cba2e134096e64a3053dc1d35011fbf61f6a2eeee34e"
+        ],
+        "note": "Disposición apilada final indicativa: compruebe la estabilidad de los palés, la sujeción de la carga y las instrucciones del transportista. No se calculan el peso ni el equilibrio de la carga."
+      },
+      "es-side-bw": {
+        "imageHashes": [
+          "5e38fbe667f2c8a3aff941fa45360dd35a92f94b27ea3fe4544ff997c235bd7a"
+        ],
+        "note": "Disposición apilada final indicativa: compruebe la estabilidad de los palés, la sujeción de la carga y las instrucciones del transportista. No se calculan el peso ni el equilibrio de la carga."
+      },
+      "fr-ramp-colour": {
+        "imageHashes": [
+          "5a80878a985672ff8157a1b9696d312d00c5e6ea5cd71201aabd0204c5c21a2c"
+        ],
+        "note": "Plan final empilé indicatif : vérifier la stabilité des palettes, l’arrimage et les consignes du transporteur. Le poids et la répartition de la charge ne sont pas calculés."
+      },
+      "fr-ramp-bw": {
+        "imageHashes": [
+          "5c6d36803baa1a86e3ec8ba0265002ee13fcfbb8997d5a73fa7508c661731227"
+        ],
+        "note": "Plan final empilé indicatif : vérifier la stabilité des palettes, l’arrimage et les consignes du transporteur. Le poids et la répartition de la charge ne sont pas calculés."
+      },
+      "fr-side-colour": {
+        "imageHashes": [
+          "cc7ccba057cd587ef2982c3cb200d63f8ab2b240e145330815f8c201572ed90c"
+        ],
+        "note": "Plan final empilé indicatif : vérifier la stabilité des palettes, l’arrimage et les consignes du transporteur. Le poids et la répartition de la charge ne sont pas calculés."
+      },
+      "fr-side-bw": {
+        "imageHashes": [
+          "83d4a9609d25ce4f538070002897ef2f0905cda3b2e67ba39a3403dcf805338f"
+        ],
+        "note": "Plan final empilé indicatif : vérifier la stabilité des palettes, l’arrimage et les consignes du transporteur. Le poids et la répartition de la charge ne sont pas calculés."
+      },
+      "pt-ramp-colour": {
+        "imageHashes": [
+          "a987dd7e74e08b03d722d3327d48cd20ce5e06db2eb2bbbd6041c806b55bda99"
+        ],
+        "note": "Plano final de empilhamento indicativo: verifique a estabilidade das paletes, a fixação da carga e as instruções do transportador. O peso e o equilíbrio da carga não são calculados."
+      },
+      "pt-ramp-bw": {
+        "imageHashes": [
+          "3ed09e1fc475f09cde43d7a775d722d19958ee1a7818cdb3be2b36ed0bcc3fb3"
+        ],
+        "note": "Plano final de empilhamento indicativo: verifique a estabilidade das paletes, a fixação da carga e as instruções do transportador. O peso e o equilíbrio da carga não são calculados."
+      },
+      "pt-side-colour": {
+        "imageHashes": [
+          "6a4d4007e31e55e37eea1153807e0876da1a7259315aa7e5ec1e7af9497d8283"
+        ],
+        "note": "Plano final de empilhamento indicativo: verifique a estabilidade das paletes, a fixação da carga e as instruções do transportador. O peso e o equilíbrio da carga não são calculados."
+      },
+      "pt-side-bw": {
+        "imageHashes": [
+          "249d73c9fc8b5238a32497912ade877de914f5401b434939ebd17862c67d20d9"
+        ],
+        "note": "Plano final de empilhamento indicativo: verifique a estabilidade das paletes, a fixação da carga e as instruções do transportador. O peso e o equilíbrio da carga não são calculados."
+      },
+      "nl-ramp-colour": {
+        "imageHashes": [
+          "3ccb15fdeec790ca3f22969ee15edf80b4d0756b350b6c80f381923874a00633"
+        ],
+        "note": "Indicatieve uiteindelijke stapelindeling: controleer de stabiliteit van de pallets, de ladingzekering en de instructies van de vervoerder. Gewicht en ladingsbalans worden niet berekend."
+      },
+      "nl-ramp-bw": {
+        "imageHashes": [
+          "752efdbdcf1644e9b9c6edcbd92aed24968cd846bcd5016cdb67cbd9d546804a"
+        ],
+        "note": "Indicatieve uiteindelijke stapelindeling: controleer de stabiliteit van de pallets, de ladingzekering en de instructies van de vervoerder. Gewicht en ladingsbalans worden niet berekend."
+      },
+      "nl-side-colour": {
+        "imageHashes": [
+          "1727f4251b50d32f8150ed2750267a7b91a3a9cf7f2af7a09b5c5ee65a09eb46"
+        ],
+        "note": "Indicatieve uiteindelijke stapelindeling: controleer de stabiliteit van de pallets, de ladingzekering en de instructies van de vervoerder. Gewicht en ladingsbalans worden niet berekend."
+      },
+      "nl-side-bw": {
+        "imageHashes": [
+          "442713283c73e712c14cc034d99e1821ee6f7b353b2d049e11e57090bdf4f938"
+        ],
+        "note": "Indicatieve uiteindelijke stapelindeling: controleer de stabiliteit van de pallets, de ladingzekering en de instructies van de vervoerder. Gewicht en ladingsbalans worden niet berekend."
+      }
+    }
+  },
+  "advanced-floor": {
+    "geometry": "17039d552ff23aebab997ae8fec60998b77d5b463d1bb99d5da6eb8831f9b5f9",
+    "prints": {
+      "en-ramp-colour": {
+        "imageHashes": [
+          "e3fb222f1ef58a26c949d9d8dac6f91173c5fe3348a9540e441e550e8fe0fc00"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-ramp-bw": {
+        "imageHashes": [
+          "077d014918b98f9efa29566c01e23141815edb8641ef71dc8f6df8fa82b820a8"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-colour": {
+        "imageHashes": [
+          "5b627893311dfa59e8a98decc4fad1272509ccc7360891956dc771d6096932ac"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "en-side-bw": {
+        "imageHashes": [
+          "cda3ee146b200fbfc6d85372f852e4ff8c80453778ee3a9924092a57128a65d7"
+        ],
+        "note": "Indicative layout: check pallet tolerances/bulging, load securing, and forwarder/carrier instructions. Floor level and rear loading only; weight, load balance, and side loading excluded."
+      },
+      "it-ramp-colour": {
+        "imageHashes": [
+          "8b6d1e3856103ac70c09eeeeab6b6b15431e74db99b0c4940a562aeb58a2d5ca"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-ramp-bw": {
+        "imageHashes": [
+          "251cb840722767509a11ebf4abb15783ac262fd009b61e639c998976c3729494"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-colour": {
+        "imageHashes": [
+          "c63b7d7f397331fb166344b31a6734f53a1b85c08c38e164aba07186a62dec07"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "it-side-bw": {
+        "imageHashes": [
+          "21260a61432490fc407f15519bb79dcf9968b2cd08cc329f284e50788624a6c5"
+        ],
+        "note": "Schema indicativo: verificare tolleranze/rigonfiamenti pallet, fissaggio e istruzioni di spedizioniere/vettore. Solo pavimento e caricamento posteriore; esclusi peso, bilanciamento e caricamento laterale."
+      },
+      "de-ramp-colour": {
+        "imageHashes": [
+          "755d7497814787ce8c8d1a144135141e07e1f0fa6b6199e22c7fb3dbf10f9ba1"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-ramp-bw": {
+        "imageHashes": [
+          "5b27ada729a0a8400ede88f3a7287a6938f545632479e9cf2cb18f3d3ca2aa10"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-colour": {
+        "imageHashes": [
+          "eeb78aadbd040c3ad8b06f87529d6e5d2bf068183c2c3d14fce2d9c9c92a0c51"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "de-side-bw": {
+        "imageHashes": [
+          "6a5cfa89c954c752c9e2c4b0e017258737469e3483d4a1170bac3d8bc0204987"
+        ],
+        "note": "Indikativer Ladeplan: Palettentoleranzen/-ausbauchungen, Ladungssicherung und Anweisungen von Spediteur/Frachtführer prüfen. Nur Ladefläche und Heckbeladung; Gewicht, Lastverteilung und Seitenbeladung ausgeschlossen."
+      },
+      "es-ramp-colour": {
+        "imageHashes": [
+          "d8c510abfe16d220a4a523c5b13a32ee84d70f3149e1d91887f31a672674937c"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-ramp-bw": {
+        "imageHashes": [
+          "c448da241fba0e9dbb6146eb27458123027c70323b51b9c01956b3094e4e9120"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-colour": {
+        "imageHashes": [
+          "8374ca388812dfacc1b945e8168cdca5b63dd58fb637ac292733dbf5fe34339c"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "es-side-bw": {
+        "imageHashes": [
+          "de719c05a787d819e06ad1c63adaf8fba5a52e7868fa0894fbb92a43d4ae0593"
+        ],
+        "note": "Esquema orientativo: comprobar tolerancias/abombamientos de los palés, sujeción e instrucciones del transitario/transportista. Solo a nivel del suelo y carga trasera; se excluyen peso, distribución y carga lateral."
+      },
+      "fr-ramp-colour": {
+        "imageHashes": [
+          "86aff6766cad1886e7e8966ebf35073c60992a2ec85d402e8d96949e6a75c33c"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-ramp-bw": {
+        "imageHashes": [
+          "1d2920c8cd276d6f9a814d0415fd5429af3bd360f34722fa634e37e8cbfbd020"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-colour": {
+        "imageHashes": [
+          "463d8aaccd14239dac0b3bcf3a3901524abbf809733f0dd0b532f379fe108f69"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "fr-side-bw": {
+        "imageHashes": [
+          "3167280db7aa50d8ed427ceead2221511e365dbc3190f431f2c591fd69d3aae5"
+        ],
+        "note": "Plan indicatif : vérifier tolérances/gonflements des palettes, arrimage et consignes du transitaire/transporteur. Disposition au sol et chargement arrière uniquement ; poids, répartition et chargement latéral exclus."
+      },
+      "pt-ramp-colour": {
+        "imageHashes": [
+          "7ebf650b2e7884012f95dedfce10c2021e27d05607b9b05bd7aec609a9054e28"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-ramp-bw": {
+        "imageHashes": [
+          "ebd0249a6923686ddf13d914c696472cfe9c4c03feadd16abee2f763acee05c2"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-colour": {
+        "imageHashes": [
+          "e281ceec6ea2081ea1d924b1ab6d2f8a0c04e5f2cf3e45a8a3a58f34f1544089"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "pt-side-bw": {
+        "imageHashes": [
+          "16472183508f7d84dda8065e87521babfe88c60bb615cd29324985e46f3a62ec"
+        ],
+        "note": "Esquema indicativo: verificar tolerâncias/abaulamentos das paletes, fixação e instruções do transitário/transportador. Apenas no piso e carregamento pela traseira; peso, distribuição e carregamento lateral excluídos."
+      },
+      "nl-ramp-colour": {
+        "imageHashes": [
+          "b01e0cf15bc1c47b037a8ed01b5be04f8c533b4577db3d5072c80b1cfbe4f5aa"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-ramp-bw": {
+        "imageHashes": [
+          "fce91137e4805b0f00cb168d1b429615e20768efa7116b1544105351b518920f"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-colour": {
+        "imageHashes": [
+          "7caee30189f88a3f6af85425003899acaa6fd9057ff3657ce251c2aa2964feb7"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      },
+      "nl-side-bw": {
+        "imageHashes": [
+          "e9bae14b5ff9cc139fd1e30665ece80864b46f11056f11f023e5266312ed91f6"
+        ],
+        "note": "Indicatief laadplan: controleer pallettoleranties/uitbuiken, ladingzekering en instructies van expediteur/vervoerder. Alleen vloerindeling en laden aan de achterzijde; gewicht, gewichtsverdeling en zijbelading uitgesloten."
+      }
+    }
+  }
+}

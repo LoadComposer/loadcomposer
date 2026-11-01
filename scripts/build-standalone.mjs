@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import "./build-computation-v1.5.0.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -62,7 +63,7 @@ if (!html.includes(marker)) {
   throw new Error("Standalone injection marker not found in modular HTML.");
 }
 
-const standalone = html.replace(
+let standalone = html.replace(
   marker,
   `<script id="loadcomposer-embedded-i18n" type="application/json">${embedded}</script>`
 ).replace(
@@ -72,6 +73,13 @@ const standalone = html.replace(
   /<title>[^<]*<\/title>/,
   `<title>LoadComposer v${VERSION} — Pallet Loading Calculator</title>`
 );
+
+for (const asset of ["advanced-stacking-engine.js", "advanced-stacking-validator.js", "computation-core.js", "computation-worker-source.js", "computation-runtime.js"]) {
+  const marker = `<script src="./${asset}"></script>`;
+  if (!standalone.includes(marker)) throw new Error(`Standalone script marker missing: ${asset}`);
+  const source = fs.readFileSync(path.join(PROJECT_DIR, "site", asset), "utf8");
+  standalone = standalone.replace(marker, `<script>\n${source.replace(/<\/script/gi, "<\\/script")}\n</script>`);
+}
 
 fs.writeFileSync(outputPath, standalone, "utf8");
 console.log(

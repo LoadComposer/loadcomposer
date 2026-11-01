@@ -1,0 +1,132 @@
+{
+  "mode": "mixed",
+  "container": {
+    "id": "G01",
+    "innerLength": 2000,
+    "innerWidth": 1000,
+    "innerHeight": 2400,
+    "doorWidth": 1000,
+    "doorHeight": 2400,
+    "accessKnown": true
+  },
+  "layout": {
+    "mode": "mixed",
+    "type": "pallet misti omogenei \u00b7 motore single",
+    "count": 1,
+    "rects": [
+      {
+        "id": "1.1",
+        "typeIndex": 0,
+        "name": "G0",
+        "identifier": "",
+        "length": 1000,
+        "width": 1000,
+        "height": 500,
+        "rotationMode": "auto",
+        "lockedOrientation": "normal",
+        "unitNo": 1,
+        "x": 0,
+        "y": 0,
+        "rotated": false,
+        "layoutIndex": 0,
+        "originalLength": 1000,
+        "originalWidth": 1000,
+        "footprintLength": 1000,
+        "footprintWidth": 1000
+      }
+    ],
+    "materializedCount": 1,
+    "truncated": false,
+    "unplaced": [
+      {
+        "id": "2.1",
+        "typeIndex": 1,
+        "name": "G1",
+        "identifier": "",
+        "length": 1000,
+        "width": 1000,
+        "height": 500,
+        "rotationMode": "auto",
+        "lockedOrientation": "normal",
+        "unitNo": 1,
+        "x": 1000,
+        "y": 0,
+        "rotated": false,
+        "layoutIndex": 1,
+        "originalLength": 1000,
+        "originalWidth": 1000,
+        "footprintLength": 1000,
+        "footprintWidth": 1000
+      }
+    ],
+    "usedLength": 1000,
+    "usedWidth": 1000,
+    "orderingName": "ponte omogeneo deterministico",
+    "score": {
+      "placedCount": 2,
+      "placedArea": 2000000,
+      "compactness": 1,
+      "usedLength": 2000,
+      "usedWidth": 1000
+    }
+  },
+  "layers": 1,
+  "floorCapacity": 1,
+  "totalCapacity": 1,
+  "totalItems": 2,
+  "placedCount": 1,
+  "allPlaced": false,
+  "fitsQtyBySpace": false,
+  "okDoor": true,
+  "okHeight": true,
+  "loadedWeight": 0,
+  "okWeight": true,
+  "ok": true,
+  "input": {
+    "mode": "mixed",
+    "quantity": 2,
+    "types": [
+      {
+        "name": "G0",
+        "quantity": 1,
+        "length": 1000,
+        "width": 1000,
+        "height": 500,
+        "rotationMode": "auto",
+        "lockedOrientation": "normal",
+        "stackingEnabled": false,
+        "stackRole": "any",
+        "maxLayers": 1,
+        "allowedAbove": []
+      },
+      {
+        "name": "G1",
+        "quantity": 1,
+        "length": 1000,
+        "width": 1000,
+        "height": 500,
+        "rotationMode": "auto",
+        "lockedOrientation": "normal",
+        "stackingEnabled": false,
+        "stackRole": "any",
+        "maxLayers": 1,
+        "allowedAbove": []
+      }
+    ],
+    "gap": 0,
+    "verticalGap": 0,
+    "advancedStacking": false
+  },
+  "validation": {
+    "valid": true,
+    "internalError": false,
+    "okDoor": true,
+    "okHeight": true,
+    "errors": [],
+    "accessFailures": [],
+    "heightFailures": [],
+    "minDoorWidthMargin": 0,
+    "minDoorHeightMargin": 1900
+  },
+  "validationError": false
+}

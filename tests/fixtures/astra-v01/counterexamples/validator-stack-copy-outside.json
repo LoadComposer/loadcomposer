@@ -1,0 +1,289 @@
+{
+  "originalTest": {
+    "id": "validator-seed",
+    "container": {
+      "id": "mut-box",
+      "innerLength": 200,
+      "innerWidth": 100,
+      "innerHeight": 300,
+      "doorWidth": 100,
+      "doorHeight": 300,
+      "accessKnown": true
+    },
+    "input": {
+      "mode": "mixed",
+      "advancedStacking": true,
+      "quantity": 4,
+      "gap": 0,
+      "verticalGap": 0,
+      "types": [
+        {
+          "typeIndex": 0,
+          "name": "V0",
+          "quantity": 2,
+          "length": 100,
+          "width": 100,
+          "height": 100,
+          "rotationMode": "locked",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "base",
+          "maxLayers": 2,
+          "allowedAbove": [
+            1
+          ]
+        },
+        {
+          "typeIndex": 1,
+          "name": "V1",
+          "quantity": 2,
+          "length": 100,
+          "width": 100,
+          "height": 100,
+          "rotationMode": "locked",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "top",
+          "maxLayers": 1,
+          "allowedAbove": []
+        }
+      ]
+    }
+  },
+  "mutation": "stack-copy-outside",
+  "result": {
+    "mode": "mixed",
+    "input": {
+      "mode": "mixed",
+      "advancedStacking": true,
+      "quantity": 4,
+      "gap": 0,
+      "verticalGap": 0,
+      "types": [
+        {
+          "typeIndex": 0,
+          "name": "V0",
+          "quantity": 2,
+          "length": 100,
+          "width": 100,
+          "height": 100,
+          "rotationMode": "locked",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "base",
+          "maxLayers": 2,
+          "allowedAbove": [
+            1
+          ]
+        },
+        {
+          "typeIndex": 1,
+          "name": "V1",
+          "quantity": 2,
+          "length": 100,
+          "width": 100,
+          "height": 100,
+          "rotationMode": "locked",
+          "lockedOrientation": "normal",
+          "stackingEnabled": true,
+          "stackRole": "top",
+          "maxLayers": 1,
+          "allowedAbove": []
+        }
+      ]
+    },
+    "container": {
+      "id": "mut-box",
+      "innerLength": 200,
+      "innerWidth": 100,
+      "innerHeight": 300,
+      "doorWidth": 100,
+      "doorHeight": 300,
+      "accessKnown": true
+    },
+    "advancedStacking": true,
+    "layout": {
+      "mode": "mixed",
+      "count": 2,
+      "materializedCount": 2,
+      "truncated": false,
+      "rects": [
+        {
+          "id": "1.1",
+          "typeIndex": 0,
+          "unitNo": 1,
+          "length": 100,
+          "width": 100,
+          "originalLength": 100,
+          "originalWidth": 100,
+          "height": 100,
+          "rotated": false,
+          "x": 0,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P01"
+        },
+        {
+          "id": "1.2",
+          "typeIndex": 0,
+          "unitNo": 2,
+          "length": 100,
+          "width": 100,
+          "originalLength": 100,
+          "originalWidth": 100,
+          "height": 100,
+          "rotated": false,
+          "x": 100,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P02"
+        }
+      ],
+      "unplaced": [],
+      "usedLength": 200,
+      "usedWidth": 100
+    },
+    "stacks": [
+      {
+        "rect": {
+          "id": "1.1",
+          "typeIndex": 0,
+          "unitNo": 1,
+          "length": 100,
+          "width": 100,
+          "originalLength": 100,
+          "originalWidth": 100,
+          "height": 100,
+          "rotated": false,
+          "x": 500,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P01"
+        },
+        "layers": [
+          {
+            "id": "1.1",
+            "typeIndex": 0,
+            "unitNo": 1,
+            "length": 100,
+            "width": 100,
+            "originalLength": 100,
+            "originalWidth": 100,
+            "height": 100,
+            "rotated": false,
+            "x": 500,
+            "y": 0,
+            "layer": 1,
+            "positionId": "P01"
+          },
+          {
+            "id": "2.1",
+            "typeIndex": 1,
+            "unitNo": 1,
+            "length": 100,
+            "width": 100,
+            "originalLength": 100,
+            "originalWidth": 100,
+            "height": 100,
+            "rotated": false,
+            "x": 500,
+            "y": 0,
+            "layer": 2,
+            "positionId": "P01"
+          }
+        ],
+        "height": 200,
+        "positionId": "P01"
+      },
+      {
+        "rect": {
+          "id": "1.2",
+          "typeIndex": 0,
+          "unitNo": 2,
+          "length": 100,
+          "width": 100,
+          "originalLength": 100,
+          "originalWidth": 100,
+          "height": 100,
+          "rotated": false,
+          "x": 100,
+          "y": 0,
+          "layer": 1,
+          "positionId": "P02"
+        },
+        "layers": [
+          {
+            "id": "1.2",
+            "typeIndex": 0,
+            "unitNo": 2,
+            "length": 100,
+            "width": 100,
+            "originalLength": 100,
+            "originalWidth": 100,
+            "height": 100,
+            "rotated": false,
+            "x": 100,
+            "y": 0,
+            "layer": 1,
+            "positionId": "P02"
+          },
+          {
+            "id": "2.2",
+            "typeIndex": 1,
+            "unitNo": 2,
+            "length": 100,
+            "width": 100,
+            "originalLength": 100,
+            "originalWidth": 100,
+            "height": 100,
+            "rotated": false,
+            "x": 100,
+            "y": 0,
+            "layer": 2,
+            "positionId": "P02"
+          }
+        ],
+        "height": 200,
+        "positionId": "P02"
+      }
+    ],
+    "placedCount": 4,
+    "floorPlacedCount": 2,
+    "stackedCount": 2,
+    "maxLayersUsed": 2,
+    "mixedGroupStacks": 2,
+    "totalItems": 4,
+    "totalCapacity": 4,
+    "floorCapacity": 2,
+    "allPlaced": true
+  },
+  "own": {
+    "valid": false,
+    "errors": [
+      {
+        "code": "STACK_FLOOR_COPY_MISMATCH",
+        "detail": "x"
+      }
+    ],
+    "placed": 4,
+    "floor": 2
+  },
+  "production": {
+    "valid": true,
+    "general": {
+      "valid": true,
+      "internalError": false,
+      "okDoor": true,
+      "okHeight": true,
+      "errors": [],
+      "accessFailures": [],
+      "heightFailures": [],
+      "minDoorWidthMargin": 0,
+      "minDoorHeightMargin": 200
+    },
+    "advanced": {
+      "valid": true,
+      "errors": []
+    }
+  }
+}

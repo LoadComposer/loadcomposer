@@ -8,7 +8,7 @@
 
 LoadComposer è un ausilio alla pianificazione nel browser che stima la disposizione geometrica dei pallet nei principali container marittimi e bilici da 13,60 m. Gestisce carichi a pallet singolo e misti, rotazione e orientamento obbligatorio dell’inforcamento, quantità su livelli, anteprime responsive, stampa operativa localizzata e una pagina standalone offline.
 
-> **Versione corrente:** `v1.3.5` (prima versione stabile: `v1.0.0`). Verificare sempre i risultati prima dell’uso operativo.
+> **Candidata approvata:** `v1.5.0` (C4c), verificata indipendentemente fino a C4d e approvata manualmente per la pubblicazione. Il deploy in produzione non è ancora stato eseguito. Verificare i risultati prima dell’uso operativo.
 
 | Giorno | Notte |
 |---|---|
@@ -20,7 +20,7 @@ LoadComposer è un ausilio alla pianificazione nel browser che stima la disposiz
 
 ## Funzioni
 
-- Composizione con un tipo di pallet o pallet misti, quantità a pavimento e su livelli.
+- Carichi con un tipo di pallet su uno o più strati; misti solo a pavimento; Advanced Stacking con pile esplicite e vincoli di compatibilità per gruppo.
 - Formati predefiniti, misure personalizzate e vincoli di orientamento.
 - Container 20' Dry, 40' Dry, 40' HC, 45' HC, 20' Reefer, 40' HC Reefer, 40' e 45' HC Pallet Wide e 45' Reefer Pallet Wide.
 - Bilici da 13,60 m telonato, mega e frigo.
@@ -46,22 +46,27 @@ site/downloads/index.html
 Per l’uso offline il download più semplice è l’HTML standalone:
 
 ```text
-site/downloads/loadcomposer-v1.3.5-standalone.html
+site/downloads/loadcomposer-v1.5.0-standalone.html
 ```
 
 Copiarlo sul computer offline e aprirlo nel browser. Per archiviazione o
 distribuzione interna è disponibile anche
-`site/downloads/loadcomposer-v1.3.5-standalone.zip`.
+`site/downloads/loadcomposer-v1.5.0-standalone.zip`.
 
-Per ricostruire e verificare:
+Per ricostruire il prodotto dalla delivery:
 
 ```bash
 node --version  # v22.17.0 oppure una versione compatibile >=24.0.0
 npm ci
-npm test
+npm run build
 ```
 
-La baseline verificata è Node.js 22.17.0 con npm 11.9.0. Su Cloudflare Pages
+La delivery include `package.json`, `package-lock.json` e il runtime di build.
+Test automatici e fixture sono nel test bundle v1.5.0 separato: da quella
+cartella eseguire `npm ci` e `npm test` per la suite completa. La generazione
+delle immagini delle guide usa il launcher Chromium Linux incluso.
+
+Usare Node.js conforme a `^22.17.0 || >=24.0.0` e npm 11.9.0; C3j/C4 hanno usato Node.js 24.22.1. Su Cloudflare Pages
 non servono framework o comando di build: la directory di output è `site`.
 Seguire [GITHUB_FIRST_PUSH.md](docs/GITHUB_FIRST_PUSH.md),
 [DEPLOYMENT.md](docs/DEPLOYMENT.md) e
@@ -90,3 +95,9 @@ Repository ufficiale: [github.com/LoadComposer/loadcomposer](https://github.com/
 Pagina Download: [loadcomposer.com/downloads/](https://loadcomposer.com/downloads/)
 
 Copyright © 2026 Marco Pernigotti.
+
+## Verifica finale e stato della pubblicazione
+
+Usare Node.js conforme a `^22.17.0 || >=24.0.0` e npm 11.9.0. C3j/C4 sono stati verificati con Node.js 24.22.1. Verificare i sei artefatti C4c definitivi tramite il manifesto esterno `SHA256SUMS-C4c-CLEAN.txt`, poi CRC e manifesti interni. Conservare `PACKAGE_VERIFICATION-C4c-v1.5.0.json` come evidenza storica, non come elenco degli asset pubblicabili: la voce temporanea `.PfeItk` non appartiene alla distribuzione. Il test bundle contiene `npm test` completo, incluso `test:c4c`; la delivery contiene gli input di build senza le prove QA pesanti. Anche la CI del ramo GitHub di release è passata. Consultare [DEPLOYMENT.md](docs/DEPLOYMENT.md) per la verifica e la successiva pubblicazione in produzione.
+
+S02 resta MINOR accettato esplicitamente nel perimetro della mutazione/ripristino controllati documentato da C4: la preview rampa può restare obsoleta fino al ridisegno, mentre il documento stampato è corretto. Non è risolto nella C4c. La verifica indipendente C4d ha confermato la correzione responsive U02. La pubblicazione è approvata, ma deploy in produzione, tag e GitHub Release non sono ancora stati eseguiti.
