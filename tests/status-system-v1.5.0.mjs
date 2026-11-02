@@ -1,3 +1,4 @@
+import {currentReleasePath} from './current-release.mjs';
 import assert from "node:assert/strict";
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -6,7 +7,7 @@ import { pathToFileURL } from "node:url";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const APP = path.join(ROOT, "site", "downloads", "loadcomposer-v1.5.0-standalone.html");
+const APP = path.join(ROOT, "site", "downloads", currentReleasePath("loadcomposer-v1.5.0-standalone.html"));
 const OUTPUT = path.resolve(process.env.STATUS_V130_OUTPUT || path.join(ROOT, "status-visual-evidence-v1.5.0"));
 const RESULT_FILE = path.resolve(process.env.STATUS_V130_RESULT || path.join(ROOT, "status-system-results-v1.5.0.json"));
 const LOCALES = { it: "it-IT", en: "en-GB", de: "de-DE" };

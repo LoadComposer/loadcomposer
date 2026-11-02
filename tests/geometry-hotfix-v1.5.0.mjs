@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
@@ -7,7 +8,7 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_PATH = path.resolve(
   ROOT,
   process.env.LOADCOMPOSER_HTML ||
-    "site/downloads/loadcomposer-v1.5.0-standalone.html"
+    currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html")
 );
 const RESULT_PATH = path.resolve(
   ROOT,
@@ -376,7 +377,7 @@ try {
   assert(stressMs < 1000, `stress non interattivo: ${stressMs.toFixed(3)} ms`);
 
   const result = {
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     source: path.relative(ROOT, APP_PATH).split(path.sep).join("/"),
     status: "PASS",
     canonical: {

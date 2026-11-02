@@ -10,6 +10,8 @@ LoadComposer is a browser-based planning aid that estimates how pallets fit geom
 
 > **Current stable release:** `v1.5.0` (final C4e), published on 2026-11-01. The official [GitHub Release](https://github.com/LoadComposer/loadcomposer/releases/tag/v1.5.0) includes standalone HTML/ZIP plus SHA-256 sidecars. Verify results before operational use.
 
+> **v1.5.1 preparation:** the dedicated hotfix branch shortens the horizontal pallet-gap labels and adds keyboard/touch-accessible help. The published stable release above remains v1.5.0 until the new PR is manually approved.
+
 | Day | Night |
 |---|---|
 | ![LoadComposer day theme](docs/screenshots/loadcomposer-day-desktop.png) | ![LoadComposer night theme](docs/screenshots/loadcomposer-night-desktop.png) |
@@ -49,12 +51,12 @@ site/downloads/index.html
 For offline use, the simplest download is the standalone HTML:
 
 ```text
-site/downloads/loadcomposer-v1.5.0-standalone.html
+site/downloads/loadcomposer-v1.5.1-standalone.html
 ```
 
 Copy it to the offline computer and open it in a browser. A compressed ZIP for
 archiving or internal distribution is also available as
-`site/downloads/loadcomposer-v1.5.0-standalone.zip`.
+`site/downloads/loadcomposer-v1.5.1-standalone.zip`.
 
 To rebuild the product from the delivery archive:
 
@@ -108,7 +110,7 @@ LoadComposer is source-available under the custom [LoadComposer Community Licens
 Official site: [loadcomposer.com](https://loadcomposer.com/)  
 Official repository: [github.com/LoadComposer/loadcomposer](https://github.com/LoadComposer/loadcomposer)  
 Download options: [loadcomposer.com/downloads/](https://loadcomposer.com/downloads/)  
-Current standalone HTML: [v1.5.0](site/downloads/loadcomposer-v1.5.0-standalone.html)
+Current standalone HTML: [v1.5.0](site/downloads/loadcomposer-v1.5.1-standalone.html)
 
 Copyright © 2026 Marco Pernigotti.
 

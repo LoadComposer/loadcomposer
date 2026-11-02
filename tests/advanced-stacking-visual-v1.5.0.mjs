@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -5,7 +6,7 @@ import { pathToFileURL } from "node:url";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
-const current = pathToFileURL(path.join(root, "site/downloads/loadcomposer-v1.5.0-standalone.html")).href;
+const current = pathToFileURL(path.join(root, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"))).href;
 const baseline = pathToFileURL(path.join(root, "site/downloads/loadcomposer-v1.4.0-standalone.html")).href;
 const evidence = path.join(root, "advanced-stacking-visual-evidence-v1.5.0");
 fs.mkdirSync(evidence, { recursive: true });
@@ -119,7 +120,7 @@ try {
   await layers.close();
 
   fs.writeFileSync(path.join(root, 'advanced-stacking-visual-results-v1.5.0.json'),
-    JSON.stringify({ version: '1.5.0', baselineHeight, checks, germanDark: 'PASS',
+    JSON.stringify({ version: CURRENT_VERSION, baselineHeight, checks, germanDark: 'PASS',
       stackedPreview: layerScenario.stacked, layerSwitchRecalculations: 0 }, null, 2) + '\n');
   console.log(`PASS advanced stacking visual: ${checks.length} widths, 3-group reflow, German Dark, four advanced previews, baseline group ${baselineHeight.toFixed(1)}px`);
 } finally { await browser.close(); }

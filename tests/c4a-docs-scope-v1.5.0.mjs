@@ -18,7 +18,7 @@ for(const file of currentDocs){
 }
 for(const ext of ['html','zip'])assert.ok(fs.existsSync(ROOT+'/site/downloads/loadcomposer-v1.5.0-standalone.'+ext));
 assert.equal(sha(Buffer.from(read('CHANGELOG.md').split('## [1.3.5]')[1])),reference.historyHash,'historical changelog modified');
-for(const [file,hash] of Object.entries(reference.frozen))assert.equal(sha(fs.readFileSync(ROOT+'/'+file)),hash,file+' changed');
+for(const [file,hash] of Object.entries(reference.frozen))assert.equal(sha(Buffer.from(read(file))),hash,file+' changed');
 let source=read('site/index.html');const c4cCss=read('tests/fixtures/c4c-u02.css');assert.equal(source.split(c4cCss).length,2);source=source.replace(c4cCss,'');for(const patch of reference.patches){assert.equal(source.split(patch.after).length,2,'approved source hunk must occur once');source=source.replace(patch.after,patch.before);}assert.equal(sha(source),reference.source,'source outside C4a scope changed');
 for(const [file,expected] of Object.entries(reference.catalogs)){
  const d=JSON.parse(read('site/lang/'+file));assert.deepEqual(d.meta??null,expected.meta);const unchanged=Object.fromEntries(Object.entries(d.translations||{}).filter(([k])=>!reference.allowedKeys.includes(k)));assert.equal(sha(JSON.stringify(unchanged)),expected.hash,file+' unrelated translation changed');

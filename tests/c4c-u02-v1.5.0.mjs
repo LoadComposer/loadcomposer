@@ -1,3 +1,4 @@
+import {currentReleasePath} from './current-release.mjs';
 import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';
 import {restoreC4c} from './c4e-scope-helper.mjs';
 import {launchBrowser} from '../scripts/browser-runtime.mjs';import {ROOT,ready,mount,pallet as g} from './c4a-helpers-v1.5.0.mjs';
@@ -5,7 +6,7 @@ const hash=x=>crypto.createHash('sha256').update(x).digest('hex'),css=fs.readFil
 assert.equal(hash(css),'97b188ed55d502627cd733ad65b8d3e831017605265038947f301279d42bfc51');
 assert.equal(hash(html.replace(css,'')),'7b4bc92a1e7c8f0d5465ad2dc22368752b19554fb73f260d0e7dfd0946740ca3');
 const b=await launchBrowser(ROOT),rows=[],actions=[];
-try{const p=await b.newPage();await p.context().setOffline(true);await p.goto('file://'+ROOT+'/site/downloads/loadcomposer-v1.5.0-standalone.html');await ready(p);
+try{const p=await b.newPage();await p.context().setOffline(true);await p.goto('file://'+ROOT+currentReleasePath('/site/downloads/loadcomposer-v1.5.0-standalone.html'));await ready(p);
 for(const count of [1,2,3,5])for(const custom of [false,true]){
  await mount(p,Array.from({length:count},()=>g(2)));await p.evaluate(({custom})=>{for(const row of allGroupElements()){selectPresetForGroup(row,custom?'custom':'eur',false);row.querySelector('[data-field="customName"]').value='Very long pallet name ABCDEFGHIJKLMN';updateGroupVisuals(row);}syncUnifiedMode({calculate:false});calculate();},{custom});await p.evaluate(()=>loadComposerComputation.whenIdle());
  for(const width of [320,375,390,430,600,768,844,1024,1280]){await p.setViewportSize({width,height:width===844?390:1024});for(const lang of ['en','it','de','es','fr','pt','nl']){await p.evaluate(l=>loadComposerI18n.setLanguage(l),lang);for(const theme of ['light','dark']){

@@ -2,6 +2,16 @@
 
 All notable project changes are documented here.
 
+## [1.5.1] — Unreleased (prepared 2026-11-02)
+
+- Shortened the horizontal pallet-gap caption in all seven languages. The floor-level meaning and zero default are explained in a native information popover available through mouse, keyboard and touch.
+- Added matching information buttons to both horizontal and inter-layer spacing. Simplified both explanations in seven languages and retained `aria-describedby`, short captions and numeric-field semantics.
+- Close the native inter-layer help when stacking is switched OFF, including keyboard-only OFF/ON transitions.
+- Prepared separate v1.5.1 offline HTML/ZIP, checksums, Downloads metadata and translation glossaries. Published v1.5.0 artifacts are preserved byte for byte.
+- Retargeted current-release regressions to `VERSION` without renaming the historical suites or altering their baseline fixtures. Added specific gap UI, accessibility and source-scope tests.
+- The only application JavaScript change is the UI-only native-popover close instruction. Solver, computation core/runtime, Worker, Advanced engine, validators, results, units and print remain unchanged. S02 remains ACCEPTED RESIDUAL, NOT FIXED.
+- This branch requires visual review and explicit release approval; it does not publish v1.5.1.
+
 ## [1.5.0] — 2026-11-01 (final C4e; stable release)
 
 ### Added and corrected in v1.5.0

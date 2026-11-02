@@ -1,10 +1,11 @@
+import {currentReleasePath} from './current-release.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {JSDOM,VirtualConsole} from 'jsdom';
 export const root=path.resolve(import.meta.dirname,'..');
 export const clone=x=>structuredClone(x);
 export const fixture=name=>JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/astra-v01/counterexamples',name)));
-export async function harness(source=path.join(root,'site/downloads/loadcomposer-v1.5.0-standalone.html')) {
+export async function harness(source=path.join(root,currentReleasePath('site/downloads/loadcomposer-v1.5.0-standalone.html'))) {
   const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>errors.push(String(e)));
   const dom=new JSDOM(fs.readFileSync(source,'utf8'),{runScripts:'dangerously',url:'https://hotfix.invalid/',virtualConsole:vc,
     beforeParse(w){w.localStorage.setItem('loadcomposer.language','en');w.alert=()=>{};

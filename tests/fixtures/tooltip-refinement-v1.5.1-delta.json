@@ -1,0 +1,119 @@
+{
+  "initialCommit": "7a8fc60858ed23f77479ed10e5b4daabfde453b7",
+  "initialTree": "2d24d99229507f6e9e1a2019a26571db4984094b",
+  "initialHtmlSha256": "5411f6b415a51c566168d2ce70e46756db9b4f5ddaf710cdca6624a4bbe5d593",
+  "hunks": [
+    {
+      "before": "#planner .gap-setting { position: relative; display: grid; min-width: 0; }",
+      "after": "#planner .gap-setting { --spacing-help-anchor: --pallet-gap-info; position: relative; display: grid; min-width: 0; }\n    #planner #verticalGapSetting { --spacing-help-anchor: --pallet-vertical-gap-info; }"
+    },
+    {
+      "before": "#planner .gap-setting #gapLabel { padding-inline-end: 28px; }",
+      "after": "#planner .gap-setting > label > span:first-child { padding-inline-end: 28px; }"
+    },
+    {
+      "before": "#gapHelp { box-sizing: border-box;",
+      "after": "#gapHelp, #verticalGapHelp { box-sizing: border-box;"
+    },
+    {
+      "before": "#planner .gap-info { anchor-name: --pallet-gap-info; }",
+      "after": "#planner .gap-info { anchor-name: var(--spacing-help-anchor); }"
+    },
+    {
+      "before": "#gapHelp { position-anchor: --pallet-gap-info;",
+      "after": "#gapHelp, #verticalGapHelp { position-anchor: var(--spacing-help-anchor);"
+    },
+    {
+      "before": "            <label id=\"verticalGapSetting\" class=\"hidden\"><span data-i18n=\"pallet.verticalGap\">pallet.verticalGap</span><span class=\"measurement-input\"><input id=\"verticalGap\" aria-describedby=\"verticalGapHelp\" data-length-input data-min-mm=\"0\" data-mm=\"0\" type=\"text\" inputmode=\"decimal\" value=\"0\"><span class=\"unit-suffix\" data-unit-suffix aria-hidden=\"true\">mm</span></span></label>\n            <span id=\"verticalGapHelp\" class=\"visually-hidden\" data-i18n=\"pallet.verticalGapHelp\">pallet.verticalGapHelp</span>",
+      "after": "            <div id=\"verticalGapSetting\" class=\"gap-setting hidden\">\n              <label>\n                <span id=\"verticalGapLabel\" data-i18n=\"pallet.verticalGap\">pallet.verticalGap</span>\n                <span class=\"measurement-input\">\n                  <input id=\"verticalGap\" aria-describedby=\"verticalGapHelp\" data-length-input data-min-mm=\"0\" data-mm=\"0\" type=\"text\" inputmode=\"decimal\" value=\"0\">\n                  <span class=\"unit-suffix\" data-unit-suffix aria-hidden=\"true\">mm</span>\n                </span>\n              </label>\n              <button class=\"gap-info\" type=\"button\" popovertarget=\"verticalGapHelp\" aria-labelledby=\"verticalGapLabel\" aria-describedby=\"verticalGapHelp\"><span aria-hidden=\"true\">i</span></button>\n              <div id=\"verticalGapHelp\" popover=\"auto\" role=\"tooltip\" data-i18n=\"pallet.verticalGapHelp\">pallet.verticalGapHelp</div>\n            </div>"
+    },
+    {
+      "before": "      els.verticalGapSetting.classList.toggle('hidden', !enabled);",
+      "after": "      if (!enabled) els.verticalGapSetting.querySelector('[popover]:popover-open')?.hidePopover();\n      els.verticalGapSetting.classList.toggle('hidden', !enabled);"
+    },
+    {
+      "before": "      grid-template-columns: 229px repeat(2, 180px);",
+      "after": "      grid-template-columns: 229px repeat(2, 200px);"
+    }
+  ],
+  "catalogs": {
+    "it": {
+      "before": {
+        "pallet.gapHelp": "Spazio aggiuntivo orizzontale tra le impronte dei pallet carichi sul pavimento del mezzo. Predefinito: 0.",
+        "pallet.verticalGapHelp": "Per separatori o intercalari tra strati; non corregge l’altezza del pallet. Predefinito: 0."
+      },
+      "after": {
+        "pallet.gapHelp": "Spazio da lasciare tra un pallet e l'altro sul pavimento del mezzo. Lascia 0 se non serve.",
+        "pallet.verticalGapHelp": "Spazio per eventuali interfalde o separatori tra i pallet sovrapposti. Lascia 0 se non serve."
+      },
+      "initialSha256": "46da4f0bd0813b3349ff29479241fe6df9ea56ded53ccf9e079728859315536c"
+    },
+    "en": {
+      "before": {
+        "pallet.gapHelp": "Additional horizontal space between loaded pallet footprints on the vehicle floor. Default: 0.",
+        "pallet.verticalGapHelp": "For separators or interlayers; it is not a pallet height allowance. Default: 0."
+      },
+      "after": {
+        "pallet.gapHelp": "Space to leave between pallets on the vehicle floor. Leave 0 if no gap is needed.",
+        "pallet.verticalGapHelp": "Space for separator sheets or dividers between stacked pallets. Leave 0 if none are needed."
+      },
+      "initialSha256": "b42e550cfe2dc3c91807464096b91a02d6e6b01387867c2c2cadb3c0e258cb5d"
+    },
+    "de": {
+      "before": {
+        "pallet.gapHelp": "Zusätzlicher horizontaler Abstand zwischen den Grundflächen der beladenen Paletten auf dem Fahrzeugboden. Standard: 0.",
+        "pallet.verticalGapHelp": "Für Trennlagen oder Zwischenlagen, nicht als Höhentoleranz der Palette. Standard: 0."
+      },
+      "after": {
+        "pallet.gapHelp": "Abstand zwischen den Paletten auf dem Fahrzeugboden. Wenn kein Abstand nötig ist, 0 lassen.",
+        "pallet.verticalGapHelp": "Abstand für Zwischenlagen oder Trennmaterial zwischen gestapelten Paletten. Wenn nicht benötigt, 0 lassen."
+      },
+      "initialSha256": "7c4064e84687683b96577e7d0e709df7b958b790ea77fbe40a0c1279439df1fb"
+    },
+    "es": {
+      "before": {
+        "pallet.gapHelp": "Espacio horizontal adicional entre las huellas de los palés cargados en el suelo del vehículo. Predeterminado: 0.",
+        "pallet.verticalGapHelp": "Para separadores o láminas intermedias; no es un margen de altura del palé. Predeterminado: 0."
+      },
+      "after": {
+        "pallet.gapHelp": "Espacio entre palés en el suelo del vehículo. Deja 0 si no hace falta.",
+        "pallet.verticalGapHelp": "Espacio para láminas o separadores entre los palés apilados. Deja 0 si no hace falta."
+      },
+      "initialSha256": "99dc96f736a4a43a5959ae26aaf1c70e752ad22ab5576f4b650992a9e1798c37"
+    },
+    "fr": {
+      "before": {
+        "pallet.gapHelp": "Espace horizontal supplémentaire entre les empreintes des palettes chargées sur le plancher du véhicule. Par défaut : 0.",
+        "pallet.verticalGapHelp": "Pour les séparateurs ou intercalaires, pas comme marge de hauteur de la palette. Par défaut : 0."
+      },
+      "after": {
+        "pallet.gapHelp": "Espace à laisser entre les palettes sur le plancher du véhicule. Laissez 0 si aucun espace n’est nécessaire.",
+        "pallet.verticalGapHelp": "Espace pour les intercalaires ou séparateurs entre les palettes empilées. Laissez 0 si vous n’en utilisez pas."
+      },
+      "initialSha256": "0b4f221aefaad89631d8f7ec90e0e342f285719d68dedc2e925bad4509f5bb43"
+    },
+    "pt": {
+      "before": {
+        "pallet.gapHelp": "Espaço horizontal adicional entre as áreas ocupadas pelas paletes carregadas no piso do veículo. Predefinição: 0.",
+        "pallet.verticalGapHelp": "Para separadores ou camadas intermédias, não como tolerância à altura da palete. Predefinição: 0."
+      },
+      "after": {
+        "pallet.gapHelp": "Espaço a deixar entre as paletes no piso do veículo. Deixe 0 se não for necessário.",
+        "pallet.verticalGapHelp": "Espaço para folhas ou placas separadoras entre as paletes empilhadas. Deixe 0 se não for necessário."
+      },
+      "initialSha256": "9aface5cfb96a1db006dec07accd4c65096cb38c5f4600f74d53a3aecf86be3e"
+    },
+    "nl": {
+      "before": {
+        "pallet.gapHelp": "Extra horizontale ruimte tussen de voetafdrukken van beladen pallets op de laadvloer. Standaard: 0.",
+        "pallet.verticalGapHelp": "Voor scheidingsmateriaal of tussenlagen, niet als hoogtetolerantie van de pallet. Standaard: 0."
+      },
+      "after": {
+        "pallet.gapHelp": "Ruimte tussen pallets op de laadvloer. Laat 0 staan als er geen extra ruimte nodig is.",
+        "pallet.verticalGapHelp": "Ruimte voor tussenlegvellen of scheidingsmateriaal tussen gestapelde pallets. Laat 0 staan als dit niet nodig is."
+      },
+      "initialSha256": "e08256da621025f8ae96458f90e8274f11089c65a72a1b80977283f7b8cc69c5"
+    }
+  },
+  "uiOnlyJavascriptLine": "      if (!enabled) els.verticalGapSetting.querySelector('[popover]:popover-open')?.hidePopover();\n"
+}

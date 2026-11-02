@@ -3,7 +3,7 @@
     "code": "de",
     "name": "Deutsch",
     "dir": "ltr",
-    "version": "1.5.0"
+    "version": "1.5.1"
   },
   "translations": {
     "advanced.role": "Wie darf die Palette gestapelt werden?",
@@ -68,7 +68,7 @@
     "pallet.maxLayers": "Max. Lagen",
     "pallet.maxLayersHelp": "Maximale Anzahl Palettenlagen pro Bodenposition. Die Palette auf dem Fahrzeugboden zählt als erste Lage. Je nach nutzbarer Höhe kann das Fahrzeug weniger Lagen zulassen.",
     "pallet.verticalGap": "Abstand zwischen Lagen",
-    "pallet.gap": "Abstand zwischen Paletten (am Boden)",
+    "pallet.gap": "Palettenabstand",
     "pallet.mixedNote": "Jede Gruppe kann eigene Maße, Kennung und Drehung haben. Das Stapeln wird je Gruppe eingestellt.",
     "pallet.mixedStackNote": "Für verschiedene Gruppen Stapeln bei den beteiligten Gruppen aktivieren und die Verträglichkeit wählen.",
     "pallet.addGroup": "+ Weiteren Palettentyp hinzufügen",
@@ -216,7 +216,7 @@
     "downloads.offline.badge": "FÜR COMPUTER OHNE INTERNET",
     "downloads.offline.body": "Für Computer gedacht, die keinen Internetzugang haben oder offline bleiben müssen. Es handelt sich um eine einfache eigenständige Webseite; der Ladeplaner funktioniert ohne Verbindung. Die Datei wird nicht automatisch aktualisiert: Für neue Funktionen und Korrekturen müssen Sie sie manuell durch eine neuere Version ersetzen.",
     "downloads.offline.internetNote": "Wenn Sie Internetzugang haben, müssen Sie diese Version normalerweise nicht herunterladen.",
-    "downloads.currentVersion": "LoadComposer v1.5.0",
+    "downloads.currentVersion": "LoadComposer v1.5.1",
     "downloads.offline.htmlButton": "Standalone-HTML herunterladen",
     "downloads.offline.htmlHelp": "Eine einzelne Datei, die auf den Computer kopiert und im Browser geöffnet wird.",
     "downloads.offline.zipButton": "Standalone-ZIP herunterladen",
@@ -602,8 +602,8 @@
     "units.inputUnit": "Eingabeeinheit: {unit}",
     "planner.footprintHint": "Verwenden Sie die tatsächliche maximale Stellfläche der beladenen Palette einschließlich Überständen. Maximal 500 Paletten pro Berechnung.",
     "advanced.allowedAboveHelp": "Gruppen auswählen, die direkt auf dieser Palette liegen dürfen.",
-    "pallet.gapHelp": "Zusätzlicher Platz über die tatsächliche Grundfläche der beladenen Palette hinaus. Standard: 0.",
-    "pallet.verticalGapHelp": "Für Trennlagen oder Zwischenlagen, nicht als Höhentoleranz der Palette. Standard: 0.",
+    "pallet.gapHelp": "Abstand zwischen den Paletten auf dem Fahrzeugboden. Wenn kein Abstand nötig ist, 0 lassen.",
+    "pallet.verticalGapHelp": "Abstand für Zwischenlagen oder Trennmaterial zwischen gestapelten Paletten. Wenn nicht benötigt, 0 lassen.",
     "advanced.roleHelp.any": "Kann auf anderen Paletten stehen und weitere Paletten tragen.",
     "advanced.roleHelp.base": "Darf Paletten über sich haben, muss aber immer unten im Stapel stehen.",
     "advanced.roleHelp.top": "Wenn gestapelt, muss sie ganz oben stehen. Darüber dürfen keine Paletten stehen.",

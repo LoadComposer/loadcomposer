@@ -3,7 +3,7 @@
     "code": "en",
     "name": "English",
     "dir": "ltr",
-    "version": "1.5.0"
+    "version": "1.5.1"
   },
   "translations": {
     "advanced.role": "How can it be stacked?",
@@ -68,7 +68,7 @@
     "pallet.maxLayers": "Max layers",
     "pallet.maxLayersHelp": "Maximum pallet layers allowed at each floor position. The pallet on the floor counts as the first layer. The vehicle may allow fewer layers because of its usable height.",
     "pallet.verticalGap": "Space between layers",
-    "pallet.gap": "Space between pallets (on the floor)",
+    "pallet.gap": "Pallet gap",
     "pallet.mixedNote": "Each group can have its own size, identifier, and rotation. Configure stacking for each group.",
     "pallet.mixedStackNote": "To stack different groups, enable Stacking for the groups involved and choose their compatibility.",
     "pallet.addGroup": "+ Add another pallet type",
@@ -216,7 +216,7 @@
     "downloads.offline.badge": "FOR COMPUTERS WITHOUT INTERNET",
     "downloads.offline.body": "Designed for computers that have no Internet access or must remain offline. It is a simple standalone web page and the planner works without a connection. It does not update automatically: to use new features and fixes, you must manually replace the file with a newer version.",
     "downloads.offline.internetNote": "If you have Internet access, you normally do not need to download this version.",
-    "downloads.currentVersion": "LoadComposer v1.5.0",
+    "downloads.currentVersion": "LoadComposer v1.5.1",
     "downloads.offline.htmlButton": "Download standalone HTML",
     "downloads.offline.htmlHelp": "A single file to copy to the computer and open in a browser.",
     "downloads.offline.zipButton": "Download standalone ZIP",
@@ -602,8 +602,8 @@
     "units.inputUnit": "Input unit: {unit}",
     "planner.footprintHint": "Use the maximum actual footprint of the loaded pallet, including any overhang. Maximum 500 pallets per calculation.",
     "advanced.allowedAboveHelp": "Select groups that may be loaded directly on this pallet.",
-    "pallet.gapHelp": "Extra space beyond the actual loaded pallet footprint. Default: 0.",
-    "pallet.verticalGapHelp": "For separators or interlayers; it is not a pallet height allowance. Default: 0.",
+    "pallet.gapHelp": "Space to leave between pallets on the vehicle floor. Leave 0 if no gap is needed.",
+    "pallet.verticalGapHelp": "Space for separator sheets or dividers between stacked pallets. Leave 0 if none are needed.",
     "advanced.roleHelp.any": "Can be loaded above other pallets and support others.",
     "advanced.roleHelp.base": "Can have pallets above it, but must always be at the base of the stack.",
     "advanced.roleHelp.top": "If stacked, it must be at the top. No pallets can be placed above it.",

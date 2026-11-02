@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -5,7 +6,7 @@ import vm from "node:vm";
 import { JSDOM, VirtualConsole } from "jsdom";
 
 const root = path.resolve(import.meta.dirname, "..");
-const html = fs.readFileSync(path.join(root, "site/downloads/loadcomposer-v1.5.0-standalone.html"), "utf8");
+const html = fs.readFileSync(path.join(root, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html")), "utf8");
 const engineSource = fs.readFileSync(path.join(root, "site/advanced-stacking-engine.js"), "utf8");
 const validatorSource = fs.readFileSync(path.join(root, "site/advanced-stacking-validator.js"), "utf8");
 const context = { performance };
@@ -272,7 +273,7 @@ try {
     assert.equal(window.__printedHtml.includes('class="advanced-manifest"'), detail === "complete");
   }
   fs.writeFileSync(path.join(root, "advanced-stacking-operational-results-v1.5.0.json"),
-    JSON.stringify({ version: "1.5.0", requested: 99, placed: warehouse.placedCount,
+    JSON.stringify({ version: CURRENT_VERSION, requested: 99, placed: warehouse.placedCount,
       floor: warehouse.floorPlacedCount, upper: warehouse.stackedCount,
       maxLayers: warehouse.maxLayersUsed, groups: 3,
       printDetails: ["standard", "layers", "complete"] }, null, 2) + "\n");

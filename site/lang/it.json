@@ -3,7 +3,7 @@
     "code": "it",
     "name": "Italiano",
     "dir": "ltr",
-    "version": "1.5.0"
+    "version": "1.5.1"
   },
   "translations": {
     "advanced.role": "Come può essere sovrapposto?",
@@ -68,7 +68,7 @@
     "pallet.maxLayers": "Max strati",
     "pallet.maxLayersHelp": "Numero massimo di strati di pallet consentiti per ogni posizione a pavimento. Il pallet sul pavimento conta come primo strato. Il mezzo può consentire meno strati in base all'altezza utile.",
     "pallet.verticalGap": "Spazio tra strati",
-    "pallet.gap": "Gioco tra pallet (a pavimento)",
+    "pallet.gap": "Gioco tra pallet",
     "pallet.mixedNote": "Ogni gruppo può avere misura, identificativo e rotazione propri. La sovrapposizione si configura per gruppo.",
     "pallet.mixedStackNote": "Per sovrapporre gruppi diversi, attiva Sovrapposizione sui gruppi coinvolti e scegli le compatibilità.",
     "pallet.addGroup": "+ Aggiungi altro tipo di pallet",
@@ -216,7 +216,7 @@
     "downloads.offline.badge": "PER COMPUTER SENZA INTERNET",
     "downloads.offline.body": "Pensata per computer che non hanno accesso a Internet o devono restare offline. È una semplice pagina web standalone e il planner funziona senza connessione. Non si aggiorna automaticamente: per usare nuove funzioni e correzioni devi sostituire manualmente il file con una versione più recente.",
     "downloads.offline.internetNote": "Se hai accesso a Internet, normalmente non serve scaricare questa versione.",
-    "downloads.currentVersion": "LoadComposer v1.5.0",
+    "downloads.currentVersion": "LoadComposer v1.5.1",
     "downloads.offline.htmlButton": "Scarica HTML standalone",
     "downloads.offline.htmlHelp": "Un solo file da copiare sul computer e aprire con il browser.",
     "downloads.offline.zipButton": "Scarica ZIP standalone",
@@ -602,8 +602,8 @@
     "units.inputUnit": "Unità del campo: {unit}",
     "planner.footprintHint": "Usa l’ingombro massimo reale del pallet carico, inclusi eventuali sbordi. Massimo 500 pallet per calcolo.",
     "advanced.allowedAboveHelp": "Seleziona i gruppi caricabili direttamente su questo pallet.",
-    "pallet.gapHelp": "Spazio extra oltre all’ingombro effettivo del pallet carico. Predefinito: 0.",
-    "pallet.verticalGapHelp": "Per separatori o intercalari tra strati; non corregge l’altezza del pallet. Predefinito: 0.",
+    "pallet.gapHelp": "Spazio da lasciare tra un pallet e l'altro sul pavimento del mezzo. Lascia 0 se non serve.",
+    "pallet.verticalGapHelp": "Spazio per eventuali interfalde o separatori tra i pallet sovrapposti. Lascia 0 se non serve.",
     "advanced.roleHelp.any": "Può essere caricato sopra altri pallet e sostenerne altri.",
     "advanced.roleHelp.base": "Può avere pallet sopra, ma deve sempre stare alla base della pila.",
     "advanced.roleHelp.top": "Se sovrapposto, deve stare in cima alla pila. Non può avere pallet sopra.",

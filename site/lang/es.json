@@ -3,7 +3,7 @@
     "code": "es",
     "name": "Español",
     "dir": "ltr",
-    "version": "1.5.0"
+    "version": "1.5.1"
   },
   "translations": {
     "advanced.role": "¿Cómo se puede apilar?",
@@ -68,7 +68,7 @@
     "pallet.maxLayers": "Máx. niveles",
     "pallet.maxLayersHelp": "Número máximo de niveles de palés permitidos en cada posición de suelo. El palé apoyado en el suelo cuenta como primer nivel. El vehículo puede admitir menos niveles por su altura útil.",
     "pallet.verticalGap": "Espacio entre capas",
-    "pallet.gap": "Espacio entre palés (en el suelo)",
+    "pallet.gap": "Espacio entre palés",
     "pallet.mixedNote": "Cada grupo puede tener sus propias medidas, identificador y giro. Configura el apilado por grupo.",
     "pallet.mixedStackNote": "Para apilar grupos distintos, activa el apilado en los grupos implicados y elige la compatibilidad.",
     "pallet.addGroup": "+ Añadir otro tipo de palé",
@@ -216,7 +216,7 @@
     "downloads.offline.badge": "PARA ORDENADORES SIN INTERNET",
     "downloads.offline.body": "Pensada para ordenadores que no tienen acceso a Internet o deben permanecer sin conexión. Es una sencilla página web standalone y el planificador funciona sin conexión. No se actualiza automáticamente: para usar nuevas funciones y correcciones debes sustituir manualmente el archivo por una versión más reciente.",
     "downloads.offline.internetNote": "Si tienes acceso a Internet, normalmente no necesitas descargar esta versión.",
-    "downloads.currentVersion": "LoadComposer v1.5.0",
+    "downloads.currentVersion": "LoadComposer v1.5.1",
     "downloads.offline.htmlButton": "Descargar HTML standalone",
     "downloads.offline.htmlHelp": "Un único archivo para copiarlo al ordenador y abrirlo con el navegador.",
     "downloads.offline.zipButton": "Descargar ZIP standalone",
@@ -602,8 +602,8 @@
     "units.inputUnit": "Unidad del campo: {unit}",
     "planner.footprintHint": "Usa las dimensiones máximas reales del palet cargado, incluidos los salientes. Máximo 500 palets por cálculo.",
     "advanced.allowedAboveHelp": "Selecciona los grupos que pueden ir directamente sobre este palé.",
-    "pallet.gapHelp": "Espacio adicional sobre la huella real del palé cargado. Predeterminado: 0.",
-    "pallet.verticalGapHelp": "Para separadores o láminas intermedias; no es un margen de altura del palé. Predeterminado: 0.",
+    "pallet.gapHelp": "Espacio entre palés en el suelo del vehículo. Deja 0 si no hace falta.",
+    "pallet.verticalGapHelp": "Espacio para láminas o separadores entre los palés apilados. Deja 0 si no hace falta.",
     "advanced.roleHelp.any": "Puede colocarse sobre otros palés y sostener más palés.",
     "advanced.roleHelp.base": "Puede tener palés encima, pero siempre debe estar en la base de la pila.",
     "advanced.roleHelp.top": "Si se apila, debe quedar arriba del todo. No puede tener palés encima.",

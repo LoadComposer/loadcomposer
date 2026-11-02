@@ -1,10 +1,11 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { JSDOM, VirtualConsole } from "jsdom";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const APP = path.join(ROOT, "site", "downloads", "loadcomposer-v1.5.0-standalone.html");
+const APP = path.join(ROOT, "site", "downloads", currentReleasePath("loadcomposer-v1.5.0-standalone.html"));
 const OUTPUT = path.join(ROOT, "final-consistency-results-v1.5.0.json");
 
 function canvasContextStub() {
@@ -335,7 +336,7 @@ try {
   checks.push({ id: "access-metadata-scope", profiles: 3, doorHeightUnchanged: true, status: "PASS" });
 
   fs.writeFileSync(OUTPUT, `${JSON.stringify({
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     source: path.relative(ROOT, APP),
     checks,
     summary: { passed: checks.length, total: checks.length },

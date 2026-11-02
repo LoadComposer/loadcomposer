@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -7,7 +8,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const ONLINE = path.join(ROOT, "site/index.html");
-const CURRENT = path.join(ROOT, "site/downloads/loadcomposer-v1.5.0-standalone.html");
+const CURRENT = path.join(ROOT, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"));
 const BASELINE = path.resolve(
   ROOT,
   process.env.LOADCOMPOSER_STACKING_BASELINE ||
@@ -389,7 +390,7 @@ try {
   await printBaselinePage.close();
 
   const report = {
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     status: "PASS",
     initialState: {
       default: "colour",

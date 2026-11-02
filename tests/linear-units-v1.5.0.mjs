@@ -1,3 +1,4 @@
+import {currentReleasePath} from './current-release.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import http from "node:http";
@@ -5,7 +6,7 @@ import path from "node:path";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const HTML = path.join(ROOT, "site/downloads/loadcomposer-v1.5.0-standalone.html");
+const HTML = path.join(ROOT, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"));
 const CODES = ["it", "en", "de", "es", "fr", "pt", "nl"];
 assert.ok(fs.existsSync(HTML), "Standalone v1.5.0 missing; run the build first.");
 

@@ -1,3 +1,11 @@
+# v1.5.1 preparation — pending manual approval
+
+The `hotfix/v1.5.1-pallet-gap-label` branch prepares a UI-only micro-release from main `1a731263764f3d183845f925e46483b323269362`. Current source version and checkout downloads are v1.5.1; the published release remains v1.5.0 until explicitly approved. Use the branch preview for visual review. Do not merge, tag, create a GitHub Release or deploy production as part of this preparation.
+
+New offline paths: `site/downloads/loadcomposer-v1.5.1-standalone.html` and `.zip`, with separate `.sha256` sidecars. Keep every v1.5.0 file, its tag and release attachments unchanged. Standard build/test and deterministic-distribution commands continue to apply. See [micro-release scope](releases/v1.5.1-pallet-gap.md).
+
+The following section records the already completed v1.5.0 deployment and is preserved as history.
+
 # Production deployment and verification — v1.5.0 (final C4e, 2026-11-01)
 
 The final C4e candidate was merged from [PR #1](https://github.com/LoadComposer/loadcomposer/pull/1) into production branch `main` on 2026-11-01 (commit `e75e188e6c6aeddac4b910a3cac5949c27a5f087`, tree `733d6c98b689ba579f912a1485f7790a3d52afe0`). Cloudflare Pages production deployment was confirmed, and the stable [v1.5.0 GitHub Release](https://github.com/LoadComposer/loadcomposer/releases/tag/v1.5.0) and tag point to that commit. S02 remains an accepted MINOR. The older `release/v1.5.0-c4c` branch and C4c/C4d evidence are historical, not a pending production promotion.

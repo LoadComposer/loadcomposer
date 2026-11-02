@@ -152,7 +152,7 @@ function serve(root) {
   });
 }
 
-assert.equal(VERSION, "1.5.0", "SEO test must be current v1.5.0 coverage");
+assert.equal(VERSION, JSON.parse(fs.readFileSync(path.join(ROOT, "package.json"), "utf8")).version, "test must cover the current release");
 assert.equal(GUIDE_ROUTES.length, 7, "expected one guide hub and six container leaf guides");
 assert.equal(LEAF_ROUTES.length, 6);
 
