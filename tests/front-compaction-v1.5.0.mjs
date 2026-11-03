@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
@@ -6,7 +7,7 @@ import { JSDOM, VirtualConsole } from "jsdom";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const APP_PATH = path.resolve(
   ROOT,
-  process.env.LOADCOMPOSER_HTML || "site/downloads/loadcomposer-v1.5.0-standalone.html"
+  process.env.LOADCOMPOSER_HTML || currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html")
 );
 const RESULT_PATH = path.resolve(
   ROOT,
@@ -179,7 +180,7 @@ try {
   equal(JSON.stringify(canonicalAgain), JSON.stringify(canonical.loadLayout), "idempotenza canonica");
 
   const result = {
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     status: "PASS",
     implementation: {
       phase: "post-selection normalization",

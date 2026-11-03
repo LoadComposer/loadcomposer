@@ -1,9 +1,10 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import fs from "node:fs";
 import path from "node:path";
 import { JSDOM, VirtualConsole } from "jsdom";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const APP = path.join(ROOT, "site/downloads/loadcomposer-v1.5.0-standalone.html");
+const APP = path.join(ROOT, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"));
 const OUTPUT = path.join(ROOT, "mixed-regression-results-v1.5.0.json");
 
 function assert(condition, message) {
@@ -97,7 +98,7 @@ try {
   assert(stackItems.every(item => item.identifier === "STACK"), "identità stackable mixed");
 
   const report = {
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     status: "PASS",
     complete: {
       requested: completeItems.length,

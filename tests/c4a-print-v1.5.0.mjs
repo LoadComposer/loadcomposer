@@ -1,3 +1,4 @@
+import {currentReleasePath} from './current-release.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -16,13 +17,13 @@ const cases=[
  {id:'advanced-floor',groups:[g(2,1200,800,1500,{stack:true}),g(2,1000,800,1500,{stack:true})],layers:1,key:'advanced.warehouseNoteFloor'}
 ];
 const b=await launchBrowser(ROOT),server=await serverFor(source+'/site'),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'loadcomposer-c4a-')),rows=[],record={};
-if(!baseline)execFileSync('unzip',['-qq',source+'/site/downloads/loadcomposer-v1.5.0-standalone.zip','-d',tmp]);
+if(!baseline)execFileSync('unzip',['-qq',source+currentReleasePath('/site/downloads/loadcomposer-v1.5.0-standalone.zip'),'-d',tmp]);
 const expected=baseline?{}:JSON.parse(fs.readFileSync(fixturePath));
 try{
  for(const route of baseline?['file']:['http','file','zip']){
  const cx=await b.newContext({viewport:{width:1440,height:1000},locale:'en-GB'}),p=await cx.newPage(),errors=[],remote=[];
  p.on('pageerror',e=>errors.push(e.message));await cx.route('**/*',r=>{if(/^https?:/.test(r.request().url())&&!r.request().url().startsWith(server.url)){remote.push(r.request().url());return r.abort();}return r.continue();});if(route!=='http')await cx.setOffline(true);
- const url=route==='http'?server.url:'file://'+(route==='file'?source+'/site/downloads/loadcomposer-v1.5.0-standalone.html':tmp+'/loadcomposer-v1.5.0-standalone/loadcomposer-v1.5.0-standalone.html');
+ const url=route==='http'?server.url:'file://'+(route==='file'?source+currentReleasePath('/site/downloads/loadcomposer-v1.5.0-standalone.html'):tmp+currentReleasePath('/loadcomposer-v1.5.0-standalone/loadcomposer-v1.5.0-standalone.html'));
  await p.goto(url);await ready(p);await p.evaluate(()=>{window.__docs=[];printDocumentInFrame=html=>__docs.push(html);window.alert=()=>{};});
  for(const f of cases){await mount(p,f.groups);await p.selectOption('#drawSelect',String(await p.evaluate(()=>lastResults.findIndex(r=>r.container.id==='20dc'))));
  const model=await p.evaluate(()=>lastResults.map(r=>({id:r.container.id,ok:r.ok,placed:r.placedCount,total:r.totalCapacity,layout:r.layout,stacks:r.stacks,maxLayersUsed:r.maxLayersUsed,loadLayers:r.loadLayers,access:r.accessOk,validation:r.validation})));

@@ -1,9 +1,10 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import fs from "node:fs";
 import path from "node:path";
 import { JSDOM, VirtualConsole } from "jsdom";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const CURRENT = path.join(ROOT, "site/downloads/loadcomposer-v1.5.0-standalone.html");
+const CURRENT = path.join(ROOT, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"));
 const BASELINE = path.join(ROOT, "site/downloads/loadcomposer-v1.3.1-standalone.html");
 const OUTPUT = path.join(ROOT, "geometry-reference-oracle-results-v1.5.0.json");
 const MAX_STATES = 300000;
@@ -226,7 +227,7 @@ try {
   const inconclusive = cases.filter(item => item.next.status === "INCONCLUSIVE_LIMIT").length;
   const improved = cases.filter(item => item.currentCapacity > item.baselineCapacity).length;
   const report = {
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     status: "PASS",
     methodology: {
       type: "independent bounded exhaustive bottom-left-stable rectangle placement",

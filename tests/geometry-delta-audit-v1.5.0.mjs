@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -14,7 +15,7 @@ const BASELINE_PATH = path.resolve(
 );
 const CURRENT_PATH = path.resolve(
   PROJECT_DIR,
-  process.env.LOADCOMPOSER_HTML || "site/downloads/loadcomposer-v1.5.0-standalone.html"
+  process.env.LOADCOMPOSER_HTML || currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html")
 );
 const EXPECTED_BASELINE_SHA256 =
   process.env.LOADCOMPOSER_BASELINE_SHA256 ||
@@ -1001,7 +1002,7 @@ try {
   }
 
   const report = {
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     baseline: {
       label: BASELINE_LABEL,
       file: path.basename(BASELINE_PATH),

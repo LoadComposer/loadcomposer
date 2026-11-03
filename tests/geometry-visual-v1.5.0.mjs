@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -6,7 +7,7 @@ import { pathToFileURL } from "node:url";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const APP = path.join(ROOT, "site/downloads/loadcomposer-v1.5.0-standalone.html");
+const APP = path.join(ROOT, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"));
 const EVIDENCE = path.join(ROOT, "geometry-visual-evidence-v1.5.0");
 const OUTPUT = path.join(ROOT, "geometry-visual-results-v1.5.0.json");
 fs.mkdirSync(EVIDENCE, { recursive: true });
@@ -159,7 +160,7 @@ try {
   assert.deepEqual(browserErrors, []);
   assert.deepEqual(remoteRequests, []);
   const report = {
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     status: "PASS",
     runtime: "Chromium standalone file://",
     remoteRuntimeRequests: remoteRequests.length,

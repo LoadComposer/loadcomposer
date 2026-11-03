@@ -10,6 +10,8 @@ LoadComposer è un ausilio alla pianificazione nel browser che stima la disposiz
 
 > **Versione stabile corrente:** `v1.5.0` (C4e finale), pubblicata il 1 novembre 2026. La [GitHub Release ufficiale](https://github.com/LoadComposer/loadcomposer/releases/tag/v1.5.0) comprende HTML/ZIP standalone e i relativi file SHA-256. Verificare i risultati prima dell’uso operativo.
 
+> **Preparazione v1.5.1:** il ramo hotfix dedicato abbrevia le etichette del gioco orizzontale tra pallet e aggiunge una spiegazione accessibile da tastiera e touch. La versione stabile pubblicata indicata sopra rimane v1.5.0 fino all’approvazione manuale della nuova PR.
+
 | Giorno | Notte |
 |---|---|
 | ![LoadComposer tema giorno](docs/screenshots/loadcomposer-day-desktop.png) | ![LoadComposer tema notte](docs/screenshots/loadcomposer-night-desktop.png) |
@@ -46,12 +48,12 @@ site/downloads/index.html
 Per l’uso offline il download più semplice è l’HTML standalone:
 
 ```text
-site/downloads/loadcomposer-v1.5.0-standalone.html
+site/downloads/loadcomposer-v1.5.1-standalone.html
 ```
 
 Copiarlo sul computer offline e aprirlo nel browser. Per archiviazione o
 distribuzione interna è disponibile anche
-`site/downloads/loadcomposer-v1.5.0-standalone.zip`.
+`site/downloads/loadcomposer-v1.5.1-standalone.zip`.
 
 Per ricostruire il prodotto dalla delivery:
 

@@ -1,3 +1,4 @@
+import {currentReleasePath} from './current-release.mjs';
 import assert from 'node:assert/strict';import os from 'node:os';import {execFileSync} from 'node:child_process';
 // Independent C3i fault injection. Production files and decision functions are not patched.
 import fs from 'node:fs';import path from 'node:path';
@@ -5,14 +6,14 @@ const root=path.resolve(import.meta.dirname,'..'),qa=root;
 const {launchBrowser}=await import(qa+'/scripts/browser-runtime.mjs');
 const {serverFor}=await import(qa+'/tests/computation-harness-v1.5.0.mjs');
 const browser=await launchBrowser(qa),server=await serverFor(path.join(root,'site'));
-const zipRoot=fs.mkdtempSync(path.join(os.tmpdir(),'c3j-zip-'));execFileSync('unzip',['-q',path.join(root,'site/downloads/loadcomposer-v1.5.0-standalone.zip'),'-d',zipRoot]);
+const zipRoot=fs.mkdtempSync(path.join(os.tmpdir(),'c3j-zip-'));execFileSync('unzip',['-q',path.join(root,currentReleasePath('site/downloads/loadcomposer-v1.5.0-standalone.zip')),'-d',zipRoot]);
 const rows=[],out=path.join(root,'provenance-c3j-v1.5.0/results');
 const faults=['healthy','negative-flags','remove-version','wrong-version','old-version','input-substitution','vehicle-altered','catalog-vehicle','other-row','silent-input','remove-version-silent-input','old-after-new','old-unversioned-after-new','before-reset','unversioned-before-reset','after-positive-corrupt','silent-length','silent-height','silent-gap','silent-rotation','silent-stacking','same-object-other-row','same-capacity-vehicle'];
 try{for(const route of ['http','file','zip'])for(const execution of ['worker','fallback','inline'])for(const family of ['single','mixed']){
  if(process.env.C3I_CASE && process.env.C3I_CASE!==[route,execution,family].join('-'))continue;
  const cx=await browser.newContext();if(execution==='fallback')await cx.addInitScript(()=>window.Worker=undefined);if(route!=='http')await cx.setOffline(true);
  const page=await cx.newPage(),errors=[];page.on('pageerror',e=>errors.push(String(e)));
- const url=route==='http'?server.url:'file://'+(route==='file'?path.join(root,'site/downloads/loadcomposer-v1.5.0-standalone.html'):path.join(zipRoot,'loadcomposer-v1.5.0-standalone/loadcomposer-v1.5.0-standalone.html'));
+ const url=route==='http'?server.url:'file://'+(route==='file'?path.join(root,currentReleasePath('site/downloads/loadcomposer-v1.5.0-standalone.html')):path.join(zipRoot,currentReleasePath('loadcomposer-v1.5.0-standalone/loadcomposer-v1.5.0-standalone.html')));
  await page.goto(url);await page.waitForFunction(()=>document.documentElement.dataset.i18nReady==='true'&&!loadComposerComputation.pending());
  for(const fault of faults){
  const observation=await page.evaluate(async({fault,execution,family})=>{

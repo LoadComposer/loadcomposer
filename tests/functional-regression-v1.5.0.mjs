@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -13,7 +14,7 @@ const baselineUrl = pathToFileURL(
   )
 ).href;
 const candidateUrl = pathToFileURL(
-  path.join(projectDir, "site/downloads/loadcomposer-v1.5.0-standalone.html")
+  path.join(projectDir, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"))
 ).href;
 const resultPath = path.join(projectDir, "functional-regression-results-v1.5.0.json");
 const browser = await launchBrowser(projectDir);
@@ -274,7 +275,7 @@ try {
     await baseline.context.close();
   }
   fs.writeFileSync(resultPath, `${JSON.stringify({
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     baseline: "1.2.1",
     generatedAt: new Date().toISOString(),
     scenarios: comparisons,

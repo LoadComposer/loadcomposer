@@ -1,7 +1,8 @@
+import {currentReleasePath} from './current-release.mjs';
 import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
 import {launchBrowser} from '../scripts/browser-runtime.mjs';import {mount,ready,serverFor} from './computation-harness-v1.5.0.mjs';
 const root=path.resolve(import.meta.dirname,'..'),server=await serverFor(path.join(root,'site')),deniedServer=await serverFor(path.join(root,'site'),{denyWorker:true}),browser=await launchBrowser(root),rows=[];
-const shape=await (async()=>{const p=await browser.newPage();await p.goto('file://'+path.join(root,'site/downloads/loadcomposer-v1.5.0-standalone.html'));await ready(p);const c=await p.evaluate(()=>CONTAINERS.find(x=>x.id==='truck-curtain-1360'));await p.close();return c;})();
+const shape=await (async()=>{const p=await browser.newPage();await p.goto('file://'+path.join(root,currentReleasePath('site/downloads/loadcomposer-v1.5.0-standalone.html')));await ready(p);const c=await p.evaluate(()=>CONTAINERS.find(x=>x.id==='truck-curtain-1360'));await p.close();return c;})();
 function test(n=500,{floor=false}={}) {const types=Array.from({length:n},(_,g)=>({typeIndex:g,name:'Compute '+g,identifier:'C'+g,presetId:'custom',quantity:1,length:floor?100:shape.innerLength,width:floor?100:shape.innerWidth,height:5,rotationMode:'auto',lockedOrientation:'normal',stackingEnabled:true,stackRole:'any',maxLayers:500,allowedAbove:Array.from({length:n},(_,j)=>j)}));return{id:'application-dense-'+n,container:shape,input:{mode:'mixed',advancedStacking:true,quantity:n,types,gap:0,verticalGap:0}};}
 async function open({http=false,noWorker=false,throwWorker=false,corruption=null,mobile=false,crashWorker=false,denyWorker=false,holdCompute=false}={}) {
  const context=await browser.newContext({viewport:mobile?{width:390,height:844}:{width:1440,height:1000},isMobile:mobile,hasTouch:mobile});
@@ -32,7 +33,7 @@ async function open({http=false,noWorker=false,throwWorker=false,corruption=null
   };
  });
  const page=await context.newPage(),errors=[],remote=[];page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url())&&!r.url().startsWith(server.url)&&!r.url().startsWith(deniedServer.url))remote.push(r.url());});
- await page.goto(http?(denyWorker?deniedServer.url:server.url):'file://'+path.join(root,'site/downloads/loadcomposer-v1.5.0-standalone.html'));await ready(page);if(!http)await context.setOffline(true);
+ await page.goto(http?(denyWorker?deniedServer.url:server.url):'file://'+path.join(root,currentReleasePath('site/downloads/loadcomposer-v1.5.0-standalone.html')));await ready(page);if(!http)await context.setOffline(true);
  return{context,page,errors,remote};
 }
 async function run(page,t){const setup=await mount(page,t);assert.equal(setup.valid,true,JSON.stringify(setup.errors));return page.evaluate(async()=>{calculate();const during={pending:loadComposerComputation.pending(),print:els.printLayoutBtn.disabled,count:lastResults.length,status:document.getElementById('calculationStatus').textContent};const success=await loadComposerComputation.whenIdle();return{success,during,state:loadComposerComputation.state,results:lastResults.map(r=>({id:r.container.id,placed:r.placedCount,floor:r.layout.count,valid:r.validation.valid,version:r.computationVersion}))};});}

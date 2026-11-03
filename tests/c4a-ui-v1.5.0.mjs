@@ -1,3 +1,4 @@
+import {currentReleasePath} from './current-release.mjs';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import fs from 'node:fs';
@@ -9,14 +10,14 @@ import {ROOT,OUT,languages,save,ready} from './c4a-helpers-v1.5.0.mjs';
 const b=await launchBrowser(ROOT),server=await serverFor(ROOT+'/site'),rows=[],keyboard=[];
 const route=process.env.C4A_UI_ROUTE||'http',tmp=fs.mkdtempSync(path.join(os.tmpdir(),'c4a-ui-'));
 assert.ok(['http','file','zip'].includes(route));
-if(route==='zip')execFileSync('unzip',['-qq',ROOT+'/site/downloads/loadcomposer-v1.5.0-standalone.zip','-d',tmp]);
+if(route==='zip')execFileSync('unzip',['-qq',ROOT+currentReleasePath('/site/downloads/loadcomposer-v1.5.0-standalone.zip'),'-d',tmp]);
 const widths=process.env.C4A_UI_WIDTHS?process.env.C4A_UI_WIDTHS.split(',').map(Number):[320,375,390,430,600,768,844,1024,1280,1440];
 try {
  const p=await b.newPage({viewport:{width:1440,height:1000}}),errors=[],remote=[];
  p.on('pageerror',e=>errors.push(e.message));
  await p.route('**/*',r=>{if(/^https?:/.test(r.request().url())&&!r.request().url().startsWith(server.url)){remote.push(r.request().url());return r.abort();}return r.continue();});
  if(route!=='http')await p.context().setOffline(true);
- await p.goto(route==='http'?server.url:'file://'+(route==='file'?ROOT+'/site/downloads/loadcomposer-v1.5.0-standalone.html':tmp+'/loadcomposer-v1.5.0-standalone/loadcomposer-v1.5.0-standalone.html'));await ready(p);
+ await p.goto(route==='http'?server.url:'file://'+(route==='file'?ROOT+currentReleasePath('/site/downloads/loadcomposer-v1.5.0-standalone.html'):tmp+currentReleasePath('/loadcomposer-v1.5.0-standalone/loadcomposer-v1.5.0-standalone.html')));await ready(p);
  for(const width of widths){await p.setViewportSize({width,height:1000});
  for(const lang of languages){await p.evaluate(l=>loadComposerI18n.setLanguage(l),lang);
  for(const theme of ['light','dark']){

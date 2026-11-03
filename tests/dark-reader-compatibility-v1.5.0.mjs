@@ -189,7 +189,7 @@ function serve(root) {
   });
 }
 
-assert.equal(VERSION, "1.5.0", "Dark Reader test must be the current v1.5.0 regression");
+assert.equal(VERSION, JSON.parse(fs.readFileSync(path.join(ROOT, "package.json"), "utf8")).version, "Dark Reader must test the current release");
 const currentHtml = themedCurrentHtml();
 assert.deepEqual(currentHtml, REQUIRED_CURRENT, "current native-theme entry-point discovery changed");
 

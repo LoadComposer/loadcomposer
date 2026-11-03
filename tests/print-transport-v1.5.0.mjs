@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import http from "node:http";
@@ -7,7 +8,7 @@ import { launchBrowser } from "./browser-runtime.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const SITE = path.join(ROOT, "site");
-const CURRENT = path.join(SITE, "downloads", "loadcomposer-v1.5.0-standalone.html");
+const CURRENT = path.join(SITE, "downloads", currentReleasePath("loadcomposer-v1.5.0-standalone.html"));
 const BASELINE = path.join(SITE, "downloads", "loadcomposer-v1.3.2-standalone.html");
 const OUTPUT = path.join(ROOT, "print-transport-results-v1.5.0.json");
 const FRAME_SELECTOR = "iframe[data-loadcomposer-print-frame='true']";
@@ -190,7 +191,7 @@ assert.match(authored, /print\.dialogUnavailable/, "Generic print error key miss
 const server = await serve(SITE);
 const browser = await launchBrowser(ROOT);
 const results = {
-  version: "1.5.0",
+  version: CURRENT_VERSION,
   browser: "Chromium 149",
   transport: "isolated in-page iframe",
   onlineShell: null,

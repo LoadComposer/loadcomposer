@@ -3,7 +3,7 @@
     "code": "fr",
     "name": "Français",
     "dir": "ltr",
-    "version": "1.5.0"
+    "version": "1.5.1"
   },
   "translations": {
     "advanced.role": "Comment peut-elle être empilée ?",
@@ -68,7 +68,7 @@
     "pallet.maxLayers": "Niveaux max.",
     "pallet.maxLayersHelp": "Nombre maximal de niveaux de palettes autorisés à chaque position au sol. La palette posée au sol compte comme premier niveau. Le véhicule peut autoriser moins de niveaux en raison de sa hauteur utile.",
     "pallet.verticalGap": "Espace entre couches",
-    "pallet.gap": "Espace entre palettes (au sol)",
+    "pallet.gap": "Jeu entre palettes",
     "pallet.mixedNote": "Chaque groupe peut avoir ses propres dimensions, identifiant et rotation. Réglez le gerbage par groupe.",
     "pallet.mixedStackNote": "Pour gerber différents groupes, activez le gerbage des groupes concernés et choisissez leur compatibilité.",
     "pallet.addGroup": "+ Ajouter un autre type de palette",
@@ -216,7 +216,7 @@
     "downloads.offline.badge": "POUR LES ORDINATEURS SANS INTERNET",
     "downloads.offline.body": "Conçue pour les ordinateurs qui n’ont pas accès à Internet ou doivent rester hors ligne. Il s’agit d’une simple page web autonome et le planificateur fonctionne sans connexion. Elle ne se met pas à jour automatiquement : pour bénéficier des nouvelles fonctions et corrections, vous devez remplacer manuellement le fichier par une version plus récente.",
     "downloads.offline.internetNote": "Si vous avez accès à Internet, il n’est normalement pas nécessaire de télécharger cette version.",
-    "downloads.currentVersion": "LoadComposer v1.5.0",
+    "downloads.currentVersion": "LoadComposer v1.5.1",
     "downloads.offline.htmlButton": "Télécharger le HTML autonome",
     "downloads.offline.htmlHelp": "Un seul fichier à copier sur l’ordinateur et à ouvrir avec le navigateur.",
     "downloads.offline.zipButton": "Télécharger le ZIP autonome",
@@ -602,8 +602,8 @@
     "units.inputUnit": "Unité du champ : {unit}",
     "planner.footprintHint": "Utilisez les dimensions maximales réelles de la palette chargée, débords compris. Maximum 500 palettes par calcul.",
     "advanced.allowedAboveHelp": "Choisissez les groupes placés directement sur cette palette.",
-    "pallet.gapHelp": "Espace ajouté à l’empreinte réelle de la palette chargée. Par défaut : 0.",
-    "pallet.verticalGapHelp": "Pour les séparateurs ou intercalaires, pas comme marge de hauteur de la palette. Par défaut : 0.",
+    "pallet.gapHelp": "Espace à laisser entre les palettes sur le plancher du véhicule. Laissez 0 si aucun espace n’est nécessaire.",
+    "pallet.verticalGapHelp": "Espace pour les intercalaires ou séparateurs entre les palettes empilées. Laissez 0 si vous n’en utilisez pas.",
     "advanced.roleHelp.any": "Peut être posée sur d’autres palettes et en porter d’autres.",
     "advanced.roleHelp.base": "Peut recevoir des palettes au-dessus, mais doit toujours rester à la base de la pile.",
     "advanced.roleHelp.top": "Si elle est empilée, elle doit être au sommet. Aucune palette ne peut être placée dessus.",

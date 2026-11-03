@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -9,7 +10,7 @@ const output = path.join(root, "advanced-stacking-performance-results-v1.5.0.jso
 const errors = [];
 const consoleProxy = new VirtualConsole();
 consoleProxy.on("jsdomError", error => errors.push(error));
-const dom = new JSDOM(fs.readFileSync(path.join(root, "site/downloads/loadcomposer-v1.5.0-standalone.html"), "utf8"), {
+const dom = new JSDOM(fs.readFileSync(path.join(root, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html")), "utf8"), {
   runScripts: "dangerously", url: "https://loadcomposer.benchmark.test/", virtualConsole: consoleProxy,
   beforeParse(window) {
     window.localStorage.setItem("loadcomposer.language", "en");
@@ -84,6 +85,6 @@ try {
     stackingEnabled: true, stackRole: "any", maxLayers: 3, allowedAbove: [0, 1] }));
   const dense = solve(500, "dense500", truck, denseTypes);
   assert.equal(dense.placedCount, 500, "dense 500-pallet load should fit in three layers");
-  fs.writeFileSync(output, JSON.stringify({ version: "1.5.0", rows }, null, 2) + "\n");
+  fs.writeFileSync(output, JSON.stringify({ version: CURRENT_VERSION, rows }, null, 2) + "\n");
   console.log(`PASS advanced stacking benchmark: ${rows.length} scenarios; worst solver ${Math.max(...rows.map(row => row.solverMs))} ms`);
 } finally { dom.window.close(); }

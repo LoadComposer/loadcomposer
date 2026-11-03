@@ -3,7 +3,7 @@
     "code": "pt",
     "name": "Português",
     "dir": "ltr",
-    "version": "1.5.0"
+    "version": "1.5.1"
   },
   "translations": {
     "advanced.role": "Como pode ser empilhada?",
@@ -68,7 +68,7 @@
     "pallet.maxLayers": "Máx. níveis",
     "pallet.maxLayersHelp": "Número máximo de níveis de paletes permitido em cada posição no piso. A palete apoiada no piso conta como primeiro nível. O veículo pode permitir menos níveis devido à sua altura útil.",
     "pallet.verticalGap": "Espaço entre camadas",
-    "pallet.gap": "Espaço entre paletes (no piso)",
+    "pallet.gap": "Espaço entre paletes",
     "pallet.mixedNote": "Cada grupo pode ter dimensões, identificador e rotação próprios. Configure o empilhamento por grupo.",
     "pallet.mixedStackNote": "Para empilhar grupos diferentes, ative o empilhamento nos grupos envolvidos e escolha a compatibilidade.",
     "pallet.addGroup": "+ Adicionar outro tipo de palete",
@@ -216,7 +216,7 @@
     "downloads.offline.badge": "PARA COMPUTADORES SEM INTERNET",
     "downloads.offline.body": "Destina-se a computadores sem acesso à Internet ou que têm de permanecer offline. É uma página web standalone simples e o planeador funciona sem ligação. Não se atualiza automaticamente: para usar novas funções e correções, deve substituir manualmente o ficheiro por uma versão mais recente.",
     "downloads.offline.internetNote": "Se tem acesso à Internet, normalmente não precisa de transferir esta versão.",
-    "downloads.currentVersion": "LoadComposer v1.5.0",
+    "downloads.currentVersion": "LoadComposer v1.5.1",
     "downloads.offline.htmlButton": "Transferir HTML standalone",
     "downloads.offline.htmlHelp": "Um único ficheiro para copiar para o computador e abrir no navegador.",
     "downloads.offline.zipButton": "Transferir ZIP standalone",
@@ -602,8 +602,8 @@
     "units.inputUnit": "Unidade do campo: {unit}",
     "planner.footprintHint": "Use as dimensões máximas reais da palete carregada, incluindo saliências. Máximo de 500 paletes por cálculo.",
     "advanced.allowedAboveHelp": "Selecione os grupos que podem ficar diretamente sobre esta palete.",
-    "pallet.gapHelp": "Espaço adicional além da área real da palete carregada. Predefinição: 0.",
-    "pallet.verticalGapHelp": "Para separadores ou camadas intermédias, não como tolerância à altura da palete. Predefinição: 0.",
+    "pallet.gapHelp": "Espaço a deixar entre as paletes no piso do veículo. Deixe 0 se não for necessário.",
+    "pallet.verticalGapHelp": "Espaço para folhas ou placas separadoras entre as paletes empilhadas. Deixe 0 se não for necessário.",
     "advanced.roleHelp.any": "Pode ser colocada sobre outras paletes e suportar mais paletes.",
     "advanced.roleHelp.base": "Pode ter paletes por cima, mas deve ficar sempre na base da pilha.",
     "advanced.roleHelp.top": "Se for empilhada, deve ficar no topo. Não pode ter paletes por cima.",

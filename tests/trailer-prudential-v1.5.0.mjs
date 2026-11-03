@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -8,7 +9,7 @@ const APP = path.join(
   ROOT,
   "site",
   "downloads",
-  "loadcomposer-v1.5.0-standalone.html"
+  currentReleasePath("loadcomposer-v1.5.0-standalone.html")
 );
 const OUTPUT = path.join(ROOT, "trailer-prudential-results-v1.5.0.json");
 
@@ -426,7 +427,7 @@ await runScenario({
 });
 
 fs.writeFileSync(OUTPUT, `${JSON.stringify({
-  version: "1.5.0",
+  version: CURRENT_VERSION,
   source: path.relative(ROOT, APP),
   checks,
   status: "PASS"

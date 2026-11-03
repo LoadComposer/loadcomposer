@@ -3,7 +3,7 @@
     "code": "nl",
     "name": "Nederlands",
     "dir": "ltr",
-    "version": "1.5.0"
+    "version": "1.5.1"
   },
   "translations": {
     "advanced.role": "Hoe kan deze pallet worden gestapeld?",
@@ -68,7 +68,7 @@
     "pallet.maxLayers": "Max. lagen",
     "pallet.maxLayersHelp": "Maximaal aantal palletlagen per vloerpositie. De pallet op de voertuigvloer telt als de eerste laag. Door de bruikbare hoogte kan het voertuig minder lagen toestaan.",
     "pallet.verticalGap": "Ruimte tussen lagen",
-    "pallet.gap": "Ruimte tussen pallets (op de vloer)",
+    "pallet.gap": "Palletafstand",
     "pallet.mixedNote": "Elke groep kan eigen maten, identificatie en draaiing hebben. Stel stapelen per groep in.",
     "pallet.mixedStackNote": "Schakel stapelen in voor de betrokken groepen en kies welke groepen op elkaar mogen.",
     "pallet.addGroup": "+ Nog een pallettype toevoegen",
@@ -216,7 +216,7 @@
     "downloads.offline.badge": "VOOR COMPUTERS ZONDER INTERNET",
     "downloads.offline.body": "Bedoeld voor computers die geen internettoegang hebben of offline moeten blijven. Het is één eenvoudige zelfstandige webpagina en de planner werkt zonder verbinding. De versie wordt niet automatisch bijgewerkt: voor nieuwe functies en correcties moet u het bestand handmatig door een nieuwere versie vervangen.",
     "downloads.offline.internetNote": "Als u internettoegang heeft, hoeft u deze versie normaal gesproken niet te downloaden.",
-    "downloads.currentVersion": "LoadComposer v1.5.0",
+    "downloads.currentVersion": "LoadComposer v1.5.1",
     "downloads.offline.htmlButton": "Standalone-HTML downloaden",
     "downloads.offline.htmlHelp": "Eén bestand om naar de computer te kopiëren en in de browser te openen.",
     "downloads.offline.zipButton": "Standalone-ZIP downloaden",
@@ -602,8 +602,8 @@
     "units.inputUnit": "Invoereenheid: {unit}",
     "planner.footprintHint": "Gebruik de werkelijke maximale afmetingen van de beladen pallet, inclusief overhang. Maximaal 500 pallets per berekening.",
     "advanced.allowedAboveHelp": "Kies groepen die direct op deze pallet mogen staan.",
-    "pallet.gapHelp": "Extra ruimte bovenop de werkelijke voetafdruk van de beladen pallet. Standaard: 0.",
-    "pallet.verticalGapHelp": "Voor scheidingsmateriaal of tussenlagen, niet als hoogtetolerantie van de pallet. Standaard: 0.",
+    "pallet.gapHelp": "Ruimte tussen pallets op de laadvloer. Laat 0 staan als er geen extra ruimte nodig is.",
+    "pallet.verticalGapHelp": "Ruimte voor tussenlegvellen of scheidingsmateriaal tussen gestapelde pallets. Laat 0 staan als dit niet nodig is.",
     "advanced.roleHelp.any": "Kan op andere pallets staan en zelf pallets dragen.",
     "advanced.roleHelp.base": "Er mogen pallets bovenop staan, maar deze pallet moet altijd onderaan de stapel staan.",
     "advanced.roleHelp.top": "Als deze pallet gestapeld wordt, moet hij bovenaan staan. Er mogen geen pallets bovenop.",

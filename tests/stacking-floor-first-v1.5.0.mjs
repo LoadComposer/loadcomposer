@@ -1,10 +1,11 @@
+import {currentReleasePath} from './current-release.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { JSDOM, VirtualConsole } from "jsdom";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const CURRENT = path.join(ROOT, "site/downloads/loadcomposer-v1.5.0-standalone.html");
+const CURRENT = path.join(ROOT, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"));
 const BASELINE = path.join(ROOT, "site/downloads/loadcomposer-v1.3.6-standalone.html");
 const REPORT = path.join(ROOT, "stacking-floor-first-delta-results-v1.5.0.json");
 

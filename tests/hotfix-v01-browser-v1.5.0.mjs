@@ -1,3 +1,4 @@
+import {currentReleasePath} from './current-release.mjs';
 import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {launchBrowser} from './browser-runtime.mjs';
@@ -6,7 +7,7 @@ const browser=await launchBrowser(root),rows=[],errors=[],remote=[];
 try {
   const page=await browser.newPage({viewport:{width:1280,height:940}});
   page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))remote.push(r.url());});
-  await page.goto(pathToFileURL(path.join(root,'site/downloads/loadcomposer-v1.5.0-standalone.html')).href);
+  await page.goto(pathToFileURL(path.join(root,currentReleasePath('site/downloads/loadcomposer-v1.5.0-standalone.html'))).href);
   await page.waitForFunction(()=>document.documentElement.dataset.i18nReady==='true'&&window.eval('applicationInitialized'));
   const fixtures=[['minimal-validator-copy',fixture('minimal-validator-copy.json').bad],
     ...['stack-copy-outside','stack-copy-negative','stack-copy-overlap','infinite-stack-coordinate'].map(name=>[name,fixture(`validator-${name}.json`).result]),

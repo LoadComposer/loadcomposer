@@ -1,3 +1,4 @@
+import {currentReleasePath} from './current-release.mjs';
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
@@ -5,7 +6,7 @@ import vm from "node:vm";
 const root = path.resolve(import.meta.dirname, "..");
 const files = [
   "site/index.html",
-  "site/downloads/loadcomposer-v1.5.0-standalone.html",
+  currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"),
   "site/downloads/index.html",
   "site/about/index.html",
   "site/guides/index.html",

@@ -324,7 +324,7 @@ async function createVisualEvidence() {
   return captures;
 }
 
-assert.equal(VERSION, "1.5.0", "transverse centering must test the current release");
+assert.equal(VERSION, JSON.parse(fs.readFileSync(path.join(ROOT, "package.json"), "utf8")).version, "test must cover the current release");
 assert.ok(fs.existsSync(STANDALONE), "current standalone missing; run npm run build first");
 
 const authoredSource = fs.readFileSync(AUTHORED, "utf8");

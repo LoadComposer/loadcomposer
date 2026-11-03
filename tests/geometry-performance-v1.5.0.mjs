@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import fs from "node:fs";
 import path from "node:path";
 import { performance } from "node:perf_hooks";
@@ -13,7 +14,7 @@ const SOURCES = {
   current: path.resolve(
     ROOT,
     process.env.LOADCOMPOSER_PERF_CURRENT ||
-      "site/downloads/loadcomposer-v1.5.0-standalone.html"
+      currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html")
   )
 };
 const OUTPUT = path.resolve(
@@ -164,7 +165,7 @@ try {
     item.currentCold.maxMs > worst.currentCold.maxMs ? item : worst
   ));
   const report = {
-    version: "1.5.0",
+    version: CURRENT_VERSION,
     status: "PASS",
     methodology: {
       runtime: process.version,

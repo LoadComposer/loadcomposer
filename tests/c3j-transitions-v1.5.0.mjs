@@ -1,10 +1,11 @@
+import {currentReleasePath} from './current-release.mjs';
 import os from 'node:os';import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';import path from 'node:path';import {setup} from '../provenance-c3j-v1.5.0/tools/setup.mjs';
 const root=path.resolve(import.meta.dirname,'..'),q=root;const {launchBrowser}=await import(q+'/scripts/browser-runtime.mjs');const b=await launchBrowser(q),rows=[];
-const {serverFor}=await import(q+'/tests/computation-harness-v1.5.0.mjs');const server=await serverFor(q+'/site');const zipRoot=fs.mkdtempSync(path.join(os.tmpdir(),'c3j-state-'));execFileSync('unzip',['-q',q+'/site/downloads/loadcomposer-v1.5.0-standalone.zip','-d',zipRoot]);
+const {serverFor}=await import(q+'/tests/computation-harness-v1.5.0.mjs');const server=await serverFor(q+'/site');const zipRoot=fs.mkdtempSync(path.join(os.tmpdir(),'c3j-state-'));execFileSync('unzip',['-q',q+currentReleasePath('/site/downloads/loadcomposer-v1.5.0-standalone.zip'),'-d',zipRoot]);
 try{for(const route of ['http','file','zip'])for(const family of ['floor','advanced'])for(const mode of ['worker','fallback','inline']){
- const cx=await b.newContext();if(route!=='http')await cx.setOffline(true);if(mode==='fallback')await cx.addInitScript(()=>Worker=undefined);const p=await cx.newPage();await p.goto(route==='http'?server.url:route==='file'?'file://'+root+'/site/downloads/loadcomposer-v1.5.0-standalone.html':'file://'+zipRoot+'/loadcomposer-v1.5.0-standalone/loadcomposer-v1.5.0-standalone.html');await p.waitForFunction(()=>document.documentElement.dataset.i18nReady==='true');
+ const cx=await b.newContext();if(route!=='http')await cx.setOffline(true);if(mode==='fallback')await cx.addInitScript(()=>Worker=undefined);const p=await cx.newPage();await p.goto(route==='http'?server.url:route==='file'?'file://'+root+currentReleasePath('/site/downloads/loadcomposer-v1.5.0-standalone.html'):'file://'+zipRoot+currentReleasePath('/loadcomposer-v1.5.0-standalone/loadcomposer-v1.5.0-standalone.html'));await p.waitForFunction(()=>document.documentElement.dataset.i18nReady==='true');
  await setup(p,{quantity:mode==='inline'?4:31,groups:2,stack:family==='advanced',maxLayers:3,length:900,width:600,height:600});
  const data=await p.evaluate(async({family})=>{
   window.alert=()=>{};const docs=[];printDocumentInFrame=(...a)=>docs.push(a.filter(x=>typeof x==='string').join('\n'));

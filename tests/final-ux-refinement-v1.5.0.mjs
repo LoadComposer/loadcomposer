@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -5,7 +6,7 @@ import { pathToFileURL } from "node:url";
 import { launchBrowser } from "./browser-runtime.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
-const html = pathToFileURL(path.join(root, "site/downloads/loadcomposer-v1.5.0-standalone.html")).href;
+const html = pathToFileURL(path.join(root, currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"))).href;
 const evidence = path.join(root, "final-ux-visual-evidence-v1.5.0");
 fs.mkdirSync(evidence, { recursive: true });
 const checks = [];
@@ -33,7 +34,7 @@ try {
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
         const offPositions = await settings.evaluate(section => {
           const unit = section.querySelector(".unit-preference").getBoundingClientRect();
-          const gap = section.querySelector("#gap").closest("label").getBoundingClientRect();
+          const gap = section.querySelector(".gap-setting").getBoundingClientRect();
           const unitLabel = section.querySelector(".unit-preference legend").getBoundingClientRect();
           const unitControl = section.querySelector(".unit-segments").getBoundingClientRect();
           return { unitLeft: unit.left, gapLeft: gap.left, gapRight: gap.right,
@@ -52,7 +53,7 @@ try {
         assert.equal(await page.locator("#verticalGap").getAttribute("aria-describedby"), "verticalGapHelp");
         assert.equal(await page.locator("#verticalGapHelp").textContent(), catalog["pallet.verticalGapHelp"]);
         const measurements = await settings.evaluate(section => {
-          const visible = [...section.querySelectorAll(".general-settings-grid > fieldset, .general-settings-grid > label")]
+          const visible = [...section.querySelectorAll(".general-settings-grid > fieldset, .general-settings-grid > label, .general-settings-grid > .gap-setting")]
             .filter(element => getComputedStyle(element).display !== "none")
             .map(element => {
               const bounds = element.getBoundingClientRect();
@@ -75,8 +76,8 @@ try {
           assert.ok(Math.abs(horizontal.left - unit.right - 22) < 1 &&
             Math.abs(vertical.left - horizontal.right - 22) < 1,
           `${language} ${theme} ${width}: column distances are not uniform`);
-          assert.ok(horizontal.controlWidth >= 160 && horizontal.controlWidth <= 180,
-            `${language} ${theme} ${width}: numeric fields are excessively wide`);
+          assert.ok(Math.abs(horizontal.controlWidth - 200) < 1,
+            `${language} ${theme} ${width}: both spacing columns must be 200 px for their info buttons`);
         } else if (width >= 600) {
           assert.ok(horizontal.left > unit.left && Math.abs(horizontal.left - vertical.left) < 1,
             `${language} ${theme} ${width}: two-column reflow is incoherent`);
@@ -146,5 +147,5 @@ try {
   await browser.close();
 }
 fs.writeFileSync(path.join(root, "final-ux-visual-results-v1.5.0.json"),
-  JSON.stringify({ version: "1.5.0", checks }, null, 2) + "\n");
+  JSON.stringify({ version: CURRENT_VERSION, checks }, null, 2) + "\n");
 console.log("Final UX refinement PASS: 32 load-settings views, contextual roles, normalized inputs, Reset, mobile and German Dark.");

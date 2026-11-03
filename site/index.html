@@ -3731,7 +3731,7 @@
     #planner .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
     #planner .general-settings-grid { display: flex; flex-wrap: wrap; align-items: end; gap: 16px 32px; }
     #planner .unit-preference { margin: 0; }
-    #planner .general-settings-grid > label:has(#gap) { flex: 0 0 auto; }
+    #planner .general-settings-grid > .gap-setting { flex: 0 0 auto; }
     #planner .general-settings-grid .measurement-input { width: 130px; }
     #planner #maxLayers { width: 80px; }
     #planner .stacking-setting { position: relative; padding-bottom: 0; }
@@ -3807,7 +3807,7 @@
       #planner .pallets-section-heading { flex-wrap: wrap; }
       #planner .general-settings-grid { gap: 12px 18px; }
       #planner .general-settings-grid > .unit-preference { flex: 0 0 100%; }
-      #planner .general-settings-grid > label:has(#gap) { flex: 0 0 100%; }
+      #planner .general-settings-grid > .gap-setting { flex: 0 0 100%; }
       #planner .group-heading-copy { display: grid; gap: 3px; }
       #planner .pallet-group { padding: 6px 10px; }
       #planner .group-body { display: flex; flex-direction: column; align-items: stretch; }
@@ -3828,16 +3828,16 @@
     #planner .load-settings-band > h2 { margin: 0; align-self: center; }
     #planner .general-settings-grid {
       display: grid;
-      grid-template-columns: 229px repeat(2, 180px);
+      grid-template-columns: 229px repeat(2, 200px);
       align-items: stretch;
       justify-content: start;
       gap: 12px 22px;
     }
-    #planner .general-settings-grid > label { display: grid; grid-template-rows: minmax(0, 1fr) var(--planner-control-height); gap: var(--planner-label-gap); min-width: 0; margin: 0; }
-    #planner .general-settings-grid > label.hidden { display: none; }
-    #planner .general-settings-grid > label .measurement-input { width: 100%; }
+    #planner .general-settings-grid > label, #planner .general-settings-grid > .gap-setting > label { display: grid; grid-template-rows: minmax(0, 1fr) var(--planner-control-height); gap: var(--planner-label-gap); min-width: 0; margin: 0; }
+    #planner .general-settings-grid > label.hidden, #planner .general-settings-grid > .gap-setting > label.hidden { display: none; }
+    #planner .general-settings-grid > label .measurement-input, #planner .general-settings-grid > .gap-setting > label .measurement-input { width: 100%; }
     #planner .unit-preference { position: relative; display: flex; align-items: end; margin: 0; }
-    #planner .general-settings-grid > label > span:first-child { margin: 0; line-height: 1.4; }
+    #planner .general-settings-grid > label > span:first-child, #planner .general-settings-grid > .gap-setting > label > span:first-child { margin: 0; line-height: 1.4; }
     #planner .unit-preference legend { position: absolute; top: 0; left: 0; margin: 0; line-height: 1.4; }
     #planner .unit-preference { width: 229px; flex: 0 0 229px; }
     #planner .unit-segments { box-sizing: border-box; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); width: 100%; height: var(--planner-control-height); min-height: 0; padding: 3px; }
@@ -3875,6 +3875,7 @@
     #planner .result-filters { display: grid; justify-items: start; min-width: 0; gap: 8px; }
     #planner .summary { min-width: 0; grid-template-columns: .9fr .65fr 1.15fr 1.6fr; }
     #planner .general-settings-grid > label > span:first-child,
+    #planner .gap-setting > label > span:first-child,
     #planner .unit-preference legend,
     #planner .stacking-toggle .checkline > span {
       color: var(--lc-text-secondary);
@@ -4019,7 +4020,7 @@
       #planner .general-settings-grid { grid-template-columns: minmax(190px,1fr) minmax(0,1fr); align-items: start; }
       #planner .unit-preference { display: block; width: min(229px,100%); }
       #planner .unit-preference legend { position: static; margin: 0 0 var(--planner-label-gap); }
-      #planner .general-settings-grid > label:has(#gap) { grid-column: 2; grid-row: 1; }
+      #planner .general-settings-grid > .gap-setting { grid-column: 2; grid-row: 1; }
       #planner #verticalGapSetting { grid-column: 2; grid-row: 2; }
     }
     @media (max-width: 1199px) {
@@ -4037,7 +4038,7 @@
       #planner .group-top-grid { grid-template-columns: minmax(0,1fr); row-gap: var(--planner-label-gap); }
       #planner .group-top-grid > * { grid-column: 1; margin-bottom: 5px; }
       #planner .general-settings-grid { grid-template-columns: minmax(0,1fr); }
-      #planner .general-settings-grid > label:has(#gap), #planner #verticalGapSetting { grid-column: auto; grid-row: auto; }
+      #planner .general-settings-grid > .gap-setting, #planner #verticalGapSetting { grid-column: auto; grid-row: auto; }
       #planner .general-settings-grid .unit-preference { display: block; width: 100%; flex-basis: 100%; }
       #planner .unit-preference legend { position: static; margin: 0 0 var(--planner-label-gap); }
       #planner .pallets-section-heading { align-items: stretch; }
@@ -4098,6 +4099,19 @@
     .hidden {
       display: none !important;
     }
+    /* v1.5.1: short pallet-gap label with an accessible, non-layout popover. */
+    #planner .gap-setting { --spacing-help-anchor: --pallet-gap-info; position: relative; display: grid; min-width: 0; }
+    #planner #verticalGapSetting { --spacing-help-anchor: --pallet-vertical-gap-info; }
+    #planner .gap-setting > label > span:first-child { padding-inline-end: 28px; }
+    #planner .gap-setting .gap-info { position: absolute; inset-inline-end: 0; top: -3px; display: grid; place-items: center; width: 24px; min-width: 24px; height: 24px; min-height: 24px; padding: 0; border: 0; border-radius: 4px; background: transparent; color: var(--lc-text-secondary); }
+    #planner .gap-info > span { display: grid; place-items: center; width: 14px; height: 14px; border: 1px solid currentColor; border-radius: 50%; font: 600 11px/1 sans-serif; }
+    #planner .gap-info:hover { background: var(--lc-selected-bg); }
+    #planner .gap-info:focus-visible { outline: 2px solid var(--lc-focus); outline-offset: 2px; }
+    #gapHelp, #verticalGapHelp { box-sizing: border-box; position: fixed; inset: 0; margin: auto; width: max-content; max-width: calc(100vw - 32px); height: max-content; padding: 12px 14px; border: 1px solid var(--lc-border); border-radius: 6px; background: var(--lc-tooltip-bg); color: var(--lc-tooltip-text); box-shadow: 0 4px 18px rgba(0,0,0,.18); font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+    @supports (position-area: bottom) {
+      #planner .gap-info { anchor-name: var(--spacing-help-anchor); }
+      #gapHelp, #verticalGapHelp { position-anchor: var(--spacing-help-anchor); position-area: bottom span-left; position-try-fallbacks: flip-inline, flip-block; inset: auto; margin: 6px 0 0; max-width: min(340px, calc(100vw - 32px)); }
+    }
     /* C4e UX01: align stacking controls and allow full numeric text height. */
     #planner .stack-role-row .layers-setting input { height: 44px; padding: 8px 10px; line-height: 1.25; box-sizing: border-box; }
     #planner .stack-role-row .layers-setting { max-width: 100%; }
@@ -4105,7 +4119,7 @@
     @media (min-width: 600px) and (max-width: 900px) {
       #planner .general-settings-grid { grid-template-columns: minmax(0,1.2fr) repeat(2,minmax(0,1fr)); align-items: stretch; }
       #planner .general-settings-grid > .unit-preference { display: flex; align-items: end; min-width: 0; width: 100%; }
-      #planner .general-settings-grid > label:has(#gap), #planner #verticalGapSetting { grid-column: auto; grid-row: auto; }
+      #planner .general-settings-grid > .gap-setting, #planner #verticalGapSetting { grid-column: auto; grid-row: auto; }
     }
   </style>
 </head>
@@ -4145,7 +4159,7 @@
           width="746"
           height="176"
         />
-        <span class="app-version">v1.5.0</span>
+        <span class="app-version">v1.5.1</span>
       </div>
 
       <div class="header-controls">
@@ -4236,15 +4250,28 @@
               </div>
             </fieldset>
 
-            <label>
-              <span data-i18n="pallet.gap">pallet.gap</span>
-              <span class="measurement-input">
-                <input id="gap" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0" required>
-                <span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span>
-              </span>
-            </label>
-            <label id="verticalGapSetting" class="hidden"><span data-i18n="pallet.verticalGap">pallet.verticalGap</span><span class="measurement-input"><input id="verticalGap" aria-describedby="verticalGapHelp" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0"><span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span></span></label>
-            <span id="verticalGapHelp" class="visually-hidden" data-i18n="pallet.verticalGapHelp">pallet.verticalGapHelp</span>
+            <div class="gap-setting">
+              <label>
+                <span id="gapLabel" data-i18n="pallet.gap">pallet.gap</span>
+                <span class="measurement-input">
+                  <input id="gap" aria-describedby="gapHelp" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0" required>
+                  <span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span>
+                </span>
+              </label>
+              <button class="gap-info" type="button" popovertarget="gapHelp" aria-labelledby="gapLabel" aria-describedby="gapHelp"><span aria-hidden="true">i</span></button>
+              <div id="gapHelp" popover="auto" role="tooltip" data-i18n="pallet.gapHelp">pallet.gapHelp</div>
+            </div>
+            <div id="verticalGapSetting" class="gap-setting hidden">
+              <label>
+                <span id="verticalGapLabel" data-i18n="pallet.verticalGap">pallet.verticalGap</span>
+                <span class="measurement-input">
+                  <input id="verticalGap" aria-describedby="verticalGapHelp" data-length-input data-min-mm="0" data-mm="0" type="text" inputmode="decimal" value="0">
+                  <span class="unit-suffix" data-unit-suffix aria-hidden="true">mm</span>
+                </span>
+              </label>
+              <button class="gap-info" type="button" popovertarget="verticalGapHelp" aria-labelledby="verticalGapLabel" aria-describedby="verticalGapHelp"><span aria-hidden="true">i</span></button>
+              <div id="verticalGapHelp" popover="auto" role="tooltip" data-i18n="pallet.verticalGapHelp">pallet.verticalGapHelp</div>
+            </div>
           </div>
       </div>
     </section>
@@ -7651,6 +7678,7 @@
           detail.append(list);
         }
       });
+      if (!enabled) els.verticalGapSetting.querySelector('[popover]:popover-open')?.hidePopover();
       els.verticalGapSetting.classList.toggle('hidden', !enabled);
     }
 

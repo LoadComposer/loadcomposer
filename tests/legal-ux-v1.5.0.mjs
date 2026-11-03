@@ -1,3 +1,4 @@
+import {currentReleasePath, CURRENT_VERSION} from './current-release.mjs';
 import assert from "node:assert/strict";
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -238,7 +239,7 @@ try {
 
 for (const [relative, standalone] of [
   ["site/index.html", false],
-  ["site/downloads/loadcomposer-v1.5.0-standalone.html", true]
+  [currentReleasePath("site/downloads/loadcomposer-v1.5.0-standalone.html"), true]
 ]) {
   const dom = new JSDOM(fs.readFileSync(path.join(ROOT, relative), "utf8"));
   try {
@@ -369,7 +370,7 @@ try {
 }
 
 const report = {
-  version: "1.5.0",
+  version: CURRENT_VERSION,
   status: "PASS",
   sourceInventory,
   routes: PAGES.map(page => `/legal/${page.route}/`),
